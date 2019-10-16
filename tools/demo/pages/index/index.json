@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "mui-button": "../../components/button/button"
+  }
+}

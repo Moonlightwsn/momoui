@@ -1,0 +1,9 @@
+<button
+  class="mui-button {{typeMap[type]}}"
+  style="{{style}}"
+  bindtap="buttonTap"
+>
+  <view class="mui-button-label">
+    <slot></slot>
+  </view>
+</button>
