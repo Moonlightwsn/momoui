@@ -1,18 +1,21 @@
+import {debounce} from '../utils/utils'
+
 Component({
   data: {
     rippleList: [],
+    rippleListInitKey: 0,
     width: 0,
     x: 0,
     y: 0,
   },
   methods: {
-    stopRipple() {
-      this.data.rippleList.shift()
+    stopRipple: debounce(function () {
       this.setData({
-        rippleList: this.data.rippleList,
+        rippleList: [],
+        rippleListInitKey: 0,
       })
-    },
-    ripple(e) {
+    }, 1500),
+    Click(e) {
       const that = this
       const query = this.createSelectorQuery()
       query.select('.mui-ripple-view').boundingClientRect()
@@ -24,12 +27,13 @@ Component({
         const rippleWidth = boxWidth > boxHeight ? boxWidth : boxHeight
         const rippleX = (e.detail.x - (view.left + viewPort.scrollLeft)) - (rippleWidth / 2)
         const rippleY = (e.detail.y - (view.top + viewPort.scrollTop)) - (rippleWidth / 2)
+        that.data.rippleListInitKey += 1
         that.data.rippleList.push({
           width: rippleWidth,
           x: rippleX,
           y: rippleY,
+          key: that.data.rippleListInitKey
         })
-        console.log(that.data.rippleList)
         that.setData({
           rippleList: that.data.rippleList,
         })

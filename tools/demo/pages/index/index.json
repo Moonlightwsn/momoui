@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "mui-button": "../../components/button/button",
-    "mui-ripple-view": "../../components/ripple/ripple"
+    "mui-button": "../../components/button/button"
   }
 }

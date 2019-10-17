@@ -1,3 +1,6 @@
 {
-  "component": true
+  "component": true,
+  "usingComponents": {
+    "mui-ripple-view": "../ripple/ripple"
+  }
 }
