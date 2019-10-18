@@ -13,7 +13,6 @@ const dist = path.resolve(__dirname, '../miniprogram_dist')
 
 const entryFiles = [
   'components/button/button',
-  'components/ripple/ripple'
 ]
 
 module.exports = {

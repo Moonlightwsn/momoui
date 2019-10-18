@@ -1,11 +1,11 @@
+import rippleBehaviors from '../ripple/behaviors'
+
 Component({
+  behaviors: [rippleBehaviors],
   properties: {
     type: {
       type: String,
       value: 'default',
-    },
-    style: {
-      type: String,
     },
   },
   data: {

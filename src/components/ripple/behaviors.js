@@ -1,12 +1,15 @@
 import {debounce} from '../utils/utils'
 
-Component({
+export default Behavior({
+  properties: {
+    ripple: {
+      type: Boolean,
+      value: true
+    }
+  },
   data: {
     rippleList: [],
     rippleListInitKey: 0,
-    width: 0,
-    x: 0,
-    y: 0,
   },
   methods: {
     stopRipple: debounce(function () {
@@ -15,9 +18,10 @@ Component({
         rippleListInitKey: 0,
       })
     }, 1500),
-    Click(e) {
+    rippleClick(e) {
+      console.log(111, e)
       const that = this
-      const query = this.createSelectorQuery()
+      const query = that.createSelectorQuery()
       query.select('.mui-ripple-view').boundingClientRect()
       query.selectViewport().scrollOffset()
       query.exec(function (res) {

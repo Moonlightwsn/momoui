@@ -1,10 +1,14 @@
-<view
-  class="mui-button {{typeMap[type]}}"
-  style="{{style}}"
-  bindtap="buttonTap"
+<button
+  class="mui-button {{typeMap[type]}} {{ripple ? 'mui-ripple-view' : ''}}"
+  capture-bind:tap="{{ripple ? 'rippleClick' : ''}}"
 >
   <view class="mui-button-label">
     <slot></slot>
   </view>
-  <mui-ripple-view />
-</view>
+  <view
+    wx:for="{{rippleList}}"
+    wx:key="{{item.key}}"
+    style="width:{{item.width}}px;height:{{item.width}}px;left:{{item.x}}px;top:{{item.y}}px" class="mui-ripple mui-ripple-animation"
+    bind:animationend="stopRipple"
+  />
+</button>

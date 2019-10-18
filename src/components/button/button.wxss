@@ -1,6 +1,7 @@
+@import '../styles/global.wxss';
+
 .mui-button {
   display: inline-flex;
-  position: relative;
   align-items: center;
   justify-content: center;
   cursor: pointer;

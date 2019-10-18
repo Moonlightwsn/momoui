@@ -1,4 +1,4 @@
 <view style="padding: 24px;margin: auto;display: flex;outline: 0;border-radius: 4px;justify-content: center;background-color: #f5f5f5;">
   <mui-button style="margin-right: 12px;">DEFAULT</mui-button>
-  <mui-button style="margin-right: 12px;" type="primary" bindonclick="onClick">PRIMARY</mui-button>
+  <mui-button style="margin-right: 12px;" type="primary" bindonclick="onClick" ripple="{{false}}">PRIMARY</mui-button>
 </view>
