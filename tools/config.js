@@ -13,6 +13,7 @@ const dist = path.resolve(__dirname, '../miniprogram_dist')
 
 const entryFiles = [
   'components/button/button',
+  'components/ripple/behaviors',
 ]
 
 module.exports = {
@@ -70,5 +71,5 @@ module.exports = {
       assetFilter: assetFilename => assetFilename.endsWith('.js')
     }
   },
-  // copy: ['./assets', './utils.js'], // 将会复制到目标目录
+  copy: ['components/styles/fonts'], // 将会复制到目标目录
 }

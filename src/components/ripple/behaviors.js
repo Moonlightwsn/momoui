@@ -1,5 +1,7 @@
 import {debounce} from '../utils/utils'
 
+const regexp = /(\b[0-9]{1,3}\b)/g
+
 export default Behavior({
   properties: {
     ripple: {
@@ -19,10 +21,13 @@ export default Behavior({
       })
     }, 1500),
     rippleClick(e) {
-      console.log(111, e)
       const that = this
       const query = that.createSelectorQuery()
-      query.select('.mui-ripple-view').boundingClientRect()
+      query.select('.mui-ripple-view').fields({
+        size: true,
+        rect: true,
+        computedStyle: ['backgroundColor']
+      })
       query.selectViewport().scrollOffset()
       query.exec(function (res) {
         const [view, viewPort] = res
@@ -36,12 +41,21 @@ export default Behavior({
           width: rippleWidth,
           x: rippleX,
           y: rippleY,
+          backgroundColor: that._highBrightnessColor(view.backgroundColor) ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)',
           key: that.data.rippleListInitKey
         })
         that.setData({
           rippleList: that.data.rippleList,
         })
       })
+    },
+    _highBrightnessColor(color) {
+      const [r, g, b, a = 1] = color.match(regexp)
+      return (
+        (parseInt(r, 10) * 0.299 +
+        parseInt(g, 10) * 0.578 +
+        parseInt(b, 10) * 0.114) >= (192 * a)
+      )
     }
   }
 })

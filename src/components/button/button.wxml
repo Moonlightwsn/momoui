@@ -8,7 +8,7 @@
   <view
     wx:for="{{rippleList}}"
     wx:key="{{item.key}}"
-    style="width:{{item.width}}px;height:{{item.width}}px;left:{{item.x}}px;top:{{item.y}}px" class="mui-ripple mui-ripple-animation"
+    style="width:{{item.width}}px;height:{{item.width}}px;left:{{item.x}}px;top:{{item.y}}px;background-color: {{item.backgroundColor}}" class="mui-ripple mui-ripple-animation"
     bind:animationend="stopRipple"
   />
 </button>
