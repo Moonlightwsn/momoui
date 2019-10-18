@@ -19,8 +19,22 @@ export default Behavior({
         rippleList: [],
         rippleListInitKey: 0,
       })
-    }, 1500),
+    }, 500),
+    rippleHold(e) {
+      const {x, y} = e.detail
+      this._ripple({
+        x,
+        y
+      }, 'hold')
+    },
     rippleClick(e) {
+      const {x, y} = e.detail
+      this._ripple({
+        x,
+        y
+      }, 'click')
+    },
+    _ripple(position, type) {
       const that = this
       const query = that.createSelectorQuery()
       query.select('.mui-ripple-view').fields({
@@ -34,15 +48,16 @@ export default Behavior({
         const boxWidth = parseInt(view.width, 10)
         const boxHeight = parseInt(view.height, 10)
         const rippleWidth = boxWidth > boxHeight ? boxWidth : boxHeight
-        const rippleX = (e.detail.x - (view.left + viewPort.scrollLeft)) - (rippleWidth / 2)
-        const rippleY = (e.detail.y - (view.top + viewPort.scrollTop)) - (rippleWidth / 2)
+        const rippleX = (position.x - (view.left + viewPort.scrollLeft)) - (rippleWidth / 2)
+        const rippleY = (position.y - (view.top + viewPort.scrollTop)) - (rippleWidth / 2)
         that.data.rippleListInitKey += 1
         that.data.rippleList.push({
           width: rippleWidth,
           x: rippleX,
           y: rippleY,
           backgroundColor: that._highBrightnessColor(view.backgroundColor) ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)',
-          key: that.data.rippleListInitKey
+          key: that.data.rippleListInitKey,
+          rippleClass: type === 'hold' ? 'mui-ripple-animation-hold' : 'mui-ripple-animation'
         })
         that.setData({
           rippleList: that.data.rippleList,

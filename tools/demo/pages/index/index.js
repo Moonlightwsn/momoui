@@ -1,5 +1,5 @@
 Page({
-  onClick() {
-    console.log('test')
+  testTap() {
+    console.log('testTap')
   }
 })

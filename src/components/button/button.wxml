@@ -1,6 +1,8 @@
 <button
-  class="mui-button {{typeMap[type]}} {{ripple ? 'mui-ripple-view' : ''}}"
-  capture-bind:tap="{{ripple ? 'rippleClick' : ''}}"
+  disabled="{{disabled}}"
+  class="mui-button {{variantMap[variant]}} {{sizeMap[size]}} {{colorMap[color]}} {{ripple ? 'mui-ripple-view' : ''}}"
+  capture-bind:tap="{{(ripple && !disabled) ? 'rippleClick' : ''}}"
+  capture-bind:longpress="{{(ripple && !disabled) ? 'rippleHold' : ''}}"
 >
   <view class="mui-button-label">
     <slot></slot>
@@ -8,7 +10,7 @@
   <view
     wx:for="{{rippleList}}"
     wx:key="{{item.key}}"
-    style="width:{{item.width}}px;height:{{item.width}}px;left:{{item.x}}px;top:{{item.y}}px;background-color: {{item.backgroundColor}}" class="mui-ripple mui-ripple-animation"
+    style="width:{{item.width}}px;height:{{item.width}}px;left:{{item.x}}px;top:{{item.y}}px;background-color: {{item.backgroundColor}}" class="mui-ripple {{item.rippleClass}}"
     bind:animationend="stopRipple"
   />
 </button>
