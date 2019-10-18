@@ -12,15 +12,33 @@ export default Behavior({
   data: {
     rippleList: [],
     rippleListInitKey: 0,
+    ripplelongpress: false,
   },
   methods: {
     stopRipple: debounce(function () {
-      this.setData({
-        rippleList: [],
-        rippleListInitKey: 0,
-      })
-    }, 500),
+      if (!this.data.ripplelongpress) {
+        this.setData({
+          rippleList: [],
+          rippleListInitKey: 0,
+        })
+      }
+    }, 1000),
+    rippleHoldEnd() {
+      if (this.data.ripplelongpress) {
+        const that = this
+        setTimeout(function () {
+          that.setData({
+            rippleList: [],
+            rippleListInitKey: 0,
+            ripplelongpress: false,
+          })
+        }, 200)
+      }
+    },
     rippleHold(e) {
+      this.setData({
+        ripplelongpress: true,
+      })
       const {x, y} = e.detail
       this._ripple({
         x,
@@ -50,12 +68,13 @@ export default Behavior({
         const rippleWidth = boxWidth > boxHeight ? boxWidth : boxHeight
         const rippleX = (position.x - (view.left + viewPort.scrollLeft)) - (rippleWidth / 2)
         const rippleY = (position.y - (view.top + viewPort.scrollTop)) - (rippleWidth / 2)
+        const rippleBackgroundColor = that.rippleBackgroundColor || (that._highBrightnessColor(view.backgroundColor) ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)')
         that.data.rippleListInitKey += 1
         that.data.rippleList.push({
           width: rippleWidth,
           x: rippleX,
           y: rippleY,
-          backgroundColor: that._highBrightnessColor(view.backgroundColor) ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)',
+          backgroundColor: rippleBackgroundColor,
           key: that.data.rippleListInitKey,
           rippleClass: type === 'hold' ? 'mui-ripple-animation-hold' : 'mui-ripple-animation'
         })

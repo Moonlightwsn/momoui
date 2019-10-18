@@ -3,6 +3,7 @@
   class="mui-button {{variantMap[variant]}} {{sizeMap[size]}} {{colorMap[color]}} {{ripple ? 'mui-ripple-view' : ''}}"
   capture-bind:tap="{{(ripple && !disabled) ? 'rippleClick' : ''}}"
   capture-bind:longpress="{{(ripple && !disabled) ? 'rippleHold' : ''}}"
+  capture-bind:touchend="{{(ripple && !disabled) ? 'rippleHoldEnd' : ''}}"
 >
   <view class="mui-button-label">
     <slot></slot>

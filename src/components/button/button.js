@@ -1,5 +1,11 @@
 import rippleBehaviors from '../ripple/behaviors'
 
+const rippleBackgroundColorMap = {
+  default: null,
+  primary: '#1976d2',
+  secondary: '#dc004e',
+}
+
 Component({
   behaviors: [rippleBehaviors],
   properties: {
@@ -36,6 +42,13 @@ Component({
       small: 'mui-button-small',
       large: 'mui-button-large',
     },
+  },
+  lifetimes: {
+    attached() {
+      if (this.properties.variant !== 'contained') {
+        this.rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
+      }
+    }
   },
   methods: {
   }
