@@ -5,6 +5,19 @@
   capture-bind:tap="{{(ripple && !disabled) ? 'rippleClick' : ''}}"
   capture-bind:longpress="{{(ripple && !disabled) ? 'rippleHold' : ''}}"
   capture-bind:touchend="{{(ripple && !disabled) ? 'rippleHoldEnd' : ''}}"
+  open-type="{{opentype}}"
+  app-parameter="{{opentype === 'launchApp' ? appparameter : ''}}"
+  session-from="{{opentype === 'contact' ? sessionfrom : ''}}"
+  send-message-title="{{opentype === 'contact' ? sendmessagetitle : ''}}"
+  send-message-path="{{opentype === 'contact' ? sendmessagepath : ''}}"
+  send-message-img="{{opentype === 'contact' ? sendmessageimg : ''}}"
+  show-message-card="{{opentype === 'contact' ? showmessagecard : ''}}"
+  bind:getphonenumber="{{opentype === 'getPhoneNumber' ? '_openTypeEvent' : '' }}"
+  bind:getuserinfo="{{opentype === 'getUserInfo' ? '_openTypeEvent' : '' }}"
+  bind:opensetting="{{opentype === 'openSetting' ? '_openTypeEvent' : '' }}"
+  bind:contact="{{opentype === 'contact' ? '_openTypeEvent' : '' }}"
+  bind:launchapp="{{opentype === 'launchApp' ? '_openTypeEvent' : '' }}"
+  bind:error="{{opentype === 'launchApp' ? '_launchAppError' : '' }}"
 >
   <view class="mui-button-label">
     <slot></slot>

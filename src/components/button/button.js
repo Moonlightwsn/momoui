@@ -25,6 +25,34 @@ Component({
       type: String,
       value: 'contained',
     },
+    opentype: {
+      type: String,
+      value: '',
+    },
+    appparameter: {
+      type: String,
+      value: '',
+    },
+    sessionfrom: {
+      type: String,
+      value: '',
+    },
+    sendmessagetitle: {
+      type: String,
+      value: ''
+    },
+    sendmessagepath: {
+      type: String,
+      value: ''
+    },
+    sendmessageimg: {
+      type: String,
+      value: ''
+    },
+    showmessagecard: {
+      type: String,
+      value: '',
+    }
   },
   data: {
     variantMap: {
@@ -42,6 +70,13 @@ Component({
       small: 'mui-button-small',
       large: 'mui-button-large',
     },
+    openTypeMap: {
+      contact: 'contact',
+      getPhoneNumber: 'getphonenumber',
+      getUserInfo: 'getuserinfo',
+      openSetting: 'opensetting',
+      launchApp: 'launchapp',
+    },
   },
   lifetimes: {
     attached() {
@@ -51,5 +86,15 @@ Component({
     }
   },
   methods: {
+    _openTypeEvent(e) {
+      if (!this.properties.disabled) {
+        this.triggerEvent(this.data.openTypeMap[this.properties.opentype], e)
+      }
+    },
+    _launchAppError(e) {
+      if (!this.properties.disabled) {
+        this.triggerEvent('error', e)
+      }
+    }
   }
 })
