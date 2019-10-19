@@ -1,6 +1,7 @@
 @import '../styles/global.wxss';
 
 .mui-button {
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -29,35 +30,89 @@
     border-radius: 0;
   }
 
+  &.mui-button-hover {
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+  }
+
   &.mui-button-default {
     color: rgba(0, 0, 0, 0.87);
     background-color: #e0e0e0;
+    &.mui-button-hover {
+      background-color: #d5d5d5;
+    }
     &.mui-button-outlined {
       background-color: transparent;
       border: 1px solid rgba(0, 0, 0, 0.23);
       box-shadow: none;
+      &.mui-button-hover {
+        text-decoration: none;
+        background-color: rgba(0, 0, 0, 0.08);
+      }
+    }
+    &.mui-button-text {
+      background-color: transparent;
+      border: 0;
+      box-shadow: none;
+      &.mui-button-hover {
+        text-decoration: none;
+        background-color: rgba(0, 0, 0, 0.08);
+      }
     }
   }
 
   &.mui-button-primary {
     color: #fff;
     background-color: #1976d2;
+    &.mui-button-hover {
+      background-color: rgb(17, 82, 147);
+    }
     &.mui-button-outlined {
       background-color: transparent;
       color: #1976d2;
-      border: 1px solid #1976d2;
+      border: 1px solid rgba(25, 118, 210, 0.5);
       box-shadow: none;
+      &.mui-button-hover {
+        border: 1px solid #1976d2;
+        background-color: rgba(25, 118, 210, 0.08);
+      }
+    }
+    &.mui-button-text {
+      background-color: transparent;
+      color: #1976d2;
+      border: 0;
+      box-shadow: none;
+      &.mui-button-hover {
+        text-decoration: none;
+        background-color: rgba(25, 118, 210, 0.08);
+      }
     }
   }
 
   &.mui-button-secondary {
     color: #fff;
     background-color: #dc004e;
+    &.mui-button-hover {
+      background-color: rgb(154, 0, 54);
+    }
     &.mui-button-outlined {
       background-color: transparent;
       color: #dc004e;
-      border: 1px solid #dc004e;
+      border: 1px solid rgba(220, 0, 78, 0.5);
       box-shadow: none;
+      &.mui-button-hover {
+        border: 1px solid rgb(220, 0, 78);
+        background-color: rgba(220, 0, 78, 0.08);
+      }
+    }
+    &.mui-button-text {
+      background-color: transparent;
+      color: #dc004e;
+      border: 0;
+      box-shadow: none;
+      &.mui-button-hover {
+        text-decoration: none;
+        background-color: rgba(220, 0, 78, 0.08);
+      }
     }
   }
 
