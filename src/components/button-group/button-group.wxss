@@ -1,4 +1,69 @@
 .mui-button-group {
+  overflow: hidden;
   display: inline-flex;
   border-radius: 4px;
+  box-sizing: border-box;
+  &.mui-button-group-contained {
+    &.mui-button-group-primary {
+      .mui-button {
+        color: #fff;
+        background-color: #1976d2;
+      }
+    }
+    &.mui-button-group-secondary {
+      .mui-button {
+        color: #fff;
+        background-color: #dc004e;
+      }
+    }
+  }
+  &.mui-button-group-outlined {
+    &.mui-button-group-default {
+      border: 1px solid rgba(0, 0, 0, 0.23);
+      border-right: 0;
+      .mui-button {
+        border-right: 1px solid rgba(0, 0, 0, 0.23);
+      }
+    }
+    &.mui-button-group-primary {
+      border: 1px solid rgba(25, 118, 210, 0.5);
+      border-right: 0;
+      .mui-button {
+        border-right: 1px solid rgba(25, 118, 210, 0.5);
+      }
+    }
+    &.mui-button-group-secondary {
+      border: 1px solid rgba(220, 0, 78, 0.5);
+      border-right: 0;
+      .mui-button {
+        border-right: 1px solid rgba(220, 0, 78, 0.5);
+      }
+    }
+    .mui-button {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+  &.mui-button-group-medium {
+    .mui-button {
+      padding: 6px 16px;
+      font-size: 14px;
+    }
+  }
+  &.mui-button-group-small {
+    .mui-button {
+      padding: 4px 10px;
+      font-size: 13px;
+    }
+  }
+  &.mui-button-group-large {
+    .mui-button {
+      padding: 8px 22px;
+      font-size: 15px;
+    }
+  }
+  .mui-button {
+    border: 0;
+    border-radius: 0;
+  }
 }

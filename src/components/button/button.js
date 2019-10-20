@@ -96,5 +96,8 @@ Component({
         this.triggerEvent('error', e)
       }
     }
+  },
+  options: {
+    styleIsolation: 'shared'
   }
 })
