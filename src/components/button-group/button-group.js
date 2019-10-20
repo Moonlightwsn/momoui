@@ -1,3 +1,9 @@
+const rippleBackgroundColorMap = {
+  default: null,
+  primary: '#1976d2',
+  secondary: '#dc004e',
+}
+
 Component({
   properties: {
     color: {
@@ -27,6 +33,16 @@ Component({
       medium: 'mui-button-group-medium',
       small: 'mui-button-group-small',
       large: 'mui-button-group-large',
+    },
+  },
+  relations: {
+    '../button/button': {
+      type: 'child',
+      linked(target) {
+        if (this.properties.variant !== 'contained') {
+          target.rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
+        }
+      },
     },
   },
   options: {

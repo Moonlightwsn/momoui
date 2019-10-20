@@ -85,6 +85,11 @@ Component({
       }
     }
   },
+  relations: {
+    '../button-group/button-group': {
+      type: 'parent',
+    },
+  },
   methods: {
     _openTypeEvent(e) {
       if (!this.properties.disabled) {
