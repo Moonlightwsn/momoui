@@ -9,12 +9,13 @@ const demoSrc = path.resolve(__dirname, './demo')
 const demoDist = path.resolve(__dirname, '../miniprogram_dev')
 const src = path.resolve(__dirname, '../src')
 const dev = path.join(demoDist, 'components')
-const dist = path.resolve(__dirname, '../miniprogram_dist')
+const dist = path.resolve(__dirname, '../dist')
 
 const entryFiles = [
-  'components/button/button',
-  'components/button-group/button-group',
-  'components/ripple/behaviors',
+  'button/button',
+  'button-group/button-group',
+  'icon/icon',
+  'ripple/behaviors',
 ]
 
 module.exports = {
@@ -72,5 +73,5 @@ module.exports = {
       assetFilter: assetFilename => assetFilename.endsWith('.js')
     }
   },
-  copy: ['components/styles/fonts'], // 将会复制到目标目录
+  copy: ['styles/fonts', 'styles/icons'], // 将会复制到目标目录
 }
