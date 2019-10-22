@@ -41,6 +41,7 @@ module.exports = {
         'ignore': ['^[^.]']
       }
     ],
+    'no-bitwise': 'off',
     'import/prefer-default-export': 'off',
     'linebreak-style': 'off',
     'no-catch-shadow': 'error',
