@@ -2,6 +2,7 @@
   "usingComponents": {
     "mui-button": "/components/button/button",
     "mui-button-group": "/components/button-group/button-group",
-    "mui-icon": "/components/icon/icon"
+    "mui-icon": "/components/icon/icon",
+    "mui-test": "/components/test/test"
   }
 }

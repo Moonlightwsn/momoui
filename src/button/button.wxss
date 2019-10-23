@@ -133,9 +133,8 @@
 
   .mui-button-label {
     width: 100%;
-    display: inherit;
-    align-items: inherit;
-    justify-content: inherit;
+    display: inline;
+    line-height: 1;
     &::after, &::before {
       box-sizing: inherit;
     }

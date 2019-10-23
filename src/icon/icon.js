@@ -5,7 +5,13 @@ const muiIconPath = '/styles/icons/'
 const iconPathMap = {
   default: `${muiIconPath}default.svg`,
   share: `${muiIconPath}share.svg`,
+  'share-arrow': `${muiIconPath}share-arrow.svg`,
   check: `${muiIconPath}check.svg`,
+  'check-circle': `${muiIconPath}check-circle.svg`,
+  close: `${muiIconPath}close.svg`,
+  'close-circle': `${muiIconPath}close-circle.svg`,
+  'bullet-list': `${muiIconPath}bullet-list.svg`,
+  link: `${muiIconPath}link.svg`,
 }
 
 Component({
@@ -16,7 +22,7 @@ Component({
     },
     size: {
       type: Number,
-      value: 23,
+      value: 20,
     },
     color: String,
     pathprefix: {
@@ -59,9 +65,6 @@ Component({
             base64content: `data:image/svg+xml;base64,${svgtobase64}`
           })
         },
-        complete(res) {
-          console.log(res)
-        }
       })
     },
   },

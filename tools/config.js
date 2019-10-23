@@ -12,6 +12,7 @@ const dev = path.join(demoDist, 'components')
 const dist = path.resolve(__dirname, '../dist')
 
 const entryFiles = [
+  'test/test',
   'button/button',
   'button-group/button-group',
   'icon/icon',

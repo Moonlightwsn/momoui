@@ -6,6 +6,18 @@ const rippleBackgroundColorMap = {
   secondary: '#dc004e',
 }
 
+const iconColorMap = {
+  default: 'rgba(0, 0, 0, 0.87)',
+  primary: '#ffffff',
+  secondary: '#ffffff',
+}
+
+const iconSizeMap = {
+  small: 18,
+  medium: 20,
+  large: 22,
+}
+
 Component({
   behaviors: [rippleBehaviors],
   properties: {
@@ -17,6 +29,7 @@ Component({
       type: String,
       value: 'default',
     },
+    icon: String,
     size: {
       type: String,
       value: 'medium',
@@ -77,12 +90,25 @@ Component({
       openSetting: 'opensetting',
       launchApp: 'launchapp',
     },
+    iconSize: {
+      type: Number,
+      value: 20,
+    },
+    iconColor: {
+      type: String,
+      value: '#ffffff',
+    }
   },
   lifetimes: {
     attached() {
-      if (this.properties.variant !== 'contained') {
+      const {variant, color, size} = this.properties
+      if (variant !== 'contained') {
         this.rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
       }
+      this.setData({
+        iconColor: iconColorMap[color],
+        iconSize: iconSizeMap[size],
+      })
     }
   },
   relations: {
