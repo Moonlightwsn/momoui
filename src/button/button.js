@@ -7,9 +7,15 @@ const rippleBackgroundColorMap = {
 }
 
 const iconColorMap = {
-  default: 'rgba(0, 0, 0, 0.87)',
-  primary: '#ffffff',
-  secondary: '#ffffff',
+  'default-contained': 'rgba(0, 0, 0, 0.87)',
+  'default-outlined': 'rgba(0, 0, 0, 0.87)',
+  'default-text': 'rgba(0, 0, 0, 0.87)',
+  'primary-contained': '#ffffff',
+  'primary-outlined': '#1976d2',
+  'primary-text': '#1976d2',
+  'secondary-contained': '#ffffff',
+  'secondary-outlined': '#dc004e',
+  'secondary-text': '#dc004e',
 }
 
 const iconSizeMap = {
@@ -25,9 +31,14 @@ Component({
       type: Boolean,
       value: false,
     },
+    mstyle: String,
     color: {
       type: String,
       value: 'default',
+    },
+    shape: {
+      type: String,
+      value: 'normal',
     },
     icon: String,
     size: {
@@ -101,13 +112,18 @@ Component({
   },
   lifetimes: {
     attached() {
-      const {variant, color, size} = this.properties
+      const {
+        variant,
+        color,
+        size,
+        shape
+      } = this.properties
       if (variant !== 'contained') {
         this.rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
       }
       this.setData({
-        iconColor: iconColorMap[color],
-        iconSize: iconSizeMap[size],
+        iconColor: iconColorMap[`${color}-${variant}`],
+        iconSize: ((shape === 'circle') ? 24 : iconSizeMap[size]),
       })
     }
   },

@@ -1,0 +1,26 @@
+.mui-ripple-view {
+  overflow: hidden;
+  position: relative;
+  .mui-ripple {
+    position: absolute;
+    border-radius: 100%;
+    background-color: #000000;
+    opacity: 0.3;
+    transform: scale(2.5);
+  }
+  .mui-ripple-animation {
+    animation: ripple 6s ease-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes ripple {
+    from {
+        transform: scale(0);
+        opacity: 0.3;
+    }
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}

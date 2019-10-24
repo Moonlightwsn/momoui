@@ -10,5 +10,5 @@ Page({
   },
   launchAppError(e) {
     console.log('launchAppError', e)
-  }
+  },
 })

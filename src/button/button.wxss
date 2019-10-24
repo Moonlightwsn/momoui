@@ -119,16 +119,35 @@
   &.mui-button-medium {
     padding: 6px 16px;
     font-size: 14px;
+    &.mui-button-circle {
+      height: 48px;
+      width: 48px;
+    }
   }
 
   &.mui-button-small {
     padding: 4px 10px;
     font-size: 13px;
+    &.mui-button-circle {
+      height: 40px;
+      width: 40px;
+    }
   }
 
   &.mui-button-large {
     padding: 8px 22px;
     font-size: 15px;
+    &.mui-button-circle {
+      height: 56px;
+      width: 56px;
+    }
+  }
+
+  &.mui-button-circle {
+    padding: 0;
+    border-radius: 50%;
+    min-width: 0;
+    min-height: 36px;
   }
 
   .mui-button-label {
@@ -138,5 +157,5 @@
     &::after, &::before {
       box-sizing: inherit;
     }
-  } 
+  }
 }

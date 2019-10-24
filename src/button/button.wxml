@@ -1,6 +1,7 @@
 <button
   disabled="{{disabled}}"
-  class="mui-button {{variantMap[variant]}} {{sizeMap[size]}} {{colorMap[color]}} {{ripple ? 'mui-ripple-view' : ''}}"
+  class="mui-button {{variantMap[variant]}} {{sizeMap[size]}} {{colorMap[color]}} {{ripple ? 'mui-ripple-view' : ''}} {{shape === 'circle' ? 'mui-button-circle' : ''}}"
+  style="{{mstyle}}"
   hover-class="mui-button-hover"
   capture-bind:tap="{{(ripple && !disabled) ? 'rippleClick' : ''}}"
   capture-bind:longpress="{{(ripple && !disabled) ? 'rippleHold' : ''}}"
@@ -20,8 +21,8 @@
   bind:error="{{opentype === 'launchApp' ? '_launchAppError' : '' }}"
 >
   <view class="mui-button-label">
-    <mui-icon wx:if="{{icon}}" style="margin-right: 8px;height:{{iconSize}}px;vertical-align:2px;" size="{{iconSize}}" color="{{iconColor}}" name="{{icon}}" />
-    <slot></slot>
+    <mui-icon wx:if="{{icon}}" style="margin-right: {{shape !== 'circle' ? 8 : 0}}px;height:{{iconSize}}px;vertical-align:2px;" size="{{iconSize}}" color="{{iconColor}}" name="{{icon}}" />
+    <slot wx:if="{{shape !== 'circle'}}"></slot>
   </view>
   <view
     wx:for="{{rippleList}}"
