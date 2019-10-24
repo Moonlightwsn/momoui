@@ -1,0 +1,12 @@
+.mui-avatar {
+  overflow: hidden;
+  display: inline-flex;
+  box-sizing: border-box;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  .mui-avatar-icon {
+    box-sizing: border-box;
+    display: inline-block;
+  }
+}

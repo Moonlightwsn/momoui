@@ -1,1 +1,1 @@
-<image style="width:{{size}}px;height:{{size}}px;line-height:{{size}}px;vertical-align:middle;" src="{{base64content}}" />
+<image style="width:{{size}}px;height:{{size}}px;line-height:{{size}}px;vertical-align:middle;background-color:{{background}};" src="{{base64content}}" />

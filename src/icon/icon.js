@@ -25,6 +25,10 @@ Component({
       value: 20,
     },
     color: String,
+    background: {
+      type: String,
+      value: 'transparent',
+    },
     pathprefix: {
       type: String,
       // value: '/miniprogram_npm/momoui/dist',

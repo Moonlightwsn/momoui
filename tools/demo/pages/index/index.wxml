@@ -18,3 +18,7 @@
   <mui-button style="margin-right: 6px;" icon="default" color="secondary" variant="text">ICON</mui-button>
   <mui-button icon="default" color="default" size="large" variant="text">ICON</mui-button>
 </view>
+<view style="padding: 12px 6px;margin: auto;">
+  <mui-avatar icon="check" />
+  <mui-avatar>H</mui-avatar>
+</view>

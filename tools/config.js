@@ -16,6 +16,8 @@ const entryFiles = [
   'button/button',
   'button-group/button-group',
   'icon/icon',
+  'list/list',
+  'avatar/avatar',
   'ripple/behaviors',
 ]
 

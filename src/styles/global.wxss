@@ -8,19 +8,19 @@
     opacity: 0.3;
   }
   .mui-ripple-animation {
-    animation: ripple 0.6s ease-out;
+    animation: ripple 0.5s ease-out;
     animation-fill-mode: forwards;
   }
   .mui-ripple-animation-hold {
-    animation: ripple-hold 0.6s ease-out;
+    animation: ripple-hold 0.5s ease-out;
     animation-fill-mode: forwards;
   }
   .mui-ripple-animation-center {
-    animation: ripple-center 0.6s ease-out;
+    animation: ripple-center 0.5s ease-out;
     animation-fill-mode: forwards;
   }
   .mui-ripple-animation-hold-center {
-    animation: ripple-hold-center 0.6s ease-out;
+    animation: ripple-hold-center 0.5s ease-out;
     animation-fill-mode: forwards;
   }
 }
