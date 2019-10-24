@@ -7,12 +7,13 @@ export default Behavior({
     ripple: {
       type: Boolean,
       value: true
-    }
+    },
   },
   data: {
     rippleList: [],
     rippleListInitKey: 0,
     ripplelongpress: false,
+    centerripple: false,
   },
   methods: {
     stopRipple: debounce(function () {
@@ -22,7 +23,7 @@ export default Behavior({
           rippleListInitKey: 0,
         })
       }
-    }, 1000),
+    }, 100000000),
     rippleHoldEnd() {
       if (this.data.ripplelongpress) {
         const that = this
@@ -63,20 +64,47 @@ export default Behavior({
       query.selectViewport().scrollOffset()
       query.exec(function (res) {
         const [view, viewPort] = res
+        const rippleBackgroundColor = that.rippleBackgroundColor || (that._highBrightnessColor(view.backgroundColor) ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)')
         const boxWidth = parseInt(view.width, 10)
         const boxHeight = parseInt(view.height, 10)
-        const rippleWidth = boxWidth > boxHeight ? boxWidth : boxHeight
-        const rippleX = (position.x - (view.left + viewPort.scrollLeft)) - (rippleWidth / 2)
-        const rippleY = (position.y - (view.top + viewPort.scrollTop)) - (rippleWidth / 2)
-        const rippleBackgroundColor = that.rippleBackgroundColor || (that._highBrightnessColor(view.backgroundColor) ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)')
+
+        let rippleLength
+        if (boxWidth >= boxHeight) {
+          rippleLength = boxWidth
+        } else {
+          rippleLength = boxHeight
+        }
+
+        const {centerripple} = that.data
+
         that.data.rippleListInitKey += 1
+        const rippleClass = `mui-ripple-animation${type === 'hold' ? '-hold' : ''}${centerripple ? '-center' : ''}`
+
+        let rippleX
+        let rippleY
+        if (centerripple) {
+          if (boxWidth === boxHeight) {
+            rippleX = 0
+            rippleY = 0
+          } else if (boxWidth > boxHeight) {
+            rippleX = 0
+            rippleY = -((boxWidth - boxHeight) / 2)
+          } else {
+            rippleX = -((boxHeight - boxWidth) / 2)
+            rippleY = 0
+          }
+        } else {
+          rippleX = (position.x - (view.left + viewPort.scrollLeft)) - (rippleLength / 2)
+          rippleY = (position.y - (view.top + viewPort.scrollTop)) - (rippleLength / 2)
+        }
+
         that.data.rippleList.push({
-          width: rippleWidth,
+          length: rippleLength,
           x: rippleX,
           y: rippleY,
           backgroundColor: rippleBackgroundColor,
           key: that.data.rippleListInitKey,
-          rippleClass: type === 'hold' ? 'mui-ripple-animation-hold' : 'mui-ripple-animation'
+          rippleClass,
         })
         that.setData({
           rippleList: that.data.rippleList,

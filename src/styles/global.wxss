@@ -15,6 +15,14 @@
     animation: ripple-hold 0.6s ease-out;
     animation-fill-mode: forwards;
   }
+  .mui-ripple-animation-center {
+    animation: ripple-center 0.6s ease-out;
+    animation-fill-mode: forwards;
+  }
+  .mui-ripple-animation-hold-center {
+    animation: ripple-hold-center 0.6s ease-out;
+    animation-fill-mode: forwards;
+  }
 }
 
 @keyframes ripple {
@@ -35,6 +43,28 @@
     }
     to {
         transform: scale(2.5);
+        opacity: 0.2;
+    }
+}
+
+@keyframes ripple-center {
+    from {
+        transform: scale(0);
+        opacity: 0.3;
+    }
+    to {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes ripple-hold-center {
+    from {
+        transform: scale(0);
+        opacity: 0.3;
+    }
+    to {
+        transform: scale(1);
         opacity: 0.2;
     }
 }

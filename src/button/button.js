@@ -121,9 +121,19 @@ Component({
       if (variant !== 'contained') {
         this.rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
       }
+      let iconSize
+      let centerripple
+      if (shape === 'circle') {
+        iconSize = 24
+        centerripple = true
+      } else {
+        iconSize = iconSizeMap[size]
+        centerripple = false
+      }
       this.setData({
         iconColor: iconColorMap[`${color}-${variant}`],
-        iconSize: ((shape === 'circle') ? 24 : iconSizeMap[size]),
+        iconSize,
+        centerripple,
       })
     }
   },
