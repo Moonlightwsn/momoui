@@ -1,3 +1,5 @@
+@import '../styles/global.wxss';
+
 .mui-avatar {
   overflow: hidden;
   display: inline-flex;

@@ -1,3 +1,7 @@
+.mui {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
 .mui-ripple-view {
   overflow: hidden;
   position: relative;

@@ -20,11 +20,10 @@ Component({
   },
   lifetimes: {
     attached() {
-      if (this.properties.size !== 36) {
-        this.setData({
-          iconSize: (this.properties.size / 1.5)
-        })
-      }
+      this.setData({
+        iconSize: (this.properties.size / 1.5),
+        fontSize: (this.properties.size / 2),
+      })
     },
   },
 })
