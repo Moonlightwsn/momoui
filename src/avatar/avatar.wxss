@@ -5,8 +5,4 @@
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  .mui-avatar-icon {
-    box-sizing: border-box;
-    display: inline-block;
-  }
 }

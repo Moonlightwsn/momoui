@@ -21,7 +21,7 @@
   bind:error="{{opentype === 'launchApp' ? '_launchAppError' : '' }}"
 >
   <view class="mui-button-label">
-    <mui-icon wx:if="{{icon}}" style="margin-right: {{shape !== 'circle' ? 8 : 0}}px;height:{{iconSize}}px;vertical-align:2px;" size="{{iconSize}}" color="{{iconColor}}" name="{{icon}}" />
+    <mui-icon wx:if="{{icon}}" style="margin-right: {{shape !== 'circle' ? 8 : 0}}px;display:inline-flex;" size="{{iconSize}}" color="{{iconColor}}" name="{{icon}}"></mui-icon>
     <slot wx:if="{{shape !== 'circle'}}"></slot>
   </view>
   <view
@@ -29,5 +29,5 @@
     wx:key="{{item.key}}"
     style="width:{{item.length}}px;height:{{item.length}}px;left:{{item.x}}px;top:{{item.y}}px;background-color: {{item.backgroundColor}}" class="mui-ripple {{item.rippleClass}}"
     bind:animationend="stopRipple"
-  />
+  ></view>
 </button>

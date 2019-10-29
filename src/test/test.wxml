@@ -1,3 +1,1 @@
-<view class="mui-ripple-view" style="border-radius:20px;display: inline-block;width: 100px;height: 100px;background:#ffffff;border:1px solid #ffffff;">
-  <view class="mui-ripple" style="top:0;left:0;width:100px;height:100px;background-color: #1976d2;" />
-</view>
+<image style="display:inline-flex;width:20px;height:20px;border:1px solid red;box-sizing:border-box"></image>
