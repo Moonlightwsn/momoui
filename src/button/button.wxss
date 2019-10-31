@@ -1,5 +1,3 @@
-@import '../styles/global.wxss';
-
 .mui-button {
   overflow: hidden;
   display: inline-flex;

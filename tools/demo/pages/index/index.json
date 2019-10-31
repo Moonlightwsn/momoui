@@ -4,6 +4,8 @@
     "mui-button-group": "/components/button-group/button-group",
     "mui-icon": "/components/icon/icon",
     "mui-avatar": "/components/avatar/avatar",
+    "mui-list": "/components/list/list",
+    "mui-list-item": "/components/list-item/list-item",
     "mui-test": "/components/test/test"
   }
 }

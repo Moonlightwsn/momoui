@@ -23,7 +23,7 @@ export default Behavior({
           rippleListInitKey: 0,
         })
       }
-    }, 100000000),
+    }, 1000),
     rippleHoldEnd() {
       if (this.data.ripplelongpress) {
         const that = this

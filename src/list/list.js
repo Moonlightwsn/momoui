@@ -1,1 +1,10 @@
-Component({})
+Component({
+  relations: {
+    '../list-item/list-item': {
+      type: 'child',
+    },
+  },
+  options: {
+    styleIsolation: 'shared',
+  },
+})

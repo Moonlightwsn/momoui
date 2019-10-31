@@ -1,0 +1,15 @@
+<view
+  class="mui-list-item {{ripple ? 'mui-ripple-view' : ''}}"
+  style="{{mstyle}}"
+  capture-bind:tap="{{(ripple && !disabled) ? 'rippleClick' : ''}}"
+  capture-bind:longpress="{{(ripple && !disabled) ? 'rippleHold' : ''}}"
+  capture-bind:touchend="{{(ripple && !disabled) ? 'rippleHoldEnd' : ''}}"
+>
+  <slot></slot>
+  <view
+    wx:for="{{rippleList}}"
+    wx:key="{{item.key}}"
+    style="width:{{item.length}}px;height:{{item.length}}px;left:{{item.x}}px;top:{{item.y}}px;background-color: {{item.backgroundColor}}" class="mui-ripple {{item.rippleClass}}"
+    bind:animationend="stopRipple"
+  ></view>
+</view>

@@ -155,6 +155,6 @@ Component({
     }
   },
   options: {
-    styleIsolation: 'shared'
-  }
+    styleIsolation: 'shared',
+  },
 })

@@ -17,6 +17,7 @@ const entryFiles = [
   'button-group/button-group',
   'icon/icon',
   'list/list',
+  'list-item/list-item',
   'avatar/avatar',
   'ripple/behaviors',
 ]
@@ -76,5 +77,5 @@ module.exports = {
       assetFilter: assetFilename => assetFilename.endsWith('.js')
     }
   },
-  copy: ['styles/fonts', 'styles/icons'], // 将会复制到目标目录
+  copy: ['styles'], // 将会复制到目标目录
 }
