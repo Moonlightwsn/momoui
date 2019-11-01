@@ -21,7 +21,7 @@
   bind:error="{{opentype === 'launchApp' ? '_launchAppError' : '' }}"
 >
   <view class="mui-button-label">
-    <mui-icon wx:if="{{icon}}" style="margin-right: {{shape !== 'circle' ? 8 : 0}}px;display:inline-flex;" size="{{iconSize}}" color="{{iconColor}}" name="{{icon}}"></mui-icon>
+    <mui-icon wx:if="{{icon}}" class="mui-icon" style="margin-right: {{shape !== 'circle' ? 8 : 0}}px;" size="{{iconSize}}" color="{{iconColor}}" name="{{icon}}"></mui-icon>
     <slot wx:if="{{shape !== 'circle'}}"></slot>
   </view>
   <view

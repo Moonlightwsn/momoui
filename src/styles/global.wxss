@@ -1,33 +1,37 @@
 .mui {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   box-sizing: border-box;
+
+  .mui-ripple-view {
+    overflow: hidden;
+    position: relative;
+    .mui-ripple {
+      position: absolute;
+      border-radius: 100%;
+      background-color: #000000;
+      opacity: 0.3;
+    }
+    .mui-ripple-animation {
+      animation: ripple 500ms ease-out;
+      animation-fill-mode: forwards;
+    }
+    .mui-ripple-animation-hold {
+      animation: ripple-hold 500ms ease-out;
+      animation-fill-mode: forwards;
+    }
+    .mui-ripple-animation-center {
+      animation: ripple-center 200ms ease-out;
+      animation-fill-mode: forwards;
+    }
+    .mui-ripple-animation-hold-center {
+      animation: ripple-hold-center 200ms ease-out;
+      animation-fill-mode: forwards;
+    }
+  }
 }
 
-.mui-ripple-view {
-  overflow: hidden;
-  position: relative;
-  .mui-ripple {
-    position: absolute;
-    border-radius: 100%;
-    background-color: #000000;
-    opacity: 0.3;
-  }
-  .mui-ripple-animation {
-    animation: ripple 500ms ease-out;
-    animation-fill-mode: forwards;
-  }
-  .mui-ripple-animation-hold {
-    animation: ripple-hold 500ms ease-out;
-    animation-fill-mode: forwards;
-  }
-  .mui-ripple-animation-center {
-    animation: ripple-center 200ms ease-out;
-    animation-fill-mode: forwards;
-  }
-  .mui-ripple-animation-hold-center {
-    animation: ripple-hold-center 200ms ease-out;
-    animation-fill-mode: forwards;
-  }
+.mui-icon {
+  display: inline-flex;
 }
 
 @keyframes ripple {

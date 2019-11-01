@@ -1,30 +1,13 @@
-<view style="padding: 12px 6px;margin: auto;background-color: #f5f5f5;">
-  <mui-button style="margin-right: 6px;" icon="default" color="primary" size="small" variant="contained">ICON</mui-button>
-  <mui-button style="margin-right: 6px;" icon="default" color="secondary" variant="contained">ICON</mui-button>
-  <mui-button icon="default" color="default" size="large" variant="contained">ICON</mui-button>
-</view>
-<view style="padding: 12px 6px;margin: auto;background-color: #f5f5f5;">
-  <mui-button style="margin-right: 6px;" icon="check" color="primary" size="small" variant="outlined">ICON</mui-button>
-  <mui-button style="margin-right: 6px;" icon="check" color="secondary" variant="outlined">ICON</mui-button>
-  <mui-button icon="check" color="default" size="large" variant="outlined">ICON</mui-button>
-</view>
-<view style="padding: 12px 6px;margin: auto;background-color: #f5f5f5;">
-  <mui-button style="margin-right: 6px;" icon="check" color="primary" size="small" variant="text">ICON</mui-button>
-  <mui-button style="margin-right: 6px;" icon="check" color="secondary" variant="text">ICON</mui-button>
-  <mui-button icon="check" color="default" size="large" variant="text">ICON</mui-button>
-</view>
-<view style="padding: 12px 6px;margin: auto;background-color: #f5f5f5;display:flex;">
-  <mui-avatar style="display:inline-flex;" icon="default"></mui-avatar>
-  <mui-avatar style="display:inline-flex;" icon="default"></mui-avatar>
-  <mui-avatar style="display:inline-flex;">M</mui-avatar>
-  <mui-avatar style="display:inline-flex;">M</mui-avatar>
-  <mui-avatar style="display:inline-flex;" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></mui-avatar>
-  <mui-avatar style="display:inline-flex;" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></mui-avatar>
-</view>
 <view style="padding: 12px 0;margin: auto;background-color: #f5f5f5;">
   <mui-list>
-    <mui-list-item>LIST ITEM 1</mui-list-item>
-    <mui-list-item>LIST ITEM 2</mui-list-item>
-    <mui-list-item>LIST ITEM 3</mui-list-item>
+    <mui-list-item>
+      <mui-avatar icon="check" slot="avatar"></mui-avatar>
+      <view slot="content">ICON</view>
+    </mui-list-item>
+    <mui-list-item>
+      <view slot="content">ICON</view>
+    </mui-list-item>
   </mui-list>
+  <mui-avatar icon="check" slot="avatar"></mui-avatar>
+  <mui-icon class="mui-icon"></mui-icon>
 </view>

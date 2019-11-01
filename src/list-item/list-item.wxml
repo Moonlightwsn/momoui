@@ -5,7 +5,8 @@
   capture-bind:longpress="{{(ripple && !disabled) ? 'rippleHold' : ''}}"
   capture-bind:touchend="{{(ripple && !disabled) ? 'rippleHoldEnd' : ''}}"
 >
-  <slot></slot>
+  <slot name="avatar"></slot>
+  <slot name="content"></slot>
   <view
     wx:for="{{rippleList}}"
     wx:key="{{item.key}}"
