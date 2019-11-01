@@ -8,6 +8,7 @@ Component({
       value: false,
     },
     mstyle: String,
+    icon: String,
   },
   relations: {
     '../list/list': {

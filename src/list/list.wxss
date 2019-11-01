@@ -12,5 +12,22 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    .mui-list-item-avatar {
+      height: 24px;
+      width: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .mui-list-item-content {
+      color: rgba(0, 0, 0, 0.87);
+      box-sizing: content-box;
+      display: inline-flex;
+      align-items: center;
+      height: 24px;
+      margin: 4px 0;
+      font-size: 16px;
+      font-weight: 400;
+    }
   }
 }

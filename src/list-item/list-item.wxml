@@ -5,8 +5,12 @@
   capture-bind:longpress="{{(ripple && !disabled) ? 'rippleHold' : ''}}"
   capture-bind:touchend="{{(ripple && !disabled) ? 'rippleHoldEnd' : ''}}"
 >
-  <slot name="avatar"></slot>
-  <slot name="content"></slot>
+  <view wx:if="{{icon}}" class="mui-list-item-avatar">
+    <mui-icon class="mui-icon" size="24" name="{{icon}}" color="rgba(0, 0, 0, 0.54)"></mui-icon>
+  </view>
+  <view class="mui-list-item-content">
+    <slot name="content"></slot>
+  </view>
   <view
     wx:for="{{rippleList}}"
     wx:key="{{item.key}}"
