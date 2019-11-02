@@ -31,7 +31,7 @@
   animation-fill-mode: forwards;
 }
 
-.mui-icon {
+.mui-inline-flex {
   display: inline-flex;
 }
 

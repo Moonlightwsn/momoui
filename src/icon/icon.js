@@ -29,7 +29,7 @@ Component({
       type: String,
       value: 'transparent',
     },
-    pathprefix: {
+    pathPrefix: {
       type: String,
       // value: '/miniprogram_npm/momoui/dist',
       value: '/components'
@@ -46,7 +46,7 @@ Component({
       if (path) {
         this._readSvgFile(path)
       } else if (name && iconPathMap[name]) {
-        const iconPath = `${this.properties.pathprefix}${iconPathMap[name]}`
+        const iconPath = `${this.properties.pathPrefix}${iconPathMap[name]}`
         this._readSvgFile(iconPath)
       }
     },

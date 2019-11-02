@@ -49,31 +49,31 @@ Component({
       type: String,
       value: 'contained',
     },
-    opentype: {
+    openType: {
       type: String,
       value: '',
     },
-    appparameter: {
+    appParameter: {
       type: String,
       value: '',
     },
-    sessionfrom: {
+    sessionFrom: {
       type: String,
       value: '',
     },
-    sendmessagetitle: {
+    sendMessageTitle: {
       type: String,
       value: ''
     },
-    sendmessagepath: {
+    sendMessagePath: {
       type: String,
       value: ''
     },
-    sendmessageimg: {
+    sendMessageImg: {
       type: String,
       value: ''
     },
-    showmessagecard: {
+    showMessageCard: {
       type: String,
       value: '',
     }
@@ -145,7 +145,7 @@ Component({
   methods: {
     _openTypeEvent(e) {
       if (!this.properties.disabled) {
-        this.triggerEvent(this.data.openTypeMap[this.properties.opentype], e)
+        this.triggerEvent(this.data.openTypeMap[this.properties.openType], e)
       }
     },
     _launchAppError(e) {

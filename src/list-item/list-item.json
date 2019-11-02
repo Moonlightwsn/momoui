@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "mui-icon": "../icon/icon"
+    "mui-icon": "../icon/icon",
+    "mui-avatar": "../avatar/avatar"
   }
 }

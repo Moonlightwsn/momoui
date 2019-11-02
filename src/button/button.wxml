@@ -6,22 +6,22 @@
   capture-bind:tap="{{(ripple && !disabled) ? 'rippleClick' : ''}}"
   capture-bind:longpress="{{(ripple && !disabled) ? 'rippleHold' : ''}}"
   capture-bind:touchend="{{(ripple && !disabled) ? 'rippleHoldEnd' : ''}}"
-  open-type="{{opentype}}"
-  app-parameter="{{opentype === 'launchApp' ? appparameter : ''}}"
-  session-from="{{opentype === 'contact' ? sessionfrom : ''}}"
-  send-message-title="{{opentype === 'contact' ? sendmessagetitle : ''}}"
-  send-message-path="{{opentype === 'contact' ? sendmessagepath : ''}}"
-  send-message-img="{{opentype === 'contact' ? sendmessageimg : ''}}"
-  show-message-card="{{opentype === 'contact' ? showmessagecard : ''}}"
-  bind:getphonenumber="{{opentype === 'getPhoneNumber' ? '_openTypeEvent' : '' }}"
-  bind:getuserinfo="{{opentype === 'getUserInfo' ? '_openTypeEvent' : '' }}"
-  bind:opensetting="{{opentype === 'openSetting' ? '_openTypeEvent' : '' }}"
-  bind:contact="{{opentype === 'contact' ? '_openTypeEvent' : '' }}"
-  bind:launchapp="{{opentype === 'launchApp' ? '_openTypeEvent' : '' }}"
-  bind:error="{{opentype === 'launchApp' ? '_launchAppError' : '' }}"
+  open-type="{{openType}}"
+  app-parameter="{{openType === 'launchApp' ? appParameter : ''}}"
+  session-from="{{openType === 'contact' ? sessionFrom : ''}}"
+  send-message-title="{{openType === 'contact' ? sendMessageTitle : ''}}"
+  send-message-path="{{openType === 'contact' ? sendMessagePath : ''}}"
+  send-message-img="{{openType === 'contact' ? sendMessageImg : ''}}"
+  show-message-card="{{openType === 'contact' ? showMessageCard : ''}}"
+  bind:getphonenumber="{{openType === 'getPhoneNumber' ? '_openTypeEvent' : '' }}"
+  bind:getuserinfo="{{openType === 'getUserInfo' ? '_openTypeEvent' : '' }}"
+  bind:opensetting="{{openType === 'openSetting' ? '_openTypeEvent' : '' }}"
+  bind:contact="{{openType === 'contact' ? '_openTypeEvent' : '' }}"
+  bind:launchapp="{{openType === 'launchApp' ? '_openTypeEvent' : '' }}"
+  bind:error="{{openType === 'launchApp' ? '_launchAppError' : '' }}"
 >
   <view class="mui-button-label">
-    <mui-icon wx:if="{{icon}}" class="mui-icon" style="margin-right: {{shape !== 'circle' ? 8 : 0}}px;" size="{{iconSize}}" color="{{iconColor}}" name="{{icon}}"></mui-icon>
+    <mui-icon wx:if="{{icon}}" class="mui-inline-flex" style="margin-right: {{shape !== 'circle' ? 8 : 0}}px;" size="{{iconSize}}" color="{{iconColor}}" name="{{icon}}"></mui-icon>
     <slot wx:if="{{shape !== 'circle'}}"></slot>
   </view>
   <view
