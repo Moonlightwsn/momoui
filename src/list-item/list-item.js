@@ -13,7 +13,10 @@ Component({
       type: Number,
       value: 24,
     },
-    iconColor: String,
+    iconColor: {
+      type: String,
+      value: '#757575',
+    },
     avatar: String,
     avatarSize: {
       type: Number,
@@ -30,6 +33,27 @@ Component({
     avatarSrc: String,
     primaryText: String,
     secondaryText: String,
+    action: String,
+    actionType: {
+      type: String,
+      value: 'default',
+    },
+    actionColor: {
+      type: String,
+      value: '#757575',
+    },
+  },
+  data: {
+    disabledListItemRipple: false,
+  },
+  lifetimes: {
+    attached() {
+      if (this.properties.action) {
+        this.setData({
+          disabledListItemRipple: true
+        })
+      }
+    },
   },
   relations: {
     '../list/list': {

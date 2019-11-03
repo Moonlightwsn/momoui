@@ -2,6 +2,7 @@
   "component": true,
   "usingComponents": {
     "mui-icon": "../icon/icon",
+    "mui-button": "../button/button",
     "mui-avatar": "../avatar/avatar"
   }
 }

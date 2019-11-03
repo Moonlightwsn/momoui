@@ -1,9 +1,9 @@
 <view
   class="mui-list-item {{ripple ? 'mui-ripple-view' : ''}} {{primaryText && secondaryText ? 'mui-list-item-multiple-lines' : ''}}"
   style="{{mstyle}}"
-  capture-bind:tap="{{(ripple && !disabled) ? 'rippleClick' : ''}}"
-  capture-bind:longpress="{{(ripple && !disabled) ? 'rippleHold' : ''}}"
-  capture-bind:touchend="{{(ripple && !disabled) ? 'rippleHoldEnd' : ''}}"
+  capture-bind:tap="{{(ripple && !disabled && !disabledListItemRipple) ? 'rippleClick' : ''}}"
+  capture-bind:longpress="{{(ripple && !disabled && !disabledListItemRipple) ? 'rippleHold' : ''}}"
+  capture-bind:touchend="{{(ripple && !disabled && !disabledListItemRipple) ? 'rippleHoldEnd' : ''}}"
 >
   <view wx:if="{{icon}}" class="mui-list-item-avatar">
     <mui-icon class="mui-inline-flex" size="{{iconSize}}" name="{{icon}}" color="{{iconColor}}"></mui-icon>
@@ -16,6 +16,9 @@
     <text wx:if="{{secondaryText}}" class="content-secondary">{{secondaryText}}</text>
   </view>
   <slot wx:else name="content"></slot>
+  <view wx:if="{{action}}" class="mui-list-item-action">
+    <mui-button icon="{{action}}" variant="text" size="small" color="{{actionType}}" custom-icon-color="{{actionColor}}" shape="circle"></mui-button>
+  </view>
   <view
     wx:for="{{rippleList}}"
     wx:key="{{item.key}}"

@@ -2,15 +2,21 @@
   <mui-list header="ICON">
     <mui-list-item icon="default" primary-text="DEFAULT">
     </mui-list-item>
-    <mui-list-item icon="bullet-list" primary-text="BULLET">
+    <mui-list-item icon="bullet-list" primary-text="BULLET" action="close-circle">
     </mui-list-item>
   </mui-list>
 </view>
 <view style="padding: 6px 0 0 0;margin: auto;background-color: #f5f5f5;">
   <mui-list header="AVATAR">
-    <mui-list-item avatar="default" avatarSrc="https://material-ui.com/static/images/avatar/1.jpg" primary-text="DEFAULT" secondary-text="This is a test">
+    <mui-list-item
+      avatar="default"
+      avatarSrc="https://material-ui.com/static/images/avatar/1.jpg"
+      primary-text="DEFAULT"
+      secondary-text="This is a test test test test test test test test test test test test test"
+      action="close-circle"
+    >
     </mui-list-item>
-    <mui-list-item avatar="bullet-list" primary-text="BULLET" secondary-text="This is a test">
+    <mui-list-item avatar="bullet-list" primary-text="BULLET" action="close-circle">
     </mui-list-item>
   </mui-list>
 </view>
