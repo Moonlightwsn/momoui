@@ -1,22 +1,9 @@
-<view style="padding: 0;margin: auto;background-color: #f5f5f5;">
-  <mui-list header="ICON">
-    <mui-list-item icon="default" primary-text="DEFAULT">
-    </mui-list-item>
-    <mui-list-item icon="bullet-list" primary-text="BULLET" action="close-circle">
-    </mui-list-item>
-  </mui-list>
-</view>
 <view style="padding: 6px 0 0 0;margin: auto;background-color: #f5f5f5;">
-  <mui-list header="AVATAR">
-    <mui-list-item
-      avatar="default"
-      avatarSrc="https://material-ui.com/static/images/avatar/1.jpg"
-      primary-text="DEFAULT"
-      secondary-text="This is a test test test test test test test test test test test test test"
-      action="close-circle"
-    >
-    </mui-list-item>
-    <mui-list-item avatar="bullet-list" primary-text="BULLET" action="close-circle">
-    </mui-list-item>
-  </mui-list>
+  <mui-typography variant="h1">h1.Heading</mui-typography>
+  <mui-typography variant="h2">h2.Heading</mui-typography>
+  <mui-typography variant="h3">h3.Heading</mui-typography>
+  <mui-typography variant="h4">h4.Heading</mui-typography>
+  <mui-typography variant="h5">h5.Heading</mui-typography>
+  <mui-typography variant="h6">h6.Heading</mui-typography>
+  <mui-typography variant="subtitle1">subtitle1.Lorem ipsum dolor sit amet,consectetur adipisicing elit.Quos blanditiis tenetur</mui-typography>
 </view>

@@ -60,7 +60,7 @@
 @keyframes ripple-center {
     from {
         transform: scale(0);
-        opacity: 0.3;
+        opacity: 0.2;
     }
     to {
         transform: scale(1);
@@ -71,10 +71,10 @@
 @keyframes ripple-hold-center {
     from {
         transform: scale(0);
-        opacity: 0.3;
+        opacity: 0.2;
     }
     to {
         transform: scale(1);
-        opacity: 0.2;
+        opacity: 0.1;
     }
 }

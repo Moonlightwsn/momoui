@@ -38,10 +38,13 @@ Component({
       type: String,
       value: 'default',
     },
+    actionColor: String,
+    /*
     actionColor: {
       type: String,
       value: '#757575',
     },
+    */
   },
   data: {
     disabledListItemRipple: false,

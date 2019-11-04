@@ -20,6 +20,7 @@ const entryFiles = [
   'list-item/list-item',
   'avatar/avatar',
   'ripple/behaviors',
+  'typography/typography',
 ]
 
 module.exports = {

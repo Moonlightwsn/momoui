@@ -1,0 +1,3 @@
+<text class="mui mui-typography mui-typography-{{variant}}">
+  <slot></slot>
+</text>

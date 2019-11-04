@@ -17,7 +17,7 @@
   </view>
   <slot wx:else name="content"></slot>
   <view wx:if="{{action}}" class="mui-list-item-action">
-    <mui-button icon="{{action}}" variant="text" size="small" color="{{actionType}}" custom-icon-color="{{actionColor}}" shape="circle"></mui-button>
+    <mui-button icon="{{action}}" variant="text" color="{{actionType}}" custom-icon-color="{{actionColor}}" shape="circle"></mui-button>
   </view>
   <view
     wx:for="{{rippleList}}"

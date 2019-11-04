@@ -1,0 +1,50 @@
+.mui-typography {
+  margin: 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.87);
+  display: block;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  word-break: break-all;
+  &.mui-typography-h6 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.15px;
+  }
+  &.mui-typography-h5 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.33;
+    letter-spacing: normal;
+  }
+  &.mui-typography-h4 {
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.17;
+    letter-spacing: 0.2499px;
+  }
+  &.mui-typography-h3 {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.04;
+    letter-spacing: normal;
+  }
+  &.mui-typography-h2 {
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: -0.4998px;
+  }
+  &.mui-typography-h1 {
+    font-size: 96px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1.49952px;
+  }
+  &.mui-typography-subtitle1 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+    letter-spacing: 0.15008px;
+  }
+}

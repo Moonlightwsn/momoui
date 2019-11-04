@@ -6,6 +6,7 @@
     "mui-avatar": "/components/avatar/avatar",
     "mui-list": "/components/list/list",
     "mui-list-item": "/components/list-item/list-item",
-    "mui-test": "/components/test/test"
+    "mui-test": "/components/test/test",
+    "mui-typography": "/components/typography/typography"
   }
 }

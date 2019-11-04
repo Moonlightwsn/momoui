@@ -12,7 +12,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.8.3",
+	"libVersion": "2.9.1",
 	"appid": "wx3cfe351ff4edacd2",
 	"projectname": "momoui-demo",
 	"isGameTourist": false,

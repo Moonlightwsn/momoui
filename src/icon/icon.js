@@ -1,5 +1,13 @@
 import {Base64} from '../utils/base64'
 
+/* eslint-disable */
+const app = getApp()
+/* eslint-disable */
+let pathPrefix = '/miniprogram_npm/momoui/dist'
+if (app.momouiRootPath) {
+  pathPrefix = app.momouiRootPath
+}
+
 const muiIconPath = '/styles/icons/'
 
 const iconPathMap = {
@@ -12,6 +20,7 @@ const iconPathMap = {
   'close-circle': `${muiIconPath}close-circle.svg`,
   'bullet-list': `${muiIconPath}bullet-list.svg`,
   link: `${muiIconPath}link.svg`,
+  trash: `${muiIconPath}trash.svg`,
 }
 
 Component({
@@ -31,8 +40,7 @@ Component({
     },
     pathPrefix: {
       type: String,
-      // value: '/miniprogram_npm/momoui/dist',
-      value: '/components'
+      value: pathPrefix,
     },
     src: {
       type: String,
@@ -46,6 +54,7 @@ Component({
       if (path) {
         this._readSvgFile(path)
       } else if (name && iconPathMap[name]) {
+        console.log(this.properties.pathPrefix)
         const iconPath = `${this.properties.pathPrefix}${iconPathMap[name]}`
         this._readSvgFile(iconPath)
       }
