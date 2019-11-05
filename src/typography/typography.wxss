@@ -1,12 +1,36 @@
 .mui-typography {
   margin: 0;
   box-sizing: border-box;
-  color: rgba(0, 0, 0, 0.87);
-  display: block;
+  color: inherit;
+  display: inherit;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   word-break: break-all;
   margin-bottom: 6px;
+  &.mui-typography-block {
+    display: block;
+  }
+  &.mui-typography-inline {
+    display: inline;
+  }
+  &.mui-typography-primary {
+    color: #3f51b5;
+  }
+  &.mui-typography-secondary {
+    color: #3f51b5;
+  }
+  &.mui-typography-primary {
+    color: #f50057;
+  }
+  &.mui-typography-textPrimary {
+    color: rgba(0, 0, 0, 0.87);
+  }
+  &.mui-typography-textSecondary {
+    color: rgba(0, 0, 0, 0.54);
+  }
+  &.mui-typography-error {
+    color: #f44336;
+  }
   &.mui-typography-h6 {
     font-size: 20px;
     font-weight: 500;

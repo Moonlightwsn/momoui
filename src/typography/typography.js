@@ -3,7 +3,15 @@ Component({
     mStyle: String,
     variant: {
       type: String,
-      value: 'h6',
+      value: 'body1',
     },
+    color: {
+      type: String,
+      value: 'inherit',
+    },
+    display: {
+      type: String,
+      value: 'block',
+    }
   },
 })

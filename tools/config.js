@@ -21,6 +21,8 @@ const entryFiles = [
   'avatar/avatar',
   'ripple/behaviors',
   'typography/typography',
+  'card/card',
+  'card-content/card-content',
 ]
 
 module.exports = {

@@ -7,6 +7,8 @@
     "mui-list": "/components/list/list",
     "mui-list-item": "/components/list-item/list-item",
     "mui-test": "/components/test/test",
-    "mui-typography": "/components/typography/typography"
+    "mui-typography": "/components/typography/typography",
+    "mui-card": "/components/card/card",
+    "mui-card-content": "/components/card-content/card-content"
   }
 }

@@ -54,7 +54,6 @@ Component({
       if (path) {
         this._readSvgFile(path)
       } else if (name && iconPathMap[name]) {
-        console.log(this.properties.pathPrefix)
         const iconPath = `${this.properties.pathPrefix}${iconPathMap[name]}`
         this._readSvgFile(iconPath)
       }

@@ -15,7 +15,9 @@
     <text class="content-primary">{{primaryText}}</text>
     <text wx:if="{{secondaryText}}" class="content-secondary">{{secondaryText}}</text>
   </view>
-  <slot wx:else name="content"></slot>
+  <view wx:else class="mui-list-item-content">
+    <slot name="content"></slot>
+  </view>
   <view wx:if="{{action}}" class="mui-list-item-action">
     <mui-button icon="{{action}}" variant="text" color="{{actionType}}" custom-icon-color="{{actionColor}}" shape="circle"></mui-button>
   </view>
