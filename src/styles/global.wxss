@@ -24,11 +24,11 @@
   animation-fill-mode: forwards;
 }
 .mui-ripple-view .mui-ripple-animation-center {
-  animation: ripple-center 300ms ease-out;
+  animation: ripple-center 600ms ease-out;
   animation-fill-mode: forwards;
 }
 .mui-ripple-view .mui-ripple-animation-hold-center {
-  animation: ripple-hold-center 300ms ease-out;
+  animation: ripple-hold-center 600ms ease-out;
   animation-fill-mode: forwards;
 }
 
@@ -38,44 +38,52 @@
 
 @keyframes ripple {
     from {
-        transform: scale(0);
-        opacity: 0.2;
+      transform: scale(0);
+      opacity: 0.2;
     }
     to {
-        transform: scale(2.5);
-        opacity: 0;
+      transform: scale(2.5);
+      opacity: 0;
     }
 }
 
 @keyframes ripple-hold {
     from {
-        transform: scale(0);
-        opacity: 0.2;
+      transform: scale(0);
+      opacity: 0.2;
     }
     to {
-        transform: scale(2.5);
-        opacity: 0.1;
+      transform: scale(2.5);
+      opacity: 0.1;
     }
 }
 
 @keyframes ripple-center {
-    from {
-        transform: scale(0);
-        opacity: 0.2;
+    0% {
+      transform: scale(0);
+      opacity: 0.2;
     }
-    to {
-        transform: scale(1);
-        opacity: 0;
+    40% {
+      transform: scale(1);
+      opacity: 0.12;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
     }
 }
 
 @keyframes ripple-hold-center {
-    from {
-        transform: scale(0);
-        opacity: 0.2;
+    0% {
+      transform: scale(0);
+      opacity: 0.2;
     }
-    to {
-        transform: scale(1);
-        opacity: 0.1;
+    40% {
+      transform: scale(1);
+      opacity: 0.12;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.1;
     }
 }

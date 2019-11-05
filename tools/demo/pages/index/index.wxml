@@ -1,4 +1,9 @@
 <view style="padding: 6px 0 0 0;margin: auto;background-color: #f5f5f5;">
+  <mui-button size="small">SMALL</mui-button>
+  <mui-button>MEDIUM</mui-button>
+  <mui-button size="large">LARGE</mui-button>
+  <mui-button shape="circle" icon="default"></mui-button>
+  <!--
   <mui-typography variant="h1">h1.Heading</mui-typography>
   <mui-typography variant="h2">h2.Heading</mui-typography>
   <mui-typography variant="h3">h3.Heading</mui-typography>
@@ -12,4 +17,5 @@
   <mui-typography variant="button">BUTTON TEXT</mui-typography>
   <mui-typography variant="caption" m-style="margin-bottom: 12px;">caption text</mui-typography>
   <mui-typography variant="overline">OVERLINE TEXT</mui-typography>
+  -->
 </view>
