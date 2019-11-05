@@ -31,7 +31,7 @@ Component({
       type: Boolean,
       value: false,
     },
-    mstyle: String,
+    mStyle: String,
     color: {
       type: String,
       value: 'default',

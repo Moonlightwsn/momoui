@@ -6,4 +6,10 @@
   <mui-typography variant="h5">h5.Heading</mui-typography>
   <mui-typography variant="h6">h6.Heading</mui-typography>
   <mui-typography variant="subtitle1">subtitle1.Lorem ipsum dolor sit amet,consectetur adipisicing elit.Quos blanditiis tenetur</mui-typography>
+  <mui-typography variant="subtitle2">subtitle2.Lorem ipsum dolor sit amet,consectetur adipisicing elit.Quos blanditiis tenetur</mui-typography>
+  <mui-typography variant="body1">body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.</mui-typography>
+  <mui-typography variant="body2">body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.</mui-typography>
+  <mui-typography variant="button">BUTTON TEXT</mui-typography>
+  <mui-typography variant="caption" m-style="margin-bottom: 12px;">caption text</mui-typography>
+  <mui-typography variant="overline">OVERLINE TEXT</mui-typography>
 </view>
