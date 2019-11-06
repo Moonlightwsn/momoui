@@ -22,7 +22,9 @@ const entryFiles = [
   'ripple/behaviors',
   'typography/typography',
   'card/card',
+  'card-header/card-header',
   'card-content/card-content',
+  'card-action/card-action',
 ]
 
 module.exports = {

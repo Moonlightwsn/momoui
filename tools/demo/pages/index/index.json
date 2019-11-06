@@ -9,6 +9,8 @@
     "mui-test": "/components/test/test",
     "mui-typography": "/components/typography/typography",
     "mui-card": "/components/card/card",
-    "mui-card-content": "/components/card-content/card-content"
+    "mui-card-header": "/components/card-header/card-header",
+    "mui-card-content": "/components/card-content/card-content",
+    "mui-card-action": "/components/card-action/card-action"
   }
 }

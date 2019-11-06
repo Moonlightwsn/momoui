@@ -3,6 +3,7 @@
     <mui-list-item icon="trash" primaryText="Primary Text"></mui-list-item>
   </mui-list>
   <mui-card m-style="margin: 12px 0 0 0;">
+    <mui-card-header></mui-card-header>
     <mui-card-content>
       <mui-typography color="textSecondary">Word of the Day</mui-typography>
       <mui-typography variant="h5">be•nev•o•lent</mui-typography>
@@ -10,5 +11,10 @@
       <mui-typography variant="body2" m-style="margin-bottom:0;">well meaning and kindly.</mui-typography>
       <mui-typography variant="body2" m-style="margin-bottom:0;">"a benevolent smile"</mui-typography>
     </mui-card-content>
+    <mui-card-action>
+      <mui-button variant="text" size="small">Action 1</mui-button>
+      <mui-button color="primary" variant="text" size="small">Action 2</mui-button>
+      <mui-button color="secondary" variant="text" size="small">Action 3</mui-button>
+    </mui-card-action>
   </mui-card>
 </view>

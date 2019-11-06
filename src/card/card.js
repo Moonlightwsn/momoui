@@ -3,7 +3,13 @@ Component({
     mStyle: String,
   },
   relations: {
+    '../card-header/card-header': {
+      type: 'child',
+    },
     '../card-content/card-content': {
+      type: 'child',
+    },
+    '../card-action/card-action': {
       type: 'child',
     },
   },
