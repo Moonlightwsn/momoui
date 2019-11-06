@@ -1,14 +1,14 @@
 <view class="mui-card-header">
-  <view class="avatar">
+  <view class="mui-card-header-avatar">
     <mui-avatar wx:if="{{avatarSrc}}" src="{{avatarSrc}}" size="40">{{avatarText}}</mui-avatar>
     <mui-avatar wx:elif="{{avatar}}" icon="{{avatar}}" color="{{avatarColor}}" background="{{avatarBackgroundColor}}" size="40"></mui-avatar>
     <mui-avatar wx:elif="{{avatarText}}" color="{{avatarColor}}" background="{{avatarBackgroundColor}}" size="40">{{avatarText}}</mui-avatar>
   </view>
-  <view class="content">
-    <mui-typography wx:if="{{title}}" class="title" m-style="margin-bottom: 0;" variant="body2">{{title}}</mui-typography>
-    <mui-typography wx:if="{{subheader}}" class="subheader" m-style="margin-bottom: 0;" variant="body2" color="textSecondary">{{subheader}}</mui-typography>
+  <view class="mui-card-header-content">
+    <mui-typography wx:if="{{title}}" class="mui-card-header-content-title" m-style="margin-bottom: 0;" variant="body2">{{title}}</mui-typography>
+    <mui-typography wx:if="{{subheader}}" class="mui-card-header-content-subheader" m-style="margin-bottom: 0;" variant="body2" color="textSecondary">{{subheader}}</mui-typography>
   </view>
-  <view class="action">
+  <view class="mui-card-header-action">
     <mui-button wx:if="{{action}}" icon="{{action}}" variant="text" shape="circle" custom-icon-color="{{actionColor}}"></mui-button>
   </view>
 </view>

@@ -6,7 +6,6 @@
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   word-break: break-all;
-  margin-bottom: 6px;
   &.mui-typography-block {
     display: block;
   }

@@ -11,25 +11,28 @@
     display: flex;
     padding: 16px;
     align-items: center;
-    .avatar {
+    .mui-card-header-avatar {
       flex: 0 0 auto;
       margin-right: 16px;
     }
-    .content {
+    .mui-card-header-content {
       flex: 1 1 auto;
-      .title {
+      .mui-card-header-content-title {
         display: block;
       }
-      .subheader {
+      .mui-card-header-content-subheader {
         display: block;
       }
     }
-    .action {
+    .mui-card-header-action {
       flex: 0 0 auto;
       align-self: flex-start;
       margin-top: -8px;
       margin-right: -8px;
     }
+  }
+  .mui-card-media {
+    width: 100%;
   }
   .mui-card-content {
     padding: 16px;

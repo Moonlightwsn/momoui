@@ -8,17 +8,13 @@
       title="Shrimp and Chorizo Paella"
       subheader="September 14, 2016"
     ></mui-card-header>
+    <mui-card-media image-src="https://material-ui.com/static/images/cards/paella.jpg"></mui-card-media>
     <mui-card-content>
-      <mui-typography color="textSecondary">Word of the Day</mui-typography>
-      <mui-typography variant="h5">be•nev•o•lent</mui-typography>
-      <mui-typography color="textSecondary">adjective</mui-typography>
-      <mui-typography variant="body2" m-style="margin-bottom:0;">well meaning and kindly.</mui-typography>
-      <mui-typography variant="body2" m-style="margin-bottom:0;">"a benevolent smile"</mui-typography>
+      <mui-typography variant="body2" color="textSecondary">This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.</mui-typography>
     </mui-card-content>
     <mui-card-action>
-      <mui-button variant="text" size="small">Action 1</mui-button>
-      <mui-button color="primary" variant="text" size="small">Action 2</mui-button>
-      <mui-button color="secondary" variant="text" size="small">Action 3</mui-button>
+      <mui-button variant="text" icon="share" shape="circle" custom-icon-color="rgba(0, 0, 0, 0.54)"></mui-button>
+      <mui-button variant="text" icon="trash" shape="circle" custom-icon-color="rgba(0, 0, 0, 0.54)"></mui-button>
     </mui-card-action>
   </mui-card>
 </view>

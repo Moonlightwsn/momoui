@@ -23,6 +23,7 @@ const entryFiles = [
   'typography/typography',
   'card/card',
   'card-header/card-header',
+  'card-media/card-media',
   'card-content/card-content',
   'card-action/card-action',
 ]
