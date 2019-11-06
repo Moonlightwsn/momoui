@@ -8,7 +8,28 @@
   box-sizing: border-box;
   box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
   .mui-card-header {
+    display: flex;
     padding: 16px;
+    align-items: center;
+    .avatar {
+      flex: 0 0 auto;
+      margin-right: 16px;
+    }
+    .content {
+      flex: 1 1 auto;
+      .title {
+        display: block;
+      }
+      .subheader {
+        display: block;
+      }
+    }
+    .action {
+      flex: 0 0 auto;
+      align-self: flex-start;
+      margin-top: -8px;
+      margin-right: -8px;
+    }
   }
   .mui-card-content {
     padding: 16px;
