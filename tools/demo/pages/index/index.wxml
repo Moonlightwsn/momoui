@@ -28,11 +28,11 @@
       <view
         style="display: flex;align-items:center;justify-content:center;padding: 0 0 8px 8px;"
       >
-        <mui-button variant="text" shape="circle" icon="arrow-left-2"></mui-button>
-        <mui-button variant="text" shape="circle" icon="play" size="large" custom-icon-size="38"></mui-button>
-        <mui-button variant="text" shape="circle" icon="arrow-right-2"></mui-button>
+        <mui-button style="margin-right: 16px;" variant="text" shape="circle" icon="play-prev"></mui-button>
+        <mui-button style="margin-right: 16px;" variant="text" shape="circle" icon="play" size="large"></mui-button>
+        <mui-button variant="text" shape="circle" icon="play-next"></mui-button>
       </view>
     </view>
-    <mui-card-media style="min-width: 155px;display: flex;" image-src="https://material-ui.com/static/images/cards/live-from-space.jpg"></mui-card-media>
+    <mui-card-media style="min-width: 155px;display: flex;" m-style="height: 155px;" mode="center" image-src="https://material-ui.com/static/images/cards/live-from-space.jpg"></mui-card-media>
   </mui-card>
 </view>
