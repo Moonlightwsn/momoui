@@ -1,1 +1,1 @@
-<image class="mui-card-media" mode="widthFix" src="{{imageSrc}}"></image>
+<image class="mui-card-media" style="{{mStyle}}" mode="{{mode}}" src="{{imageSrc}}"></image>

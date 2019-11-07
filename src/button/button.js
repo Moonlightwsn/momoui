@@ -31,6 +31,7 @@ Component({
       type: Boolean,
       value: false,
     },
+    mClass: String,
     mStyle: String,
     color: {
       type: String,

@@ -7,6 +7,7 @@ Component({
       type: Boolean,
       value: false,
     },
+    mClass: String,
     mStyle: String,
     icon: String,
     iconSize: {

@@ -1,5 +1,5 @@
 <view
-  class="mui-list-item {{ripple ? 'mui-ripple-view' : ''}} {{primaryText && secondaryText ? 'mui-list-item-multiple-lines' : ''}}"
+  class="{{mClass}} mui-list-item {{ripple ? 'mui-ripple-view' : ''}} {{primaryText && secondaryText ? 'mui-list-item-multiple-lines' : ''}}"
   style="{{mStyle}}"
   capture-bind:tap="{{(ripple && !disabled && !disabledListItemRipple) ? 'rippleClick' : ''}}"
   capture-bind:longpress="{{(ripple && !disabled && !disabledListItemRipple) ? 'rippleHold' : ''}}"

@@ -1,6 +1,6 @@
 <button
   disabled="{{disabled}}"
-  class="mui mui-button {{variantMap[variant]}} {{sizeMap[size]}} {{colorMap[color]}} {{ripple ? 'mui-ripple-view' : ''}} {{shape === 'circle' ? 'mui-button-circle' : ''}}"
+  class="{{mClass}} mui mui-button {{variantMap[variant]}} {{sizeMap[size]}} {{colorMap[color]}} {{ripple ? 'mui-ripple-view' : ''}} {{shape === 'circle' ? 'mui-button-circle' : ''}}"
   style="{{mStyle}}"
   hover-class="{{shape !== 'circle' ? 'mui-button-hover' : 'none'}}"
   capture-bind:tap="{{(ripple && !disabled) ? 'rippleClick' : ''}}"

@@ -1,5 +1,10 @@
 Component({
   properties: {
+    mStyle: String,
+    mode: {
+      type: String,
+      value: 'widthFix',
+    },
     imageSrc: String,
     title: {
       type: String,

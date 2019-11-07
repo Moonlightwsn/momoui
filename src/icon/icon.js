@@ -21,6 +21,15 @@ const iconPathMap = {
   'bullet-list': `${muiIconPath}bullet-list.svg`,
   link: `${muiIconPath}link.svg`,
   trash: `${muiIconPath}trash.svg`,
+  like: `${muiIconPath}like.svg`,
+  'arrow-down-1': `${muiIconPath}arrow-down-1.svg`,
+  'arrow-up-1': `${muiIconPath}arrow-up-1.svg`,
+  'arrow-left-1': `${muiIconPath}arrow-left-1.svg`,
+  'arrow-right-1': `${muiIconPath}arrow-right-1.svg`,
+  'arrow-down-2': `${muiIconPath}arrow-down-2.svg`,
+  'arrow-up-2': `${muiIconPath}arrow-up-2.svg`,
+  'arrow-left-2': `${muiIconPath}arrow-left-2.svg`,
+  'arrow-right-2': `${muiIconPath}arrow-right-2.svg`,
 }
 
 Component({

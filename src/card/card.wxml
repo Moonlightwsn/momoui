@@ -1,5 +1,5 @@
 <view
-  class="mui mui-card"
+  class="{{mClass}}  mui mui-card"
   style="{{mStyle}}"
 >
   <slot></slot>

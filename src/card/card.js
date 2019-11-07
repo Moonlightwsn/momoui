@@ -1,9 +1,13 @@
 Component({
   properties: {
+    mClass: String,
     mStyle: String,
   },
   relations: {
     '../card-header/card-header': {
+      type: 'child',
+    },
+    '../card-action-area/card-action-area': {
       type: 'child',
     },
     '../card-media/card-media': {

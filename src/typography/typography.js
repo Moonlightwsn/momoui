@@ -1,5 +1,6 @@
 Component({
   properties: {
+    mClass: String,
     mStyle: String,
     variant: {
       type: String,
