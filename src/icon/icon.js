@@ -30,6 +30,7 @@ const iconPathMap = {
   'arrow-up-2': `${muiIconPath}arrow-up-2.svg`,
   'arrow-left-2': `${muiIconPath}arrow-left-2.svg`,
   'arrow-right-2': `${muiIconPath}arrow-right-2.svg`,
+  'play':  `${muiIconPath}play.svg`,
 }
 
 Component({

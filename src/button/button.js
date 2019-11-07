@@ -43,6 +43,7 @@ Component({
     },
     icon: String,
     customIconColor: String,
+    customIconSize: Number,
     size: {
       type: String,
       value: 'medium',
@@ -120,6 +121,7 @@ Component({
         size,
         shape,
         customIconColor,
+        customIconSize,
       } = this.properties
       if (variant !== 'contained') {
         this.rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
@@ -132,6 +134,9 @@ Component({
       } else {
         iconSize = iconSizeMap[size]
         centerripple = false
+      }
+      if (customIconSize) {
+        iconSize = customIconSize
       }
       this.setData({
         iconColor: customIconColor || iconColorMap[`${color}-${variant}`],

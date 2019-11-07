@@ -1,5 +1,5 @@
-<view style="padding: 12px 0;margin: auto;background-color: #f5f5f5;">
-  <mui-card m-style="margin: 12px 0;">
+<view style="padding: 0;margin: auto;background-color: #f5f5f5;">
+  <mui-card m-style="margin: 0 0 12px 0;">
     <mui-card-action-area>
       <mui-card-media image-src="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"></mui-card-media>
       <mui-card-content>
@@ -13,24 +13,26 @@
   </mui-card>
   <mui-card m-style="display: flex;">
     <view
-      style="display:flex;flex-direction:column;"
+      style="display:flex;flex-direction:column;flex:1 0 auto;"
     >
-      <mui-card-content m-style="flex: 1 0 auto">
-        <mui-typography variant="h5">
-          Live From Space
-        </mui-typography>
-        <mui-typography variant="subtitle1" color="textSecondary">
-          Mac Miller
-        </mui-typography>
+      <mui-card-content style="flex: 1 0 auto;" m-style="display: flex;justify-content: center;align-item:center;">
+        <view>
+          <mui-typography variant="h5">
+            Live From Space
+          </mui-typography>
+          <mui-typography variant="subtitle1" color="textSecondary">
+            Mac Miller
+          </mui-typography>
+        </view>
       </mui-card-content>
       <view
-        style="display: flex;align-items:center;padding: 0 0 8px 8px;"
+        style="display: flex;align-items:center;justify-content:center;padding: 0 0 8px 8px;"
       >
-        <mui-button variant="text" shape="circle" icon="check"></mui-button>
-        <mui-button variant="text" shape="circle" icon="check"></mui-button>
-        <mui-button variant="text" shape="circle" icon="check"></mui-button>
+        <mui-button variant="text" shape="circle" icon="arrow-left-2"></mui-button>
+        <mui-button variant="text" shape="circle" icon="play" size="large" custom-icon-size="38"></mui-button>
+        <mui-button variant="text" shape="circle" icon="arrow-right-2"></mui-button>
       </view>
     </view>
-    <mui-card-media m-style="width: 151px;" mode="" image-src="https://material-ui.com/static/images/cards/live-from-space.jpg"></mui-card-media>
+    <mui-card-media style="min-width: 155px;display: flex;" image-src="https://material-ui.com/static/images/cards/live-from-space.jpg"></mui-card-media>
   </mui-card>
 </view>
