@@ -27,6 +27,7 @@ const entryFiles = [
   'card-media/card-media',
   'card-content/card-content',
   'card-action/card-action',
+  'divider/divider',
 ]
 
 module.exports = {

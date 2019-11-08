@@ -13,6 +13,7 @@
     "mui-card-action-area": "/components/card-action-area/card-action-area",
     "mui-card-media": "/components/card-media/card-media",
     "mui-card-content": "/components/card-content/card-content",
-    "mui-card-action": "/components/card-action/card-action"
+    "mui-card-action": "/components/card-action/card-action",
+    "mui-divider": "/components/divider/divider"
   }
 }

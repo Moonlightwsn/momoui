@@ -19,7 +19,8 @@
     <slot name="content"></slot>
   </view>
   <view wx:if="{{action}}" class="mui-list-item-action">
-    <mui-button icon="{{action}}" variant="text" color="{{actionType}}" custom-icon-color="{{actionColor}}" shape="circle"></mui-button>
+    <mui-button wx:if="{{actionType}}" icon="{{action}}" variant="text" color="{{actionType}}" custom-icon-color="{{actionColor}}" shape="circle"></mui-button>
+    <mui-icon wx:else class="mui-inline-flex" name="{{action}}" color="{{actionColor}}"></mui-icon>
   </view>
   <view
     wx:for="{{rippleList}}"

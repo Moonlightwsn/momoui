@@ -48,6 +48,7 @@ export default Behavior({
     },
     rippleClick(e) {
       const {x, y} = e.detail
+      console.log('rippleClick')
       this._ripple({
         x,
         y

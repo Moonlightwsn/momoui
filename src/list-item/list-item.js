@@ -35,24 +35,15 @@ Component({
     primaryText: String,
     secondaryText: String,
     action: String,
-    actionType: {
-      type: String,
-      value: 'default',
-    },
+    actionType: String,
     actionColor: String,
-    /*
-    actionColor: {
-      type: String,
-      value: '#757575',
-    },
-    */
   },
   data: {
     disabledListItemRipple: false,
   },
   lifetimes: {
     attached() {
-      if (this.properties.action) {
+      if (this.properties.actionType) {
         this.setData({
           disabledListItemRipple: true
         })

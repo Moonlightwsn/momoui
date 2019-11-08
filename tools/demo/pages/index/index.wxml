@@ -1,4 +1,10 @@
 <view style="padding: 0;margin: auto;background-color: #f5f5f5;">
+  <mui-list>
+    <mui-list-item icon="pictures" iconColor="#1296db" primaryText="相册" action="arrow-right-2"></mui-list-item>
+    <mui-divider></mui-divider>
+    <mui-list-item icon="pictures" iconColor="#1296db" primaryText="相册" action="arrow-right-2"></mui-list-item>
+  </mui-list>
+  <!--
   <mui-card m-style="margin: 0 0 12px 0;">
     <mui-card-action-area>
       <mui-card-media image-src="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"></mui-card-media>
@@ -35,4 +41,5 @@
     </view>
     <mui-card-media style="min-width: 155px;display: flex;" m-style="height: 155px;" mode="center" image-src="https://material-ui.com/static/images/cards/live-from-space.jpg"></mui-card-media>
   </mui-card>
+  -->
 </view>

@@ -33,6 +33,7 @@ const iconPathMap = {
   'play':  `${muiIconPath}play.svg`,
   'play-next':  `${muiIconPath}play-next.svg`,
   'play-prev':  `${muiIconPath}play-previous.svg`,
+  'pictures': `${muiIconPath}pictures.svg`,
 }
 
 Component({
