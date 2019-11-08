@@ -1,0 +1,15 @@
+<view
+  class="mui-checkbox {{ripple ? 'mui-ripple-view' : ''}}"
+  capture-bind:tap="{{(ripple && !disabled) ? 'rippleClick' : ''}}"
+  capture-bind:longpress="{{(ripple && !disabled) ? 'rippleHold' : ''}}"
+  capture-bind:touchend="{{(ripple && !disabled) ? 'rippleHoldEnd' : ''}}"
+>
+  <mui-icon wx:if="{{checked}}" class="mui-inline-flex" name="square-check" size="{{size}}"></mui-icon>
+  <mui-icon wx:else class="mui-inline-flex" name="square" size="{{size}}"></mui-icon>
+  <view
+    wx:for="{{rippleList}}"
+    wx:key="{{item.key}}"
+    style="width:{{item.length}}px;height:{{item.length}}px;left:{{item.x}}px;top:{{item.y}}px;background-color: {{item.backgroundColor}}" class="mui-ripple {{item.rippleClass}}"
+    bind:animationend="stopRipple"
+  ></view>
+</view>

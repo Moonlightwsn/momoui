@@ -1,0 +1,8 @@
+.mui-checkbox {
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 50%;
+}

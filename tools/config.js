@@ -28,6 +28,7 @@ const entryFiles = [
   'card-content/card-content',
   'card-action/card-action',
   'divider/divider',
+  'checkbox/checkbox',
 ]
 
 module.exports = {

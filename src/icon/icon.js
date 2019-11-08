@@ -34,6 +34,8 @@ const iconPathMap = {
   'play-next':  `${muiIconPath}play-next.svg`,
   'play-prev':  `${muiIconPath}play-previous.svg`,
   'pictures': `${muiIconPath}pictures.svg`,
+  'square': `${muiIconPath}square.svg`,
+  'square-check': `${muiIconPath}square-check-fill.svg`,
 }
 
 Component({

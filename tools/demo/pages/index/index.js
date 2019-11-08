@@ -1,14 +1,11 @@
 Page({
-  getPhoneNumber(e) {
-    console.log('getPhoneNumber', e)
+  data: {
+    checked: true,
   },
-  getUserInfo(e) {
-    console.log('getUserInfo', e)
-  },
-  openSetting(e) {
-    console.log('openSetting', e)
-  },
-  launchAppError(e) {
-    console.log('launchAppError', e)
+  checkboxChange() {
+    const {checked} = this.data
+    this.setData({
+      checked: !checked,
+    })
   },
 })
