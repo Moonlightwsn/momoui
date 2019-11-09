@@ -29,6 +29,7 @@ const entryFiles = [
   'card-action/card-action',
   'divider/divider',
   'checkbox/checkbox',
+  'checkbox-group/checkbox-group',
 ]
 
 module.exports = {

@@ -5,19 +5,19 @@ Component({
   },
   relations: {
     '../card-header/card-header': {
-      type: 'child',
+      type: 'descendant',
     },
     '../card-action-area/card-action-area': {
-      type: 'child',
+      type: 'descendant',
     },
     '../card-media/card-media': {
-      type: 'child',
+      type: 'descendant',
     },
     '../card-content/card-content': {
-      type: 'child',
+      type: 'descendant',
     },
     '../card-action/card-action': {
-      type: 'child',
+      type: 'descendant',
     },
   },
   options: {

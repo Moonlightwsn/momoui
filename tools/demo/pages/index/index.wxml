@@ -4,7 +4,11 @@
     <mui-divider></mui-divider>
     <mui-list-item icon="pictures" iconColor="#1296db" primaryText="相册" action="arrow-right-2"></mui-list-item>
   </mui-list>
-  <mui-checkbox class="mui-inline-flex" checked="{{checked}}" bind:tap="checkboxChange"></mui-checkbox>
+  <mui-checkbox-group bind:change="test2">
+    <mui-checkbox value="test1" disabled="{{true}}" checked="{{true}}"></mui-checkbox>
+    <mui-checkbox value="test2" color="primary"></mui-checkbox>
+    <mui-checkbox value="test2" color="default"></mui-checkbox>
+  </mui-checkbox-group>
   <!--
   <mui-card m-style="margin: 0 0 12px 0;">
     <mui-card-action-area>

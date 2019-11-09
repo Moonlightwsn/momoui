@@ -95,4 +95,12 @@ Component({
       })
     },
   },
+  observers: {
+    name(name) {
+      if (name && iconPathMap[name]) {
+        const iconPath = `${this.properties.pathPrefix}${iconPathMap[name]}`
+        this._readSvgFile(iconPath)
+      }
+    },
+  },
 })

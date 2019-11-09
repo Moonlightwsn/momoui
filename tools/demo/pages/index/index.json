@@ -15,6 +15,7 @@
     "mui-card-content": "/components/card-content/card-content",
     "mui-card-action": "/components/card-action/card-action",
     "mui-divider": "/components/divider/divider",
-    "mui-checkbox": "/components/checkbox/checkbox"
+    "mui-checkbox": "/components/checkbox/checkbox",
+    "mui-checkbox-group": "/components/checkbox-group/checkbox-group"
   }
 }

@@ -1,4 +1,5 @@
 .mui-checkbox {
+  position: relative;
   padding: 12px;
   width: 48px;
   height: 48px;

@@ -1,7 +1,7 @@
 Component({
   relations: {
     '../card/card': {
-      type: 'parent',
+      type: 'ancestor',
     },
   },
   options: {

@@ -1,5 +1,5 @@
 const rippleBackgroundColorMap = {
-  default: null,
+  default: '#707070',
   primary: '#1976d2',
   secondary: '#dc004e',
 }
@@ -40,7 +40,7 @@ Component({
       type: 'child',
       linked(target) {
         if (this.properties.variant !== 'contained') {
-          target.rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
+          target.data.rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
         }
       },
     },

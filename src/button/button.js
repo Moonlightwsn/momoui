@@ -1,7 +1,7 @@
 import rippleBehaviors from '../ripple/behaviors'
 
 const rippleBackgroundColorMap = {
-  default: null,
+  default: '#707070',
   primary: '#1976d2',
   secondary: '#dc004e',
 }
@@ -9,7 +9,7 @@ const rippleBackgroundColorMap = {
 const iconColorMap = {
   'default-contained': 'rgba(0, 0, 0, 0.87)',
   'default-outlined': 'rgba(0, 0, 0, 0.87)',
-  'default-text': 'rgba(0, 0, 0, 0.87)',
+  'default-text': '#707070',
   'primary-contained': '#ffffff',
   'primary-outlined': '#1976d2',
   'primary-text': '#1976d2',
@@ -124,7 +124,7 @@ Component({
         customIconSize,
       } = this.properties
       if (variant !== 'contained') {
-        this.rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
+        this.data.rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
       }
       let iconSize
       let centerripple

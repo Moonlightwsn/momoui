@@ -24,11 +24,11 @@ export default Behavior({
         })
       }
     }, 1000),
-    rippleHoldEnd() {
-      if (this.data.ripplelongpress) {
-        const that = this
+    rippleHoldEnd(e, that) {
+      const thisRippleBehaviors = that || this
+      if (thisRippleBehaviors.data.ripplelongpress) {
         setTimeout(function () {
-          that.setData({
+          thisRippleBehaviors.setData({
             rippleList: [],
             rippleListInitKey: 0,
             ripplelongpress: false,
@@ -36,19 +36,21 @@ export default Behavior({
         }, 200)
       }
     },
-    rippleHold(e) {
-      this.setData({
+    rippleHold(e, that) {
+      const thisRippleBehaviors = that || this
+      thisRippleBehaviors.setData({
         ripplelongpress: true,
       })
       const {x, y} = e.detail
-      this._ripple({
+      thisRippleBehaviors._ripple({
         x,
         y
       }, 'hold')
     },
-    rippleClick(e) {
+    rippleClick(e, that) {
       const {x, y} = e.detail
-      this._ripple({
+      const thisRippleBehaviors = that || this
+      thisRippleBehaviors._ripple({
         x,
         y
       }, 'click')
@@ -64,7 +66,7 @@ export default Behavior({
       query.selectViewport().scrollOffset()
       query.exec(function (res) {
         const [view, viewPort] = res
-        const rippleBackgroundColor = that.rippleBackgroundColor || (that._highBrightnessColor(view.backgroundColor) ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)')
+        const rippleBackgroundColor = that.data.rippleBackgroundColor || (that._highBrightnessColor(view.backgroundColor) ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)')
         const boxWidth = parseInt(view.width, 10)
         const boxHeight = parseInt(view.height, 10)
 
