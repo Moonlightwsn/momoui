@@ -5,9 +5,9 @@
     <mui-list-item icon="pictures" iconColor="#1296db" primaryText="相册" action="arrow-right-2"></mui-list-item>
   </mui-list>
   <mui-checkbox-group bind:change="test2">
-    <mui-checkbox value="test1" disabled="{{true}}" checked="{{true}}"></mui-checkbox>
-    <mui-checkbox value="test2" color="primary"></mui-checkbox>
-    <mui-checkbox value="test2" color="default"></mui-checkbox>
+    <mui-checkbox value="test1">Secondary</mui-checkbox>
+    <mui-checkbox value="test2" color="primary">Primary</mui-checkbox>
+    <mui-checkbox value="test2" color="default" placement="left">Default</mui-checkbox>
   </mui-checkbox-group>
   <!--
   <mui-card m-style="margin: 0 0 12px 0;">

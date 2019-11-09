@@ -1,9 +1,18 @@
-.mui-checkbox {
+.mui-checkbox-wrapper {
   position: relative;
-  padding: 12px;
-  width: 48px;
-  height: 48px;
-  display: inline-block;
+  display: inline-flex;
   box-sizing: border-box;
-  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+  &.mui-checkbox-wrapper-left {
+    margin-left: 16px;
+  }
+  &.mui-checkbox-wrapper-right {
+    margin-right: 16px;
+  }
+  .mui-checkbox {
+    padding: 12px;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
 }

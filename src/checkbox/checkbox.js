@@ -13,6 +13,8 @@ Component({
       type: Boolean,
       value: false,
     },
+    mStyle: String,
+    mClass: String,
     value: {
       type: String,
       value: '',
@@ -28,6 +30,10 @@ Component({
     checked: {
       type: Boolean,
       value: false,
+    },
+    placement: {
+      type: String,
+      value: 'right',
     }
   },
   data: {
