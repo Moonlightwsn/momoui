@@ -1,10 +1,5 @@
 import rippleBehaviors from '../ripple/behaviors'
-
-const rippleBackgroundColorMap = {
-  default: '#707070',
-  primary: '#1976d2',
-  secondary: '#dc004e',
-}
+import {rippleBackgroundColorMap} from '../utils/utils'
 
 Component({
   behaviors: [rippleBehaviors],
@@ -60,34 +55,18 @@ Component({
         action(e, this)
       }
     },
-    _checkControol() {
-      const {checked} = this.data
-      const {disabled} = this.properties
-      if (!disabled) {
-        this.setData({checked: !checked})
-      }
-    },
     _tap(e) {
-      this._checkControol()
       this._rippleControll(e, this.rippleClick)
     },
     _longPress(e) {
-      this._checkControol()
       this._rippleControll(e, this.rippleHold)
     },
     _touchEnd(e) {
       this._rippleControll(e, this.rippleHoldEnd)
     },
   },
-  observers: {
-    checked() {
-      if (this.data.group) {
-        this.data.group.checkedChange()
-      }
-    },
-  },
   relations: {
-    '../checkbox-group/checkbox-group': {
+    '../radio-group/radio-group': {
       type: 'ancestor',
       linked(target) {
         this.data.group = target

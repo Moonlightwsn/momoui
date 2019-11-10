@@ -5,10 +5,11 @@
     <mui-list-item icon="pictures" iconColor="#1296db" primaryText="相册" action="arrow-right-2"></mui-list-item>
   </mui-list>
   <mui-checkbox-group bind:change="test2">
-    <mui-checkbox value="test1">Secondary</mui-checkbox>
-    <mui-checkbox value="test2" color="primary">Primary</mui-checkbox>
-    <mui-checkbox value="test2" color="default" placement="left">Default</mui-checkbox>
+    <mui-checkbox value="test1">1</mui-checkbox>
+    <mui-checkbox value="test2" color="primary">2</mui-checkbox>
+    <mui-checkbox value="test2" color="default">3</mui-checkbox>
   </mui-checkbox-group>
+  <mui-radio style="display:block;" value="test1" checked="{{true}}">1</mui-radio>
   <!--
   <mui-card m-style="margin: 0 0 12px 0;">
     <mui-card-action-area>

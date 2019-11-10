@@ -1,0 +1,23 @@
+<label
+  class="{{mClass}} mui-radio-wrapper mui-radio-wrapper-{{placement}}"
+  style="{{mStyle}}"
+  capture-bind:tap="_tap"
+  capture-bind:longpress="_longPress"
+  capture-bind:touchend="_touchEnd"
+>
+  <mui-typography wx:if="{{placement === 'left'}}" class="mui-inline-flex" m-style="display:inline-flex;align-items:center;">
+    <slot></slot>
+  </mui-typography>
+  <view class="mui-inline-flex mui-radio {{ripple ? 'mui-ripple-view' : ''}}">
+    <mui-icon class="mui-inline-flex" name="{{checked ? 'radio-box' : 'round'}}" size="{{size}}" color="{{iconColor}}"></mui-icon>
+    <view
+      wx:for="{{rippleList}}"
+      wx:key="{{item.key}}"
+      style="width:{{item.length}}px;height:{{item.length}}px;left:{{item.x}}px;top:{{item.y}}px;background-color: {{item.backgroundColor}}" class="mui-ripple {{item.rippleClass}}"
+      bind:animationend="stopRipple"
+    ></view>
+  </view>
+  <mui-typography wx:if="{{placement === 'right'}}" class="mui-inline-flex" m-style="display:inline-flex;align-items:center;">
+    <slot></slot>
+  </mui-typography>
+</label>

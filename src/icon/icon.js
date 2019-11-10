@@ -11,17 +11,17 @@ if (app.momouiRootPath) {
 const muiIconPath = '/styles/icons/'
 
 const iconPathMap = {
-  default: `${muiIconPath}default.svg`,
-  share: `${muiIconPath}share.svg`,
+  'default': `${muiIconPath}default.svg`,
+  'share': `${muiIconPath}share.svg`,
   'share-arrow': `${muiIconPath}share-arrow.svg`,
-  check: `${muiIconPath}check.svg`,
+  'check': `${muiIconPath}check.svg`,
   'check-circle': `${muiIconPath}check-circle.svg`,
-  close: `${muiIconPath}close.svg`,
+  'close': `${muiIconPath}close.svg`,
   'close-circle': `${muiIconPath}close-circle.svg`,
   'bullet-list': `${muiIconPath}bullet-list.svg`,
-  link: `${muiIconPath}link.svg`,
-  trash: `${muiIconPath}trash.svg`,
-  like: `${muiIconPath}like.svg`,
+  'link': `${muiIconPath}link.svg`,
+  'trash': `${muiIconPath}trash.svg`,
+  'like': `${muiIconPath}like.svg`,
   'arrow-down-1': `${muiIconPath}arrow-down-1.svg`,
   'arrow-up-1': `${muiIconPath}arrow-up-1.svg`,
   'arrow-left-1': `${muiIconPath}arrow-left-1.svg`,
@@ -36,6 +36,8 @@ const iconPathMap = {
   'pictures': `${muiIconPath}pictures.svg`,
   'square': `${muiIconPath}square.svg`,
   'square-check': `${muiIconPath}square-check-fill.svg`,
+  'round': `${muiIconPath}round.svg`,
+  'radio-box': `${muiIconPath}radio-box.svg`,
 }
 
 Component({
@@ -85,7 +87,7 @@ Component({
           const base64 = new Base64()
           let svgdata = res.data
           if (color) {
-            svgdata = svgdata.replace(/fill="#[a-zA-Z0-9]{0,6}"/, 'fill="' + color + '"')
+            svgdata = svgdata.replace(/fill="#[a-zA-Z0-9]{0,6}"/g, 'fill="' + color + '"')
           }
           const svgtobase64 = base64.encode(svgdata)
           that.setData({

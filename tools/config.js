@@ -30,6 +30,8 @@ const entryFiles = [
   'divider/divider',
   'checkbox/checkbox',
   'checkbox-group/checkbox-group',
+  'radio/radio',
+  'radio-group/radio-group',
 ]
 
 module.exports = {

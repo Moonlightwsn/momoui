@@ -12,6 +12,13 @@ function debounce(func, wait) {
   }
 }
 
+const rippleBackgroundColorMap = {
+  default: '#707070',
+  primary: '#1976d2',
+  secondary: '#dc004e',
+}
+
 export {
-  debounce
+  debounce,
+  rippleBackgroundColorMap,
 }

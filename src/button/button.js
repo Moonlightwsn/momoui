@@ -127,13 +127,13 @@ Component({
         this.data.rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
       }
       let iconSize
-      let centerripple
+      let centerRipple
       if (shape === 'circle') {
         iconSize = 24
-        centerripple = true
+        centerRipple = true
       } else {
         iconSize = iconSizeMap[size]
-        centerripple = false
+        centerRipple = false
       }
       if (customIconSize) {
         iconSize = customIconSize
@@ -141,7 +141,7 @@ Component({
       this.setData({
         iconColor: customIconColor || iconColorMap[`${color}-${variant}`],
         iconSize,
-        centerripple,
+        centerRipple,
       })
     }
   },

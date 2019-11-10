@@ -13,7 +13,7 @@ export default Behavior({
     rippleList: [],
     rippleListInitKey: 0,
     ripplelongpress: false,
-    centerripple: false,
+    centerRipple: false,
   },
   methods: {
     stopRipple: debounce(function () {
@@ -77,14 +77,14 @@ export default Behavior({
           rippleLength = boxHeight
         }
 
-        const {centerripple} = that.data
+        const {centerRipple} = that.data
 
         that.data.rippleListInitKey += 1
-        const rippleClass = `mui-ripple-animation${type === 'hold' ? '-hold' : ''}${centerripple ? '-center' : ''}`
+        const rippleClass = `mui-ripple-animation${type === 'hold' ? '-hold' : ''}${centerRipple ? '-center' : ''}`
 
         let rippleX
         let rippleY
-        if (centerripple) {
+        if (centerRipple) {
           if (boxWidth === boxHeight) {
             rippleX = 0
             rippleY = 0
