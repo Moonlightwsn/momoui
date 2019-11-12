@@ -38,16 +38,32 @@ Component({
       type: Number,
       value: 16,
     },
+    error: {
+      type: Boolean,
+      value: false,
+    },
+    label: String,
+    fullWidth: {
+      type: Boolean,
+      value: false,
+    },
+    help: String,
   },
   data: {
     _focus: false,
   },
   methods: {
     _focus() {
-      this.setData({_focus: true})
+      const {disabled, error} = this.properties
+      if (!disabled && !error) {
+        this.setData({_focus: true})
+      }
     },
     _blur() {
-      this.setData({_focus: false})
+      const {disabled, error} = this.properties
+      if (!disabled && !error) {
+        this.setData({_focus: false})
+      }
     },
   },
 })

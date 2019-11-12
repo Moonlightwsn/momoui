@@ -1,17 +1,10 @@
-<view style="padding: 0;margin: auto;background-color: #f5f5f5;">
-  <mui-checkbox-group bind:change="test2">
-    <mui-checkbox wx:for="{{checkedboxList}}" wx:key="{{item.key}}" checked="{{item.checked}}" value="{{item.value}}" color="{{item.color}}">{{item.label}}</mui-checkbox>
-  </mui-checkbox-group>
-  <mui-radio-group bind:change="test2">
-    <mui-radio value="test1" checked="{{false}}" color="default">radio1</mui-radio>
-    <mui-radio value="test2" checked="{{false}}" color="primary">radio2</mui-radio>
-    <mui-radio value="test3" checked="{{false}}">radio3</mui-radio>
-  </mui-radio-group>
-  <mui-input m-style="margin:8px;" focus="{{false}}" />
-  <mui-input m-style="margin:8px;" focus="{{false}}" />
-  <mui-input m-style="margin:8px;" focus="{{false}}" />
-  <mui-input m-style="margin:8px;" focus="{{false}}" />
-  <mui-input m-style="margin:8px;" focus="{{false}}" />
+<view style="padding: 0 16px;margin: auto;background-color: #f5f5f5;">
+  <mui-input m-style="margin: 8px 0px;" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" />
+  <mui-input m-style="margin: 8px 0px;" color="secondary" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" />
+  <mui-input m-style="margin: 8px 0px;" color="wechat" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" />
+   <mui-input m-style="margin: 8px 0px;" color="default" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" />
+  <mui-input m-style="margin: 8px 0px;" error="{{true}}" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" />
+  <mui-input m-style="margin: 8px 0px;" color="default" focus="{{true}}" disabled="{{true}}" full-width="{{true}}" label="Name" help="Some important helper text" />
   <!--
   <mui-card m-style="margin: 0 0 12px 0;">
     <mui-card-action-area>
