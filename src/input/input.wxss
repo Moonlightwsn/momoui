@@ -1,0 +1,55 @@
+.mui-input-wrapper {
+  position: relative;
+  color: rgba(0, 0, 0, 0.87);
+  cursor: text;
+  display: flex;
+  position: relative;
+  font-size: 16px;
+  font-weight: 400;
+  height: 32px;
+  line-height: 19px;
+  box-sizing: border-box;
+  align-items: center;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  letter-spacing: 0.14994px;
+  &.mui-input-wrapper-focus {
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+  &::before {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "\00a0";
+    position: absolute;
+    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+    pointer-events: none;
+  }
+  &::after {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    border-bottom: 2px solid #1976d2;
+    pointer-events: none;
+  }
+  .mui-input {
+    width: 100%;
+    border: 0;
+    display: block;
+    height: inherit;
+    line-height: inherit;
+    box-sizing: inherit;
+    word-spacing: normal;
+    padding: 6px 0 7px;
+    min-width: 0;
+    background: none;
+    animation-name: MuiInputBase-keyframes-auto-fill-cancel;
+    -webkit-tap-highlight-color: transparent;
+  }
+}

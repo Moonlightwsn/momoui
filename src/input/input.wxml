@@ -1,0 +1,19 @@
+<view
+  class="{{mClass}} mui mui-input-wrapper mui-input-wrapper-{{_focus ? 'focus' : 'blur'}}"
+  style="{{mStyle}}"
+>
+  <input
+    class="mui-input"
+    disabled="{{disabled}}"
+    value="{{value}}"
+    placeholder="{{placeholder}}"
+    placeholder-style='font-family: "Roboto", "Helvetica", "Arial", sans-serif;color:#9c9c9c;'
+    password="{{password}}"
+    type="{{type}}"
+    confirm-type="{{confirmType}}"
+    focus="{{focus}}"
+    bind:focus="_focus"
+    bind:blur="_blur"
+    cursor-spacing="{{cursorSpacing}}"
+  />
+</view>

@@ -18,6 +18,7 @@
     "mui-checkbox": "/components/checkbox/checkbox",
     "mui-checkbox-group": "/components/checkbox-group/checkbox-group",
     "mui-radio": "/components/radio/radio",
-    "mui-radio-group": "/components/radio-group/radio-group"
+    "mui-radio-group": "/components/radio-group/radio-group",
+    "mui-input": "/components/input/input"
   }
 }

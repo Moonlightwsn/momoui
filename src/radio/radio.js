@@ -33,21 +33,25 @@ Component({
   },
   data: {
     centerRipple: true,
-    iconColor: '#dc004e',
+    iconColor: '#707070',
     rippleBackgroundColor: '#dc004e',
   },
   lifetimes: {
     attached() {
-      if (this.properties.disabled) {
+      const {disabled, checked, color} = this.properties
+      if (disabled) {
         this.setData({iconColor: '#b6b6b6'})
       } else {
-        const rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
-        this.setData({iconColor: rippleBackgroundColor})
+        const rippleBackgroundColor = rippleBackgroundColorMap[color]
+        this.setData({iconColor: checked ? rippleBackgroundColor : '#707070'})
         this.data.rippleBackgroundColor = rippleBackgroundColor
       }
     },
   },
   methods: {
+    uncheck() {
+      this.setData({checked: false, iconColor: '#707070'})
+    },
     _rippleControll(e, action) {
       const {ripple} = this.data
       const {disabled} = this.properties
@@ -55,10 +59,21 @@ Component({
         action(e, this)
       }
     },
+    _checkControol() {
+      const {checked} = this.data
+      const {disabled, color} = this.properties
+      if (!disabled && !checked) {
+        const rippleBackgroundColor = rippleBackgroundColorMap[color]
+        this.setData({checked: true, iconColor: rippleBackgroundColor})
+        this.data.group.checkedChange(this)
+      }
+    },
     _tap(e) {
+      this._checkControol()
       this._rippleControll(e, this.rippleClick)
     },
     _longPress(e) {
+      this._checkControol()
       this._rippleControll(e, this.rippleHold)
     },
     _touchEnd(e) {
