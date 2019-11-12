@@ -1,7 +1,7 @@
 <view style="padding: 0 16px;margin: auto;background-color: #f5f5f5;">
   <mui-input m-style="margin: 8px 0px;" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" />
-  <mui-input m-style="margin: 8px 0px;" color="secondary" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" />
-  <mui-input m-style="margin: 8px 0px;" color="wechat" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" />
+  <mui-input m-style="margin: 8px 0px;" color="secondary" focus="{{false}}" full-width="{{true}}" label="Name" filled="{{true}}" help="Some important helper text" />
+  <mui-input m-style="margin: 8px 0px;" color="wechat" focus="{{false}}" full-width="{{true}}" label="Name" filled="{{true}}" help="Some important helper text" />
    <mui-input m-style="margin: 8px 0px;" color="default" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" />
   <mui-input m-style="margin: 8px 0px;" error="{{true}}" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" />
   <mui-input m-style="margin: 8px 0px;" color="default" focus="{{true}}" disabled="{{true}}" full-width="{{true}}" label="Name" help="Some important helper text" />

@@ -48,6 +48,10 @@ Component({
       value: false,
     },
     help: String,
+    filled: {
+      type: Boolean,
+      value: false,
+    }
   },
   data: {
     _focus: false,

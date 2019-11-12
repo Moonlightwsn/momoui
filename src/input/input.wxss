@@ -81,9 +81,11 @@
     display: inline-block;
     width: 100%;
     position: relative;
+    padding: 6px 0 7px;
     font-size: 16px;
     font-weight: 400;
     box-sizing: border-box;
+    height: 32px;
     align-items: center;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     letter-spacing: 0.14994px;
@@ -111,12 +113,14 @@
     .mui-input {
       width: 100%;
       border: 0;
-      display: block;
-      height: 32px;
+      display: inline-block;
+      height: 19px;
+      min-height: 19px;
       line-height: 19px;
       box-sizing: inherit;
       word-spacing: normal;
-      padding: 6px 0 7px;
+      padding: 0;
+      margin: 0;
       min-width: 0;
       background: none;
       animation-name: MuiInputBase-keyframes-auto-fill-cancel;
