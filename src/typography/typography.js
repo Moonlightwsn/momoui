@@ -15,4 +15,12 @@ Component({
       value: 'block',
     }
   },
+  relations: {
+    '../input/input': {
+      type: 'ancestor',
+    },
+  },
+  options: {
+    styleIsolation: 'shared',
+  },
 })

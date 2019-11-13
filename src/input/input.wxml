@@ -1,34 +1,33 @@
 <view
-  class="{{mClass}} mui mui-input-root mui-input-root-{{color}} mui-input-root-{{_focus ? 'focus' : 'blur'}} {{disabled ? 'mui-input-root-disabled' : ''}} {{error ? 'mui-input-root-error' : ''}}"
-  style="{{fullWidth ? 'width: 100%;' : ''}} {{mStyle}}"
+  class="{{mClass}} mui mui-input-root mui-input-root-{{color}} mui-input-root-{{innerFocus ? 'focus' : 'blur'}} {{disabled ? 'mui-input-root-disabled' : ''}} {{error ? 'mui-input-root-error' : ''}}"
+  style="{{fullWidth ? 'width: 100%;' : ''}}{{mStyle}}"
 >
   <mui-typography
     wx:if="{{label}}"
     variant="caption"
-    class="mui-input-label"
-    m-style="height: 16px;inline-height: 16px;"
-    style="{{filled ? 'left: 12px;top: 6px;' : ''}}"
+    class="mui-input-label mui-input-label-{{innerLabelShrink ? 'shrink' : 'normal'}} {{filled ? 'mui-input-label-filled' : ''}}"
+    m-class="mui-input-label-typography-{{innerLabelShrink ? 'shrink' : 'normal'}}"
   >
     {{label}}
   </mui-typography>
   <view
-    class="mui-input-wrapper"
-    style="{{label ? 'padding-top: 22px;height: 48px;' : ''}} {{filled ? 'background-color:rgba(0,0,0,0.09);border-radius:4px;padding: 27px 12px 10px; height: 56px;' : ''}}"
+    class="mui-input-wrapper {{label ? 'mui-input-wrapper-with-label' : ''}} {{filled ? 'mui-input-wrapper-with-filled' : ''}}"
   >
     <input
-      class="mui-input"
+      class="mui-input {{label ? 'mui-input-with-label' : ''}} {{filled ? 'mui-input-with-filled' : ''}}"
       disabled="{{disabled}}"
       value="{{value}}"
-      placeholder="{{placeholder}}"
-      placeholder-style='font-family: "Roboto", "Helvetica", "Arial", sans-serif;color:#9c9c9c;'
+      placeholder="{{innerPlaceholder}}"
+      placeholder-style='font-family: "Roboto", "Helvetica", "Arial", sans-serif;color:#9c9c9c;font-size:16px;'
       password="{{password}}"
       type="{{type}}"
       confirm-type="{{confirmType}}"
       focus="{{focus}}"
+      bind:input="_input"
       bind:focus="_focus"
       bind:blur="_blur"
       cursor-spacing="{{cursorSpacing}}"
     />
   </view>
-  <mui-typography wx:if="{{help}}" variant="body" class="mui-input-help" m-style="height:12px;inline-height:12px;font-size:12px;margin-top:4px;">{{help}}</mui-typography>
+  <mui-typography wx:if="{{help}}" variant="body" class="mui-input-help" m-style="height:12px;line-height:12px;font-size:12px;margin-top:4px;">{{help}}</mui-typography>
 </view>

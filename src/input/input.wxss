@@ -5,9 +5,37 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 16px;
-    line-height: 16px;
     color: rgba(0, 0, 0, 0.54);
+    &.mui-input-label-filled {
+      &.mui-input-label-normal {
+        transform: translate(12px, 20px);
+      }
+      &.mui-input-label-shrink {
+        transform: translate(12px, 10px);
+      }
+    }
+    &.mui-input-label-normal {
+      transform: translate(0, 23px);
+      transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    }
+    &.mui-input-label-shrink {
+      transform: translate(0, 1.5px);
+      transform-origin: top left;
+      transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    }
+    .mui-input-label-typography-normal {
+      font-size: 16px;
+      height: 16px;
+      line-height: 16px;
+      min-height: 16px;
+      transform: scale(1);
+      transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    }
+    .mui-input-label-typography-shrink {
+      transform: scale(0.75);
+      transform-origin: top left;
+      transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    }
   }
   .mui-input-help {
     color: rgba(0, 0, 0, 0.54);
@@ -81,7 +109,6 @@
     display: inline-block;
     width: 100%;
     position: relative;
-    padding: 6px 0 7px;
     font-size: 16px;
     font-weight: 400;
     box-sizing: border-box;
@@ -89,6 +116,15 @@
     align-items: center;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     letter-spacing: 0.14994px;
+    &.mui-input-wrapper-with-label {
+      height: 48px;
+    }
+    &.mui-input-wrapper-with-filled {
+      background-color:rgba(0,0,0,0.09);
+      border-radius:4px;
+      height: 56px;
+      padding: 0 12px;
+    }
     &::before {
       left: 0;
       right: 0;
@@ -114,17 +150,23 @@
       width: 100%;
       border: 0;
       display: inline-block;
+      padding: 6px 0 7px;
       height: 19px;
       min-height: 19px;
       line-height: 19px;
-      box-sizing: inherit;
+      box-sizing: content-box;
       word-spacing: normal;
-      padding: 0;
       margin: 0;
       min-width: 0;
       background: none;
       animation-name: MuiInputBase-keyframes-auto-fill-cancel;
       -webkit-tap-highlight-color: transparent;
+      &.mui-input-with-label {
+        padding: 22px 0 7px;
+      }
+      &.mui-input-with-filled {
+        padding: 27px 0 10px;
+      }
     }
   }
 }
