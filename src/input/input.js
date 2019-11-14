@@ -6,6 +6,7 @@ Component({
       type: String,
       value: 'primary',
     },
+    name: String,
     value: {
       type: String,
       value: '',
@@ -16,7 +17,7 @@ Component({
     },
     confirmType: {
       type: String,
-      value: 'done',
+      value: 'next',
     },
     password: {
       type: Boolean,
@@ -36,7 +37,7 @@ Component({
     },
     cursorSpacing: {
       type: Number,
-      value: 16,
+      value: 72,
     },
     error: {
       type: Boolean,
@@ -52,6 +53,7 @@ Component({
       type: Boolean,
       value: false,
     },
+    startAdornment: String,
   },
   data: {
     innerFocus: false,
@@ -65,13 +67,14 @@ Component({
         value,
         disabled,
         label,
-        placeholder
+        placeholder,
+        startAdornment,
       } = this.properties
       const newData = {}
       if (!label) {
         newData.innerPlaceholder = placeholder
       }
-      if (value) {
+      if (value || (startAdornment)) {
         this.data.currentValue = value
         newData.innerLabelShrink = true
       }
@@ -104,14 +107,14 @@ Component({
       }
     },
     _blur() {
-      const {disabled, error} = this.properties
+      const {disabled, error, startAdornment} = this.properties
       const {currentValue} = this.data
       if (!disabled) {
         const newData = {}
         if (!error) {
           newData.innerFocus = false
         }
-        newData.innerLabelShrink = currentValue.length > 0
+        newData.innerLabelShrink = currentValue || startAdornment
         newData.innerPlaceholder = ''
         this.setData(newData)
       }

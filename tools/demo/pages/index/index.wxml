@@ -35,10 +35,10 @@
     </view>
     <mui-card-media style="min-width: 155px;display: flex;" m-style="height: 155px;" mode="center" image-src="https://material-ui.com/static/images/cards/live-from-space.jpg"></mui-card-media>
   </mui-card>
-  <mui-input m-style="margin: 8px 0px;" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" placeholder="Placeholder" />
-  <mui-input m-style="margin: 8px 0px;" color="secondary" focus="{{false}}" full-width="{{true}}" label="Name" filled="{{true}}" help="Some important helper text" placeholder="Placeholder"  />
-  <mui-input m-style="margin: 8px 0px;" color="wechat" focus="{{false}}" full-width="{{true}}" filled="{{true}}" help="Some important helper text" placeholder="Placeholder"  />
-   <mui-input m-style="margin: 8px 0px;" color="default" focus="{{false}}" full-width="{{true}}" help="Some important helper text" placeholder="Placeholder"  />
+  <mui-input m-style="margin: 8px 0px;" start-adornment="user" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" placeholder="Placeholder" />
+  <mui-input m-style="margin: 8px 0px;" start-adornment="user" color="secondary" focus="{{false}}" full-width="{{true}}" label="Name" filled="{{true}}" help="Some important helper text" placeholder="Placeholder"  />
+  <mui-input m-style="margin: 8px 0px;" start-adornment="user" color="wechat" focus="{{false}}" full-width="{{true}}" filled="{{true}}" help="Some important helper text" placeholder="Placeholder"  />
+  <mui-input m-style="margin: 8px 0px;" start-adornment="user" color="default" focus="{{false}}" full-width="{{true}}" help="Some important helper text" placeholder="Placeholder"  />
   <mui-input m-style="margin: 8px 0px;" error="{{true}}" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" placeholder="Placeholder"  />
   <mui-input m-style="margin: 8px 0px;" color="default" focus="{{true}}" disabled="{{true}}" full-width="{{true}}" label="Name" help="Some important helper text" value="Disabled" placeholder="Placeholder"  />
 </view>

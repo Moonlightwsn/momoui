@@ -106,14 +106,14 @@
     position: relative;
     color: rgba(0, 0, 0, 0.87);
     cursor: text;
-    display: inline-block;
+    display: inline-flex;
+    align-items: flex-end;
     width: 100%;
     position: relative;
     font-size: 16px;
     font-weight: 400;
     box-sizing: border-box;
     height: 32px;
-    align-items: center;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     letter-spacing: 0.14994px;
     &.mui-input-wrapper-with-label {
@@ -145,6 +145,14 @@
       transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
       border-bottom: 2px solid #1976d2;
       pointer-events: none;
+    }
+    .mui-input-start-icon-normal {
+      padding-bottom: 4px;
+      padding-right: 8px;
+    }
+    .mui-input-start-icon-filled {
+      padding-bottom: 7px;
+      padding-right: 8px;
     }
     .mui-input {
       width: 100%;
