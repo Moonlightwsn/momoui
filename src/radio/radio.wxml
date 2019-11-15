@@ -1,5 +1,5 @@
 <label
-  class="{{mClass}} mui-radio-wrapper mui-radio-wrapper-{{placement}}"
+  class="{{mClass}} mui mui-radio-wrapper mui-radio-wrapper-{{placement}}"
   style="{{mStyle}}"
   capture-bind:tap="_tap"
   capture-bind:longpress="_longPress"

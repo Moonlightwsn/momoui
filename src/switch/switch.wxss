@@ -1,0 +1,25 @@
+.mui-switch-wrapper {
+  position: relative;
+  display: inline-flex;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  &.mui-switch-wrapper-left {
+    margin-left: 16px;
+  }
+  &.mui-switch-wrapper-right {
+    margin-right: 16px;
+  }
+  .mui-switch {
+    width: 58px;
+    height: 38px;
+    display: inline-flex;
+    padding: 12px;
+    z-index: 0;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    vertical-align: middle;
+  }
+}

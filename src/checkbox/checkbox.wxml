@@ -1,5 +1,5 @@
 <label
-  class="{{mClass}} mui-checkbox-wrapper mui-checkbox-wrapper-{{placement}}"
+  class="{{mClass}} mui mui-checkbox-wrapper mui-checkbox-wrapper-{{placement}}"
   style="{{mStyle}}"
   capture-bind:tap="_tap"
   capture-bind:longpress="_longPress"
