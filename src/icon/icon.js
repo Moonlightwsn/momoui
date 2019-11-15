@@ -39,6 +39,7 @@ const iconPathMap = {
   'round': `${muiIconPath}round.svg`,
   'radio-box': `${muiIconPath}radio-box.svg`,
   'user': `${muiIconPath}user.svg`,
+  'circle': `${muiIconPath}circle.svg`,
 }
 
 Component({

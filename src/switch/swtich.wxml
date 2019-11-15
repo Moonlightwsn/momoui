@@ -1,0 +1,14 @@
+<label
+  class="{{mClass}} mui-switch-wrapper mui-switch-wrapper-{{placement}}"
+  style="{{mStyle}}"
+>
+  <mui-typography wx:if="{{placement === 'left'}}" class="mui-inline-flex" m-style="display:inline-flex;align-items:center;">
+    <slot></slot>
+  </mui-typography>
+  <view>
+    <mui-button m-style="height: 38px; width: 38px;" icon="circle" shape="circle" variant="text" color="primary" custom-icon-size="20" />
+  </view>
+  <mui-typography wx:if="{{placement === 'right'}}" class="mui-inline-flex" m-style="display:inline-flex;align-items:center;">
+    <slot></slot>
+  </mui-typography>
+</label>
