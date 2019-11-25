@@ -10,13 +10,6 @@
   &.mui-switch-wrapper-right {
     margin-right: 16px;
   }
-  &.mui-switch-wrapper-disabled {
-    .mui-switch {
-      .mui-switch-track {
-        opacity: 0.12;
-      }
-    }
-  }
   .mui-switch {
     width: 58px;
     height: 38px;
@@ -55,6 +48,22 @@
           background-color: #dc004e;
           opacity: 0.5;
         }
+      }
+    }
+    &.mui-switch-primary {
+      &.mui-switch-checked {
+        .mui-switch-track {
+          background-color: #1976d2;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  &.mui-switch-wrapper-disabled {
+    .mui-switch {
+      .mui-switch-track {
+        opacity: 0.12!important;
+        background-color: #000!important;
       }
     }
   }

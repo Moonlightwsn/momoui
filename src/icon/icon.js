@@ -100,7 +100,7 @@ Component({
     },
   },
   observers: {
-    name(name) {
+    'name, color': function (name) {
       if (name && iconPathMap[name]) {
         const iconPath = `${this.properties.pathPrefix}${iconPathMap[name]}`
         this._readSvgFile(iconPath)

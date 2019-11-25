@@ -163,6 +163,13 @@ Component({
       }
     }
   },
+  observers: {
+    'color, variant, customIconColor': function (color, variant, customIconColor) {
+      this.setData({
+        iconColor: customIconColor || iconColorMap[`${color}-${variant}`],
+      })
+    },
+  },
   options: {
     styleIsolation: 'shared',
   },

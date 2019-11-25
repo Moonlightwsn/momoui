@@ -1,7 +1,9 @@
 <view style="padding: 0 16px;margin: auto;background-color: #f5f5f5;">
-  <mui-switch checked="{{false}}" />
+  <mui-switch checked="{{true}}" color="default" />
   <mui-switch checked="{{true}}" />
-  <mui-switch disabled="{{true}}" />
+  <mui-switch checked="{{true}}" color="primary" />
+  <mui-switch disabled="{{true}}" checked="{{false}}" />
+  <mui-switch disabled="{{true}}" checked="{{true}}" />
   <!--
   <mui-card m-style="margin: 0 0 12px 0;">
     <mui-card-action-area>
