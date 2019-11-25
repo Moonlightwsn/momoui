@@ -1,4 +1,5 @@
 .mui-button {
+  position: relative;
   overflow: hidden;
   display: inline-flex;
   align-items: center;

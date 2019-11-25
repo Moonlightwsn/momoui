@@ -33,6 +33,7 @@ const entryFiles = [
   'radio/radio',
   'radio-group/radio-group',
   'input/input',
+  'switch/switch',
 ]
 
 module.exports = {

@@ -44,6 +44,7 @@ Component({
     icon: String,
     customIconColor: String,
     customIconSize: Number,
+    customIconStyle: String,
     size: {
       type: String,
       value: 'medium',

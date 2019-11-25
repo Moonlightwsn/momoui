@@ -1,5 +1,9 @@
 <view style="padding: 0 16px;margin: auto;background-color: #f5f5f5;">
-   <mui-card m-style="margin: 0 0 12px 0;">
+  <mui-switch checked="{{false}}" />
+  <mui-switch checked="{{true}}" />
+  <mui-switch disabled="{{true}}" />
+  <!--
+  <mui-card m-style="margin: 0 0 12px 0;">
     <mui-card-action-area>
       <mui-card-media image-src="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"></mui-card-media>
       <mui-card-content>
@@ -41,4 +45,5 @@
   <mui-input m-style="margin: 8px 0px;" start-adornment="user" color="default" focus="{{false}}" full-width="{{true}}" help="Some important helper text" placeholder="Placeholder"  />
   <mui-input m-style="margin: 8px 0px;" error="{{true}}" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" placeholder="Placeholder"  />
   <mui-input m-style="margin: 8px 0px;" color="default" focus="{{true}}" disabled="{{true}}" full-width="{{true}}" label="Name" help="Some important helper text" value="Disabled" placeholder="Placeholder"  />
+  -->
 </view>
