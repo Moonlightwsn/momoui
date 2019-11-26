@@ -32,4 +32,7 @@ Component({
       },
     },
   },
+  options: {
+    styleIsolation: 'shared',
+  },
 })

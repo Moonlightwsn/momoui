@@ -16,6 +16,10 @@ Component({
       type: Boolean,
       value: false,
     },
+    placement: {
+      type: String,
+      value: 'right',
+    }
   },
   data: {
     iconColor: '#ffffff',
@@ -33,6 +37,9 @@ Component({
   methods: {
     _switchControol(trigger) {
       const {checked, color} = this.properties
+      if (trigger) {
+        this.triggerEvent('change', {checked: !checked})
+      }
       const rippleBackgroundColor = rippleBackgroundColorMap[color]
       const newState = {}
       newState.checked = trigger ? !checked : checked
@@ -53,5 +60,8 @@ Component({
         }
       }
     },
+  },
+  options: {
+    styleIsolation: 'shared',
   },
 })

@@ -29,5 +29,8 @@ Page({
   },
   test2(e) {
     console.log('test2', e.detail.value)
+  },
+  testswitch(e) {
+    console.log('testswitch', e.detail.checked)
   }
 })

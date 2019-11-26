@@ -1,6 +1,7 @@
 .mui-switch-wrapper {
   position: relative;
   display: inline-flex;
+  align-items: center;
   box-sizing: border-box;
   margin: 0;
   padding: 0;

@@ -30,4 +30,7 @@ Component({
       },
     },
   },
+  options: {
+    styleIsolation: 'shared',
+  },
 })

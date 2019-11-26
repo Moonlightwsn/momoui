@@ -107,4 +107,7 @@ Component({
       }
     },
   },
+  options: {
+    styleIsolation: 'shared',
+  },
 })

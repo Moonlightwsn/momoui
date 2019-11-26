@@ -43,11 +43,13 @@ Component({
   },
   lifetimes: {
     attached() {
-      if (this.properties.disabled) {
+      const {disabled, color} = this.properties
+      const {checked} = this.data
+      if (disabled) {
         this.setData({iconColor: '#b6b6b6'})
       } else {
-        const rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
-        this.setData({iconColor: rippleBackgroundColor})
+        const rippleBackgroundColor = rippleBackgroundColorMap[color]
+        this.setData({iconColor: checked ? rippleBackgroundColor : '#707070'})
         this.data.rippleBackgroundColor = rippleBackgroundColor
       }
     },
@@ -62,9 +64,10 @@ Component({
     },
     _checkControol() {
       const {checked} = this.data
-      const {disabled} = this.properties
+      const {disabled, color} = this.properties
       if (!disabled) {
-        this.setData({checked: !checked})
+        const rippleBackgroundColor = rippleBackgroundColorMap[color]
+        this.setData({checked: !checked, iconColor: !checked ? rippleBackgroundColor : '#707070'})
       }
     },
     _tap(e) {

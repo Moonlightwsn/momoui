@@ -1,6 +1,7 @@
 .mui-checkbox-wrapper {
   position: relative;
   display: inline-flex;
+  align-items: center;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -11,7 +12,7 @@
     margin-right: 16px;
   }
   .mui-checkbox {
-    padding: 12px;
+    padding: 7px;
     border-radius: 50%;
     box-sizing: border-box;
   }

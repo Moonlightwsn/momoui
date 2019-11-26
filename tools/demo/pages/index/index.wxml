@@ -1,7 +1,18 @@
 <view style="padding: 0 16px;margin: auto;background-color: #f5f5f5;">
-  <mui-switch checked="{{true}}" color="default" />
-  <mui-switch checked="{{true}}" />
-  <mui-switch checked="{{true}}" color="primary" />
+  <mui-checkbox color="primary" checked="{{true}}">Checkbox</mui-checkbox>
+  <mui-checkbox color="primary" checked="{{false}}">Checkbox</mui-checkbox>
+  <mui-checkbox color="default" checked="{{true}}">Checkbox</mui-checkbox>
+  <mui-checkbox color="default" checked="{{false}}">Checkbox</mui-checkbox>
+  <mui-checkbox checked="{{true}}">Checkbox</mui-checkbox>
+  <mui-checkbox checked="{{false}}">Checkbox</mui-checkbox>
+  <mui-radio-group>
+    <mui-radio color="primary">Radio</mui-radio>
+    <mui-radio color="default" checked="{{true}}">Radio</mui-radio>
+    <mui-radio>Radio</mui-radio>
+  </mui-radio-group>
+  <mui-switch checked="{{true}}" color="default">Default</mui-switch>
+  <mui-switch checked="{{true}}" bind:change="testswitch">Secondary</mui-switch>
+  <mui-switch checked="{{true}}" color="primary">Primary</mui-switch>
   <mui-switch disabled="{{true}}" checked="{{false}}" />
   <mui-switch disabled="{{true}}" checked="{{true}}" />
   <!--
