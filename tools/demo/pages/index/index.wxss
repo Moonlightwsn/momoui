@@ -1,0 +1,8 @@
+.progress-circle {
+  animation: MuiCircularProgress-keyframes-circular-rotate 1.4s linear infinite;
+}
+@keyframes MuiCircularProgress-keyframes-circular-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

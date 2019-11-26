@@ -40,6 +40,7 @@ const iconPathMap = {
   'radio-box': `${muiIconPath}radio-box.svg`,
   'user': `${muiIconPath}user.svg`,
   'circle': `${muiIconPath}circle.svg`,
+  'progress-circle': `${muiIconPath}progress-circle.svg`,
 }
 
 Component({
@@ -81,7 +82,7 @@ Component({
   methods: {
     _readSvgFile(iconPath) {
       const that = this
-      const {color} = that.properties
+      const {color, name} = that.properties
       wx.getFileSystemManager().readFile({
         filePath: iconPath,
         encoding: 'binary',
@@ -89,7 +90,11 @@ Component({
           const base64 = new Base64()
           let svgdata = res.data
           if (color) {
-            svgdata = svgdata.replace(/fill="#[a-zA-Z0-9]{0,6}"/g, 'fill="' + color + '"')
+            if (name === 'progress-circle') {
+              svgdata = svgdata.replace(/stroke="#[a-zA-Z0-9]{0,6}"/g, 'stroke="' + color + '"')
+            } else {
+              svgdata = svgdata.replace(/fill="#[a-zA-Z0-9]{0,6}"/g, 'fill="' + color + '"')
+            }
           }
           const svgtobase64 = base64.encode(svgdata)
           that.setData({

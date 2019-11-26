@@ -15,6 +15,7 @@
   <mui-switch checked="{{true}}" color="primary">Primary</mui-switch>
   <mui-switch disabled="{{true}}" checked="{{false}}" />
   <mui-switch disabled="{{true}}" checked="{{true}}" />
+  <mui-icon class="mui-inline-flex progress-circle" name="progress-circle" size="40" color="#1976d2" />
   <!--
   <mui-card m-style="margin: 0 0 12px 0;">
     <mui-card-action-area>
