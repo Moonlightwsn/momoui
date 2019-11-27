@@ -6,7 +6,6 @@
     "mui-avatar": "/components/avatar/avatar",
     "mui-list": "/components/list/list",
     "mui-list-item": "/components/list-item/list-item",
-    "mui-test": "/components/test/test",
     "mui-typography": "/components/typography/typography",
     "mui-card": "/components/card/card",
     "mui-card-header": "/components/card-header/card-header",
@@ -20,6 +19,7 @@
     "mui-radio": "/components/radio/radio",
     "mui-radio-group": "/components/radio-group/radio-group",
     "mui-input": "/components/input/input",
-    "mui-switch": "/components/switch/switch"
+    "mui-switch": "/components/switch/switch",
+    "mui-progress": "/components/progress/progress"
   }
 }

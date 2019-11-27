@@ -1,0 +1,14 @@
+<mui-icon
+  wx:if="{{type==='circle'}}"
+  class="mui-inline-flex mui-progress mui-progress-circle mui-progress-{{variant}}"
+  name="progress-{{type}}"
+  size="{{size}}"
+  color="{{color === 'primary' ? '#1976d2' : '#dc004e'}}"
+/>
+<view
+  wx:elif="{{type==='line'}}"
+  class="mui-progress mui-progress-line mui-progress-{{color}} mui-progress-{{variant}}"
+>
+  <view class="mui-progress-bar mui-progress-bar1" />
+  <view class="mui-progress-bar mui-progress-bar2" />
+</view>
