@@ -1,10 +1,5 @@
 import rippleBehaviors from '../ripple/behaviors'
-
-const rippleBackgroundColorMap = {
-  default: '#707070',
-  primary: '#1976d2',
-  secondary: '#dc004e',
-}
+import {rippleBackgroundColorMap} from '../utils/utils'
 
 const iconColorMap = {
   'default-contained': 'rgba(0, 0, 0, 0.87)',
@@ -22,6 +17,12 @@ const iconSizeMap = {
   small: 18,
   medium: 20,
   large: 22,
+}
+
+const circleProgressSize = {
+  small: 40,
+  medium: 48,
+  large: 56,
 }
 
 Component({
@@ -53,6 +54,10 @@ Component({
       type: String,
       value: 'contained',
     },
+    loading: {
+      type: Boolean,
+      value: false,
+    },
     openType: {
       type: String,
       value: '',
@@ -83,6 +88,7 @@ Component({
     }
   },
   data: {
+    innerDisabled: false,
     variantMap: {
       text: 'mui-button-text',
       contained: 'mui-button-contained',
@@ -105,14 +111,9 @@ Component({
       openSetting: 'opensetting',
       launchApp: 'launchapp',
     },
-    iconSize: {
-      type: Number,
-      value: 20,
-    },
-    iconColor: {
-      type: String,
-      value: '#ffffff',
-    }
+    iconSize: 20,
+    progressSize: 20,
+    iconColor: '#ffffff',
   },
   lifetimes: {
     attached() {
@@ -127,21 +128,25 @@ Component({
       if (variant !== 'contained') {
         this.data.rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
       }
-      let iconSize
+      let iconSize = iconSizeMap[size]
+      let progressSize = iconSize
       let centerRipple
+
       if (shape === 'circle') {
-        iconSize = 24
+        iconSize += 4
+        progressSize = circleProgressSize[size]
         centerRipple = true
       } else {
-        iconSize = iconSizeMap[size]
         centerRipple = false
       }
       if (customIconSize) {
         iconSize = customIconSize
       }
+      const iconColor = customIconColor || iconColorMap[`${color}-${variant}`]
       this.setData({
-        iconColor: customIconColor || iconColorMap[`${color}-${variant}`],
+        iconColor,
         iconSize,
+        progressSize,
         centerRipple,
       })
     }
@@ -153,12 +158,16 @@ Component({
   },
   methods: {
     _openTypeEvent(e) {
-      if (!this.properties.disabled) {
+      const {disabled} = this.properties
+      const {innerDisabled} = this.properties
+      if (!disabled && !innerDisabled) {
         this.triggerEvent(this.data.openTypeMap[this.properties.openType], e)
       }
     },
     _launchAppError(e) {
-      if (!this.properties.disabled) {
+      const {disabled} = this.properties
+      const {innerDisabled} = this.properties
+      if (!disabled && !innerDisabled) {
         this.triggerEvent('error', e)
       }
     }
@@ -167,6 +176,11 @@ Component({
     'color, variant, customIconColor': function (color, variant, customIconColor) {
       this.setData({
         iconColor: customIconColor || iconColorMap[`${color}-${variant}`],
+      })
+    },
+    loading(loading) {
+      this.setData({
+        innerDisabled: loading,
       })
     },
   },

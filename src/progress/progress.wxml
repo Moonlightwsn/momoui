@@ -3,7 +3,7 @@
   class="mui-inline-flex mui-progress mui-progress-circle mui-progress-{{variant}}"
   name="progress-{{type}}"
   size="{{size}}"
-  color="{{color === 'primary' ? '#1976d2' : '#dc004e'}}"
+  color="{{color !== 'secondary' ? '#1976d2' : '#dc004e'}}"
 />
 <view
   wx:elif="{{type==='line'}}"

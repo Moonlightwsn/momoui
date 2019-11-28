@@ -1,10 +1,5 @@
 import rippleBehaviors from '../ripple/behaviors'
-
-const rippleBackgroundColorMap = {
-  default: '#707070',
-  primary: '#1976d2',
-  secondary: '#dc004e',
-}
+import {rippleBackgroundColorMap} from '../utils/utils'
 
 Component({
   behaviors: [rippleBehaviors],
@@ -56,9 +51,7 @@ Component({
   },
   methods: {
     _rippleControll(e, action) {
-      const {ripple} = this.data
-      const {disabled} = this.properties
-      if (!disabled && ripple && typeof action === 'function') {
+      if (action && typeof action === 'function') {
         action(e, this)
       }
     },

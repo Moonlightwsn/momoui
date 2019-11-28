@@ -158,4 +158,10 @@
       box-sizing: inherit;
     }
   }
+
+  .mui-button-progress {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
 }

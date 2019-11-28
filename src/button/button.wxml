@@ -1,11 +1,11 @@
 <button
-  disabled="{{disabled}}"
+  disabled="{{disabled || innerDisabled}}"
   class="{{mClass}} mui mui-button {{variantMap[variant]}} {{sizeMap[size]}} {{colorMap[color]}} {{ripple ? 'mui-ripple-view' : ''}} {{shape === 'circle' ? 'mui-button-circle' : ''}}"
   style="{{mStyle}}"
   hover-class="{{shape !== 'circle' ? 'mui-button-hover' : 'none'}}"
-  capture-bind:tap="{{(ripple && !disabled) ? 'rippleClick' : ''}}"
-  capture-bind:longpress="{{(ripple && !disabled) ? 'rippleHold' : ''}}"
-  capture-bind:touchend="{{(ripple && !disabled) ? 'rippleHoldEnd' : ''}}"
+  capture-bind:tap="rippleClick"
+  capture-bind:longpress="rippleHold"
+  capture-bind:touchend="rippleHoldEnd"
   open-type="{{openType}}"
   app-parameter="{{openType === 'launchApp' ? appParameter : ''}}"
   session-from="{{openType === 'contact' ? sessionFrom : ''}}"
@@ -20,13 +20,21 @@
   bind:launchapp="{{openType === 'launchApp' ? '_openTypeEvent' : '' }}"
   bind:error="{{openType === 'launchApp' ? '_launchAppError' : '' }}"
 >
+  <mui-progress
+    wx:if="{{(loading === true)}}"
+    class="mui-inline-flex mui-button-progress"
+    style="margin-top: -{{progressSize/2}}px;margin-left: -{{progressSize/2}}px;"
+    type="circle"
+    size="{{progressSize}}"
+    color="{{color}}"
+  />
   <view class="mui-button-label">
     <mui-icon
       wx:if="{{icon}}"
       class="mui-inline-flex"
       style="margin-right: {{shape !== 'circle' ? 8 : 0}}px;{{customIconStyle}}"
       size="{{iconSize}}"
-      color="{{iconColor}}"
+      color="{{(disabled || innerDisabled) ? 'rgba(0,0,0,0.3)' : iconColor}}"
       name="{{icon}}"
     ></mui-icon>
     <slot wx:if="{{shape !== 'circle'}}"></slot>

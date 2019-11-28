@@ -1,8 +1,7 @@
-<mui-progress style="display:block;" type="line" />
-<mui-progress style="margin-top: 12px;display:block;" type="line" color="secondary" />
-<view style="padding: 0 16px;margin: 10px auto;background-color: #f5f5f5;display: flex;align-items:center;">
-  <mui-progress class="mui-inline-flex" color="primary" size="38" />
-  <mui-progress class="mui-inline-flex" color="secondary" size="38" />
+<view style="padding: 16px;margin: 10px auto;background-color: #f5f5f5;">
+  <mui-button shape="circle" icon="save" color="primary" size="small" disabled="{{false}}" loading="{{buttonLoading}}" bind:tap="buttonTapTest" />
+  <mui-button shape="circle" icon="save" color="primary" size="medium" disabled="{{false}}" loading="{{buttonLoading}}" bind:tap="buttonTapTest" />
+  <mui-button shape="circle" icon="save" color="primary" size="large" disabled="{{false}}" loading="{{buttonLoading}}" bind:tap="buttonTapTest" />
   <!--
   <mui-card m-style="margin: 0 0 12px 0;">
     <mui-card-action-area>

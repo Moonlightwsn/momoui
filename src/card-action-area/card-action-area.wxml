@@ -1,9 +1,9 @@
 <view
   class="{{mClass}} mui-card-action-area {{ripple ? 'mui-ripple-view' : ''}}"
   style="{{mStyle}}"
-  capture-bind:tap="{{(ripple && !disabled) ? 'rippleClick' : ''}}"
-  capture-bind:longpress="{{(ripple && !disabled) ? 'rippleHold' : ''}}"
-  capture-bind:touchend="{{(ripple && !disabled) ? 'rippleHoldEnd' : ''}}"
+  capture-bind:tap="rippleClick"
+  capture-bind:longpress="rippleHold"
+  capture-bind:touchend="rippleHoldEnd"
 >
   <slot></slot>
   <view

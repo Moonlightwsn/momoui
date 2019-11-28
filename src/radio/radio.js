@@ -53,9 +53,7 @@ Component({
       this.setData({checked: false, iconColor: '#707070'})
     },
     _rippleControll(e, action) {
-      const {ripple} = this.data
-      const {disabled} = this.properties
-      if (!disabled && ripple && typeof action === 'function') {
+      if (action && typeof action === 'function') {
         action(e, this)
       }
     },

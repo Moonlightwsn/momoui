@@ -1,8 +1,4 @@
-const rippleBackgroundColorMap = {
-  default: '#707070',
-  primary: '#1976d2',
-  secondary: '#dc004e',
-}
+import {rippleBackgroundColorMap} from '../utils/utils'
 
 Component({
   properties: {

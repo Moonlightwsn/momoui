@@ -1,5 +1,6 @@
 Page({
   data: {
+    buttonLoading: false,
     checked: true,
     checkedboxList: [{
       key: 1,
@@ -32,5 +33,12 @@ Page({
   },
   testswitch(e) {
     console.log('testswitch', e.detail.checked)
+  },
+  buttonTapTest(e) {
+    console.log('buttonTapTest', e)
+    this.setData({ buttonLoading: true });
+    setTimeout(() => {
+      this.setData({ buttonLoading: false })
+    }, 3000);
   }
 })

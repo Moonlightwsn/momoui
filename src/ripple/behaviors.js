@@ -25,35 +25,47 @@ export default Behavior({
       }
     }, 1000),
     rippleHoldEnd(e, that) {
-      const thisRippleBehaviors = that || this
-      if (thisRippleBehaviors.data.ripplelongpress) {
-        setTimeout(function () {
-          thisRippleBehaviors.setData({
-            rippleList: [],
-            rippleListInitKey: 0,
-            ripplelongpress: false,
-          })
-        }, 200)
+      const {ripple, disabled} = this.properties
+      const {innerDisabled} = this.data
+      if (ripple && !disabled && !innerDisabled) {
+        const thisRippleBehaviors = that || this
+        if (thisRippleBehaviors.data.ripplelongpress) {
+          setTimeout(function () {
+            thisRippleBehaviors.setData({
+              rippleList: [],
+              rippleListInitKey: 0,
+              ripplelongpress: false,
+            })
+          }, 200)
+        }
       }
     },
     rippleHold(e, that) {
-      const thisRippleBehaviors = that || this
-      thisRippleBehaviors.setData({
-        ripplelongpress: true,
-      })
-      const {x, y} = e.detail
-      thisRippleBehaviors._ripple({
-        x,
-        y
-      }, 'hold')
+      const {ripple, disabled} = this.properties
+      const {innerDisabled} = this.data
+      if (ripple && !disabled && !innerDisabled) {
+        const thisRippleBehaviors = that || this
+        thisRippleBehaviors.setData({
+          ripplelongpress: true,
+        })
+        const {x, y} = e.detail
+        thisRippleBehaviors._ripple({
+          x,
+          y
+        }, 'hold')
+      }
     },
     rippleClick(e, that) {
-      const {x, y} = e.detail
-      const thisRippleBehaviors = that || this
-      thisRippleBehaviors._ripple({
-        x,
-        y
-      }, 'click')
+      const {ripple, disabled} = this.properties
+      const {innerDisabled} = this.data
+      if (ripple && !disabled && !innerDisabled) {
+        const {x, y} = e.detail
+        const thisRippleBehaviors = that || this
+        thisRippleBehaviors._ripple({
+          x,
+          y
+        }, 'click')
+      }
     },
     _ripple(position, type) {
       const that = this

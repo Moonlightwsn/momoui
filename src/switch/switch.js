@@ -6,6 +6,10 @@ Component({
       type: Boolean,
       value: false,
     },
+    ripple: {
+      type: Boolean,
+      value: true,
+    },
     mStyle: String,
     mClass: String,
     color: {

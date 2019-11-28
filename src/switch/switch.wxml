@@ -9,6 +9,8 @@
   <view class="mui-switch mui-switch-{{color}} {{checked ? 'mui-switch-checked' : ''}}">
     <mui-button
       class="mui-switch-icon"
+      ripple="{{ripple}}"
+      disabled="{{disabled}}"
       m-style="height: 38px; width: 38px;"
       color="{{color}}"
       icon="circle"
