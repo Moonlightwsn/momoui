@@ -42,6 +42,9 @@ const iconPathMap = {
   'circle': `${muiIconPath}circle.svg`,
   'progress-circle': `${muiIconPath}progress-circle.svg`,
   'save': `${muiIconPath}save.svg`,
+  'search': `${muiIconPath}search.svg`,
+  'clock': `${muiIconPath}clock.svg`,
+  'location': `${muiIconPath}location.svg`,
 }
 
 Component({

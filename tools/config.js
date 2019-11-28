@@ -34,6 +34,7 @@ const entryFiles = [
   'input/input',
   'switch/switch',
   'progress/progress',
+  'bottom-navigation/bottom-navigation',
 ]
 
 module.exports = {

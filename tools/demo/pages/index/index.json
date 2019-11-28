@@ -20,6 +20,7 @@
     "mui-radio-group": "/components/radio-group/radio-group",
     "mui-input": "/components/input/input",
     "mui-switch": "/components/switch/switch",
-    "mui-progress": "/components/progress/progress"
+    "mui-progress": "/components/progress/progress",
+    "mui-bottom-navigation": "/components/bottom-navigation/bottom-navigation"
   }
 }

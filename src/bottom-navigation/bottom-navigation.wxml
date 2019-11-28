@@ -1,0 +1,8 @@
+<view class="mui mui-bottom-navigation">
+  <mui-button wx:for="{{actions}}" wx:key="{{item.key || index}}" class="mui-bottom-navigation-action" m-style="display:flex;" color="{{color}}" variant="text">
+    <view class="mui-bottom-navigation-action-view">
+      <mui-icon class="mui-inline-flex" name="{{item.icon}}" color="{{item.color || '#757575'}}" size="{{item.iconSize || 24}}" />
+      <mui-typography m-style="color:{{item.color || '#757575'}};" variant="caption">{{item.title}}</mui-typography>
+    </view>
+  </mui-button>
+</view>

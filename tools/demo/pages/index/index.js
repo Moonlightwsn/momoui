@@ -1,5 +1,18 @@
 Page({
   data: {
+    actions: [{
+      key: 'recents',
+      title: 'Recents',
+      icon: 'clock',
+    }, {
+      key: 'favorites',
+      title: 'Favorites',
+      icon: 'like',
+    }, {
+      key: 'nearby',
+      title: 'Nearby',
+      icon: 'location',
+    }],
     buttonLoading: false,
     checked: true,
     checkedboxList: [{

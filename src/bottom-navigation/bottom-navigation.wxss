@@ -1,0 +1,11 @@
+.mui-bottom-navigation {
+  display: flex;
+  .mui-bottom-navigation-action {
+    flex: 1;
+    .mui-bottom-navigation-action-view {
+      display:inline-flex;
+      flex-direction:column;
+      align-items:center;
+    }
+  }
+}

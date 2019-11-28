@@ -1,8 +1,11 @@
+<view style="padding: 16px 0;margin: 10px auto;background-color: #f5f5f5;">
+  <mui-bottom-navigation
+    color="primary"
+    actions="{{actions}}"
+  />
+</view>
+<!--
 <view style="padding: 16px;margin: 10px auto;background-color: #f5f5f5;">
-  <mui-button shape="circle" icon="save" color="primary" size="small" disabled="{{false}}" loading="{{buttonLoading}}" bind:tap="buttonTapTest" />
-  <mui-button shape="circle" icon="save" color="primary" size="medium" disabled="{{false}}" loading="{{buttonLoading}}" bind:tap="buttonTapTest" />
-  <mui-button shape="circle" icon="save" color="primary" size="large" disabled="{{false}}" loading="{{buttonLoading}}" bind:tap="buttonTapTest" />
-  <!--
   <mui-card m-style="margin: 0 0 12px 0;">
     <mui-card-action-area>
       <mui-card-media image-src="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"></mui-card-media>
@@ -45,5 +48,5 @@
   <mui-input m-style="margin: 8px 0px;" start-adornment="user" color="default" focus="{{false}}" full-width="{{true}}" help="Some important helper text" placeholder="Placeholder"  />
   <mui-input m-style="margin: 8px 0px;" error="{{true}}" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" placeholder="Placeholder"  />
   <mui-input m-style="margin: 8px 0px;" color="default" focus="{{true}}" disabled="{{true}}" full-width="{{true}}" label="Name" help="Some important helper text" value="Disabled" placeholder="Placeholder"  />
-  -->
 </view>
+-->

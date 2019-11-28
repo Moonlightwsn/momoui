@@ -36,6 +36,10 @@
   display: inline-flex;
 }
 
+.mui-block {
+  display: block;
+}
+
 @keyframes ripple {
     from {
       transform: scale(0);
