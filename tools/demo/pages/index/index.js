@@ -1,5 +1,6 @@
 Page({
   data: {
+    activeKey: 'recents',
     actions: [{
       key: 'recents',
       title: 'Recents',
@@ -12,6 +13,10 @@ Page({
       key: 'nearby',
       title: 'Nearby',
       icon: 'location',
+    }, {
+      key: 'folder',
+      title: 'Folder',
+      icon: 'folder',
     }],
     buttonLoading: false,
     checked: true,
@@ -35,23 +40,8 @@ Page({
       checked: true,
     }],
   },
-  testTap(e) {
-    console.log('testTap', e)
+  bnchange(e) {
+    const {detail: {key}} = e
+    this.setData({activeKey: key})
   },
-  testLongPress(e) {
-    console.log('testLongPress', e)
-  },
-  test2(e) {
-    console.log('test2', e.detail.value)
-  },
-  testswitch(e) {
-    console.log('testswitch', e.detail.checked)
-  },
-  buttonTapTest(e) {
-    console.log('buttonTapTest', e)
-    this.setData({ buttonLoading: true });
-    setTimeout(() => {
-      this.setData({ buttonLoading: false })
-    }, 3000);
-  }
 })

@@ -2,6 +2,9 @@
   <mui-bottom-navigation
     color="primary"
     actions="{{actions}}"
+    activeKey="{{activeKey}}"
+    controlled="{{true}}"
+    bind:change="bnchange"
   />
 </view>
 <!--

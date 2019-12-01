@@ -1,8 +1,27 @@
 <view class="mui mui-bottom-navigation">
-  <mui-button wx:for="{{actions}}" wx:key="{{item.key || index}}" class="mui-bottom-navigation-action" m-style="display:flex;" color="{{color}}" variant="text">
+  <mui-button
+    wx:for="{{actions}}"
+    wx:key="{{item.key || index}}"
+    data-key="{{item.key || index}}"
+    class="mui-bottom-navigation-action"
+    m-style="display:flex;padding: {{actions.length <= 3 || activeKey === item.key ? '6px 12px 8px' : '16px 12px 22px'}};height: 56px;transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,padding-top 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    color="{{color}}"
+    variant="text"
+    bind:tap="_tap"
+  >
     <view class="mui-bottom-navigation-action-view">
-      <mui-icon class="mui-inline-flex" name="{{item.icon}}" color="{{item.color || '#757575'}}" size="{{item.iconSize || 24}}" />
-      <mui-typography m-style="color:{{item.color || '#757575'}};" variant="caption">{{item.title}}</mui-typography>
+      <mui-icon
+        class="mui-inline-flex"
+        name="{{item.icon}}"
+        color="{{activeStatus[activeKey === item.key ? 'active' : 'normal'].iconColor}}"
+        size="24"
+      />
+      <mui-typography
+        m-style="{{activeStatus[activeKey === item.key ? 'active' : 'normal'].typographyStyle}}"
+        variant="caption"
+      >
+        {{actions.length <= 3 || activeKey === item.key ? item.title : ' '}}
+      </mui-typography>
     </view>
   </mui-button>
 </view>
