@@ -1,25 +1,23 @@
 Component({
-  behaviors: ['wx://form-field'],
-  properties: {
-    value: Array,
-  },
   data: {
     _targetList: [],
   },
   methods: {
-    checkedChange() {
-      const vals = []
-      this.data._targetList.forEach(item => {
-        if (item.data.checked && item.data.value) {
-          vals.push(item.data.value)
-        }
-      })
-      this.triggerEvent('change', {value: vals})
-      this.setData({value: vals})
+    _submit(e) {
+      console.log('submit', e.detail.values)
     },
+    _reset(e) {
+      console.log('reset', e)
+    }
   },
   relations: {
-    '../checkbox/checkbox': {
+    '../button-group/button-group': {
+      type: 'descendant',
+    },
+    '../button/button': {
+      type: 'descendant',
+    },
+    '../input/input': {
       type: 'descendant',
       linked(target) {
         this.data._targetList.push(target)
@@ -37,6 +35,5 @@ Component({
   },
   options: {
     pureDataPattern: /^_/,
-    styleIsolation: 'shared',
   },
 })

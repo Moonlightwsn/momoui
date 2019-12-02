@@ -3,7 +3,7 @@
   class="{{mClass}} mui mui-button {{variantMap[variant]}} {{sizeMap[size]}} {{colorMap[color]}} {{ripple ? 'mui-ripple-view' : ''}} {{shape === 'circle' ? 'mui-button-circle' : ''}}"
   style="{{mStyle}}"
   hover-class="{{shape !== 'circle' ? 'mui-button-hover' : 'none'}}"
-  capture-bind:tap="rippleClick"
+  capture-bind:tap="_tap"
   capture-bind:longpress="rippleHold"
   capture-bind:touchend="rippleHoldEnd"
   open-type="{{openType}}"

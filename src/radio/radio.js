@@ -63,7 +63,7 @@ Component({
       if (!disabled && !checked) {
         const rippleBackgroundColor = rippleBackgroundColorMap[color]
         this.setData({checked: true, iconColor: rippleBackgroundColor})
-        this.data.group.checkedChange(this)
+        this.data._group.checkedChange(this)
       }
     },
     _tap(e) {
@@ -82,14 +82,15 @@ Component({
     '../radio-group/radio-group': {
       type: 'ancestor',
       linked(target) {
-        this.data.group = target
+        this.data._group = target
       },
       unlinked() {
-        this.data.group = null
+        this.data._group = null
       },
     },
   },
   options: {
+    pureDataPattern: /^_/,
     styleIsolation: 'shared',
   },
 })

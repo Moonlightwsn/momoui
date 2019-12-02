@@ -85,7 +85,8 @@ Component({
     showMessageCard: {
       type: String,
       value: '',
-    }
+    },
+    formType: String,
   },
   data: {
     innerDisabled: false,
@@ -155,6 +156,18 @@ Component({
     '../button-group/button-group': {
       type: 'parent',
     },
+    '../form/form': {
+      type: 'ancestor',
+      linked(target) {
+        const {formType} = this.properties
+        if (formType) {
+          this.form = target
+        }
+      },
+      unlinked() {
+        this.form = null
+      },
+    },
   },
   methods: {
     _openTypeEvent(e) {
@@ -170,7 +183,23 @@ Component({
       if (!disabled && !innerDisabled) {
         this.triggerEvent('error', e)
       }
-    }
+    },
+    _tap(e) {
+      const {formType} = this.properties
+      if (formType) {
+        if (this.form && this.form.data._targetList) {
+          const formValues = {}
+          this.form.data._targetList.forEach(item => {
+            const {value, name} = item.data
+            if (name) {
+              formValues[name] = value
+            }
+          })
+          this.triggerEvent(formType, {values: formValues}, {bubbles: true, composed: true})
+        }
+      }
+      this.rippleClick(e)
+    },
   },
   observers: {
     'color, variant, customIconColor': function (color, variant, customIconColor) {

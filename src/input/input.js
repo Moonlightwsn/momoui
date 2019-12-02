@@ -122,6 +122,9 @@ Component({
     '../typography/typography': {
       type: 'descendant',
     },
+    '../form/form': {
+      type: 'ancestor',
+    },
   },
   options: {
     styleIsolation: 'shared',

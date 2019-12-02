@@ -1,0 +1,6 @@
+<form
+  bindsubmit="_submit"
+  bindreset="_reset"
+>
+  <slot></slot>
+</form>

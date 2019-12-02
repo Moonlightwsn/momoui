@@ -27,6 +27,7 @@ const entryFiles = [
   'card-content/card-content',
   'card-action/card-action',
   'divider/divider',
+  'form/form',
   'checkbox/checkbox',
   'checkbox-group/checkbox-group',
   'radio/radio',

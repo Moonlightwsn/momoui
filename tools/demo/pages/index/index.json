@@ -14,6 +14,7 @@
     "mui-card-content": "/components/card-content/card-content",
     "mui-card-action": "/components/card-action/card-action",
     "mui-divider": "/components/divider/divider",
+    "mui-form": "/components/form/form",
     "mui-checkbox": "/components/checkbox/checkbox",
     "mui-checkbox-group": "/components/checkbox-group/checkbox-group",
     "mui-radio": "/components/radio/radio",

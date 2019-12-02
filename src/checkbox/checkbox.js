@@ -77,8 +77,8 @@ Component({
   },
   observers: {
     checked() {
-      if (this.data.group) {
-        this.data.group.checkedChange()
+      if (this.data._group) {
+        this.data._group.checkedChange()
       }
     },
   },
@@ -86,14 +86,15 @@ Component({
     '../checkbox-group/checkbox-group': {
       type: 'ancestor',
       linked(target) {
-        this.data.group = target
+        this.data._group = target
       },
       unlinked() {
-        this.data.group = null
+        this.data._group = null
       },
     },
   },
   options: {
+    pureDataPattern: /^_/,
     styleIsolation: 'shared',
   },
 })
