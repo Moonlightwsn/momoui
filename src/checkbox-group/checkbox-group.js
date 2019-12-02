@@ -1,4 +1,8 @@
 Component({
+  behaviors: ['wx://form-field'],
+  properties: {
+    value: Array,
+  },
   data: {
     targetList: [],
   },
@@ -11,6 +15,7 @@ Component({
         }
       })
       this.triggerEvent('change', {value: vals})
+      this.setData({value: vals})
     },
   },
   relations: {

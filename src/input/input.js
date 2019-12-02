@@ -1,4 +1,5 @@
 Component({
+  behaviors: ['wx://form-field'],
   properties: {
     mStyle: String,
     mClass: String,
@@ -6,15 +7,11 @@ Component({
       type: String,
       value: 'primary',
     },
-    name: String,
-    value: {
-      type: String,
-      value: '',
-    },
     type: {
       type: String,
       value: 'text',
     },
+    value: String,
     confirmType: {
       type: String,
       value: 'next',
@@ -89,6 +86,7 @@ Component({
     _input(e) {
       const {value} = e.detail
       this.data.currentValue = value
+      this.setData({value})
     },
     _focus() {
       const {

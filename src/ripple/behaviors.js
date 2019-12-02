@@ -25,10 +25,10 @@ export default Behavior({
       }
     }, 1000),
     rippleHoldEnd(e, that) {
-      const {ripple, disabled} = this.properties
-      const {innerDisabled} = this.data
+      const thisRippleBehaviors = that || this
+      const {ripple, disabled} = thisRippleBehaviors.properties
+      const {innerDisabled} = thisRippleBehaviors.data
       if (ripple && !disabled && !innerDisabled) {
-        const thisRippleBehaviors = that || this
         if (thisRippleBehaviors.data.ripplelongpress) {
           setTimeout(function () {
             thisRippleBehaviors.setData({
@@ -41,10 +41,10 @@ export default Behavior({
       }
     },
     rippleHold(e, that) {
-      const {ripple, disabled} = this.properties
-      const {innerDisabled} = this.data
+      const thisRippleBehaviors = that || this
+      const {ripple, disabled} = thisRippleBehaviors.properties
+      const {innerDisabled} = thisRippleBehaviors.data
       if (ripple && !disabled && !innerDisabled) {
-        const thisRippleBehaviors = that || this
         thisRippleBehaviors.setData({
           ripplelongpress: true,
         })
@@ -56,11 +56,11 @@ export default Behavior({
       }
     },
     rippleClick(e, that) {
-      const {ripple, disabled} = this.properties
-      const {innerDisabled} = this.data
+      const thisRippleBehaviors = that || this
+      const {ripple, disabled} = thisRippleBehaviors.properties
+      const {innerDisabled} = thisRippleBehaviors.data
       if (ripple && !disabled && !innerDisabled) {
         const {x, y} = e.detail
-        const thisRippleBehaviors = that || this
         thisRippleBehaviors._ripple({
           x,
           y

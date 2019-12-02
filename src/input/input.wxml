@@ -16,9 +16,7 @@
     <mui-icon wx:if="{{startAdornment}}" class="mui-inline-flex mui-input-start-icon-{{filled ? 'filled' : 'normal'}}" name="{{startAdornment}}" color="#202020" size="24"></mui-icon>
     <input
       class="mui-input {{label ? 'mui-input-with-label' : ''}} {{filled ? 'mui-input-with-filled' : ''}}"
-      name="{{name}}"
       disabled="{{disabled}}"
-      value="{{value}}"
       placeholder="{{innerPlaceholder}}"
       placeholder-style='font-family: "Roboto", "Helvetica", "Arial", sans-serif;color:#9c9c9c;font-size:16px;'
       password="{{password}}"

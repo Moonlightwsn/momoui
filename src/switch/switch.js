@@ -1,6 +1,7 @@
 import {rippleBackgroundColorMap} from '../utils/utils'
 
 Component({
+  behaviors: ['wx://form-field'],
   properties: {
     disabled: {
       type: Boolean,
@@ -12,6 +13,7 @@ Component({
     },
     mStyle: String,
     mClass: String,
+    value: Boolean,
     color: {
       type: String,
       value: 'secondary',
@@ -41,11 +43,12 @@ Component({
   methods: {
     _switchControol(trigger) {
       const {checked, color} = this.properties
+      const newState = {}
       if (trigger) {
         this.triggerEvent('change', {checked: !checked})
+        newState.value = !checked
       }
       const rippleBackgroundColor = rippleBackgroundColorMap[color]
-      const newState = {}
       newState.checked = trigger ? !checked : checked
       if (color === 'default') {
         newState.iconColor = '#ffffff'
