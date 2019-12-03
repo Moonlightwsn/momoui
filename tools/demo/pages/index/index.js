@@ -45,7 +45,7 @@ Page({
     this.setData({activeKey: key})
   },
   formSubmit(e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    console.log('form发生了submit事件，携带数据为：', e.detail.values)
   },
   formReset() {
     console.log('form发生了reset事件')

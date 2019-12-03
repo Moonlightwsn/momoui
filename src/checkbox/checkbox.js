@@ -55,12 +55,20 @@ Component({
         action(e, this)
       }
     },
-    _checkControol() {
+    _checkControol(force) {
       const {checked} = this.data
       const {disabled, color} = this.properties
       if (!disabled) {
         const rippleBackgroundColor = rippleBackgroundColorMap[color]
-        this.setData({checked: !checked, iconColor: !checked ? rippleBackgroundColor : '#707070'})
+        const newData = {}
+        if (typeof force === 'boolean') {
+          newData.checked = force
+          newData.iconColor = force ? rippleBackgroundColor : '#707070'
+        } else {
+          newData.checked = !checked
+          newData.iconColor = !checked ? rippleBackgroundColor : '#707070'
+        }
+        this.setData(newData)
       }
     },
     _tap(e) {

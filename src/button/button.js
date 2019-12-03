@@ -190,9 +190,11 @@ Component({
         if (this.form && this.form.data._targetList) {
           const formValues = {}
           this.form.data._targetList.forEach(item => {
-            const {value, name} = item.data
-            if (name) {
-              formValues[name] = value
+            if (formType === 'submit') {
+              const {value, name} = item.data
+              if (name) {
+                formValues[name] = value
+              }
             }
           })
           this.triggerEvent(formType, {values: formValues}, {bubbles: true, composed: true})

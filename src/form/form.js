@@ -3,22 +3,24 @@ Component({
     _targetList: [],
   },
   methods: {
-    _submit(e) {
-      console.log('submit', e.detail.values)
-    },
-    _reset(e) {
-      console.log('reset', e)
+    _reset() {
+      const {_targetList} = this.data
+      if (_targetList && _targetList.length > 0) {
+        for (const item of _targetList) {
+          if (item.reset && typeof item.reset === 'function') {
+            item.reset()
+          }
+        }
+      }
     }
   },
   relations: {
-    '../button-group/button-group': {
-      type: 'descendant',
-    },
     '../button/button': {
       type: 'descendant',
     },
     '../input/input': {
       type: 'descendant',
+      target: 'wx://form-field',
       linked(target) {
         this.data._targetList.push(target)
       },

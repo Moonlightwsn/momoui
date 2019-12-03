@@ -6,7 +6,7 @@
     controlled="{{true}}"
     bind:change="bnchange"
   />
-  <mui-form>
+  <mui-form bind:submit="formSubmit" bind:reset="formReset">
     <mui-input fullWidth="{{true}}" name="input" startAdornment="user" />
     <mui-checkbox-group name="checkbox">
       <mui-checkbox value="ck1">Checkbox1</mui-checkbox>
@@ -16,7 +16,7 @@
       <mui-radio value="rd1">Raido1</mui-radio>
       <mui-radio value="rd2">Raido2</mui-radio>
     </mui-radio-group>
-    <mui-switch name="switch" />
+    <mui-switch name="switch" checked="{{true}}" />
     <mui-button form-type="submit" color="primary" variant="outlined" size="medium">Submit</mui-button>
     <mui-button form-type="reset" color="secondary" variant="outlined" size="medium">Reset</mui-button>
   </mui-form>

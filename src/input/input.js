@@ -83,6 +83,9 @@ Component({
     },
   },
   methods: {
+    reset() {
+      this.setData({value: ''})
+    },
     _input(e) {
       const {value} = e.detail
       this.data.currentValue = value

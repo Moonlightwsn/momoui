@@ -23,6 +23,7 @@
       type="{{type}}"
       confirm-type="{{confirmType}}"
       focus="{{focus}}"
+      value="{{value}}"
       bind:input="_input"
       bind:focus="_focus"
       bind:blur="_blur"

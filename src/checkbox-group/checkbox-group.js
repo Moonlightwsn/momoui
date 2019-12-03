@@ -17,6 +17,16 @@ Component({
       this.triggerEvent('change', {value: vals})
       this.setData({value: vals})
     },
+    reset() {
+      const {_targetList} = this.data
+      if (_targetList && _targetList.length > 0) {
+        for (const item of _targetList) {
+          if (item._checkControol && typeof item._checkControol === 'function') {
+            item._checkControol(false)
+          }
+        }
+      }
+    },
   },
   relations: {
     '../checkbox/checkbox': {
@@ -33,6 +43,9 @@ Component({
         })
         this.data._targetList.splice(index, 1)
       },
+    },
+    '../form/form': {
+      type: 'ancestor',
     },
   },
   options: {

@@ -19,6 +19,16 @@ Component({
       this.triggerEvent('change', {value: vals})
       this.setData({value: vals})
     },
+    reset() {
+      const {_targetList} = this.data
+      if (_targetList && _targetList.length > 0) {
+        for (const item of _targetList) {
+          if (item.uncheck && typeof item.uncheck === 'function') {
+            item.uncheck()
+          }
+        }
+      }
+    },
   },
   relations: {
     '../radio/radio': {
@@ -35,6 +45,9 @@ Component({
         })
         this.data._targetList.splice(index, 1)
       },
+    },
+    '../form/form': {
+      type: 'ancestor',
     },
   },
   options: {
