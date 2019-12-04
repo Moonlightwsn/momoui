@@ -46,6 +46,7 @@ const iconPathMap = {
   'clock': `${muiIconPath}clock.svg`,
   'location': `${muiIconPath}location.svg`,
   'folder': `${muiIconPath}folder.svg`,
+  'menu': `${muiIconPath}menu.svg`,
 }
 
 Component({

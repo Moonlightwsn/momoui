@@ -1,4 +1,8 @@
-<view style="padding: 16px 0;margin: 10px auto;background-color: #f5f5f5;">
+<view style="padding: 16px 0;margin: 10px auto;background-color: #1976d2;color:#fff;">
+  <mui-app-bar>
+    <mui-button shape="circle" variant="text" icon="menu" />
+  </mui-app-bar>
+  <!--
   <mui-bottom-navigation
     color="primary"
     actions="{{actions}}"
@@ -6,6 +10,8 @@
     controlled="{{true}}"
     bind:change="bnchange"
   />
+  -->
+  <!--
   <mui-form bind:submit="formSubmit" bind:reset="formReset">
     <mui-input fullWidth="{{true}}" name="input" startAdornment="user" />
     <mui-checkbox-group name="checkbox">
@@ -20,9 +26,11 @@
     <mui-button form-type="submit" color="primary" variant="outlined" size="medium">Submit</mui-button>
     <mui-button form-type="reset" color="secondary" variant="outlined" size="medium">Reset</mui-button>
   </mui-form>
+  -->
 </view>
-<!--
+
 <view style="padding: 16px;margin: 10px auto;background-color: #f5f5f5;">
+  <!--
   <mui-card m-style="margin: 0 0 12px 0;">
     <mui-card-action-area>
       <mui-card-media image-src="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"></mui-card-media>
@@ -65,5 +73,5 @@
   <mui-input m-style="margin: 8px 0px;" start-adornment="user" color="default" focus="{{false}}" full-width="{{true}}" help="Some important helper text" placeholder="Placeholder"  />
   <mui-input m-style="margin: 8px 0px;" error="{{true}}" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" placeholder="Placeholder"  />
   <mui-input m-style="margin: 8px 0px;" color="default" focus="{{true}}" disabled="{{true}}" full-width="{{true}}" label="Name" help="Some important helper text" value="Disabled" placeholder="Placeholder"  />
+  -->
 </view>
--->

@@ -8,6 +8,7 @@ export default Behavior({
       type: Boolean,
       value: true
     },
+    customRippleBackgroundColor: String,
   },
   data: {
     rippleList: [],
@@ -73,12 +74,12 @@ export default Behavior({
       query.select('.mui-ripple-view').fields({
         size: true,
         rect: true,
-        computedStyle: ['backgroundColor']
+        computedStyle: ['backgroundColor'],
       })
       query.selectViewport().scrollOffset()
       query.exec(function (res) {
         const [view, viewPort] = res
-        const rippleBackgroundColor = that.data.rippleBackgroundColor || (that._highBrightnessColor(view.backgroundColor) ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)')
+        const rippleBackgroundColor = that.properties.customRippleBackgroundColor || that.data.rippleBackgroundColor || (that._highBrightnessColor(view.backgroundColor) ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)')
         const boxWidth = parseInt(view.width, 10)
         const boxHeight = parseInt(view.height, 10)
 

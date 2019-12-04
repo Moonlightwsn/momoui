@@ -99,6 +99,7 @@ Component({
       default: 'mui-button-default',
       primary: 'mui-button-primary',
       secondary: 'mui-button-secondary',
+      inherit: 'mui-button-inherit',
     },
     sizeMap: {
       medium: 'mui-button-medium',
@@ -126,7 +127,8 @@ Component({
         customIconColor,
         customIconSize,
       } = this.properties
-      if (variant !== 'contained') {
+      if (variant !== 'contained' && color !== 'inherit') {
+        console.log(1234)
         this.data.rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
       }
       let iconSize = iconSizeMap[size]

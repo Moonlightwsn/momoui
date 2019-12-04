@@ -36,6 +36,8 @@ const entryFiles = [
   'switch/switch',
   'progress/progress',
   'bottom-navigation/bottom-navigation',
+  'app-bar/app-bar',
+  'toolbar/toolbar',
 ]
 
 module.exports = {
