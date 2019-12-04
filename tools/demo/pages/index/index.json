@@ -23,6 +23,7 @@
     "mui-switch": "/components/switch/switch",
     "mui-progress": "/components/progress/progress",
     "mui-bottom-navigation": "/components/bottom-navigation/bottom-navigation",
-    "mui-app-bar": "/components/app-bar/app-bar"
+    "mui-app-bar": "/components/app-bar/app-bar",
+    "mui-toolbar": "/components/toolbar/toolbar"
   }
 }
