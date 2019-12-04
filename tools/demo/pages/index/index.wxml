@@ -1,28 +1,26 @@
-<view style="padding: 16px 0;margin: 10px auto;background-color: #f5f5f5;color:#fff;">
-  <mui-app-bar color="primary">
-    <mui-toolbar variant="dense">
-      <mui-button
-        shape="circle"
-        variant="text"
-        icon="menu"
-        custom-icon-color="#ffffff"
-        custom-ripple-background-color="#ffffff"
-        style="margin-right: 16px;"
-        size="small"
-      />
-      <mui-typography style="flex-grow: 1;" variant="h6">News</mui-typography>
-      <mui-button color="inherit" variant="text" custom-ripple-background-color="#ffffff" size="small">LOGIN</mui-button>
-    </mui-toolbar>
-  </mui-app-bar>
-  <!--
-  <mui-bottom-navigation
-    color="primary"
-    actions="{{actions}}"
-    activeKey="{{activeKey}}"
-    controlled="{{true}}"
-    bind:change="bnchange"
-  />
-  -->
+<mui-app-bar color="primary" m-style="padding-top:24px;box-shadow: 0px 0px 0px 0px rgba(0,0,0,0), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 0px 0px 0px rgba(0,0,0,0);">
+  <mui-toolbar variant="dense">
+    <mui-button
+      shape="circle"
+      variant="text"
+      icon="menu"
+      custom-icon-color="#ffffff"
+      custom-ripple-background-color="#ffffff"
+      style="margin-right: 16px;"
+      size="small"
+    />
+    <mui-typography style="flex-grow: 1;" variant="h6">News</mui-typography>
+    <!-- <mui-button color="inherit" variant="text" custom-ripple-background-color="#ffffff" size="small">LOGIN</mui-button> -->
+  </mui-toolbar>
+</mui-app-bar>
+<mui-bottom-navigation
+  style="position: fixed;bottom: 0; width: 100%;border-top: 1px solid #00000014;"
+  color="primary"
+  actions="{{actions}}"
+  activeKey="{{activeKey}}"
+  controlled="{{true}}"
+  bind:change="bnchange"
+/>
   <!--
   <mui-form bind:submit="formSubmit" bind:reset="formReset">
     <mui-input fullWidth="{{true}}" name="input" startAdornment="user" />
@@ -39,10 +37,9 @@
     <mui-button form-type="reset" color="secondary" variant="outlined" size="medium">Reset</mui-button>
   </mui-form>
   -->
-</view>
-
+<!--
 <view style="padding: 16px;margin: 10px auto;background-color: #f5f5f5;">
-  <!--
+  
   <mui-card m-style="margin: 0 0 12px 0;">
     <mui-card-action-area>
       <mui-card-media image-src="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"></mui-card-media>
@@ -85,5 +82,6 @@
   <mui-input m-style="margin: 8px 0px;" start-adornment="user" color="default" focus="{{false}}" full-width="{{true}}" help="Some important helper text" placeholder="Placeholder"  />
   <mui-input m-style="margin: 8px 0px;" error="{{true}}" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" placeholder="Placeholder"  />
   <mui-input m-style="margin: 8px 0px;" color="default" focus="{{true}}" disabled="{{true}}" full-width="{{true}}" label="Name" help="Some important helper text" value="Disabled" placeholder="Placeholder"  />
-  -->
+  
 </view>
+-->

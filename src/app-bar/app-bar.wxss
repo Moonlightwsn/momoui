@@ -15,6 +15,18 @@
     right: 0;
     position: fixed;
   }
+  &.mui-app-bar-static {
+    position: static;
+  }
+  &.mui-app-bar-relative {
+    position: relative;
+  }
+  &.mui-app-bar-absolute {
+    position: absolute;
+  }
+  &.mui-app-bar-sticky {
+    position: sticky;
+  }
   &.mui-app-bar-primary {
     color: #fff;
     background-color: #1976d2;
