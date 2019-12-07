@@ -1,9 +1,9 @@
-<mui-app-bar color="primary" m-style="padding-top:24px;box-shadow: 0px 0px 0px 0px rgba(0,0,0,0), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 0px 0px 0px rgba(0,0,0,0);">
-  <mui-toolbar variant="dense" disable-gutters="{{true}}">
+<mui-app-bar color="primary" m-style="padding-top:10px;box-shadow: 0px 0px 0px 0px rgba(0,0,0,0), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 0px 0px 0px rgba(0,0,0,0);">
+  <mui-toolbar disable-gutters="{{true}}">
     <mui-button
       shape="circle"
       variant="text"
-      icon="menu"
+      icon="plus"
       custom-icon-color="#ffffff"
       custom-ripple-background-color="#ffffff"
       style="margin-right: 16px;"
@@ -11,9 +11,9 @@
     />
     <!-- <mui-typography style="flex-grow: 1;" variant="h6">News</mui-typography> -->
     <mui-input
-      style="width: 140px;"
+      style="width: 150px;"
       m-class="search-input"
-      start-adornment="user"
+      start-adornment="search"
       start-icon-color="#ffffff"
       inherit="{{true}}"
     />

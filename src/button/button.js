@@ -128,7 +128,6 @@ Component({
         customIconSize,
       } = this.properties
       if (variant !== 'contained' && color !== 'inherit') {
-        console.log(1234)
         this.data.rippleBackgroundColor = rippleBackgroundColorMap[this.properties.color]
       }
       let iconSize = iconSizeMap[size]

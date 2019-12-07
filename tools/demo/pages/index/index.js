@@ -1,22 +1,22 @@
 Page({
   data: {
-    activeKey: 'recents',
+    activeKey: 'wechat',
     actions: [{
-      key: 'recents',
-      title: 'Recents',
-      icon: 'clock',
+      key: 'wechat',
+      title: '微信',
+      icon: 'message',
     }, {
-      key: 'favorites',
-      title: 'Favorites',
-      icon: 'like',
+      key: 'address',
+      title: '通讯录',
+      icon: 'address-book',
     }, {
-      key: 'nearby',
-      title: 'Nearby',
-      icon: 'location',
+      key: 'browser',
+      title: '发现',
+      icon: 'browser',
     }, {
-      key: 'folder',
-      title: 'Folder',
-      icon: 'folder',
+      key: 'user',
+      title: '我',
+      icon: 'user',
     }],
     buttonLoading: false,
     checked: true,

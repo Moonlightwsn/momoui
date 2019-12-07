@@ -47,6 +47,10 @@ const iconPathMap = {
   'location': `${muiIconPath}location.svg`,
   'folder': `${muiIconPath}folder.svg`,
   'menu': `${muiIconPath}menu.svg`,
+  'message': `${muiIconPath}message.svg`,
+  'address-book': `${muiIconPath}address-book.svg`,
+  'browser': `${muiIconPath}browser.svg`,
+  'plus': `${muiIconPath}plus.svg`,
 }
 
 Component({
