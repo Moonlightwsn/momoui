@@ -18,7 +18,8 @@
       class="mui-input {{label ? 'mui-input-with-label' : ''}} {{filled ? 'mui-input-with-filled' : ''}}"
       disabled="{{disabled}}"
       placeholder="{{innerPlaceholder}}"
-      placeholder-style='font-family: "Roboto", "Helvetica", "Arial", sans-serif;color:#9c9c9c;font-size:16px;'
+      placeholder-style='font-family: "Roboto", "Helvetica", "Arial", sans-serif;color:#9c9c9c;font-size:16px; {{placeholderStyle}}'
+      placeholder-class="{{placeholderClass}}"
       password="{{password}}"
       type="{{type}}"
       confirm-type="{{confirmType}}"

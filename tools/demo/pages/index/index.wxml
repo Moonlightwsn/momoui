@@ -1,23 +1,24 @@
-<mui-app-bar color="primary" m-style="padding-top:10px;box-shadow: 0px 0px 0px 0px rgba(0,0,0,0), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 0px 0px 0px rgba(0,0,0,0);">
-  <mui-toolbar disable-gutters="{{true}}">
+<mui-app-bar color="primary" m-style="box-shadow: 0px 0px 0px 0px rgba(0,0,0,0), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 0px 0px 0px rgba(0,0,0,0);">
+  <mui-toolbar variant="dense" disable-gutters="{{true}}">
+    <mui-input
+      style="flex-grow: 1;margin-left: 16px;"
+      m-class="search-input"
+      fullWidth="{{true}}"
+      start-adornment="search"
+      start-icon-color="#ffffff"
+      inherit="{{true}}"
+      placeholder="搜索"
+      placeholder-style="color:#8dbbe9;"
+    />
     <mui-button
       shape="circle"
       variant="text"
       icon="plus"
       custom-icon-color="#ffffff"
       custom-ripple-background-color="#ffffff"
-      style="margin-right: 16px;"
+      style="margin-left: 16px;margin-right: 4px;"
       m-style="height:40px;width:40px;"
     />
-    <!-- <mui-typography style="flex-grow: 1;" variant="h6">News</mui-typography> -->
-    <mui-input
-      style="width: 150px;"
-      m-class="search-input"
-      start-adornment="search"
-      start-icon-color="#ffffff"
-      inherit="{{true}}"
-    />
-    <!-- <mui-button color="inherit" variant="text" custom-ripple-background-color="#ffffff" size="small">LOGIN</mui-button> -->
   </mui-toolbar>
 </mui-app-bar>
 <mui-bottom-navigation

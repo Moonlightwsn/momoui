@@ -24,6 +24,14 @@ Component({
       type: String,
       value: '',
     },
+    placeholderStyle: {
+      type: String,
+      value: '',
+    },
+    placeholderClass: {
+      type: String,
+      value: '',
+    },
     disabled: {
       type: Boolean,
       value: false,
@@ -116,7 +124,12 @@ Component({
       }
     },
     _blur() {
-      const {disabled, error, startAdornment} = this.properties
+      const {
+        disabled,
+        error,
+        startAdornment,
+        placeholder
+      } = this.properties
       const {currentValue} = this.data
       if (!disabled) {
         const newData = {}
@@ -124,7 +137,7 @@ Component({
           newData.innerFocus = false
         }
         newData.innerLabelShrink = currentValue || startAdornment
-        newData.innerPlaceholder = ''
+        newData.innerPlaceholder = currentValue || placeholder
         this.setData(newData)
       }
     },
