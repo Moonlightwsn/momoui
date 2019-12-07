@@ -51,6 +51,14 @@ Component({
       value: false,
     },
     startAdornment: String,
+    startIconColor: {
+      type: String,
+      value: '#202020',
+    },
+    inherit: {
+      type: Boolean,
+      value: false,
+    }
   },
   data: {
     innerFocus: false,

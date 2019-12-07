@@ -6,3 +6,18 @@
     transform: rotate(360deg);
   }
 }
+
+.search-input {
+  padding:0 8px;
+  background-color:rgb(255,255,255,0.15);
+  color:#fff;
+  border-radius:4px;
+}
+
+.search-input .mui-input-wrapper::before {
+  border-bottom-width: 0px!important;
+}
+
+.search-input .mui-input-wrapper::after {
+  border-bottom-width: 0px!important;
+}

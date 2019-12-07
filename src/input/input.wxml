@@ -11,9 +11,9 @@
     {{label}}
   </mui-typography>
   <view
-    class="mui-input-wrapper {{label ? 'mui-input-wrapper-with-label' : ''}} {{filled ? 'mui-input-wrapper-with-filled' : ''}}"
+    class="mui-input-wrapper {{label ? 'mui-input-wrapper-with-label' : ''}} {{filled ? 'mui-input-wrapper-with-filled' : ''}} {{inherit ? 'mui-input-inherit' : ''}}"
   >
-    <mui-icon wx:if="{{startAdornment}}" class="mui-inline-flex mui-input-start-icon-{{filled ? 'filled' : 'normal'}}" name="{{startAdornment}}" color="#202020" size="24"></mui-icon>
+    <mui-icon wx:if="{{startAdornment}}" class="mui-inline-flex mui-input-start-icon-{{filled ? 'filled' : 'normal'}}" name="{{startAdornment}}" color="{{startIconColor}}" size="24"></mui-icon>
     <input
       class="mui-input {{label ? 'mui-input-with-label' : ''}} {{filled ? 'mui-input-with-filled' : ''}}"
       disabled="{{disabled}}"

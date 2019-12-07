@@ -116,6 +116,9 @@
     height: 32px;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     letter-spacing: 0.14994px;
+    &.mui-input-inherit {
+      color: inherit;
+    }
     &.mui-input-wrapper-with-label {
       height: 48px;
     }
@@ -157,6 +160,7 @@
     .mui-input {
       width: 100%;
       border: 0;
+      color: inherit;
       display: inline-block;
       padding: 6px 0 7px;
       height: 19px;
