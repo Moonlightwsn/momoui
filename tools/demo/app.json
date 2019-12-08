@@ -4,8 +4,9 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#1976d2",
     "navigationBarTitleText": "微信",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#ffffff"
   }
 }

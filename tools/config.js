@@ -38,6 +38,7 @@ const entryFiles = [
   'bottom-navigation/bottom-navigation',
   'app-bar/app-bar',
   'toolbar/toolbar',
+  'paper/paper',
 ]
 
 module.exports = {
