@@ -1,0 +1,17 @@
+.mui-menu {
+  display: inline-flex;
+  .mui-menu-ul {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 8px 0;
+    .mui-menu-item {
+      display: flex;
+      .mui-button-label {
+        color: rgba(0, 0, 0, 0.87);
+        justify-content: start;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+}

@@ -39,6 +39,7 @@ const entryFiles = [
   'app-bar/app-bar',
   'toolbar/toolbar',
   'paper/paper',
+  'menu/menu',
 ]
 
 module.exports = {

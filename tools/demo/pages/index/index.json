@@ -25,6 +25,7 @@
     "mui-bottom-navigation": "/components/bottom-navigation/bottom-navigation",
     "mui-app-bar": "/components/app-bar/app-bar",
     "mui-toolbar": "/components/toolbar/toolbar",
-    "mui-paper": "/components/paper/paper"
+    "mui-paper": "/components/paper/paper",
+    "mui-menu": "/components/menu/menu"
   }
 }

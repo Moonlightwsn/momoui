@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mui-paper": "../paper/paper",
+    "mui-button": "../button/button"
+  }
+}

@@ -34,6 +34,10 @@
       Paper can be used to build surface or other elements for your application.
     </mui-typography>
   </mui-paper>
+  <mui-menu
+    style="margin-top: 8px;display:inline-flex;"
+    menu-items="{{menuItems}}"
+  />
 </view>
 <mui-bottom-navigation
   style="position: fixed;bottom: 0; width: 100%;border-top: 1px solid #00000014;"

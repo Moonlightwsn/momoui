@@ -1,5 +1,12 @@
 Page({
   data: {
+    menuItems: [{
+      text: 'Profile',
+    }, {
+      text: 'My Account',
+    }, {
+      text: 'Logout',
+    }],
     activeKey: 'wechat',
     actions: [{
       key: 'wechat',
