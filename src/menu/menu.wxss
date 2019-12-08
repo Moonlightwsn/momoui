@@ -4,12 +4,13 @@
     display: inline-flex;
     flex-direction: column;
     padding: 8px 0;
+    overflow-y: auto;
     .mui-menu-item {
       display: flex;
       .mui-button-label {
-        color: rgba(0, 0, 0, 0.87);
+        color: #212121;
         justify-content: start;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 400;
       }
     }

@@ -1,11 +1,17 @@
 Page({
   data: {
     menuItems: [{
-      text: 'Profile',
+      text: 'Send',
+      icon: 'send',
+      key: 'send',
     }, {
-      text: 'My Account',
+      text: 'Info',
+      icon: 'info',
+      key: 'info',
     }, {
-      text: 'Logout',
+      text: 'Mail',
+      icon: 'mail',
+      key: 'mail',
     }],
     activeKey: 'wechat',
     actions: [{
@@ -46,6 +52,10 @@ Page({
       label: 'check3',
       checked: true,
     }],
+  },
+  itemClick(e) {
+    const {detail: {key}} = e
+    console.log('itemClick', key)
   },
   bnchange(e) {
     const {detail: {key}} = e

@@ -37,6 +37,8 @@
   <mui-menu
     style="margin-top: 8px;display:inline-flex;"
     menu-items="{{menuItems}}"
+    bind:itemClick="itemClick"
+    menu-height="80"
   />
 </view>
 <mui-bottom-navigation

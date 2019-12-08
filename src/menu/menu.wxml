@@ -4,13 +4,17 @@
 >
   <view
     class="mui-menu-ul"
+    style="height:{{menuHeight}}px"
   >
     <mui-button
       wx:for="{{menuItems}}"
       wx:key="{{item.key || index}}"
-      m-class="mui-menu-item"
       data-key="{{item.key || index}}"
+      m-class="mui-menu-item"
+      icon="{{item.icon}}"
       variant="text"
+      custom-icon-color="#757575"
+      bind:tap="_buttonTap"
     >
       {{item.text || ''}}
     </mui-button>
