@@ -1,0 +1,4 @@
+<view>
+  <slot name="overlay" />
+  <slot />
+</view>
