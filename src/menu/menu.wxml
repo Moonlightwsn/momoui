@@ -14,7 +14,7 @@
       icon="{{item.icon}}"
       variant="text"
       custom-icon-color="#757575"
-      bind:tap="_buttonTap"
+      catch:tap="_buttonTap"
     >
       {{item.text || ''}}
     </mui-button>

@@ -54,6 +54,9 @@ const iconPathMap = {
   'send': `${muiIconPath}send.svg`,
   'info': `${muiIconPath}info.svg`,
   'mail': `${muiIconPath}mail.svg`,
+  'user-add': `${muiIconPath}user-add.svg`,
+  'scan': `${muiIconPath}scan.svg`,
+  'pay': `${muiIconPath}pay.svg`,
 }
 
 Component({

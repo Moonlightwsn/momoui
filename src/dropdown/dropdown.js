@@ -12,16 +12,18 @@ Component({
   methods: {
     _trigger() {
       const that = this
-      const query = that.createSelectorQuery()
-      query.select('.mui-dropdown-content').boundingClientRect()
-      query.exec(function (res) {
-        const [view = {}] = res
+      const queryContent = that.createSelectorQuery()
+      queryContent.select('.mui-dropdown-content').boundingClientRect()
+      queryContent.exec((resContent) => {
+        const [viewContent = {}] = resContent
         const {
           bottom,
           top,
           right,
           left,
-        } = view
+        } = viewContent
+        const systemInfo = wx.getSystemInfoSync()
+        const {windowWidth, windowHeight} = systemInfo || {}
         const {placeholder} = that.properties
         const newData = {
           overlayVisible: true,
@@ -31,11 +33,11 @@ Component({
         if (placeholder === 'bottomLeft') {
           newData.overlayStyle = `${newData.overlayStyle}top: ${bottom}px; left: ${left}px;`
         } else if (placeholder === 'topLeft') {
-          newData.overlayStyle = `${newData.overlayStyle}bottom: ${top}px; left: ${left}px;`
+          newData.overlayStyle = `${newData.overlayStyle}bottom: ${windowHeight - top}px; left: ${left}px;`
         } else if (placeholder === 'bottomRight') {
-          newData.overlayStyle = `${newData.overlayStyle}top: ${bottom}px; left: ${right}px;`
+          newData.overlayStyle = `${newData.overlayStyle}top: ${bottom}px; right: ${windowWidth - right}px;`
         } else if (placeholder === 'topRight') {
-          newData.overlayStyle = `${newData.overlayStyle}bottom: ${top}px; left: ${right}px;`
+          newData.overlayStyle = `${newData.overlayStyle}bottom: ${windowHeight - top}px; right: ${windowWidth - right}px;`
         }
         that.setData(newData)
       })

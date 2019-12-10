@@ -1,17 +1,21 @@
 Page({
   data: {
     menuItems: [{
-      text: 'Send',
-      icon: 'send',
-      key: 'send',
+      text: '发起群聊',
+      icon: 'message',
+      key: 'message',
     }, {
-      text: 'Info',
-      icon: 'info',
-      key: 'info',
+      text: '添加朋友',
+      icon: 'user-add',
+      key: 'user-add',
     }, {
-      text: 'Mail',
-      icon: 'mail',
-      key: 'mail',
+      text: '扫一扫',
+      icon: 'scan',
+      key: 'scan',
+    }, {
+      text: '收付款',
+      icon: 'pay',
+      key: 'pay',
     }],
     activeKey: 'wechat',
     actions: [{
