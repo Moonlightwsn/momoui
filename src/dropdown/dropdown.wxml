@@ -1,4 +1,10 @@
-<view>
-  <slot name="overlay" />
-  <slot />
+<view class="mui mui-dropdown">
+  <view class="mui-dropdown-content" bind:tap="_trigger">
+    <slot />
+  </view>
+</view>
+<view wx:if="{{overlayVisible}}" class="mui-dropdown-mask" bind:tap="_hide">
+  <view class="mui-dropdown-overlay" style="{{overlayStyle}}">
+    <slot name="overlay" />
+  </view>
 </view>

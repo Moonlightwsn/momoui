@@ -185,7 +185,7 @@ Component({
         this.triggerEvent('error', e)
       }
     },
-    _tap(e) {
+    _formAction() {
       const {formType} = this.properties
       if (formType) {
         if (this.form && this.form.data._targetList) {
@@ -201,7 +201,14 @@ Component({
           this.triggerEvent(formType, {values: formValues}, {bubbles: true, composed: true})
         }
       }
+    },
+    _tap(e) {
+      this._formAction()
       this.rippleClick(e)
+    },
+    _longpress(e) {
+      this._formAction()
+      this.rippleHold(e)
     },
   },
   observers: {

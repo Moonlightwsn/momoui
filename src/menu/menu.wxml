@@ -4,7 +4,7 @@
 >
   <view
     class="mui-menu-ul"
-    style="height:{{menuHeight}}px"
+    style="height:{{menuHeight === 'auto' ? 'auto': menuHeight + 'px'}}"
   >
     <mui-button
       wx:for="{{menuItems}}"

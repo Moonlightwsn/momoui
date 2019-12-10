@@ -8,6 +8,7 @@
     color="{{color}}"
     variant="text"
     bind:tap="_tap"
+    bind:longpress="_tap"
   >
     <view class="mui-bottom-navigation-action-view">
       <mui-icon

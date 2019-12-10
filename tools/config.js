@@ -40,6 +40,7 @@ const entryFiles = [
   'toolbar/toolbar',
   'paper/paper',
   'menu/menu',
+  'dropdown/dropdown',
 ]
 
 module.exports = {

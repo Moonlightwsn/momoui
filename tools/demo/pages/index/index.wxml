@@ -40,6 +40,19 @@
     bind:itemClick="itemClick"
     menu-height="80"
   />
+  <mui-dropdown placeholder="topLeft">
+    <mui-menu
+      menu-items="{{menuItems}}"
+      bind:itemClick="itemClick"
+      slot="overlay"
+    />
+    <mui-button
+      shape="circle"
+      variant="text"
+      icon="plus"
+      color="primary"
+    />
+  </mui-dropdown>
 </view>
 <mui-bottom-navigation
   style="position: fixed;bottom: 0; width: 100%;border-top: 1px solid #00000014;"

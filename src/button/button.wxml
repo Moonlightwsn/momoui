@@ -4,7 +4,7 @@
   style="{{mStyle}}"
   hover-class="{{shape !== 'circle' ? 'mui-button-hover' : 'none'}}"
   capture-bind:tap="_tap"
-  capture-bind:longpress="rippleHold"
+  capture-bind:longpress="_longpress"
   capture-bind:touchend="rippleHoldEnd"
   open-type="{{openType}}"
   app-parameter="{{openType === 'launchApp' ? appParameter : ''}}"

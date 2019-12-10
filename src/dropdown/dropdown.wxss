@@ -1,0 +1,21 @@
+.mui-dropdown {
+  display: inline-flex;
+  position: relative;
+  .mui-dropdown-content {
+    display: inherit;
+  }
+}
+
+.mui-dropdown-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1300;
+  .mui-dropdown-overlay {
+    display: inherit;
+    position: absolute;
+    z-index: 1301;
+  }
+}
