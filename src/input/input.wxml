@@ -4,9 +4,10 @@
 >
   <mui-typography
     wx:if="{{label}}"
-    variant="caption"
+    variant="subtitle1"
     class="mui-input-label mui-input-label-{{innerLabelShrink ? 'shrink' : 'normal'}} {{filled ? 'mui-input-label-filled' : ''}}"
     m-class="mui-input-label-typography-{{innerLabelShrink ? 'shrink' : 'normal'}}"
+    m-style="height:16px;line-height:16px;"
   >
     {{label}}
   </mui-typography>

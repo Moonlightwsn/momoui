@@ -1,4 +1,4 @@
-import {debounce} from '../utils/utils'
+// import {debounce} from '../utils/utils'
 
 const regexp = /(\b[0-9]{1,3}\b)/g
 
@@ -12,19 +12,32 @@ export default Behavior({
   },
   data: {
     rippleList: [],
-    rippleListInitKey: 0,
-    ripplelongpress: false,
     centerRipple: false,
   },
   methods: {
-    stopRipple: debounce(function () {
-      if (!this.data.ripplelongpress) {
-        this.setData({
-          rippleList: [],
-          rippleListInitKey: 0,
+    stopRipple(e) {
+      console.log(e)
+      const {target: {dataset: {key}}} = e
+      if (key) {
+        const {rippleList} = this.data
+        let tobeDeletedIndex
+        rippleList.some((item, index) => {
+          if (item.key === key) {
+            tobeDeletedIndex = index
+            return true
+          }
+          return false
         })
+        if (tobeDeletedIndex || tobeDeletedIndex === 0) {
+          rippleList.splice(tobeDeletedIndex, 1, {idle: true, key: `idle-${new Date().getTime()}-${Math.round(Math.random() * 10000)}`})
+          console.log(rippleList)
+          setTimeout(() => {
+            this.setData({rippleList: this.data.rippleList})
+          }, 600)
+        }
       }
-    }, 1000),
+    },
+    /*
     rippleHoldEnd(e, that) {
       const thisRippleBehaviors = that || this
       const {ripple, disabled} = thisRippleBehaviors.properties
@@ -34,21 +47,18 @@ export default Behavior({
           setTimeout(function () {
             thisRippleBehaviors.setData({
               rippleList: [],
-              rippleListInitKey: 0,
               ripplelongpress: false,
             })
           }, 200)
         }
       }
     },
+    */
     rippleHold(e, that) {
       const thisRippleBehaviors = that || this
       const {ripple, disabled} = thisRippleBehaviors.properties
       const {innerDisabled} = thisRippleBehaviors.data
       if (ripple && !disabled && !innerDisabled) {
-        thisRippleBehaviors.setData({
-          ripplelongpress: true,
-        })
         const {x, y} = e.detail
         thisRippleBehaviors._ripple({
           x,
@@ -92,7 +102,6 @@ export default Behavior({
 
         const {centerRipple} = that.data
 
-        that.data.rippleListInitKey += 1
         const rippleClass = `mui-ripple-animation${type === 'hold' ? '-hold' : ''}${centerRipple ? '-center' : ''}`
 
         let rippleX
@@ -118,7 +127,7 @@ export default Behavior({
           x: rippleX,
           y: rippleY,
           backgroundColor: rippleBackgroundColor,
-          key: that.data.rippleListInitKey,
+          key: `ripple-${new Date().getTime()}-${Math.round(Math.random() * 10000)}`,
           rippleClass,
         })
         that.setData({

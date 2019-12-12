@@ -74,9 +74,6 @@ Component({
       this._checkControol()
       this._rippleControll(e, this.rippleHold)
     },
-    _touchEnd(e) {
-      this._rippleControll(e, this.rippleHoldEnd)
-    },
   },
   relations: {
     '../radio-group/radio-group': {

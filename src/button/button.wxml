@@ -5,7 +5,6 @@
   hover-class="{{shape !== 'circle' ? 'mui-button-hover' : 'none'}}"
   capture-bind:tap="_tap"
   capture-bind:longpress="_longpress"
-  capture-bind:touchend="rippleHoldEnd"
   open-type="{{openType}}"
   app-parameter="{{openType === 'launchApp' ? appParameter : ''}}"
   session-from="{{openType === 'contact' ? sessionFrom : ''}}"
@@ -42,7 +41,12 @@
   <view
     wx:for="{{rippleList}}"
     wx:key="{{item.key}}"
-    style="width:{{item.length}}px;height:{{item.length}}px;left:{{item.x}}px;top:{{item.y}}px;background-color: {{item.backgroundColor}}" class="mui-ripple {{item.rippleClass}}"
-    bind:animationend="stopRipple"
-  ></view>
+  >
+    <view
+      wx:if="{{!item.idle}}"
+      data-key="{{item.key}}"
+      style="width:{{item.length}}px;height:{{item.length}}px;left:{{item.x}}px;top:{{item.y}}px;background-color: {{item.backgroundColor}}" class="mui-ripple {{item.rippleClass}}"
+      bind:animationstart="stopRipple"
+    ></view>
+  </view>
 </button>
