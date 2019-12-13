@@ -31,7 +31,7 @@
     </mui-dropdown>
   </mui-toolbar>
 </mui-app-bar>
-<view style="margin-top: 48px;margin-bottom: 58px;background-color: #f5f5f5;padding: 16px 8px;height:calc(100vh - 105px);box-sizing: border-box;overflow-y:auto;">
+<view style="padding: 64px 8px 74px;box-sizing: border-box;">
   <mui-form bind:submit="formSubmit" bind:reset="formReset">
     <mui-input fullWidth="{{true}}" label="TextField" name="input" />
     <mui-checkbox-group name="checkbox">
@@ -61,7 +61,8 @@
   />
 </view>
 <mui-bottom-navigation
-  style="position: fixed;bottom: 0; width: 100%;border-top: 1px solid #00000014;"
+  style="position: fixed;bottom: 0; width: 100%;"
+  m-style="border-top: 1px solid #00000014;"
   color="primary"
   actions="{{actions}}"
   activeKey="{{activeKey}}"

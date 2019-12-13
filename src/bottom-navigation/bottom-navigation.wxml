@@ -1,4 +1,4 @@
-<view class="mui mui-bottom-navigation">
+<view class="mui mui-bottom-navigation {{mClass}}" style="{{mStyle}}">
   <mui-button
     wx:for="{{actions}}"
     wx:key="{{item.key || index}}"

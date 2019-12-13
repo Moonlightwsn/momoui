@@ -2,6 +2,8 @@
 
 Component({
   properties: {
+    mClass: String,
+    mStyle: String,
     actions: {
       type: Array,
       value: [],
