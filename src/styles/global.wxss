@@ -13,22 +13,22 @@
   position: absolute;
   border-radius: 100%;
   background-color: #000000;
-  opacity: 0.2;
+  opacity: 0.3;
 }
 .mui-ripple-view .mui-ripple-animation {
-  animation: ripple 600ms ease-out;
+  animation: ripple 0.6s ease-out;
   animation-fill-mode: forwards;
 }
 .mui-ripple-view .mui-ripple-animation-hold {
-  animation: ripple-hold 600ms ease-out;
+  animation: ripple-hold 0.6s ease-out;
   animation-fill-mode: forwards;
 }
 .mui-ripple-view .mui-ripple-animation-center {
-  animation: ripple-center 600ms ease-out;
+  animation: ripple-center 0.6s ease-out;
   animation-fill-mode: forwards;
 }
 .mui-ripple-view .mui-ripple-animation-hold-center {
-  animation: ripple-hold-center 600ms ease-out;
+  animation: ripple-hold-center 0.6s ease-out;
   animation-fill-mode: forwards;
 }
 
@@ -43,10 +43,10 @@
 @keyframes ripple {
     from {
       transform: scale(0);
-      opacity: 0.2;
+      opacity: 0.3;
     }
     to {
-      transform: scale(2.5);
+      transform: scale(2);
       opacity: 0;
     }
 }
@@ -54,10 +54,10 @@
 @keyframes ripple-hold {
     from {
       transform: scale(0);
-      opacity: 0.2;
+      opacity: 0.3;
     }
     to {
-      transform: scale(2.5);
+      transform: scale(2);
       opacity: 0.1;
     }
 }
@@ -65,7 +65,7 @@
 @keyframes ripple-center {
     0% {
       transform: scale(0);
-      opacity: 0.2;
+      opacity: 0.3;
     }
     40% {
       transform: scale(1);
@@ -80,7 +80,7 @@
 @keyframes ripple-hold-center {
     0% {
       transform: scale(0);
-      opacity: 0.2;
+      opacity: 0.3;
     }
     40% {
       transform: scale(1);

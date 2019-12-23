@@ -3,7 +3,7 @@
     <slot />
   </view>
 </view>
-<view hidden="{{!overlayVisible}}" class="mui-dropdown-mask" catch:tap="_hide">
+<view style="visibility:{{overlayVisible ? 'visible' : 'hidden'}}" class="mui-dropdown-mask" catch:tap="_hide">
   <view class="mui-dropdown-overlay" style="{{overlayStyle}}">
     <slot name="overlay" />
   </view>

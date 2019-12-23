@@ -24,12 +24,8 @@
   <view
     wx:for="{{rippleList}}"
     wx:key="{{item.key}}"
-  >
-    <view
-      wx:if="{{!item.idle}}"
-      data-key="{{item.key}}"
-      style="width:{{item.length}}px;height:{{item.length}}px;left:{{item.x}}px;top:{{item.y}}px;background-color: {{item.backgroundColor}}" class="mui-ripple {{item.rippleClass}}"
-      bind:animationstart="stopRipple"
-    ></view>
-  </view>
+    data-key="{{item.key}}"
+    style="width:{{item.length}}px;height:{{item.length}}px;left:{{item.x}}px;top:{{item.y}}px;background-color: {{item.backgroundColor}}" class="mui-ripple {{item.rippleClass}}"
+    bind:animationend="stopRipple"
+  />
 </view>

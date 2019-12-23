@@ -1,4 +1,4 @@
-// import {debounce} from '../utils/utils'
+import {debounce} from '../utils/utils'
 
 const regexp = /(\b[0-9]{1,3}\b)/g
 
@@ -15,27 +15,19 @@ export default Behavior({
     centerRipple: false,
   },
   methods: {
-    stopRipple(e) {
-      console.log(e)
-      const {target: {dataset: {key}}} = e
-      if (key) {
-        const {rippleList} = this.data
-        let tobeDeletedIndex
-        rippleList.some((item, index) => {
-          if (item.key === key) {
-            tobeDeletedIndex = index
-            return true
-          }
-          return false
-        })
-        if (tobeDeletedIndex || tobeDeletedIndex === 0) {
-          rippleList.splice(tobeDeletedIndex, 1, {idle: true, key: `idle-${new Date().getTime()}-${Math.round(Math.random() * 10000)}`})
-          console.log(rippleList)
-          setTimeout(() => {
-            this.setData({rippleList: this.data.rippleList})
-          }, 600)
-        }
+    _stopRipple: debounce((that, key) => {
+      let _tobeDeletedIndex
+      that.data.rippleList.some((item, index) => {
+        _tobeDeletedIndex = index
+        return item.key === key
+      })
+      if (_tobeDeletedIndex >= 0) {
+        that.data.rippleList.splice(0, _tobeDeletedIndex + 1)
+        that.setData({rippleList: that.data.rippleList})
       }
+    }, 300),
+    stopRipple(e) {
+      this._stopRipple(this, e.target.dataset.key)
     },
     /*
     rippleHoldEnd(e, that) {

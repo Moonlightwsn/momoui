@@ -7,7 +7,7 @@ Component({
   },
   data: {
     overlayVisible: false,
-    overlayStyle: 'display: none;',
+    overlayStyle: 'opacity: 0;',
   },
   methods: {
     _trigger() {
@@ -27,7 +27,7 @@ Component({
         const {placeholder} = that.properties
         const newData = {
           overlayVisible: true,
-          overlayStyle: 'display: inline-flex;',
+          overlayStyle: 'opacity: 1;',
         }
 
         if (placeholder === 'bottomLeft') {
@@ -43,7 +43,7 @@ Component({
       })
     },
     _hide() {
-      this.setData({overlayVisible: false, overlayStyle: 'display: none;'})
+      this.setData({overlayVisible: false, overlayStyle: 'opacity: 0;'})
     },
   },
   options: {
