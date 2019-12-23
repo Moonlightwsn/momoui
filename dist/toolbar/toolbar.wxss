@@ -1,0 +1,15 @@
+.mui-toolbar {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.mui-toolbar.mui-toolbar-regular {
+  min-height: 64px;
+}
+.mui-toolbar.mui-toolbar-dense {
+  min-height: 48px;
+}
+.mui-toolbar.mui-toolbar-gutters {
+  padding-left: 16px;
+  padding-right: 16px;
+}

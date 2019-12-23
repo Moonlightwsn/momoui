@@ -1,0 +1,36 @@
+<view
+  class="{{mClass}} mui mui-input-root mui-input-root-{{color}} mui-input-root-{{innerFocus ? 'focus' : 'blur'}} {{disabled ? 'mui-input-root-disabled' : ''}} {{error ? 'mui-input-root-error' : ''}}"
+  style="{{fullWidth ? 'width: 100%;' : ''}}{{mStyle}}"
+>
+  <mui-typography
+    wx:if="{{label}}"
+    variant="subtitle1"
+    class="mui-input-label mui-input-label-{{innerLabelShrink ? 'shrink' : 'normal'}} {{filled ? 'mui-input-label-filled' : ''}}"
+    m-class="mui-input-label-typography-{{innerLabelShrink ? 'shrink' : 'normal'}}"
+    m-style="height:16px;line-height:16px;"
+  >
+    {{label}}
+  </mui-typography>
+  <view
+    class="mui-input-wrapper {{label ? 'mui-input-wrapper-with-label' : ''}} {{filled ? 'mui-input-wrapper-with-filled' : ''}} {{inherit ? 'mui-input-inherit' : ''}}"
+  >
+    <mui-icon wx:if="{{startAdornment}}" class="mui-inline-flex mui-input-start-icon-{{filled ? 'filled' : 'normal'}}" name="{{startAdornment}}" color="{{startIconColor}}" size="24"></mui-icon>
+    <input
+      class="mui-input {{label ? 'mui-input-with-label' : ''}} {{filled ? 'mui-input-with-filled' : ''}}"
+      disabled="{{disabled}}"
+      placeholder="{{innerPlaceholder}}"
+      placeholder-style='font-family: "Roboto", "Helvetica", "Arial", sans-serif;color:#9c9c9c;font-size:16px; {{placeholderStyle}}'
+      placeholder-class="{{placeholderClass}}"
+      password="{{password}}"
+      type="{{type}}"
+      confirm-type="{{confirmType}}"
+      focus="{{focus}}"
+      value="{{value}}"
+      bind:input="_input"
+      bind:focus="_focus"
+      bind:blur="_blur"
+      cursor-spacing="{{cursorSpacing}}"
+    />
+  </view>
+  <mui-typography wx:if="{{help}}" variant="body" class="mui-input-help" m-style="height:12px;line-height:12px;font-size:12px;margin-top:4px;">{{help}}</mui-typography>
+</view>

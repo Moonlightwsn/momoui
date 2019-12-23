@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mui-typography": "../typography/typography",
+    "mui-icon": "../icon/icon"
+  }
+}

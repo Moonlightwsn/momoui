@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mui-avatar": "../avatar/avatar",
+    "mui-button": "../button/button",
+    "mui-typography": "../typography/typography"
+  }
+}

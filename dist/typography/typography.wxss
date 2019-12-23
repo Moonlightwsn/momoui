@@ -1,0 +1,111 @@
+.mui-typography {
+  margin: 0;
+  box-sizing: border-box;
+  color: inherit;
+  display: inherit;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  word-break: break-all;
+}
+.mui-typography.mui-typography-block {
+  display: block;
+}
+.mui-typography.mui-typography-inline {
+  display: inline;
+}
+.mui-typography.mui-typography-primary {
+  color: #3f51b5;
+}
+.mui-typography.mui-typography-secondary {
+  color: #3f51b5;
+}
+.mui-typography.mui-typography-primary {
+  color: #f50057;
+}
+.mui-typography.mui-typography-textPrimary {
+  color: rgba(0, 0, 0, 0.87);
+}
+.mui-typography.mui-typography-textSecondary {
+  color: rgba(0, 0, 0, 0.54);
+}
+.mui-typography.mui-typography-error {
+  color: #f44336;
+}
+.mui-typography.mui-typography-h6 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.15px;
+}
+.mui-typography.mui-typography-h5 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: normal;
+}
+.mui-typography.mui-typography-h4 {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.2499px;
+}
+.mui-typography.mui-typography-h3 {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: normal;
+}
+.mui-typography.mui-typography-h2 {
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: -0.4998px;
+}
+.mui-typography.mui-typography-h1 {
+  font-size: 96px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1.49952px;
+}
+.mui-typography.mui-typography-subtitle1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.15008px;
+}
+.mui-typography.mui-typography-subtitle2 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.57;
+  letter-spacing: 0.09996px;
+}
+.mui-typography.mui-typography-body1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.15008;
+}
+.mui-typography.mui-typography-body2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.14994px;
+}
+.mui-typography.mui-typography-button {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.399998px;
+}
+.mui-typography.mui-typography-caption {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.66;
+  letter-spacing: 0.399996px;
+}
+.mui-typography.mui-typography-overline {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 2.66;
+  letter-spacing: 0.99996px;
+}

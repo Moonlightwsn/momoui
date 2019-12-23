@@ -1,0 +1,3 @@
+<view class="{{mClass}} mui mui-typography mui-typography-{{variant}} mui-typography-{{color}} mui-typography-{{display}}" style="{{mStyle}}">
+  <slot></slot>
+</view>

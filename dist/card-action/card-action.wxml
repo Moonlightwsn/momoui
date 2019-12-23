@@ -1,0 +1,3 @@
+<view class="mui-card-action">
+  <slot></slot>
+</view>

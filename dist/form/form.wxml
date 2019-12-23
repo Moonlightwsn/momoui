@@ -1,0 +1,5 @@
+<form
+  bind:reset="_reset"
+>
+  <slot></slot>
+</form>

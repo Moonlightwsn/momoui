@@ -1,0 +1,13 @@
+.mui-bottom-navigation {
+  z-index: 1100;
+  display: flex;
+  background-color: #fff;
+}
+.mui-bottom-navigation .mui-bottom-navigation-action {
+  flex: 1;
+}
+.mui-bottom-navigation .mui-bottom-navigation-action .mui-bottom-navigation-action-view {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}

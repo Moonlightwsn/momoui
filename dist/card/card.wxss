@@ -1,0 +1,51 @@
+.mui-card {
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+.mui-card .mui-card-action-area {
+  width: 100%;
+  display: block;
+  text-align: inherit;
+}
+.mui-card .mui-card-header {
+  display: flex;
+  padding: 16px;
+  align-items: center;
+}
+.mui-card .mui-card-header .mui-card-header-avatar {
+  flex: 0 0 auto;
+  margin-right: 16px;
+}
+.mui-card .mui-card-header .mui-card-header-content {
+  flex: 1 1 auto;
+}
+.mui-card .mui-card-header .mui-card-header-content .mui-card-header-content-title {
+  display: block;
+}
+.mui-card .mui-card-header .mui-card-header-content .mui-card-header-content-subheader {
+  display: block;
+}
+.mui-card .mui-card-header .mui-card-header-action {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  margin-top: -8px;
+  margin-right: -8px;
+}
+.mui-card .mui-card-media {
+  width: 100%;
+}
+.mui-card .mui-card-content {
+  padding: 16px;
+  box-sizing: inherit;
+}
+.mui-card .mui-card-action {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+}

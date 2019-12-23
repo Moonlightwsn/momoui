@@ -1,0 +1,3 @@
+<view class="mui-card-content" style="{{mStyle}}">
+  <slot></slot>
+</view>

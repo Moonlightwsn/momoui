@@ -1,0 +1,6 @@
+<view
+  class="{{mClass}} mui mui-toolbar mui-toolbar-{{variant}} {{disableGutters ? '' : 'mui-toolbar-gutters'}}"
+  style="{{mStyle}}"
+>
+  <slot />
+</view>

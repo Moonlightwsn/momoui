@@ -1,0 +1,3 @@
+<radio-group>
+  <slot></slot>
+</radio-group>

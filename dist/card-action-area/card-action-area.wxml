@@ -1,0 +1,15 @@
+<view
+  class="{{mClass}} mui-card-action-area {{ripple ? 'mui-ripple-view' : ''}}"
+  style="{{mStyle}}"
+  capture-bind:tap="rippleClick"
+  capture-bind:longpress="rippleHold"
+>
+  <slot></slot>
+  <view
+    wx:for="{{rippleList}}"
+    wx:key="{{item.key}}"
+    data-key="{{item.key}}"
+    style="width:{{item.length}}px;height:{{item.length}}px;left:{{item.x}}px;top:{{item.y}}px;background-color: {{item.backgroundColor}}" class="mui-ripple {{item.rippleClass}}"
+    bind:animationend="stopRipple"
+  />
+</view>
