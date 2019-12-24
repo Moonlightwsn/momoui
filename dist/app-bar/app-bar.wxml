@@ -1,6 +1,0 @@
-<view
-  class="{{mClass}} mui mui-app-bar mui-app-bar-{{position}} mui-app-bar-{{color}}"
-  style="{{mStyle}}"
->
-  <slot />
-</view>

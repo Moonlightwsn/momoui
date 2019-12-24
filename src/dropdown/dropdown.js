@@ -8,6 +8,7 @@ Component({
   data: {
     overlayVisible: false,
     overlayStyle: 'opacity: 0;',
+    overlayPosition: '',
   },
   methods: {
     _trigger() {
@@ -31,19 +32,22 @@ Component({
         }
 
         if (placeholder === 'bottomLeft') {
-          newData.overlayStyle = `${newData.overlayStyle}top: ${bottom}px; left: ${left}px;`
+          newData.overlayPosition = `top: ${bottom}px; left: ${left}px;`
         } else if (placeholder === 'topLeft') {
-          newData.overlayStyle = `${newData.overlayStyle}bottom: ${windowHeight - top}px; left: ${left}px;`
+          newData.overlayPosition = `bottom: ${windowHeight - top}px; left: ${left}px;`
         } else if (placeholder === 'bottomRight') {
-          newData.overlayStyle = `${newData.overlayStyle}top: ${bottom}px; right: ${windowWidth - right}px;`
+          newData.overlayPosition = `top: ${bottom}px; right: ${windowWidth - right}px;`
         } else if (placeholder === 'topRight') {
-          newData.overlayStyle = `${newData.overlayStyle}bottom: ${windowHeight - top}px; right: ${windowWidth - right}px;`
+          newData.overlayPosition = `bottom: ${windowHeight - top}px; right: ${windowWidth - right}px;`
         }
         that.setData(newData)
       })
     },
     _hide() {
-      this.setData({overlayVisible: false, overlayStyle: 'opacity: 0;'})
+      this.setData({overlayStyle: 'opacity: 0;'})
+      setTimeout(() => {
+        this.setData({overlayVisible: false})
+      }, 300)
     },
   },
   options: {

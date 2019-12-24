@@ -4,7 +4,7 @@
   </view>
 </view>
 <view style="visibility:{{overlayVisible ? 'visible' : 'hidden'}}" class="mui-dropdown-mask" catch:tap="_hide">
-  <view class="mui-dropdown-overlay" style="{{overlayStyle}}">
+  <view class="mui-dropdown-overlay" style="{{overlayStyle}} {{overlayPosition}}">
     <slot name="overlay" />
   </view>
 </view>

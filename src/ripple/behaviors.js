@@ -13,21 +13,18 @@ export default Behavior({
   data: {
     rippleList: [],
     centerRipple: false,
+    __tobeDeletedCount: 0,
   },
   methods: {
-    _stopRipple: debounce((that, key) => {
-      let _tobeDeletedIndex
-      that.data.rippleList.some((item, index) => {
-        _tobeDeletedIndex = index
-        return item.key === key
-      })
-      if (_tobeDeletedIndex >= 0) {
-        that.data.rippleList.splice(0, _tobeDeletedIndex + 1)
+    _stopRipple: debounce((that) => {
+      if (that.data._tobeDeletedCount >= 0) {
+        that.data.rippleList.splice(0, that.data.__tobeDeletedCount + 1)
         that.setData({rippleList: that.data.rippleList})
       }
     }, 300),
-    stopRipple(e) {
-      this._stopRipple(this, e.target.dataset.key)
+    stopRipple() {
+      this.data.__tobeDeletedCount += 1
+      this._stopRipple(this)
     },
     /*
     rippleHoldEnd(e, that) {
