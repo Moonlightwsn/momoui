@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mui-paper": "../paper/paper",
+    "mui-typography": "../typography/typography",
+    "mui-button": "../button/button"
+  }
+}

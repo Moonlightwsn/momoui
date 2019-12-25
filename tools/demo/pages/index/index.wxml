@@ -59,6 +59,8 @@
     menu-items="{{menuItems}}"
     bind:itemClick="itemClick"
   />
+  <mui-button color="primary" bind:tap="showMessage">Show Message</mui-button>
+  <mui-snack-bar open="{{open}}" message="I love snacks" />
 </view>
 <mui-bottom-navigation
   style="position: fixed;bottom: 0; width: 100%;"

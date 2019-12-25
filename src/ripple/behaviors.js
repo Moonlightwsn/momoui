@@ -1,5 +1,3 @@
-import {debounce} from '../utils/utils'
-
 const regexp = /(\b[0-9]{1,3}\b)/g
 
 export default Behavior({
@@ -13,18 +11,26 @@ export default Behavior({
   data: {
     rippleList: [],
     centerRipple: false,
-    __tobeDeletedCount: 0,
+    _tobeDeletedCount: 0,
   },
   methods: {
-    _stopRipple: debounce((that) => {
-      if (that.data._tobeDeletedCount >= 0) {
-        that.data.rippleList.splice(0, that.data.__tobeDeletedCount + 1)
-        that.setData({rippleList: that.data.rippleList})
-      }
-    }, 300),
     stopRipple() {
-      this.data.__tobeDeletedCount += 1
-      this._stopRipple(this)
+      /*
+      this.data._tobeDeletedCount++
+      if (this.data.timer) {
+        clearTimeout(this.data.timer)
+      }
+      function deleteRipple() {
+        this.data.rippleList.splice(0, this.data._tobeDeletedCount)
+        this.setData({
+          rippleList: this.data.rippleList
+        })
+        clearTimeout(this.data.timer)
+        this.data.timer = null
+        this.data._tobeDeletedCount = 0
+      }
+      this.data.timer = setTimeout(deleteRipple.bind(this), 300)
+      */
     },
     /*
     rippleHoldEnd(e, that) {
@@ -117,6 +123,7 @@ export default Behavior({
           y: rippleY,
           backgroundColor: rippleBackgroundColor,
           key: `ripple-${new Date().getTime()}-${Math.round(Math.random() * 10000)}`,
+          startRipple: true,
           rippleClass,
         })
         that.setData({

@@ -1,5 +1,6 @@
 Page({
   data: {
+    open: false,
     menuItems: [{
       text: '发起群聊',
       icon: 'message',
@@ -56,6 +57,9 @@ Page({
       label: 'check3',
       checked: true,
     }],
+  },
+  showMessage() {
+    this.setData({open: true})
   },
   itemClick(e) {
     const {detail: {key}} = e

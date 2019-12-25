@@ -27,6 +27,7 @@
     "mui-toolbar": "/components/toolbar/toolbar",
     "mui-paper": "/components/paper/paper",
     "mui-menu": "/components/menu/menu",
-    "mui-dropdown": "/components/dropdown/dropdown"
+    "mui-dropdown": "/components/dropdown/dropdown",
+    "mui-snack-bar": "/components/snack-bar/snack-bar"
   }
 }
