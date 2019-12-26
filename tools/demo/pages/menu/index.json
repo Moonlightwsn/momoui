@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+      "mui-typography": "/components/typography/typography",
+      "mui-button": "/components/button/button",
+      "mui-menu": "/components/menu/menu",
+      "mui-dropdown": "/components/dropdown/dropdown"
+    }
+  }

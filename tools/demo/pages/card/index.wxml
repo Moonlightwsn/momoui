@@ -1,0 +1,46 @@
+<view style="box-sizing: border-box;padding: 24px 0;background-color: #f5f5f5;">
+  <view style="padding: 0 36px;">
+    <mui-typography variant="h6">Card</mui-typography>
+    <mui-typography variant="body2" color="textSecondary">
+        卡片
+    </mui-typography>
+  </view>
+  <view style="margin: 24px 0 48px;">
+    <mui-card m-style="margin: 0 0 12px 0;">
+        <mui-card-action-area>
+        <mui-card-media image-src="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"></mui-card-media>
+        <mui-card-content>
+            <mui-typography variant="body2" color="textSecondary">Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica</mui-typography>
+        </mui-card-content>
+        </mui-card-action-area>
+        <mui-card-action>
+        <mui-button variant="text" color="primary" size="small">Share</mui-button>
+        <mui-button variant="text" color="primary" size="small">Learn More</mui-button>
+        </mui-card-action>
+    </mui-card>
+    <mui-card m-style="display: flex;">
+        <view
+        style="display:flex;flex-direction:column;flex:1 0 auto;"
+        >
+        <mui-card-content style="flex: 1 0 auto;" m-style="display: flex;justify-content: center;align-item:center;">
+            <view>
+            <mui-typography variant="h5">
+                Live From Space
+            </mui-typography>
+            <mui-typography variant="subtitle1" color="textSecondary">
+                Mac Miller
+            </mui-typography>
+            </view>
+        </mui-card-content>
+        <view
+            style="display: flex;align-items:center;justify-content:center;padding: 0 0 8px 8px;"
+        >
+            <mui-button style="margin-right: 16px;" variant="text" shape="circle" icon="play-prev"></mui-button>
+            <mui-button style="margin-right: 16px;" variant="text" shape="circle" icon="play" size="large"></mui-button>
+            <mui-button variant="text" shape="circle" icon="play-next"></mui-button>
+        </view>
+        </view>
+        <mui-card-media style="min-width: 155px;display: flex;" m-style="height: 155px;" mode="center" image-src="https://material-ui.com/static/images/cards/live-from-space.jpg"></mui-card-media>
+    </mui-card>
+  </view>
+</view>

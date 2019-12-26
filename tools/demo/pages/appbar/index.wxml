@@ -14,21 +14,14 @@
       placeholder="搜索"
       placeholder-style="color:#8dbbe9;"
     />
-    <mui-dropdown style="margin-left: 16px;margin-right: 4px;" placeholder="bottomRight">
-      <mui-menu
-        menu-items="{{menuItems}}"
-        bind:itemClick="itemClick"
-        slot="overlay"
-      />
-      <mui-button
-        shape="circle"
-        variant="text"
-        icon="plus"
-        custom-icon-color="#ffffff"
-        custom-ripple-background-color="#ffffff"
-        m-style="height:40px;width:40px;"
-      />
-    </mui-dropdown>
+    <mui-button
+      shape="circle"
+      variant="text"
+      icon="plus"
+      custom-icon-color="#ffffff"
+      custom-ripple-background-color="#ffffff"
+      m-style="height:40px;width:40px;"
+    />
   </mui-toolbar>
 </mui-app-bar>
 <view style="box-sizing: border-box;padding: 88px 24px;background-color: #f5f5f5;">
@@ -40,7 +33,7 @@
     <mui-app-bar color="secondary" position="static">
       <mui-toolbar m-style="padding: 0 6px;" variant="dense" disable-gutters="{{true}}">
         <mui-button
-          icon="bullet-list"
+          icon="menu"
           variant="text"
           shape="circle"
           custom-icon-color="#ffffff"

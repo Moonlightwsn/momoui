@@ -1,0 +1,31 @@
+<view style="box-sizing: border-box;padding: 24px 0;background-color: #f5f5f5;">
+  <view style="padding: 0 36px;">
+    <mui-typography variant="h6">List</mui-typography>
+    <mui-typography variant="body2" color="textSecondary">
+        列表
+    </mui-typography>
+  </view>
+  <view style="margin: 24px 0 48px;">
+    <mui-list header="Header">
+        <mui-list-item primary-text="Folder" icon="folder" />
+        <mui-list-item primary-text="Drafts" icon="mail" />
+        <mui-divider />
+        <mui-list-item
+            avatar="{{true}}"
+            avatar-src="https://material-ui.com/static/images/avatar/1.jpg"
+            primary-text="Brunch this weekend?"
+            secondary-text="Ali Connors — I'll be in your neighborhood doing errands this…"
+        />
+        <mui-list-item
+            avatar="{{true}}"
+            avatar-src="https://material-ui.com/static/images/avatar/2.jpg"
+            primary-text="Summer BBQ"
+            secondary-text="to Scott, Alex, Jennifer — Wish I could come, but I'm out of town this…"
+        />
+        <mui-divider />
+        <mui-list-item primary-text="Trash" />
+        <mui-list-item primary-text="Spam" />
+        <mui-list-item primary-text="More" action="arrow-right-2" />
+    </mui-list>
+  </view>
+</view>

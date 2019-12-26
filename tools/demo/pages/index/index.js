@@ -68,16 +68,8 @@ Page({
             text: 'List',
           },
           {
-            key: 'paper',
-            text: 'Paper',
-          },
-          {
             key: 'menu',
-            text: 'Menu',
-          },
-          {
-            key: 'dropdown',
-            text: 'Dropdown',
+            text: 'Menu + Dropdown',
           },
         ],
       },

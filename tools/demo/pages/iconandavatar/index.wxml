@@ -18,7 +18,13 @@
       内置图标
     </mui-typography>
     <view style="margin-top: 16px;">
-      <mui-icon class="mui-inline-flex icon-base" />
+      <mui-icon
+        wx:for="{{icons}}"
+        wx:key="{{item}}"
+        class="mui-inline-flex icon-base"
+        name="{{item}}"
+        size="28"
+      />
     </view>
   </view>
 </view>

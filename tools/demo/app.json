@@ -9,7 +9,10 @@
     "pages/progress/index",
     "pages/snackbar/index",
     "pages/typography/index",
-    "pages/iconandavatar/index"
+    "pages/iconandavatar/index",
+    "pages/list/index",
+    "pages/card/index",
+    "pages/menu/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

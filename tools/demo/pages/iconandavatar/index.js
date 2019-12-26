@@ -4,9 +4,4 @@ Component({
   data: {
     icons: Object.keys(iconPathMap),
   },
-  lifetimes: {
-    attached() {
-      console.log(this.data.icons)
-    }
-  }
 })

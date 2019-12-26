@@ -14,14 +14,21 @@
       placeholder="搜索"
       placeholder-style="color:#8dbbe9;"
     />
-    <mui-button
-      shape="circle"
-      variant="text"
-      icon="plus"
-      custom-icon-color="#ffffff"
-      custom-ripple-background-color="#ffffff"
-      m-style="height:40px;width:40px;"
-    />
+    <mui-dropdown style="margin-left: 16px;margin-right: 4px;" placeholder="bottomRight">
+      <mui-menu
+        menu-items="{{menuItems}}"
+        bind:itemClick="itemClick"
+        slot="overlay"
+      />
+      <mui-button
+        shape="circle"
+        variant="text"
+        icon="plus"
+        custom-icon-color="#ffffff"
+        custom-ripple-background-color="#ffffff"
+        m-style="height:40px;width:40px;"
+      />
+    </mui-dropdown>
   </mui-toolbar>
 </mui-app-bar>
 <view style="padding: 64px 8px 74px;box-sizing: border-box;">
