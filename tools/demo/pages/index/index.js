@@ -56,12 +56,8 @@ Page({
             text: 'Typography',
           },
           {
-            key: 'icon',
-            text: 'Icon',
-          },
-          {
-            key: 'avatar',
-            text: 'Avatar',
+            key: 'iconandavatar',
+            text: 'Icon + Avatar',
           },
           {
             key: 'card',
@@ -88,6 +84,9 @@ Page({
     ],
   },
   navigateTo(e) {
-    console.log(e)
+    const {target: {dataset: {subItemKey}}} = e
+    wx.navigateTo({
+      url: `/pages/${subItemKey}/index`,
+    })
   },
 })

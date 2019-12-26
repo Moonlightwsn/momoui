@@ -1,13 +1,21 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/test/index"
+    "pages/button/index",
+    "pages/input/index",
+    "pages/form/index",
+    "pages/bottomnavigation/index",
+    "pages/appbar/index",
+    "pages/progress/index",
+    "pages/snackbar/index",
+    "pages/typography/index",
+    "pages/iconandavatar/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#1976d2",
+    "navigationBarBackgroundColor": "#f5f5f5",
     "navigationBarTitleText": "MOMOUI",
-    "navigationBarTextStyle":"white",
+    "navigationBarTextStyle": "black",
     "backgroundColor": "#f5f5f5"
   }
 }

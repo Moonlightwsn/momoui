@@ -14,7 +14,7 @@ Component({
     value: String,
     confirmType: {
       type: String,
-      value: 'next',
+      value: 'done',
     },
     password: {
       type: Boolean,
@@ -128,7 +128,7 @@ Component({
         disabled,
         error,
         startAdornment,
-        placeholder
+        // placeholder
       } = this.properties
       const {currentValue} = this.data
       if (!disabled) {
@@ -137,7 +137,7 @@ Component({
           newData.innerFocus = false
         }
         newData.innerLabelShrink = currentValue || startAdornment
-        newData.innerPlaceholder = currentValue || placeholder
+        newData.innerPlaceholder = currentValue || ''
         this.setData(newData)
       }
     },

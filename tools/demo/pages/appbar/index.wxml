@@ -1,0 +1,57 @@
+<mui-app-bar
+  color="primary"
+  position="fixed"
+  m-style="box-shadow: 0px 0px 0px 0px rgba(0,0,0,0), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 0px 0px 0px rgba(0,0,0,0);"
+>
+  <mui-toolbar>
+    <mui-input
+      style="flex-grow: 1;"
+      m-class="search-input"
+      fullWidth="{{true}}"
+      start-adornment="search"
+      start-icon-color="#ffffff"
+      inherit="{{true}}"
+      placeholder="搜索"
+      placeholder-style="color:#8dbbe9;"
+    />
+    <mui-dropdown style="margin-left: 16px;margin-right: 4px;" placeholder="bottomRight">
+      <mui-menu
+        menu-items="{{menuItems}}"
+        bind:itemClick="itemClick"
+        slot="overlay"
+      />
+      <mui-button
+        shape="circle"
+        variant="text"
+        icon="plus"
+        custom-icon-color="#ffffff"
+        custom-ripple-background-color="#ffffff"
+        m-style="height:40px;width:40px;"
+      />
+    </mui-dropdown>
+  </mui-toolbar>
+</mui-app-bar>
+<view style="box-sizing: border-box;padding: 88px 24px;background-color: #f5f5f5;">
+  <mui-typography variant="h6">AppBar</mui-typography>
+  <mui-typography variant="body2" color="textSecondary">
+    应用栏
+  </mui-typography>
+  <view style="margin: 72px 0 48px;">
+    <mui-app-bar color="secondary" position="static">
+      <mui-toolbar m-style="padding: 0 6px;" variant="dense" disable-gutters="{{true}}">
+        <mui-button
+          icon="bullet-list"
+          variant="text"
+          shape="circle"
+          custom-icon-color="#ffffff"
+          custom-ripple-background-color="#ffffff"
+          m-style="height:48px;width:48px;"
+        />
+        <mui-typography variant="h6" style="flex-grow: 1;margin-left: 16px;">
+          News
+        </mui-typography>
+        <mui-button variant="text" size="small" color="secondary" m-style="color:#ffffff;" custom-ripple-background-color="#ffffff">LOGIN</mui-button>
+      </mui-toolbar>
+    </mui-app-bar>
+  </view>
+</view>

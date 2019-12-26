@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mui-typography": "/components/typography/typography",
+    "mui-snack-bar": "/components/snack-bar/snack-bar",
+    "mui-button": "/components/button/button"
+  }
+}

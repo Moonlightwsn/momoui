@@ -99,5 +99,5 @@ module.exports = {
       assetFilter: assetFilename => assetFilename.endsWith('.js')
     }
   },
-  copy: ['styles'], // 将会复制到目标目录
+  copy: ['styles', 'utils'], // 将会复制到目标目录
 }

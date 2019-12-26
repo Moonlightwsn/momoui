@@ -1,0 +1,21 @@
+<view style="box-sizing: border-box;padding: 24px 36px;background-color: #f5f5f5;">
+  <mui-typography variant="h6">Typography</mui-typography>
+  <mui-typography variant="body2" color="textSecondary">
+    文字铸排
+  </mui-typography>
+  <view style="margin: 24px 0 48px;text-align:center;">
+    <mui-typography variant="h1">h1</mui-typography>
+    <mui-typography variant="h2">h2</mui-typography>
+    <mui-typography variant="h3">h3</mui-typography>
+    <mui-typography variant="h4">h4</mui-typography>
+    <mui-typography variant="h5">h5</mui-typography>
+    <mui-typography variant="h6">h6</mui-typography>
+    <mui-typography variant="subtitle1">subtitle1</mui-typography>
+    <mui-typography variant="subtitle2">subtitle2</mui-typography>
+    <mui-typography variant="body1">body1</mui-typography>
+    <mui-typography variant="body2">body2</mui-typography>
+    <mui-typography variant="button">button</mui-typography>
+    <mui-typography variant="caption">caption</mui-typography>
+    <mui-typography variant="overline">OVERLINE</mui-typography>
+  </view>
+</view>

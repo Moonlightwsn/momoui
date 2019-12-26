@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "mui-form": "/components/form/form",
+    "mui-typography": "/components/typography/typography",
+    "mui-input": "/components/input/input",
+    "mui-radio-group": "/components/radio-group/radio-group",
+    "mui-radio": "/components/radio/radio",
+    "mui-checkbox-group": "/components/checkbox-group/checkbox-group",
+    "mui-checkbox": "/components/checkbox/checkbox",
+    "mui-switch": "/components/switch/switch",
+    "mui-button": "/components/button/button"
+  }
+}

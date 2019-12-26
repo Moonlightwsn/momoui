@@ -1,0 +1,18 @@
+<view style="box-sizing: border-box;padding: 24px 36px;background-color: #f5f5f5;">
+  <mui-typography variant="h6">Progress</mui-typography>
+  <mui-typography variant="body2" color="textSecondary">
+    进度条
+  </mui-typography>
+  <view style="margin: 48px 0;">
+    <mui-progress type="circle" size="32" style="margin-right:12px;" />
+    <mui-progress type="circle" style="margin-right: 12px;" />
+    <mui-progress type="circle" size="48" style="margin-right: 12px;" />
+    <mui-progress type="circle" color="secondary" size="48"  />
+  </view>
+  <view style="margin: 48px 0;">
+    <view style="margin-bottom: 12px;">
+      <mui-progress type="line" />
+    </view>
+    <mui-progress type="line" color="secondary"  />
+  </view>
+</view>

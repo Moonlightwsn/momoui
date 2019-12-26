@@ -59,23 +59,27 @@
     .mui-button {
       padding: 6px 16px;
       font-size: 14px;
+      height: 36px;
     }
   }
   &.mui-button-group-small {
     .mui-button {
-      padding: 4px 10px;
+      padding: 3px 9px;
       font-size: 13px;
+      height: 30px;
     }
   }
   &.mui-button-group-large {
     .mui-button {
       padding: 8px 22px;
       font-size: 15px;
+      height: 42px;
     }
   }
   .mui-button {
     border: 0;
     border-radius: 0;
+    box-sizing: border-box;
     &.mui-button-hover {
       box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
     }

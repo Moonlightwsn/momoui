@@ -1,0 +1,24 @@
+<view style="box-sizing: border-box;padding: 24px;background-color: #f5f5f5;">
+  <mui-typography variant="h6">BottomNavigation</mui-typography>
+  <mui-typography variant="body2" color="textSecondary">
+    底部导航栏
+  </mui-typography>
+  <view style="margin: 72px 0 48px;">
+    <mui-bottom-navigation
+      color="secondary"
+      actions="{{actions}}"
+      activeKey="{{activeKey}}"
+      controlled="{{true}}"
+      bind:change="bnchange"
+    />
+  </view>
+</view>
+<mui-bottom-navigation
+  style="position: fixed;bottom: 0; width: 100%;"
+  m-style="border-top: 1px solid #00000014;"
+  color="primary"
+  actions="{{actions}}"
+  activeKey="{{activeKey}}"
+  controlled="{{true}}"
+  bind:change="bnchange"
+/>

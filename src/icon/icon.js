@@ -1,13 +1,14 @@
 import {Base64} from '../utils/base64'
+import {iconPathMap} from '../utils/utils'
 
 /* eslint-disable */
 const app = getApp()
 /* eslint-disable */
-let pathPrefix = '/miniprogram_npm/momoui/dist'
+let pathPrefix = '/miniprogram_npm/momoui-miniprogram/dist'
 if (app.momouiRootPath) {
   pathPrefix = app.momouiRootPath
 }
-
+/*
 const muiIconPath = '/styles/icons/'
 
 const iconPathMap = {
@@ -59,6 +60,7 @@ const iconPathMap = {
   'scan': `${muiIconPath}scan.svg`,
   'pay': `${muiIconPath}pay.svg`,
 }
+*/
 
 Component({
   properties: {
