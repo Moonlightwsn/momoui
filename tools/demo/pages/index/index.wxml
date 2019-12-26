@@ -1,121 +1,87 @@
-<mui-app-bar
-  color="primary"
-  position="fixed"
-  m-style="box-shadow: 0px 0px 0px 0px rgba(0,0,0,0), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 0px 0px 0px rgba(0,0,0,0);"
->
-  <mui-toolbar variant="dense" disable-gutters="{{true}}">
-    <mui-input
-      style="flex-grow: 1;margin-left: 16px;"
-      m-class="search-input"
-      fullWidth="{{true}}"
-      start-adornment="search"
-      start-icon-color="#ffffff"
-      inherit="{{true}}"
-      placeholder="搜索"
-      placeholder-style="color:#8dbbe9;"
-    />
-    <mui-dropdown style="margin-left: 16px;margin-right: 4px;" placeholder="bottomRight">
-      <mui-menu
-        menu-items="{{menuItems}}"
-        bind:itemClick="itemClick"
-        slot="overlay"
+<view style="box-sizing: border-box;padding: 12px 6px;background-color: #f5f5f5;height: 100vh;">
+  <mui-card>
+    <mui-card-header
+      avatar-text="M"
+      avatar-color="#ffffff"
+      avatar-background-color="#1976d2"
+      title="MOMO UI"
+      subheader="类Material-UI的UI组件库"
+      action="hand-like"
+      action-color="#dc004e"
+    ></mui-card-header>
+    <mui-card-content>
+      <mui-typography variant="body2" color="textSecondary">MOMO UI参照<text style="margin: 0 6px;color: #1976d2;text-decoration: none;">React Material-UI</text>的样式实现了一套可用以微信小程序开发的UI组件库, 在API的设计上也尽量还原和贴近原组件库的风格。目前MOMO UI提供的组件还不完备, 开发者可通过下方的分类查看具体示例。</mui-typography>
+    </mui-card-content>
+    <mui-list header="表单">
+      <mui-list-item
+        primary-text="Button"
+        action="arrow-right-2"
       />
-      <mui-button
-        shape="circle"
-        variant="text"
-        icon="plus"
-        custom-icon-color="#ffffff"
-        custom-ripple-background-color="#ffffff"
-        m-style="height:40px;width:40px;"
+      <mui-list-item
+        primary-text="Input"
+        action="arrow-right-2"
       />
-    </mui-dropdown>
-  </mui-toolbar>
-</mui-app-bar>
-<view style="padding: 64px 8px 74px;box-sizing: border-box;">
-  <mui-form bind:submit="formSubmit" bind:reset="formReset">
-    <mui-input fullWidth="{{true}}" label="TextField" name="input" />
-    <mui-checkbox-group name="checkbox">
-      <mui-checkbox value="ck1">Checkbox1</mui-checkbox>
-      <mui-checkbox value="ck2">Checkbox2</mui-checkbox>
-    </mui-checkbox-group>
-    <mui-radio-group name="radio">
-      <mui-radio value="rd1">Raido1</mui-radio>
-      <mui-radio value="rd2">Raido2</mui-radio>
-    </mui-radio-group>
-    <mui-switch name="switch" checked="{{true}}" />
-    <mui-button form-type="submit" color="primary" variant="outlined" size="medium">Submit</mui-button>
-    <mui-button form-type="reset" color="secondary" variant="outlined" size="medium">Reset</mui-button>
-  </mui-form>
-  <mui-paper m-style="padding: 24px 16px;">
-    <mui-typography variant="h5">
-      This is a sheet of paper.
-    </mui-typography>
-    <mui-typography variant="p">
-      Paper can be used to build surface or other elements for your application.
-    </mui-typography>
-  </mui-paper>
-  <mui-menu
-    style="margin-top: 8px;display:inline-flex;"
-    menu-items="{{menuItems}}"
-    bind:itemClick="itemClick"
-  />
-  <mui-button color="primary" bind:tap="showMessage">Show Message</mui-button>
-  <mui-snack-bar open="{{open}}" message="I love snacks" />
-</view>
-<mui-bottom-navigation
-  style="position: fixed;bottom: 0; width: 100%;"
-  m-style="border-top: 1px solid #00000014;"
-  color="primary"
-  actions="{{actions}}"
-  activeKey="{{activeKey}}"
-  controlled="{{true}}"
-  bind:change="bnchange"
-/>
-<!--
-<view style="padding: 16px;margin: 10px auto;background-color: #f5f5f5;">
-  
-  <mui-card m-style="margin: 0 0 12px 0;">
-    <mui-card-action-area>
-      <mui-card-media image-src="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"></mui-card-media>
-      <mui-card-content>
-        <mui-typography variant="body2" color="textSecondary">Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica</mui-typography>
-      </mui-card-content>
-    </mui-card-action-area>
-    <mui-card-action>
-      <mui-button variant="text" color="primary" size="small">Share</mui-button>
-      <mui-button variant="text" color="primary" size="small">Learn More</mui-button>
-    </mui-card-action>
+      <mui-list-item
+        primary-text="Form"
+        action="arrow-right-2"
+      />
+    </mui-list>
+    <mui-divider />
+    <mui-list header="导航">
+      <mui-list-item
+        primary-text="BottomNavigation"
+        action="arrow-right-2"
+      />
+      <mui-list-item
+        primary-text="AppBar"
+        action="arrow-right-2"
+      />
+    </mui-list>
+    <mui-divider />
+    <mui-list header="交互">
+      <mui-list-item
+        primary-text="Progress"
+        action="arrow-right-2"
+      />
+      <mui-list-item
+        primary-text="SnackBar"
+        action="arrow-right-2"
+      />
+    </mui-list>
+    <mui-divider />
+    <mui-list header="展示">
+      <mui-list-item
+        primary-text="Typography"
+        action="arrow-right-2"
+      />
+      <mui-list-item
+        primary-text="Icon"
+        action="arrow-right-2"
+      />
+      <mui-list-item
+        primary-text="Avatar"
+        action="arrow-right-2"
+      />
+      <mui-list-item
+        primary-text="Card"
+        action="arrow-right-2"
+      />
+      <mui-list-item
+        primary-text="List"
+        action="arrow-right-2"
+      />
+      <mui-list-item
+        primary-text="Paper"
+        action="arrow-right-2"
+      />
+      <mui-list-item
+        primary-text="Menu"
+        action="arrow-right-2"
+      />
+      <mui-list-item
+        primary-text="Dropdown"
+        action="arrow-right-2"
+      />
+    </mui-list>
   </mui-card>
-  <mui-card m-style="display: flex;">
-    <view
-      style="display:flex;flex-direction:column;flex:1 0 auto;"
-    >
-      <mui-card-content style="flex: 1 0 auto;" m-style="display: flex;justify-content: center;align-item:center;">
-        <view>
-          <mui-typography variant="h5">
-            Live From Space
-          </mui-typography>
-          <mui-typography variant="subtitle1" color="textSecondary">
-            Mac Miller
-          </mui-typography>
-        </view>
-      </mui-card-content>
-      <view
-        style="display: flex;align-items:center;justify-content:center;padding: 0 0 8px 8px;"
-      >
-        <mui-button style="margin-right: 16px;" variant="text" shape="circle" icon="play-prev"></mui-button>
-        <mui-button style="margin-right: 16px;" variant="text" shape="circle" icon="play" size="large"></mui-button>
-        <mui-button variant="text" shape="circle" icon="play-next"></mui-button>
-      </view>
-    </view>
-    <mui-card-media style="min-width: 155px;display: flex;" m-style="height: 155px;" mode="center" image-src="https://material-ui.com/static/images/cards/live-from-space.jpg"></mui-card-media>
-  </mui-card>
-  <mui-input m-style="margin: 8px 0px;" start-adornment="user" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" placeholder="Placeholder" />
-  <mui-input m-style="margin: 8px 0px;" start-adornment="user" color="secondary" focus="{{false}}" full-width="{{true}}" label="Name" filled="{{true}}" help="Some important helper text" placeholder="Placeholder"  />
-  <mui-input m-style="margin: 8px 0px;" start-adornment="user" color="wechat" focus="{{false}}" full-width="{{true}}" filled="{{true}}" help="Some important helper text" placeholder="Placeholder"  />
-  <mui-input m-style="margin: 8px 0px;" start-adornment="user" color="default" focus="{{false}}" full-width="{{true}}" help="Some important helper text" placeholder="Placeholder"  />
-  <mui-input m-style="margin: 8px 0px;" error="{{true}}" focus="{{false}}" full-width="{{true}}" label="Name" help="Some important helper text" placeholder="Placeholder"  />
-  <mui-input m-style="margin: 8px 0px;" color="default" focus="{{true}}" disabled="{{true}}" full-width="{{true}}" label="Name" help="Some important helper text" value="Disabled" placeholder="Placeholder"  />
-  
 </view>
--->

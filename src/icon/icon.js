@@ -22,6 +22,7 @@ const iconPathMap = {
   'link': `${muiIconPath}link.svg`,
   'trash': `${muiIconPath}trash.svg`,
   'like': `${muiIconPath}like.svg`,
+  'hand-like': `${muiIconPath}hand-like.svg`,
   'arrow-down-1': `${muiIconPath}arrow-down-1.svg`,
   'arrow-up-1': `${muiIconPath}arrow-up-1.svg`,
   'arrow-left-1': `${muiIconPath}arrow-left-1.svg`,

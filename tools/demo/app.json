@@ -1,12 +1,13 @@
 {
   "pages":[
-    "pages/index/index"
+    "pages/index/index",
+    "pages/test/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#1976d2",
-    "navigationBarTitleText": "微信",
+    "navigationBarTitleText": "MOMOUI",
     "navigationBarTextStyle":"white",
-    "backgroundColor": "#ffffff"
+    "backgroundColor": "#f5f5f5"
   }
 }
