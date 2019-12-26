@@ -12,76 +12,24 @@
     <mui-card-content>
       <mui-typography variant="body2" color="textSecondary">MOMO UI参照<text style="margin: 0 6px;color: #1976d2;text-decoration: none;">React Material-UI</text>的样式实现了一套可用以微信小程序开发的UI组件库, 在API的设计上也尽量还原和贴近原组件库的风格。目前MOMO UI提供的组件还不完备, 开发者可通过下方的分类查看具体示例。</mui-typography>
     </mui-card-content>
-    <mui-list header="表单">
-      <mui-list-item
-        primary-text="Button"
-        action="arrow-right-2"
-      />
-      <mui-list-item
-        primary-text="Input"
-        action="arrow-right-2"
-      />
-      <mui-list-item
-        primary-text="Form"
-        action="arrow-right-2"
-      />
-    </mui-list>
-    <mui-divider />
-    <mui-list header="导航">
-      <mui-list-item
-        primary-text="BottomNavigation"
-        action="arrow-right-2"
-      />
-      <mui-list-item
-        primary-text="AppBar"
-        action="arrow-right-2"
-      />
-    </mui-list>
-    <mui-divider />
-    <mui-list header="交互">
-      <mui-list-item
-        primary-text="Progress"
-        action="arrow-right-2"
-      />
-      <mui-list-item
-        primary-text="SnackBar"
-        action="arrow-right-2"
-      />
-    </mui-list>
-    <mui-divider />
-    <mui-list header="展示">
-      <mui-list-item
-        primary-text="Typography"
-        action="arrow-right-2"
-      />
-      <mui-list-item
-        primary-text="Icon"
-        action="arrow-right-2"
-      />
-      <mui-list-item
-        primary-text="Avatar"
-        action="arrow-right-2"
-      />
-      <mui-list-item
-        primary-text="Card"
-        action="arrow-right-2"
-      />
-      <mui-list-item
-        primary-text="List"
-        action="arrow-right-2"
-      />
-      <mui-list-item
-        primary-text="Paper"
-        action="arrow-right-2"
-      />
-      <mui-list-item
-        primary-text="Menu"
-        action="arrow-right-2"
-      />
-      <mui-list-item
-        primary-text="Dropdown"
-        action="arrow-right-2"
-      />
-    </mui-list>
+    <view
+      wx:for="{{list}}"
+      wx:for-index="idx"
+      wx:for-item="category"
+      wx:key="{{category.key}}"
+    >
+      <mui-list header="{{category.header}}">
+        <mui-list-item
+          wx:for="{{category.items}}"
+          wx:for-index="subIdx"
+          wx:for-item="subItem"
+          wx:key="{{category.key}}-{{subItem.key}}"
+          primary-text="{{subItem.text}}"
+          action="arrow-right-2"
+          data-sub-item-key="{{subItem.key}}"
+          bind:tap="navigateTo"
+        />
+      </mui-list>
+    </view>
   </mui-card>
 </view>
