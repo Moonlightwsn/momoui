@@ -27,7 +27,7 @@ $ 生成的 miniprogram_dev 目录是一个小程序项目目录，以此目录�
 - 在个人小程序项目下安装momoui-miniprogram
 
 ```bash
-$ npm install momoui-miniprogram --save
+$ npm install momoui-miniprogram --production
 ```
 
 - 安装完成后, 在微信开发者工具中构建npm
