@@ -17,7 +17,7 @@ $ 生成的 miniprogram_dev 目录是一个小程序项目目录，以此目录�
 ```
 
 ### 使用微信扫一扫
-<img src="https://github.com/Moonlightwsn/momoui/blob/master/momoui.png?raw=true" height="215px" width="619px" alt="logo-miniprogram" />
+<img src="https://github.com/Moonlightwsn/momoui/blob/master/momoui.png?raw=true" height="256px" width="256px" alt="logo-miniprogram" />
 
 
 ## 开始使用
