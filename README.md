@@ -70,6 +70,8 @@ App({
 <mui-button color="primary">PRIMARY</mui-button>
 ```
 
+### 更多示例可参看 `/tools/demo`
+
 
 
 
