@@ -1,7 +1,8 @@
 {
   "name": "momoui-miniprogram",
   "version": "1.0.3",
-  "description": "",
+  "keywords": ["material ui", "小程序", "微信", "wechat", "miniprogram"],
+  "description": "类Material-UI的微信小程序组件库",
   "main": "dist/index.js",
   "scripts": {
     "dev": "gulp dev --develop",
