@@ -1,7 +1,13 @@
 {
   "name": "momoui-miniprogram",
-  "version": "1.0.3",
-  "keywords": ["material ui", "小程序", "微信", "wechat", "miniprogram"],
+  "version": "1.0.4",
+  "keywords": [
+    "material ui",
+    "小程序",
+    "微信",
+    "wechat",
+    "miniprogram"
+  ],
   "description": "类Material-UI的微信小程序组件库",
   "main": "dist/index.js",
   "scripts": {
