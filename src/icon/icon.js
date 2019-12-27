@@ -4,7 +4,7 @@ import {iconPathMap} from '../utils/utils'
 /* eslint-disable */
 const app = getApp()
 /* eslint-disable */
-let pathPrefix = '/miniprogram_npm/momoui-miniprogram/dist'
+let pathPrefix = '/miniprogram_npm/momoui-miniprogram'
 if (app.momouiRootPath) {
   pathPrefix = app.momouiRootPath
 }
