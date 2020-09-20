@@ -100,7 +100,12 @@ Component({
   },
   methods: {
     reset() {
-      this.setData({value: '', innerPlaceholder: '', innerLabelShrink: false})
+      this.setData({
+        value: '',
+        currentValue: '',
+        innerPlaceholder: '',
+        innerLabelShrink: false,
+      })
     },
     _input(e) {
       const {value} = e.detail

@@ -14,3 +14,8 @@ docs
 miniprogram_dev
 node_modules
 coverage
+src
+gulpfile.js
+momoui.png
+.babelrc
+.eslintrc.js
