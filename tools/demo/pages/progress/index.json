@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "mui-typography": "/components/typography/typography",
-    "mui-progress": "/components/progress/progress"
-  }
-}

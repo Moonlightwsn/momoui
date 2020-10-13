@@ -1,6 +1,0 @@
-<view
-  class="{{mClass}}  mui mui-card"
-  style="{{mStyle}}"
->
-  <slot></slot>
-</view>

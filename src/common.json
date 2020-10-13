@@ -1,0 +1,6 @@
+{
+  "commonJs": [
+    "./common/utils",
+    "./common/theme"
+  ]
+}

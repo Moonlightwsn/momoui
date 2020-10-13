@@ -1,6 +1,0 @@
-<view style="visibility:{{open ? 'visible' : 'hidden'}}" class="mui mui-snack-bar-wrapper mui-snack-bar-wrapper-{{placeholder}}">
-  <mui-paper m-class="{{mClass}} mui-snack-bar" m-style="{{mStyle}} opacity:{{open ? '1' : '0'}}" style="width: 100%;">
-    <mui-typography variant="body2" m-style="padding: 8px 0;" style="flex:auto;">{{message}}</mui-typography>
-    <mui-button style="flex:none;" shape="circle" icon="close" size="small" variant="text" color="default" custom-icon-color="#ffffff" custom-icon-size="20" bind:tap="close" />
-  </mui-paper>
-</view>

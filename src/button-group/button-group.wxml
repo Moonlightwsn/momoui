@@ -1,5 +1,0 @@
-<view
-  class="mui mui-button-group {{variantMap[variant]}} {{colorMap[color]}} {{sizeMap[size]}}"
->
-  <slot></slot>
-</view>

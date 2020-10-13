@@ -1,2 +1,2 @@
-@import './components/styles/fonts/roboto/roboto.wxss';
-@import './components/styles/global.wxss';
+@import './styles/static/fonts/roboto.wxss';
+@import './styles/common.wxss';

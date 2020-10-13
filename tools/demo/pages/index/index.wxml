@@ -1,36 +1,150 @@
-<view style="box-sizing: border-box;padding: 12px 18px;background-color: #f5f5f5;">
-  <mui-card>
-    <mui-card-header
-      avatar-text="M"
-      avatar-color="#ffffff"
-      avatar-background-color="#1976d2"
-      title="MOMO UI"
-      subheader="类Material-UI的UI组件库"
-      action="hand-like"
-      action-color="#dc004e"
-    ></mui-card-header>
-    <mui-card-content>
-      <mui-typography variant="body2" color="textSecondary">MOMO UI参照<text style="margin: 0 6px;color: #1976d2;text-decoration: none;">React Material-UI</text>的样式实现了一套可用以微信小程序开发的UI组件库, 在API的设计上也尽量还原和贴近原组件库的风格。目前MOMO UI提供的组件还不完备, 开发者可通过下方的分类查看具体示例。</mui-typography>
-    </mui-card-content>
-    <view
-      wx:for="{{list}}"
-      wx:for-index="idx"
-      wx:for-item="category"
-      wx:key="{{category.key}}"
-    >
-      <mui-list header="{{category.header}}">
-        <mui-list-item
-          wx:for="{{category.items}}"
-          wx:for-index="subIdx"
-          wx:for-item="subItem"
-          wx:key="{{category.key}}-{{subItem.key}}"
-          primary-text="{{subItem.text}}"
-          action="arrow-right-2"
-          data-sub-item-key="{{subItem.key}}"
-          bind:tap="navigateTo"
-        />
-      </mui-list>
-      <mui-divider />
+<view
+  id="wrapper"
+  style="padding-top: 100px;min-height: 100px;width: 100%;position:relative;overflow: hidden;"
+>
+  <view>
+    <view style="margin-bottom: 12px;">
+      <mui-button shape="circle" m-style="padding: 8px;" variant="text" color="primary">
+        <mui-icon name="search" size="16" color="#1976d2" />
+      </mui-button>
+      <mui-button shape="circle" m-style="padding: 8px;" variant="outlined" color="primary">
+        <mui-icon name="search" size="16" color="#1976d2" />
+      </mui-button>
+      <mui-button shape="circle" m-style="padding: 8px;" variant="contained" color="primary">
+        <mui-icon name="search" size="16" color="#ffffff" />
+      </mui-button>
     </view>
-  </mui-card>
+  </view>
+  <view>
+    <view style="margin-bottom: 12px;">
+      <mui-button
+        variant="text"
+        size="small"
+      >TEXT</mui-button>
+      <mui-button
+        variant="outlined"
+        size="small"
+      >OUTLINED</mui-button>
+      <mui-button size="small">CONTAINED</mui-button>
+    </view>
+    <view style="margin-bottom: 12px;">
+      <mui-button
+        color="primary"
+        variant="text"
+        size="small"
+      >TEXT</mui-button>
+      <mui-button
+        color="{{buttonColor}}"
+        variant="outlined"
+        size="small"
+      >OUTLINED</mui-button>
+      <mui-button
+        color="primary"
+        size="small"
+        bind:tap="changeButtonColor"
+      >CONTAINED</mui-button>
+    </view>
+    <view style="margin-bottom: 12px;">
+      <mui-button
+        color="secondary"
+        variant="text"
+        size="small"
+      >TEXT</mui-button>
+      <mui-button
+        disabled="{{disabled}}"
+        color="secondary"
+        variant="outlined"
+        size="small"
+      >OUTLINED</mui-button>
+      <mui-button
+        color="secondary"
+        size="small"
+        bind:tap="changeDisabled"
+      >CONTAINED</mui-button>
+    </view>
+  </view>
+  <view>
+    <view style="margin-bottom: 12px;">
+      <mui-button
+        variant="text"
+      >TEXT</mui-button>
+      <mui-button
+        variant="outlined"
+      >OUTLINED</mui-button>
+      <mui-button disabled="{{true}}">CONTAINED</mui-button>
+    </view>
+    <view style="margin-bottom: 12px;">
+      <mui-button
+        color="primary"
+        variant="text"
+      >TEXT</mui-button>
+      <mui-button
+        color="primary"
+        variant="outlined"
+      >OUTLINED</mui-button>
+      <mui-button
+        color="primary"
+      >CONTAINED<mui-icon size="20" name="trash" m-style="margin-left: 8px" color="#fff" /></mui-button>
+    </view>
+    <view style="margin-bottom: 12px;">
+      <mui-button
+        color="secondary"
+        variant="text"
+      >TEXT</mui-button>
+      <mui-button
+        color="secondary"
+        variant="outlined"
+      >OUTLINED</mui-button>
+      <mui-button
+        color="secondary"
+      >CONTAINED</mui-button>
+    </view>
+  </view>
+    <view>
+    <view style="margin-bottom: 12px;">
+      <mui-button
+        variant="text"
+        size="large"
+      >TEXT</mui-button>
+      <mui-button
+        variant="outlined"
+        size="large"
+      >OUTLINED</mui-button>
+      <mui-button size="large">CONTAINED</mui-button>
+    </view>
+    <view style="margin-bottom: 12px;">
+      <mui-button
+        color="primary"
+        variant="text"
+        disabled="{{true}}"
+        size="large"
+      >TEXT</mui-button>
+      <mui-button
+        color="primary"
+        variant="outlined"
+        size="large"
+      >OUTLINED</mui-button>
+      <mui-button
+        color="primary"
+        size="large"
+      >CONTAINED</mui-button>
+    </view>
+    <view style="margin-bottom: 12px;">
+      <mui-button
+        color="secondary"
+        variant="text"
+        size="large"
+      >TEXT</mui-button>
+      <mui-button
+        color="secondary"
+        variant="outlined"
+        size="large"
+      >OUTLINED</mui-button>
+      <mui-button
+        color="secondary"
+        size="large"
+        loading="{{true}}"
+      >CONTAINED</mui-button>
+    </view>
+  </view>
 </view>

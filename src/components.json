@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "test": "./components/test/test",
+    "ripple": "./components/ripple/ripple",
+    "ripple-container": "./components/ripple-container/ripple-container",
+    "button": "./components/button/button",
+    "icon": "./components/icon/icon"
+  }
+}

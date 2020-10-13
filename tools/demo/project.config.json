@@ -1,5 +1,5 @@
 {
-	"description": "MOMOUI实例",
+	"description": "项目配置文件。",
 	"packOptions": {
 		"ignore": []
 	},
@@ -12,9 +12,9 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.4",
-	"appid": "wx3cfe351ff4edacd2",
-	"projectname": "momoui-demo",
+	"libVersion": "2.11.2",
+	"appid": "wxf5fa295a8fa3204a",
+	"projectname": "miniprogram-demo",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

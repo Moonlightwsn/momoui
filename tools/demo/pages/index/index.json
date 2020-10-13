@@ -1,33 +1,6 @@
 {
   "usingComponents": {
-    "mui-button": "/components/button/button",
-    "mui-button-group": "/components/button-group/button-group",
-    "mui-icon": "/components/icon/icon",
-    "mui-avatar": "/components/avatar/avatar",
-    "mui-list": "/components/list/list",
-    "mui-list-item": "/components/list-item/list-item",
-    "mui-typography": "/components/typography/typography",
-    "mui-card": "/components/card/card",
-    "mui-card-header": "/components/card-header/card-header",
-    "mui-card-action-area": "/components/card-action-area/card-action-area",
-    "mui-card-media": "/components/card-media/card-media",
-    "mui-card-content": "/components/card-content/card-content",
-    "mui-card-action": "/components/card-action/card-action",
-    "mui-divider": "/components/divider/divider",
-    "mui-form": "/components/form/form",
-    "mui-checkbox": "/components/checkbox/checkbox",
-    "mui-checkbox-group": "/components/checkbox-group/checkbox-group",
-    "mui-radio": "/components/radio/radio",
-    "mui-radio-group": "/components/radio-group/radio-group",
-    "mui-input": "/components/input/input",
-    "mui-switch": "/components/switch/switch",
-    "mui-progress": "/components/progress/progress",
-    "mui-bottom-navigation": "/components/bottom-navigation/bottom-navigation",
-    "mui-app-bar": "/components/app-bar/app-bar",
-    "mui-toolbar": "/components/toolbar/toolbar",
-    "mui-paper": "/components/paper/paper",
-    "mui-menu": "/components/menu/menu",
-    "mui-dropdown": "/components/dropdown/dropdown",
-    "mui-snack-bar": "/components/snack-bar/snack-bar"
+    "mui-button": "../../components/button/button",
+    "mui-icon": "../../components/icon/icon"
   }
 }

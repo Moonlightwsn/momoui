@@ -1,0 +1,15 @@
+<view
+  class="mui-ripple-container"
+  style="width:{{width}}px;height:{{height}}px;top:0;left:0"
+>
+  <mui-ripple
+    wx:key="key"
+    wx:for="{{rippleArray}}"
+    background-color="{{backgroundColor}}"
+    radius="{{radius}}"
+    top="{{item.y}}"
+    left="{{item.x}}"
+    ripple-key="{{item.key}}"
+    bind:clearripple="_clearRippleAction"
+  ></mui-ripple>
+</view>

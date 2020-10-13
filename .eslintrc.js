@@ -3,6 +3,8 @@ module.exports = {
     'airbnb-base',
     'plugin:promise/recommended'
   ],
+  'parser': '@typescript-eslint/parser',
+  'plugins': ['@typescript-eslint'],
   'parserOptions': {
     'ecmaVersion': 9,
     'ecmaFeatures': {
@@ -26,12 +28,19 @@ module.exports = {
       'error',
       'only-multiline'
     ],
-    'complexity': ['error', 10],
+    'complexity': ['error', 20],
     'func-names': 'off',
     'global-require': 'off',
     'handle-callback-err': [
       'error',
       '^(err|error)$'
+    ],
+    "import/extensions": [
+      'error',
+      'never',
+      {
+        'ts': 'always'
+      }
     ],
     'import/no-unresolved': [
       'error',
@@ -41,7 +50,6 @@ module.exports = {
         'ignore': ['^[^.]']
       }
     ],
-    'no-bitwise': 'off',
     'import/prefer-default-export': 'off',
     'linebreak-style': 'off',
     'no-catch-shadow': 'error',

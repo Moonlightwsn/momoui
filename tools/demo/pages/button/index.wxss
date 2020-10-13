@@ -1,5 +1,0 @@
-.button-base {
-  width: 130px;
-  display: flex!important;
-  margin-bottom: 8px!important;
-}

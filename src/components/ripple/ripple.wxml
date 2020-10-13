@@ -1,0 +1,4 @@
+<view
+  class="mui-ripple"
+  style="width:{{radius}}px;height:{{radius}}px;top:{{top}}px;left:{{left}}px;background-color:{{backgroundColor}}"
+></view>

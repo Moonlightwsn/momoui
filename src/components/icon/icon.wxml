@@ -1,0 +1,1 @@
+<image src="{{src || base64Content}}" style="width:{{size}}px;height:{{size}}px;{{mStyle}}"></image>

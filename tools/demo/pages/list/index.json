@@ -1,8 +1,0 @@
-{
-    "usingComponents": {
-      "mui-typography": "/components/typography/typography",
-      "mui-divider": "/components/divider/divider",
-      "mui-list": "/components/list/list",
-      "mui-list-item": "/components/list-item/list-item"
-    }
-  }

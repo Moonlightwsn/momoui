@@ -1,3 +1,0 @@
-<checkbox-group>
-  <slot></slot>
-</checkbox-group>

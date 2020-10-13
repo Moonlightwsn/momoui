@@ -1,24 +1,12 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/button/index",
-    "pages/input/index",
-    "pages/form/index",
-    "pages/bottomnavigation/index",
-    "pages/appbar/index",
-    "pages/progress/index",
-    "pages/snackbar/index",
-    "pages/typography/index",
-    "pages/iconandavatar/index",
-    "pages/list/index",
-    "pages/card/index",
-    "pages/menu/index"
+    "pages/test/test"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#f5f5f5",
-    "navigationBarTitleText": "MOMOUI",
-    "navigationBarTextStyle": "black",
-    "backgroundColor": "#f5f5f5"
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
   }
 }

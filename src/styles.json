@@ -1,0 +1,6 @@
+{
+  "commonWxss": [
+    "./styles/common",
+    "./styles/theme"
+  ]
+}

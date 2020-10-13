@@ -1,5 +1,0 @@
-Component({
-  options: {
-    styleIsolation: 'shared',
-  },
-})

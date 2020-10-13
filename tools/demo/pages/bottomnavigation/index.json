@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "mui-typography": "/components/typography/typography",
-    "mui-bottom-navigation": "/components/bottom-navigation/bottom-navigation"
-  }
-}

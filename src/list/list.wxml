@@ -1,7 +1,0 @@
-<view
-  class="mui mui-list"
-  style="{{header ? 'padding-top: 0;' : ''}}"
->
-  <view wx:if="{{header}}" class="mui-list-header">{{header}}</view>
-  <slot></slot>
-</view>

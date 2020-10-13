@@ -8,44 +8,11 @@ const isWatch = process.argv.indexOf('--watch') >= 0
 const demoSrc = path.resolve(__dirname, './demo')
 const demoDist = path.resolve(__dirname, '../miniprogram_dev')
 const src = path.resolve(__dirname, '../src')
-const dev = path.join(demoDist, 'components')
+const dev = path.join(demoDist, '')
 const dist = path.resolve(__dirname, '../dist')
 
-const entryFiles = [
-  'button/button',
-  'button-group/button-group',
-  'icon/icon',
-  'list/list',
-  'list-item/list-item',
-  'avatar/avatar',
-  'ripple/behaviors',
-  'typography/typography',
-  'card/card',
-  'card-header/card-header',
-  'card-action-area/card-action-area',
-  'card-media/card-media',
-  'card-content/card-content',
-  'card-action/card-action',
-  'divider/divider',
-  'form/form',
-  'checkbox/checkbox',
-  'checkbox-group/checkbox-group',
-  'radio/radio',
-  'radio-group/radio-group',
-  'input/input',
-  'switch/switch',
-  'progress/progress',
-  'bottom-navigation/bottom-navigation',
-  'app-bar/app-bar',
-  'toolbar/toolbar',
-  'paper/paper',
-  'menu/menu',
-  'dropdown/dropdown',
-  'snack-bar/snack-bar',
-]
-
 module.exports = {
-  entry: entryFiles,
+  entry: ['components', 'behaviors', 'common', 'styles'],
 
   isDev,
   isWatch,
@@ -75,11 +42,36 @@ module.exports = {
     module: {
       rules: [{
         test: /\.js$/i,
-        use: [
-          'babel-loader',
-          'eslint-loader'
-        ],
+        use: [{
+          loader: 'thread-loader',
+        }, {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+          },
+        }, {
+          loader: 'eslint-loader',
+        }],
         exclude: /node_modules/
+      }, {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: [{
+          loader: 'thread-loader',
+        }, {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+          },
+        }, {
+          loader: 'ts-loader',
+          options: {
+            appendTsSuffixTo: [/\.vue$/],
+            happyPackMode: true,
+          },
+        }, {
+          loader: 'eslint-loader',
+        }],
       }],
     },
     resolve: {
@@ -93,11 +85,13 @@ module.exports = {
     optimization: {
       minimize: false,
     },
-    // devtool: 'nosources-source-map', // 生成 js sourcemap
+    ...(isDev ? { devtool: 'source-map' } : {}),
+    // devtool: 'source-map', // 生成 js sourcemap
     performance: {
       hints: 'warning',
       assetFilter: assetFilename => assetFilename.endsWith('.js')
     }
   },
-  copy: ['styles', 'utils'], // 将会复制到目标目录
+
+  copy: ['styles/static'], // 将会复制到目标目录
 }
