@@ -62,7 +62,6 @@ export default Behavior({
     'color, variant, size, loading, disabled': function (color, variant, size, loading, disabled) {
       const _disabled = (disabled || loading)
       this._defineDisabled(_disabled)
-      console.log(color, variant, size, _disabled)
       if (!(color === 'default' && variant === 'contained' && size === 'medium' && !_disabled)) {
         /**
          * 在人为设置[color, variant, size, _disabled]四元组的值后会触发observers

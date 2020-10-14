@@ -1,7 +1,6 @@
 {
   "commonJs": [
     "./behaviors/muiController",
-    "./behaviors/muiStyleBase",
     "./behaviors/rippleBase"
   ]
 }

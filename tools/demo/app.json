@@ -3,10 +3,15 @@
     "pages/index/index",
     "pages/test/test"
   ],
+  "darkmode": true,
+  "themeLocation": "theme.json",
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "@navBgColor",
+    "navigationBarTextStyle": "@navTxtStyle",
+    "backgroundColor": "@bgColor",
+    "backgroundTextStyle": "@bgTxtStyle",
+    "backgroundColorTop": "@bgColorTop",
+    "backgroundColorBottom": "@bgColorBottom"
   }
 }
