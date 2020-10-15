@@ -16,10 +16,11 @@ function debounce(func: Function, wait: number) {
 const regexp = /(\b[0-9]{1,3}\b)/g
 function highBrightnessColor(color: string) {
   const [r, g, b, a = 1] = color.match(regexp)
+  const aref = 100 // 标注值是192，这里自行调整为100
   return (
     (parseInt(r, 10) * 0.299 +
     parseInt(g, 10) * 0.578 +
-    parseInt(b, 10) * 0.114) >= (192 * Number(a))
+    parseInt(b, 10) * 0.114) >= (aref * Number(a))
   )
 }
 

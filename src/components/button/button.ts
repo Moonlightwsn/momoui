@@ -1,6 +1,11 @@
 import muiController from '../../behaviors/muiController.ts'
 import rippleBase from '../../behaviors/rippleBase.ts'
 
+const innerRippleColorMap = {
+  primary: '#90caf9',
+  secondary: '#f48fb1'
+}
+
 Component({
   behaviors: [muiController, rippleBase],
   properties: {
@@ -65,12 +70,23 @@ Component({
       value: '',
     },
   },
+  data: {
+    _rippleColor: '',
+  },
   observers: {
     shape(shape) {
       this.setData({
         _pure_center: shape === 'circle',
       })
-    }
+    },
+    'variant, color': function (variant = 'contained', color = 'default') {
+      if (variant !== 'contained') {
+        const _rippleColor = innerRippleColorMap[color]
+        this.setData({
+          _rippleColor,
+        })
+      }
+    },
   },
   options: {
     virtualHost: true,

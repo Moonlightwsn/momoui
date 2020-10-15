@@ -4,7 +4,7 @@ module.exports = Behavior({
   },
   attached: function() {
     const app = getApp()
-    this.themeChanged(app.theme)
+    this.themeChanged(app.momouiTheme)
     app.watchThemeChange && app.watchThemeChange(this.themeChanged)
   },
   detached: function() {

@@ -1,4 +1,3 @@
-import {innerRippleColorsMap} from '../common/theme.ts'
 import {highBrightnessColor} from '../common/utils.ts'
 
 export default Behavior({
@@ -44,11 +43,9 @@ export default Behavior({
             } = view
             if (width > 0 && height > 0) {
               const {scrollLeft = 0, scrollTop = 0} = viewPort
-              const {rippleColor, color, variant} = this.properties
-              let realRippleColor = rippleColor
-              if (!realRippleColor && variant !== 'contained') {
-                realRippleColor = innerRippleColorsMap[color]
-              }
+              const {rippleColor} = this.properties
+              const {_rippleColor} = this.data
+              let realRippleColor = rippleColor || _rippleColor
               if (!realRippleColor) {
                 realRippleColor = (highBrightnessColor(backgroundColor) ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)')
               }

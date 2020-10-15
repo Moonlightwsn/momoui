@@ -5,14 +5,14 @@ App({
     wx.getSystemInfo({
       success: (sysinfo) => {
         if (sysinfo && sysinfo.theme) {
-          this.theme = sysinfo.theme;
+          this.momouiTheme = sysinfo.theme;
         }
       },
     })
   },
   onThemeChange: function(obj) {
     if (obj && obj.theme) {
-      this.theme = obj.theme;
+      this.momouiTheme = obj.theme;
       themeListeners.forEach((listener) => {
         listener(obj.theme)
       })
@@ -30,5 +30,5 @@ App({
     }
   },
   momouiRootPath: '/',
-  theme: 'light'
+  momouiTheme: 'light'
 })
