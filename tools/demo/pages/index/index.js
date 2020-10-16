@@ -25,5 +25,8 @@ Page({
     this.setData({
       disabled: !disabled
     })
+  },
+  testLongPress() {
+    console.log('testLongPress')
   }
 })

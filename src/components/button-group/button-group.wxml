@@ -1,0 +1,6 @@
+<view
+  class="mui mui-button-group {{muiClasses}}"
+  style="{{mStyle}}"
+>
+  <slot></slot>
+</view>

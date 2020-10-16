@@ -5,6 +5,7 @@
   hover-class="{{_disabled ? '' : 'mui-button-hover'}}"
   loading="{{loading}}"
   capture-bind:tap="_RippleAction"
+  capture-bind:longpress="_RippleAction"
   form-type="{{formType}}"
   open-type="{{openType}}"
   app-parameter="{{openType === 'launchApp' ? appParameter : ''}}"

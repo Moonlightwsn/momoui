@@ -73,6 +73,31 @@ Component({
   data: {
     _rippleColor: '',
   },
+  relations: {
+    '../button-group/button-group': {
+      type: 'parent',
+      linked(target) {
+        if (target) {
+          const {data: {variant, color, size} = {}} = target
+          this.setData({
+            variant,
+            color,
+            size,
+          })
+        }
+      }
+    }
+  },
+  methods: {
+    _setRippleColor(variant = 'contained', color = 'default') {
+      if (variant !== 'contained') {
+        const _rippleColor = innerRippleColorMap[color] || ''
+        this.setData({
+          _rippleColor,
+        })
+      }
+    },
+  },
   observers: {
     shape(shape) {
       this.setData({
@@ -80,12 +105,7 @@ Component({
       })
     },
     'variant, color': function (variant = 'contained', color = 'default') {
-      if (variant !== 'contained') {
-        const _rippleColor = innerRippleColorMap[color]
-        this.setData({
-          _rippleColor,
-        })
-      }
+      this._setRippleColor(variant, color)
     },
   },
   options: {
