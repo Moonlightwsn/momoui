@@ -5,6 +5,8 @@
     "ripple-container": "./components/ripple-container/ripple-container",
     "button": "./components/button/button",
     "button-group": "./components/button-group/button-group",
+    "paper": "./components/paper/paper",
+    "grid": "./components/grid/grid",
     "icon": "./components/icon/icon"
   }
 }

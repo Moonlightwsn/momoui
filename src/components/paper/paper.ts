@@ -3,25 +3,21 @@ import muiController from '../../behaviors/muiController.ts'
 Component({
   behaviors: [muiController],
   properties: {
-    color: {
-      type: String,
-      value: 'default',
+    elevation: {
+      type: Number,
+      value: 1,
     },
     variant: {
       type: String,
-      value: 'outlined',
+      value: 'elevation',
     },
-    size: {
-      type: String,
-      value: 'medium',
+    square: {
+      type: Boolean,
+      value: false,
     },
-  },
-  relations: {
-    '../button/button': {
-      type: 'child',
-    }
   },
   options: {
+    virtualHost: true,
     pureDataPattern: /^_pure/,
     styleIsolation: 'apply-shared',
   },

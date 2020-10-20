@@ -1,8 +1,20 @@
 <view
-  style="padding: 40px 10px"
+  style="padding: 40px 10px;background-color: #f5f5f5;"
 >
   <mui-test>测试</mui-test>
   <button>BUTTON</button>
   <mui-button m-style="margin: 8px;">MUI BUTTON</mui-button>
   <mui-button color="primary">MUI BUTTON</mui-button>
+  <mui-grid container justify="center" m-style="flex-grow:1;height: 300px;">
+    <mui-grid item>
+      <mui-paper m-style="width: 100px;height: 140px;" ></mui-paper>
+    </mui-grid>
+    <mui-grid item>
+      <mui-paper m-style="width: 100px;height: 140px;" ></mui-paper>
+    </mui-grid>
+    <mui-grid item>
+      <mui-paper m-style="width: 100px;height: 140px;" ></mui-paper>
+    </mui-grid>
+  </mui-grid>
+  <mui-paper wx:for="{{papers}}" wx:key="item" m-style="width: 128px;height: 128px;margin: 8px;" elevation="{{item}}"></mui-paper>
 </view>

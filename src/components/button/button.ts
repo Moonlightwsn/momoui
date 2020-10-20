@@ -101,7 +101,7 @@ Component({
   observers: {
     shape(shape) {
       this.setData({
-        _pure_center: shape === 'circle',
+        _pureCenter: shape === 'circle',
       })
     },
     'variant, color': function (variant = 'contained', color = 'default') {
@@ -110,7 +110,7 @@ Component({
   },
   options: {
     virtualHost: true,
-    pureDataPattern: /^_pure_/,
+    pureDataPattern: /^_pure/,
     styleIsolation: 'apply-shared',
   },
 })

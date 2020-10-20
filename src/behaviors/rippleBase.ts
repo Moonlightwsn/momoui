@@ -12,7 +12,7 @@ export default Behavior({
     }
   },
   data: {
-    _pure_center: false,
+    _pureCenter: false,
   },
   methods: {
     _RippleAction(e) {
@@ -59,7 +59,7 @@ export default Behavior({
                 backgroundColor: realRippleColor,
                 x,
                 y,
-                center: this.data._pure_center,
+                center: this.data._pureCenter,
               })
             }
           })

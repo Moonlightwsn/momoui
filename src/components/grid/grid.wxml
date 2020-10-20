@@ -1,0 +1,6 @@
+<view
+  class="mui mui-grid {{container ? 'container' : ''}} {{item ? 'item' : ''}} {{mClass}}"
+  style="{{_innerStyles}}{{mStyle}}"
+>
+  <slot></slot>
+</view>

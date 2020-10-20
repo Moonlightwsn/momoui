@@ -76,7 +76,7 @@ Component({
     },
   },
   options: {
-    pureDataPattern: /^_pure_/,
+    pureDataPattern: /^_pure/,
     styleIsolation: 'apply-shared',
   },
 })
