@@ -1,6 +1,6 @@
 <view
   class="mui mui-grid {{_innerClasses}} {{mClass}}"
-  style="{{_innerStyles}}{{mStyle}}"
+  style="display:flex;{{_innerStyles}}{{mStyle}}"
 >
   <slot></slot>
 </view>

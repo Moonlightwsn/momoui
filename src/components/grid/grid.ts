@@ -59,6 +59,26 @@ Component({
       type: String,
       value: 'wrap',
     },
+    xs: {
+      type: Number,
+      value: 0,
+    },
+    sm: {
+      type: Number,
+      value: 0,
+    },
+    md: {
+      type: Number,
+      value: 0,
+    },
+    lg: {
+      type: Number,
+      value: 0,
+    },
+    xl: {
+      type: Number,
+      value: 0,
+    },
   },
   data: {
     _innerStyles: '',
@@ -109,7 +129,7 @@ Component({
       let _innerClasses = ''
       Object.keys(gridClassesMap).forEach(prop => {
         if (gridClassesMap[prop].slice(-1) === '-') {
-          if ((prop === 'spacing' && params.container && !params.item) || (prop !== 'spacing' && typeof params[prop] !== 'undefined')) {
+          if ((prop === 'spacing' && params.container && !params.item) || (prop !== 'spacing' && params[prop])) {
             _innerClasses = `${_innerClasses}${gridClassesMap[prop]}${params[prop]} `
           }
         } else if (typeof params[prop] === 'boolean' && params[prop]) {
@@ -141,7 +161,7 @@ Component({
       })
     },
     [Object.keys(gridClassesMap).join(',')](container, item, spacing, xs, sm, md, lg, xl) {
-      this._defineGridStyles({
+      this._defineGridClasses({
         container,
         item,
         spacing,
