@@ -1,9 +1,20 @@
-const gridCssMap = {
+const gridStylesMap = {
   alignContent: 'align-content',
   alignItems: 'align-items',
   direction: 'flex-direction',
   justify: 'justify-content',
   wrap: 'flex-wrap',
+}
+
+const gridClassesMap = {
+  container: 'container',
+  item: 'item',
+  spacing: 'spacing-',
+  xs: 'xs-',
+  sm: 'sm-',
+  md: 'md-',
+  lg: 'lg-',
+  xl: 'xl-',
 }
 
 Component({
@@ -51,44 +62,94 @@ Component({
   },
   data: {
     _innerStyles: '',
+    _pureIsGenMuiStyles: false,
+    _innerClasses: '',
     _pureIsGenMuiClasses: false,
   },
   attached() {
     const {
-      _pureIsGenMuiClasses
+      _pureIsGenMuiStyles,
+      _pureIsGenMuiClasses,
     } = this.data
     const {
       alignContent,
       alignItems,
       direction,
       justify,
-      wrap
+      wrap,
+      container,
+      item,
+      spacing,
+      xs,
+      sm,
+      md,
+      lg,
+      xl,
     } = this.properties
     if (!_pureIsGenMuiClasses) {
       this._defineGridClasses({
+        container,
+        item,
+        spacing,
+        xs,
+        sm,
+        md,
+        lg,
+        xl,
+      })
+    }
+    if (!_pureIsGenMuiStyles) {
+      this._defineGridStyles({
         alignContent, alignItems, direction, justify, wrap
       })
     }
   },
   methods: {
     _defineGridClasses(params = {}) {
-      console.log(params)
+      let _innerClasses = ''
+      Object.keys(gridClassesMap).forEach(prop => {
+        if (gridClassesMap[prop].slice(-1) === '-') {
+          if ((prop === 'spacing' && params.container && !params.item) || (prop !== 'spacing' && typeof params[prop] !== 'undefined')) {
+            _innerClasses = `${_innerClasses}${gridClassesMap[prop]}${params[prop]} `
+          }
+        } else if (typeof params[prop] === 'boolean' && params[prop]) {
+          _innerClasses = `${_innerClasses}${gridClassesMap[prop]} `
+        }
+      })
+      this.setData({
+        _innerClasses,
+        _pureIsGenMuiClasses: true,
+      })
+    },
+    _defineGridStyles(params = {}) {
       let _innerStyles = ''
-      Object.keys(gridCssMap).forEach(prop => {
+      Object.keys(gridStylesMap).forEach(prop => {
         if (params[prop]) {
-          _innerStyles = `${_innerStyles}${gridCssMap[prop]}:${params[prop]};`
+          _innerStyles = `${_innerStyles}${gridStylesMap[prop]}:${params[prop]};`
         }
       })
       this.setData({
         _innerStyles,
-        _pureIsGenMuiClasses: true,
+        _pureIsGenMuiStyles: true,
       })
     },
   },
   observers: {
-    [Object.keys(gridCssMap).join(',')](alignContent, alignItems, direction, justify, wrap) {
-      this._defineGridClasses({
+    [Object.keys(gridStylesMap).join(',')](alignContent, alignItems, direction, justify, wrap) {
+      this._defineGridStyles({
         alignContent, alignItems, direction, justify, wrap
+      })
+    },
+    [Object.keys(gridClassesMap).join(',')](container, item, spacing, xs, sm, md, lg, xl) {
+      this._defineGridStyles({
+        container,
+        item,
+        spacing,
+        xs,
+        sm,
+        md,
+        lg,
+        xl,
       })
     },
   },

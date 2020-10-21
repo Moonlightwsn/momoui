@@ -5,6 +5,61 @@
       display: flex;
       flex-wrap: wrap;
       box-sizing: border-box;
+      &.spacing-0 {
+        .mui-grid {
+          padding: 0;
+        }
+      }
+      &.spacing-1 {
+        .mui-grid {
+          padding: 4px;
+        }
+      }
+      &.spacing-2 {
+        .mui-grid {
+          padding: 8px;
+        }
+      }
+      &.spacing-3 {
+        .mui-grid {
+          padding: 12px;
+        }
+      }
+      &.spacing-4 {
+        .mui-grid {
+          padding: 16px;
+        }
+      }
+      &.spacing-5 {
+        .mui-grid {
+          padding: 20px;
+        }
+      }
+      &.spacing-6 {
+        .mui-grid {
+          padding: 24px;
+        }
+      }
+      &.spacing-7 {
+        .mui-grid {
+          padding: 28px;
+        }
+      }
+      &.spacing-8 {
+        .mui-grid {
+          padding: 32px;
+        }
+      }
+      &.spacing-9 {
+        .mui-grid {
+          padding: 36px;
+        }
+      }
+      &.spacing-10 {
+        .mui-grid {
+          padding: 40px;
+        }
+      }
     }
   }
 }
