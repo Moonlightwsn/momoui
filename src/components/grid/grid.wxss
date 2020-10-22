@@ -122,6 +122,16 @@
       max-width: 8.333333%;
       flex-basis: 8.333333%;
     }
+    &.xs-true {
+      flex-grow: 1;
+      max-width: 100%;
+      flex-basis: 0;
+    }
+    &.xs-auto {
+      flex-grow: 0;
+      max-width: none;
+      flex-basis: auto;
+    }
   }
 }
 
@@ -187,6 +197,16 @@
         flex-grow: 0;
         max-width: 8.333333%;
         flex-basis: 8.333333%;
+      }
+      &.sm-true {
+        flex-grow: 1;
+        max-width: 100%;
+        flex-basis: 0;
+      }
+      &.sm-auto {
+        flex-grow: 0;
+        max-width: none;
+        flex-basis: auto;
       }
     }
   }
@@ -255,6 +275,16 @@
         max-width: 8.333333%;
         flex-basis: 8.333333%;
       }
+      &.md-true {
+        flex-grow: 1;
+        max-width: 100%;
+        flex-basis: 0;
+      }
+      &.md-auto {
+        flex-grow: 0;
+        max-width: none;
+        flex-basis: auto;
+      }
     }
   }
 }
@@ -322,6 +352,16 @@
         max-width: 8.333333%;
         flex-basis: 8.333333%;
       }
+      &.lg-true {
+        flex-grow: 1;
+        max-width: 100%;
+        flex-basis: 0;
+      }
+      &.lg-auto {
+        flex-grow: 0;
+        max-width: none;
+        flex-basis: auto;
+      }
     }
   }
 }
@@ -388,6 +428,16 @@
         flex-grow: 0;
         max-width: 8.333333%;
         flex-basis: 8.333333%;
+      }
+      &.xl-true {
+        flex-grow: 1;
+        max-width: 100%;
+        flex-basis: 0;
+      }
+      &.xl-auto {
+        flex-grow: 0;
+        max-width: none;
+        flex-basis: auto;
       }
     }
   } 

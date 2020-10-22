@@ -16,17 +16,14 @@
     <mui-grid item xs="{{12}}" sm="{{6}}" md="{{4}}" lg="{{3}}">
       <mui-paper m-style="padding: 16px;text-align: center;">xs=12 sm=6 md=4 lg=3</mui-paper>
     </mui-grid>
-    <mui-grid item xs="{{3}}">
-      <mui-paper m-style="padding: 16px;text-align: center;">xs=3</mui-paper>
+    <mui-grid item xs="auto">
+      <mui-paper m-style="padding: 16px;text-align: center;">xs=auto</mui-paper>
     </mui-grid>
-    <mui-grid item xs="{{3}}">
-      <mui-paper m-style="padding: 16px;text-align: center;">xs=3</mui-paper>
+    <mui-grid item xs="{{6}}">
+      <mui-paper m-style="padding: 16px;text-align: center;">xs=6</mui-paper>
     </mui-grid>
-    <mui-grid item xs="{{3}}">
-      <mui-paper m-style="padding: 16px;text-align: center;">xs=3</mui-paper>
-    </mui-grid>
-    <mui-grid item xs="{{3}}">
-      <mui-paper m-style="padding: 16px;text-align: center;">xs=3</mui-paper>
+    <mui-grid item xs>
+      <mui-paper m-style="padding: 16px;text-align: center;">xs=true</mui-paper>
     </mui-grid>
   </mui-grid>
   <view style="background-color:{{theme === 'dark' ? '#333' : '#f5f5f5'}};padding: 24px;">

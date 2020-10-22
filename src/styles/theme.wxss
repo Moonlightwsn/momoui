@@ -171,7 +171,10 @@
 [data-momoui-theme=dark] {
   background-color: #212121;
   &.mui, .mui {
-    color: rgba(0, 0, 0, 0.87);
+    color: rgba(255, 255, 255, 0.7);
+    &.mui-variant-contained {
+      color: rgba(0, 0, 0, 0.87);
+    }
     &.mui-variant-text {
       color: #fff;
     }
