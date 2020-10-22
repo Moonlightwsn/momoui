@@ -134,7 +134,7 @@ Component({
       let _innerClasses = ''
       Object.keys(gridClassesMap).forEach(prop => {
         if (gridClassesMap[prop].slice(-1) === '-') {
-          if ((prop === 'spacing' && params.container && !params.item) || (prop !== 'spacing' && params[prop])) {
+          if ((prop === 'spacing' && params.container) || (prop !== 'spacing' && params[prop])) {
             _innerClasses = `${_innerClasses}${gridClassesMap[prop]}${params[prop]} `
           }
         } else if (typeof params[prop] === 'boolean' && params[prop]) {

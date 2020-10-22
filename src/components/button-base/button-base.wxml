@@ -1,0 +1,9 @@
+<view
+  class="mui mui-ripple-base {{mClass}}"
+  style="{{mStyle}}"
+  capture-bind:tap="_RippleAction"
+  capture-bind:longpress="_RippleAction"
+>
+  <slot></slot>
+  <mui-ripple-container class="_mui-ripple-container"></mui-ripple-container>
+</view>

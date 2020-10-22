@@ -1,8 +1,8 @@
 {
   "usingComponents": {
-    "test": "./components/test/test",
     "ripple": "./components/ripple/ripple",
     "ripple-container": "./components/ripple-container/ripple-container",
+    "button-base": "./components/button-base/button-base",
     "button": "./components/button/button",
     "button-group": "./components/button-group/button-group",
     "paper": "./components/paper/paper",

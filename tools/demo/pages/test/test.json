@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "mui-test": "../../components/test/test",
+    "mui-button-base": "../../components/button-base/button-base",
     "mui-button": "../../components/button/button",
     "mui-paper": "../../components/paper/paper",
     "mui-grid": "../../components/grid/grid"

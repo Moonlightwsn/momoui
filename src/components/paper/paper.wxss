@@ -90,12 +90,3 @@
     }
   }
 }
-
-[data-momoui-theme=dark].mui,  [data-momoui-theme=dark] .mui{
-  &.mui-paper {
-    background-color: #424242;
-    &.mui-variant-outlined {
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-  }
-}

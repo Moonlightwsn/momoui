@@ -1,1 +1,8 @@
 @import './theme.wxss';
+
+.mui {
+  &.mui-ripple-base {
+    position: relative;
+    cursor: pointer;
+  }
+}

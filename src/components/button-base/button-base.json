@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mui-ripple-container": "../ripple-container/ripple-container"
+  }
+}

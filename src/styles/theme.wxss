@@ -172,6 +172,14 @@
   background-color: #212121;
   &.mui, .mui {
     color: rgba(255, 255, 255, 0.7);
+
+    &.mui-paper {
+      background-color: #424242;
+      &.mui-variant-outlined {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+    }
+
     &.mui-variant-contained {
       color: rgba(0, 0, 0, 0.87);
     }
