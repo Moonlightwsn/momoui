@@ -7,16 +7,6 @@ const styleProps = [
 ]
 
 export default Behavior({
-  properties: {
-    mClass: {
-      type: String,
-      value: ''
-    },
-    mStyle: {
-      type: String,
-      value: ''
-    }
-  },
   data: {
     _pureIsGenMuiClasses: false,
     _disabled: false,

@@ -1,3 +1,5 @@
+import muiBase from '../../behaviors/muiBase.ts'
+
 const gridStylesMap = {
   alignContent: 'align-content',
   alignItems: 'align-items',
@@ -18,15 +20,8 @@ const gridClassesMap = {
 }
 
 Component({
+  behaviors: [muiBase],
   properties: {
-    mClass: {
-      type: String,
-      value: '',
-    },
-    mStyle: {
-      type: String,
-      value: '',
-    },
     container: {
       type: Boolean,
       value: false,

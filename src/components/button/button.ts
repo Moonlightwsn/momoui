@@ -1,3 +1,4 @@
+import muiBase from '../../behaviors/muiBase.ts'
 import muiController from '../../behaviors/muiController.ts'
 import rippleBase from '../../behaviors/rippleBase.ts'
 
@@ -7,7 +8,7 @@ const innerRippleColorMap = {
 }
 
 Component({
-  behaviors: [muiController, rippleBase],
+  behaviors: [muiBase, muiController, rippleBase],
   properties: {
     disabled: {
       type: Boolean,

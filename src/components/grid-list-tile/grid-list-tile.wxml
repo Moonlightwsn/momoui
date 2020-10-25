@@ -1,0 +1,8 @@
+<view
+  class="mui mui-grid-list-tile {{mClass}}"
+  style="{{_innerStyles}}{{mStyle}}"
+>
+  <view class="tile">
+    <slot></slot>
+  </view>
+</view>

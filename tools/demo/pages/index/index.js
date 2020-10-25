@@ -6,6 +6,9 @@ Page({
     buttonColor: 'primary',
     disabled: true,
   },
+  gototestpage() {
+    wx.redirectTo({ url: '/pages/test/test' })
+  },
   changeButtonColor() {
     console.log('changeButtonColor')
     const {buttonColor} = this.data

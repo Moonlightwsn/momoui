@@ -6,7 +6,7 @@
   <view>
     <view style="margin-bottom: 12px;">
       <mui-button-group color="primary" variant="contained" m-style="margin: 0 12px">
-        <mui-button>ONE</mui-button>
+        <mui-button bind:tap="gototestpage">ONE</mui-button>
         <mui-button disabled="{{true}}">TWO</mui-button>
         <mui-button>INJECT</mui-button>
         <mui-button>THREE</mui-button>

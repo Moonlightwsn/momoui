@@ -1,4 +1,4 @@
-
+import muiBase from '../../behaviors/muiBase.ts'
 import Base64 from '../../common/base64.ts'
 
 let momouiRootPath = '/miniprogram_npm/momoui-miniprogram/'
@@ -11,11 +11,8 @@ if (app.momouiRootPath) {
 const muiIconPath = 'styles/static/icons/'
 
 Component({
+  behaviors: [muiBase],
   properties: {
-    mStyle: {
-      type: String,
-      value: ''
-    },
     name: {
       type: String,
       value: 'default'

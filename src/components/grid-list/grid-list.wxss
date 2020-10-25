@@ -1,0 +1,9 @@
+.mui {
+  &.mui-grid-list {
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

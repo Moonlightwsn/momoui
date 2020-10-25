@@ -1,17 +1,8 @@
+import muiBase from '../../behaviors/muiBase.ts'
 import rippleBase from '../../behaviors/rippleBase.ts'
 
 Component({
-  behaviors: [rippleBase],
-  properties: {
-    mClass: {
-      type: String,
-      value: '',
-    },
-    mStyle: {
-      type: String,
-      value: '',
-    },
-  },
+  behaviors: [muiBase, rippleBase],
   options: {
     virtualHost: true,
     pureDataPattern: /^_pure/,

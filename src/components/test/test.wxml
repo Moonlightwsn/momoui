@@ -1,3 +1,0 @@
-<view class="test">
-  <slot></slot>
-</view>

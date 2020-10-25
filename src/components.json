@@ -7,6 +7,8 @@
     "button-group": "./components/button-group/button-group",
     "paper": "./components/paper/paper",
     "grid": "./components/grid/grid",
+    "grid-list": "./components/grid-list/grid-list",
+    "grid-list-tile": "./components/grid-list-tile/grid-list-tile",
     "icon": "./components/icon/icon"
   }
 }

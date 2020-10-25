@@ -1,0 +1,13 @@
+.mui {
+  &.mui-grid-list-tile {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    .tile {
+      height: 100%;
+      width: 100%;
+      display: block;
+      overflow: hidden;
+      position: relative;
+    }
+  }
+}

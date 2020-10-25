@@ -1,7 +1,8 @@
+import muiBase from '../../behaviors/muiBase.ts'
 import muiController from '../../behaviors/muiController.ts'
 
 Component({
-  behaviors: [muiController],
+  behaviors: [muiBase, muiController],
   properties: {
     elevation: {
       type: Number,

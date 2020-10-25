@@ -1,6 +1,0 @@
-.test {
-  font-size: 14px;
-  line-height: 1.75;
-  padding: 8px 16px;
-  display: flex;
-}

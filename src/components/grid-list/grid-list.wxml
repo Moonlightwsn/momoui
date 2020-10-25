@@ -1,0 +1,6 @@
+<view
+  class="mui mui-grid-list {{mClass}}"
+  style="{{mStyle}}"
+>
+  <slot></slot>
+</view>
