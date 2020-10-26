@@ -4,8 +4,17 @@
 >
   <mui-button m-style="margin: 8px;">MUI BUTTON</mui-button>
   <mui-button color="primary">MUI BUTTON</mui-button>
-  <mui-grid-list cell-height="{{80}}" m-style="height:150px;width: 500px;">
-    <mui-grid-list-tile>TILE1</mui-grid-list-tile>
+  <mui-grid-list cell-height="{{140}}" m-style="height:150px;width: 100%">
+    <mui-grid-list-tile>
+      TILE1
+      <mui-grid-list-tile-bar tile-position="bottom" action-position="right">
+        <text slot="title">bar-title</text>
+        <text slot="sub-title">bar-sub-title11111111111111111111111111111111111111111</text>
+        <mui-button slot="action-icon" shape="circle" variant="text">
+          <mui-icon name="search" size="20" color="#bebfc1" />
+        </mui-button>
+      </mui-grid-list-tile-bar>
+    </mui-grid-list-tile>
     <mui-grid-list-tile>TILE2</mui-grid-list-tile>
     <mui-grid-list-tile cols="{{2}}" rows="{{2}}">TILE3</mui-grid-list-tile>
     <mui-grid-list-tile cols="{{2}}" rows="{{2}}">TILE4</mui-grid-list-tile>

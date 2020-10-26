@@ -1,0 +1,55 @@
+.mui {
+  &.mui-grid-list-tile-bar {
+    left: 0;
+    right: 0;
+    display: flex;
+    position: absolute;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 0;
+    &.tile-position-bottom {
+      bottom: 0;
+    }
+    &.tile-position-top {
+      top: 0;
+    }
+    &.action-position-left {
+      .action-icon {
+        order: -1;
+      }
+    }
+    .title-wrap {
+      color: #fff;
+      overflow: hidden;
+      flex-grow: 1;
+      margin-right: 16px;
+      margin-left: 16px;
+      .title {
+        font-size: 1rem;
+        overflow: hidden;
+        line-height: 24px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .sub-title {
+        font-size: 0.75rem;
+        overflow: hidden;
+        line-height: 1;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+    &.action-position-left {
+      .title-wrap {
+        margin-left: 0;
+      }
+    }
+    &.action-position-right {
+      .title-wrap {
+        margin-right: 0;
+      }
+    }
+  }
+}
