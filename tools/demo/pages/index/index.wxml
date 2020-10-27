@@ -31,26 +31,26 @@
   </view>
   <view style="margin-bottom: 12px;">
     <mui-button shape="circle" size="small">
-      <mui-icon name="search" />
+      <mui-icon name="progress-circle" m-style="font-size:20px;" />
     </mui-button>
     <mui-button shape="circle" color="primary">
-      <mui-icon name="search" color="#fff" size="{{24}}" />
+      <mui-icon name="progress-circle" m-class="icon" />
     </mui-button>
     <mui-button shape="circle" color="secondary" size="large">
-      <mui-icon name="search" color="#fff" size="{{24}}" />
+      <mui-icon name="progress-circle" m-class="icon" />
     </mui-button>
   </view>
   <view style="margin-bottom: 12px;">
     <mui-button shape="extended" size="small">
-      <mui-icon m-style="margin-right:8px;" name="search" size="{{24}}" />
+      <mui-icon m-style="margin-right:8px;font-size:20px;" name="search" />
       EXTENDED
     </mui-button>
     <mui-button shape="extended" color="primary">
-      <mui-icon m-style="margin-right:8px;" name="search" color="#fff" size="{{24}}" />
+      <mui-icon m-style="margin-right:8px;" name="search" m-class="icon" />
       EXTENDED
     </mui-button>
     <mui-button shape="extended" color="secondary" size="large">
-      <mui-icon m-style="margin-right:8px;" name="search" color="#fff" size="{{24}}" />
+      <mui-icon m-style="margin-right:8px;" name="search" m-class="icon" />
       EXTENDED
     </mui-button>
   </view>

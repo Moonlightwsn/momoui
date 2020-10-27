@@ -17,59 +17,64 @@ Component({
       type: String,
       value: 'default'
     },
-    size: {
-      type: Number,
-      value: 20
-    },
-    color: {
-      type: String,
-      value: 'rgba(0, 0, 0, 0.87)'
-    },
     src: {
       type: String,
       value: ''
-    }
+    },
+    forceReRender: {
+      type: String,
+      value: '',
+    },
   },
   data: {
-    base64Content: ''
-  },
-  lifetimes: {
-    attached() {
-      const {src, name, color} = this.properties
-      if (!src) {
-        this._readSvgFile(name, color)
-      }
-    }
+    base64Content: '',
+    _innerStyles: 'width:20px;height:20px;',
   },
   methods: {
-    async _readSvgFile(iconName: string, color: string = 'rgba(0, 0, 0, 0.87)') {
-      if (iconName) {
-        const iconPath = `${momouiRootPath}${muiIconPath}${iconName}.svg`
-        try {
-          const fileRes = await wx.getFileSystemManager().readFileSync(iconPath, 'binary')
-          if (fileRes) {
-            let svgdata = String(fileRes)
-            if (iconName === 'progress-circle') {
-              svgdata = svgdata.replace(/stroke="#[a-zA-Z0-9]{0,6}"/g, 'stroke="' + color + '"')
-            } else {
-              svgdata = svgdata.replace(/fill="#[a-zA-Z0-9]{0,6}"/g, 'fill="' + color + '"')
-            }
-            const base64 = new Base64()
-            const svgtobase64 = base64.encode(svgdata)
-            const base64Content = `data:image/svg+xml;base64,${svgtobase64}`
-            this.setData({
-              base64Content
-            })
+    _readSvgFile(iconName: string) {
+      const {src} = this.properties
+      if (iconName && !src) {
+        this.createSelectorQuery().select('.mui-icon').fields({
+          computedStyle: ['color','fontSize'],
+        }, async res => {
+          let {color, fontSize: size} = res
+          if (!size) {
+            size = '20px'
           }
-        } catch(e) {
-          console.log(e)
-        }
+          if (!color) {
+            color = 'rgba(0, 0, 0, 0.87)'
+          }
+          const iconPath = `${momouiRootPath}${muiIconPath}${iconName}.svg`
+          try {
+            const fileRes = await wx.getFileSystemManager().readFileSync(iconPath, 'binary')
+            if (fileRes) {
+              let svgdata = String(fileRes)
+              const dstr = '<style type="text/css">'
+              const styleIndex = svgdata.indexOf(dstr)
+              let insertStyle = `path { fill: ${color}; }`
+              if (iconName === 'progress-circle') {
+                insertStyle = `circle { stroke: ${color}; }`
+              }
+              svgdata = `${svgdata.slice(0, styleIndex + dstr.length)}${insertStyle}${svgdata.slice(styleIndex + dstr.length)}`
+              const base64 = new Base64()
+              const svgtobase64 = base64.encode(svgdata)
+              const base64Content = `data:image/svg+xml;base64,${svgtobase64}`
+              const _innerStyles = `width:${size};height:${size};`
+              this.setData({
+                base64Content,
+                _innerStyles,
+              })
+            }
+          } catch(e) {
+            console.log(e)
+          }
+        }).exec()
       }
     }
   },
   observers: {
-    'name, color': function (name, color) {
-      this._readSvgFile(name, color)
+    'name, forceReRender': function (name) {
+      this._readSvgFile(name)
     }
   },
   options: {
