@@ -30,17 +30,28 @@
     </view>
   </view>
   <view style="margin-bottom: 12px;">
-    <mui-button shape="circle" m-style="padding: 8px;" variant="text">
-      <mui-icon name="search" size="16" color="#ffffff" />
+    <mui-button shape="circle" size="small">
+      <mui-icon name="search" />
     </mui-button>
-    <mui-button shape="circle" m-style="padding: 8px;" variant="text" disabled="{{true}}">
-      <mui-icon name="search" size="16" color="rgba(255, 255, 255, 0.3)" />
+    <mui-button shape="circle" color="primary">
+      <mui-icon name="search" color="#fff" size="{{24}}" />
     </mui-button>
-    <mui-button shape="circle" m-style="padding: 8px;" variant="text" color="primary">
-      <mui-icon name="search" size="16" color="#90caf9" />
+    <mui-button shape="circle" color="secondary" size="large">
+      <mui-icon name="search" color="#fff" size="{{24}}" />
     </mui-button>
-    <mui-button shape="circle" m-style="padding: 8px;" variant="text" color="secondary">
-      <mui-icon name="search" size="16" color="#f48fb1" />
+  </view>
+  <view style="margin-bottom: 12px;">
+    <mui-button shape="extended" size="small">
+      <mui-icon m-style="margin-right:8px;" name="search" size="{{24}}" />
+      EXTENDED
+    </mui-button>
+    <mui-button shape="extended" color="primary">
+      <mui-icon m-style="margin-right:8px;" name="search" color="#fff" size="{{24}}" />
+      EXTENDED
+    </mui-button>
+    <mui-button shape="extended" color="secondary" size="large">
+      <mui-icon m-style="margin-right:8px;" name="search" color="#fff" size="{{24}}" />
+      EXTENDED
     </mui-button>
   </view>
   <view>

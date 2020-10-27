@@ -1,6 +1,7 @@
 .mui {
   &.mui-grid-list {
     display: flex;
+    justify-content: flex-start;
     padding: 0;
     flex-wrap: wrap;
     overflow-y: auto;

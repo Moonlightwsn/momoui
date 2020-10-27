@@ -30,8 +30,18 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
-		}
+      "list": [
+        {
+          "name": "index",
+          "pathName": "pages/index/index",
+          "scene": null
+        },
+        {
+          "name": "test",
+          "pathName": "pages/test/test",
+          "scene": null
+        }
+      ]
+    }
 	}
 }

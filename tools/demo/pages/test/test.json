@@ -7,6 +7,7 @@
     "mui-grid": "../../components/grid/grid",
     "mui-grid-list": "../../components/grid-list/grid-list",
     "mui-grid-list-tile": "../../components/grid-list-tile/grid-list-tile",
-    "mui-grid-list-tile-bar": "../../components/grid-list-tile-bar/grid-list-tile-bar"
+    "mui-grid-list-tile-bar": "../../components/grid-list-tile-bar/grid-list-tile-bar",
+    "mui-list-subheader": "../../components/list-subheader/list-subheader"
   }
 }

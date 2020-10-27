@@ -1,0 +1,21 @@
+.mui {
+  &.mui-list-subheader {
+    display: block;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 0.875rem;
+    box-sizing: border-box;
+    list-style: none;
+    font-weight: 500;
+    line-height: 48px;
+    &.sticky-true {
+      top: 0;
+      z-index: 1;
+      position: sticky;
+      background-color: inherit;
+    }
+    &.gutters-true {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+}

@@ -8,10 +8,10 @@
   border-radius: 4px;
   color: rgba(0, 0, 0, 0.87);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.75;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  letter-spacing: 0.42855px;
+  letter-spacing: 0.02857em;
   outline: 0;
   user-select: none;
   vertical-align: middle;
@@ -66,9 +66,12 @@
   &.mui-button {
     &.mui-size-small {
       padding: 4px 10px;
-      font-size: 13px;
+      font-size: 0.8125rem;
       &.mui-variant-outlined {
         padding: 3px 9px;
+      }
+      &.mui-variant-text {
+        padding: 4px 5px;
       }
     }
     &.mui-size-medium {
@@ -76,12 +79,18 @@
       &.mui-variant-outlined {
         padding: 5px 15px;
       }
+      &.mui-variant-text {
+        padding: 6px 8px;
+      }
     }
     &.mui-size-large {
-      font-size: 15px;
+      font-size: 0.9375rem;
       padding: 8px 22px;
       &.mui-variant-outlined {
         padding: 7px 21px;
+      }
+      &.mui-variant-text {
+        padding: 8px 11px;
       }
     }
     &.mui-button-hover {

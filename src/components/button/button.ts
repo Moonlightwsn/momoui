@@ -100,13 +100,13 @@ Component({
     },
   },
   observers: {
-    shape(shape) {
-      this.setData({
-        _pureCenter: shape === 'circle',
-      })
-    },
-    'variant, color': function (variant = 'contained', color = 'default') {
+    'variant, color, shape': function (variant = 'contained', color = 'default', shape = 'normal') {
       this._setRippleColor(variant, color)
+      if (shape === 'circle' && variant === 'text') {
+        this.setData({
+          _pureCenter: shape === 'circle',
+        })
+      }
     },
   },
   options: {

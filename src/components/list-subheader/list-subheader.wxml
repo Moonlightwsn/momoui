@@ -1,0 +1,6 @@
+<view
+  class="mui mui-list-subheader sticky-{{!disableSticky}} gutters-{{!disableGutters}} {{mClass}}"
+  style="{{mStyle}}"
+>
+  <slot></slot>
+</view>

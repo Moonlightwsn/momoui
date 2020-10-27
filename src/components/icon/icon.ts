@@ -35,7 +35,7 @@ Component({
   },
   lifetimes: {
     attached() {
-      const {src, name, color, mStyle} = this.properties
+      const {src, name, color} = this.properties
       if (!src) {
         this._readSvgFile(name, color)
       }
