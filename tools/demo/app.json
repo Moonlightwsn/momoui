@@ -1,7 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/test/test"
+    "pages/grid/grid",
+    "pages/typography/typography"
   ],
   "darkmode": true,
   "themeLocation": "theme.json",

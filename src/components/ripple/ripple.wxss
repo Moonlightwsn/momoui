@@ -1,6 +1,0 @@
-.mui-ripple {
-  display: inline-block;
-  position: absolute;
-  opacity: 0;
-  border-radius: 100%;
-}

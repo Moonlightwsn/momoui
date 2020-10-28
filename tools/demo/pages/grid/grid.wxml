@@ -19,8 +19,8 @@
       >
         <text slot="title">bar-title</text>
         <text slot="sub-title">bar-sub-title11111111111111111111111111111111111111111</text>
-        <mui-button slot="action-icon" shape="circle" variant="text">
-          <mui-icon name="search" size="24" color="#4791db" />
+        <mui-button m-style="color:#4791db;font-size:24px;" slot="action-icon" shape="circle" variant="text">
+          <mui-icon name="search" />
         </mui-button>
       </mui-grid-list-tile-bar>
     </mui-grid-list-tile>

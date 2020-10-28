@@ -37,8 +37,13 @@
           "scene": null
         },
         {
-          "name": "test",
-          "pathName": "pages/test/test",
+          "name": "grid",
+          "pathName": "pages/grid/grid",
+          "scene": null
+				},
+				{
+          "name": "typography",
+          "pathName": "pages/typography/typography",
           "scene": null
         }
       ]

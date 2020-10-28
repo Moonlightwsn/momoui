@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "mui-typography": "../../components/typography/typography"
+  }
+}

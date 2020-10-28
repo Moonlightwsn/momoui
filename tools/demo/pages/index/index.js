@@ -7,7 +7,7 @@ Page({
     disabled: true,
   },
   gototestpage() {
-    wx.redirectTo({ url: '/pages/test/test' })
+    wx.redirectTo({ url: '/pages/grid/grid' })
   },
   changeButtonColor() {
     console.log('changeButtonColor')

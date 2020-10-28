@@ -11,6 +11,7 @@
     "grid-list-tile": "./components/grid-list-tile/grid-list-tile",
     "grid-list-tile-bar": "./components/grid-list-tile-bar/grid-list-tile-bar",
     "list-subheader": "./components/list-subheader/list-subheader",
-    "icon": "./components/icon/icon"
+    "icon": "./components/icon/icon",
+    "typography": "./components/typography/typography"
   }
 }

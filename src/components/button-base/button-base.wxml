@@ -1,5 +1,5 @@
 <view
-  class="mui mui-ripple-base {{mClass}}"
+  class="mui-ripple-base {{mClass}}"
   style="{{mStyle}}"
   capture-bind:tap="_RippleAction"
   capture-bind:longpress="_RippleAction"
