@@ -1,2 +1,10 @@
 @import './styles/static/fonts/roboto.wxss';
 @import './styles/common.wxss';
+
+[data-momoui-theme=light] {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+[data-momoui-theme=dark] {
+  color: #fff;
+}

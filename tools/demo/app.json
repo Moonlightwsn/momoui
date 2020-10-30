@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/grid/grid",
-    "pages/typography/typography"
+    "pages/typography/typography",
+    "pages/form/form"
   ],
   "darkmode": true,
   "themeLocation": "theme.json",

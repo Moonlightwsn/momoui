@@ -6,7 +6,6 @@
   margin: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  color: rgba(0, 0, 0, 0.87);
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.75;
@@ -1004,14 +1003,18 @@
 
 [data-momoui-theme=dark] {
   background-color: #212121;
+  color: #fff;
   &.mui, .mui {
-    color: rgba(255, 255, 255, 0.7);
-
     &.mui-paper {
+      color: rgba(255, 255, 255, 0.7);
       background-color: #424242;
       &.mui-variant-outlined {
         border: 1px solid rgba(255, 255, 255, 0.12);
       }
+    }
+
+    &.mui-list-subheader {
+      color: rgba(255, 255, 255, 0.7);
     }
 
     &.mui-variant-contained {

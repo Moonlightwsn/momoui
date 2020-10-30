@@ -1,0 +1,33 @@
+<view
+  data-momoui-theme="{{theme}}"
+>
+  <form bindsubmit="submit" bindreset="reset">
+    <view>
+      <label>Switch<switch name="switch" /></label>
+    </view>
+    <view>
+      Radio
+      <radio-group name="radio">
+        <label><radio value="radio1" />选项一</label>
+        <label><radio value="radio2" />选项二</label>
+      </radio-group>
+    </view>
+    <view>
+      Checkbox
+      <checkbox-group name="checkbox">
+        <label><checkbox value="checkbox1" />选项一</label>
+        <label><checkbox value="checkbox2" />选项二</label>
+      </checkbox-group>
+    </view>
+    <view>
+      Slider<slider value="50" name="slider" show-value ></slider>
+    </view>
+    <view>
+      Input<input class="weui-input" name="input" placeholder="这是一个输入框" />
+    </view>
+    <view class="btn-area">
+        <button style="margin: 30rpx 0" type="primary" formType="submit">Submit</button>
+        <button style="margin: 30rpx 0" formType="reset">Reset</button>
+      </view>
+  </form>
+</view>

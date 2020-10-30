@@ -4,35 +4,37 @@
 >
   <mui-button m-style="margin: 8px;">MUI BUTTON</mui-button>
   <mui-button color="primary">MUI BUTTON</mui-button>
-  <mui-grid-list cell-height="{{140}}" m-style="height: 200px;" spacing="{{8}}">
-    <mui-grid-list-tile m-style="height:auto;" cols="{{2}}">
-      <mui-list-subheader>December</mui-list-subheader>
-    </mui-grid-list-tile>
-    <mui-grid-list-tile>
-      TILE1
-      <mui-grid-list-tile-bar
-        tile-position="bottom"
-        action-position="left"
-        m-style="background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%);"
-        m-title-style="color:#4791db;"
-        m-sub-title-style="color:#4791db;"
-      >
-        <text slot="title">bar-title</text>
-        <text slot="sub-title">bar-sub-title11111111111111111111111111111111111111111</text>
-        <mui-button m-style="color:#4791db;font-size:24px;" slot="action-icon" shape="circle" variant="text">
-          <mui-icon name="search" />
-        </mui-button>
-      </mui-grid-list-tile-bar>
-    </mui-grid-list-tile>
-    <mui-grid-list-tile>
-      TILE2
-      <mui-grid-list-tile-bar title="bar-title" sub-title="sub-title"></mui-grid-list-tile-bar>
-    </mui-grid-list-tile>
-    <mui-grid-list-tile>TILE3</mui-grid-list-tile>
-    <mui-grid-list-tile>TILE4</mui-grid-list-tile>
-    <mui-grid-list-tile>TILE5</mui-grid-list-tile>
-    <mui-grid-list-tile>TILE6</mui-grid-list-tile>
-  </mui-grid-list>
+  <view style="background-color: #424242">
+    <mui-grid-list cell-height="{{140}}" m-style="height: 200px;" spacing="{{8}}">
+      <mui-grid-list-tile m-style="height:auto;" cols="{{2}}">
+        <mui-list-subheader>December</mui-list-subheader>
+      </mui-grid-list-tile>
+      <mui-grid-list-tile>
+        <image mode="aspectFill" class="image" src="../../assets/breakfast.jpg"></image>
+        <mui-grid-list-tile-bar
+          tile-position="bottom"
+          action-position="left"
+          m-style="background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%);"
+          m-title-style="color:#4791db;"
+          m-sub-title-style="color:#4791db;"
+        >
+          <text slot="title">bar-title</text>
+          <text slot="sub-title">bar-sub-title11111111111111111111111111111111111111111</text>
+          <mui-button m-style="color:#4791db;font-size:24px;" slot="action-icon" shape="circle" variant="text">
+            <mui-icon name="search" />
+          </mui-button>
+        </mui-grid-list-tile-bar>
+      </mui-grid-list-tile>
+      <mui-grid-list-tile>
+        <image mode="aspectFill" class="image" src="../../assets/breakfast.jpg"></image>
+        <mui-grid-list-tile-bar title="bar-title" sub-title="sub-title"></mui-grid-list-tile-bar>
+      </mui-grid-list-tile>
+      <mui-grid-list-tile>TILE3</mui-grid-list-tile>
+      <mui-grid-list-tile>TILE4</mui-grid-list-tile>
+      <mui-grid-list-tile>TILE5</mui-grid-list-tile>
+      <mui-grid-list-tile>TILE6</mui-grid-list-tile>
+    </mui-grid-list>
+  </view>
   <mui-grid container justify="flex-start" spacing="{{3}}">
     <mui-grid item xs="{{12}}">
       <mui-paper m-style="padding: 16px;text-align: center;">xs=12</mui-paper>
@@ -57,7 +59,7 @@
     <mui-grid container spacing="{{2}}">
       <mui-grid item>
         <mui-button-base m-style="width:128px;height:128px;">
-          <image mode="aspectFit" style="max-height: 100%;max-width: 100%;margin: auto;display: block;" src="../../assets/complex.jpg" />
+          <image mode="aspectFit" class="image" src="../../assets/complex.jpg" />
         </mui-button-base>
       </mui-grid>
       <mui-grid item xs="{{12}}" sm container>

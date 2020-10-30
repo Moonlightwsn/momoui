@@ -37,6 +37,11 @@
           "scene": null
         },
         {
+          "name": "form",
+          "pathName": "pages/form/form",
+          "scene": null
+        },
+        {
           "name": "grid",
           "pathName": "pages/grid/grid",
           "scene": null
