@@ -1,3 +1,5 @@
 {
-
+  "usingComponents": {
+    "mui-checkbox": "../../components/checkbox/checkbox"
+  }
 }

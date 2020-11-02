@@ -1,6 +1,7 @@
 <view
   data-momoui-theme="{{theme}}"
 >
+<!--
   <form bindsubmit="submit" bindreset="reset">
     <view>
       <label>Switch<switch name="switch" /></label>
@@ -30,4 +31,6 @@
         <button style="margin: 30rpx 0" formType="reset">Reset</button>
       </view>
   </form>
+-->
+  <mui-checkbox>CHECKBOX</mui-checkbox>
 </view>

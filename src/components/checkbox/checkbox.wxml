@@ -1,0 +1,9 @@
+<view
+  class="mui mui-checkbox {{mClass}}"
+  style="{{mStyle}}"
+>
+  <slot></slot>
+  <mui-button-base>
+  <checkbox />
+  </mui-button-base>
+</view>

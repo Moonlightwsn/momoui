@@ -1,8 +1,5 @@
 .mui {
   /* mui base */
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -64,6 +61,8 @@
   /**  mui-button */
   &.mui-button {
     display: inline-flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     &::after {
       border: 0;
@@ -172,11 +171,6 @@
   /** mui-button-group */
   &.mui-button-group {
     display: inline-flex;
-  }
-   /**  mui-button-group end */
-
-  /** mui-button-group */
-  &.mui-button-group {
     background-color: transparent;
     border-width: 0;
     .mui-button {
@@ -210,6 +204,12 @@
     }
   }
   /** mui-button-group end */
+
+  /** mui-chechbox */
+  &.mui-checkbox {
+    display: inline-flex;
+  }
+  /** mui-chechbox end */
 
   /** mui-grid */
   &.mui-grid {
@@ -383,6 +383,7 @@
 
   /** mui-grid-list-tile */
   &.mui-grid-list-tile {
+    display: flex;
     box-sizing: border-box;
     flex-shrink: 0;
     .tile {

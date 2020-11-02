@@ -5,6 +5,7 @@
     "button-base": "./components/button-base/button-base",
     "button": "./components/button/button",
     "button-group": "./components/button-group/button-group",
+    "checkbox": "./components/checkbox/checkbox",
     "paper": "./components/paper/paper",
     "grid": "./components/grid/grid",
     "grid-list": "./components/grid-list/grid-list",
