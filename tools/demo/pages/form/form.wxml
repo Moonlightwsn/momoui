@@ -32,5 +32,8 @@
       </view>
   </form>
 -->
-  <mui-checkbox>CHECKBOX</mui-checkbox>
+  <mui-checkbox default-checked />
+  <mui-checkbox color="primary" />
+  <mui-checkbox color="default" />
+  <mui-checkbox bind:change="triggle" default-checked checked="{{checked}}" />
 </view>

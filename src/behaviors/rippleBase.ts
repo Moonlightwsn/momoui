@@ -9,10 +9,11 @@ export default Behavior({
     rippleColor: {
       type: String,
       value: ''
+    },
+    _pureCenter: {
+      type: Boolean,
+      value: false,
     }
-  },
-  data: {
-    _pureCenter: false,
   },
   methods: {
     _RippleAction(e) {

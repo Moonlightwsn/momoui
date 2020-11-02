@@ -208,6 +208,12 @@
   /** mui-chechbox */
   &.mui-checkbox {
     display: inline-flex;
+    align-items: center;
+    .mui-button {
+      &.mui-color-default {
+        color: #757575;
+      }
+    }
   }
   /** mui-chechbox end */
 

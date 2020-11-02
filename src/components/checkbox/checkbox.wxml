@@ -1,9 +1,10 @@
 <view
   class="mui mui-checkbox {{mClass}}"
   style="{{mStyle}}"
+  capture-bind:tap="_checkControol"
 >
   <slot></slot>
-  <mui-button-base>
-  <checkbox />
-  </mui-button-base>
+  <mui-button color="{{color}}" variant="text" shape="circle" m-style="padding: 9px;">
+    <mui-icon name="{{_checked ? checkedIcon : icon}}" m-style="font-size:24px;color:{{_checked ? 'inherit' : '#757575'}}" />
+  </mui-button>
 </view>
