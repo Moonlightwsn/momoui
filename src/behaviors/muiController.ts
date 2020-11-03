@@ -10,7 +10,7 @@ export default Behavior({
   data: {
     _pureIsGenMuiClasses: false,
     _disabled: false,
-    muiClasses: ['mui-color-default', 'mui-variant-contained', 'mui-size-medium']
+    muiClasses: []
   },
   lifetimes: {
     attached() {
@@ -59,8 +59,9 @@ export default Behavior({
       if (mClass) {
         muiClasses.push(mClass)
       }
+      console.log(muiClasses)
       this.setData({
-        muiClasses,
+        muiClasses: muiClasses.join(' '),
         _pureIsGenMuiClasses: true,
       })
     },

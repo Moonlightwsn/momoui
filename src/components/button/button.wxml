@@ -1,6 +1,7 @@
 <button
   disabled="{{_disabled}}"
   class="mui mui-ripple-base mui-button mui-shape-{{shape}} {{muiClasses}} {{mClass}}"
+  data-class="{{muiClasses}}"
   style="{{inline ? '' : 'display: flex;'}}{{mStyle}}"
   hover-class="{{_disabled ? '' : 'mui-button-hover'}}"
   loading="{{loading}}"

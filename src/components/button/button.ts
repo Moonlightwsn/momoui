@@ -89,6 +89,14 @@ Component({
       }
     }
   },
+  lifetimes: {
+    created() {
+      console.log('button create', this.data.color)
+    },
+    attached() {
+      console.log('button attached', this.data.color)
+    },
+  },
   methods: {
     _setRippleColor(variant = 'contained', color = 'default') {
       if (variant !== 'contained') {

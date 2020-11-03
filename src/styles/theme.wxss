@@ -205,11 +205,18 @@
   }
   /** mui-button-group end */
 
-  /** mui-chechbox */
-  &.mui-checkbox {
+  /** mui-chechbox mui-radio */
+  &.mui-checkbox, &.mui-radio {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    .mui-button {
+      &.mui-color-default {
+        color: #757575;
+      }
+    }
   }
-  /** mui-chechbox end */
+  /** mui-chechbox mui-radio end */
 
   /** mui-grid */
   &.mui-grid {

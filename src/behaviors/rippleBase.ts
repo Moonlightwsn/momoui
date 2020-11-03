@@ -9,13 +9,15 @@ export default Behavior({
     rippleColor: {
       type: String,
       value: ''
-    }
-  },
-  data: {
-    _pureCenter: false,
+    },
+    _pureCenter: {
+      type: Boolean,
+      value: false,
+    },
   },
   methods: {
     _RippleAction(e) {
+      console.log(e)
       const {ripple} = this.properties
       const {_disabled} = this.data
       if (ripple && !_disabled) {
