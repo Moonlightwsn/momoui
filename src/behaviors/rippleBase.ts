@@ -13,7 +13,7 @@ export default Behavior({
     _pureCenter: {
       type: Boolean,
       value: false,
-    }
+    },
   },
   methods: {
     _RippleAction(e) {

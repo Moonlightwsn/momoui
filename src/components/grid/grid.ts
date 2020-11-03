@@ -82,15 +82,9 @@ Component({
   },
   data: {
     _innerStyles: '',
-    _pureIsGenMuiStyles: false,
     _innerClasses: '',
-    _pureIsGenMuiClasses: false,
   },
   attached() {
-    const {
-      _pureIsGenMuiStyles,
-      _pureIsGenMuiClasses,
-    } = this.data
     const {
       alignContent,
       alignItems,
@@ -106,23 +100,19 @@ Component({
       lg,
       xl,
     } = this.properties
-    if (!_pureIsGenMuiClasses) {
-      this._defineGridClasses({
-        container,
-        item,
-        spacing,
-        xs,
-        sm,
-        md,
-        lg,
-        xl,
-      })
-    }
-    if (!_pureIsGenMuiStyles) {
-      this._defineGridStyles({
-        alignContent, alignItems, direction, justify, wrap
-      })
-    }
+    this._defineGridClasses({
+      container,
+      item,
+      spacing,
+      xs,
+      sm,
+      md,
+      lg,
+      xl,
+    })
+    this._defineGridStyles({
+      alignContent, alignItems, direction, justify, wrap
+    })
   },
   methods: {
     _defineGridClasses(params = {}) {
@@ -138,7 +128,6 @@ Component({
       })
       this.setData({
         _innerClasses,
-        _pureIsGenMuiClasses: true,
       })
     },
     _defineGridStyles(params = {}) {
@@ -150,7 +139,6 @@ Component({
       })
       this.setData({
         _innerStyles,
-        _pureIsGenMuiStyles: true,
       })
     },
   },

@@ -21,10 +21,6 @@ Component({
       type: String,
       value: ''
     },
-    forceReRender: {
-      type: String,
-      value: '',
-    },
   },
   data: {
     base64Content: '',
@@ -73,7 +69,7 @@ Component({
     }
   },
   observers: {
-    'name, forceReRender': function (name) {
+    'name, mStyle, mClass': function (name) {
       this._readSvgFile(name)
     }
   },

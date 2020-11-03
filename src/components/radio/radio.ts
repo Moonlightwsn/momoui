@@ -6,11 +6,11 @@ Component({
   properties: {
     checkedIcon: {
       type: String,
-      value: 'square-check-fill',
+      value: 'radio-box',
     },
     icon: {
       type: String,
-      value: 'square',
+      value: 'round',
     },
   },
   options: {

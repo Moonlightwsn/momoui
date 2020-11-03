@@ -30,6 +30,17 @@
     </view>
   </view>
   <view style="margin-bottom: 12px;">
+    <mui-button shape="circle" size="small" variant="text">
+      <mui-icon name="default" m-style="font-size:20px;" />
+    </mui-button>
+    <mui-button shape="circle" color="primary" variant="text">
+      <mui-icon name="default" m-style="font-size:20px;" />
+    </mui-button>
+    <mui-button shape="circle" color="secondary" size="large" variant="text">
+      <mui-icon name="default" m-style="font-size:20px;" />
+    </mui-button>
+  </view>
+  <view style="margin-bottom: 12px;">
     <mui-button shape="circle" size="small">
       <mui-icon name="progress-circle" m-style="font-size:20px;" />
     </mui-button>

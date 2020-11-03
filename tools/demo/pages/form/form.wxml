@@ -1,5 +1,6 @@
 <view
   data-momoui-theme="{{theme}}"
+  bind:change="change"
 >
 <!--
   <form bindsubmit="submit" bindreset="reset">
@@ -32,8 +33,11 @@
       </view>
   </form>
 -->
-  <mui-checkbox default-checked />
-  <mui-checkbox color="primary" />
-  <mui-checkbox color="default" />
-  <mui-checkbox bind:change="triggle" default-checked checked="{{checked}}" />
+  <mui-checkbox>SECONDARY</mui-checkbox>
+  <mui-checkbox color="primary" size="{{size}}" defaultChecked checked="{{checked}}" bind:change="trigger">PRIMARY</mui-checkbox>
+  <mui-checkbox color="default">DEFAULT</mui-checkbox>
+  <mui-radio checked="{{checked}}" bind:change="trigger">SECONDARY</mui-radio>
+  <mui-radio color="primary">PRIMARY</mui-radio>
+  <mui-radio color="default" size="{{size}}">DEFAULT</mui-radio>
+  <mui-button bind:tap="changeSize">chagen size</mui-button>
 </view>
