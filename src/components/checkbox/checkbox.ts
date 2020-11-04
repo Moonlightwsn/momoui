@@ -13,6 +13,16 @@ Component({
       value: 'square',
     },
   },
+  relations: {
+    '../checkbox-group/checkbox-group': {
+      type: 'ancestor',
+      linked(target) {
+        if (target) {
+          this._group = target
+        }
+      },
+    }
+  },
   options: {
     virtualHost: true,
     pureDataPattern: /^_pure/,

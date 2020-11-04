@@ -23,6 +23,7 @@ Component({
     }
   },
   options: {
+    // virtualHost: true,
     pureDataPattern: /^_pure/,
     styleIsolation: 'apply-shared',
   },

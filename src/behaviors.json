@@ -2,6 +2,7 @@
   "commonJs": [
     "./behaviors/muiBase",
     "./behaviors/muiController",
+    "./behaviors/checkGroupController",
     "./behaviors/checkController",
     "./behaviors/rippleBase"
   ]

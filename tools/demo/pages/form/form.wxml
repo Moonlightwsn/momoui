@@ -33,9 +33,11 @@
       </view>
   </form>
 -->
-  <mui-checkbox>SECONDARY</mui-checkbox>
-  <mui-checkbox color="primary" size="{{size}}" defaultChecked checked="{{checked}}" bind:change="trigger">PRIMARY</mui-checkbox>
-  <mui-checkbox color="default">DEFAULT</mui-checkbox>
+  <mui-checkbox-group bind:change="test">
+    <mui-checkbox value="1">SECONDARY</mui-checkbox>
+    <mui-checkbox value="2" color="primary" size="{{size}}" defaultChecked checked="{{checked}}" bind:change="trigger">PRIMARY</mui-checkbox>
+    <mui-checkbox value="3" color="default">DEFAULT</mui-checkbox>
+  </mui-checkbox-group>
   <mui-radio checked="{{checked}}" bind:change="trigger">SECONDARY</mui-radio>
   <mui-radio color="primary">PRIMARY</mui-radio>
   <mui-radio color="default" size="{{size}}">DEFAULT</mui-radio>

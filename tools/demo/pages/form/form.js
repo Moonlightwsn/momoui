@@ -6,6 +6,9 @@ Page({
     checked: false,
     size: 'small',
   },
+  test(event) {
+    console.log('test', event.detail.checkedValue)
+  },
   change(event) {
     console.log('form page change', event)
   },

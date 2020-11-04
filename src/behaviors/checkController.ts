@@ -31,6 +31,10 @@ export default Behavior({
     size: {
       type: String,
       value: 'medium',
+    },
+    value: {
+      type: String,
+      value: null,
     }
   },
   data: {
@@ -55,8 +59,11 @@ export default Behavior({
       }
     },
     _checkControol() {
-      const {checked, _checked} = this.data
+      const {checked, _checked, value} = this.data
       this.triggerEvent('change', {checked: !_checked})
+      if (value) {
+        this.triggerEvent('innerchange', {value, checked: !_checked}, {bubbles: true, composed: true})
+      }
       if (typeof checked !== 'boolean') {
         this.setData(this.genIcon(!_checked))
       }
@@ -74,5 +81,5 @@ export default Behavior({
       const _checked = typeof checked === 'boolean' ? checked : defaultChecked
       this.setData(this.genIcon(_checked))
     }
-  }
+  },
 })
