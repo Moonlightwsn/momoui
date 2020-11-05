@@ -1,8 +1,8 @@
 <view
   class="mui mui-checkbox {{mClass}}"
   style="{{mStyle}}"
-  capture-bind:tap="_checkControol"
-  capture-bind:longpress="_checkControol"
+  capture-bind:tap="_checkControll"
+  capture-bind:longpress="_checkControll"
 >
   <slot></slot>
   <mui-button ripple="{{ripple}}" color="{{color}}" shape="circle" variant="text" m-style="padding: 9px;">

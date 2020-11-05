@@ -3,11 +3,16 @@ import themeMixin from '../../behaviors/theme'
 Page({
   behaviors: [themeMixin],
   data: {
-    checked: false,
-    size: 'small',
+    checked: true,
+    size: 'medium',
+    checkedValue: 'B'
   },
   test(event) {
-    console.log('test', event.detail.checkedValue)
+    const {checkedValue} = event.detail
+    console.log(checkedValue)
+    this.setData({
+      checkedValue
+    })
   },
   change(event) {
     console.log('form page change', event)

@@ -33,13 +33,15 @@
       </view>
   </form>
 -->
-  <mui-checkbox-group bind:change="test">
-    <mui-checkbox value="1">SECONDARY</mui-checkbox>
-    <mui-checkbox value="2" color="primary" size="{{size}}" defaultChecked checked="{{checked}}" bind:change="trigger">PRIMARY</mui-checkbox>
-    <mui-checkbox value="3" color="default">DEFAULT</mui-checkbox>
+  <mui-checkbox-group bind:change="test" defaultValue="A" value="{{checkedValue}}">
+    <mui-checkbox value="A">A</mui-checkbox>
+    <mui-checkbox value="B" checked="{{checked}}" color="primary" size="{{size}}" bind:change="trigger">B</mui-checkbox>
+    <mui-checkbox value="C" defaultChecked>C</mui-checkbox>
+    <mui-checkbox value="D">D</mui-checkbox>
+    <mui-checkbox value="E">E</mui-checkbox>
+    <mui-checkbox value="F">F</mui-checkbox>
   </mui-checkbox-group>
-  <mui-radio checked="{{checked}}" bind:change="trigger">SECONDARY</mui-radio>
-  <mui-radio color="primary">PRIMARY</mui-radio>
-  <mui-radio color="default" size="{{size}}">DEFAULT</mui-radio>
+  <mui-checkbox value="B" checked="{{checked}}" color="primary" bind:change="trigger" size="{{size}}">B</mui-checkbox>
+  <mui-checkbox value="C" defaultChecked>C</mui-checkbox>
   <mui-button bind:tap="changeSize">chagen size</mui-button>
 </view>
