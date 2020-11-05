@@ -7,6 +7,7 @@
     "button-group": "./components/button-group/button-group",
     "checkbox-group": "./components/checkbox-group/checkbox-group",
     "checkbox": "./components/checkbox/checkbox",
+    "radio-group": "./components/radio-group/radio-group",
     "radio": "./components/radio/radio",
     "paper": "./components/paper/paper",
     "grid": "./components/grid/grid",

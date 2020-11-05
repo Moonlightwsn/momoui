@@ -2,8 +2,11 @@ import checkGroupController from '../../behaviors/checkGroupController.ts'
 
 Component({
   behaviors: [checkGroupController],
+  data: {
+    _pure_multiple: false,
+  },
   relations: {
-    '../checkbox/checkbox': {
+    '../radio/radio': {
       type: 'descendant',
       linked(target) {
         if (target) {

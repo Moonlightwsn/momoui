@@ -38,6 +38,7 @@ export default Behavior({
     }
   },
   data: {
+    _pure_one_way: false,
     _checked: false,
     _currentIcon: '',
     _currentIconStyle: '',
@@ -48,7 +49,7 @@ export default Behavior({
         checkedIcon,
         icon,
         size: _size,
-        _checked
+        _checked,
       } = this.data
       let checked = _checked
       let size = _size
@@ -72,17 +73,31 @@ export default Behavior({
       }
     },
     _checkControll() {
-      const {checked, _checked, value} = this.data
-      this.triggerEvent('change', {checked: !_checked})
+      const {
+        checked,
+        _checked,
+        value,
+        _pure_one_way: isOneWay
+      } = this.data
+      const realChecked = isOneWay || !_checked
+      this.triggerEvent('change', {checked: realChecked})
       if (value) {
         this.triggerEvent('innerchange', {value, checked: !_checked}, {bubbles: true, composed: true})
       }
       if (this._group) {
         if (!this._group.data._pure_be_controlled) {
-          this.setData(this.genIcon({checked: !_checked}))
+          if (realChecked && this._group.data._pure_targets) {
+            const {_pure_targets: targets} = this._group.data
+            Object.keys(targets).forEach(targetName => {
+              if (targetName !== value) {
+                targets[targetName]._groupControll(false)
+              }
+            })
+          }
+          this.setData(this.genIcon({checked: realChecked}))
         }
       } else if (typeof checked !== 'boolean') {
-        this.setData(this.genIcon({checked: !_checked}))
+        this.setData(this.genIcon({checked: realChecked}))
       }
     },
     _groupControll(checked) {

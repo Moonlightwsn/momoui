@@ -2,6 +2,7 @@
   "usingComponents": {
     "mui-checkbox-group": "../../components/checkbox-group/checkbox-group",
     "mui-checkbox": "../../components/checkbox/checkbox",
+    "mui-radio-group": "../../components/radio-group/radio-group",
     "mui-radio": "../../components/radio/radio",
     "mui-button": "../../components/button/button"
   }

@@ -5,14 +5,17 @@ Page({
   data: {
     checked: true,
     size: 'medium',
-    checkedValue: 'B'
+    checkedValue: ['A', 'B']
   },
   test(event) {
     const {checkedValue} = event.detail
-    console.log(checkedValue)
+    console.log('form page', checkedValue)
     this.setData({
       checkedValue
     })
+  },
+  radioChange(event) {
+    console.log(event.detail)
   },
   change(event) {
     console.log('form page change', event)

@@ -44,4 +44,13 @@
   <mui-checkbox value="B" checked="{{checked}}" color="primary" bind:change="trigger" size="{{size}}">B</mui-checkbox>
   <mui-checkbox value="C" defaultChecked>C</mui-checkbox>
   <mui-button bind:tap="changeSize">chagen size</mui-button>
+  <view />
+  <mui-radio bind:change="radioChange">A</mui-radio>
+  <mui-radio bind:change="radioChange" defaultChecked color="primary">B</mui-radio>
+  <mui-radio bind:change="radioChange" checked="{{checked}}" color="default" size="small">c</mui-radio>
+  <mui-radio-group defaultValue="B">
+    <mui-radio value="A">A</mui-radio>
+    <mui-radio color="primary" value="B">B</mui-radio>
+    <mui-radio value="C">C</mui-radio>
+  </mui-radio-group>
 </view>
