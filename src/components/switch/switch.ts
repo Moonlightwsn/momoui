@@ -7,12 +7,19 @@ Component({
   properties: {
     checkedIcon: {
       type: String,
-      value: 'square-check-fill',
+      value: 'circle',
     },
     icon: {
       type: String,
-      value: 'square',
+      value: 'circle',
     },
+  },
+  data: {
+    _pureSizeToPx: {
+      medium: 20,
+      small: 16,
+    },
+    _pureUncheckedColor: '#fff',
   },
   relations: {
     '../checkbox-group/checkbox-group': {

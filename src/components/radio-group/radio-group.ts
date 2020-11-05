@@ -20,8 +20,8 @@ Component({
         }
       },
       unlinked(target) {
-        if (target) {
-          const {value} = this.target.data
+        if (target && target.data) {
+          const {value} = target.data
           this._trigger(value, false)
         }
       },

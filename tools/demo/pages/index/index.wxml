@@ -33,7 +33,7 @@
     <mui-button shape="circle" size="small" variant="text">
       <mui-icon name="default" m-style="font-size:20px;" />
     </mui-button>
-    <mui-button shape="circle" color="primary" variant="text">
+    <mui-button shape="circle" color="primary" disabled variant="text">
       <mui-icon name="default" m-style="font-size:20px;" />
     </mui-button>
     <mui-button shape="circle" color="secondary" size="large" variant="text">

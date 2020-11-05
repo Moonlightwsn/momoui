@@ -42,6 +42,12 @@ export default Behavior({
     _checked: false,
     _currentIcon: '',
     _currentIconStyle: '',
+    _switchRootClass: '',
+    _pureSizeToPx: {
+      medium: 24,
+      small: 20,
+    },
+    _pureUncheckedColor: '#757575',
   },
   methods: {
     genIcon({checked: checkedArg, size: sizeArg}) {
@@ -50,6 +56,9 @@ export default Behavior({
         icon,
         size: _size,
         _checked,
+        disabled,
+        _pureSizeToPx,
+        _pureUncheckedColor,
       } = this.data
       let checked = _checked
       let size = _size
@@ -60,16 +69,19 @@ export default Behavior({
         size = sizeArg
       }
       let _currentIcon = icon
-      let _currentIconStyle = `font-size: ${size === 'small' ? '20px' : '24px'}`
+      let _switchRootClass = ''
+      let _currentIconStyle = `font-size: ${_pureSizeToPx[size] || 24}px;`
       if (checked) {
         _currentIcon = checkedIcon
+        _switchRootClass = 'switch-checked'
       } else {
-        _currentIconStyle = `${_currentIconStyle};color: #757575`
+        _currentIconStyle = `${_currentIconStyle}${disabled ? '' : `color: ${_pureUncheckedColor};`}`
       }
       return {
         _checked: checked,
         _currentIcon,
         _currentIconStyle,
+        _switchRootClass,
       }
     },
     _checkControll() {

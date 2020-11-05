@@ -4,6 +4,7 @@
     "mui-checkbox": "../../components/checkbox/checkbox",
     "mui-radio-group": "../../components/radio-group/radio-group",
     "mui-radio": "../../components/radio/radio",
+    "mui-switch": "../../components/switch/switch",
     "mui-button": "../../components/button/button"
   }
 }

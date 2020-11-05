@@ -9,6 +9,7 @@
     "checkbox": "./components/checkbox/checkbox",
     "radio-group": "./components/radio-group/radio-group",
     "radio": "./components/radio/radio",
+    "switch": "./components/switch/switch",
     "paper": "./components/paper/paper",
     "grid": "./components/grid/grid",
     "grid-list": "./components/grid-list/grid-list",

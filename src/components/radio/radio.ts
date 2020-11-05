@@ -1,8 +1,9 @@
 import muiBase from '../../behaviors/muiBase.ts'
+import muiController from '../../behaviors/muiController.ts'
 import checkController from '../../behaviors/checkController.ts'
 
 Component({
-  behaviors: [muiBase, checkController],
+  behaviors: [muiBase, muiController, checkController],
   properties: {
     checkedIcon: {
       type: String,

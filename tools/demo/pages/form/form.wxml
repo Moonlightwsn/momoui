@@ -39,18 +39,21 @@
     <mui-checkbox value="C" defaultChecked>C</mui-checkbox>
     <mui-checkbox value="D">D</mui-checkbox>
     <mui-checkbox value="E">E</mui-checkbox>
-    <mui-checkbox value="F">F</mui-checkbox>
+    <mui-checkbox value="F" disabled>F</mui-checkbox>
   </mui-checkbox-group>
   <mui-checkbox value="B" checked="{{checked}}" color="primary" bind:change="trigger" size="{{size}}">B</mui-checkbox>
-  <mui-checkbox value="C" defaultChecked>C</mui-checkbox>
-  <mui-button bind:tap="changeSize">chagen size</mui-button>
+  <mui-checkbox value="C" defaultChecked disabled>C</mui-checkbox>
+  <mui-button m-style="margin-left: 12px;" bind:tap="changeSize">chagen size</mui-button>
   <view />
   <mui-radio bind:change="radioChange">A</mui-radio>
-  <mui-radio bind:change="radioChange" defaultChecked color="primary">B</mui-radio>
+  <mui-radio bind:change="radioChange" defaultChecked disabled color="primary">B</mui-radio>
   <mui-radio bind:change="radioChange" checked="{{checked}}" color="default" size="small">c</mui-radio>
-  <mui-radio-group defaultValue="B">
-    <mui-radio value="A">A</mui-radio>
+  <mui-radio-group defaultValue="D">
+    <mui-radio value="A" ripple="{{false}}">A</mui-radio>
     <mui-radio color="primary" value="B">B</mui-radio>
     <mui-radio value="C">C</mui-radio>
+    <mui-radio value="D" disabled>D</mui-radio>
   </mui-radio-group>
+  <mui-switch>Secondary</mui-switch>
+  <mui-switch color="primary" size="small" />
 </view>
