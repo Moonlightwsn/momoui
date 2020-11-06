@@ -287,6 +287,104 @@
   }
   /** mui-chechbox mui-radio mui-switch end */
 
+  /** mui-input */
+  &.mui-input-root {
+    color: rgba(0, 0, 0, 0.87);
+    cursor: text;
+    display: inline-flex;
+    position: relative;
+    font-size: 1rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    box-sizing: border-box;
+    align-items: center;
+    font-weight: 400;
+    line-height: 1.1876em;
+    letter-spacing: 0.00938em;
+    &.mui-disabled {
+      color: rgba(0, 0, 0, 0.38);
+      cursor: default;
+      .mui-input {
+        opacity: 0.38;
+      }
+    }
+    &.disable-underline-false {
+      &::before {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "\00a0";
+        position: absolute;
+        transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+        pointer-events: none;
+      }
+      &::after {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        position: absolute;
+        transform: scaleX(0);
+        transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+        border-bottom: 2px solid #1976d2;
+        pointer-events: none;
+      }
+      &.focus-true {
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+      &.mui-disabled {
+        &::before {
+          border-bottom-style: dotted;
+        }
+      }
+    }
+    &.mui-color-primary {
+      color: rgba(0, 0, 0, 0.87);
+      background-color: inherit;
+      border-color: inherit;
+      &.disable-underline-false {
+        &::after {
+          border-color: #1976d2;
+        }
+      }
+    }
+    &.mui-color-secondary {
+      color: rgba(0, 0, 0, 0.87);
+      background-color: inherit;
+      border-color: inherit;
+      &.disable-underline-false {
+        &::after {
+          border-color: #dc004e;
+        }
+      }
+    }
+    .mui-input {
+      font: inherit;
+      color: currentColor;
+      width: 100%;
+      border: 0;
+      height: 1.1876em;
+      margin: 0;
+      display: block;
+      padding: 6px 0 7px;
+      min-width: 0;
+      min-height: 0;
+      background: none;
+      box-sizing: content-box;
+      animation-name: mui-auto-fill-cancel;
+      letter-spacing: inherit;
+      animation-duration: 10ms;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .input-placeholder {
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      color: #c8c8c8;
+    }
+  }
+   /** mui-input end */
+
   /** mui-grid */
   &.mui-grid {
     display: block;

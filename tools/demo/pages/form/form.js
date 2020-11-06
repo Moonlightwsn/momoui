@@ -5,7 +5,11 @@ Page({
   data: {
     checked: true,
     size: 'medium',
-    checkedValue: ['A', 'B']
+    checkedValue: ['A', 'B'],
+    input: 'Hello world',
+  },
+  showInput() {
+    console.log(this.data.input, this.data.checked)
   },
   test(event) {
     const {checkedValue} = event.detail

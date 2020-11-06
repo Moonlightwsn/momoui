@@ -1,5 +1,5 @@
 <view
-  class="mui mui-button-group {{muiClasses}} {{mClass}}"
+  class="mui mui-button-group {{muiClasses}}"
   style="{{mStyle}}"
 >
   <slot></slot>

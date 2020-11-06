@@ -1,5 +1,5 @@
 <view
-  class="mui mui-switch {{_switchRootClass}} {{muiClasses}} {{mClass}}"
+  class="mui mui-switch {{_switchRootClass}} {{muiClasses}}"
   style="{{mStyle}}"
   capture-bind:tap="_checkControll"
   capture-bind:longpress="_checkControll"

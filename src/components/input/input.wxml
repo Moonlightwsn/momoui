@@ -1,0 +1,32 @@
+<view
+  class="mui mui-input-root focus-{{_focus}} disable-underline-{{disableUnderline}} {{muiClasses}}"
+  style="{{fullWidth ? 'width:100%;' : 'width:182px;'}}{{mStyle}}"
+>
+  <textarea
+    wx:if="{{multiline}}"
+    class="mui-input"
+    style="{{margin === 'dense' ? 'padding-top:3px;' : ''}}height:{{_textareaHeight}}px"
+    auto-height="{{_textAutoHeight}}"
+    disabled="{{disabled}}"
+    focus="{{focus}}"
+    placeholder="{{placeholder}}"
+    placeholder-class="input-placeholder"
+    model:value="{{value}}"
+    bindfocus="_onFocus"
+    bindblur="_onBlur"
+    bindinput="_onChange"
+  />
+  <input
+    wx:else
+    class="mui-input"
+    style="{{margin === 'dense' ? 'padding-top:3px;' : ''}}"
+    disabled="{{disabled}}"
+    focus="{{focus}}"
+    placeholder="{{placeholder}}"
+    placeholder-class="input-placeholder"
+    model:value="{{value}}"
+    bindfocus="_onFocus"
+    bindblur="_onBlur"
+    bindinput="_onChange"
+  />
+</view>
