@@ -7,6 +7,9 @@ Page({
     size: 'medium',
     checkedValue: ['A', 'B'],
     input: 'Hello world',
+    inputChange: (value, cursor, keyCode) => {
+      console.log(value, cursor, keyCode)
+    },
   },
   showInput() {
     console.log(this.data.input, this.data.checked)

@@ -58,10 +58,13 @@
   <mui-switch>Secondary</mui-switch>
   <mui-switch color="primary" size="small" />
   -->
+  <!--
   <mui-button bindtap="showInput">Show Input</mui-button>
   <view />
   <mui-input placeholder="Placeholder" rows="{{3}}" multiline m-style="margin: 8px;" />
   <mui-input margin="dense" color="secondary" m-style="margin: 8px;" value="Disabled" disabled />
   <mui-input placeholder="Placeholder" m-style="margin: 8px;" />
   <mui-input placeholder="Placeholder" multiline m-style="margin: 8px;" />
+  -->
+  <mui-input inputChange="{{inputChange}}" password maxlength="{{3}}" />
 </view>

@@ -332,6 +332,7 @@
       &.focus-true {
         &::after {
           transform: scaleX(1);
+          transition: initial;
         }
       }
       &.mui-disabled {
@@ -378,7 +379,7 @@
       animation-duration: 10ms;
       -webkit-tap-highlight-color: transparent;
     }
-    .input-placeholder {
+    .mui-input-placeholder {
       font-family: "Roboto", "Helvetica", "Arial", sans-serif;
       color: #c8c8c8;
     }
