@@ -1,3 +1,4 @@
 <view bind:tap="_test">
+  <view>{{value}}</view>
   <slot></slot>
 </view>

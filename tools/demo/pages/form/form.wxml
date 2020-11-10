@@ -32,11 +32,9 @@
       </view>
   </form>
 -->
-  <mui-checkbox model:checked="{{modelChecked}}" onChange="{{trigger}}" />
-  <!--
   <mui-checkbox-group onChange="{{groupChange}}" model:value="{{checkedValue}}">
     <mui-checkbox value="A">A</mui-checkbox>
-    <mui-checkbox value="B" checked="{{checked}}" color="primary" size="{{size}}" onChange="{{trigger}}">B</mui-checkbox>
+    <mui-checkbox value="B" color="primary">B</mui-checkbox>
     <mui-checkbox value="C" defaultChecked>C</mui-checkbox>
     <mui-checkbox value="D">D</mui-checkbox>
     <mui-checkbox value="E">E</mui-checkbox>
@@ -66,5 +64,4 @@
   <mui-input placeholder="Placeholder" m-style="margin: 8px;" />
   <mui-input placeholder="Placeholder" multiline m-style="margin: 8px;" />
   <mui-input inputChange="{{inputChange}}" password maxlength="{{3}}" />
-  -->
 </view>

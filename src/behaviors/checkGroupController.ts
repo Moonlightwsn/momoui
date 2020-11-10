@@ -22,6 +22,48 @@ export default Behavior({
     _pure_be_controlled: false,
     _pure_multiple: true,
   },
+  methods: {
+    innerchange(detail) {
+      const {value, checked} = detail
+      let checkedValue: Array<String> = []
+      let tmpCheckedValueMap = false
+      const {
+        _pure_multiple: isMultiple,
+        _pure_checked_value: checkedValueFromThisData,
+        onChange,
+      } = this.data
+      if (this.data._pure_be_controlled) {
+        tmpCheckedValueMap = {...checkedValueFromThisData}
+      }
+      const checkedValueMap = this._trigger(value, checked, tmpCheckedValueMap)
+      checkedValue = Object.keys(checkedValueMap).filter(item => (checkedValueMap[item]))
+      const realCheckedValue = isMultiple ? checkedValue : checkedValue[0]
+      if (onChange && typeof onChange === 'function') {
+        onChange(realCheckedValue)
+      }
+      /*
+      const {_pure_be_controlled: beController} = this.data
+      if (beController) {
+        this.setData({value: realCheckedValue})
+      }
+      */
+    },
+    _trigger(value, checked, checkedValueMap) {
+      if (value) {
+        const {
+          _pure_multiple: isMultiple,
+          _pure_checked_value: checkedValue,
+        } = this.data
+        let realCheckedValue = checkedValueMap || checkedValue
+        if (!isMultiple) {
+          realCheckedValue = {}
+        }
+        realCheckedValue[value] = checked
+        return realCheckedValue
+      }
+      return null
+    },
+  },
   lifetimes: {
     attached() {
       const {
@@ -59,48 +101,6 @@ export default Behavior({
         })
       }
     }
-  },
-  methods: {
-    innerchange(detail) {
-      const {value, checked} = detail
-      let checkedValue: Array<String> = []
-      let tmpCheckedValueMap = false
-      const {
-        _pure_multiple: isMultiple,
-        _pure_checked_value: checkedValueFromThisData,
-        onChange,
-      } = this.data
-      if (this.data._pure_be_controlled) {
-        tmpCheckedValueMap = {...checkedValueFromThisData}
-      }
-      const checkedValueMap = this._trigger(value, checked, tmpCheckedValueMap)
-      checkedValue = Object.keys(checkedValueMap).filter(item => (checkedValueMap[item]))
-      const realCheckedValue = isMultiple ? checkedValue : checkedValue[0]
-      if (onChange && typeof onChange === 'function') {
-        onChange(realCheckedValue)
-      }
-      /*
-      const {value: valueFromProps} = this.data
-      if (valueFromProps) {
-        this.setData({value: realCheckedValue})
-      }
-      */
-    },
-    _trigger(value, checked, checkedValueMap) {
-      if (value) {
-        const {
-          _pure_multiple: isMultiple,
-          _pure_checked_value: checkedValue,
-        } = this.data
-        let realCheckedValue = checkedValueMap || checkedValue
-        if (!isMultiple) {
-          realCheckedValue = {}
-        }
-        realCheckedValue[value] = checked
-        return realCheckedValue
-      }
-      return null
-    },
   },
   observers: {
     value(value) {

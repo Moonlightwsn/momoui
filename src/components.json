@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "test": "./components/test/test",
     "ripple": "./components/ripple/ripple",
     "ripple-container": "./components/ripple-container/ripple-container",
     "button-base": "./components/button-base/button-base",

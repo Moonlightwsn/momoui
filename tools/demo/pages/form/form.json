@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "mui-test": "../../components/test/test",
     "mui-checkbox-group": "../../components/checkbox-group/checkbox-group",
     "mui-checkbox": "../../components/checkbox/checkbox",
     "mui-radio-group": "../../components/radio-group/radio-group",

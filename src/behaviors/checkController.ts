@@ -12,6 +12,10 @@ export default Behavior({
       type: String,
       value: 'secondary',
     },
+    controlled: {
+      type: Boolean,
+      value: false,
+    },
     defaultChecked: {
       type: Boolean,
       value: false,
@@ -45,7 +49,6 @@ export default Behavior({
   data: {
     _pure_one_way: false,
     _pure_be_controlled: false,
-    _pure_checked: false,
     _checked: false,
     _currentIcon: '',
     _currentIconStyle: '',
@@ -93,8 +96,8 @@ export default Behavior({
     },
     _checkControll() {
       const {
-        // checked,
         _checked,
+        controlled,
         value,
         _pure_one_way: isOneWay,
         _pure_be_controlled: thisBeControlled,
@@ -105,7 +108,7 @@ export default Behavior({
         if (onChange && typeof onChange === 'function') {
           onChange(realChecked)
         }
-        if (thisBeControlled && realChecked !== !!_checked) {
+        if (thisBeControlled && realChecked !== !!_checked && !controlled) {
           this.setData({checked: realChecked})
         }
         if (this._group) {
@@ -129,7 +132,6 @@ export default Behavior({
             this.setData(this.genIcon({checked: realChecked}))
           }
         } else if (!thisBeControlled) {
-          console.log(realChecked)
           this.setData(this.genIcon({checked: realChecked}))
         }
       }
@@ -142,38 +144,21 @@ export default Behavior({
     attached() {
       const {checked, defaultChecked} = this.data
       let _checked = defaultChecked
-      let pureChecked = defaultChecked
       let pureBeControlled = false
       if (typeof checked === 'boolean') {
         _checked = checked
-        pureChecked = checked
         pureBeControlled = true
       }
       this.setData({
         ...this.genIcon({checked: _checked}),
-        _pure_be_controlled: pureBeControlled,
-        _pure_checked: pureChecked,
+        _pure_be_controlled: pureBeControlled
       })
     }
   },
   observers: {
     checked(checked) {
-      console.log('observers', checked)
-      // this.setData({_pure_checked: checked})
-      /*
-      if (!this._group) {
-        const {_checked} = this.data
-        const realChecked = typeof checked === 'boolean' ? checked : _checked
-        if (realChecked !== !!_checked) {
-          this.setData(this.genIcon({checked: realChecked}))
-        }
-      }
-      */
-    },
-    _pure_checked(checked) {
-      console.log('_pure_checked', checked)
-      if (!this._group) {
-        const {_checked} = this.data
+      const {_checked} = this.data
+      if (checked !== !!_checked && !this._group) {
         if (checked !== !!_checked) {
           this.setData(this.genIcon({checked}))
         }
