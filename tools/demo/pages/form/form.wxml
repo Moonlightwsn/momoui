@@ -1,6 +1,5 @@
 <view
   data-momoui-theme="{{theme}}"
-  bind:change="change"
 >
 <!--
   <form bindsubmit="submit" bindreset="reset">
@@ -33,38 +32,39 @@
       </view>
   </form>
 -->
+  <mui-checkbox model:checked="{{modelChecked}}" onChange="{{trigger}}" />
   <!--
-  <mui-checkbox-group bind:change="test" defaultValue="A" value="{{checkedValue}}">
+  <mui-checkbox-group onChange="{{groupChange}}" model:value="{{checkedValue}}">
     <mui-checkbox value="A">A</mui-checkbox>
-    <mui-checkbox value="B" checked="{{checked}}" color="primary" size="{{size}}" bind:change="trigger">B</mui-checkbox>
+    <mui-checkbox value="B" checked="{{checked}}" color="primary" size="{{size}}" onChange="{{trigger}}">B</mui-checkbox>
     <mui-checkbox value="C" defaultChecked>C</mui-checkbox>
     <mui-checkbox value="D">D</mui-checkbox>
     <mui-checkbox value="E">E</mui-checkbox>
     <mui-checkbox value="F" disabled>F</mui-checkbox>
   </mui-checkbox-group>
-  <mui-checkbox value="B" checked="{{checked}}" color="primary" bind:change="trigger" size="{{size}}">B</mui-checkbox>
-  <mui-checkbox value="C" defaultChecked disabled>C</mui-checkbox>
+  <mui-checkbox value="B" model:checked="{{checked}}" color="primary" onChange="{{trigger}}" size="{{size}}">B</mui-checkbox>
+  <mui-checkbox value="C" defaultChecked>C</mui-checkbox>
   <mui-button m-style="margin-left: 12px;" bind:tap="changeSize">chagen size</mui-button>
   <view />
-  <mui-radio bind:change="radioChange">A</mui-radio>
-  <mui-radio bind:change="radioChange" defaultChecked disabled color="primary">B</mui-radio>
-  <mui-radio bind:change="radioChange" checked="{{checked}}" color="default" size="small">c</mui-radio>
-  <mui-radio-group defaultValue="D">
+  <mui-radio onChange="{{radioChange}}">A</mui-radio>
+  <mui-radio onChange="{{radioChange}}" defaultChecked disabled color="primary">B</mui-radio>
+  <mui-radio onChange="{{radioChange}}" checked="{{checked}}" color="default" size="small">c</mui-radio>
+  <mui-radio />
+  <mui-radio-group onChange="{{groupChange}}" value="{{checkedValue}}">
     <mui-radio value="A" ripple="{{false}}">A</mui-radio>
     <mui-radio color="primary" value="B">B</mui-radio>
     <mui-radio value="C">C</mui-radio>
     <mui-radio value="D" disabled>D</mui-radio>
   </mui-radio-group>
-  <mui-switch>Secondary</mui-switch>
+  <mui-switch model:checked="{{checked}}" onChange="{{trigger}}">Secondary</mui-switch>
   <mui-switch color="primary" size="small" />
-  -->
-  <!--
+  <view />
   <mui-button bindtap="showInput">Show Input</mui-button>
   <view />
   <mui-input placeholder="Placeholder" rows="{{3}}" multiline m-style="margin: 8px;" />
   <mui-input margin="dense" color="secondary" m-style="margin: 8px;" value="Disabled" disabled />
   <mui-input placeholder="Placeholder" m-style="margin: 8px;" />
   <mui-input placeholder="Placeholder" multiline m-style="margin: 8px;" />
-  -->
   <mui-input inputChange="{{inputChange}}" password maxlength="{{3}}" />
+  -->
 </view>

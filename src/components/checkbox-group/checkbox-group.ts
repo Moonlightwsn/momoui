@@ -9,7 +9,9 @@ Component({
         if (target) {
           const {value} = target.data
           if (value) {
-            this.data._pure_targets[value] = target
+            const {_pure_targets: targets} = this.data
+            targets[value] = target
+            this.setData({_pure_targets: targets})
           }
           const realChecked = this.data._pure_checked_value[value] || false
           target._groupControll(realChecked)

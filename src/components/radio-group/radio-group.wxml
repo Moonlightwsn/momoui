@@ -1,5 +1,3 @@
-<view
-  catch:innerchange="innerchange"
->
+<view>
   <slot></slot>
 </view>

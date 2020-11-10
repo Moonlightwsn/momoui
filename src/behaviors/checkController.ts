@@ -35,10 +35,17 @@ export default Behavior({
     value: {
       type: String,
       value: null,
-    }
+    },
+    onChange: {
+      // @ts-ignore
+      type: Function,
+      value: null,
+    },
   },
   data: {
     _pure_one_way: false,
+    _pure_be_controlled: false,
+    _pure_checked: false,
     _checked: false,
     _currentIcon: '',
     _currentIconStyle: '',
@@ -86,30 +93,45 @@ export default Behavior({
     },
     _checkControll() {
       const {
-        checked,
+        // checked,
         _checked,
         value,
-        _pure_one_way: isOneWay
+        _pure_one_way: isOneWay,
+        _pure_be_controlled: thisBeControlled,
+        onChange,
       } = this.data
       const realChecked = isOneWay || !_checked
-      this.triggerEvent('change', {checked: realChecked})
-      if (value) {
-        this.triggerEvent('innerchange', {value, checked: !_checked}, {bubbles: true, composed: true})
-      }
-      if (this._group) {
-        if (!this._group.data._pure_be_controlled) {
-          if (realChecked && this._group.data._pure_targets) {
-            const {_pure_targets: targets} = this._group.data
-            Object.keys(targets).forEach(targetName => {
-              if (targetName !== value) {
-                targets[targetName]._groupControll(false)
-              }
-            })
+      if (realChecked !== !!_checked) {
+        if (onChange && typeof onChange === 'function') {
+          onChange(realChecked)
+        }
+        if (thisBeControlled && realChecked !== !!_checked) {
+          this.setData({checked: realChecked})
+        }
+        if (this._group) {
+          const {
+            _pure_targets: targets,
+            _pure_be_controlled: beControlled,
+            _pure_multiple: multiple
+          } = this._group.data
+          if (value) {
+            // this._group直接调用innerchange，保整innerchange内部的this指向this._group
+            this._group.innerchange({checked: realChecked, value})
           }
+          if (!beControlled) {
+            if (realChecked && targets && !multiple) {
+              Object.keys(targets).forEach(targetName => {
+                if (targetName !== value) {
+                  targets[targetName]._groupControll(false)
+                }
+              })
+            }
+            this.setData(this.genIcon({checked: realChecked}))
+          }
+        } else if (!thisBeControlled) {
+          console.log(realChecked)
           this.setData(this.genIcon({checked: realChecked}))
         }
-      } else if (typeof checked !== 'boolean') {
-        this.setData(this.genIcon({checked: realChecked}))
       }
     },
     _groupControll(checked) {
@@ -119,16 +141,42 @@ export default Behavior({
   lifetimes: {
     attached() {
       const {checked, defaultChecked} = this.data
-      const _checked = typeof checked === 'boolean' ? checked : defaultChecked
-      this.setData(this.genIcon({checked: _checked}))
+      let _checked = defaultChecked
+      let pureChecked = defaultChecked
+      let pureBeControlled = false
+      if (typeof checked === 'boolean') {
+        _checked = checked
+        pureChecked = checked
+        pureBeControlled = true
+      }
+      this.setData({
+        ...this.genIcon({checked: _checked}),
+        _pure_be_controlled: pureBeControlled,
+        _pure_checked: pureChecked,
+      })
     }
   },
   observers: {
     checked(checked) {
+      console.log('observers', checked)
+      // this.setData({_pure_checked: checked})
+      /*
       if (!this._group) {
         const {_checked} = this.data
         const realChecked = typeof checked === 'boolean' ? checked : _checked
-        this.setData(this.genIcon({checked: realChecked}))
+        if (realChecked !== !!_checked) {
+          this.setData(this.genIcon({checked: realChecked}))
+        }
+      }
+      */
+    },
+    _pure_checked(checked) {
+      console.log('_pure_checked', checked)
+      if (!this._group) {
+        const {_checked} = this.data
+        if (checked !== !!_checked) {
+          this.setData(this.genIcon({checked}))
+        }
       }
     },
     size(size) {

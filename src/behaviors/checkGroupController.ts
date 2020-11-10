@@ -10,6 +10,11 @@ export default Behavior({
       optionalTypes: [String],
       value: null,
     },
+    onChange: {
+      // @ts-ignore
+      type: Function,
+      value: null,
+    },
   },
   data: {
     _pure_targets: {},
@@ -25,11 +30,12 @@ export default Behavior({
         _pure_multiple: isMultiple,
       } = this.data
       let checkedValue
+      let beControlled = false
       if (Array.isArray(value)) {
-        this.data._pure_be_controlled = true
+        beControlled = true
         checkedValue = value
       } else if (typeof value === 'string') {
-        this.data._pure_be_controlled = true
+        beControlled = true
         checkedValue = value.split(',')
       } else if (Array.isArray(defaultValue)) {
         checkedValue = defaultValue
@@ -37,33 +43,48 @@ export default Behavior({
         checkedValue = defaultValue.split(',')
       }
       if (checkedValue) {
+        const {_pure_checked_value: checkedValueMap} = this.data
         if (!isMultiple && checkedValue[0]) {
-          this.data._pure_checked_value[checkedValue[0]] = true
+          checkedValueMap[checkedValue[0]] = true
         } else {
           checkedValue.forEach(value => {
             if (value) {
-              this.data._pure_checked_value[value] = true
+              checkedValueMap[value] = true
             }
           })
         }
+        this.setData({
+          _pure_checked_value: checkedValueMap,
+          _pure_be_controlled: beControlled,
+        })
       }
     }
   },
   methods: {
-    innerchange(e) {
-      const {value, checked} = e.detail
+    innerchange(detail) {
+      const {value, checked} = detail
       let checkedValue: Array<String> = []
       let tmpCheckedValueMap = false
       const {
         _pure_multiple: isMultiple,
         _pure_checked_value: checkedValueFromThisData,
+        onChange,
       } = this.data
       if (this.data._pure_be_controlled) {
         tmpCheckedValueMap = {...checkedValueFromThisData}
       }
       const checkedValueMap = this._trigger(value, checked, tmpCheckedValueMap)
       checkedValue = Object.keys(checkedValueMap).filter(item => (checkedValueMap[item]))
-      this.triggerEvent('change', {checkedValue: isMultiple ? checkedValue : checkedValue[0]})
+      const realCheckedValue = isMultiple ? checkedValue : checkedValue[0]
+      if (onChange && typeof onChange === 'function') {
+        onChange(realCheckedValue)
+      }
+      /*
+      const {value: valueFromProps} = this.data
+      if (valueFromProps) {
+        this.setData({value: realCheckedValue})
+      }
+      */
     },
     _trigger(value, checked, checkedValueMap) {
       if (value) {
@@ -79,7 +100,7 @@ export default Behavior({
         return realCheckedValue
       }
       return null
-    }
+    },
   },
   observers: {
     value(value) {

@@ -39,7 +39,7 @@ export default Behavior({
       const muiClassesArr = []
       const {disabled, loading} = params
       if (!(typeof disabled === 'undefined' && typeof loading === 'undefined')) {
-        const _disabled = (disabled || loading)
+        const _disabled = (disabled || loading || false)
         if (_disabled) {
           muiClassesArr.push('mui-disabled')
         }

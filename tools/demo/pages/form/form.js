@@ -4,34 +4,35 @@ Page({
   behaviors: [themeMixin],
   data: {
     checked: true,
+    modelChecked: false,
     size: 'medium',
-    checkedValue: ['A', 'B'],
+    checkedValue: ['D'],
     input: 'Hello world',
-    inputChange: (value, cursor, keyCode) => {
-      console.log(value, cursor, keyCode)
-    },
+  },
+  onLoad() {
+    this.setData({
+      trigger: this.trigger.bind(this),
+      inputChange: this.inputChange.bind(this),
+      radioChange: this.radioChange.bind(this),
+      groupChange: this.groupChange.bind(this)
+    })
+  },
+  inputChange: (value, cursor, keyCode) => {
+    console.log(value, cursor, keyCode)
+  },
+  trigger(checked) {
+    console.log('trigger', checked)
+    console.log(this.data)
+  },
+  radioChange(checked) {
+    console.log('radioChange', checked)
   },
   showInput() {
     console.log(this.data.input, this.data.checked)
   },
-  test(event) {
-    const {checkedValue} = event.detail
-    console.log('form page', checkedValue)
-    this.setData({
-      checkedValue
-    })
-  },
-  radioChange(event) {
-    console.log(event.detail)
-  },
-  change(event) {
-    console.log('form page change', event)
-  },
-  trigger(event) {
-    const {checked} = event.detail || {}
-    this.setData({
-      checked,
-    })
+  groupChange(checkedValue) {
+    console.log('groupChange', checkedValue)
+    this.setData({checkedValue})
   },
   changeSize() {
     this.setData({

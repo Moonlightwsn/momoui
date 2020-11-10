@@ -155,6 +155,11 @@ Component({
   lifetimes: {
     attached() {
       const {rows} = this.properties
+      this._adjustTextareaHeight(rows)
+    },
+  },
+  methods: {
+    _adjustTextareaHeight(rows) {
       if (rows > 1) {
         const query = this.createSelectorQuery()
         query.select('.mui-input').fields({
@@ -174,9 +179,7 @@ Component({
           }
         })
       }
-    }
-  },
-  methods: {
+    },
     _onFocus(e) {
       this.setData({_focus: true})
       const {inputFocus} = this.data
@@ -215,6 +218,11 @@ Component({
       if (lineChange && typeof lineChange === 'function') {
         lineChange(e)
       }
+    }
+  },
+  observers: {
+    rows(rows) {
+      this._adjustTextareaHeight(rows)
     }
   },
   options: {
