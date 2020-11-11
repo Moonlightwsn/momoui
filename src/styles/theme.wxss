@@ -1,3 +1,10 @@
+/** mui-icon */
+.mui-icon {
+  color: inherit;
+  font-size: inherit;
+}
+/** mui-icon end */
+
 .mui {
   /* mui base */
   margin: 0;
@@ -214,13 +221,50 @@
       background-color: inherit;
       border-color: inherit;
     }
+    &.mui-size-small {
+      .mui-button {
+        .check-icon {
+          font-size: 20px;
+          &.switch-icon {
+            font-size: 16px;
+          }
+        }
+      }
+    }
     .mui-button {
       &.mui-color-default {
         color: #757575;
+        .check-icon {
+          &.switch-icon {
+            color: #fff;
+          }
+        }
       }
-      .switch-icon {
-        border-radius:50%;
-        box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+      .check-icon {
+        font-size: 24px;
+        &.switch-icon {
+          font-size: 20px;
+          border-radius:50%;
+          box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+        }
+      }
+    }
+    &.mui-unchecked {
+      .mui-button {
+        .check-icon {
+          color: #757575;
+          &.switch-icon {
+            color: #fff;
+          }
+        }
+      }
+    }
+    &.mui-disabled {
+      color: rgba(0, 0, 0, 0.38);
+      .mui-button {
+        .check-icon {
+          color: #bdbdbd;
+        }
       }
     }
   }
@@ -260,7 +304,7 @@
         padding: 7px;
       }
     }
-    &.switch-checked {
+    &.mui-checked {
       .switch-root {
         .mui-button {
           transform: translateX(20px);
@@ -281,6 +325,16 @@
       &.mui-color-primary {
         .switch-track {
           background-color: #1976d2
+        }
+      }
+    }
+    &.mui-disabled {
+      .switch-track {
+        opacity: 0.12;
+      }
+      &.mui-color-secondary, &.mui-color-primary {
+        .switch-track {
+          background-color: #000;
         }
       }
     }
@@ -860,13 +914,6 @@
   }
 }
 
-/** mui-icon */
-.mui-icon {
-  color: inherit;
-  font-size: inherit;
-}
-/** mui-icon end */
-
 /** mui-grid media */
 @media (min-width: 600px) {
   .mui {
@@ -1264,7 +1311,6 @@
 
     &.mui-disabled {
       color: rgba(255, 255, 255, 0.3);
-      background-color: rgba(255, 255, 255, 0.12);
       &.mui-button {
         color: rgba(255, 255, 255, 0.3);
         &.mui-variant-contained {

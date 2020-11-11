@@ -28,12 +28,14 @@ Component({
   },
   methods: {
     _readSvgFile(iconName: string) {
+      console.log('icon _readSvgFile')
       const {src} = this.properties
       if (iconName && !src) {
         this.createSelectorQuery().select('.mui-icon').fields({
           computedStyle: ['color','fontSize'],
         }, async res => {
           let {color, fontSize: size} = res
+          console.log('computedStyle', color, size)
           if (!size) {
             size = '20px'
           }
@@ -70,6 +72,7 @@ Component({
   },
   observers: {
     'name, mStyle, mClass': function (name) {
+      console.log('icon observers')
       this._readSvgFile(name)
     }
   },

@@ -1,3 +1,3 @@
-<view bind:tap="_test">
+<view>
   <slot></slot>
 </view>

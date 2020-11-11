@@ -54,6 +54,7 @@ export default Behavior({
       if (mClass) {
         muiClassesArr.push(mClass)
       }
+      console.log('muiController _defindMuiBehaviors', muiClassesArr)
       this.setData({
         muiClasses: muiClassesArr.join(' '),
       })
@@ -62,6 +63,7 @@ export default Behavior({
   },
   observers: {
     'color, variant, size, loading, disabled': function (color, variant, size, loading, disabled) {
+      console.log('muiController observers', disabled)
       this._defindMuiBehaviors({
         color,
         variant,

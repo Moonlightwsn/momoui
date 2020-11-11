@@ -14,7 +14,9 @@ Component({
       value: 'round',
     },
   },
-  _pure_one_way: true,
+  data: {
+    _pure_one_way: true,
+  },
   relations: {
     '../radio-group/radio-group': {
       type: 'ancestor',

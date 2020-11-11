@@ -7,8 +7,9 @@ Page({
     checked: true,
     modelChecked: false,
     size: 'medium',
-    checkedValue: ['D'],
+    checkedValue: ['D', 'F'],
     input: 'Hello world',
+    disabled: true,
   },
   onLoad() {
     this.setData({
@@ -39,6 +40,11 @@ Page({
   changeSize() {
     this.setData({
       size: this.data.size === 'small' ? 'medium' : 'small',
+    })
+  },
+  changeDisabled() {
+    this.setData({
+      disabled: !this.data.disabled,
     })
   },
   submit(event) {

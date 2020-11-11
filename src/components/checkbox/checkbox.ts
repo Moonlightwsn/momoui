@@ -13,6 +13,10 @@ Component({
       type: String,
       value: 'square',
     },
+    indeterminate: {
+      type: Boolean,
+      value: false,
+    }
   },
   relations: {
     '../checkbox-group/checkbox-group': {
@@ -22,6 +26,13 @@ Component({
           this._group = target
         }
       },
+    }
+  },
+  observers: {
+    indeterminate(indeterminate) {
+      if (indeterminate) {
+        this.setData({checkedIcon: 'square-indeterminate-fill'})
+      }
     }
   },
   options: {

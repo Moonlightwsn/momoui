@@ -51,47 +51,29 @@ export default Behavior({
     _pure_be_controlled: false,
     _checked: false,
     _currentIcon: '',
-    _currentIconStyle: '',
-    _switchRootClass: '',
-    _pureSizeToPx: {
-      medium: 24,
-      small: 20,
-    },
-    _pureUncheckedColor: '#757575',
+    _checkedClass: 'mui-unchecked',
   },
   methods: {
-    genIcon({checked: checkedArg, size: sizeArg}) {
+    genIcon({checked: checkedArg} = {}) {
       const {
         checkedIcon,
         icon,
-        size: _size,
         _checked,
-        disabled,
-        _pureSizeToPx,
-        _pureUncheckedColor,
       } = this.data
       let checked = _checked
-      let size = _size
       if (typeof checkedArg !== 'undefined') {
         checked = checkedArg
       }
-      if (typeof sizeArg !== 'undefined') {
-        size = sizeArg
-      }
       let _currentIcon = icon
-      let _switchRootClass = ''
-      let _currentIconStyle = `font-size: ${_pureSizeToPx[size] || 24}px;`
+      let _checkedClass = 'mui-unchecked'
       if (checked) {
         _currentIcon = checkedIcon
-        _switchRootClass = 'switch-checked'
-      } else {
-        _currentIconStyle = `${_currentIconStyle}${disabled ? '' : `color: ${_pureUncheckedColor};`}`
+        _checkedClass = 'mui-checked'
       }
       return {
         _checked: checked,
         _currentIcon,
-        _currentIconStyle,
-        _switchRootClass,
+        _checkedClass,
       }
     },
     _checkControll() {
@@ -164,8 +146,8 @@ export default Behavior({
         }
       }
     },
-    size(size) {
-      this.setData(this.genIcon({size}))
+    'size, disabled': function () {
+      this.setData(this.genIcon())
     },
   },
 })

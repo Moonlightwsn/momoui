@@ -14,13 +14,6 @@ Component({
       value: 'circle',
     },
   },
-  data: {
-    _pureSizeToPx: {
-      medium: 20,
-      small: 16,
-    },
-    _pureUncheckedColor: '#fff',
-  },
   relations: {
     '../checkbox-group/checkbox-group': {
       type: 'ancestor',
