@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mui-test": "../../components/test/test",
+    "mui-testcheck": "../../components/test/testcheck",
+    "mui-checkbox": "../../components/checkbox/checkbox",
+    "mui-radio": "../../components/radio/radio",
+    "mui-switch": "../../components/switch/switch"
+  }
+}

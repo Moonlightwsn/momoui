@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mui-button": "../button/button",
+    "mui-icon": "../icon/icon"
+  }
+}

@@ -21,6 +21,10 @@ Component({
       type: String,
       value: ''
     },
+    rerender: {
+      type: null,
+      value: null,
+    },
   },
   data: {
     base64Content: '',
@@ -28,14 +32,12 @@ Component({
   },
   methods: {
     _readSvgFile(iconName: string) {
-      console.log('icon _readSvgFile')
       const {src} = this.properties
       if (iconName && !src) {
         this.createSelectorQuery().select('.mui-icon').fields({
           computedStyle: ['color','fontSize'],
         }, async res => {
-          let {color, fontSize: size} = res
-          console.log('computedStyle', color, size)
+          let {color, fontSize: size} = res || {}
           if (!size) {
             size = '20px'
           }
@@ -71,8 +73,7 @@ Component({
     }
   },
   observers: {
-    'name, mStyle, mClass': function (name) {
-      console.log('icon observers')
+    'name, mStyle, mClass, rerender': function (name) {
       this._readSvgFile(name)
     }
   },

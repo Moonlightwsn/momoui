@@ -8,6 +8,7 @@
     "mui-switch": "../../components/switch/switch",
     "mui-input": "../../components/input/input",
     "mui-button": "../../components/button/button",
+    "mui-icon": "../../components/icon/icon",
     "mui-typography": "../../components/typography/typography"
   }
 }

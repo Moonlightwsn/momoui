@@ -32,6 +32,11 @@
 		"miniprogram": {
       "list": [
         {
+          "name": "test",
+          "pathName": "pages/test/test",
+          "scene": null
+        },
+        {
           "name": "index",
           "pathName": "pages/index/index",
           "scene": null

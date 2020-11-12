@@ -36,6 +36,7 @@ export default Behavior({
     },
     _defindMuiBehaviors(params = {}) {
       /** 整合所有样式 */
+      const newData: { _disabled?: boolean, muiClasses?: string } = {}
       const muiClassesArr = []
       const {disabled, loading} = params
       if (!(typeof disabled === 'undefined' && typeof loading === 'undefined')) {
@@ -43,9 +44,7 @@ export default Behavior({
         if (_disabled) {
           muiClassesArr.push('mui-disabled')
         }
-        this.setData({
-          _disabled,
-        })
+        newData._disabled = _disabled
       }
       styleProps.forEach(sp => {
         muiClassesArr.push(params[sp] ? `mui-${sp}-${params[sp]}` : '')
@@ -54,16 +53,13 @@ export default Behavior({
       if (mClass) {
         muiClassesArr.push(mClass)
       }
-      console.log('muiController _defindMuiBehaviors', muiClassesArr)
-      this.setData({
-        muiClasses: muiClassesArr.join(' '),
-      })
+      newData.muiClasses = muiClassesArr.join(' ')
+      this.setData(newData)
     },
 
   },
   observers: {
     'color, variant, size, loading, disabled': function (color, variant, size, loading, disabled) {
-      console.log('muiController observers', disabled)
       this._defindMuiBehaviors({
         color,
         variant,

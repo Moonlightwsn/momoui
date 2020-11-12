@@ -1,0 +1,6 @@
+<button
+  disabled="{{_disabled}}"
+  class="{{muiClasses}}"
+>
+  <slot></slot>
+</button>

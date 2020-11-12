@@ -1,13 +1,13 @@
 import muiBase from '../../behaviors/muiBase.ts'
 import muiController from '../../behaviors/muiController.ts'
-import checkController from '../../behaviors/checkController.ts'
+import rippleBase from '../../behaviors/rippleBase.ts'
 
 Component({
-  behaviors: [muiBase, muiController, checkController],
+  behaviors: [muiBase, muiController, rippleBase],
   properties: {
     color: {
       type: String,
-      value: 'secondary',
+      value: 'default',
     },
     size: {
       type: String,
@@ -17,6 +17,10 @@ Component({
       type: Boolean,
       value: false,
     },
+    loading: {
+      type: Boolean,
+      value: false,
+    }
   },
   options: {
     virtualHost: true,

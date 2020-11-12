@@ -82,7 +82,7 @@
     <mui-checkbox disabled defaultChecked />
     <mui-checkbox disabled defaultChecked color="primary" />
     -->
-    <!-- <mui-checkbox size="small" disabled="{{disabled}}" defaultChecked color="primary">(Disabled)</mui-checkbox> -->
+    <mui-checkbox size="small" disabled="{{disabled}}" defaultChecked color="primary">(Disabled)</mui-checkbox>
   </view>
   <view>
     <!--
@@ -114,11 +114,21 @@
     <mui-switch disabled defaultChecked />
     <mui-switch disabled defaultChecked color="primary" />
     -->
-    <!-- <mui-switch size="small" disabled="{{disabled}}" defaultChecked color="primary">(Disabled)</mui-switch> -->
+    <mui-switch size="small" disabled="{{disabled}}" defaultChecked color="primary">(Disabled)</mui-switch>
   </view>
   <view style="margin-top: 12px;">
     <!-- <mui-button m-style="margin-left: 12px;" bind:tap="changeSize">Chagen Size</mui-button> -->
     <!-- <mui-button m-style="margin-left: 12px;" bind:tap="changeDisabled">Chagen Disabled</mui-button> -->
     <view bind:tap="changeDisabled">Chagen Disabled</view>
+    <view class="mui mui-radio mui-checked mui-color-primary">
+      <mui-button disabled="{{disabled}}" ripple color="primary" shape="circle" variant="text" m-style="padding: 9px;">
+        <mui-icon name="radio-box" m-class="check-icon" rerender="{{disabled}}" />
+      </mui-button>
+    </view>
+    <view class="mui mui-radio mui-checked mui-color-primary">
+      <mui-button disabled="{{disabled}}" ripple color="primary" shape="circle" variant="text" m-style="padding: 9px;">
+        <mui-icon name="square-check-fill" m-class="check-icon" rerender="{{disabled}}" />
+      </mui-button>
+    </view>
   </view>
 </view>

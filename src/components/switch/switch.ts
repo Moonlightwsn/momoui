@@ -14,15 +14,7 @@ Component({
       value: 'circle',
     },
   },
-  relations: {
-    '../checkbox-group/checkbox-group': {
-      type: 'ancestor',
-      linked(target) {
-        if (target) {
-          this._group = target
-        }
-      },
-    }
+  observers: {
   },
   options: {
     virtualHost: true,
