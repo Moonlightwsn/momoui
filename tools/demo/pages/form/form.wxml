@@ -1,5 +1,6 @@
 <view
   data-momoui-theme="{{theme}}"
+  style="height: 100%;"
 >
 <!--
   <form bindsubmit="submit" bindreset="reset">
@@ -69,23 +70,21 @@
   <mui-input inputChange="{{inputChange}}" password maxlength="{{3}}" />
   -->
   <view>
-    <!--
-    <mui-checkbox size="{{size}}" />
-    <mui-checkbox color="primary">Checkbox</mui-checkbox>
+    <mui-checkbox size="{{size}}">Checkbox</mui-checkbox>
+    <mui-checkbox color="primary" />
     <mui-checkbox color="default" />
     <mui-checkbox defaultChecked />
     <mui-checkbox defaultChecked color="primary" />
     <mui-checkbox defaultChecked color="default" />
+    <mui-checkbox defaultChecked indeterminate />
     <mui-checkbox disabled />
     <mui-checkbox disabled color="primary" />
     <mui-checkbox disabled color="default" />
     <mui-checkbox disabled defaultChecked />
     <mui-checkbox disabled defaultChecked color="primary" />
-    -->
     <mui-checkbox size="small" disabled="{{disabled}}" defaultChecked color="primary">(Disabled)</mui-checkbox>
   </view>
   <view>
-    <!--
     <mui-radio size="{{size}}">Radio</mui-radio>
     <mui-radio color="primary" />
     <mui-radio color="default" />
@@ -97,11 +96,9 @@
     <mui-radio disabled color="default" />
     <mui-radio disabled defaultChecked />
     <mui-radio disabled defaultChecked color="primary" />
-    -->
     <mui-radio size="small" disabled="{{disabled}}" defaultChecked color="primary">(Disabled)</mui-radio>
   </view>
   <view>
-    <!--
     <mui-switch size="{{size}}">Switch</mui-switch>
     <mui-switch color="primary" />
     <mui-switch color="default" />
@@ -113,22 +110,18 @@
     <mui-switch disabled color="default" />
     <mui-switch disabled defaultChecked />
     <mui-switch disabled defaultChecked color="primary" />
-    -->
     <mui-switch size="small" disabled="{{disabled}}" defaultChecked color="primary">(Disabled)</mui-switch>
   </view>
   <view style="margin-top: 12px;">
-    <!-- <mui-button m-style="margin-left: 12px;" bind:tap="changeSize">Chagen Size</mui-button> -->
-    <!-- <mui-button m-style="margin-left: 12px;" bind:tap="changeDisabled">Chagen Disabled</mui-button> -->
-    <view bind:tap="changeDisabled">Chagen Disabled</view>
-    <view class="mui mui-radio mui-checked mui-color-primary">
-      <mui-button disabled="{{disabled}}" ripple color="primary" shape="circle" variant="text" m-style="padding: 9px;">
-        <mui-icon name="radio-box" m-class="check-icon" rerender="{{disabled}}" />
-      </mui-button>
-    </view>
-    <view class="mui mui-radio mui-checked mui-color-primary">
-      <mui-button disabled="{{disabled}}" ripple color="primary" shape="circle" variant="text" m-style="padding: 9px;">
-        <mui-icon name="square-check-fill" m-class="check-icon" rerender="{{disabled}}" />
-      </mui-button>
-    </view>
+    <mui-button m-style="margin-left: 12px;" bind:tap="changeSize">Chagen Size</mui-button>
+    <mui-button m-style="margin-left: 12px;" bind:tap="changeDisabled">Chagen Disabled</mui-button>
+  </view>
+  <view style="margin-bottom: 60px;">
+    <mui-input placeholder="Placeholder" rows="{{3}}" multiline m-style="margin: 8px;" />
+    <mui-input margin="dense" color="secondary" m-style="margin: 8px;" value="Disabled" disabled />
+    <mui-input placeholder="Placeholder" color="secondary" m-style="margin: 8px;" />
+    <mui-input placeholder="Placeholder" multiline m-style="margin: 8px;" />
+    <mui-input model:value="{{input}}" inputChange="{{inputChange}}" password maxlength="{{20}}" m-style="margin: 8px;" />
+    <mui-button bindtap="showInput">Show Input</mui-button>
   </view>
 </view>
