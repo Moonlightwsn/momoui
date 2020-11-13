@@ -1,0 +1,6 @@
+<label
+  class="mui mui-input-label animated-{{!disableAnimation}} {{muiClasses}} {{mClass}}"
+  style="{{mStyle}}"
+>
+  <slot />
+</label>

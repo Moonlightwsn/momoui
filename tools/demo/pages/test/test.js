@@ -1,4 +1,7 @@
+import themeMixin from '../../behaviors/theme'
+
 Page({
+  behaviors: [themeMixin],
   data: {
     disabled: true,
     color: 'secondary',

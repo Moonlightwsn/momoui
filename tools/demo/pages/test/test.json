@@ -4,6 +4,8 @@
     "mui-testcheck": "../../components/test/testcheck",
     "mui-checkbox": "../../components/checkbox/checkbox",
     "mui-radio": "../../components/radio/radio",
-    "mui-switch": "../../components/switch/switch"
+    "mui-switch": "../../components/switch/switch",
+    "mui-input": "../../components/input/input",
+    "mui-input-label": "../../components/input-label/input-label"
   }
 }

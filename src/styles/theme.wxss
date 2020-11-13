@@ -423,6 +423,15 @@
           border-bottom-style: dotted;
         }
       }
+      &.mui-color-primary, &.mui-color-secondary {
+        &.error-true {
+          &::after {
+            transform: scaleX(1);
+            transition: initial;
+            border-bottom-color: #f44336;
+          }
+        }
+      }
     }
     &.mui-color-primary {
       color: rgba(0, 0, 0, 0.87);
@@ -467,7 +476,28 @@
       color: #c8c8c8;
     }
   }
-   /** mui-input end */
+  /** mui-input end */
+
+  /** mui-input-label */
+  &.mui-input-label {
+    display: block;
+    transform-origin: top left;
+    color: rgba(0, 0, 0, 0.54);
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.00938em;
+    border-radius: 0;
+    &.mui-color-primary, &.mui-color-secondary {
+      background-color: inherit;
+      border-color: inherit;
+    }
+    &.animated-true {
+      transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    }
+  }
+  /** mui-input-label end */
 
   /** mui-grid */
   &.mui-grid {
@@ -1436,7 +1466,8 @@
           }
         }
       }
-      /* textarea 暗黑模式下 placeholder 样式不生效，暂时注释掉
+      /*
+      // textarea 暗黑模式下 placeholder 样式不生效，暂时注释掉 
       .mui-input-placeholder {
         color: #959595;
       }

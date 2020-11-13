@@ -14,6 +14,7 @@
     "radio": "./components/radio/radio",
     "switch": "./components/switch/switch",
     "input": "./components/input/input",
+    "input-label": "./components/input-label/input-label",
     "paper": "./components/paper/paper",
     "grid": "./components/grid/grid",
     "grid-list": "./components/grid-list/grid-list",

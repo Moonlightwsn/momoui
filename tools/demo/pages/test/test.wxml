@@ -1,30 +1,8 @@
-<view>
-  <mui-test
-    color="{{color}}"
-    size="{{size}}"
-    disabled="{{disabled}}"
-  >
-    TEST
-  </mui-test>
-  <button bindtap="trigger">切换</button>
-  <mui-checkbox
-    color="{{color}}"
-    size="{{size}}"
-    disabled="{{disabled}}"
-  >Checkbox</mui-checkbox>
-  <mui-radio
-    color="{{color}}"
-    size="{{size}}"
-    disabled="{{disabled}}"
-  >Radio</mui-radio>
-  <mui-switch
-    color="{{color}}"
-    size="{{size}}"
-    disabled="{{disabled}}"
-  >Switch</mui-switch>
-  <mui-testcheck
-    color="{{color}}"
-    size="{{size}}"
-    disabled="{{disabled}}"
-  >TestCheck</mui-testcheck>
+<view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <mui-input-label>Placeholder</mui-input-label>
+  <mui-input
+    m-class="input"
+    placeholder="Placeholder"
+    color="secondary"
+  />
 </view>

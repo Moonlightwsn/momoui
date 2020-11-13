@@ -7,4 +7,5 @@
 
 [data-momoui-theme=dark] {
   color: #fff;
+  background-color: #212121;
 }

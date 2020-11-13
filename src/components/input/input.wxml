@@ -1,5 +1,5 @@
 <view
-  class="mui mui-input-root focus-{{_focus}} disable-underline-{{disableUnderline}} {{muiClasses}}"
+  class="mui mui-input-root focus-{{_focus}} disable-underline-{{disableUnderline}} error-{{error}} {{muiClasses}}"
   style="{{fullWidth ? 'width:100%;' : 'width:182px;'}}{{mStyle}}"
 >
   <textarea

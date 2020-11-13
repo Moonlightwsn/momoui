@@ -44,6 +44,10 @@ Component({
       type: Boolean,
       value: false,
     },
+    error: {
+      type: Boolean,
+      value: false,
+    },
     fullWidth: {
       type: Boolean,
       value: false,
