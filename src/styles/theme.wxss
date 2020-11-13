@@ -195,7 +195,8 @@
   /** mui-button-group */
   &.mui-button-group {
     display: inline-flex;
-    background-color: transparent;
+    background-color: unset;
+    border-color: unset;
     border-width: 0;
     .mui-button {
       box-shadow: none;
@@ -234,9 +235,9 @@
     display: inline-flex;
     align-items: center;
     &.mui-color-default, &.mui-color-primary, &.mui-color-secondary {
-      color: inherit;
-      background-color: inherit;
-      border-color: inherit;
+      color: unset;
+      background-color: unset;
+      border-color: unset;
     }
     &.mui-size-small {
       .mui-button {
@@ -435,8 +436,8 @@
     }
     &.mui-color-primary {
       color: rgba(0, 0, 0, 0.87);
-      background-color: inherit;
-      border-color: inherit;
+      background-color: unset;
+      border-color: unset;
       &.disable-underline-false {
         &::after {
           border-bottom-color: #1976d2;
@@ -445,8 +446,8 @@
     }
     &.mui-color-secondary {
       color: rgba(0, 0, 0, 0.87);
-      background-color: inherit;
-      border-color: inherit;
+      background-color: unset;
+      border-color: unset;
       &.disable-underline-false {
         &::after {
           border-bottom-color: #dc004e;
@@ -490,11 +491,56 @@
     letter-spacing: 0.00938em;
     border-radius: 0;
     &.mui-color-primary, &.mui-color-secondary {
-      background-color: inherit;
-      border-color: inherit;
+      background-color: unset;
+      border-color: unset;
+    }
+    &.mui-color-primary {
+      &.focus-true {
+        color: #1976d2;
+      }
+    }
+    &.mui-color-secondary {
+      &.focus-true {
+        color: #dc004e;
+      }
+    }
+    &.error-true {
+      color: #f44336;
+      &.mui-color-primary, &.mui-color-secondary {
+        color: #f44336;
+      }
     }
     &.animated-true {
       transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    }
+    &.margin-dense {
+      transform: translate(0, 21px) scale(1);
+    }
+    &.mui-variant-outlined {
+      border: 0;
+      z-index: 1;
+      transform: translate(14px, 20px) scale(1);
+      pointer-events: none;
+    }
+    &.mui-variant-filled {
+      z-index: 1;
+      transform: translate(12px, 20px) scale(1);
+      pointer-events: none;
+    }
+    &.shrink-true {
+      transform: translate(0, 1.5px) scale(0.75);
+      transform-origin: top left;
+      &.mui-variant-outlined {
+        transform: translate(14px, -6px) scale(0.75);
+      }
+      &.mui-variant-filled {
+        transform: translate(12px, 10px) scale(0.75);
+      }
+    }
+    &.error-true, &.mui-color-primary, &.mui-color-secondary {
+      &.mui-disabled {
+        color: rgba(0, 0, 0, 0.38);
+      }
     }
   }
   /** mui-input-label end */

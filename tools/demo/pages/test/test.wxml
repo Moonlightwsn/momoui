@@ -1,8 +1,20 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
-  <mui-input-label>Placeholder</mui-input-label>
+  <mui-input-label focus>Placeholder</mui-input-label>
+  <mui-input
+    m-class="input"
+    placeholder="Placeholder"
+  />
+  <mui-input-label focus color="secondary">Placeholder</mui-input-label>
   <mui-input
     m-class="input"
     placeholder="Placeholder"
     color="secondary"
+  />
+  <mui-input-label disabled error focus color="primary" variant="outlined">Placeholder</mui-input-label>
+  <mui-input
+    m-class="input"
+    placeholder="Placeholder"
+    color="secondary"
+    error
   />
 </view>
