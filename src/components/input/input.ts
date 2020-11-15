@@ -150,11 +150,16 @@ Component({
       type: String,
       value: '',
     },
+    variant: {
+      type: String,
+      value: 'standard',
+    },
   },
   data: {
     _focus: false,
     _textAutoHeight: true,
     _textareaHeight: 19,
+    _formControl: true,
   },
   lifetimes: {
     attached() {

@@ -41,6 +41,9 @@ Component({
       value: 'standard',
     }
   },
+  data: {
+    _formControl: true,
+  },
   options: {
     virtualHost: true,
     pureDataPattern: /^_pure/,

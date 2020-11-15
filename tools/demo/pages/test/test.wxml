@@ -1,20 +1,41 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
-  <mui-input-label focus>Placeholder</mui-input-label>
-  <mui-input
-    m-class="input"
-    placeholder="Placeholder"
-  />
-  <mui-input-label focus color="secondary">Placeholder</mui-input-label>
-  <mui-input
-    m-class="input"
-    placeholder="Placeholder"
-    color="secondary"
-  />
-  <mui-input-label disabled error focus color="primary" variant="outlined">Placeholder</mui-input-label>
-  <mui-input
-    m-class="input"
-    placeholder="Placeholder"
-    color="secondary"
-    error
-  />
+  <view class="form-control">
+    <mui-input-label focus shrink>Label</mui-input-label>
+    <mui-input
+      m-class="input"
+    />
+  </view>
+  <view class="form-control">
+    <mui-input-label color="secondary" variant="outlined" focus shrink>Label</mui-input-label>
+    <mui-input
+      variant="outlined"
+      m-class="input"
+      color="secondary"
+      disableUnderline
+    />
+  </view>
+  <view class="form-control">
+    <mui-input-label color="secondary" variant="filled" focus shrink>Label</mui-input-label>
+    <mui-input
+      m-class="input"
+      color="secondary"
+      variant="filled"
+    />
+  </view>
+  <view class="form-control">
+    <mui-input-label error focus shrink>Label</mui-input-label>
+    <mui-input
+      m-class="input"
+      error
+    />
+  </view>
+  <view class="form-control">
+    <mui-input-label error disabled focus color="primary">Label</mui-input-label>
+    <mui-input
+      m-class="input"
+      color="secondary"
+      error
+      disabled
+    />
+  </view>
 </view>
