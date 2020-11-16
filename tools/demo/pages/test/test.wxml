@@ -1,10 +1,10 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
-  <view class="form-control">
-    <mui-input-label focus shrink>Label</mui-input-label>
+  <mui-form-control>
+    <mui-input-label>Label</mui-input-label>
     <mui-input
       m-class="input"
     />
-  </view>
+  </mui-form-control>
   <view class="form-control">
     <mui-input-label color="secondary" variant="outlined" focus shrink>Label</mui-input-label>
     <mui-input

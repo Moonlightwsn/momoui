@@ -4,6 +4,7 @@
     "./behaviors/muiController",
     "./behaviors/checkGroupController",
     "./behaviors/checkController",
+    "./behaviors/formItem",
     "./behaviors/rippleBase"
   ]
 }

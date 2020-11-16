@@ -1,0 +1,5 @@
+<view
+  class="mui mui-form-control"
+>
+  <slot></slot>
+</view>

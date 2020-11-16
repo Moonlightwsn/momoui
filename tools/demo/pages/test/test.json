@@ -2,6 +2,7 @@
   "usingComponents": {
     "mui-test": "../../components/test/test",
     "mui-testcheck": "../../components/test/testcheck",
+    "mui-form-control": "../../components/form-control/form-control",
     "mui-checkbox": "../../components/checkbox/checkbox",
     "mui-radio": "../../components/radio/radio",
     "mui-switch": "../../components/switch/switch",

@@ -4,7 +4,7 @@
 >
   <mui-button m-style="margin: 8px;">MUI BUTTON</mui-button>
   <mui-button color="primary">MUI BUTTON</mui-button>
-  <view style="background-color: #424242">
+  <view style="background-color: {{theme === 'dark' ? '#424242': 'transparent'}}">
     <mui-grid-list cell-height="{{140}}" m-style="height: 200px;" spacing="{{8}}">
       <mui-grid-list-tile m-style="height:auto;" cols="{{2}}">
         <mui-list-subheader>December</mui-list-subheader>

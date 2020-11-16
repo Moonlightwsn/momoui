@@ -8,6 +8,7 @@
     "button-base": "./components/button-base/button-base",
     "button": "./components/button/button",
     "button-group": "./components/button-group/button-group",
+    "form-control": "./components/form-control/form-control",
     "checkbox-group": "./components/checkbox-group/checkbox-group",
     "checkbox": "./components/checkbox/checkbox",
     "radio-group": "./components/radio-group/radio-group",
