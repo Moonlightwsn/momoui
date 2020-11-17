@@ -85,6 +85,30 @@
   }
   /** mui-form-control end */
 
+  /** mui-form-helper-text */
+  &.mui-form-helper-text {
+    color: rgba(0, 0, 0, 0.54);
+    margin: 0;
+    font-size: 0.75rem;
+    margin-top: 3px;
+    text-align: left;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.66;
+    letter-spacing: 0.03333em;
+    &.filled, &.outlined {
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+    &.error-true {
+      color: #f44336;
+    }
+    &.disabled-true {
+      color:rgba(0, 0, 0, 0.38);
+    }
+  }
+  /** mui-form-helper-text end */
+
   /**  mui-button */
   &.mui-button {
     display: inline-flex;
@@ -491,6 +515,15 @@
       position: relative;
       border-radius: 4px;
       border-color: rgba(0, 0, 0, 0.23);
+      &.error-true {
+        border-color: #f44336;
+        &.mui-color-primary, &.mui-color-secondary {
+          border-color: #f44336;
+        }
+        &.focus-true {
+          border-width: 2px;
+        }
+      }
       .mui-input {
         padding: 18.5px 14px;
       }
@@ -1406,6 +1439,16 @@
       background-color: transparent;
     }
 
+    &.mui-form-helper-text {
+      color: rgba(255, 255, 255, 0.7);
+      &.error-true {
+        color: #f44336;
+      }
+      &.disabled-true {
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+
     &.mui-button {
       &.mui-button-hover {
         background-color: #ffffff14;
@@ -1574,6 +1617,9 @@
       }
       &.error-true {
         &.mui-color-primary, &.mui-color-secondary {
+          &.mui-variant-outlined {
+            border-color: #f44336;
+          }
           &::after {
             border-bottom-color: #f44336;
           }

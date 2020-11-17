@@ -176,6 +176,8 @@ Component({
       type: 'ancestor',
       linked(target) {
         this._formControlComp = target
+        const {focus, value} = this.data
+        this._formControlComp._onFocusOrBlur(focus, !!value)
       }
     }
   },
@@ -207,7 +209,7 @@ Component({
     _onFocus(e) {
       this.setData({_focus: true})
       if (this._formControlComp) {
-        this._formControlComp._onFocusOrBlur(true)
+        this._formControlComp._onFocusOrBlur(true, true)
       }
       const {inputFocus} = this.data
       if (inputFocus && typeof inputFocus === 'function') {
@@ -217,7 +219,7 @@ Component({
     _onBlur(e) {
       this.setData({_focus: false})
       if (this._formControlComp) {
-        this._formControlComp._onFocusOrBlur(false)
+        this._formControlComp._onFocusOrBlur(false, !!this.data.value)
       }
       const {inputBlur} = this.data
       if (inputBlur && typeof inputBlur === 'function') {

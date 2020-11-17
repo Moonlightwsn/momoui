@@ -1,10 +1,33 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
   <mui-form-control
-    color="secondary"
+    color="{{color}}"
+    focus
   >
     <mui-input-label>Label</mui-input-label>
     <mui-input
-      m-class="input"
+      value="INPUT"
     />
+    <mui-form-helper-text>Some important helper text</mui-form-helper-text>
+  </mui-form-control>
+  <mui-button bindtap="trigger">Default</mui-button>
+  <mui-form-control m-style="margin-top: 12px;" variant="filled">
+    <mui-input-label>Label</mui-input-label>
+    <mui-input
+      value="INPUT"
+    />
+  </mui-form-control>
+  <mui-form-control m-style="margin-top: 12px;" variant="filled" disabled>
+    <mui-input-label>Label</mui-input-label>
+    <mui-input
+      value="INPUT"
+    />
+    <mui-form-helper-text disabled variant="filled">Disabled</mui-form-helper-text>
+  </mui-form-control>
+  <mui-form-control m-style="margin-top: 12px;" variant="outlined" error>
+    <mui-input-label>Label</mui-input-label>
+    <mui-input
+      value="INPUT"
+    />
+    <mui-form-helper-text error variant="outlined">Error</mui-form-helper-text>
   </mui-form-control>
 </view>

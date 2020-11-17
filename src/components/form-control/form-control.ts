@@ -1,4 +1,7 @@
+import muiBase from '../../behaviors/muiBase.ts'
+
 Component({
+  behaviors: [muiBase],
   properties: {
     color: {
       type: String,
@@ -73,7 +76,7 @@ Component({
           size,
           variant,
         } = this.data
-        this._controlFormItem({
+        const params: any = {
           _formControl: true,
           color,
           disabled,
@@ -84,14 +87,18 @@ Component({
           required,
           size,
           variant,
-        }, target)
+        }
+        if (type === 'input' && variant === 'outlined') {
+          params.disableUnderline = true
+        }
+        this._controlFormItem(params, target)
       }
     },
-    _onFocusOrBlur(focus) {
+    _onFocusOrBlur(focus, shrink) {
       this._formItems.filter(item => item.type === 'input-label').forEach(item => {
         item.target._formControlAction({
           focus,
-          shrink: focus,
+          shrink,
         })
       })
     },
@@ -101,7 +108,7 @@ Component({
   },
   observers: {
     'color, disabled, error, focus, fullWidth, margin, required, size, variant': function (color, disabled, error, focus, fullWidth, margin, required, size, variant) {
-      const params = {
+      const params: any = {
         color,
         disabled,
         error,
@@ -114,6 +121,9 @@ Component({
       }
       if (this._formItems) {
         this._formItems.forEach(item => {
+          if (item.type === 'input' && variant === 'outlined') {
+            params.disableUnderline = true
+          }
           item.target._formControlAction(params)
         })
       }

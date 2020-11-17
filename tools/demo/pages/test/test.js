@@ -6,6 +6,7 @@ Page({
     disabled: true,
     color: 'secondary',
     size: 'medium',
+    focus: true,
   },
   trigger() {
     this.setData({
