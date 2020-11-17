@@ -130,6 +130,10 @@ Component({
       type: Number,
       value: 1,
     },
+    required: {
+      type: Boolean,
+      value: false,
+    },
     selectionStart: {
       type: Number,
       value: -1,
@@ -159,7 +163,7 @@ Component({
     _focus: false,
     _textAutoHeight: true,
     _textareaHeight: 19,
-    _formControl: true,
+    _formControl: false,
   },
   lifetimes: {
     attached() {
@@ -167,7 +171,18 @@ Component({
       this._adjustTextareaHeight(rows)
     },
   },
+  relations: {
+    '../form-control/form-control': {
+      type: 'ancestor',
+      linked(target) {
+        this._formControlComp = target
+      }
+    }
+  },
   methods: {
+    _formControlAction(params) {
+      this.setData(params)
+    },
     _adjustTextareaHeight(rows) {
       if (rows > 1) {
         const query = this.createSelectorQuery()
@@ -191,6 +206,9 @@ Component({
     },
     _onFocus(e) {
       this.setData({_focus: true})
+      if (this._formControlComp) {
+        this._formControlComp._onFocusOrBlur(true)
+      }
       const {inputFocus} = this.data
       if (inputFocus && typeof inputFocus === 'function') {
         inputFocus(e)
@@ -198,6 +216,9 @@ Component({
     },
     _onBlur(e) {
       this.setData({_focus: false})
+      if (this._formControlComp) {
+        this._formControlComp._onFocusOrBlur(false)
+      }
       const {inputBlur} = this.data
       if (inputBlur && typeof inputBlur === 'function') {
         inputBlur(e)

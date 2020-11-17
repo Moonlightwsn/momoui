@@ -41,6 +41,84 @@ Component({
       value: 'standard',
     },
   },
+  relations: {
+    '../input-label/input-label': {
+      type: 'descendant',
+      linked(target) {
+        this._linked(target, 'input-label')
+      },
+    },
+    '../input/input': {
+      type: 'descendant',
+      linked(target) {
+        this._linked(target, 'input')
+      },
+    }
+  },
+  methods: {
+    _linked(target, type) {
+      if (target) {
+        if (!this._formItems) {
+          this._formItems = []
+        }
+        this._formItems.push({target, type})
+        const {
+          color,
+          disabled,
+          error,
+          focus,
+          fullWidth,
+          margin,
+          required,
+          size,
+          variant,
+        } = this.data
+        this._controlFormItem({
+          _formControl: true,
+          color,
+          disabled,
+          error,
+          focus,
+          fullWidth,
+          margin,
+          required,
+          size,
+          variant,
+        }, target)
+      }
+    },
+    _onFocusOrBlur(focus) {
+      this._formItems.filter(item => item.type === 'input-label').forEach(item => {
+        item.target._formControlAction({
+          focus,
+          shrink: focus,
+        })
+      })
+    },
+    _controlFormItem(parmas, target) {
+      target._formControlAction(parmas)
+    },
+  },
+  observers: {
+    'color, disabled, error, focus, fullWidth, margin, required, size, variant': function (color, disabled, error, focus, fullWidth, margin, required, size, variant) {
+      const params = {
+        color,
+        disabled,
+        error,
+        focus,
+        fullWidth,
+        margin,
+        required,
+        size,
+        variant,
+      }
+      if (this._formItems) {
+        this._formItems.forEach(item => {
+          item.target._formControlAction(params)
+        })
+      }
+    }
+  },
   options: {
     // virtualHost: true,
     pureDataPattern: /^_pure/,

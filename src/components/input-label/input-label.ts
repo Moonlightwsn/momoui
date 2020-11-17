@@ -42,7 +42,17 @@ Component({
     }
   },
   data: {
-    _formControl: true,
+    _formControl: false,
+  },
+  relations: {
+    '../form-control/form-control': {
+      type: 'ancestor',
+    }
+  },
+  methods: {
+    _formControlAction(params) {
+      this.setData(params)
+    },
   },
   options: {
     virtualHost: true,
