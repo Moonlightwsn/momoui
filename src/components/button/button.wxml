@@ -4,8 +4,8 @@
   style="{{inline ? '' : 'display: flex;'}}{{mStyle}}"
   hover-class="{{_disabled ? '' : 'mui-button-hover'}}"
   loading="{{loading}}"
-  capture-bind:tap="_RippleAction"
-  capture-bind:longpress="_RippleAction"
+  bind:tap="_RippleAction"
+  bind:longpress="_RippleAction"
   form-type="{{formType}}"
   open-type="{{openType}}"
   app-parameter="{{openType === 'launchApp' ? appParameter : ''}}"
@@ -14,6 +14,7 @@
   send-message-path="{{openType === 'contact' ? sendMessagePath : ''}}"
   send-message-img="{{openType === 'contact' ? sendMessageImg : ''}}"
   show-message-card="{{openType === 'contact' ? showMessageCard : ''}}"
+  size="mini"
 >
   <slot></slot>
   <mui-ripple-container class="_mui-ripple-container"></mui-ripple-container>

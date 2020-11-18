@@ -2,7 +2,7 @@ import muiBase from '../../behaviors/muiBase.ts'
 import muiController from '../../behaviors/muiController.ts'
 
 Component({
-  behaviors: [muiBase, muiController],
+  behaviors: [muiBase, muiController, 'wx://form-field'],
   properties: {
     adjustPosition: {
       type: Boolean,
@@ -105,6 +105,10 @@ Component({
     maxlength: {
       type: Number,
       value: 140,
+    },
+    name: {
+      type: String,
+      value: '',
     },
     password: {
       type: Boolean,

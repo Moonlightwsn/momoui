@@ -14,5 +14,8 @@ Page({
       size: this.data.size === 'medium' ? 'small' : 'medium',
       color: this.data.color === 'primary' ? 'secondary' : 'primary',
     })
+  },
+  submit(e) {
+    console.log(e)
   }
 })

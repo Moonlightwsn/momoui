@@ -8,7 +8,7 @@ const innerRippleColorMap = {
 }
 
 Component({
-  behaviors: [muiBase, muiController, rippleBase],
+  behaviors: [muiBase, muiController, rippleBase, 'wx://form-field-button'],
   properties: {
     disabled: {
       type: Boolean,
@@ -110,7 +110,7 @@ Component({
     },
   },
   options: {
-    virtualHost: true,
+    // virtualHost: true,
     pureDataPattern: /^_pure/,
     styleIsolation: 'apply-shared',
   },

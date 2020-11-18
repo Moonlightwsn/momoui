@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "testsub": "./testsub"
+    "mui-ripple-container": "../ripple-container/ripple-container"
   }
 }

@@ -115,6 +115,14 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    letter-spacing: 0.02857em;
     &::after {
       border: 0;
       border-radius: 0;
@@ -235,26 +243,37 @@
     background-color: unset;
     border-color: unset;
     border-width: 0;
+
+    mui-button {
+      &:first-child {
+        .mui-button {
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+        }
+      }
+      &:last-child {
+        .mui-button {
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+      }
+      &:not(:last-child) {
+        .mui-button {
+          border-right-width: 0;
+        }
+      }
+      &:not(:last-child) {
+        .mui-button {
+          &.mui-variant-contained, &.mui-variant-text {
+            border-right-width: 1px;
+            border-right-style: solid;
+          }
+        }
+      }
+    }
     .mui-button {
       box-shadow: none;
       border-radius: 0;
-      &:first-child {
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
-      }
-      &:last-child {
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px;
-      }
-      &:not(:last-child) {
-        border-right-width: 0;
-      }
-      &.mui-variant-contained, &.mui-variant-text {
-        &:not(:last-child) {
-          border-right-width: 1px;
-          border-right-style: solid;
-        }
-      }
       &.mui-variant-contained {
         &.mui-color-primary {
           border-right-color: #115293;
@@ -448,14 +467,14 @@
       &.focus-true {
         &::after {
           transform: scaleX(1);
-          transition: initial;
+          transition: unset;
         }
       }
       &.mui-color-primary, &.mui-color-secondary {
         &.error-true {
           &::after {
             transform: scaleX(1);
-            transition: initial;
+            transition: unset;
             border-bottom-color: #f44336;
           }
         }
@@ -1690,4 +1709,8 @@
   page {
     background-color: #212121;
   }
+}
+
+button:not([size='mini']) {
+  width: unset;
 }

@@ -1,4 +1,5 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+<!--
   <mui-form-control
     color="{{color}}"
     focus
@@ -30,4 +31,10 @@
     />
     <mui-form-helper-text error variant="outlined">Error</mui-form-helper-text>
   </mui-form-control>
+-->
+  <form bindsubmit="submit">
+    <mui-input name="mui-input" />
+    <mui-input name="mui-textarea" multiline />
+    <mui-button color="primary" form-type="submit">Submit</mui-button>
+  </form>
 </view>
