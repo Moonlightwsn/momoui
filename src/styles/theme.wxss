@@ -662,6 +662,12 @@
     align-items: center;
     white-space: nowrap;
     font-size: 1.5em;
+    &.position-start {
+      margin-right: 8px;
+    }
+    &.position-end {
+      margin-left: 8px;
+    }
   }
   /** mui-input-adornment end */
 

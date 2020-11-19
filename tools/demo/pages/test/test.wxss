@@ -1,5 +1,5 @@
 .input {
-  margin: 0;
+  margin: 8px;
 }
 .form-control {
   position: relative;

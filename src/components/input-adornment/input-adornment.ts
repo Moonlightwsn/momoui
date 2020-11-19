@@ -7,6 +7,10 @@ Component({
       type: String,
       value: null,
     },
+    position: {
+      type: String,
+      value: 'none',
+    },
   },
   options: {
     virtualHost: true,

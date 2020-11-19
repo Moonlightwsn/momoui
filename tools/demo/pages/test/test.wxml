@@ -33,28 +33,42 @@
   </mui-form-control>
 -->
   <form bindsubmit="submit" bindreset="reset">
-    <mui-input name="mui-input">
-      <mui-input-adornment slot="startAdornment" text="Kg" />
-      <mui-input-adornment slot="endAdornment" text="Kg" />
+    <mui-input name="mui-input" m-class="input">
+      <mui-input-adornment slot="startAdornment" text="Kg" position="start" />
+      <mui-input-adornment slot="endAdornment" text="Kg" position="end" />
     </mui-input>
-    <mui-input name="mui-textarea">
-      <mui-input-adornment slot="startAdornment">
+    <mui-input name="mui-textarea" m-class="input">
+      <mui-input-adornment slot="startAdornment" position="start">
         <mui-icon name="user" />
       </mui-input-adornment>
-      <mui-input-adornment slot="endAdornment">
+      <mui-input-adornment slot="endAdornment" position="end">
         <mui-icon name="user" />
       </mui-input-adornment>
     </mui-input>
-    <mui-input multiline />
-    <mui-switch name="mui-switch" />
-    <mui-checkbox-group name="mui-checkbox" value="{{checkboxValue}}" onChange="{{onCheckboxChange}}">
+    <mui-input multiline m-class="input" />
+    <mui-switch name="mui-switch" m-class="input" />
+    <mui-checkbox-group name="mui-checkbox" value="{{checkboxValue}}" onChange="{{onCheckboxChange}}" m-class="input">
       <mui-checkbox value="c1" />
       <mui-checkbox value="c2" />
     </mui-checkbox-group>
-    <mui-radio-group name="mui-radio" value="{{radioValue}}" onChange="{{onRadioChange}}">
+    <mui-radio-group name="mui-radio" value="{{radioValue}}" onChange="{{onRadioChange}}" m-class="input">
       <mui-radio value="r1" />
       <mui-radio value="r2" />
     </mui-radio-group>
     <mui-button color="primary" form-type="submit">Submit</mui-button>
   </form>
+  <view style="margin-top: 20px;">
+    <mui-button-group variant="outlined">
+      <m2-button class="mui-button-wrapper">ONE</m2-button>
+      <m2-button class="mui-button-wrapper">TWO</m2-button>
+      <m2-button class="mui-button-wrapper">THREE</m2-button>
+    </mui-button-group>
+  </view>
+  <view style="margin-top: 20px;">
+    <mui-button-group variant="outlined">
+      <mui-button>ONE</mui-button>
+      <mui-button>TWO</mui-button>
+      <mui-button>THREE</mui-button>
+    </mui-button-group>
+  </view>
 </view>

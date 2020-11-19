@@ -1,5 +1,7 @@
+import muiBase from './muiBase.ts'
+
 export default Behavior({
-  behaviors: ['wx://form-field'],
+  behaviors: [muiBase, 'wx://form-field'],
   properties: {
     value: {
       type: Array,

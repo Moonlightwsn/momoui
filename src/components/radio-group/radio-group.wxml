@@ -1,3 +1,6 @@
-<view>
+<view
+  class="{{mClass}}"
+  style="{{mStyle}}"
+>
   <slot></slot>
 </view>
