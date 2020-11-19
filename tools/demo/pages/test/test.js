@@ -7,6 +7,14 @@ Page({
     color: 'secondary',
     size: 'medium',
     focus: true,
+    checkboxValue: ['c1'],
+    radioValue: 'r2',
+  },
+  onLoad() {
+    this.setData({
+      onCheckboxChange: this.onCheckboxChange.bind(this),
+      onRadioChange: this.onRadioChange.bind(this),
+    })
   },
   trigger() {
     this.setData({
@@ -16,6 +24,15 @@ Page({
     })
   },
   submit(e) {
+    console.log(e.detail.value)
+  },
+  reset(e) {
     console.log(e)
+  },
+  onCheckboxChange(checkedValue) {
+    this.setData({ checkboxValue: checkedValue })
+  },
+  onRadioChange(checkedValue) {
+    this.setData({ radioValue: checkedValue })
   }
 })

@@ -16,5 +16,6 @@
     "backgroundTextStyle": "@bgTxtStyle",
     "backgroundColorTop": "@bgColorTop",
     "backgroundColorBottom": "@bgColorBottom"
-  }
+  },
+  "style": "v2"
 }

@@ -13,6 +13,13 @@ Component({
       type: String,
       value: 'circle',
     },
+    value: {
+      type: Boolean,
+      value: false,
+    }
+  },
+  data: {
+    _pure_is_switch: true,
   },
   observers: {
   },

@@ -32,9 +32,20 @@
     <mui-form-helper-text error variant="outlined">Error</mui-form-helper-text>
   </mui-form-control>
 -->
-  <form bindsubmit="submit">
-    <mui-input name="mui-input" />
+  <form bindsubmit="submit" bindreset="reset">
+    <mui-input name="mui-input">
+      <mui-input-adornment slot="startAdornment">Unit</mui-input-adornment>
+    </mui-input>
     <mui-input name="mui-textarea" multiline />
+    <mui-switch name="mui-switch" />
+    <mui-checkbox-group name="mui-checkbox" value="{{checkboxValue}}" onChange="{{onCheckboxChange}}">
+      <mui-checkbox value="c1" />
+      <mui-checkbox value="c2" />
+    </mui-checkbox-group>
+    <mui-radio-group name="mui-radio" value="{{radioValue}}" onChange="{{onRadioChange}}">
+      <mui-radio value="r1" />
+      <mui-radio value="r2" />
+    </mui-radio-group>
     <mui-button color="primary" form-type="submit">Submit</mui-button>
   </form>
 </view>

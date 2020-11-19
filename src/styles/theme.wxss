@@ -244,7 +244,7 @@
     border-color: unset;
     border-width: 0;
 
-    mui-button {
+    mui-button, .mui-button-wrapper {
       &:first-child {
         .mui-button {
           border-top-left-radius: 4px;
@@ -653,6 +653,16 @@
     }
   }
   /** mui-input-label end */
+
+  /** mui-input-adornment */
+  &.mui-input-adornment {
+    height: 0.01em;
+    display: flex;
+    max-height: 2em;
+    align-items: center;
+    white-space: nowrap;
+  }
+  /** mui-input-adornment end */
 
   /** mui-grid */
   &.mui-grid {
@@ -1099,6 +1109,23 @@
       line-height: 2.66;
       letter-spacing: 0.08333em;
       text-transform: uppercase;
+    }
+
+    &.mui-color-inherit {
+      color: inherit;
+    }
+    &.mui-color-primary, &.mui-color-secondary {
+      background-color: unset;
+      border-color: unset;
+    }
+    &.mui-color-textPrimary {
+      color: rgba(0, 0, 0, 0.87);
+    }
+    &.mui-color-textSecondary {
+      color: rgba(0, 0, 0, 0.54);
+    }
+    &.mui-color-error {
+      color: #f44336;
     }
 
     &.mui-display-block {
@@ -1688,6 +1715,19 @@
         &.mui-color-primary, &.mui-color-secondary {
           color: rgba(255, 255, 255, 0.5); 
         }
+      }
+    }
+
+    &.mui-typography {
+      &.mui-color-primary, &.mui-color-secondary {
+        background-color: unset;
+        border-color: unset;
+      }
+      &.mui-color-textPrimary {
+        color: #fff;
+      }
+      &.mui-color-textSecondary {
+        color: rgba(255, 255, 255, 0.7);
       }
     }
 

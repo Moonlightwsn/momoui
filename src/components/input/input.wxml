@@ -2,6 +2,7 @@
   class="mui mui-input-root form-control-{{_formControl}} focus-{{_focus}} disable-underline-{{disableUnderline}} error-{{error}} {{muiClasses}}"
   style="{{fullWidth ? 'width:100%;' : 'width:206px;'}}{{mStyle}}"
 >
+  <slot name="startAdornment"></slot>
   <textarea
     wx:if="{{multiline}}"
     adjust-position="{{adjustPosition}}"
@@ -60,4 +61,5 @@
     style="{{margin === 'dense' ? 'padding-top:3px;' : ''}}"
     type="{{type}}"
   />
+  <slot name="endAdornment"></slot>
 </view>

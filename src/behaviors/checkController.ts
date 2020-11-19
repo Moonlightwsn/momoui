@@ -1,4 +1,5 @@
 export default Behavior({
+  behaviors: ['wx://form-field'],
   properties: {
     checked: {
       type: Boolean,
@@ -59,6 +60,7 @@ export default Behavior({
         checkedIcon,
         icon,
         _checked,
+        _pure_is_switch: isSwitch,
       } = this.data
       let checked = _checked
       if (typeof checkedArg !== 'undefined') {
@@ -70,11 +72,15 @@ export default Behavior({
         _currentIcon = checkedIcon
         _checkedClass = 'mui-checked'
       }
-      return {
+      const newData:any = {
         _checked: checked,
         _currentIcon,
         _checkedClass,
       }
+      if (isSwitch) {
+        newData.value = checked
+      }
+      return newData
     },
     _checkControll() {
       const {

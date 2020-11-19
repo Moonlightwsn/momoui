@@ -1,0 +1,8 @@
+<view
+  class="mui mui-input-adornment {{muiClasses}}"
+  style="{{mStyle}}"
+>
+  <mui-typography color="textSecondary">
+    <slot></slot>
+  </mui-typography>
+</view>

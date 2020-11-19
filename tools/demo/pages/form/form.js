@@ -10,6 +10,8 @@ Page({
     checkedValue: ['D', 'F'],
     input: 'Hello world',
     disabled: true,
+    checkboxValue: ['c1'],
+    radioValue: 'r2',
   },
   onLoad() {
     this.setData({
@@ -17,7 +19,9 @@ Page({
       inputChange: this.inputChange.bind(this),
       radioChange: this.radioChange.bind(this),
       groupChange: this.groupChange.bind(this),
-      _test: this._test.bind(this)
+      _test: this._test.bind(this),
+      onCheckboxChange: this.onCheckboxChange.bind(this),
+      onRadioChange: this.onRadioChange.bind(this),
     })
   },
   inputChange: (value, cursor, keyCode) => {
@@ -47,8 +51,8 @@ Page({
       disabled: !this.data.disabled,
     })
   },
-  submit(event) {
-    console.log(event)
+  submit(e) {
+    console.log(e.detail.value)
   },
   reset(event) {
     console.log(event)
@@ -56,4 +60,10 @@ Page({
   _test(value) {
     console.log('test', value, this.data)
   },
+  onCheckboxChange(checkedValue) {
+    this.setData({ checkboxValue: checkedValue })
+  },
+  onRadioChange(checkedValue) {
+    this.setData({ radioValue: checkedValue })
+  }
 })

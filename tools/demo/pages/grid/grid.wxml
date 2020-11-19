@@ -27,7 +27,7 @@
       </mui-grid-list-tile>
       <mui-grid-list-tile>
         <image mode="aspectFill" class="image" src="../../assets/breakfast.jpg"></image>
-        <mui-grid-list-tile-bar title="bar-title" sub-title="sub-title"></mui-grid-list-tile-bar>
+        <mui-grid-list-tile-bar title="bar-title"></mui-grid-list-tile-bar>
       </mui-grid-list-tile>
       <mui-grid-list-tile>TILE3</mui-grid-list-tile>
       <mui-grid-list-tile>TILE4</mui-grid-list-tile>

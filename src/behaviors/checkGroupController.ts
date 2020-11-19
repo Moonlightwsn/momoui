@@ -1,4 +1,5 @@
 export default Behavior({
+  behaviors: ['wx://form-field'],
   properties: {
     value: {
       type: Array,
@@ -21,48 +22,6 @@ export default Behavior({
     _pure_checked_value: {},
     _pure_be_controlled: false,
     _pure_multiple: true,
-  },
-  methods: {
-    innerchange(detail) {
-      const {value, checked} = detail
-      let checkedValue: Array<String> = []
-      let tmpCheckedValueMap = false
-      const {
-        _pure_multiple: isMultiple,
-        _pure_checked_value: checkedValueFromThisData,
-        onChange,
-      } = this.data
-      if (this.data._pure_be_controlled) {
-        tmpCheckedValueMap = {...checkedValueFromThisData}
-      }
-      const checkedValueMap = this._trigger(value, checked, tmpCheckedValueMap)
-      checkedValue = Object.keys(checkedValueMap).filter(item => (checkedValueMap[item]))
-      const realCheckedValue = isMultiple ? checkedValue : checkedValue[0]
-      if (onChange && typeof onChange === 'function') {
-        onChange(realCheckedValue)
-      }
-      /*
-      const {_pure_be_controlled: beController} = this.data
-      if (beController) {
-        this.setData({value: realCheckedValue})
-      }
-      */
-    },
-    _trigger(value, checked, checkedValueMap) {
-      if (value) {
-        const {
-          _pure_multiple: isMultiple,
-          _pure_checked_value: checkedValue,
-        } = this.data
-        let realCheckedValue = checkedValueMap || checkedValue
-        if (!isMultiple) {
-          realCheckedValue = {}
-        }
-        realCheckedValue[value] = checked
-        return realCheckedValue
-      }
-      return null
-    },
   },
   lifetimes: {
     attached() {
@@ -95,31 +54,77 @@ export default Behavior({
             }
           })
         }
-        this.setData({
-          _pure_checked_value: checkedValueMap,
-          _pure_be_controlled: beControlled,
-        })
+        this.data._pure_be_controlled = beControlled
+        this.data._pure_checked_value = checkedValueMap
+        if (!beControlled) {
+          this.setData({
+            value: checkedValue
+          })
+        }
       }
     }
+  },
+  methods: {
+    innerchange(detail) {
+      const {value, checked} = detail
+      let checkedValue: Array<String> = []
+      let tmpCheckedValueMap = false
+      const {
+        _pure_multiple: isMultiple,
+        _pure_checked_value: checkedValueFromThisData,
+        onChange,
+      } = this.data
+      if (this.data._pure_be_controlled) {
+        tmpCheckedValueMap = {...checkedValueFromThisData}
+      }
+      const checkedValueMap = this._trigger(value, checked, tmpCheckedValueMap)
+      checkedValue = Object.keys(checkedValueMap).filter(item => (checkedValueMap[item]))
+      const realCheckedValue = isMultiple ? checkedValue : checkedValue[0]
+      if (onChange && typeof onChange === 'function') {
+        onChange(realCheckedValue)
+      }
+      const {_pure_be_controlled: beController} = this.data
+      if (!beController) {
+        this.setData({value: realCheckedValue})
+      }
+    },
+    _trigger(value, checked, checkedValueMap) {
+      if (value) {
+        const {
+          _pure_multiple: isMultiple,
+          _pure_checked_value: checkedValue,
+        } = this.data
+        let realCheckedValue = checkedValueMap || checkedValue
+        if (!isMultiple) {
+          realCheckedValue = {}
+        }
+        realCheckedValue[value] = checked
+        return realCheckedValue
+      }
+      return null
+    },
   },
   observers: {
     value(value) {
       let checkedValueArr = []
       const {_pure_targets: targets, _pure_checked_value: checkedValue} = this.data
-      if (typeof value === 'string') {
-        checkedValueArr = value.split(',')
-      } else if (Array.isArray(value)) {
-        checkedValueArr = value
+      const targetsKeyArr = Object.keys(targets)
+      if (targetsKeyArr.length) {
+        if (typeof value === 'string') {
+          checkedValueArr = value.split(',')
+        } else if (Array.isArray(value)) {
+          checkedValueArr = value
+        }
+        const checkedValueMap = {}
+        checkedValueArr.forEach(val => {
+          checkedValueMap[val] = true
+        })
+        targetsKeyArr.forEach(targetName => {
+          const realChecked = checkedValueMap[targetName] || false
+          checkedValue[targetName] = realChecked
+          targets[targetName]._groupControll(realChecked)
+        })
       }
-      const checkedValueMap = {}
-      checkedValueArr.forEach(val => {
-        checkedValueMap[val] = true
-      })
-      Object.keys(targets).forEach(targetName => {
-        const realChecked = checkedValueMap[targetName] || false
-        checkedValue[targetName] = realChecked
-        targets[targetName]._groupControll(realChecked)
-      })
     }
   },
 })

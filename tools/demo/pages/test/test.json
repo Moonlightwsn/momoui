@@ -5,10 +5,13 @@
     "mui-button": "../../components/button/button",
     "mui-form-control": "../../components/form-control/form-control",
     "mui-form-helper-text": "../../components/form-helper-text/form-helper-text",
+    "mui-checkbox-group": "../../components/checkbox-group/checkbox-group",
+    "mui-radio-group": "../../components/radio-group/radio-group",
     "mui-checkbox": "../../components/checkbox/checkbox",
     "mui-radio": "../../components/radio/radio",
     "mui-switch": "../../components/switch/switch",
     "mui-input": "../../components/input/input",
-    "mui-input-label": "../../components/input-label/input-label"
+    "mui-input-label": "../../components/input-label/input-label",
+    "mui-input-adornment": "../../components/input-adornment/input-adornment"
   }
 }
