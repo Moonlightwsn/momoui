@@ -1,6 +1,6 @@
 <view
   class="mui mui-input-root form-control-{{_formControl}} focus-{{_focus}} disable-underline-{{disableUnderline}} error-{{error}} {{muiClasses}}"
-  style="{{fullWidth ? 'width:100%;' : 'width:206px;'}}{{mStyle}}"
+  style="{{fullWidth ? 'width:100%;' : ''}}{{multiline ? 'min-width: 175px;' : ''}}{{mStyle}}"
 >
   <slot name="startAdornment"></slot>
   <textarea

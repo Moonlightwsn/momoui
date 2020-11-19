@@ -1,8 +1,9 @@
 <view
-  class="mui mui-input-adornment {{muiClasses}}"
+  class="mui mui-input-adornment {{mClass}}"
   style="{{mStyle}}"
 >
-  <mui-typography color="textSecondary">
+  <mui-typography wx:if="{{text}}" color="textSecondary" variant="body1">{{text}}</mui-typography>
+  <block wx:else>
     <slot></slot>
-  </mui-typography>
+  </block>
 </view>
