@@ -263,8 +263,8 @@ Component({
   },
   options: {
     virtualHost: true,
-    multipleSlots: true,
     pureDataPattern: /^_pure/,
     styleIsolation: 'apply-shared',
+    multipleSlots: true,
   }
 })

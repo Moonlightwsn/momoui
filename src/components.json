@@ -23,6 +23,8 @@
     "grid-list": "./components/grid-list/grid-list",
     "grid-list-tile": "./components/grid-list-tile/grid-list-tile",
     "grid-list-tile-bar": "./components/grid-list-tile-bar/grid-list-tile-bar",
+    "list": "./components/list/list",
+    "list-item": "./components/list-item/list-item",
     "list-subheader": "./components/list-subheader/list-subheader",
     "icon": "./components/icon/icon",
     "typography": "./components/typography/typography"

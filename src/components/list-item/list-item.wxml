@@ -1,0 +1,8 @@
+<mui-button-base
+  disabled="{{disabled}}"
+  disableRipple="{{!button}}"
+  m-class="mui mui-list-item divider-{{divider}} selected-{{selected}} button-{{button}} disable-gutters-{{disableGutters}} dense-{{dense}} {{mClass}}"
+  m-style="{{mStyle}}"
+>
+  <slot></slot>
+</mui-button-base>

@@ -1,0 +1,10 @@
+<view
+  class="mui mui-list disable-padding-{{disablePadding}} dense-{{dense}} {{mClass}}"
+  style="{{mStyle}}"
+>
+  <view class="subheader">
+    <block wx:if="{{subheader}}"></block>
+    <slot wx:else name="subheader"></slot>
+  </view>
+  <slot></slot>
+</view>

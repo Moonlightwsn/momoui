@@ -9,8 +9,12 @@
   /* mui base */
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-size: 0.875rem;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  box-sizing: border-box;
   /* mui base end */
 
   /**  mui-button-base */
@@ -33,6 +37,9 @@
     background-color: transparent;
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
+    &.mui-disabled {
+      background-color: transparent;
+    }
   }
   /**  mui-button-base end */
 
@@ -255,6 +262,7 @@
     background-color: unset;
     border-color: unset;
     border-width: 0;
+    border-radius: 4px;
 
     mui-button, .mui-button-wrapper {
       &:first-child {
@@ -868,7 +876,7 @@
   }
   /** mui-grid-list-tile end */
 
-  /** .mui-grid-list-tile-bar */
+  /** mui-grid-list-tile-bar */
   &.mui-grid-list-tile-bar {
     left: 0;
     right: 0;
@@ -922,7 +930,59 @@
       }
     }
   }
-  /** .mui-grid-list-tile-bar end */
+  /** mui-grid-list-tile-bar end */
+
+  /** mui-list */
+  &.mui-list {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    list-style: none;
+    &.disable-padding-false {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+    &.dense-true {
+      .mui-list-item {
+        padding-top: 4px;
+        padding-bottom: 4px;
+      }
+    }
+  }
+  /** mui-list end */
+
+  /** mui-list-item */
+  &.mui-list-item {
+    width: 100%;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    text-align: left;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    justify-content: flex-start;
+    text-decoration: none;
+    &.button-true {
+      transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+    &.disable-gutters-false {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    &.dense-true {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+    &.divider-true {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      background-clip: padding-box;
+    }
+    &.selected-true {
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+  }
+  /** mui-list-item end */
 
   /** mui-list-subheader */
   &.mui-list-subheader {
@@ -1756,6 +1816,16 @@
       background-color: #424242;
       &.mui-variant-outlined {
         border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+    }
+
+    &.mui-list-item {
+      &.divider-true {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        background-clip: padding-box;
+      }
+      &.selected-true {
+        background-color: rgba(255, 255, 255, 0.16);
       }
     }
 
