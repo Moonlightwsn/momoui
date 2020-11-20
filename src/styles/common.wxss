@@ -1,7 +1,7 @@
 @import './theme.wxss';
 
 .mui-ripple-base {
-  display: inline-block;
+  display: inline-flex;
   position: relative;
   cursor: pointer;
 }

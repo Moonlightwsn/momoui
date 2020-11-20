@@ -10,25 +10,33 @@ const innerRippleColorMap = {
 Component({
   behaviors: [muiBase, muiController, rippleBase, 'wx://form-field-button'],
   properties: {
-    disabled: {
-      type: Boolean,
-      value: false
-    },
-    loading: {
-      type: Boolean,
-      value: false,
-    },
-    inline: {
-      type: Boolean,
-      value: true
+    appParameter: {
+      type: String,
+      value: '',
     },
     color: {
       type: String,
       value: 'default'
     },
-    variant: {
+    disabled: {
+      type: Boolean,
+      value: false
+    },
+    formType: {
       type: String,
-      value: 'contained'
+      value: ''
+    },
+    inline: {
+      type: Boolean,
+      value: true
+    },
+    loading: {
+      type: Boolean,
+      value: false,
+    },
+    openType: {
+      type: String,
+      value: ''
     },
     size: {
       type: String,
@@ -37,18 +45,6 @@ Component({
     shape: {
       type: String,
       value: 'normal'
-    },
-    formType: {
-      type: String,
-      value: ''
-    },
-    openType: {
-      type: String,
-      value: ''
-    },
-    appParameter: {
-      type: String,
-      value: '',
     },
     sessionFrom: {
       type: String,
@@ -70,9 +66,19 @@ Component({
       type: String,
       value: '',
     },
+    variant: {
+      type: String,
+      value: 'text',
+    },
   },
   data: {
     _rippleColor: '',
+  },
+  lifetimes: {
+    attached() {
+      const {variant, color} = this.data
+      this._setRippleColor(variant, color)
+    }
   },
   relations: {
     '../button-group/button-group': {
@@ -90,7 +96,7 @@ Component({
     }
   },
   methods: {
-    _setRippleColor(variant = 'contained', color = 'default') {
+    _setRippleColor(variant = 'text', color = 'default') {
       if (variant !== 'contained') {
         const _rippleColor = innerRippleColorMap[color] || ''
         this.setData({
@@ -100,13 +106,8 @@ Component({
     },
   },
   observers: {
-    'variant, color, shape': function (variant = 'contained', color = 'default', shape = 'normal') {
+    'variant, color': function (variant = 'text', color = 'default') {
       this._setRippleColor(variant, color)
-      if (shape === 'circle' && variant === 'text') {
-        this.setData({
-          _pureCenter: shape === 'circle',
-        })
-      }
     },
   },
   options: {

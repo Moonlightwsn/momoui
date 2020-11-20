@@ -2,24 +2,24 @@ import {highBrightnessColor} from '../common/utils.ts'
 
 export default Behavior({
   properties: {
-    ripple: {
+    disableRipple: {
       type: Boolean,
-      value: true
+      value: false,
+    },
+    centerRipple: {
+      type: Boolean,
+      value: false,
     },
     rippleColor: {
       type: String,
       value: ''
     },
-    _pureCenter: {
-      type: Boolean,
-      value: false,
-    },
   },
   methods: {
     _RippleAction(e) {
-      const {ripple} = this.properties
+      const {disableRipple} = this.properties
       const {_disabled} = this.data
-      if (ripple && !_disabled) {
+      if (!disableRipple && !_disabled) {
         if (!this._muiRippleContainer) {
           const _muiRippleContainer = this.selectComponent('._mui-ripple-container')
           this._muiRippleContainer = _muiRippleContainer
@@ -44,9 +44,8 @@ export default Behavior({
             } = view
             if (width > 0 && height > 0) {
               const {scrollLeft = 0, scrollTop = 0} = viewPort
-              const {rippleColor} = this.properties
-              const {_rippleColor} = this.data
-              let realRippleColor = rippleColor || _rippleColor
+              const {rippleColor} = this.data
+              let realRippleColor = rippleColor
               if (!realRippleColor) {
                 realRippleColor = (highBrightnessColor(backgroundColor) ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)')
               }
@@ -60,7 +59,7 @@ export default Behavior({
                 backgroundColor: realRippleColor,
                 x,
                 y,
-                center: this.data._pureCenter,
+                center: this.data.centerRipple,
               })
             }
           })

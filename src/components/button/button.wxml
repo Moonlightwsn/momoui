@@ -1,21 +1,20 @@
-<button
+<mui-button-base
+  app-parameter="{{appParameter}}"
+  component="button"
+  center-ripple="{{shape === 'circle'}}"
   disabled="{{_disabled}}"
-  class="mui mui-ripple-base mui-button mui-shape-{{shape}} {{muiClasses}}"
-  style="{{inline ? '' : 'display: flex;'}}{{mStyle}}"
   hover-class="{{_disabled ? '' : 'mui-button-hover'}}"
   loading="{{loading}}"
-  capture-bind:tap="_RippleAction"
-  capture-bind:longpress="_RippleAction"
+  m-class="mui-button mui-shape-{{shape}} {{muiClasses}}"
+  m-style="{{inline ? '' : 'display: flex;'}}{{mStyle}}"
   form-type="{{formType}}"
   open-type="{{openType}}"
-  app-parameter="{{openType === 'launchApp' ? appParameter : ''}}"
-  session-from="{{openType === 'contact' ? sessionFrom : ''}}"
-  send-message-title="{{openType === 'contact' ? sendMessageTitle : ''}}"
-  send-message-path="{{openType === 'contact' ? sendMessagePath : ''}}"
-  send-message-img="{{openType === 'contact' ? sendMessageImg : ''}}"
-  show-message-card="{{openType === 'contact' ? showMessageCard : ''}}"
-  size="mini"
+  ripple-color="{{_rippleColor}}"
+  session-from="{{sessionFrom}}"
+  send-message-title="{{sendMessageTitle}}"
+  send-message-path="{{sendMessagePath}}"
+  send-message-img="{{sendMessageImg}}"
+  show-message-card="{{showMessageCard}}"
 >
   <slot></slot>
-  <mui-ripple-container class="_mui-ripple-container"></mui-ripple-container>
-</button>
+</mui-button-base>

@@ -3,6 +3,7 @@
     "mui-test": "../../components/test/test",
     "mui-testcheck": "../../components/test/testcheck",
     "mui-icon": "../../components/icon/icon",
+    "mui-button-base": "../../components/button-base/button-base",
     "mui-button-group": "../../components/button-group/button-group",
     "mui-button": "../../components/button/button",
     "m2-button": "../../components/button/button",

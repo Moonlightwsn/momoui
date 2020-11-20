@@ -1,9 +1,33 @@
 <view
-  class="mui-ripple-base {{mClass}}"
-  style="{{mStyle}}"
+  wx:if="{{component === 'view'}}"
+  class="mui mui-button-base mui-ripple-base {{mClass}}"
   capture-bind:tap="_RippleAction"
   capture-bind:longpress="_RippleAction"
+  disabled="{{disabled}}"
+  style="{{mStyle}}"
 >
   <slot></slot>
   <mui-ripple-container class="_mui-ripple-container"></mui-ripple-container>
 </view>
+<button
+  wx:elif="{{component === 'button'}}"
+  app-parameter="{{openType === 'launchApp' ? appParameter : ''}}"
+  class="mui mui-button-base mui-ripple-base {{mClass}}"
+  capture-bind:tap="_RippleAction"
+  capture-bind:longpress="_RippleAction"
+  disabled="{{disabled}}"
+  form-type="{{formType}}"
+  hover-class="{{hoverClass}}"
+  loading="{{loading}}"
+  open-type="{{openType}}"
+  session-from="{{openType === 'contact' ? sessionFrom : ''}}"
+  send-message-title="{{openType === 'contact' ? sendMessageTitle : ''}}"
+  send-message-path="{{openType === 'contact' ? sendMessagePath : ''}}"
+  send-message-img="{{openType === 'contact' ? sendMessageImg : ''}}"
+  show-message-card="{{openType === 'contact' ? showMessageCard : ''}}"
+  style="{{mStyle}}"
+  size="mini"
+>
+  <slot></slot>
+  <mui-ripple-container class="_mui-ripple-container"></mui-ripple-container>
+</button>

@@ -36,8 +36,16 @@ Component({
         center = false,
       } = params
       const radius = Math.max(width, height)
-      const rippleX = center ? 0 : (x - (left + scrollLeft)) - (radius / 2)
-      const rippleY = center ? 0 : (y - (top + scrollTop)) - (radius / 2)
+      let rippleX
+      let rippleY
+      if (center) {
+        rippleX = (width / 2) - (radius / 2)
+        rippleY = (height / 2) - (radius / 2)
+      } else {
+        rippleX = (x - (left + scrollLeft)) - (radius / 2)
+        rippleY = (y - (top + scrollTop)) - (radius / 2)
+      }
+
       this.data.rippleArray.push({
         key: `ripple-${new Date().getTime()}-${Math.round(Math.random() * 10000)}`,
         x: rippleX,
