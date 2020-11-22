@@ -1,0 +1,13 @@
+<view
+  class="mui mui-list-item-text {{mClass}}"
+  style="{{mStyle}}"
+>
+  <mui-typography display="block">
+    <block wx:if="{{primary}}">{{primary}}</block>
+    <slot wx:else name="primary"></slot>
+  </mui-typography>
+  <mui-typography display="block" variant="body2" color="textSecondary">
+    <block wx:if="{{secondary}}">{{secondary}}</block>
+    <slot wx:else name="secondary"></slot>
+  </mui-typography>
+</view>

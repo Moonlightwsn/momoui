@@ -30,6 +30,22 @@ Component({
       type: Boolean,
       value: true
     },
+    icon: {
+      type: String,
+      value: null,
+    },
+    iconSize: {
+      type: Number,
+      value: null,
+    },
+    iconColor: {
+      type: String,
+      value: 'inherit'
+    },
+    iconPosition: {
+      type: String,
+      value: 'left',
+    },
     loading: {
       type: Boolean,
       value: false,

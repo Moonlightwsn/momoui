@@ -17,4 +17,10 @@
   show-message-card="{{showMessageCard}}"
 >
   <slot></slot>
+  <mui-icon
+    wx:if="{{icon}}"
+    name="{{icon}}"
+    m-class="icon-in-button icon-position-{{iconPosition}}"
+    m-style="color:{{iconColor}};font-size:{{iconSize ? iconSize : 'inherit'}}px;"
+  />
 </mui-button-base>

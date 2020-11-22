@@ -1,8 +1,10 @@
 <mui-button-base
   disabled="{{disabled}}"
   disableRipple="{{!button}}"
+  component="{{button ? 'button' : 'view'}}"
   m-class="mui mui-list-item divider-{{divider}} selected-{{selected}} button-{{button}} disable-gutters-{{disableGutters}} dense-{{dense}} {{mClass}}"
   m-style="{{mStyle}}"
 >
   <slot></slot>
+  <mui-list-item-text wx:if="{{primary}}" primary="{{primary}}" secondary="{{secondary}}" />
 </mui-button-base>

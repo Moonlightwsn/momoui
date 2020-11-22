@@ -30,34 +30,20 @@
     </view>
   </view>
   <view style="margin-bottom: 12px;">
-    <mui-button shape="circle" size="small">
-      <mui-icon name="default" m-style="font-size:20px;" />
-    </mui-button>
-    <mui-button shape="circle" color="primary" disabled>
-      <mui-icon name="default" m-style="font-size:20px;" />
-    </mui-button>
-    <mui-button shape="circle" color="secondary" size="large">
-      <mui-icon name="default" m-style="font-size:20px;" />
-    </mui-button>
+    <mui-button shape="circle" icon="default" />
+    <mui-button shape="circle" color="primary" disabled icon="default" iconSize="20" />
+    <mui-button shape="circle" color="secondary" size="large" icon="default" iconSize="20" />
   </view>
   <view style="margin-bottom: 12px;">
-    <mui-button shape="circle" size="small" variant="contained">
-      <mui-icon name="progress-circle" m-style="font-size:20px;" />
-    </mui-button>
-    <mui-button shape="circle" color="primary" variant="contained">
-      <mui-icon name="progress-circle" m-class="icon" />
-    </mui-button>
-    <mui-button shape="circle" color="secondary" size="large" variant="contained">
-      <mui-icon name="progress-circle" m-class="icon" />
-    </mui-button>
+    <mui-button shape="circle" size="small" variant="contained" icon="progress-circle" iconSize="16" />
+    <mui-button shape="circle" color="primary" variant="contained" icon="progress-circle" iconSize="20" />
+    <mui-button shape="circle" color="secondary" size="large" variant="contained" icon="progress-circle" iconSize="24" />
   </view>
   <view style="margin-bottom: 12px;">
-    <mui-button shape="extended" size="small" variant="contained">
-      <mui-icon m-style="margin-right:8px;font-size:20px;" name="search" />
+    <mui-button shape="extended" size="small" variant="contained" icon="search" iconSize="16">
       EXTENDED
     </mui-button>
-    <mui-button shape="extended" color="primary" variant="contained">
-      <mui-icon m-style="margin-right:8px;" name="search" m-class="icon" />
+    <mui-button shape="extended" color="primary" variant="contained" icon="search" iconSize="20">
       EXTENDED
     </mui-button>
     <mui-button shape="extended" color="secondary" size="large" variant="contained">
@@ -133,7 +119,10 @@
       <mui-button
         variant="contained"
         color="primary"
-      >CONTAINED<mui-icon size="20" name="trash" m-style="margin-left: 8px" color="#fff" /></mui-button>
+        icon="trash"
+        iconSize="20"
+        iconPosition="right"
+      >CONTAINED</mui-button>
     </view>
     <view style="margin-bottom: 12px;">
       <mui-button

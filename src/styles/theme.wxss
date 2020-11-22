@@ -175,26 +175,31 @@
         padding: 8px 11px;
       }
     }
-    &.mui-shape-normal {
-
+    &.mui-shape-normal, &.mui-shape-extended {
+      .icon-in-button {
+        margin-left: 8px;
+        &.icon-position-left {
+          order: -1;
+          margin-left: 0;
+          margin-right: 8px;
+        }
+      }
     }
     &.mui-shape-circle {
       border-radius: 50%;
+      padding: 0;
+      width: 48px;
+      height: 48px;
+      &.mui-size-small {
+        width: 40px;
+        height: 40px;
+      }
+      &.mui-size-large {
+        width: 56px;
+        height: 56px;
+      }
       &.mui-variant-text {
         padding: 12px;
-      }
-      &.mui-variant-contained {
-        padding: 0;
-        width: 48px;
-        height: 48px;
-        &.mui-size-small {
-          width: 40px;
-          height: 40px;
-        }
-        &.mui-size-large {
-          width: 56px;
-          height: 56px;
-        }
       }
     }
     &.mui-shape-extended {
@@ -317,6 +322,8 @@
     }
     &.mui-size-small {
       .mui-button {
+        width: 38px;
+        height: 38px;
         .check-icon {
           font-size: 20px;
           &.switch-icon {
@@ -326,6 +333,8 @@
       }
     }
     .mui-button {
+      width: 42px;
+      height: 42px;
       &.mui-color-default {
         color: #757575;
         .check-icon {
@@ -375,6 +384,8 @@
       flex-shrink: 0;
       vertical-align: middle;
       .mui-button {
+        width: 38px;
+        height: 38px;
         top: 0;
         left: 0;
         z-index: 1;
@@ -393,6 +404,10 @@
     }
     &.mui-size-small {
       .switch-root {
+        .mui-button {
+          width: 24px;
+          height: 24px;
+        }
         width: 40px;
         height: 24px;
         padding: 7px;
@@ -983,6 +998,24 @@
     }
   }
   /** mui-list-item end */
+
+  /** mui-list-item-icon */
+  &.mui-list-item-icon {
+    color: rgba(0, 0, 0, 0.54);
+    display: inline-flex;
+    min-width: 56px;
+    flex-shrink: 0;
+  }
+  /** mui-list-item-icon end */
+
+  /** mui-list-item-text */
+  &.mui-list-item-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  /** mui-list-item-text end */
 
   /** mui-list-subheader */
   &.mui-list-subheader {
@@ -1827,6 +1860,10 @@
       &.selected-true {
         background-color: rgba(255, 255, 255, 0.16);
       }
+    }
+    
+    &.mui-list-item-icon {
+      color: #fff;
     }
 
     &.mui-list-subheader {

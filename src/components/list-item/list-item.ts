@@ -27,6 +27,14 @@ Component({
       type: Boolean,
       value: false,
     },
+    primary: {
+      type: String,
+      value: null,
+    },
+    secondary: {
+      type: String,
+      value: null,
+    },
     selected: {
       type: Boolean,
       value: false,

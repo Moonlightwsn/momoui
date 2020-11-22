@@ -25,6 +25,8 @@
     "grid-list-tile-bar": "./components/grid-list-tile-bar/grid-list-tile-bar",
     "list": "./components/list/list",
     "list-item": "./components/list-item/list-item",
+    "list-item-icon": "./components/list-item-icon/list-item-icon",
+    "list-item-text": "./components/list-item-text/list-item-text",
     "list-subheader": "./components/list-subheader/list-subheader",
     "icon": "./components/icon/icon",
     "typography": "./components/typography/typography"

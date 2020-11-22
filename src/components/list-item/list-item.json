@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "mui-button-base": "../button-base/button-base"
+    "mui-button-base": "../button-base/button-base",
+    "mui-list-item-text": "../list-item-text/list-item-text"
   }
 }
