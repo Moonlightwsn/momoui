@@ -1,0 +1,7 @@
+<view
+  class="mui mui-avatar avatar-color-default {{icon ? 'mui-avatar-icon' : ''}} {{mClass}}"
+  style="{{mStyle}}"
+>
+  <mui-icon wx:if="{{src || icon}}" src="{{src}}" name="{{icon}}" />
+  <slot wx:else></slot>
+</view>

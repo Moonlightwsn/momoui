@@ -3,6 +3,7 @@
     "mui-test": "../../components/test/test",
     "mui-testcheck": "../../components/test/testcheck",
     "mui-icon": "../../components/icon/icon",
+    "mui-avatar": "../../components/avatar/avatar",
     "mui-list": "../../components/list/list",
     "mui-list-item": "../../components/list-item/list-item",
     "mui-list-item-icon": "../../components/list-item-icon/list-item-icon",

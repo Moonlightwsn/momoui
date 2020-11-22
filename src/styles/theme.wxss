@@ -17,6 +17,31 @@
   box-sizing: border-box;
   /* mui base end */
 
+  /**  mui-avatar */
+  &.mui-avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    font-size: 1.25rem;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1;
+    user-select: none;
+    border-radius: 50%;
+    justify-content: center;
+    &.avatar-color-default {
+      color: #fff;
+      background-color: #bdbdbd;
+    }
+    &.mui-avatar-icon {
+      font-size: 24px;
+    }
+  }
+  /**  mui-avatar end */
+
   /**  mui-button-base */
   &.mui-button-base {
     color: inherit;
@@ -1565,6 +1590,13 @@
   background-color: #212121;
   color: #fff;
   &.mui, .mui {
+    &.mui-avatar {
+      &.avatar-color-default {
+        color: #121212;
+        background-color: #757575;
+      }
+    }
+
     &.mui-disabled {
       color: rgba(255, 255, 255, 0.3);
     }

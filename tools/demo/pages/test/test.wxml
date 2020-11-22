@@ -32,6 +32,7 @@
     <mui-form-helper-text error variant="outlined">Error</mui-form-helper-text>
   </mui-form-control>
 -->
+<!--
   <mui-list subheader="Sub Header">
     <mui-list-item selected button primary="Inbox1" secondary="some secondary text1">
       <mui-list-item-icon>
@@ -86,4 +87,7 @@
     <mui-button color="primary" form-type="submit">Submit</mui-button>
   </form>
   <mui-button shape="circle" color="primary" variant="outlined">A</mui-button>
+-->
+  <mui-avatar src="https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp"></mui-avatar>
+  <mui-avatar icon="default" />
 </view>

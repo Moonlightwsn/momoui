@@ -19,7 +19,7 @@ Component({
     },
     src: {
       type: String,
-      value: ''
+      value: null,
     },
     rerender: {
       type: null,
@@ -28,7 +28,7 @@ Component({
   },
   data: {
     base64Content: '',
-    _innerStyles: 'width:20px;height:20px;',
+    _innerStyles: 'width:inherit;height:inherit;',
   },
   methods: {
     _readSvgFile(iconName: string) {
@@ -38,6 +38,7 @@ Component({
           computedStyle: ['color','fontSize'],
         }, async res => {
           let {color, fontSize: size} = res || {}
+          console.log(size)
           if (!size) {
             size = '20px'
           }
