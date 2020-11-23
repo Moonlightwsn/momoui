@@ -5,6 +5,7 @@
     "mui-icon": "../../components/icon/icon",
     "mui-avatar": "../../components/avatar/avatar",
     "mui-badge": "../../components/badge/badge",
+    "mui-divider": "../../components/divider/divider",
     "mui-list": "../../components/list/list",
     "mui-list-item": "../../components/list-item/list-item",
     "mui-list-item-icon": "../../components/list-item-icon/list-item-icon",

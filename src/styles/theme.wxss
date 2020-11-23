@@ -52,6 +52,40 @@
   }
   /**  mui-avatar end */
 
+  /** mui-divider */
+  &.mui-divider {
+    border: none;
+    height: 1px;
+    margin: 0;
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.12);
+    &.light-true {
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+    &.variant-inset {
+      margin-left: 72px;
+    }
+    &.variant-middle {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+    &.absolute-true {
+      left: 0;
+      width: 100%;
+      bottom: 0;
+      position: absolute;
+    }
+    &.orientation-vertical {
+      width: 1px;
+      height: 100%;
+    }
+    &.flexItem-true {
+      height: auto;
+      align-self: stretch;
+    }
+  }
+  /** mui-divider end */
+
   /**  mui-button-base */
   &.mui-button-base {
     color: inherit;
@@ -1724,6 +1758,13 @@
       &.avatar-color-default {
         color: #121212;
         background-color: #757575;
+      }
+    }
+
+    &.mui-divider {
+      background-color: rgba(255, 255, 255, 0.12);
+      &.light-true {
+        background-color: rgba(255, 255, 255, 0.08);
       }
     }
 

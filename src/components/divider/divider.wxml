@@ -1,0 +1,1 @@
+<view class="mui mui-divider light-{{light}} variant-{{variant}} absolute-{{absolute}} orientation-{{orientation}} flexItem-{{flexItem}} {{mClass}}" style="{{mStyle}}" />

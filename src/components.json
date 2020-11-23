@@ -31,6 +31,7 @@
     "icon": "./components/icon/icon",
     "avatar": "./components/avatar/avatar",
     "badge": "./components/badge/badge",
+    "divider": "./components/divider/divider",
     "typography": "./components/typography/typography"
   }
 }
