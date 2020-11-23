@@ -30,6 +30,7 @@
     "list-subheader": "./components/list-subheader/list-subheader",
     "icon": "./components/icon/icon",
     "avatar": "./components/avatar/avatar",
+    "badge": "./components/badge/badge",
     "typography": "./components/typography/typography"
   }
 }

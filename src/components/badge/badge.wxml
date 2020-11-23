@@ -1,0 +1,14 @@
+<view
+  class="mui mui-badge-root {{mClass}}"
+  style="{{mStyle}}"
+>
+  <slot></slot>
+  <view class="mui mui-badge mui-color-{{color}} badge-invisible-{{invisible || (content && !_content)}} badge-variant-{{variant}} badge-anchor-origin-{{anchorOrigin.vertical || 'top'}}-{{anchorOrigin.horizontal || 'right'}}-{{overlap}}">
+    <block wx:if="{{content}}">
+      <block wx:if="{{variant !== 'dot'}}">
+        {{_content}}
+      </block>
+    </block>
+    <slot wx:else name="content"></slot>
+  </view>
+</view>

@@ -88,6 +88,23 @@
   </form>
   <mui-button shape="circle" color="primary" variant="outlined">A</mui-button>
 -->
-  <mui-avatar src="https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp"></mui-avatar>
-  <mui-avatar icon="default" />
+  <view style="display: flex;">
+    <mui-badge overlap="{{overlap}}" m-style="margin:8px;" anchorOrigin="{{anchorOrigin}}">
+      <mui-avatar src="https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp"></mui-avatar>
+      <mui-avatar m-style="width:22px;height:22px;border: 2px solid #fff;" slot="content" src="https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp"></mui-avatar>
+    </mui-badge>
+    <mui-avatar m-style="margin:8px;" variant="rounded" icon="search" />
+    <mui-badge m-style="margin:8px;" anchorOrigin="{{anchorOrigin}}" content="0" showZero color="primary" invisible="{{invisible}}" overlap="{{overlap}}" variant="{{badgeVariant}}">
+      <mui-avatar>H</mui-avatar>
+    </mui-badge>
+    <mui-avatar m-style="margin: 8px;background-color: #ff5722;" variant="square">N</mui-avatar>
+    <mui-avatar m-style="margin: 8px;background-color: #673ab7;color: #ff3391;">OP</mui-avatar>
+  </view>
+  <mui-button bindtap="showOrHideBadge" variant="outlined">切换显示</mui-button>
+  <mui-button bindtap="changeOverlap" variant="outlined">切换位置</mui-button>
+   <mui-button bindtap="changeVariant" variant="outlined">切换类型</mui-button>
+  <mui-button bindtap="topRight" variant="outlined">Top Right</mui-button>
+  <mui-button bindtap="topLeft" variant="outlined">Top Left</mui-button>
+  <mui-button bindtap="bottomRight" variant="outlined">Bottom Right</mui-button>
+  <mui-button bindtap="bottomLeft" variant="outlined">Bottom Left</mui-button>
 </view>

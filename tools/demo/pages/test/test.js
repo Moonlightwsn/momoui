@@ -9,6 +9,13 @@ Page({
     focus: true,
     checkboxValue: ['c1'],
     radioValue: 'r2',
+    invisible: false,
+    anchorOrigin: {
+      vertical: 'top',
+      horizontal: 'right',
+    },
+    overlap: 'rectangle',
+    badgeVariant: 'standard',
   },
   onLoad() {
     this.setData({
@@ -34,5 +41,46 @@ Page({
   },
   onRadioChange(checkedValue) {
     this.setData({ radioValue: checkedValue })
+  },
+  showOrHideBadge() {
+    this.setData({ invisible: !this.data.invisible })
+  },
+  changeOverlap() {
+    this.setData({ overlap: this.data.overlap === 'rectangle' ? 'circle' : 'rectangle' })
+  },
+  changeVariant() {
+    this.setData({ badgeVariant: this.data.badgeVariant === 'dot' ? 'standard' : 'dot' })
+  },
+  topRight() {
+    this.setData({
+      anchorOrigin: {
+        vertical: 'top',
+        horizontal: 'right',
+      }
+    })
+  },
+  topLeft() {
+    this.setData({
+      anchorOrigin: {
+        vertical: 'top',
+        horizontal: 'left',
+      }
+    })
+  },
+  bottomRight() {
+    this.setData({
+      anchorOrigin: {
+        vertical: 'bottom',
+        horizontal: 'right',
+      }
+    })
+  },
+  bottomLeft() {
+    this.setData({
+      anchorOrigin: {
+        vertical: 'bottom',
+        horizontal: 'left',
+      }
+    })
   }
 })

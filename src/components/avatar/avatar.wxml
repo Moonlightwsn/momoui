@@ -1,5 +1,5 @@
 <view
-  class="mui mui-avatar avatar-color-default {{icon ? 'mui-avatar-icon' : ''}} {{mClass}}"
+  class="mui mui-avatar avatar-color-default avatar-variant-{{variant}} {{icon ? 'mui-avatar-icon' : ''}} {{mClass}}"
   style="{{mStyle}}"
 >
   <mui-icon wx:if="{{src || icon}}" src="{{src}}" name="{{icon}}" />

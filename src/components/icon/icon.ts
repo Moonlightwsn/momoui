@@ -38,7 +38,6 @@ Component({
           computedStyle: ['color','fontSize'],
         }, async res => {
           let {color, fontSize: size} = res || {}
-          console.log(size)
           if (!size) {
             size = '20px'
           }

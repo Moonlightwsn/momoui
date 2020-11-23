@@ -7,13 +7,13 @@ Component({
       type: String,
       value: null,
     },
-    sizes: {
-      type: String,
-      value: null,
-    },
     src: {
       type: String,
       value: null,
+    },
+    variant: {
+      type: String,
+      value: 'circle',
     },
   },
   options: {

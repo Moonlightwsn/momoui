@@ -98,7 +98,6 @@ Component({
   methods: {
     _setRippleColor(variant = 'text', color = 'default') {
       if (variant !== 'contained') {
-        console.log(1234)
         const _rippleColor = innerRippleColorMap[color] || ''
         this.setData({
           _rippleColor,

@@ -1,3 +1,7 @@
+@primary_color: #1976d2;
+@secondary_color: #dc004e;
+@error_color: #f44336;
+
 /** mui-icon */
 .mui-icon {
   color: inherit;
@@ -35,6 +39,12 @@
     &.avatar-color-default {
       color: #fff;
       background-color: #bdbdbd;
+    }
+    &.avatar-variant-square {
+      border-radius: 0;
+    }
+    &.avatar-variant-rounded {
+      border-radius: 4px;
     }
     &.mui-avatar-icon {
       font-size: 24px;
@@ -85,14 +95,18 @@
     border-color: rgba(0, 0, 0, 0.23);
   }
   &.mui-color-primary {
-    color: #1976d2;
-    background-color: #1976d2;
+    color: @primary_color;
+    background-color: @primary_color;
     border-color: #1976d280;
   }
   &.mui-color-secondary {
-    color: #dc004e;
-    background-color: #dc004e;
+    color: @secondary_color;
+    background-color: @secondary_color;
     border-color: #dc004e80;
+  }
+  &.mui-color-error {
+    color: @error_color;
+    background-color: @error_color;
   }
   &.mui-variant-contained {
     border: 0;
@@ -115,6 +129,122 @@
       color: rgba(0, 0, 0, 0.87);
     }
   }
+
+  /** mui-badge */
+  &.mui-badge-root {
+    display: inline-flex;
+    position: relative;
+    flex-shrink: 0;
+    vertical-align: middle;
+    .mui-badge {
+      height: 20px;
+      display: flex;
+      padding: 0 6px;
+      z-index: 1;
+      position: absolute;
+      flex-wrap: wrap;
+      font-size: 0.75rem;
+      min-width: 20px;
+      box-sizing: border-box;
+      transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      align-items: center;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 500;
+      line-height: 1;
+      align-content: center;
+      border-radius: 10px;
+      flex-direction: row;
+      justify-content: center;
+      &.badge-invisible-true {
+        transition: transform 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      }
+      &.mui-color-default {
+        background-color: unset;
+      }
+      &.mui-color-primary, &.mui-color-secondary, &.mui-color-error {
+        color: #fff;
+      }
+      &.badge-variant-dot {
+        height: 8px;
+        padding: 0;
+        min-width: 8px;
+        border-radius: 4px;
+      }
+      &.badge-anchor-origin-top-right-rectangle {
+        top: 0;
+        right: 0;
+        transform: scale(1) translate(50%, -50%);
+        transform-origin: 100% 0%;
+        &.badge-invisible-true {
+          transform: scale(0) translate(50%, -50%);
+        }
+      }
+      &.badge-anchor-origin-top-right-circle {
+        top: 14%;
+        right: 14%;
+        transform: scale(1) translate(50%, -50%);
+        transform-origin: 100% 0%;
+        &.badge-invisible-true {
+          transform: scale(0) translate(50%, -50%);
+        }
+      }
+      &.badge-anchor-origin-top-left-rectangle {
+        top: 0;
+        left: 0;
+        transform: scale(1) translate(-50%, -50%);
+        transform-origin: 0% 0%;
+        &.badge-invisible-true {
+          transform: scale(0) translate(-50%, -50%);
+        }
+      }
+      &.badge-anchor-origin-top-left-circle {
+        top: 14%;
+        left: 14%;
+        transform: scale(1) translate(-50%, -50%);
+        transform-origin: 0% 0%;
+        &.badge-invisible-true {
+          transform: scale(0) translate(-50%, -50%);
+        }
+      }
+      &.badge-anchor-origin-bottom-left-rectangle {
+        left: 0;
+        bottom: 0;
+        transform: scale(1) translate(-50%, 50%);
+        transform-origin: 0% 100%;
+        &.badge-invisible-true {
+          transform: scale(0) translate(-50%, 50%);
+        }
+      }
+      &.badge-anchor-origin-bottom-left-circle {
+        left: 14%;
+        bottom: 14%;
+        transform: scale(1) translate(-50%, 50%);
+        transform-origin: 0% 100%;
+        &.badge-invisible-true {
+          transform: scale(0) translate(-50%, 50%);
+        }
+      }
+      &.badge-anchor-origin-bottom-right-rectangle {
+        right: 0;
+        bottom: 0;
+        transform: scale(1) translate(50%, 50%);
+        transform-origin: 100% 100%;
+        &.badge-invisible-true {
+          transform: scale(0) translate(50%, 50%);
+        }
+      }
+      &.badge-anchor-origin-bottom-right-circle {
+        right: 14%;
+        bottom: 14%;
+        transform: scale(1) translate(50%, 50%);
+        transform-origin: 100% 100%;
+        &.badge-invisible-true {
+          transform: scale(0) translate(50%, 50%);
+        }
+      }
+    }
+  }
+  /** mui-badge end */
 
   /** mui-form-control */
   &.mui-form-control {
@@ -145,7 +275,7 @@
       margin-right: 12px;
     }
     &.error-true {
-      color: #f44336;
+      color: @error_color;
     }
     &.disabled-true {
       color:rgba(0, 0, 0, 0.38);
@@ -266,10 +396,10 @@
       }
       &.mui-variant-outlined {
         &.mui-color-primary {
-          border-color: #1976d2;
+          border-color: @primary_color;
         }
         &.mui-color-secondary {
-          border-color: #dc004e;
+          border-color: @secondary_color;
         }
       }
     }
@@ -453,12 +583,12 @@
       }
       &.mui-color-secondary {
         .switch-track {
-          background-color: #dc004e;
+          background-color: @secondary_color;
         }
       }
       &.mui-color-primary {
         .switch-track {
-          background-color: #1976d2
+          background-color: @primary_color
         }
       }
     }
@@ -521,7 +651,7 @@
         position: absolute;
         transform: scaleX(0);
         transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
-        border-bottom: 2px solid #1976d2;
+        border-bottom: 2px solid @primary_color;
         pointer-events: none;
       }
       &.focus-true {
@@ -535,7 +665,7 @@
           &::after {
             transform: scaleX(1);
             transition: unset;
-            border-bottom-color: #f44336;
+            border-bottom-color: @error_color;
           }
         }
       }
@@ -556,12 +686,12 @@
       border-color: unset;
       &.disable-underline-false {
         &::after {
-          border-bottom-color: #1976d2;
+          border-bottom-color: @primary_color;
         }
       }
       &.focus-true {
         &.mui-variant-outlined {
-          border-color: #1976d2;
+          border-color: @primary_color;
         }
       }
     }
@@ -571,12 +701,12 @@
       border-color: unset;
       &.disable-underline-false {
         &::after {
-          border-bottom-color: #dc004e;
+          border-bottom-color: @secondary_color;
         }
       }
       &.focus-true {
         &.mui-variant-outlined {
-          border-color: #dc004e;
+          border-color: @secondary_color;
         }
       }
     }
@@ -595,9 +725,9 @@
       border-radius: 4px;
       border-color: rgba(0, 0, 0, 0.23);
       &.error-true {
-        border-color: #f44336;
+        border-color: @error_color;
         &.mui-color-primary, &.mui-color-secondary {
-          border-color: #f44336;
+          border-color: @error_color;
         }
         &.focus-true {
           border-width: 2px;
@@ -659,18 +789,18 @@
     }
     &.mui-color-primary {
       &.focus-true {
-        color: #1976d2;
+        color: @primary_color;
       }
     }
     &.mui-color-secondary {
       &.focus-true {
-        color: #dc004e;
+        color: @secondary_color;
       }
     }
     &.error-true {
-      color: #f44336;
+      color: @error_color;
       &.mui-color-primary, &.mui-color-secondary {
-        color: #f44336;
+        color: @error_color;
       }
     }
     &.error-true, &.mui-color-primary, &.mui-color-secondary {
@@ -1263,7 +1393,7 @@
       color: rgba(0, 0, 0, 0.54);
     }
     &.mui-color-error {
-      color: #f44336;
+      color: @error_color;
     }
 
     &.mui-display-block {
@@ -1633,7 +1763,7 @@
     &.mui-form-helper-text {
       color: rgba(255, 255, 255, 0.7);
       &.error-true {
-        color: #f44336;
+        color: @error_color;
       }
       &.disabled-true {
         color: rgba(255, 255, 255, 0.5);
@@ -1809,10 +1939,10 @@
       &.error-true {
         &.mui-color-primary, &.mui-color-secondary {
           &.mui-variant-outlined {
-            border-color: #f44336;
+            border-color: @error_color;
           }
           &::after {
-            border-bottom-color: #f44336;
+            border-bottom-color: @error_color;
           }
         }
       }
@@ -1850,9 +1980,9 @@
         }
       }
       &.error-true {
-        color: #f44336;
+        color: @error_color;
         &.mui-color-primary, &.mui-color-secondary {
-          color: #f44336;
+          color: @error_color;
         }
       }
       &.mui-disabled {
