@@ -3,22 +3,20 @@ import muiBase from '../../behaviors/muiBase.ts'
 Component({
   behaviors: [muiBase],
   properties: {
-    color: {
-      type: String,
-      value: 'default',
+    collapsedHeight: {
+      type: Number,
+      optionalTypes: [String],
+      value: 0,
     },
-    disableGutters: {
+    in: {
       type: Boolean,
       value: false,
     },
-    disableSticky: {
-      type: Boolean,
-      value: true,
+    timeout: {
+      type: Number,
+      optionalTypes: [String, Object],
+      value: 300,
     },
-    inset: {
-      type: Boolean,
-      value: false,
-    }
   },
   options: {
     virtualHost: true,

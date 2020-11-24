@@ -1,0 +1,7 @@
+<view
+  wx:if="{{in}}"
+  class="mui mui-collapse-container{{in ? ' collapse-entered ' : ''}}{{mClass}}"
+  style="transition-duration: {{timeout}}ms;{{mStyle}}"
+>
+  <slot></slot>
+</view>

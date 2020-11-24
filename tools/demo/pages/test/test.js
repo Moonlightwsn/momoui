@@ -16,12 +16,16 @@ Page({
     },
     overlap: 'rectangle',
     badgeVariant: 'standard',
+    open: true,
   },
   onLoad() {
     this.setData({
       onCheckboxChange: this.onCheckboxChange.bind(this),
       onRadioChange: this.onRadioChange.bind(this),
     })
+  },
+  setOpen() {
+    this.setData({open: !this.data.open})
   },
   trigger() {
     this.setData({

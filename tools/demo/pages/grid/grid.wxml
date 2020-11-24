@@ -7,7 +7,7 @@
   <view style="background-color: {{theme === 'dark' ? '#424242': 'transparent'}}">
     <mui-grid-list cell-height="{{140}}" m-style="height: 200px;" spacing="{{8}}">
       <mui-grid-list-tile m-style="height:auto;" cols="{{2}}">
-        <mui-list-subheader>December</mui-list-subheader>
+        <mui-list-subheader inset>December</mui-list-subheader>
       </mui-grid-list-tile>
       <mui-grid-list-tile>
         <image mode="aspectFill" class="image" src="../../assets/breakfast.jpg"></image>

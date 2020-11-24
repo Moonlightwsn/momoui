@@ -19,7 +19,6 @@ Component({
   },
   lifetimes: {
     ready() {
-      console.log(this.data._more, this.data._moreStyle)
       this.setData({
         _more: this.data._more,
         _moreStyle: this.data._moreStyle,

@@ -1161,6 +1161,9 @@
         padding-bottom: 4px;
       }
     }
+    &.list-subheader {
+      padding-top: 0;
+    }
   }
   /** mui-list end */
 
@@ -1234,8 +1237,29 @@
       padding-left: 16px;
       padding-right: 16px;
     }
+    &.inset-true {
+      padding-left: 72px;
+    }
   }
   /** mui-list-subheader end */
+
+  /** mui-collapse-container */
+  &.mui-collapse-container {
+    height: 0;
+    overflow: hidden;
+    transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    &.collapse-entered {
+      height: auto;
+      overflow: visible;
+    }
+    mui-collapse-wrapper {
+      display: flex;
+      mui-collapse-wrapper-inner {
+        width: 100%;
+      }
+    }
+  }
+  /** mui-collapse-container end */
 
   /** mui-paper */
   &.mui-paper {

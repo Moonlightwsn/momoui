@@ -32,15 +32,33 @@
     <mui-form-helper-text error variant="outlined">Error</mui-form-helper-text>
   </mui-form-control>
 -->
-<!--
   <mui-list subheader="Sub Header">
-    <mui-list-item selected button primary="Inbox1" secondary="some secondary text1">
+    <mui-list-item button primary="Inbox1" secondary="some secondary text1">
       <mui-list-item-icon>
         <mui-icon name="send" m-style="font-size: 24px;" />
       </mui-list-item-icon>
     </mui-list-item>
-    <mui-list-item>Drafts</mui-list-item>
+    <mui-list-item button primary="Inbox1" secondary="some secondary text1">
+      <mui-list-item-icon>
+        <mui-icon name="send" m-style="font-size: 24px;" />
+      </mui-list-item-icon>
+    </mui-list-item>
+    <mui-list-item button primary="Inbox1" secondary="some secondary text1" bindtap="setOpen">
+      <mui-list-item-icon>
+        <mui-icon name="{{open ? 'arrow-up-2' : 'arrow-down-2'}}" m-style="font-size: 24px;" />
+      </mui-list-item-icon>
+    </mui-list-item>
+    <mui-collapse in="{{open}}">
+      <mui-list disablePadding>
+        <mui-list-item m-style="padding-left: 32px;" button primary="Inbox1" secondary="some secondary text1">
+          <mui-list-item-icon>
+            <mui-icon name="like" m-style="font-size: 24px;" />
+          </mui-list-item-icon>
+        </mui-list-item>
+      </mui-list>
+    </mui-collapse>
   </mui-list>
+  <!--
   <mui-button-base disabled component="button" centerRipple m-style="width: 140px;height: 42px;">Button Base</mui-button-base>
   <mui-button disabled color="primary" variant="outlined">TEST</mui-button>
   <view style="margin: 20px 0;">
@@ -57,7 +75,8 @@
       <mui-button>THREE</mui-button>
     </mui-button-group>
   </view>
-  
+  -->
+<!--
   <form bindsubmit="submit" bindreset="reset">
     <mui-input name="mui-input" m-class="input">
       <mui-input-adornment slot="startAdornment" text="Kg" position="start" />
@@ -88,6 +107,7 @@
   </form>
   <mui-button shape="circle" color="primary" variant="outlined">A</mui-button>
 -->
+<!--
   <view style="margin: 8px;">
     <mui-avatar-group spacing="small" max="3">
       <mui-avatar icon="search" />
@@ -125,4 +145,5 @@
   <mui-button bindtap="topLeft" variant="outlined">Top Left</mui-button>
   <mui-button bindtap="bottomRight" variant="outlined">Bottom Right</mui-button>
   <mui-button bindtap="bottomLeft" variant="outlined">Bottom Left</mui-button>
+-->
 </view>

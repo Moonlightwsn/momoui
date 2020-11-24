@@ -1,5 +1,5 @@
 <view
-  class="mui mui-list-subheader sticky-{{!disableSticky}} gutters-{{!disableGutters}} {{mClass}}"
+  class="mui mui-list-subheader sticky-{{!disableSticky}} gutters-{{!disableGutters}} inset-{{inset}} {{mClass}}"
   style="{{mStyle}}"
 >
   <slot></slot>

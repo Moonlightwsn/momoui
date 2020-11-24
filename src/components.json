@@ -28,6 +28,7 @@
     "list-item-icon": "./components/list-item-icon/list-item-icon",
     "list-item-text": "./components/list-item-text/list-item-text",
     "list-subheader": "./components/list-subheader/list-subheader",
+    "collapse": "./components/collapse/collapse",
     "icon": "./components/icon/icon",
     "avatar-group": "./components/avatar-group/avatar-group",
     "avatar": "./components/avatar/avatar",
