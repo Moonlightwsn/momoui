@@ -88,6 +88,16 @@
   </form>
   <mui-button shape="circle" color="primary" variant="outlined">A</mui-button>
 -->
+  <view style="margin: 8px;">
+    <mui-avatar-group spacing="small" max="3">
+      <mui-avatar icon="search" />
+      <mui-avatar icon="search" />
+      <mui-avatar icon="search" />
+      <mui-avatar icon="search" />
+      <mui-avatar icon="search" />
+      <mui-avatar icon="search" />
+    </mui-avatar-group>
+  </view>
   <view style="display: flex;">
     <mui-badge overlap="{{overlap}}" m-style="margin:8px;" anchorOrigin="{{anchorOrigin}}">
       <mui-avatar src="https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp"></mui-avatar>

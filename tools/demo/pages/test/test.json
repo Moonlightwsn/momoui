@@ -3,6 +3,7 @@
     "mui-test": "../../components/test/test",
     "mui-testcheck": "../../components/test/testcheck",
     "mui-icon": "../../components/icon/icon",
+    "mui-avatar-group": "../../components/avatar-group/avatar-group",
     "mui-avatar": "../../components/avatar/avatar",
     "mui-badge": "../../components/badge/badge",
     "mui-divider": "../../components/divider/divider",

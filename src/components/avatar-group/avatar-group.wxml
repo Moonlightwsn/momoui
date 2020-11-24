@@ -1,0 +1,7 @@
+<view
+  class="mui mui-avatar-group {{mClass}}"
+  style="{{mStyle}}"
+>
+  <slot></slot>
+  <mui-avatar wx:if="{{_more > 0}}" m-style="{{_moreStyle}}">+{{_more}}</mui-avatar>
+</view>

@@ -29,6 +29,7 @@
     "list-item-text": "./components/list-item-text/list-item-text",
     "list-subheader": "./components/list-subheader/list-subheader",
     "icon": "./components/icon/icon",
+    "avatar-group": "./components/avatar-group/avatar-group",
     "avatar": "./components/avatar/avatar",
     "badge": "./components/badge/badge",
     "divider": "./components/divider/divider",

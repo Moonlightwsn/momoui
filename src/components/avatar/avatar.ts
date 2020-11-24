@@ -16,6 +16,23 @@ Component({
       value: 'circle',
     },
   },
+  data: {
+    _groupStyles: '',
+  },
+  relations: {
+    '../avatar-group/avatar-group': {
+      type: 'parent',
+    },
+  },
+  methods: {
+    _groupControlAction(styles) {
+      let _groupStyles = ''
+      Object.keys(styles).forEach(styleKey => {
+        _groupStyles = `${_groupStyles}${styleKey}:${styles[styleKey]};`
+      })
+      this.setData({_groupStyles})
+    }
+  },
   options: {
     virtualHost: true,
     pureDataPattern: /^_pure/,

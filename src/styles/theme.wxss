@@ -21,6 +21,15 @@
   box-sizing: border-box;
   /* mui base end */
 
+  /** mui-avatar-group */
+  &.mui-avatar-group {
+    display: flex;
+    .mui-avatar {
+      border: 2px solid #fff;
+    }
+  }
+  /** mui-avatar-group end */
+
   /**  mui-avatar */
   &.mui-avatar {
     width: 40px;
@@ -1754,6 +1763,13 @@
   background-color: #212121;
   color: #fff;
   &.mui, .mui {
+    &.mui-avatar-group {
+      display: flex;
+      .mui-avatar {
+        border: 2px solid #121212;
+      }
+    }
+
     &.mui-avatar {
       &.avatar-color-default {
         color: #121212;
