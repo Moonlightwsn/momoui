@@ -16,7 +16,14 @@ Page({
     },
     overlap: 'rectangle',
     badgeVariant: 'standard',
-    open: true,
+    open: false,
+    avatar: {
+      icon: 'pictures',
+    },
+    secondaryAction: {
+      icon: 'trash',
+      color: 'primary',
+    }
   },
   onLoad() {
     this.setData({

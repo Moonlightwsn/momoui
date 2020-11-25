@@ -1,6 +1,5 @@
 import muiBase from '../../behaviors/muiBase.ts'
 import muiController from '../../behaviors/muiController.ts'
-import rippleBase from '../../behaviors/rippleBase.ts'
 
 const innerRippleColorMap = {
   primary: '#90caf9',
@@ -8,7 +7,7 @@ const innerRippleColorMap = {
 }
 
 Component({
-  behaviors: [muiBase, muiController, rippleBase, 'wx://form-field-button'],
+  behaviors: [muiBase, muiController, 'wx://form-field-button'],
   properties: {
     appParameter: {
       type: String,

@@ -32,21 +32,25 @@
     <mui-form-helper-text error variant="outlined">Error</mui-form-helper-text>
   </mui-form-control>
 -->
-  <mui-list subheader="Sub Header">
+  <mui-list subheader="Sub Header" dense>
+    <mui-list-item
+      button
+      avatar="{{avatar}}"
+      primary="Inbox1"
+      secondary="some secondary text1"
+      secondary-action="{{secondaryAction}}"
+    />
     <mui-list-item button primary="Inbox1" secondary="some secondary text1">
       <mui-list-item-icon>
         <mui-icon name="send" m-style="font-size: 24px;" />
       </mui-list-item-icon>
     </mui-list-item>
-    <mui-list-item button primary="Inbox1" secondary="some secondary text1">
+    <mui-list-item button bindtap="setOpen">
       <mui-list-item-icon>
         <mui-icon name="send" m-style="font-size: 24px;" />
       </mui-list-item-icon>
-    </mui-list-item>
-    <mui-list-item button primary="Inbox1" secondary="some secondary text1" bindtap="setOpen">
-      <mui-list-item-icon>
-        <mui-icon name="{{open ? 'arrow-up-2' : 'arrow-down-2'}}" m-style="font-size: 24px;" />
-      </mui-list-item-icon>
+      <mui-list-item-text primary="Inbox1" secondary="some secondary text1" />
+      <mui-icon name="{{open ? 'arrow-up-2' : 'arrow-down-2'}}" m-style="font-size: 24px;" />
     </mui-list-item>
     <mui-collapse in="{{open}}">
       <mui-list disablePadding>
@@ -55,9 +59,15 @@
             <mui-icon name="like" m-style="font-size: 24px;" />
           </mui-list-item-icon>
         </mui-list-item>
+        <mui-list-item m-style="padding-left: 32px;" button primary="Inbox1" secondary="some secondary text1">
+          <mui-list-item-icon>
+            <mui-icon name="like" m-style="font-size: 24px;" />
+          </mui-list-item-icon>
+        </mui-list-item>
       </mui-list>
     </mui-collapse>
   </mui-list>
+  <mui-button>TEST</mui-button>
   <!--
   <mui-button-base disabled component="button" centerRipple m-style="width: 140px;height: 42px;">Button Base</mui-button-base>
   <mui-button disabled color="primary" variant="outlined">TEST</mui-button>

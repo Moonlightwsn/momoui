@@ -7,6 +7,10 @@ Component({
       type: String,
       value: 'center',
     },
+    avatar: {
+      type: Object,
+      value: null,
+    },
     button: {
       type: Boolean,
       value: false,
@@ -33,6 +37,10 @@ Component({
     },
     secondary: {
       type: String,
+      value: null,
+    },
+    secondaryAction: {
+      type: Object,
       value: null,
     },
     selected: {

@@ -6,5 +6,9 @@
   m-style="align-items:{{alignItems}};{{mStyle}}"
 >
   <slot></slot>
+  <mui-list-item-avatar wx:if="{{avatar}}">
+    <mui-avatar src="{{avatar.src}}" icon="{{avatar.icon}}" />
+  </mui-list-item-avatar>
   <mui-list-item-text wx:if="{{primary}}" primary="{{primary}}" secondary="{{secondary}}" />
+  <mui-button wx:if="{{secondaryAction}}" shape="circle" icon="{{secondaryAction.icon}}" color="{{secondaryAction.color}}" iconSize="{{secondaryAction.size || 24}}" />
 </mui-button-base>

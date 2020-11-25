@@ -18,6 +18,32 @@ Component({
       value: 300,
     },
   },
+  data: {
+    _openStyles: '',
+  },
+  methods: {
+    _getInnerHeight() {
+      const query = this.createSelectorQuery()
+      query.select('.mui-collapse-wrapper').fields({
+        size: true,
+      }).exec((res) => {
+        const [size = {}] = res || {}
+        const {height} = size
+        if (height > 0) {
+          this.setData({_openStyles: `height:${height}px`})
+        }
+      })
+    },
+  },
+  observers: {
+    in(open) {
+      if (open) {
+        this._getInnerHeight()
+      } else {
+        this.setData({_openStyles: ''})
+      }
+    }
+  },
   options: {
     virtualHost: true,
     pureDataPattern: /^_pure/,

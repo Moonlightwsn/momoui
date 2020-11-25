@@ -1,0 +1,6 @@
+<view
+  class="mui mui-list-item-avatar {{mClass}}"
+  style="{{mStyle}}"
+>
+  <slot></slot>
+</view>

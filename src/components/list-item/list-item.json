@@ -2,6 +2,9 @@
   "component": true,
   "usingComponents": {
     "mui-button-base": "../button-base/button-base",
+    "mui-button": "../button/button",
+    "mui-avatar": "../avatar/avatar", 
+    "mui-list-item-avatar": "../list-item-avatar/list-item-avatar",
     "mui-list-item-text": "../list-item-text/list-item-text"
   }
 }
