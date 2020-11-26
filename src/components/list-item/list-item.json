@@ -5,6 +5,7 @@
     "mui-button": "../button/button",
     "mui-avatar": "../avatar/avatar", 
     "mui-list-item-avatar": "../list-item-avatar/list-item-avatar",
-    "mui-list-item-text": "../list-item-text/list-item-text"
+    "mui-list-item-text": "../list-item-text/list-item-text",
+    "mui-list-item-secondary-action": "../list-item-secondary-action/list-item-secondary-action"
   }
 }

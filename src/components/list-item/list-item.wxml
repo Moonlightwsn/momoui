@@ -2,13 +2,15 @@
   disabled="{{disabled}}"
   disableRipple="{{!button}}"
   component="{{button ? 'button' : 'view'}}"
-  m-class="mui mui-list-item divider-{{divider}} selected-{{selected}} button-{{button}} disable-gutters-{{disableGutters}} dense-{{dense}} {{mClass}}"
-  m-style="align-items:{{alignItems}};{{mStyle}}"
+  m-class="mui mui-list-item divider-{{divider}} align-items-{{alignItems}} selected-{{selected}} button-{{button}} disable-gutters-{{disableGutters}} dense-{{dense}} {{mClass}}"
+  m-style="{{mStyle}}"
 >
-  <slot></slot>
   <mui-list-item-avatar wx:if="{{avatar}}">
     <mui-avatar src="{{avatar.src}}" icon="{{avatar.icon}}" />
   </mui-list-item-avatar>
+  <slot></slot>
   <mui-list-item-text wx:if="{{primary}}" primary="{{primary}}" secondary="{{secondary}}" />
-  <mui-button wx:if="{{secondaryAction}}" shape="circle" icon="{{secondaryAction.icon}}" color="{{secondaryAction.color}}" iconSize="{{secondaryAction.size || 24}}" />
+  <mui-list-item-secondary-action>
+    <mui-button wx:if="{{secondaryAction}}" catch:tap="_secondaryAction" catch:longpress="_secondaryLongpress" shape="circle" icon="{{secondaryAction.icon}}" color="{{secondaryAction.color}}" iconSize="{{secondaryAction.size || 24}}" />
+  </mui-list-item-secondary-action>
 </mui-button-base>

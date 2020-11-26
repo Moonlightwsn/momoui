@@ -1,20 +1,14 @@
-<mui-button-base
-  app-parameter="{{appParameter}}"
-  component="button"
-  center-ripple="{{shape === 'circle'}}"
-  disabled="{{_disabled}}"
-  hover-class="{{_disabled ? '' : 'mui-button-hover'}}"
-  loading="{{loading}}"
-  m-class="mui-button mui-shape-{{shape}} {{muiClasses}}"
-  m-style="{{inline ? '' : 'display: flex;'}}{{mStyle}}"
-  form-type="{{formType}}"
-  open-type="{{openType}}"
-  ripple-color="{{_rippleColor}}"
-  session-from="{{sessionFrom}}"
-  send-message-title="{{sendMessageTitle}}"
-  send-message-path="{{sendMessagePath}}"
-  send-message-img="{{sendMessageImg}}"
-  show-message-card="{{showMessageCard}}"
+<mui-testsub
+  m-class="{{mClass}}"
+  m-style="display:flex;padding: 24px;border: 1px solid green;{{mStyle}}"
+  bindtap="_tap1"
+  capture-bind:tap="_capturetap1"
 >
-  <slot></slot>
-</mui-button-base>
+  <view
+    style="display:inline-block; padding: 8px 16px;border: 1px solid red;"
+    catchtap="_tap2"
+    capture-bind:tap="_capturetap2"
+  >
+    点我
+  </view>
+</mui-testsub>

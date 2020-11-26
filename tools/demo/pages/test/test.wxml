@@ -1,4 +1,5 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <!-- <mui-test /> -->
 <!--
   <mui-form-control
     color="{{color}}"
@@ -52,6 +53,7 @@
       <mui-list-item-text primary="Inbox1" secondary="some secondary text1" />
       <mui-icon name="{{open ? 'arrow-up-2' : 'arrow-down-2'}}" m-style="font-size: 24px;" />
     </mui-list-item>
+    <mui-divider />
     <mui-collapse in="{{open}}">
       <mui-list disablePadding>
         <mui-list-item m-style="padding-left: 32px;" button primary="Inbox1" secondary="some secondary text1">
@@ -67,7 +69,49 @@
       </mui-list>
     </mui-collapse>
   </mui-list>
-  <mui-button>TEST</mui-button>
+  <mui-list m-style="width: 100%;max-width: 36ch;">
+    <mui-list-item alignItems="flex-start">
+      <mui-list-item-avatar>
+        <mui-avatar src="https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp" />
+      </mui-list-item-avatar>
+      <mui-list-item-text>
+        <view slot="primary">Brunch this weekend?</view>
+        <view slot="secondary"><mui-typography variant="body2" color="textPrimary" m-style="display:inline;">Ali Connors</mui-typography> — I'll be in your neighborhood doing errands this…</view>
+      </mui-list-item-text>
+    </mui-list-item>
+    <mui-divider variant="inset" />
+    <mui-list-item alignItems="flex-start">
+      <mui-list-item-avatar>
+        <mui-avatar src="https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp" />
+      </mui-list-item-avatar>
+      <mui-list-item-text>
+        <view slot="primary">Summer BBQ</view>
+        <view slot="secondary"><mui-typography variant="body2" color="textPrimary" m-style="display:inline;">to Scott, Alex, Jennifer</mui-typography> — Wish I could come, but I'm out of town this…</view>
+      </mui-list-item-text>
+    </mui-list-item>
+    <mui-divider variant="inset" />
+    <mui-list-item alignItems="flex-start">
+      <mui-list-item-avatar>
+        <mui-avatar src="https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp" />
+      </mui-list-item-avatar>
+      <mui-list-item-text primary="Oui Oui">
+        <view slot="secondary"><mui-typography variant="body2" color="textPrimary" m-style="display:inline;">Sandra Adams</mui-typography> — Do you have Paris recommendations? Have you ever…</view>
+      </mui-list-item-text>
+    </mui-list-item>
+  </mui-list>
+  <mui-list>
+    <mui-list-item button wx:for="{{[0,1,2,3]}}" wx:key="index" data-index="{{index}}" bindtap="listItemTap">
+      <mui-list-item-icon>
+        <mui-checkbox checked="{{listChecked[index]}}" disableRipple />
+      </mui-list-item-icon>
+      <mui-list-item-text primary="Line item {{index + 1}}" />
+      <mui-list-item-secondary-action>
+        <mui-button catchtap="secondaryAction" icon="message" shape="circle" m-style="font-size: 24px;" />
+      </mui-list-item-secondary-action>
+    </mui-list-item>
+  </mui-list>
+  <mui-button color="primary" disableRipple>BUTTON</mui-button>
+  <mui-button-base disableRipple>BUTTON BASE</mui-button-base>
   <!--
   <mui-button-base disabled component="button" centerRipple m-style="width: 140px;height: 42px;">Button Base</mui-button-base>
   <mui-button disabled color="primary" variant="outlined">TEST</mui-button>

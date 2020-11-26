@@ -21,6 +21,10 @@ Component({
       type: Boolean,
       value: false
     },
+    disableRipple: {
+      type: Boolean,
+      value: false,
+    },
     formType: {
       type: String,
       value: ''

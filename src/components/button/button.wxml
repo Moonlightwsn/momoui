@@ -3,6 +3,7 @@
   component="button"
   center-ripple="{{shape === 'circle'}}"
   disabled="{{_disabled}}"
+  disableRipple="{{disableRipple}}"
   hover-class="{{_disabled ? '' : 'mui-button-hover'}}"
   loading="{{loading}}"
   m-class="mui-button mui-shape-{{shape}} {{muiClasses}}"

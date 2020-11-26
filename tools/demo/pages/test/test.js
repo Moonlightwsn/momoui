@@ -19,16 +19,42 @@ Page({
     open: false,
     avatar: {
       icon: 'pictures',
+      src: 'https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp'
     },
-    secondaryAction: {
-      icon: 'trash',
-      color: 'primary',
-    }
+    listChecked: {
+      0: false,
+      1: false,
+      2: true,
+      3: false,
+    },
   },
   onLoad() {
     this.setData({
       onCheckboxChange: this.onCheckboxChange.bind(this),
       onRadioChange: this.onRadioChange.bind(this),
+      secondaryAction: {
+        icon: 'trash',
+        color: 'primary',
+        action: this.secondaryAction.bind(this),
+        longpress: this.secondaryLongpress.bind(this),
+      },
+    })
+  },
+  secondaryAction(e) {
+    console.log('secondaryAction', this, e)
+  },
+  secondaryLongpress(e) {
+    console.log('secondaryLongpress', this, e)
+  },
+  listItemTap(e) {
+    const {currentTarget: {dataset: {index}} = {}} = e || {}
+    const {listChecked} = this.data
+    const newListChecked = {
+      ...listChecked,
+      [index]: !listChecked[index],
+    };
+    this.setData({
+      listChecked: newListChecked,
     })
   },
   setOpen() {

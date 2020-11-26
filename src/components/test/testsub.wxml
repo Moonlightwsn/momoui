@@ -1,6 +1,8 @@
 <button
-  disabled="{{_disabled}}"
-  class="{{muiClasses}}"
+  class="{{mClass}}"
+  style="{{mStyle}}"
+  bindtap="_tap3"
+  capture-bind:tap="_capturetap3"
 >
   <slot></slot>
 </button>

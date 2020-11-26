@@ -50,7 +50,7 @@
   <mui-radio onChange="{{radioChange}}" checked="{{checked}}" color="default" size="small">c</mui-radio>
   <mui-radio />
   <mui-radio-group onChange="{{groupChange}}" value="{{checkedValue}}">
-    <mui-radio value="A" ripple="{{false}}">A</mui-radio>
+    <mui-radio value="A" disableRipple>A</mui-radio>
     <mui-radio color="primary" value="B">B</mui-radio>
     <mui-radio value="C">C</mui-radio>
     <mui-radio value="D" disabled>D</mui-radio>

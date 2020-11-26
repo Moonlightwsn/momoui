@@ -1,6 +1,6 @@
-<text
+<view
   class="mui mui-typography mui-gutterBottom-{{gutterBottom}} mui-display-{{display}} {{muiClasses}}"
   style="{{mStyle}}"
 >
   <slot></slot>
-</text>
+</view>

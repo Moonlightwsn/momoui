@@ -4,7 +4,7 @@
   capture-bind:tap="_checkControll"
   capture-bind:longpress="_checkControll"
 >
-  <mui-button disabled="{{disabled}}" ripple="{{ripple}}" color="{{color}}" shape="circle" variant="text" m-style="padding: 9px;">
+  <mui-button disabled="{{disabled}}" disableRipple="{{disableRipple}}" color="{{color}}" shape="circle" variant="text" m-style="padding: 9px;">
     <mui-icon name="{{_currentIcon}}" m-class="check-icon" />
   </mui-button>
   <slot></slot>

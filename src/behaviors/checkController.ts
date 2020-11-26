@@ -25,9 +25,9 @@ export default Behavior({
       type: Boolean,
       value: false,
     },
-    ripple: {
+    disableRipple: {
       type: Boolean,
-      value: true,
+      value: false,
     },
     icon: {
       type: String,
