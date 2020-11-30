@@ -15,6 +15,7 @@
     "radio-group": "./components/radio-group/radio-group",
     "radio": "./components/radio/radio",
     "switch": "./components/switch/switch",
+    "select": "./components/select/select",
     "input": "./components/input/input",
     "input-label": "./components/input-label/input-label",
     "input-adornment": "./components/input-adornment/input-adornment",

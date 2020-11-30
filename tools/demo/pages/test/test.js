@@ -3,6 +3,8 @@ import themeMixin from '../../behaviors/theme'
 Page({
   behaviors: [themeMixin],
   data: {
+    value: 0,
+    range: ['a','b','c','d','e'],
     disabled: true,
     color: 'secondary',
     size: 'medium',

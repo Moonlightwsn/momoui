@@ -1,0 +1,11 @@
+<picker
+  range="{{range}}"
+  range-key="{{rangeKey}}"
+  value="{{_index}}"
+>
+  <mui-input
+    m-class="{{mClass}}"
+    m-style="{{mStyle}}"
+    value="{{value}}"
+  />
+</picker>

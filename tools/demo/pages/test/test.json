@@ -26,6 +26,7 @@
     "mui-checkbox": "../../components/checkbox/checkbox",
     "mui-radio": "../../components/radio/radio",
     "mui-switch": "../../components/switch/switch",
+    "mui-select": "../../components/select/select",
     "mui-input": "../../components/input/input",
     "mui-input-label": "../../components/input-label/input-label",
     "mui-input-adornment": "../../components/input-adornment/input-adornment",

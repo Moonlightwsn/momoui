@@ -1,6 +1,8 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
-  <!-- <mui-test /> -->
-<!--
+  <mui-select
+    range="{{['a', 'b']}}"
+    value="a"
+  />
   <mui-form-control
     color="{{color}}"
     focus
@@ -32,7 +34,7 @@
     />
     <mui-form-helper-text error variant="outlined">Error</mui-form-helper-text>
   </mui-form-control>
--->
+  <!--
   <mui-list subheader="Sub Header" dense>
     <mui-list-item
       button
@@ -112,6 +114,7 @@
   </mui-list>
   <mui-button color="primary" disableRipple>BUTTON</mui-button>
   <mui-button-base disableRipple>BUTTON BASE</mui-button-base>
+  -->
   <!--
   <mui-button-base disabled component="button" centerRipple m-style="width: 140px;height: 42px;">Button Base</mui-button-base>
   <mui-button disabled color="primary" variant="outlined">TEST</mui-button>
@@ -130,7 +133,6 @@
     </mui-button-group>
   </view>
   -->
-<!--
   <form bindsubmit="submit" bindreset="reset">
     <mui-input name="mui-input" m-class="input">
       <mui-input-adornment slot="startAdornment" text="Kg" position="start" />
@@ -160,7 +162,6 @@
     <mui-button color="primary" form-type="submit">Submit</mui-button>
   </form>
   <mui-button shape="circle" color="primary" variant="outlined">A</mui-button>
--->
 <!--
   <view style="margin: 8px;">
     <mui-avatar-group spacing="small" max="3">
