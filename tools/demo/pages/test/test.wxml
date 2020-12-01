@@ -9,6 +9,10 @@
     value="{{value}}"
     bindchange="change"
   />
+  <mui-button loading variant="outlined" size="small">TEST</mui-button>
+  <mui-button loading variant="outlined">TEST</mui-button>
+  <mui-button loading variant="outlined" size="large">TEST</mui-button>
+  <mui-button-base loading>TEST BASE</mui-button-base>
   <!--
   <mui-form-control
     color="{{color}}"

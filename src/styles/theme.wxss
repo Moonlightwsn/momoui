@@ -340,6 +340,9 @@
     line-height: 1.75;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     letter-spacing: 0.02857em;
+    .mui-button-loading {
+      margin-right: 8px;
+    }
     &::after {
       border: 0;
       border-radius: 0;
@@ -353,6 +356,9 @@
       &.mui-variant-text {
         padding: 4px 5px;
       }
+      .mui-button-loading {
+        font-size: 14px;
+      }
     }
     &.mui-size-medium {
       padding: 6px 16px;
@@ -361,6 +367,9 @@
       }
       &.mui-variant-text {
         padding: 6px 8px;
+      }
+      .mui-button-loading {
+        font-size: 16px;
       }
     }
     &.mui-size-large {
@@ -371,6 +380,9 @@
       }
       &.mui-variant-text {
         padding: 8px 11px;
+      }
+      .mui-button-loading {
+        font-size: 18px;
       }
     }
     &.mui-shape-normal, &.mui-shape-extended {

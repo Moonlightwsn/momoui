@@ -8,7 +8,6 @@ const styleProps = [
 
 export default Behavior({
   data: {
-    _disabled: false,
     muiClasses: '',
   },
   lifetimes: {
@@ -17,15 +16,11 @@ export default Behavior({
         color,
         variant,
         size,
-        loading,
-        disabled
       } = this.properties
       this._defindMuiBehaviors({
         color,
         variant,
         size,
-        disabled,
-        loading,
       })
     }
   },
@@ -36,16 +31,8 @@ export default Behavior({
     },
     _defindMuiBehaviors(params = {}) {
       /** 整合所有样式 */
-      const newData: { _disabled?: boolean, muiClasses?: string } = {}
+      const newData: { muiClasses?: string } = {}
       const muiClassesArr = []
-      const {disabled, loading} = params
-      if (!(typeof disabled === 'undefined' && typeof loading === 'undefined')) {
-        const _disabled = (disabled || loading || false)
-        if (_disabled) {
-          muiClassesArr.push('mui-disabled')
-        }
-        newData._disabled = _disabled
-      }
       styleProps.forEach(sp => {
         muiClassesArr.push(params[sp] ? `mui-${sp}-${params[sp]}` : '')
       })
@@ -59,13 +46,11 @@ export default Behavior({
 
   },
   observers: {
-    'color, variant, size, loading, disabled': function (color, variant, size, loading, disabled) {
+    'color, variant, size': function (color, variant, size) {
       this._defindMuiBehaviors({
         color,
         variant,
         size,
-        disabled,
-        loading,
       })
     },
   },

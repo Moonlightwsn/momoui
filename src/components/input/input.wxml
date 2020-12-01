@@ -1,5 +1,5 @@
 <view
-  class="mui mui-input-root form-control-{{_formControl}} focus-{{_focus}} disable-underline-{{disableUnderline}} error-{{error}} {{muiClasses}}"
+  class="mui mui-input-root form-control-{{_formControl}} focus-{{_focus}} disable-underline-{{disableUnderline}} error-{{error}} {{disabled ? 'mui-disabled' : ''}} {{muiClasses}}"
   style="{{fullWidth ? 'width:100%;' : ''}}{{multiline ? 'min-width: 175px;' : ''}}{{mStyle}}"
 >
   <slot name="startAdornment"></slot>

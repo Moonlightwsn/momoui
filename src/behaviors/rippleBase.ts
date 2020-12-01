@@ -18,9 +18,8 @@ export default Behavior({
   methods: {
     _RippleAction(e) {
       const {disableRipple} = this.properties
-      const {disabled, loading} = this.data
-      const _disabled = disabled || loading
-      if (!disableRipple && !_disabled) {
+      const {disabled} = this.data
+      if (!disableRipple && !disabled) {
         if (!this._muiRippleContainer) {
           const _muiRippleContainer = this.selectComponent('._mui-ripple-container')
           this._muiRippleContainer = _muiRippleContainer

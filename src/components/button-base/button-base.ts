@@ -24,10 +24,6 @@ Component({
       type: String,
       value: '',
     },
-    loading: {
-      type: Boolean,
-      value: false,
-    },
     openType: {
       type: String,
       value: ''

@@ -1,6 +1,6 @@
 <view
   wx:if="{{component === 'view'}}"
-  class="mui mui-button-base mui-ripple-base {{(disabled || loading) ? 'mui-disabled' : ''}} {{mClass}}"
+  class="mui mui-button-base mui-ripple-base {{disabled ? 'mui-disabled' : ''}} {{mClass}}"
   bind:tap="_RippleAction"
   bind:longpress="_RippleAction"
   disabled="{{disabled}}"
@@ -12,13 +12,12 @@
 <button
   wx:elif="{{component === 'button'}}"
   app-parameter="{{openType === 'launchApp' ? appParameter : ''}}"
-  class="mui mui-button-base mui-ripple-base {{(disabled || loading) ? 'mui-disabled' : ''}} {{mClass}}"
+  class="mui mui-button-base mui-ripple-base {{disabled ? 'mui-disabled' : ''}} {{mClass}}"
   bind:tap="_RippleAction"
   bind:longpress="_RippleAction"
   disabled="{{disabled}}"
   form-type="{{formType}}"
   hover-class="{{hoverClass}}"
-  loading="{{loading}}"
   open-type="{{openType}}"
   session-from="{{openType === 'contact' ? sessionFrom : ''}}"
   send-message-title="{{openType === 'contact' ? sendMessageTitle : ''}}"

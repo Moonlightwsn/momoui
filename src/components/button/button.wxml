@@ -2,10 +2,9 @@
   app-parameter="{{appParameter}}"
   component="button"
   center-ripple="{{shape === 'circle'}}"
-  disabled="{{_disabled}}"
+  disabled="{{disabled || loading}}"
   disableRipple="{{disableRipple}}"
-  hover-class="{{_disabled ? '' : 'mui-button-hover'}}"
-  loading="{{loading}}"
+  hover-class="{{(disabled || loading) ? '' : 'mui-button-hover'}}"
   m-class="mui-button mui-shape-{{shape}} {{muiClasses}}"
   m-style="{{inline ? '' : 'display: flex;'}}{{mStyle}}"
   form-type="{{formType}}"
@@ -17,6 +16,7 @@
   send-message-img="{{sendMessageImg}}"
   show-message-card="{{showMessageCard}}"
 >
+  <mui-icon wx:if="{{loading}}" m-class="mui-button-loading" name="progress-circle" />
   <slot></slot>
   <mui-icon
     wx:if="{{icon}}"
