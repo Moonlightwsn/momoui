@@ -29,7 +29,7 @@ Component({
     },
     range: {
       type: Array,
-      value: [],
+      value: null,
     },
     rangeKey: {
       type: String,
@@ -39,66 +39,62 @@ Component({
       type: String,
       value: null,
     },
-    value: {
-      type: String,
-      optionalTypes: [Array],
-      value: null,
-    },
+    // @ts-ignore
+    value: null,
   },
   data: {
-    _index: null,
+    _display: null,
+  },
+  lifetimes: {
+    attached() {
+      const {mode, value} = this.data
+      if (value === null || typeof value === 'undefined') {
+        this._becontrolled = false
+      } else {
+        this._becontrolled = true
+      }
+      if (mode === 'region' && !Array.isArray(value)) {
+        this.setData({value: []})
+      }
+    }
   },
   methods: {
-    _value2index(val) {
-      let _index
+    _value2display(val) {
       const {
-        mode,
         range,
-        rangeKey,
+        rangeKey
       } = this.data
-      switch (mode) {
-        case 'selector':
-          if (Array.isArray(range)) {
-            range.some((item, index) => {
-              if (val === item) {
-                _index = index
-                return true
-              } else if (typeof item === 'object' && rangeKey && val === item[rangeKey]) {
-                _index = index
-                return true
-              }
-              return false
-            })
-          }
-          break
-        case 'multiSelector':
-          _index = []
-          if (Array.isArray(range) && Array.isArray(val)) {
-            range.forEach((innerRange, i) => {
-              if (Array.isArray(innerRange)) {
-                innerRange.some((item, j) => {
-                  if (val[i] === item) {
-                    _index[i] = j
-                    return true
-                  } else if (typeof item === 'object' && rangeKey && val[i] === item[rangeKey]) {
-                    _index[i] = j
-                    return true
-                  }
-                  return false
-                })
-              }
-            })
-          }
-          break
-        default:
-          _index = val
+      let _display
+      if (Array.isArray(range)) {
+        if (Array.isArray(val)) {
+          _display = val.map((item, i) => {
+            const index = Number(item)
+            return (rangeKey ? range[i][index][rangeKey] : range[i][index])
+          }).join(' ')
+        } else {
+          const index = Number(val)
+          _display = rangeKey ? range[index][rangeKey] : range[index]
+        }
+      } else if (Array.isArray(val)) {
+        _display = val.join(' ')
+      } else {
+        _display = val
       }
-      this.setData({_index})
+      this.setData({
+        _display
+      })
     },
+    _change(e) {
+      const {detail: {value}} = e
+      if (!this._becontrolled) {
+        this.setData({value})
+      }
+      this.triggerEvent('change', e.detail)
+    }
   },
   observers: {
     value(val) {
-      this._value2index(val)
+      this._value2display(val)
     }
   },
   options: {

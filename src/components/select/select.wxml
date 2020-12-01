@@ -1,11 +1,20 @@
 <picker
+  custom-item="{{customItem}}"
+  disabled="{{disabled}}"
+  end="{{end}}"
+  fields="{{fields}}"
+  headerText="{{headerText}}"
+  value="{{value}}"
+  mode="{{mode}}"
   range="{{range}}"
   range-key="{{rangeKey}}"
-  value="{{_index}}"
+  start="{{start}}"
+  bindchange="_change"
 >
   <mui-input
-    m-class="{{mClass}}"
+    disabled
+    m-class="mui-select select-disabled-{{disabled}} {{mClass}}"
     m-style="{{mStyle}}"
-    value="{{value}}"
+    value="{{_display}}"
   />
 </picker>

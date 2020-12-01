@@ -3,8 +3,8 @@ import themeMixin from '../../behaviors/theme'
 Page({
   behaviors: [themeMixin],
   data: {
-    value: 0,
-    range: ['a','b','c','d','e'],
+    value: 1,
+    range: [{key: 'a'}, {key: 'b'}],
     disabled: true,
     color: 'secondary',
     size: 'medium',
@@ -90,6 +90,9 @@ Page({
   changeVariant() {
     this.setData({ badgeVariant: this.data.badgeVariant === 'dot' ? 'standard' : 'dot' })
   },
+  change(e) {
+    this.setData({value: e.detail.value})
+  },
   topRight() {
     this.setData({
       anchorOrigin: {
@@ -121,5 +124,8 @@ Page({
         horizontal: 'left',
       }
     })
+  },
+  test() {
+    console.log(this.data)
   }
 })

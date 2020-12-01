@@ -1,20 +1,22 @@
-import muiBase from '../../behaviors/muiBase.ts'
-// import rippleBase from '../../behaviors/rippleBase.ts'
-
 Component({
-  behaviors: [muiBase/* , rippleBase */],
-  methods: {
-    _tap1() {
-      console.log('tap 1')
+  properties: {
+    mode: {
+      type: String,
+      value: 'selector'
     },
-    _tap2() {
-      console.log('tap 2')
+    customItem: {
+      type: String,
+      value: null,
     },
-    _capturetap1() {
-      console.log('capturetap 1')
-    },
-    _capturetap2() {
-      console.log('capturetap 2')
+    // @ts-ignore
+    value: null,
+  },
+  lifetimes: {
+    attached() {
+      const {mode, value} = this.data
+      if (mode === 'region' && !Array.isArray(value)) {
+        this.setData({value: []})
+      }
     }
   },
   options: {

@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "mui-testsub": "./testsub"
+    "mui-input": "../input/input",
+    "mui-button": "../button/button"
   }
 }

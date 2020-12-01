@@ -1,8 +1,15 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
   <mui-select
-    range="{{['a', 'b']}}"
-    value="a"
+    mode="region"
+    header-text="TEST"
   />
+  <mui-select
+    range="{{range}}"
+    range-key="key"
+    value="{{value}}"
+    bindchange="change"
+  />
+  <!--
   <mui-form-control
     color="{{color}}"
     focus
@@ -34,6 +41,7 @@
     />
     <mui-form-helper-text error variant="outlined">Error</mui-form-helper-text>
   </mui-form-control>
+  -->
   <!--
   <mui-list subheader="Sub Header" dense>
     <mui-list-item
@@ -133,6 +141,7 @@
     </mui-button-group>
   </view>
   -->
+  <!--
   <form bindsubmit="submit" bindreset="reset">
     <mui-input name="mui-input" m-class="input">
       <mui-input-adornment slot="startAdornment" text="Kg" position="start" />
@@ -162,6 +171,7 @@
     <mui-button color="primary" form-type="submit">Submit</mui-button>
   </form>
   <mui-button shape="circle" color="primary" variant="outlined">A</mui-button>
+  -->
 <!--
   <view style="margin: 8px;">
     <mui-avatar-group spacing="small" max="3">
