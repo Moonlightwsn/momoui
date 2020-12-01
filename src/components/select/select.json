@@ -1,6 +1,8 @@
 {
   "component": true,
   "usingComponents": {
-    "mui-input": "../input/input"
+    "mui-icon": "../icon/icon",
+    "mui-input": "../input/input",
+    "mui-input-adornment": "../input-adornment/input-adornment"
   }
 }

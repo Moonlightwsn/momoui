@@ -44,6 +44,7 @@ Component({
   },
   data: {
     _display: null,
+    _focus: false,
   },
   lifetimes: {
     attached() {
@@ -84,12 +85,37 @@ Component({
         _display
       })
     },
+    _inputBlur(e) {
+      if (!this._muiSelectInput) {
+        const _muiSelectInput = this.selectComponent('._mui-select-input')
+        this._muiSelectInput = _muiSelectInput
+      }
+      if (this._muiSelectInput) {
+        this._muiSelectInput._onBlur(e)
+      }
+      this.setData({_focus: false})
+    },
+    _inputFocus(e) {
+      if (!this._muiSelectInput) {
+        const _muiSelectInput = this.selectComponent('._mui-select-input')
+        this._muiSelectInput = _muiSelectInput
+      }
+      if (this._muiSelectInput) {
+        this._muiSelectInput._onFocus(e)
+      }
+      this.setData({_focus: true})
+    },
     _change(e) {
       const {detail: {value}} = e
       if (!this._becontrolled) {
         this.setData({value})
       }
+      this._inputBlur(e)
       this.triggerEvent('change', e.detail)
+    },
+    _cancel(e) {
+      this._inputBlur(e)
+      this.triggerEvent('cancel', e.detail)
     }
   },
   observers: {

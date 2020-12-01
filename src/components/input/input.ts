@@ -64,6 +64,10 @@ Component({
       type: Boolean,
       value: false,
     },
+    inputDisabled: {
+      type: Boolean,
+      value: false,
+    },
     inputChange: {
       // @ts-ignore
       type: Function,
@@ -262,7 +266,7 @@ Component({
     }
   },
   options: {
-    virtualHost: true,
+    // virtualHost: true,
     pureDataPattern: /^_pure/,
     styleIsolation: 'apply-shared',
     multipleSlots: true,

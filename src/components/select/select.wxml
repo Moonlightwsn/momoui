@@ -10,11 +10,19 @@
   range-key="{{rangeKey}}"
   start="{{start}}"
   bindchange="_change"
+  bindcancel="_cancel"
+  bindtap="_inputFocus"
 >
   <mui-input
-    disabled
-    m-class="mui-select select-disabled-{{disabled}} {{mClass}}"
+    input-disabled
+    disabled="{{disabled}}"
+    class="_mui-select-input"
+    m-class="mui-select-input {{mClass}}"
     m-style="{{mStyle}}"
     value="{{_display}}"
-  />
+  >
+    <mui-input-adornment slot="endAdornment" position="end">
+      <mui-icon name="arrow-{{_focus ? 'up' : 'down'}}-2" m-style="font-size: 16px;" />
+    </mui-input-adornment>
+  </mui-input>
 </picker>
