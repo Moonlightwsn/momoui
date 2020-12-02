@@ -471,6 +471,36 @@
   } 
   /**  mui-button end */
 
+  /**  mui-chip */
+  &.mui-chip {
+    color: rgba(0, 0, 0, 0.87);
+    border: none;
+    cursor: default;
+    height: 32px;
+    display: inline-flex;
+    outline: 0;
+    padding: 0;
+    font-size: 0.8125rem;
+    box-sizing: border-box;
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    white-space: nowrap;
+    border-radius: 16px;
+    vertical-align: middle;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #e0e0e0;
+    .mui-chip-label {
+      overflow: hidden;
+      white-space: nowrap;
+      padding-left: 12px;
+      padding-right: 12px;
+      text-overflow: ellipsis;
+    }
+  }
+  /**  mui-chip end */
+
   /** mui-button-group */
   &.mui-button-group {
     display: inline-flex;
@@ -822,6 +852,16 @@
       }
       .mui-input {
         opacity: 0.38;
+      }
+    }
+    &.mui-select-input {
+      .select-arrow {
+        margin: 0 10px;
+      }
+      &.mui-variant-filled, &.mui-variant-outlined {
+        .select-arrow {
+          margin: 0 15px;
+        }
       }
     }
   }

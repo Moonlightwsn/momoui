@@ -50,7 +50,7 @@ Component({
     },
     fullWidth: {
       type: Boolean,
-      value: false,
+      value: true,
     },
     fixed: {
       type: Boolean,

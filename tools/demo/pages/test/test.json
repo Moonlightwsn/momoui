@@ -18,7 +18,7 @@
     "mui-button-base": "../../components/button-base/button-base",
     "mui-button-group": "../../components/button-group/button-group",
     "mui-button": "../../components/button/button",
-    "m2-button": "../../components/button/button",
+    "mui-chip": "../../components/chip/chip",
     "mui-form-control": "../../components/form-control/form-control",
     "mui-form-helper-text": "../../components/form-helper-text/form-helper-text",
     "mui-checkbox-group": "../../components/checkbox-group/checkbox-group",

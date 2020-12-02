@@ -1,7 +1,7 @@
 <mui-button-base
   app-parameter="{{appParameter}}"
   component="button"
-  center-ripple="{{shape === 'circle'}}"
+  center-ripple="{{(shape === 'circle' && variant === 'text')}}"
   disabled="{{disabled || loading}}"
   disableRipple="{{disableRipple}}"
   hover-class="{{(disabled || loading) ? '' : 'mui-button-hover'}}"

@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mui-button-base": "../button-base/button-base",
+    "mui-avatar": "../avatar/avatar",
+    "mui-icon": "../icon/icon"
+  }
+}

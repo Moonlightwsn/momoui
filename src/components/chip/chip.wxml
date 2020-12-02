@@ -1,0 +1,15 @@
+<mui-button-base
+  m-class="mui-chip {{mClass}}"
+  m-style="{{mStyle}}"
+>
+  <mui-avatar wx:if="{{avatar}}" />
+  <slot wx:else name="avatar"></slot>
+  <mui-icon wx:if="{{icon}}" />
+  <slot wx:else name="icon" />
+  <view class="mui-chip-label">
+    <text wx:if="{{label}}">{{label}}</text>
+    <slot wx:else name="label" />
+  </view>
+  <mui-icon wx:if="{{onDelete}}" name="{{deleteIcon || 'delete'}}" />
+  <slot wx:else name="deleteIcon" />
+</mui-button-base>

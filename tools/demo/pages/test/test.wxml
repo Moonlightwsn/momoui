@@ -1,14 +1,29 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <mui-chip
+    label="Basic"
+  />
+  <mui-button shape="extended" variant="contained">Basic</mui-button>
+  <!--
   <mui-select
     mode="region"
     header-text="TEST"
+    color="secondary"
   />
   <mui-select
     range="{{range}}"
     range-key="key"
     value="{{value}}"
     bindchange="change"
+    variant="filled"
   />
+  <mui-select
+    range="{{range}}"
+    range-key="key"
+    value="{{value}}"
+    bindchange="change"
+    variant="outlined"
+  />
+  -->
   <!--
   <mui-form-control
     color="{{color}}"
@@ -143,6 +158,13 @@
   -->
   <!--
   <form bindsubmit="submit" bindreset="reset">
+    <mui-select
+      name="mui-select"
+      m-class="input"
+      mode="region"
+      header-text="TEST"
+      color="secondary"
+    />
     <mui-input name="mui-input" m-class="input">
       <mui-input-adornment slot="startAdornment" text="Kg" position="start" />
       <mui-input-adornment slot="endAdornment" text="Kg" position="end" />

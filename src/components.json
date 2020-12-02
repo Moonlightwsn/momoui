@@ -7,6 +7,7 @@
     "ripple-container": "./components/ripple-container/ripple-container",
     "button-base": "./components/button-base/button-base",
     "button": "./components/button/button",
+    "chip": "./components/chip/chip",
     "button-group": "./components/button-group/button-group",
     "form-control": "./components/form-control/form-control",
     "form-helper-text": "./components/form-helper-text/form-helper-text",

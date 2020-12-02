@@ -9,20 +9,33 @@
   range="{{range}}"
   range-key="{{rangeKey}}"
   start="{{start}}"
+  style="{{fullWidth ? '' : 'display: inline-flex;'}}"
   bindchange="_change"
   bindcancel="_cancel"
   bindtap="_inputFocus"
 >
   <mui-input
-    input-disabled
+    color="{{color}}"
     disabled="{{disabled}}"
+    disable-default-padding="{{disableDefaultPadding}}"
+    disable-underline="{{disableUnderline}}"
+    error="{{error}}"
+    full-width="{{fullWidth}}"
     class="_mui-select-input"
+    input-disabled
     m-class="mui-select-input {{mClass}}"
     m-style="{{mStyle}}"
+    margin="{{margin}}"
+    name="{{name}}"
+    placeholder="{{placeholder}}"
+    placeholder-style="{{placeholderStyle}}"
+    placeholder-class="{{placeholderClass}}"
+    required="{{required}}"
     value="{{_display}}"
+    variant="{{variant}}"
   >
-    <mui-input-adornment slot="endAdornment" position="end">
-      <mui-icon name="arrow-{{_focus ? 'up' : 'down'}}-2" m-style="font-size: 16px;" />
+    <mui-input-adornment m-class="select-arrow" slot="endAdornment" position="end">
+      <mui-icon name="arrow-{{_focus ? 'up' : 'down'}}-2" m-style="font-size: 12px;" />
     </mui-input-adornment>
   </mui-input>
 </picker>

@@ -1,8 +1,12 @@
 import muiBase from '../../behaviors/muiBase.ts'
 
 Component({
-  behaviors: [muiBase],
+  behaviors: [muiBase, 'wx://form-field'],
   properties: {
+    color: {
+      type: String,
+      value: 'primary',
+    },
     customItem: {
       type: String,
       value: null,
@@ -11,9 +15,25 @@ Component({
       type: Boolean,
       value: false,
     },
+    disableDefaultPadding: {
+      type: Boolean,
+      value: false,
+    },
+    disableUnderline: {
+      type: Boolean,
+      value: false,
+    },
+    error: {
+      type: Boolean,
+      value: false,
+    },
     end: {
       type: String,
       value: null,
+    },
+    fullWidth: {
+      type: Boolean,
+      value: true,
     },
     fields: {
       type: String,
@@ -27,6 +47,26 @@ Component({
       type: String,
       value: 'selector',
     },
+    margin: {
+      type: String,
+      value: 'none',
+    },
+    name: {
+      type: String,
+      value: '',
+    },
+    placeholder: {
+      type: String,
+      value: '',
+    },
+    placeholderStyle: {
+      type: String,
+      value: '',
+    },
+    placeholderClass: {
+      type: String,
+      value: '',
+    },
     range: {
       type: Array,
       value: null,
@@ -35,12 +75,20 @@ Component({
       type: String,
       value: null,
     },
+    required: {
+      type: Boolean,
+      value: false,
+    },
     start: {
       type: String,
       value: null,
     },
     // @ts-ignore
     value: null,
+    variant: {
+      type: String,
+      value: 'standard',
+    },
   },
   data: {
     _display: null,
