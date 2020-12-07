@@ -1,15 +1,17 @@
 <mui-button-base
-  m-class="mui-chip {{mClass}}"
+  m-class="mui-chip disabled-{{disabled}} {{mClass}}"
   m-style="{{mStyle}}"
+  disableRipple="{{disabled || !(clickable || onClick)}}"
+  bindtap="_click"
 >
-  <mui-avatar wx:if="{{avatar}}" />
+  <mui-avatar wx:if="{{_avatar}}" m-class="mui-chip-avatar {{_avatar && _avatar.icon ? 'icon' : ''}}" icon="{{_avatar.icon}}" src="{{_avatar.src}}">{{_avatar.text}}</mui-avatar>
   <slot wx:else name="avatar"></slot>
-  <mui-icon wx:if="{{icon}}" />
+  <mui-icon m-class="mui-chip-icon" wx:if="{{icon}}" name="{{icon}}" />
   <slot wx:else name="icon" />
   <view class="mui-chip-label">
     <text wx:if="{{label}}">{{label}}</text>
     <slot wx:else name="label" />
   </view>
-  <mui-icon wx:if="{{onDelete}}" name="{{deleteIcon || 'delete'}}" />
+  <mui-icon wx:if="{{_hasDelete}}" catchtap="_delete" m-class="mui-chip-delete" name="{{deleteIcon || 'close-circle'}}" />
   <slot wx:else name="deleteIcon" />
 </mui-button-base>

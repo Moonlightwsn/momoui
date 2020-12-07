@@ -1,6 +1,6 @@
 <view
   class="mui-ripple-container"
-  style="width:{{width}}px;height:{{height}}px;top:0;left:0"
+  style="width:{{width}}px;height:{{height}}px;top:0;left:0;border-radius: {{borderRadius}}"
 >
   <mui-ripple
     wx:key="key"

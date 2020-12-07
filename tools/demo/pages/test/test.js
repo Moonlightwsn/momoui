@@ -23,6 +23,9 @@ Page({
       icon: 'pictures',
       src: 'https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp'
     },
+    avatar2: {
+      icon: 'user',
+    },
     listChecked: {
       0: false,
       1: false,
@@ -40,6 +43,8 @@ Page({
         action: this.secondaryAction.bind(this),
         longpress: this.secondaryLongpress.bind(this),
       },
+      chipClick: this.chipClick.bind(this),
+      chipDelete: this.chipDelete.bind(this),
     })
   },
   secondaryAction(e) {
@@ -127,5 +132,11 @@ Page({
   },
   test() {
     console.log(this.data)
+  },
+  chipClick() {
+    console.log('click chip')
+  },
+  chipDelete() {
+    console.log('clip delete')
   }
 })

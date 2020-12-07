@@ -2,7 +2,32 @@
   <mui-chip
     label="Basic"
   />
-  <mui-button shape="extended" variant="contained">Basic</mui-button>
+  <mui-chip
+    label="Disabled"
+    disabled
+  />
+  <mui-chip
+    label="Clickable"
+    avatar="M"
+    onClick="{{chipClick}}"
+  />
+  <mui-chip
+    label="Deletable"
+    avatar="{{avatar}}"
+    onDelete="{{chipDelete}}"
+  />
+  <mui-chip
+    label="Clickable deletable"
+    icon="user"
+    onClick="{{chipClick}}"
+    onDelete="{{chipDelete}}"
+  />
+  <mui-chip
+    label="Custom delete icon"
+    onClick="{{chipClick}}"
+    onDelete="{{chipDelete}}"
+    deleteIcon="check"
+  />
   <!--
   <mui-select
     mode="region"

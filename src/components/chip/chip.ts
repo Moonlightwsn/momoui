@@ -4,7 +4,8 @@ Component({
   behaviors: [muiBase],
   properties: {
     avatar: {
-      type: String,
+      type: Object,
+      optionalTypes: [String],
       value: null,
     },
     clickable: {
@@ -31,6 +32,11 @@ Component({
       type: String,
       value: null,
     },
+    onClick: {
+      // @ts-ignore
+      type: Function,
+      value: null,
+    },
     onDelete: {
       // @ts-ignore
       type: Function,
@@ -44,6 +50,46 @@ Component({
       type: String,
       value: 'default',
     },
+  },
+  data: {
+    _avatar: null,
+    _hasDelete: false,
+  },
+  methods: {
+    _click() {
+      const {onClick} = this.data
+      if (onClick && typeof onClick === 'function') {
+        onClick()
+      }
+    },
+    _delete() {
+      const {onDelete} = this.data
+      if (onDelete && typeof onDelete === 'function') {
+        onDelete()
+      }
+    }
+  },
+  observers: {
+    avatar(avatar) {
+      const _avatar: {
+        text?:string
+        icon?:string
+        src?:string
+      } = {}
+      if (typeof avatar === 'string') {
+        _avatar.text = avatar
+        this.setData({_avatar})
+      } else if (typeof avatar === 'object' && avatar) {
+        _avatar.icon = avatar.icon
+        _avatar.src = avatar.src
+        this.setData({_avatar})
+      }
+    },
+    onDelete(onDelete) {
+      if (onDelete) {
+        this.setData({_hasDelete: true})
+      }
+    }
   },
   options: {
     virtualHost: true,

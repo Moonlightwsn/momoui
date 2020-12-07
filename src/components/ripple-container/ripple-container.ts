@@ -5,6 +5,7 @@ interface RippleParams {
   height: number,
   left: number,
   top: number,
+  borderRadius: number,
   scrollLeft: number,
   scrollTop: number,
   backgroundColor: string,
@@ -28,6 +29,7 @@ Component({
         height,
         left,
         top,
+        borderRadius,
         scrollLeft,
         scrollTop,
         backgroundColor,
@@ -56,7 +58,8 @@ Component({
         width,
         height,
         radius,
-        backgroundColor
+        backgroundColor,
+        borderRadius,
       })
     },
     /* 暂时注销
