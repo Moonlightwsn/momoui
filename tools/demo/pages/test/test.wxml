@@ -28,6 +28,48 @@
     onDelete="{{chipDelete}}"
     deleteIcon="check"
   />
+  <mui-chip
+    avatar="M"
+    color="primary"
+    clickable
+    deleteIcon="check"
+    label="Primary clickable"
+    onDelete="{{chipDelete}}"
+  />
+  <mui-chip
+    color="primary"
+    clickable
+    deleteIcon="check"
+    label="Primary clickable"
+    icon="user"
+    onDelete="{{chipDelete}}"
+  />
+  <mui-chip
+    color="primary"
+    label="Deletable primary"
+    onDelete="{{chipDelete}}"
+  />
+  <mui-chip
+    avatar="M"
+    color="secondary"
+    clickable
+    deleteIcon="check"
+    label="Secondary clickable"
+    onDelete="{{chipDelete}}"
+  />
+  <mui-chip
+    color="secondary"
+    clickable
+    deleteIcon="check"
+    label="Secondary clickable"
+    icon="user"
+    onDelete="{{chipDelete}}"
+  />
+  <mui-chip
+    color="secondary"
+    label="Deletable secondary"
+    onDelete="{{chipDelete}}"
+  />
   <!--
   <mui-select
     mode="region"

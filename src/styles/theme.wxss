@@ -1,6 +1,13 @@
 @primary_color: #1976d2;
+@primary_color_2: #115293;
 @secondary_color: #dc004e;
+@secondary_color_2: #9a0036;
 @error_color: #f44336;
+
+@primary_dark_color: #90caf9;
+@primary_dark_color_2: #648dae;
+@secondary_dark_color: #f48fb1;
+@secondary_dark_color_2: #aa647b;
 
 /** mui-icon */
 .mui-icon {
@@ -443,10 +450,10 @@
         box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
         background-color: #d5d5d5;
         &.mui-color-primary {
-          background-color: #115293;
+          background-color: @primary_color_2;
         }
         &.mui-color-secondary {
-          background-color: #9a0036;
+          background-color: @secondary_color_2;
         }
       }
       &.mui-variant-outlined {
@@ -524,6 +531,31 @@
       margin: 0 5px 0 -6px;
       -webkit-tap-highlight-color: transparent;
     }
+    &.mui-color-primary {
+      color: #fff;
+      background-color: @primary_color;
+      .mui-chip-avatar {
+        background-color: @primary_color_2;
+      }
+    }
+    &.mui-color-secondary {
+      color: #fff;
+      background-color: @secondary_color;
+      .mui-chip-avatar {
+        background-color: @secondary_color_2;
+      }
+    }
+    &.mui-color-primary, &.mui-color-secondary {
+      .mui-chip-avatar {
+        color: #fff;
+      }
+      .mui-chip-icon {
+        color: inherit;
+      }
+      .mui-chip-delete {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
     &.disabled-true {
       opacity: 0.5;
       pointer-events: none;
@@ -571,10 +603,10 @@
       border-radius: 0;
       &.mui-variant-contained {
         &.mui-color-primary {
-          border-right-color: #115293;
+          border-right-color: @primary_color_2;
         }
         &.mui-color-secondary {
-          border-right-color: #9a0036;
+          border-right-color: @secondary_color_2;
         }
       }
     }
@@ -1919,14 +1951,14 @@
     }
 
     &.mui-color-primary {
-      color: #90caf9;
-      background-color: #90caf9;
+      color: @primary_dark_color;
+      background-color: @primary_dark_color;
       border-color: rgba(144, 202, 249, 0.5);
     }
 
     &.mui-color-secondary {
-      color: #f48fb1;
-      background-color: #f48fb1;
+      color: @secondary_dark_color;
+      background-color: @secondary_dark_color;
       border-color: rgba(244, 143, 177, 0.5);
     }
 
@@ -1964,19 +1996,19 @@
         &.mui-variant-contained {
           background-color: #d5d5d5;
           &.mui-color-primary {
-            background-color: #648dae;
+            background-color: @primary_dark_color_2;
           }
           &.mui-color-secondary {
-            background-color: #aa647b;
+            background-color: @secondary_dark_color_2;
           }
         }
         &.mui-variant-outlined {
           border-color: #ffffff3b;
           &.mui-color-primary {
-            border-color: #90caf9;
+            border-color: @primary_dark_color;
           }
           &.mui-color-secondary {
-            border-color: #f48fb1;
+            border-color: @secondary_dark_color;
           }
         }
       }
@@ -1998,6 +2030,61 @@
     &.mui-button-group {
       &.mui-variant-contained {
         background-color: transparent;
+      }
+    }
+
+    &.mui-chip {
+      color: #fff;
+      border: none;
+      cursor: default;
+      height: 32px;
+      display: inline-flex;
+      outline: 0;
+      padding: 0;
+      font-size: 0.8125rem;
+      box-sizing: border-box;
+      transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      align-items: center;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      white-space: nowrap;
+      border-radius: 16px;
+      vertical-align: middle;
+      justify-content: center;
+      text-decoration: none;
+      background-color: #616161;
+      .mui-chip-avatar {
+        color: #e0e0e0;
+      }
+      .mui-chip-icon {
+        color: #e0e0e0;
+      }
+      .mui-chip-delete {
+        color: rgba(255, 255, 255, 0.26);
+      }
+      &.mui-color-primary {
+        color: rgba(0, 0, 0, 0.87);
+        background-color: @primary_dark_color;
+        .mui-chip-avatar {
+          background-color: @primary_dark_color_2;
+        }
+      }
+      &.mui-color-secondary {
+        color: rgba(0, 0, 0, 0.87);
+        background-color: @secondary_dark_color;
+        .mui-chip-avatar {
+          background-color: @secondary_dark_color_2;
+        }
+      }
+      &.mui-color-primary, &.mui-color-secondary {
+        .mui-chip-avatar {
+          color: rgba(0, 0, 0, 0.87);
+        }
+        .mui-chip-icon {
+          color: inherit;
+        }
+        .mui-chip-delete {
+          color: rgba(0, 0, 0, 0.7);
+        }
       }
     }
 
@@ -2043,12 +2130,12 @@
       &.mui-checked {
         &.mui-color-secondary {
           .switch-track {
-            background-color: #f48fb1;
+            background-color: @secondary_dark_color;
           }
         }
         &.mui-color-primary {
           .switch-track {
-            background-color: #90caf9;
+            background-color: @primary_dark_color;
           }
         }
       }
@@ -2079,7 +2166,7 @@
           border-bottom-color: rgba(255, 255, 255, 0.7);
         }
         &::after {
-          border-bottom-color: #90caf9;
+          border-bottom-color: @primary_dark_color;
         }
       }
       &.mui-color-primary {
@@ -2088,12 +2175,12 @@
         border-color: unset;
         &.disable-underline-false {
           &::after {
-            border-bottom-color: #90caf9;
+            border-bottom-color: @primary_dark_color;
           }
         }
         &.focus-true {
           &.mui-variant-outlined {
-            border-color: #90caf9;
+            border-color: @primary_dark_color;
           }
         }
       }
@@ -2103,12 +2190,12 @@
         border-color: unset;
         &.disable-underline-false {
           &::after {
-            border-bottom-color: #f48fb1;
+            border-bottom-color: @secondary_dark_color;
           }
         }
         &.focus-true {
           &.mui-variant-outlined {
-            border-color: #f48fb1;
+            border-color: @secondary_dark_color;
           }
         }
       }
@@ -2151,14 +2238,14 @@
         background-color: unset;
         border-color: unset;
         &.focus-true {
-          color: #90caf9;
+          color: @primary_dark_color;
         }
       }
       &.mui-color-secondary {
         background-color: unset;
         border-color: unset;
         &.focus-true {
-          color: #f48fb1;
+          color: @secondary_dark_color;
         }
       }
       &.error-true {
