@@ -1,5 +1,5 @@
 <mui-button-base
-  m-class="mui-chip disabled-{{disabled}} mui-color-{{color}} mui-variant-{{variant}} {{mClass}}"
+  m-class="mui-chip disabled-{{disabled}} mui-color-{{color}} mui-variant-{{variant}} mui-size-{{size}} {{mClass}}"
   m-style="{{mStyle}}"
   disableRipple="{{disabled || !(clickable || onClick)}}"
   bindtap="_click"

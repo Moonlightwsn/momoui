@@ -70,6 +70,268 @@
     label="Deletable secondary"
     onDelete="{{chipDelete}}"
   />
+  <mui-chip
+    label="Basic"
+    variant="outlined"
+  />
+  <mui-chip
+    label="Disabled"
+    disabled
+    variant="outlined"
+  />
+  <mui-chip
+    variant="outlined"
+    label="Clickable"
+    avatar="M"
+    onClick="{{chipClick}}"
+  />
+  <mui-chip
+    variant="outlined"
+    label="Deletable"
+    avatar="{{avatar}}"
+    onDelete="{{chipDelete}}"
+  />
+  <mui-chip
+    variant="outlined"
+    label="Clickable deletable"
+    icon="user"
+    onClick="{{chipClick}}"
+    onDelete="{{chipDelete}}"
+  />
+  <mui-chip
+    variant="outlined"
+    label="Custom delete icon"
+    onClick="{{chipClick}}"
+    onDelete="{{chipDelete}}"
+    deleteIcon="check"
+  />
+  <mui-chip
+    variant="outlined"
+    avatar="M"
+    color="primary"
+    clickable
+    deleteIcon="check"
+    label="Primary clickable"
+    onDelete="{{chipDelete}}"
+  />
+  <mui-chip
+    variant="outlined"
+    color="primary"
+    clickable
+    deleteIcon="check"
+    label="Primary clickable"
+    icon="user"
+    onDelete="{{chipDelete}}"
+  />
+  <mui-chip
+    variant="outlined"
+    color="primary"
+    label="Deletable primary"
+    onDelete="{{chipDelete}}"
+  />
+  <mui-chip
+    variant="outlined"
+    avatar="M"
+    color="secondary"
+    clickable
+    deleteIcon="check"
+    label="Secondary clickable"
+    onDelete="{{chipDelete}}"
+  />
+  <mui-chip
+    variant="outlined"
+    color="secondary"
+    clickable
+    deleteIcon="check"
+    label="Secondary clickable"
+    icon="user"
+    onDelete="{{chipDelete}}"
+  />
+  <mui-chip
+    variant="outlined"
+    color="secondary"
+    label="Deletable secondary"
+    onDelete="{{chipDelete}}"
+  />
+
+  <mui-chip
+    label="Basic"
+    size="small"
+  />
+  <mui-chip
+    label="Disabled"
+    disabled
+    size="small"
+  />
+  <mui-chip
+    label="Clickable"
+    avatar="M"
+    onClick="{{chipClick}}"
+    size="small"
+  />
+  <mui-chip
+    label="Deletable"
+    avatar="{{avatar}}"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
+  <mui-chip
+    label="Clickable deletable"
+    icon="user"
+    onClick="{{chipClick}}"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
+  <mui-chip
+    label="Custom delete icon"
+    onClick="{{chipClick}}"
+    onDelete="{{chipDelete}}"
+    deleteIcon="check"
+    size="small"
+  />
+  <mui-chip
+    avatar="M"
+    color="primary"
+    clickable
+    deleteIcon="check"
+    label="Primary clickable"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
+  <mui-chip
+    color="primary"
+    clickable
+    deleteIcon="check"
+    label="Primary clickable"
+    icon="user"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
+  <mui-chip
+    color="primary"
+    label="Deletable primary"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
+  <mui-chip
+    avatar="M"
+    color="secondary"
+    clickable
+    deleteIcon="check"
+    label="Secondary clickable"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
+  <mui-chip
+    color="secondary"
+    clickable
+    deleteIcon="check"
+    label="Secondary clickable"
+    icon="user"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
+  <mui-chip
+    color="secondary"
+    label="Deletable secondary"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
+  <mui-chip
+    label="Basic"
+    variant="outlined"
+    size="small"
+  />
+  <mui-chip
+    label="Disabled"
+    disabled
+    variant="outlined"
+    size="small"
+  />
+  <mui-chip
+    variant="outlined"
+    label="Clickable"
+    avatar="M"
+    onClick="{{chipClick}}"
+    size="small"
+  />
+  <mui-chip
+    variant="outlined"
+    label="Deletable"
+    avatar="{{avatar}}"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
+  <mui-chip
+    variant="outlined"
+    label="Clickable deletable"
+    icon="user"
+    onClick="{{chipClick}}"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
+  <mui-chip
+    variant="outlined"
+    label="Custom delete icon"
+    onClick="{{chipClick}}"
+    onDelete="{{chipDelete}}"
+    deleteIcon="check"
+    size="small"
+  />
+  <mui-chip
+    variant="outlined"
+    avatar="M"
+    color="primary"
+    clickable
+    deleteIcon="check"
+    label="Primary clickable"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
+  <mui-chip
+    variant="outlined"
+    color="primary"
+    clickable
+    deleteIcon="check"
+    label="Primary clickable"
+    icon="user"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
+  <mui-chip
+    variant="outlined"
+    color="primary"
+    label="Deletable primary"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
+  <mui-chip
+    variant="outlined"
+    avatar="M"
+    color="secondary"
+    clickable
+    deleteIcon="check"
+    label="Secondary clickable"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
+  <mui-chip
+    variant="outlined"
+    color="secondary"
+    clickable
+    deleteIcon="check"
+    label="Secondary clickable"
+    icon="user"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
+  <mui-chip
+    variant="outlined"
+    color="secondary"
+    label="Deletable secondary"
+    onDelete="{{chipDelete}}"
+    size="small"
+  />
   <!--
   <mui-select
     mode="region"

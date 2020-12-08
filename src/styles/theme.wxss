@@ -556,6 +556,55 @@
         color: rgba(255, 255, 255, 0.7);
       }
     }
+    &.mui-variant-outlined {
+      border: 1px solid rgba(0, 0, 0, 0.23);
+      background-color: transparent;
+      &.mui-color-primary {
+        color: @primary_color;
+        border: 1px solid @primary_color;
+        .mui-chip-delete {
+          color: #1976d2b3;
+        }
+      }
+      &.mui-color-secondary {
+        color: @secondary_color;
+        border: 1px solid @secondary_color;
+        .mui-chip-delete {
+          color: #dc004eb3;
+        }
+      }
+    }
+    &.mui-size-small {
+      height: 24px;
+      .mui-chip-avatar {
+        width: 18px;
+        height: 18px;
+        font-size: 0.625rem;
+        margin-left: 4px;
+        margin-right: -4px;
+        &.icon {
+          font-size: 13px;
+        }
+      }
+      .mui-chip-icon {
+        width: 18px;
+        height: 18px;
+        font-size: 18px;
+        margin-left: 4px;
+        margin-right: -4px;
+      }
+      .mui-chip-label {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      .mui-chip-delete {
+        width: 16px;
+        height: 16px;
+        font-size: 16px;
+        margin-left: -4px;
+        margin-right: 4px;
+      }
+    }
     &.disabled-true {
       opacity: 0.5;
       pointer-events: none;
@@ -2035,22 +2084,6 @@
 
     &.mui-chip {
       color: #fff;
-      border: none;
-      cursor: default;
-      height: 32px;
-      display: inline-flex;
-      outline: 0;
-      padding: 0;
-      font-size: 0.8125rem;
-      box-sizing: border-box;
-      transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-      align-items: center;
-      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-      white-space: nowrap;
-      border-radius: 16px;
-      vertical-align: middle;
-      justify-content: center;
-      text-decoration: none;
       background-color: #616161;
       .mui-chip-avatar {
         color: #e0e0e0;
@@ -2084,6 +2117,24 @@
         }
         .mui-chip-delete {
           color: rgba(0, 0, 0, 0.7);
+        }
+      }
+      &.mui-variant-outlined {
+        border: 1px solid rgba(255, 255, 255, 0.23);;
+        background-color: transparent;
+        &.mui-color-primary {
+          color: @primary_dark_color;
+          border: 1px solid @primary_dark_color;
+          .mui-chip-delete {
+            color: #90caf9b3;
+          }
+        }
+        &.mui-color-secondary {
+          color: @secondary_dark_color;
+          border: 1px solid @secondary_dark_color;
+          .mui-chip-delete {
+            color: #f48fb1b3;
+          }
         }
       }
     }
