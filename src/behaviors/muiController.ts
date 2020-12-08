@@ -1,5 +1,3 @@
-import {openTypeMap} from '../common/utils.ts'
-
 const styleProps = [
   'color',
   'variant',
@@ -10,6 +8,7 @@ export default Behavior({
   data: {
     muiClasses: '',
   },
+  /*
   lifetimes: {
     attached() {
       const {
@@ -24,11 +23,8 @@ export default Behavior({
       })
     }
   },
+  */
   methods: {
-    _openTypeEvent(e) {
-      const {openType} = this.properties
-      this.triggerEvent(openTypeMap[openType], e)
-    },
     _defindMuiBehaviors(params = {}) {
       /** 整合所有样式 */
       const newData: { muiClasses?: string } = {}

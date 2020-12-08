@@ -5,6 +5,7 @@
     "./behaviors/checkGroupController",
     "./behaviors/checkController",
     "./behaviors/formItem",
-    "./behaviors/rippleBase"
+    "./behaviors/rippleBase",
+    "./behaviors/openType"
   ]
 }

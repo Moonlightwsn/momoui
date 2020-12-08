@@ -1,8 +1,9 @@
 import muiBase from '../../behaviors/muiBase.ts'
 import rippleBase from '../../behaviors/rippleBase.ts'
+import openType from '../../behaviors/openType.ts'
 
 Component({
-  behaviors: [muiBase, rippleBase, 'wx://form-field-button'],
+  behaviors: [muiBase, rippleBase, openType, 'wx://form-field-button'],
   properties: {
     appParameter: {
       type: String,

@@ -47,6 +47,9 @@ Page({
       chipDelete: this.chipDelete.bind(this),
     })
   },
+  getPhoneNumber(e) {
+    console.log(e)
+  },
   secondaryAction(e) {
     console.log('secondaryAction', this, e)
   },
