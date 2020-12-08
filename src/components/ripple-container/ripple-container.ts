@@ -1,5 +1,3 @@
-// import {debounce} from '../../common/utils.ts'
-
 interface RippleParams {
   width:number,
   height: number,
@@ -8,10 +6,10 @@ interface RippleParams {
   borderRadius: number,
   scrollLeft: number,
   scrollTop: number,
-  backgroundColor: string,
   x: number,
   y: number,
   center: boolean,
+  backgroundColor?: string,
 }
 
 Component({
@@ -20,7 +18,7 @@ Component({
     width: 0,
     height: 0,
     radius: 0,
-    backgroundColor: '',
+    backgroundColor: null,
   },
   methods: {
     _RippleAction(params: RippleParams) {
@@ -53,14 +51,17 @@ Component({
         x: rippleX,
         y: rippleY,
       })
-      this.setData({
+      const newData: any = {
         rippleArray: this.data.rippleArray,
         width,
         height,
         radius,
-        backgroundColor,
         borderRadius,
-      })
+      }
+      if (backgroundColor) {
+        newData.backgroundColor = backgroundColor
+      }
+      this.setData(newData)
     },
     /* 暂时注销
     _updateRippleArray: debounce(function () {

@@ -17,4 +17,56 @@
   position: absolute;
   opacity: 0;
   border-radius: 100%;
+  background-color: rgb(0, 0, 0);
+}
+
+.mui-variant-text,.mui-variant-outlined {
+  &.mui-color-primary {
+    .mui-ripple {
+      background-color: #90caf9;
+    }
+  }
+  
+  &.mui-color-secondary {
+    .mui-ripple {
+      background-color: #f48fb1;
+    }
+  }
+}
+
+.mui-variant-contained, .mui-chip.mui-variant-default {
+  &.mui-color-primary,&.mui-color-secondary {
+    .mui-ripple {
+      background-color: rgb(255, 255, 255);
+    } 
+  }
+}
+
+
+[data-momoui-theme=dark] {
+  .mui-ripple {
+    background-color: rgb(255, 255, 255);
+  }
+  .mui-variant-text,.mui-variant-outlined {
+    &.mui-color-primary {
+      .mui-ripple {
+        background-color: #90caf9;
+      }
+    }
+    &.mui-color-secondary {
+      .mui-ripple {
+        background-color: #f48fb1;
+      }
+    }
+  }
+  .mui-variant-contained, .mui-chip.mui-variant-default {
+    .mui-ripple {
+      background-color: rgb(0, 0, 0);
+    }
+  }
+  .mui-chip.mui-variant-default.mui-color-default {
+    .mui-ripple {
+      background-color: rgb(255, 255, 255);
+    }
+  }
 }

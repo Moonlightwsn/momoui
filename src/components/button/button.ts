@@ -1,11 +1,6 @@
 import muiBase from '../../behaviors/muiBase.ts'
 import muiController from '../../behaviors/muiController.ts'
 
-const innerRippleColorMap = {
-  primary: '#90caf9',
-  secondary: '#f48fb1'
-}
-
 Component({
   behaviors: [muiBase, muiController, 'wx://form-field-button'],
   properties: {
@@ -90,15 +85,6 @@ Component({
       value: 'text',
     },
   },
-  data: {
-    _rippleColor: '',
-  },
-  lifetimes: {
-    attached() {
-      const {variant, color} = this.data
-      this._setRippleColor(variant, color)
-    }
-  },
   relations: {
     '../button-group/button-group': {
       type: 'parent',
@@ -114,20 +100,7 @@ Component({
       }
     }
   },
-  methods: {
-    _setRippleColor(variant = 'text', color = 'default') {
-      if (variant !== 'contained') {
-        const _rippleColor = innerRippleColorMap[color] || ''
-        this.setData({
-          _rippleColor,
-        })
-      }
-    },
-  },
   observers: {
-    'variant, color': function (variant = 'text', color = 'default') {
-      this._setRippleColor(variant, color)
-    },
   },
   options: {
     // virtualHost: true,

@@ -1,5 +1,3 @@
-import {highBrightnessColor} from '../common/utils.ts'
-
 export default Behavior({
   properties: {
     disableRipple: {
@@ -30,7 +28,7 @@ export default Behavior({
           query.select('.mui-ripple-base').fields({
             size: true,
             rect: true,
-            computedStyle: ['backgroundColor', 'borderRadius']
+            computedStyle: ['borderRadius']
           })
           query.selectViewport().scrollOffset()
           query.exec((res) => {
@@ -40,16 +38,11 @@ export default Behavior({
               height = 0,
               left = 0,
               top = 0,
-              backgroundColor = '',
               borderRadius = 0,
             } = view
             if (width > 0 && height > 0) {
               const {scrollLeft = 0, scrollTop = 0} = viewPort
               const {rippleColor} = this.data
-              let realRippleColor = rippleColor
-              if (!realRippleColor) {
-                realRippleColor = (highBrightnessColor(backgroundColor) ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)')
-              }
               this._muiRippleContainer._RippleAction({
                 width,
                 height,
@@ -58,7 +51,7 @@ export default Behavior({
                 borderRadius,
                 scrollLeft,
                 scrollTop,
-                backgroundColor: realRippleColor,
+                backgroundColor: rippleColor,
                 x,
                 y,
                 center: this.data.centerRipple,

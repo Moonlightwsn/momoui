@@ -1,4 +1,5 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <mui-button-base ripple-color="green">BUTTON BASE</mui-button-base>
   <mui-chip
     label="Basic"
   />
@@ -386,7 +387,7 @@
     <mui-form-helper-text error variant="outlined">Error</mui-form-helper-text>
   </mui-form-control>
   -->
-  <!--
+
   <mui-list subheader="Sub Header" dense>
     <mui-list-item
       button
@@ -466,7 +467,6 @@
   </mui-list>
   <mui-button color="primary" disableRipple>BUTTON</mui-button>
   <mui-button-base disableRipple>BUTTON BASE</mui-button-base>
-  -->
   <!--
   <mui-button-base disabled component="button" centerRipple m-style="width: 140px;height: 42px;">Button Base</mui-button-base>
   <mui-button disabled color="primary" variant="outlined">TEST</mui-button>

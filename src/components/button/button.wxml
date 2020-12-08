@@ -9,7 +9,6 @@
   m-style="{{inline ? '' : 'display: flex;'}}{{mStyle}}"
   form-type="{{formType}}"
   open-type="{{openType}}"
-  ripple-color="{{_rippleColor}}"
   session-from="{{sessionFrom}}"
   send-message-title="{{sendMessageTitle}}"
   send-message-path="{{sendMessagePath}}"
@@ -22,6 +21,6 @@
     wx:if="{{icon}}"
     name="{{icon}}"
     m-class="icon-in-button icon-position-{{iconPosition}}"
-    m-style="color:{{iconColor}};font-size:{{iconSize ? iconSize : 'inherit'}}px;"
+    m-style="color:{{iconColor}};font-size:{{iconSize ? iconSize + 'px' : 'inherit'}};"
   />
 </mui-button-base>
