@@ -1,38 +1,38 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
-  <mui-tooltip m-class="tooltipWrapper" title="Add">
+  <mui-tooltip m-class="tooltipWrapper" title="Add" arrow>
     <mui-button variant="outlined">BOTTOM</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="bottom-start" title="Add">
+  <mui-tooltip m-class="tooltipWrapper" placement="bottom-start" title="Add" arrow>
     <mui-button variant="outlined">BOTTOM START</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="bottom-end" title="Add">
+  <mui-tooltip m-class="tooltipWrapper" placement="bottom-end" title="Add" arrow>
     <mui-button variant="outlined">BOTTOM END</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="left" title="Add">
+  <mui-tooltip m-class="tooltipWrapper" placement="left" title="Add" arrow>
     <mui-button variant="outlined">LEFT</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="left-start" title="Add">
+  <mui-tooltip m-class="tooltipWrapper" placement="left-start" title="Add" arrow>
     <mui-button variant="outlined">LEFT START</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="left-end" title="Add">
+  <mui-tooltip m-class="tooltipWrapper" placement="left-end" title="Add" arrow>
     <mui-button variant="outlined">LEFT END</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="right" title="Add">
+  <mui-tooltip m-class="tooltipWrapper" placement="right" title="Add" arrow>
     <mui-button variant="outlined">RIGHT</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="right-start" title="Add">
+  <mui-tooltip m-class="tooltipWrapper" placement="right-start" title="Add" arrow>
     <mui-button variant="outlined">RIGHT START</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="right-end" title="Add">
+  <mui-tooltip m-class="tooltipWrapper" placement="right-end" title="Add" arrow>
     <mui-button variant="outlined">RIGHT END</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="top" title="Add">
+  <mui-tooltip m-class="tooltipWrapper" placement="top" title="Add" arrow>
     <mui-button variant="outlined">TOP</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="top-start" title="Add">
+  <mui-tooltip m-class="tooltipWrapper" placement="top-start" title="Add" arrow>
     <mui-button variant="outlined">TOP START</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="top-end" title="Add">
+  <mui-tooltip m-class="tooltipWrapper" placement="top-end" title="Add" arrow>
     <mui-button variant="outlined">TOP END</mui-button>
   </mui-tooltip>
   <!--

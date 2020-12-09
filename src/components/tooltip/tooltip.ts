@@ -29,7 +29,9 @@ Component({
     },
   },
   data: {
-    _positionStyle: 'display: none;',
+    _positionStyle: '',
+    _arrowPositionStyle: '',
+    _show: false,
   },
   lifetimes: {
     attached() {
@@ -45,7 +47,7 @@ Component({
         open: !this.data.open,
       }
       if (!newData.open) {
-        newData._positionStyle = 'display: none;'
+        newData._show = false
       }
       this.setData(newData)
     },
@@ -58,35 +60,46 @@ Component({
           const {width: tooltipWidth = 0, height: tooltipHeight = 0} = tooptipView
           const {placement} = this.data
           let _positionStyle = ''
+          let _arrowPositionStyle = ''
           const tooltipMargin = 14
           if (placement === 'bottom') {
             _positionStyle = `top: ${popperHeight + tooltipMargin}px;left: ${(popperWidth - tooltipWidth) / 2}px;`
+            _arrowPositionStyle = `top: -7px;left: ${(tooltipWidth - 10) / 2}px;`
           } else if (placement === 'bottom-start') {
             _positionStyle = `top: ${popperHeight + tooltipMargin}px;left: 0;`
+            _arrowPositionStyle = `top: -7px;left: ${(tooltipWidth - 10) / 2}px;`
           } else if (placement === 'bottom-end') {
             _positionStyle = `top: ${popperHeight + tooltipMargin}px;right: 0;`
+            _arrowPositionStyle = `top: -7px;left: ${(tooltipWidth - 10) / 2}px;`
           } else if (placement === 'top') {
             _positionStyle = `top: -${tooltipHeight + tooltipMargin}px;left: ${(popperWidth - tooltipWidth) / 2}px;`
+            _arrowPositionStyle = `bottom: -7px;left: ${(tooltipWidth - 10) / 2}px;`
           } else if (placement === 'top-start') {
             _positionStyle = `top: -${tooltipHeight + tooltipMargin}px;left: 0;`
+            _arrowPositionStyle = `bottom: -7px;left: ${(tooltipWidth - 10) / 2}px;`
           } else if (placement === 'top-end') {
             _positionStyle = `top: -${tooltipHeight + tooltipMargin}px;right: 0;`
+            _arrowPositionStyle = `bottom: -7px;left: ${(tooltipWidth - 10) / 2}px;`
           } else if (placement === 'left') {
-            console.log(popperHeight, tooltipHeight, (popperHeight - tooltipHeight) / 2)
             _positionStyle = `top: ${(popperHeight - tooltipHeight) / 2}px;left: -${tooltipWidth + tooltipMargin}px;`
+            _arrowPositionStyle = `top: ${(tooltipHeight - 10) / 2}px;right: -7px;`
           } else if (placement === 'left-start') {
             _positionStyle = `top: 0;left: -${tooltipWidth + tooltipMargin}px;`
+            _arrowPositionStyle = `top: ${(tooltipHeight - 10) / 2}px;right: -7px;`
           } else if (placement === 'left-end') {
             _positionStyle = `bottom: 0;left: -${tooltipWidth + tooltipMargin}px;`
+            _arrowPositionStyle = `top: ${(tooltipHeight - 10) / 2}px;right: -7px;`
           } else if (placement === 'right') {
             _positionStyle = `top: ${(popperHeight - tooltipHeight) / 2}px;left: ${popperWidth + tooltipMargin}px;`
+            _arrowPositionStyle = `top: ${(tooltipHeight - 10) / 2}px;left: -7px;`
           } else if (placement === 'right-start') {
             _positionStyle = `top: 0;left: ${popperWidth + tooltipMargin}px;`
+            _arrowPositionStyle = `top: ${(tooltipHeight - 10) / 2}px;left: -7px;`
           } else if (placement === 'right-end') {
             _positionStyle = `bottom: 0;left: ${popperWidth + tooltipMargin}px;`
+            _arrowPositionStyle = `top: ${(tooltipHeight - 10) / 2}px;left: -7px;`
           }
-          _positionStyle = `${_positionStyle}display: inline-block`
-          this.setData({_positionStyle})
+          this.setData({_positionStyle, _arrowPositionStyle, _show: true})
         })
       })
     }
