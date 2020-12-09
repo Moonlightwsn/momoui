@@ -38,6 +38,7 @@
     "avatar": "./components/avatar/avatar",
     "badge": "./components/badge/badge",
     "divider": "./components/divider/divider",
-    "typography": "./components/typography/typography"
+    "typography": "./components/typography/typography",
+    "tooltip": "./components/tooltip/tooltip"
   }
 }

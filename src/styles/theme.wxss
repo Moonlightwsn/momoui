@@ -102,6 +102,28 @@
   }
   /** mui-divider end */
 
+  /** mui-tooltip */
+  &.mui-tooltip-popper {
+    position: relative;
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    .mui-tooltip {
+      position: absolute;
+      color: #fff;
+      padding: 4px 8px;
+      font-size: 0.625rem;
+      max-width: 300px;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-weight: 500;
+      line-height: 1.4em;
+      border-radius: 4px;
+      background-color: rgba(97, 97, 97, 0.9);
+    }
+  }
+  /** mui-tooltip end */
+
   /**  mui-button-base */
   &.mui-button-base {
     color: inherit;

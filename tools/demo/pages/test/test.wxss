@@ -12,3 +12,6 @@
   flex-direction: column;
   vertical-align: top;
 }
+.tooltipWrapper {
+  margin: 24px 48px;
+}

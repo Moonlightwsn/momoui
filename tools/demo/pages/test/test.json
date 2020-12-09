@@ -30,6 +30,7 @@
     "mui-input": "../../components/input/input",
     "mui-input-label": "../../components/input-label/input-label",
     "mui-input-adornment": "../../components/input-adornment/input-adornment",
-    "mui-typography": "../../components/typography/typography"
+    "mui-typography": "../../components/typography/typography",
+    "mui-tooltip": "../../components/tooltip/tooltip"
   }
 }

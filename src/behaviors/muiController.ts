@@ -8,22 +8,22 @@ export default Behavior({
   data: {
     muiClasses: '',
   },
-  /*
   lifetimes: {
     attached() {
-      const {
-        color,
-        variant,
-        size,
-      } = this.properties
-      this._defindMuiBehaviors({
-        color,
-        variant,
-        size,
-      })
+      if (!this._firstOberverForMuiClass) {
+        const {
+          color,
+          variant,
+          size,
+        } = this.properties
+        this._defindMuiBehaviors({
+          color,
+          variant,
+          size,
+        })
+      }
     }
   },
-  */
   methods: {
     _defindMuiBehaviors(params = {}) {
       /** 整合所有样式 */
@@ -43,6 +43,7 @@ export default Behavior({
   },
   observers: {
     'color, variant, size': function (color, variant, size) {
+      this._firstOberverForMuiClass = true
       this._defindMuiBehaviors({
         color,
         variant,

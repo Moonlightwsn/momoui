@@ -1,0 +1,17 @@
+<view
+  class="{{mClass}}"
+  style="{{mStyle}};display: inline-block"
+>
+  <view
+    class="mui mui-tooltip-popper"
+    bind:touchstart="_touchstart"
+  >
+    <slot></slot>
+    <view class="mui-tooltip {{tooltipClass}}" style="{{_positionStyle}}{{tooltipStyle}}">
+      <block wx:if="{{title}}">
+        {{title}}
+      </block>
+      <slot name="title"></slot>
+    </view>
+  </view>
+</view>
