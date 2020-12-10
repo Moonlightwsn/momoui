@@ -1,8 +1,9 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
-  <mui-tooltip m-class="tooltipWrapper" title="Add" arrow>
+  <mui-button bind:tap="test">TEST</mui-button>
+  <mui-tooltip m-class="tooltipWrapper" title="Add" arrow open="{{open}}" onClose="{{onClose}}" onOpen="{{onOpen}}">
     <mui-button variant="outlined">BOTTOM</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="bottom-start" title="Add" arrow>
+  <mui-tooltip m-class="tooltipWrapper" placement="bottom-start" title="Add" arrow onClose="{{onClose}}" onOpen="{{onOpen}}">
     <mui-button variant="outlined">BOTTOM START</mui-button>
   </mui-tooltip>
   <mui-tooltip m-class="tooltipWrapper" placement="bottom-end" title="Add" arrow>
@@ -424,6 +425,7 @@
     <mui-form-helper-text error variant="outlined">Error</mui-form-helper-text>
   </mui-form-control>
   -->
+  <!--
   <mui-list subheader="Sub Header" dense>
     <mui-list-item
       button
@@ -503,6 +505,7 @@
   </mui-list>
   <mui-button color="primary" disableRipple>BUTTON</mui-button>
   <mui-button-base disableRipple>BUTTON BASE</mui-button-base>
+  -->
   <!--
   <mui-button-base disabled component="button" centerRipple m-style="width: 140px;height: 42px;">Button Base</mui-button-base>
   <mui-button disabled color="primary" variant="outlined">TEST</mui-button>

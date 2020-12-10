@@ -45,6 +45,8 @@ Page({
       },
       chipClick: this.chipClick.bind(this),
       chipDelete: this.chipDelete.bind(this),
+      onOpen: this.onOpen.bind(this),
+      onClose: this.onClose.bind(this),
     })
   },
   getPhoneNumber(e) {
@@ -66,6 +68,12 @@ Page({
     this.setData({
       listChecked: newListChecked,
     })
+  },
+  onOpen() {
+    this.setData({open: true})
+  },
+  onClose() {
+    this.setData({open: false})
   },
   setOpen() {
     this.setData({open: !this.data.open})

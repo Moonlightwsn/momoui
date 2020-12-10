@@ -7,9 +7,19 @@ Component({
       type: Boolean,
       value: false,
     },
+    onClose: {
+      // @ts-ignore
+      type: Function,
+      value: null,
+    },
+    onOpen: {
+      // @ts-ignore
+      type: Function,
+      value: null,
+    },
     open: {
       type: Boolean,
-      value: false,
+      value: null,
     },
     placement: {
       type: String,
@@ -36,17 +46,29 @@ Component({
   lifetimes: {
     attached() {
       const {open} = this.data
+      if (typeof open === 'boolean') {
+        this._becontrolled = true
+      }
       if (open) {
         this._computePostion()
       }
     }
   },
   methods: {
-    _touchstart() {
-      const newData: any = {
-        open: !this.data.open,
+    _touchstart(e) {
+      const newOpen = !this.data.open
+      const newData: any = {}
+      if (!this._becontrolled) {
+        newData.open = newOpen
+        if (!newOpen) {
+          newData._show = false
+        }
       }
-      if (!newData.open) {
+      const {onOpen, onClose} = this.data
+      if (newOpen && onOpen && typeof onOpen === 'function') {
+        onOpen(e)
+      } else if (onClose && onClose && typeof onClose === 'function') {
+        onClose(e)
         newData._show = false
       }
       this.setData(newData)
