@@ -166,6 +166,66 @@
   }
   /** mui-tooltip end */
 
+  /** mui-snack-bar */
+  &.mui-snack-bar-root {
+    left: 8px;
+    right: 8px;
+    display: flex;
+    z-index: 1400;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    &.anchor-origin-bottom-left {
+      bottom: 8px;
+      justify-content: flex-start;
+    }
+    &.anchor-origin-bottom-center {
+      bottom: 8px;
+    }
+    &.anchor-origin-bottom-right {
+      bottom: 8px;
+      justify-content: flex-end;
+    }
+    &.anchor-origin-top-left {
+      top: 8px;
+      justify-content: flex-start;
+    }
+    &.anchor-origin-top-center {
+      top: 8px;
+    }
+    &.anchor-origin-top-right {
+      top: 8px;
+      justify-content: flex-end;
+    }
+    &.show-true {
+      .snack-bar-content-root {
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+    }
+    .snack-bar-content-root {
+      color: #fff;
+      display: flex;
+      padding: 6px 16px;
+      flex-grow: 1;
+      flex-wrap: wrap;
+      font-size: 0.875rem;
+      align-items: center;
+      font-weight: 400;
+      line-height: 1.43;
+      border-radius: 4px;
+      letter-spacing: 0.01071em;
+      background-color: rgb(49, 49, 49);
+      opacity: 0;
+      transform: scale(0.75, 0.5625);
+      
+      .snack-bar-content-message {
+        padding: 8px 0;
+      }
+    }
+  }
+  /** mui-snack-bar end */
+
   /**  mui-button-base */
   &.mui-button-base {
     color: inherit;
@@ -1512,8 +1572,6 @@
     display: block;
     transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     background-color: #fff;
-    width: 100%;
-    height: 100%;
     border-radius: 4px;
     &.mui-variant-outlined {
       border: 1px solid rgba(0, 0, 0, 0.12);
@@ -1722,6 +1780,41 @@
 /** mui-grid media */
 @media (min-width: 600px) {
   .mui {
+    &.mui-snack-bar-root {
+      &.anchor-origin-bottom-left {
+        left: 24px;
+        right: auto;
+        bottom: 24px;
+      }
+      &.anchor-origin-bottom-center {
+        left: 50%;
+        right: auto;
+        bottom: 24px;
+        transform: translateX(-50%);
+      }
+      &.anchor-origin-bottom-right {
+        left: auto;
+        right: 24px;
+        bottom: 24px;
+      }
+      &.anchor-origin-top-left {
+        left: 24px;
+        right: auto;
+        top: 24px;
+      }
+      &.anchor-origin-top-center {
+        left: 50%;
+        right: auto;
+        top: 24px;
+        transform: translateX(-50%);
+      }
+      &.anchor-origin-top-right {
+        left: auto;
+        right: 24px;
+        top: 24px;
+      }
+    }
+
     &.mui-grid {
       &.sm-12 {
         flex-grow: 0;

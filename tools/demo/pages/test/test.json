@@ -31,6 +31,8 @@
     "mui-input-label": "../../components/input-label/input-label",
     "mui-input-adornment": "../../components/input-adornment/input-adornment",
     "mui-typography": "../../components/typography/typography",
-    "mui-tooltip": "../../components/tooltip/tooltip"
+    "mui-tooltip": "../../components/tooltip/tooltip",
+    "mui-snack-bar": "../../components/snack-bar/snack-bar",
+    "mui-paper": "../../components/paper/paper"
   }
 }

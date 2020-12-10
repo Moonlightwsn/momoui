@@ -1,4 +1,8 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <mui-snack-bar message="TEST" open="{{open}}" />
+  <mui-paper>Paper</mui-paper>
+  <mui-button bind:tap="setOpen">Open simple snackbar</mui-button>
+  <!--
   <mui-button bind:tap="test">TEST</mui-button>
   <mui-tooltip m-class="tooltipWrapper" title="Add" arrow open="{{open}}" onClose="{{onClose}}" onOpen="{{onOpen}}">
     <mui-button variant="outlined">BOTTOM</mui-button>
@@ -36,6 +40,7 @@
   <mui-tooltip m-class="tooltipWrapper" placement="top-end" title="Add" arrow>
     <mui-button variant="outlined">TOP END</mui-button>
   </mui-tooltip>
+  -->
   <!--
   <mui-chip
     label="Basic"

@@ -17,6 +17,11 @@ Component({
       value: false,
     },
   },
+  methods: {
+    _animationend() {
+      console.log(1)
+    }
+  },
   options: {
     virtualHost: true,
     pureDataPattern: /^_pure/,
