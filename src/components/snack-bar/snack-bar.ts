@@ -43,10 +43,10 @@ Component({
   },
   observers: {
     open(open) {
+      clearTimeout(this.autoCloseTimer)
       if (open) {
         const {autoHideDuration} = this.data
         if (autoHideDuration > 0) {
-          clearTimeout(this.autoCloseTimer)
           this.autoCloseTimer = setTimeout(() => {
             this._close()
           }, autoHideDuration)
@@ -55,6 +55,12 @@ Component({
         setTimeout(() => {
           this.setData({_show: true})
         }, 100)
+      } else {
+        this.setData({_show: false}, () => {
+          setTimeout(() => {
+            this.setData({_open: false})
+          }, 225)
+        })
       }
     },
   },
@@ -62,5 +68,6 @@ Component({
     virtualHost: true,
     pureDataPattern: /^_pure/,
     styleIsolation: 'apply-shared',
+    multipleSlots: true,
   },
 })

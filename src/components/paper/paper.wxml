@@ -1,7 +1,6 @@
 <view
   class="mui mui-paper {{muiClasses}} elevation-{{elevation}} {{square ? 'paper-square' : ''}}"
   style="{{mStyle}}"
-  bind:animationend="_animationend"
 >
   <slot></slot>
 </view>

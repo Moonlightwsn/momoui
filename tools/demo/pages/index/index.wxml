@@ -30,7 +30,7 @@
     </view>
   </view>
   <view style="margin-bottom: 12px;">
-    <mui-button shape="circle" icon="default" />
+    <mui-button shape="circle" icon="default" size="small" iconSize="20" />
     <mui-button shape="circle" color="primary" disabled icon="default" iconSize="20" />
     <mui-button shape="circle" color="secondary" size="large" icon="default" iconSize="20" />
   </view>
