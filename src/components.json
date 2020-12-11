@@ -40,6 +40,7 @@
     "divider": "./components/divider/divider",
     "typography": "./components/typography/typography",
     "tooltip": "./components/tooltip/tooltip",
-    "snack-bar": "./components/snack-bar/snack-bar"
+    "snack-bar": "./components/snack-bar/snack-bar",
+    "snack-bar-content": "./components/snack-bar-content/snack-bar-content"
   }
 }

@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "mui-paper": "../paper/paper"
+    "mui-snack-bar-content": "../snack-bar-content/snack-bar-content"
   }
 }

@@ -13,12 +13,12 @@ Page({
     radioValue: 'r2',
     invisible: false,
     anchorOrigin: {
-      vertical: 'top',
-      horizontal: 'right',
+      vertical: 'bottom',
+      horizontal: 'center',
     },
     overlap: 'rectangle',
     badgeVariant: 'standard',
-    open: false,
+    open: true,
     avatar: {
       icon: 'pictures',
       src: 'https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp'

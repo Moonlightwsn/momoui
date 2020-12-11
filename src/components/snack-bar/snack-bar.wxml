@@ -3,15 +3,9 @@
   class="mui mui-snack-bar-root anchor-origin-{{anchorOrigin.vertical}}-{{anchorOrigin.horizontal}} show-{{_show}} {{mClass}}"
   style="{{mStyle}}"
 >
-  <mui-paper m-class="snack-bar-content-root" m-style="{{_transitionStyle}}" elevation="6">
-    <view class="snack-bar-content-message">
-      <block wx:if="{{message}}">
-        {{message}}
-      </block>
-      <slot wx:else name="message"></slot>
-    </view>
-    <view class="snack-bar-content-action">
-      <slot name="action"></slot>
-    </view>
-  </mui-paper>
+  <mui-snack-bar-content wx:if="{{message}}" transitionDuration="{{transitionDuration}}" message="{{message}}">
+    <slot name="message" slot="message"></slot>
+    <slot name="action" slot="action"></slot>
+  </mui-snack-bar-content>
+  <slot name="content"></slot>
 </view>

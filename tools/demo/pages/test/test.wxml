@@ -1,18 +1,16 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
-  <mui-snack-bar message="TEST" open="{{open}}" anchorOrigin="{{anchorOrigin}}" autoHideDuration="2000" onClose="{{onClose}}">
-    <view slot="action">
-      <mui-button color="secondary" bind:tap="onClose" size="small">
-        UNDO
-      </mui-button>
-      <mui-button bind:tap="onClose" shape="circle" icon="close" m-style="padding: 3px;width: 26px;height: 26px;color:inherit" size="small" iconSize="20" />
-    </view>
+  <mui-snack-bar open="{{open}}" message="abcd" transitionDuration="5000" anchorOrigin="{{anchorOrigin}}" onClose="{{onClose}}">
+    <mui-snack-bar-content slot="content" transitionDuration="5000" m-style="width: 400px;" message="TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST">
+      <view slot="action">
+        <mui-button color="secondary" bind:tap="onClose" size="small">
+          UNDO
+        </mui-button>
+        <mui-button bind:tap="onClose" shape="circle" icon="close" m-style="padding: 3px;width: 26px;height: 26px;color:inherit" size="small" iconSize="20" />
+      </view>
+    </mui-snack-bar-content>
   </mui-snack-bar>
   <view style="margin-top: 40px;" />
   <mui-button bind:tap="onOpen">Open simple snackbar</mui-button>
-  <mui-button shape="circle" icon="close" m-style="padding: 3px;width: 26px;height: 26px" size="small" iconSize="20" />
-  <mui-button color="secondary" size="small">
-    UNDO
-  </mui-button>
   <!--
   <mui-button bind:tap="test">TEST</mui-button>
   <mui-tooltip m-class="tooltipWrapper" title="Add" arrow open="{{open}}" onClose="{{onClose}}" onOpen="{{onOpen}}">

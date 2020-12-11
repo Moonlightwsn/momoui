@@ -27,11 +27,14 @@ Component({
       type: Boolean,
       value: null,
     },
+    transitionDuration: {
+      type: Number,
+      value: 225,
+    },
   },
   data: {
     _open: false,
     _show: false,
-    _transitionStyle: 'transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;',
   },
   methods: {
     _close() {
@@ -43,23 +46,24 @@ Component({
   },
   observers: {
     open(open) {
-      clearTimeout(this.autoCloseTimer)
+      clearTimeout(this.closeTimer)
+      clearTimeout(this.openTimer)
+      const {autoHideDuration, transitionDuration} = this.data
       if (open) {
-        const {autoHideDuration} = this.data
         if (autoHideDuration > 0) {
-          this.autoCloseTimer = setTimeout(() => {
+          this.closeTimer = setTimeout(() => {
             this._close()
           }, autoHideDuration)
         }
         this.setData({_open: true})
-        setTimeout(() => {
+        this.openTimer = setTimeout(() => {
           this.setData({_show: true})
         }, 100)
       } else {
         this.setData({_show: false}, () => {
-          setTimeout(() => {
+          this.closeTimer = setTimeout(() => {
             this.setData({_open: false})
-          }, 225)
+          }, transitionDuration)
         })
       }
     },
