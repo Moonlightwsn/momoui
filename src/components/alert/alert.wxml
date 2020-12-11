@@ -1,0 +1,16 @@
+<mui-paper
+  m-class="mui-alert mui-color-{{color}} mui-variant-{{variant}} {{mClass}}"
+  m-style="{{mStyle}}"
+  elevation="0"
+>
+  <view class="alert-icon" wx:if="{{icon}}">
+    <mui-icon name="{{icon}}" />
+  </view>
+  <view class="alert-message">
+    <view class="alert-title" wx:if="{{title}}">
+      <mui-typography>{{title}}</mui-typography>
+    </view>
+    {{message}}
+    <slot></slot>
+  </view>
+</mui-paper>

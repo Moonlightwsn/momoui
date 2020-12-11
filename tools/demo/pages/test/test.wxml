@@ -1,4 +1,23 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <mui-alert
+    color="error"
+    message="This is an error alert — check it out!"
+  />
+  <mui-alert
+    color="warning"
+    message="This is an warning alert — check it out!"
+    m-style="margin-top: 16px;"
+  />
+  <mui-alert
+    color="info"
+    message="This is an info alert — check it out!"
+    m-style="margin-top: 16px;"
+  />
+  <mui-alert
+    message="This is an success alert — check it out!"
+    m-style="margin-top: 16px;"
+  />
+  <!--
   <mui-snack-bar open="{{open}}" message="abcd" anchorOrigin="{{anchorOrigin}}" transitionDuration="2000" onClose="{{onClose}}">
     <mui-snack-bar-content m-style="width: 400px;" message="TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST">
       <view slot="action">
@@ -11,6 +30,7 @@
   </mui-snack-bar>
   <view style="margin-top: 40px;" />
   <mui-button bind:tap="onOpen">Open simple snackbar</mui-button>
+  -->
   <!--
   <mui-button bind:tap="test">TEST</mui-button>
   <mui-tooltip m-class="tooltipWrapper" title="Add" arrow open="{{open}}" onClose="{{onClose}}" onOpen="{{onOpen}}">

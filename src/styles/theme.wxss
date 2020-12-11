@@ -3,6 +3,9 @@
 @secondary_color: #dc004e;
 @secondary_color_2: #9a0036;
 @error_color: #f44336;
+@info_color: #2196f3;
+@success_color: #4caf50;
+@warning_color: #ff9800;
 
 @primary_dark_color: #90caf9;
 @primary_dark_color_2: #648dae;
@@ -1790,6 +1793,57 @@
     }
   }
   /** mui-typography end */
+
+  /** mui-alert */
+  &.mui-alert {
+    display: flex;
+    padding: 6px 16px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.43;
+    border-radius: 4px;
+    letter-spacing: 0.01071em;
+    background-color: transparent;
+    &.mui-color-error {
+      color: #611a15;
+      background-color: #fdecea;
+      .alert-icon {
+        color: @error_color;
+      }
+    }
+    &.mui-color-warning {
+      color: #663c00;
+      background-color: #fff4e5;
+      .alert-icon {
+        color: @warning_color;
+      }
+    }
+    &.mui-color-info {
+      color: #0d3c61;
+      background-color: #e8f4fd;
+      .alert-icon {
+        color: @info_color;
+      }
+    }
+    &.mui-color-success {
+      color: #1e4620;
+      background-color: #edf7ed;
+      .alert-icon {
+        color: @success_color;
+      }
+    }
+    .alert-icon {
+      display: flex;
+      opacity: 0.9;
+      padding: 7px 0;
+      font-size: 22px;
+      margin-right: 12px;
+    }
+    .alert-message {
+      padding: 8px 0;
+    }
+  }
+  /** mui-alert end */
 }
 
 /** mui-grid media */
