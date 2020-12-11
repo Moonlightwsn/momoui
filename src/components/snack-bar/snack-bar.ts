@@ -36,6 +36,11 @@ Component({
     _open: false,
     _show: false,
   },
+  relations: {
+    '../snack-bar-content/snack-bar-content': {
+      type: 'child',
+    },
+  },
   methods: {
     _close() {
       const {onClose} = this.data
@@ -69,7 +74,7 @@ Component({
     },
   },
   options: {
-    virtualHost: true,
+    // virtualHost: true,
     pureDataPattern: /^_pure/,
     styleIsolation: 'apply-shared',
     multipleSlots: true,

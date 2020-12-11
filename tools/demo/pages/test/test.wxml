@@ -1,6 +1,6 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
-  <mui-snack-bar open="{{open}}" message="abcd" transitionDuration="5000" anchorOrigin="{{anchorOrigin}}" onClose="{{onClose}}">
-    <mui-snack-bar-content slot="content" transitionDuration="5000" m-style="width: 400px;" message="TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST">
+  <mui-snack-bar open="{{open}}" message="abcd" anchorOrigin="{{anchorOrigin}}" transitionDuration="2000" onClose="{{onClose}}">
+    <mui-snack-bar-content m-style="width: 400px;" message="TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST">
       <view slot="action">
         <mui-button color="secondary" bind:tap="onClose" size="small">
           UNDO

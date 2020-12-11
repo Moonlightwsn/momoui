@@ -7,5 +7,5 @@
     <slot name="message" slot="message"></slot>
     <slot name="action" slot="action"></slot>
   </mui-snack-bar-content>
-  <slot name="content"></slot>
+  <slot></slot>
 </view>
