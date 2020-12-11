@@ -73,6 +73,7 @@ Page({
     this.setData({open: true})
   },
   onClose() {
+    console.log(12134)
     this.setData({open: false})
   },
   setOpen() {

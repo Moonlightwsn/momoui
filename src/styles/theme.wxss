@@ -390,6 +390,10 @@
     color: @error_color;
     background-color: @error_color;
   }
+  &.mui-color-inherit {
+    color: inherit;
+    border-color: currentColor;
+  }
   &.mui-variant-contained {
     border: 0;
     color: #fff;
@@ -1841,6 +1845,17 @@
     }
     .alert-message {
       padding: 8px 0;
+      .alert-title {
+        margin-top: -2px;
+        font-weight: 500;
+      }
+    }
+    .alert-action {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      margin-right: -8px;
+      padding-left: 16px;
     }
   }
   /** mui-alert end */

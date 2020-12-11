@@ -3,14 +3,20 @@
   m-style="{{mStyle}}"
   elevation="0"
 >
-  <view class="alert-icon" wx:if="{{icon}}">
-    <mui-icon name="{{icon}}" />
+  <view class="alert-icon">
+    <mui-icon wx:if="{{icon}}" name="{{icon}}" />
+    <slot wx:else name="icon"></slot>
   </view>
   <view class="alert-message">
-    <view class="alert-title" wx:if="{{title}}">
-      <mui-typography>{{title}}</mui-typography>
-    </view>
-    {{message}}
-    <slot></slot>
+    <mui-typography wx:if="{{title}}" m-class="alert-title" gutterBottom>{{title}}</mui-typography>
+    <block wx:if="{{message}}">
+      {{message}}
+    </block>
+    <slot wx:else></slot>
+  </view>
+  <view class="alert-action">
+    <mui-button wx:if="{{(_hasAction && closeText)}}" size="small" color="inherit" catchtap="_close">{{closeText}}</mui-button>
+    <mui-button wx:elif="{{_hasAction}}" m-style="padding: 3px;width: 26px;height:26px;font-size: 20px;" color="inherit" shape="circle" size="small" icon="{{closeIcon || 'close-circle'}}" catchtap="_close" />
+    <slot wx:else name="action"></slot>
   </view>
 </mui-paper>

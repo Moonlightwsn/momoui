@@ -3,6 +3,7 @@
   "usingComponents": {
     "mui-paper": "../paper/paper",
     "mui-icon": "../icon/icon",
-    "mui-typography": "../typography/typography"
+    "mui-typography": "../typography/typography",
+    "mui-button": "../button/button"
   }
 }

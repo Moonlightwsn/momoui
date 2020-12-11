@@ -82,9 +82,11 @@ Component({
        *  clear rippleArray后再调用_updateRippleArray无效，无法将ripple删掉
        *  这里就在下面直接setData了
        * */
+      /*
       this.setData({
         rippleArray: this.data.rippleArray
       })
+      */
     },
   },
   options: {

@@ -88,6 +88,8 @@ Component({
     onDelete(onDelete) {
       if (onDelete) {
         this.setData({_hasDelete: true})
+      } else {
+        this.setData({_hasDelete: false})
       }
     }
   },
