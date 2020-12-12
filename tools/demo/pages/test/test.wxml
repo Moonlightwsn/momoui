@@ -4,6 +4,7 @@
     title="Error"
     onClose="{{onClose}}"
     closeText="Close"
+    variant="filled"
   >
     This is an error alert — <text style="font-weight: 700;">check it out!</text>
   </mui-alert>
@@ -12,6 +13,7 @@
     title="Warning"
     onClose="{{onClose}}"
     m-style="margin-top: 16px;"
+    variant="filled"
   >
     This is an warning alert — <text style="font-weight: 700;">check it out!</text>
   </mui-alert>
@@ -19,16 +21,29 @@
     color="info"
     title="Info"
     m-style="margin-top: 16px;"
+    variant="filled"
   >
     This is an info alert — <text style="font-weight: 700;">check it out!</text>
   </mui-alert>
   <mui-alert
     title="Success"
     m-style="margin-top: 16px;"
+    variant="filled"
   >
     This is an success alert — <text style="font-weight: 700;">check it out!</text>
     <mui-button size="small" color="inherit" slot="action">Close</mui-button>
   </mui-alert>
+  <mui-snack-bar open="{{open}}">
+    <mui-alert
+      title="Success"
+      m-style="margin-top: 16px;"
+      variant="filled"
+    >
+      This is an success alert — <text style="font-weight: 700;">check it out!</text>
+      <mui-button bind:tap="onClose" size="small" color="inherit" slot="action">Close</mui-button>
+    </mui-alert>
+  </mui-snack-bar>
+  <mui-button bind:tap="onOpen">Open snackbar</mui-button>
   <!--
   <mui-snack-bar open="{{open}}" message="abcd" anchorOrigin="{{anchorOrigin}}" transitionDuration="2000" onClose="{{onClose}}">
     <mui-snack-bar-content m-style="width: 400px;" message="TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST">
@@ -41,7 +56,6 @@
     </mui-snack-bar-content>
   </mui-snack-bar>
   <view style="margin-top: 40px;" />
-  <mui-button bind:tap="onOpen">Open simple snackbar</mui-button>
   -->
   <!--
   <mui-button bind:tap="test">TEST</mui-button>

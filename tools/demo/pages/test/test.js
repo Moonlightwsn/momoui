@@ -18,7 +18,7 @@ Page({
     },
     overlap: 'rectangle',
     badgeVariant: 'standard',
-    open: true,
+    open: false,
     avatar: {
       icon: 'pictures',
       src: 'https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp'
