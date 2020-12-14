@@ -13,6 +13,14 @@ const muiIconPath = 'styles/static/icons/'
 Component({
   behaviors: [muiBase],
   properties: {
+    color: {
+      type: String,
+      value: null,
+    },
+    size: {
+      type: Number,
+      value: null,
+    },
     name: {
       type: String,
       value: 'default'
@@ -28,53 +36,57 @@ Component({
   },
   data: {
     base64Content: '',
-    _innerStyles: 'width:inherit;height:inherit;',
+    _innerStyles: 'width:20px;height:20px;',
   },
   methods: {
-    _readSvgFile(iconName: string) {
-      const {src} = this.properties
-      if (iconName && !src) {
-        this.createSelectorQuery().select('.mui-icon').fields({
-          computedStyle: ['color','fontSize'],
-        }, async res => {
-          let {color, fontSize: size} = res || {}
-          if (!size) {
-            size = '20px'
-          }
-          if (!color) {
-            color = 'rgba(0, 0, 0, 0.87)'
-          }
-          const iconPath = `${momouiRootPath}${muiIconPath}${iconName}.svg`
-          try {
-            const fileRes = await wx.getFileSystemManager().readFileSync(iconPath, 'binary')
-            if (fileRes) {
-              let svgdata = String(fileRes)
-              const dstr = '<style type="text/css">'
-              const styleIndex = svgdata.indexOf(dstr)
-              let insertStyle = `path { fill: ${color}; }`
-              if (iconName === 'progress-circle') {
-                insertStyle = `circle { stroke: ${color}; }`
-              }
-              svgdata = `${svgdata.slice(0, styleIndex + dstr.length)}${insertStyle}${svgdata.slice(styleIndex + dstr.length)}`
-              const base64 = new Base64()
-              const svgtobase64 = base64.encode(svgdata)
-              const base64Content = `data:image/svg+xml;base64,${svgtobase64}`
-              const _innerStyles = `width:${size};height:${size};`
-              this.setData({
-                base64Content,
-                _innerStyles,
-              })
+    async _readSvgAndGenBase64(iconName: string, color: string, size: string) {
+      if (iconName) {
+        const iconPath = `${momouiRootPath}${muiIconPath}${iconName}.svg`
+        try {
+          const fileRes = await wx.getFileSystemManager().readFileSync(iconPath, 'binary')
+          if (fileRes) {
+            let svgdata = String(fileRes)
+            const dstr = '<style type="text/css">'
+            const styleIndex = svgdata.indexOf(dstr)
+            let insertStyle = `path { fill: ${color}; }`
+            if (iconName === 'progress-circle') {
+              insertStyle = `circle { stroke: ${color}; }`
             }
-          } catch(e) {
-            console.log(e)
+            svgdata = `${svgdata.slice(0, styleIndex + dstr.length)}${insertStyle}${svgdata.slice(styleIndex + dstr.length)}`
+            const base64 = new Base64()
+            const svgtobase64 = base64.encode(svgdata)
+            const base64Content = `data:image/svg+xml;base64,${svgtobase64}`
+            const _innerStyles = `width:${size};height:${size};`
+            this.setData({
+              base64Content,
+              _innerStyles,
+            })
           }
-        }).exec()
+        } catch(e) {
+          console.log(e)
+        }
       }
     }
   },
   observers: {
-    'name, mStyle, mClass, rerender': function (name) {
-      this._readSvgFile(name)
+    'name, color, size, mStyle, mClass, rerender': function (name, color, size) {
+      const {src} = this.data
+      if (name && !src) {
+        if (color && size) {
+          this._readSvgAndGenBase64(name, color, `${size}px`)
+        } else {
+          this.createSelectorQuery().select('.mui-icon').fields({
+            computedStyle: ['color','fontSize'],
+          }, res => {
+            let {color: queryColor, fontSize: querySize} = res || {}
+            queryColor = queryColor || 'currentColor'
+            querySize = querySize || '20px'
+            const realColor = color || queryColor
+            const realSize = size ? `${size}px` : querySize
+            this._readSvgAndGenBase64(name, realColor, realSize)
+          }).exec()
+        }
+      }
     }
   },
   options: {

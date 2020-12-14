@@ -19,8 +19,9 @@
   <slot></slot>
   <mui-icon
     wx:if="{{icon}}"
+    color="{{iconColor}}"
     name="{{icon}}"
     m-class="icon-in-button icon-position-{{iconPosition}}"
-    m-style="color:{{iconColor}};font-size:{{iconSize ? iconSize + 'px' : 'inherit'}};"
+    size="{{iconSize}}"
   />
 </mui-button-base>

@@ -18,6 +18,10 @@ Component({
       type: String,
       value: null,
     },
+    closeIconProps: {
+      type: Object,
+      value: {},
+    },
     color: {
       type: String,
       value: 'success'
@@ -26,6 +30,10 @@ Component({
       type: Boolean,
       optionalTypes: [String],
       value: null,
+    },
+    iconProps: {
+      type: Object,
+      value: {},
     },
     message: {
       type: String,

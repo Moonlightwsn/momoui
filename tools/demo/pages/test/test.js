@@ -13,8 +13,18 @@ Page({
     radioValue: 'r2',
     invisible: false,
     anchorOrigin: {
-      vertical: 'bottom',
+      vertical: 'top',
       horizontal: 'center',
+    },
+    alert: {
+      iconProps: {
+        color: '#fff',
+        size: 22,
+      },
+      closeIconProps: {
+        color: '#fff',
+        size: 20
+      }
     },
     overlap: 'rectangle',
     badgeVariant: 'standard',
@@ -73,7 +83,6 @@ Page({
     this.setData({open: true})
   },
   onClose() {
-    console.log(12134)
     this.setData({open: false})
   },
   setOpen() {

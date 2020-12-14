@@ -38,7 +38,7 @@ Component({
     },
     iconColor: {
       type: String,
-      value: 'inherit'
+      value: null,
     },
     iconPosition: {
       type: String,

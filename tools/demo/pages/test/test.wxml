@@ -5,16 +5,20 @@
       Dialog
     </mui-dialog>
   </mui-backdrop>
+  <!--
   <mui-snack-bar open="{{open}}">
     <mui-alert
+      closeIconProps="{{alert.closeIconProps}}"
+      iconProps="{{alert.iconProps}}"
       title="Success"
       m-style="margin-top: 16px;"
       variant="filled"
+      onClose="{{onClose}}"
     >
       This is an success alert — <text style="font-weight: 700;">check it out!</text>
-      <mui-button bind:tap="onClose" size="small" color="inherit" slot="action">Close</mui-button>
     </mui-alert>
   </mui-snack-bar>
+  -->
   <!--
   <mui-alert
     color="error"
@@ -52,17 +56,23 @@
   </mui-alert>
   -->
   <!--
-  <mui-snack-bar open="{{open}}" message="abcd" anchorOrigin="{{anchorOrigin}}" transitionDuration="2000" onClose="{{onClose}}">
-    <mui-snack-bar-content m-style="width: 400px;" message="TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST">
+  <mui-snack-bar open="{{open}}" anchorOrigin="{{anchorOrigin}}" transitionDuration="1000" onClose="{{onClose}}">
+    <mui-snack-bar-content m-style="width: 400px;" message="TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST">
       <view slot="action">
         <mui-button color="secondary" bind:tap="onClose" size="small">
           UNDO
         </mui-button>
-        <mui-button bind:tap="onClose" shape="circle" icon="close" m-style="padding: 3px;width: 26px;height: 26px;color:inherit" size="small" iconSize="20" />
+        <mui-button
+          bind:tap="onClose"
+          shape="circle"
+          icon="close"
+          m-style="padding: 3px;width: auto;height: auto;"
+          iconColor="#fff"
+          iconSize="20"
+        />
       </view>
     </mui-snack-bar-content>
   </mui-snack-bar>
-  <view style="margin-top: 40px;" />
   -->
   <!--
   <mui-button bind:tap="test">TEST</mui-button>

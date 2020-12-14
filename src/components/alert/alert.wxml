@@ -4,7 +4,7 @@
   elevation="0"
 >
   <view class="alert-icon">
-    <mui-icon wx:if="{{icon}}" name="{{icon}}" />
+    <mui-icon wx:if="{{icon}}" name="{{icon}}" color="{{iconProps.color}}" size="{{iconProps.size}}" />
     <slot wx:else name="icon"></slot>
   </view>
   <view class="alert-message">
@@ -15,8 +15,24 @@
     <slot wx:else></slot>
   </view>
   <view class="alert-action">
-    <mui-button wx:if="{{(_hasAction && closeText)}}" size="small" color="inherit" catchtap="_close">{{closeText}}</mui-button>
-    <mui-button wx:elif="{{_hasAction}}" m-style="padding: 3px;width: 26px;height:26px;font-size: 20px;" color="inherit" shape="circle" size="small" icon="{{closeIcon || 'close-circle'}}" catchtap="_close" />
+    <mui-button
+      wx:if="{{(_hasAction && closeText)}}"
+      size="small"
+      color="inherit"
+      catchtap="_close"
+    >
+      {{closeText}}
+    </mui-button>
+    <mui-button
+      wx:elif="{{_hasAction}}"
+      m-style="padding: 3px;width: auto;height:auto;"
+      color="inherit"
+      shape="circle"
+      icon="{{closeIcon || 'close-circle'}}"
+      iconColor="{{closeIconProps.color}}"
+      iconSize="{{closeIconProps.size}}"
+      catchtap="_close"
+    />
     <slot wx:else name="action"></slot>
   </view>
 </mui-paper>
