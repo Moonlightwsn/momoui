@@ -35,6 +35,8 @@
     "mui-snack-bar": "../../components/snack-bar/snack-bar",
     "mui-snack-bar-content": "../../components/snack-bar-content/snack-bar-content",
     "mui-paper": "../../components/paper/paper",
-    "mui-alert": "../../components/alert/alert"
+    "mui-alert": "../../components/alert/alert",
+    "mui-dialog": "../../components/dialog/dialog",
+    "mui-backdrop": "../../components/backdrop/backdrop"
   }
 }

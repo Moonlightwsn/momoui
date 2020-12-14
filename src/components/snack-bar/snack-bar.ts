@@ -35,12 +35,15 @@ Component({
   data: {
     _open: false,
     _show: false,
+    _transitionStyle: 'transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;',
   },
+  /*
   relations: {
     '../snack-bar-content/snack-bar-content': {
       type: 'child',
     },
   },
+  */
   methods: {
     _close() {
       const {onClose} = this.data
@@ -72,6 +75,11 @@ Component({
         })
       }
     },
+    transitionDuration(duration) {
+      this.setData({
+        _transitionStyle: `transition: opacity ${duration}ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform ${duration * 0.66666667}ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;`
+      })
+    }
   },
   options: {
     // virtualHost: true,

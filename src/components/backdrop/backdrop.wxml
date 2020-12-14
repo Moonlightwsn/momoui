@@ -1,0 +1,8 @@
+<view
+  wx:if="{{open}}"
+  class="mui mui-backdrop {{mClass}}"
+  style="{{mStyle}}"
+  bind:tap="_click"
+>
+  <slot></slot>
+</view>

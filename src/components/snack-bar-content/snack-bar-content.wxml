@@ -1,4 +1,4 @@
-<mui-paper m-class="snack-bar-content-root {{mClass}}" m-style="{{_transitionStyle}}{{mStyle}}" elevation="6">
+<mui-paper m-class="snack-bar-content-root {{mClass}}" m-style="{{mStyle}}" elevation="6">
   <view class="snack-bar-content-message">
     <block wx:if="{{message}}">
       {{message}}

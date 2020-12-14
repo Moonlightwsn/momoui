@@ -1,4 +1,11 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <mui-button bind:tap="onOpen">Open/Close snackbar</mui-button>
+  <mui-backdrop m-style="z-index: 1000;" open="{{open}}" onClose="{{onClose}}">
+    <mui-dialog>
+      Dialog
+    </mui-dialog>
+  </mui-backdrop>
+  <!--
   <mui-alert
     color="error"
     title="Error"
@@ -33,6 +40,8 @@
     This is an success alert — <text style="font-weight: 700;">check it out!</text>
     <mui-button size="small" color="inherit" slot="action">Close</mui-button>
   </mui-alert>
+  -->
+  <!--
   <mui-snack-bar open="{{open}}">
     <mui-alert
       title="Success"
@@ -44,6 +53,7 @@
     </mui-alert>
   </mui-snack-bar>
   <mui-button bind:tap="onOpen">Open snackbar</mui-button>
+  -->
   <!--
   <mui-snack-bar open="{{open}}" message="abcd" anchorOrigin="{{anchorOrigin}}" transitionDuration="2000" onClose="{{onClose}}">
     <mui-snack-bar-content m-style="width: 400px;" message="TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST">
