@@ -1,8 +1,8 @@
 <view
-  wx:if="{{open}}"
-  class="mui mui-backdrop {{mClass}}"
-  style="{{mStyle}}"
-  bind:tap="_click"
+  wx:if="{{_open}}"
+  class="mui mui-backdrop transition-show-{{_show}} {{mClass}}"
+  style="{{_transitionStyle}}{{mStyle}}"
+  bind:tap="_close"
 >
   <slot></slot>
 </view>

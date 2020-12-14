@@ -31,6 +31,15 @@
   box-sizing: border-box;
   /* mui base end */
 
+  &.transition-show-true {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+  &.transition-show-false {
+    opacity: 0;
+    transform: scale(0.75, 0.5625);
+  }
+
   &.mui-backdrop {
     top: 0;
     left: 0;

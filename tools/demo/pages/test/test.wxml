@@ -5,6 +5,16 @@
       Dialog
     </mui-dialog>
   </mui-backdrop>
+  <mui-snack-bar open="{{open}}">
+    <mui-alert
+      title="Success"
+      m-style="margin-top: 16px;"
+      variant="filled"
+    >
+      This is an success alert — <text style="font-weight: 700;">check it out!</text>
+      <mui-button bind:tap="onClose" size="small" color="inherit" slot="action">Close</mui-button>
+    </mui-alert>
+  </mui-snack-bar>
   <!--
   <mui-alert
     color="error"
@@ -40,19 +50,6 @@
     This is an success alert — <text style="font-weight: 700;">check it out!</text>
     <mui-button size="small" color="inherit" slot="action">Close</mui-button>
   </mui-alert>
-  -->
-  <!--
-  <mui-snack-bar open="{{open}}">
-    <mui-alert
-      title="Success"
-      m-style="margin-top: 16px;"
-      variant="filled"
-    >
-      This is an success alert — <text style="font-weight: 700;">check it out!</text>
-      <mui-button bind:tap="onClose" size="small" color="inherit" slot="action">Close</mui-button>
-    </mui-alert>
-  </mui-snack-bar>
-  <mui-button bind:tap="onOpen">Open snackbar</mui-button>
   -->
   <!--
   <mui-snack-bar open="{{open}}" message="abcd" anchorOrigin="{{anchorOrigin}}" transitionDuration="2000" onClose="{{onClose}}">

@@ -1,32 +1,12 @@
 import muiBase from '../../behaviors/muiBase.ts'
+import openCloseTransition from '../../behaviors/openCloseTransition.ts'
 
 Component({
-  behaviors: [muiBase],
+  behaviors: [muiBase, openCloseTransition],
   properties: {
     invisible: {
       type: Boolean,
       value: false,
-    },
-    onClose: {
-      // @ts-ignore
-      type: Function,
-      value: null,
-    },
-    open: {
-      type: Boolean,
-      value: null,
-    },
-    transitionDuration: {
-      type: Number,
-      value: 255,
-    },
-  },
-  methods: {
-    _click() {
-      const {onClose} = this.data
-      if (onClose && typeof onClose === 'function') {
-        onClose()
-      }
     },
   },
   options: {
