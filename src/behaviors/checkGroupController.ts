@@ -85,8 +85,8 @@ export default Behavior({
       if (onChange && typeof onChange === 'function') {
         onChange(realCheckedValue)
       }
-      const {_pure_be_controlled: beController} = this.data
-      if (!beController) {
+      const {_pure_be_controlled: beControlled} = this.data
+      if (!beControlled) {
         this.setData({value: realCheckedValue})
       }
     },

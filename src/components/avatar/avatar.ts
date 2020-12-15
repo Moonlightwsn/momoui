@@ -7,6 +7,14 @@ Component({
       type: String,
       value: null,
     },
+    iconColor: {
+      type: String,
+      value: null,
+    },
+    iconSize: {
+      type: Number,
+      value: null,
+    },
     src: {
       type: String,
       value: null,

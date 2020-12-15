@@ -1,10 +1,28 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
-  <mui-button bind:tap="onOpen">Open/Close snackbar</mui-button>
-  <mui-backdrop m-style="z-index: 1000;" open="{{open}}" onClose="{{onClose}}">
-    <mui-dialog>
-      Dialog
-    </mui-dialog>
-  </mui-backdrop>
+  <mui-button bind:tap="onOpen">Open Dialog</mui-button>
+  <mui-dialog open="{{open}}" onClose="{{onClose}}" title="Set backup account" content="Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.">
+    <mui-list>
+      <mui-list-item button primary="username@gmail.com" bind:tap="onClose">
+        <mui-list-item-avatar>
+          <mui-avatar icon="user" m-style="background-color: #bbdefb;" iconColor="#1e88e5"></mui-avatar>
+        </mui-list-item-avatar>
+      </mui-list-item>
+      <mui-list-item button primary="user02@gmail.com" bind:tap="onClose">
+        <mui-list-item-avatar>
+          <mui-avatar icon="user"  m-style="background-color: #bbdefb;" iconColor="#1e88e5"></mui-avatar>
+        </mui-list-item-avatar>
+      </mui-list-item>
+      <mui-list-item button primary="Add account" bind:tap="onClose">
+        <mui-list-item-avatar>
+          <mui-avatar icon="plus" iconColor="#fff"></mui-avatar>
+        </mui-list-item-avatar>
+      </mui-list-item>
+    </mui-list>
+    <mui-dialog-actions>
+      <mui-button color="primary">DISAGREE</mui-button>
+      <mui-button color="primary">AGREE</mui-button>
+    </mui-dialog-actions>
+  </mui-dialog>
   <!--
   <mui-snack-bar open="{{open}}">
     <mui-alert

@@ -37,6 +37,7 @@
     "mui-paper": "../../components/paper/paper",
     "mui-alert": "../../components/alert/alert",
     "mui-dialog": "../../components/dialog/dialog",
+    "mui-dialog-actions": "../../components/dialog-actions/dialog-actions",
     "mui-backdrop": "../../components/backdrop/backdrop"
   }
 }

@@ -36,7 +36,7 @@ Component({
   },
   data: {
     base64Content: '',
-    _innerStyles: 'width:20px;height:20px;',
+    _innerStyles: 'width:24px;height:24px;',
   },
   methods: {
     async _readSvgAndGenBase64(iconName: string, color: string, size: string) {
@@ -80,7 +80,7 @@ Component({
           }, res => {
             let {color: queryColor, fontSize: querySize} = res || {}
             queryColor = queryColor || 'currentColor'
-            querySize = querySize || '20px'
+            querySize = querySize || '24px'
             const realColor = color || queryColor
             const realSize = size ? `${size}px` : querySize
             this._readSvgAndGenBase64(name, realColor, realSize)

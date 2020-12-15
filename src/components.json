@@ -44,6 +44,9 @@
     "snack-bar-content": "./components/snack-bar-content/snack-bar-content",
     "alert": "./components/alert/alert",
     "dialog": "./components/dialog/dialog",
+    "dialog-title": "./components/dialog-title/dialog-title",
+    "dialog-content": "./components/dialog-content/dialog-content",
+    "dialog-actions": "./components/dialog-actions/dialog-actions",
     "backdrop": "./components/backdrop/backdrop"
   }
 }

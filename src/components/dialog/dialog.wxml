@@ -1,11 +1,23 @@
-<view
-  class="mui mui-dialog-container dialog-scroll-paper {{mClass}}"
-  style="{{mStyle}}"
+<mui-backdrop
+  m-style="z-index: 1300;"
+  disableBackdropClick="{{disableBackdropClick}}"
+  onBackdropClick="{{onBackdropClick}}"
+  onClose="{{onClose}}"
+  open="{{open}}"
+  transitionDuration="{{transitionDuration}}"
 >
-  <mui-paper
-    m-class="dialog-paper dialog-scroll-paper"
-    elevation="24"
+  <view
+    class="mui mui-dialog-container dialog-scroll-{{scroll}}"
   >
-    <slot></slot>
-  </mui-paper>
-</view>
+    <mui-paper
+      m-class="dialog-paper dialog-paper-scroll-{{scroll}} maxWidth-{{maxWidth}} fullWidth-{{fullWidth}} fullScreen-{{fullScreen}} {{mClass}}"
+      m-style="{{mStyle}}"
+      elevation="24"
+      catch:tap="_clickDialogContent"
+    >
+      <mui-dialog-title wx:if="{{title}}">{{title}}</mui-dialog-title>
+      <mui-dialog-content wx:if="{{content}}">{{content}}</mui-dialog-content>
+      <slot></slot>
+    </mui-paper>
+  </view>
+</mui-backdrop>

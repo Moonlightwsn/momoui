@@ -1,0 +1,6 @@
+<view
+  class="mui mui-dialog-actions-root {{mClass}}"
+  style="{{mStyle}}"
+>
+  <slot></slot>
+</view>

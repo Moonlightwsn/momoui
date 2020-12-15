@@ -1,6 +1,9 @@
 {
   "component": true,
   "usingComponents": {
-    "mui-paper": "../paper/paper"
+    "mui-paper": "../paper/paper",
+    "mui-backdrop": "../backdrop/backdrop",
+    "mui-dialog-title": "../dialog-title/dialog-title",
+    "mui-dialog-content": "../dialog-content/dialog-content"
   }
 }

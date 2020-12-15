@@ -38,6 +38,9 @@
   &.transition-show-false {
     opacity: 0;
     transform: scale(0.75, 0.5625);
+    &.backdrop-transition {
+      transform: scale(1, 1);
+    }
   }
 
   &.mui-backdrop {
@@ -363,17 +366,81 @@
       align-items: center;
       justify-content: center;
     }
+    &.dialog-scroll-body {
+      overflow-x: hidden;
+      overflow-y: auto;
+      text-align: center;
+    }
     .dialog-paper {
       margin: 32px;
       position: relative;
       overflow-y: auto;
-      &.dialog-scroll-paper {
+      &.dialog-paper-scroll-paper {
         display: flex;
         max-height: calc(100% - 64px);
         flex-direction: column;
       }
+      &.dialog-paper-scroll-body {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+      }
+      &.maxWidth-xs {
+        max-width: 444px;
+      }
+      &.maxWidth-sm {
+        max-width: 600px;
+      }
+      &.maxWidth-md {
+        max-width: 960px;
+      }
+      &.maxWidth-lg {
+        max-width: 1280px;
+      }
+      &.maxWidth-xl {
+        max-width: 1920px;
+      }
+      &.maxWidth-false {
+        max-width: calc(100% - 64px);
+      }
+      &.fullWidth-true {
+        width: calc(100% - 64px);
+      }
+      &.fullScreen-true {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        max-width: 100%;
+        max-height: none;
+        border-radius: 0;
+      }
     }
   }
+
+  &.mui-dialog-title-root {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 16px 24px;
+  }
+
+  &.mui-dialog-content-root {
+    flex: 1 1 auto;
+    padding: 8px 24px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    .dialog-content-text {
+      margin-bottom: 12px;
+    }
+  }
+
+  &.mui-dialog-actions-root{
+    flex: 0 0 auto;
+    display: flex;
+    padding: 8px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
   /** mui-dialog end */
 
   /**  mui-button-base */

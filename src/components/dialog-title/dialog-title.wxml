@@ -1,0 +1,8 @@
+<view
+  class="mui mui-dialog-title-root {{mClass}}"
+  style="{{mStyle}}"
+>
+  <mui-typography variant="h6">
+    <slot></slot>
+  </mui-typography>
+</view>
