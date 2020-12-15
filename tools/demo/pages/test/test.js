@@ -3,6 +3,12 @@ import themeMixin from '../../behaviors/theme'
 Page({
   behaviors: [themeMixin],
   data: {
+    actions: {
+      // confirmText: '确定',
+      // cancelText: '取消',
+      onConfirm: () => console.log(1),
+      onCancel: () => console.log(2),
+    },
     value: 1,
     range: [{key: 'a'}, {key: 'b'}],
     disabled: true,

@@ -1,5 +1,5 @@
 <view
-  class="mui mui-dialog-content-root {{mClass}}"
+  class="mui mui-dialog-content-root dividers-{{dividers}} {{mClass}}"
   style="{{mStyle}}"
 >
   <mui-typography m-class="dialog-content-text" variant="body1" color="textSecondary">

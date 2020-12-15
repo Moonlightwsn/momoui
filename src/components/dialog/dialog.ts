@@ -3,6 +3,10 @@ import muiBase from '../../behaviors/muiBase.ts'
 Component({
   behaviors: [muiBase],
   properties: {
+    actions: {
+      type: Object,
+      value: null,
+    },
     content: {
       type: String,
       value: null,
@@ -51,8 +55,25 @@ Component({
       value: 255,
     },
   },
+  lifetimes: {
+    attached() {
+      console.log(this.data.actions)
+    }
+  },
   methods: {
     _clickDialogContent() {},
+    _confirm(e) {
+      const {actions} = this.data
+      if (actions && actions.onConfirm && typeof actions.onConfirm === 'function') {
+        actions.onConfirm(e)
+      }
+    },
+    _cancel(e) {
+      const {actions} = this.data
+      if (actions && actions.onCancel && typeof actions.onCancel === 'function') {
+        actions.onCancel(e)
+      }
+    },
   },
   observers: {},
   options: {

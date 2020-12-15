@@ -16,7 +16,21 @@
       catch:tap="_clickDialogContent"
     >
       <mui-dialog-title wx:if="{{title}}">{{title}}</mui-dialog-title>
-      <mui-dialog-content wx:if="{{content}}">{{content}}</mui-dialog-content>
+      <mui-dialog-content wx:if="{{content}}" dividers>{{content}}</mui-dialog-content>
+      <mui-dialog-actions wx:if="{{actions}}">
+        <mui-button
+          color="secondary"
+          bind:tap="_confirm"
+        >
+          {{actions.cancelText || 'Cancel'}}
+        </mui-button>
+        <mui-button
+          color="primary"
+          bind:tap="_cancel"
+        >
+          {{actions.confirmText || 'Confirm'}}
+        </mui-button>
+      </mui-dialog-actions>
       <slot></slot>
     </mui-paper>
   </view>
