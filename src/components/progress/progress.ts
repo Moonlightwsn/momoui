@@ -48,16 +48,27 @@ Component({
       value: 0,
       variant: 'indeterminate',
     },
+    _mainBarStyle: '',
+    _bufferStyle: '',
   },
   observers: {
-    'disableShrink, value, variant': function (disableShrink, value, variant) {
-      this.setData({
-        _progressPropsForIcon: {
-          disableShrink,
-          value,
-          variant,
-        },
-      })
+    'disableShrink, value, variant, type, valueBuffer': function (disableShrink, value, variant, type, valueBuffer) {
+      if (type === 'circular') {
+        this.setData({
+          _progressPropsForIcon: {
+            disableShrink,
+            value,
+            variant,
+          },
+        })
+      } else if (type === 'linear' && variant !== 'indeterminate') {
+        const newStyles: any = {}
+        newStyles._mainBarStyle = `transform: translateX(${(-100 + value)}%);`
+        if (variant === 'buffer') {
+          newStyles._bufferStyle = `transform: translateX(${(-100 + valueBuffer)}%);`
+        }
+        this.setData(newStyles)
+      }
     },
   },
   options: {

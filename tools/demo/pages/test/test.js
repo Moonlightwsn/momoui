@@ -5,7 +5,7 @@ Page({
   data: {
     loading: false,
     success: false,
-    progress: 0,
+    progress: 10,
     actions: {
       // confirmText: '确定',
       // cancelText: '取消',
@@ -67,6 +67,17 @@ Page({
       onOpen: this.onOpen.bind(this),
       onClose: this.onClose.bind(this),
     })
+    setInterval(() => {
+      const {progress} = this.data
+      if (progress === 100) {
+        this.setData({progress: 0})
+      } else {
+        let newProgress
+        const diff = Math.random() * 10
+        newProgress = Math.min(progress + diff, 100)
+        this.setData({progress: newProgress})
+      }
+    }, 500)
   },
   setLoading() {
     if (!this.data.loading) {

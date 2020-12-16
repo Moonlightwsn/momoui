@@ -47,6 +47,9 @@
   <view>
     <mui-progress type="linear"></mui-progress>
     <mui-progress type="linear" color="secondary" m-style="margin-top: 16px;"></mui-progress>
+    <mui-progress type="linear" variant="determinate" value="{{progress}}" m-style="margin-top: 16px;"></mui-progress>
+    <mui-progress type="linear" variant="buffer" value="10" value-buffer="15" m-style="margin-top: 16px;"></mui-progress>
+    <mui-progress type="linear" color="secondary" variant="buffer" value="5" value-buffer="30" m-style="margin-top: 16px;"></mui-progress>
   </view>
   <!--
   <mui-button bind:tap="onOpen">Open Dialog</mui-button>
