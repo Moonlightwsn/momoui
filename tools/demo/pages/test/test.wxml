@@ -1,6 +1,6 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
   <mui-progress />
-  <mui-progress color="secondary" />
+  <mui-progress color="secondary" disableShrink />
   <view style="color: green;display:inline-flex;">
     <mui-progress color="inherit" variant="determinate" value="25" />
   </view>
@@ -43,6 +43,10 @@
         size="24"
       />
     </view>
+  </view>
+  <view>
+    <mui-progress type="linear"></mui-progress>
+    <mui-progress type="linear" color="secondary" m-style="margin-top: 16px;"></mui-progress>
   </view>
   <!--
   <mui-button bind:tap="onOpen">Open Dialog</mui-button>

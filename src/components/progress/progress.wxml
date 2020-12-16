@@ -10,4 +10,11 @@
   />
 </block>
 <block wx:elif="{{type === 'linear'}}">
+  <view
+    class="mui mui-progress-root progress-color-{{color}} {{mClass}}"
+    style="{{mStyle}}"
+  >
+    <view class="mui progress-bar mui-color-{{color}} mui-variant-{{variant}}"></view>
+    <view class="mui progress-bar progress-bar2 mui-color-{{color}} mui-variant-{{variant}}"></view>
+  </view>
 </block>
