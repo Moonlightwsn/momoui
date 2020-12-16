@@ -1,1 +1,1 @@
-<image class="mui-icon {{mClass}}" style="{{_innerStyles}}{{mStyle}}" src="{{src || base64Content}}"></image>
+<image class="mui-icon {{spin ? 'icon-rotate' : ''}} {{mClass}}" style="{{_innerStyles}}{{mStyle}}" src="{{src || base64Content}}"></image>

@@ -16,6 +16,26 @@
 .mui-icon {
   color: inherit;
   font-size: inherit;
+  &.icon-rotate {
+    animation: mui-icon-keyframes-rotate 1.4s linear infinite;
+    @keyframes mui-icon-keyframes-rotate {
+      0% {
+        transform-origin: 50% 50%;
+      }
+      100% {
+          transform: rotate(360deg);
+      }
+    }
+  }
+  &.adjust-offset {
+    transform: rotate(-90deg);
+  }
+  &.mui {
+    &.mui-color-primary, &.mui-color-secondary {
+      background-color: unset;
+      border-color: unset;
+    }
+  }
 }
 /** mui-icon end */
 
@@ -2399,6 +2419,16 @@
 [data-momoui-theme=dark] {
   background-color: #212121;
   color: #fff;
+  .mui-icon {
+    color: inherit;
+    font-size: inherit;
+    &.mui {
+      &.mui-color-primary, &.mui-color-secondary {
+        background-color: unset;
+        border-color: unset;
+      }
+    }
+  }
   &.mui, .mui {
     &.mui-paper {
       color: rgba(255, 255, 255, 0.7);

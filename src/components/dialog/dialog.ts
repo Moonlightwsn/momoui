@@ -55,11 +55,6 @@ Component({
       value: 255,
     },
   },
-  lifetimes: {
-    attached() {
-      console.log(this.data.actions)
-    }
-  },
   methods: {
     _clickDialogContent() {},
     _confirm(e) {

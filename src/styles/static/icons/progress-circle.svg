@@ -6,11 +6,8 @@
             .icon-progress {
             }
             .icon-progress .circle {
-                animation: MuiCircularProgress-keyframes-circular-dash 1.4s ease-in-out infinite;
-                stroke-dasharray: 80px, 200px;
-                stroke-dashoffset: 0px
             }
-            @keyframes MuiCircularProgress-keyframes-circular-dash {
+            @keyframes mui-circular-progress-keyframes-circular-dash {
                 0% {
                     stroke-dasharray: 1px, 200px;
                     stroke-dashoffset: 0px;

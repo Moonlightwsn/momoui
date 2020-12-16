@@ -44,6 +44,10 @@ Component({
       type: String,
       value: 'left',
     },
+    iconSpin: {
+      type: Boolean,
+      value: false,
+    },
     loading: {
       type: Boolean,
       value: false,

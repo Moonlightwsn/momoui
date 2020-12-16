@@ -3,6 +3,9 @@ import themeMixin from '../../behaviors/theme'
 Page({
   behaviors: [themeMixin],
   data: {
+    loading: false,
+    success: false,
+    progress: 0,
     actions: {
       // confirmText: '确定',
       // cancelText: '取消',
@@ -64,6 +67,16 @@ Page({
       onOpen: this.onOpen.bind(this),
       onClose: this.onClose.bind(this),
     })
+  },
+  setLoading() {
+    if (!this.data.loading) {
+      this.setData({loading: true, success: false})
+      setTimeout(() => {
+        this.setData({loading: false, success: true})
+      }, 3000)
+    }
+    
+
   },
   getPhoneNumber(e) {
     console.log(e)

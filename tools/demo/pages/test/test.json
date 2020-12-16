@@ -38,6 +38,7 @@
     "mui-alert": "../../components/alert/alert",
     "mui-dialog": "../../components/dialog/dialog",
     "mui-dialog-actions": "../../components/dialog-actions/dialog-actions",
-    "mui-backdrop": "../../components/backdrop/backdrop"
+    "mui-backdrop": "../../components/backdrop/backdrop",
+    "mui-progress": "../../components/progress/progress"
   }
 }

@@ -15,7 +15,7 @@
   send-message-img="{{sendMessageImg}}"
   show-message-card="{{showMessageCard}}"
 >
-  <mui-icon wx:if="{{loading}}" m-class="mui-button-loading" name="progress-circle" />
+  <mui-icon wx:if="{{loading}}" m-class="mui-button-loading" name="progress-circle" spin />
   <slot></slot>
   <mui-icon
     wx:if="{{icon}}"
@@ -23,5 +23,6 @@
     name="{{icon}}"
     m-class="icon-in-button icon-position-{{iconPosition}}"
     size="{{iconSize}}"
+    spin="{{iconSpin}}"
   />
 </mui-button-base>

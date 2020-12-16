@@ -17,17 +17,29 @@ Component({
       type: String,
       value: null,
     },
-    size: {
-      type: Number,
-      value: null,
-    },
     name: {
       type: String,
       value: 'default'
     },
+    progressProps: {
+      type: Object,
+      value: {
+        disableShrink: false,
+        value: 0,
+        variant: 'indeterminate',
+      }
+    },
+    size: {
+      type: Number,
+      value: null,
+    },
     src: {
       type: String,
       value: null,
+    },
+    spin: {
+      type: Boolean,
+      value: false,
     },
     rerender: {
       type: null,
@@ -50,7 +62,24 @@ Component({
             const styleIndex = svgdata.indexOf(dstr)
             let insertStyle = `path { fill: ${color}; }`
             if (iconName === 'progress-circle') {
-              insertStyle = `circle { stroke: ${color}; }`
+              const {progressProps} = this.data
+              insertStyle = `
+                circle {
+                  stroke: ${color};
+              `
+              if (progressProps.disableShrink) {
+                insertStyle = `${insertStyle}
+                    animation: none;
+                `
+              } else {
+                insertStyle = `${insertStyle}
+                    ${progressProps.variant !== 'indeterminate' ? 'transition: stroke-dashoffset 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms' : 'animation: mui-circular-progress-keyframes-circular-dash 1.4s ease-in-out infinite'};
+                `
+              }
+              insertStyle = `${insertStyle}
+                  ${progressProps.variant === 'indeterminate' ? 'stroke-dasharray: 80px, 200px;stroke-dashoffset: 0px' : `stroke-dasharray: 126.92;stroke-dashoffset: ${(126.92 - (((progressProps.value || 0) / 100) * 126.92)).toFixed(2)}px`};
+                }
+              `
             }
             svgdata = `${svgdata.slice(0, styleIndex + dstr.length)}${insertStyle}${svgdata.slice(styleIndex + dstr.length)}`
             const base64 = new Base64()
@@ -69,7 +98,7 @@ Component({
     }
   },
   observers: {
-    'name, color, size, mStyle, mClass, rerender': function (name, color, size) {
+    'name, color, size, mStyle, progressProps, mClass, rerender': function (name, color, size) {
       const {src} = this.data
       if (name && !src) {
         if (color && size) {

@@ -1,4 +1,50 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <mui-progress />
+  <mui-progress color="secondary" />
+  <view style="color: green;display:inline-flex;">
+    <mui-progress color="inherit" variant="determinate" value="25" />
+  </view>
+  <view style="display: flex;align-items: center;">
+    <view
+      style="margin: 8px;position: relative;"
+    >
+      <mui-button
+        m-style="{{success ? 'background-color: #4caf50' : ''}}"
+        color="primary"
+        shape="circle"
+        icon="{{success ? 'check' : 'save'}}"
+        variant="contained"
+        size="large"
+        iconSize="24"
+        iconColor="#fff"
+        bind:tap="setLoading"
+      />
+      <mui-progress
+        wx:if="{{loading}}"
+        m-style="color: #4caf50;position: absolute;top: -6px;left: -6px;zIndex: 1;"
+        size="68"
+      />
+    </view>
+    <view
+      style="margin: 8px;position: relative;"
+    >
+      <mui-button
+        m-style="{{success ? 'background-color: #4caf50' : ''}}"
+        disabled="{{loading}}"
+        color="primary"
+        variant="contained"
+        bind:tap="setLoading"
+      >
+        ACCEPT TERMS
+      </mui-button>
+      <mui-progress
+        wx:if="{{loading}}"
+        m-style="color: #4caf50;position: absolute;top: 50%;left: 50%;margin-top: -12px; margin-left: -12px"
+        size="24"
+      />
+    </view>
+  </view>
+  <!--
   <mui-button bind:tap="onOpen">Open Dialog</mui-button>
   <mui-dialog
     actions="{{actions}}"
@@ -7,7 +53,6 @@
     onClose="{{onClose}}"
     title="Set backup account"
   >
-    <!--
     <mui-list>
       <mui-list-item button primary="username@gmail.com" bind:tap="onClose">
         <mui-list-item-avatar>
@@ -25,14 +70,12 @@
         </mui-list-item-avatar>
       </mui-list-item>
     </mui-list>
-    -->
-    <!--
     <mui-dialog-actions>
       <mui-button color="primary">DISAGREE</mui-button>
       <mui-button color="primary">AGREE</mui-button>
     </mui-dialog-actions>
-    -->
   </mui-dialog>
+  -->
   <!--
   <mui-snack-bar open="{{open}}">
     <mui-alert
