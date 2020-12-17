@@ -1,0 +1,6 @@
+<view
+  class="mui mui-card-actions-root {{mClass}}"
+  style="{{mStyle}}"
+>
+  <slot></slot>
+</view>

@@ -1,7 +1,0 @@
-<picker
-  custom-item="{{customItem}}"
-  mode="{{mode}}"
-  model:value="{{value}}"
->
-  <mui-button variant="outlined" color="primary">PICKER</mui-button>
-</picker>

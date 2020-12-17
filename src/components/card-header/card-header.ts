@@ -1,18 +1,9 @@
 import muiBase from '../../behaviors/muiBase.ts'
-import muiController from '../../behaviors/muiController.ts'
 
 Component({
-  behaviors: [muiBase, muiController],
+  behaviors: [muiBase],
   properties: {
-    elevation: {
-      type: Number,
-      value: 1,
-    },
-    variant: {
-      type: String,
-      value: 'elevation',
-    },
-    square: {
+    disableTypography: {
       type: Boolean,
       value: false,
     },

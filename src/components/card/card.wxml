@@ -1,0 +1,8 @@
+<mui-paper
+  m-class="mui mui-card-root {{mClass}}"
+  elevation="{{raised ? 8 : 1}}"
+  variant="{{variant}}"
+  m-style="{{mStyle}}"
+>
+  <slot></slot>
+</mui-paper>

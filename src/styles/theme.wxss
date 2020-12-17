@@ -173,6 +173,20 @@
   }
   /** mui-paper end */
 
+  /** mui-card */
+  &.mui-card-root {
+    overflow: hidden;
+  }
+  &.mui-card-content-root, .mui-card-content-root {
+    padding: 16px;
+  }
+  &.mui-card-actions-root, .mui-card-actions-root {
+    display: flex;
+    padding: 8px;
+    align-items: center;
+  }
+  /** mui-card end */
+
   /** mui-avatar-group */
   &.mui-avatar-group {
     display: flex;
@@ -2014,7 +2028,7 @@
     &.mui-color-inherit {
       color: inherit;
     }
-    &.mui-color-primary, &.mui-color-secondary {
+    &.mui-color-primary, &.mui-color-secondary, &.mui-color-error {
       background-color: unset;
       border-color: unset;
     }
@@ -2536,7 +2550,7 @@
   }
   &.mui, .mui {
     &.mui-paper {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255);
       background-color: #424242;
       &.mui-variant-outlined {
         border: 1px solid rgba(255, 255, 255, 0.12);

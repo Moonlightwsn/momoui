@@ -1,4 +1,19 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <mui-card raised>
+    <mui-card-content>
+      <mui-typography m-style="font-size: 14px;" color="textSecondary" gutterBottom>Word of the Day</mui-typography>
+      <mui-typography variant="h5">be•nev•o•lent</mui-typography>
+      <mui-typography m-style="margin-bottom: 12px;" color="textSecondary">adjective</mui-typography>
+      <mui-typography variant="body2">well meaning and kindly.<view />"a benevolent smile"</mui-typography>
+    </mui-card-content>
+    <mui-card-actions>
+      <mui-button size="small">Learn More</mui-button>
+    </mui-card-actions>
+  </mui-card>
+  <mui-card m-style="margin-top: 20px;">
+
+  </mui-card>
+  <!--
   <mui-progress />
   <mui-progress color="secondary" disableShrink />
   <view style="color: green;display:inline-flex;">
@@ -51,6 +66,7 @@
     <mui-progress type="linear" variant="buffer" value="10" value-buffer="15" m-style="margin-top: 16px;"></mui-progress>
     <mui-progress type="linear" color="secondary" variant="buffer" value="5" value-buffer="30" m-style="margin-top: 16px;"></mui-progress>
   </view>
+  -->
   <!--
   <mui-button bind:tap="onOpen">Open Dialog</mui-button>
   <mui-dialog

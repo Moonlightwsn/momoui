@@ -1,7 +1,5 @@
 {
   "usingComponents": {
-    "mui-test": "../../components/test/test",
-    "mui-testcheck": "../../components/test/testcheck",
     "mui-icon": "../../components/icon/icon",
     "mui-avatar-group": "../../components/avatar-group/avatar-group",
     "mui-avatar": "../../components/avatar/avatar",
@@ -39,6 +37,9 @@
     "mui-dialog": "../../components/dialog/dialog",
     "mui-dialog-actions": "../../components/dialog-actions/dialog-actions",
     "mui-backdrop": "../../components/backdrop/backdrop",
-    "mui-progress": "../../components/progress/progress"
+    "mui-progress": "../../components/progress/progress",
+    "mui-card": "../../components/card/card",
+    "mui-card-content": "../../components/card-content/card-content",
+    "mui-card-actions": "../../components/card-actions/card-actions"
   }
 }

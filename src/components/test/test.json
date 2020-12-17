@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "mui-input": "../input/input",
-    "mui-button": "../button/button"
-  }
-}
