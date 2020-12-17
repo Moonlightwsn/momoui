@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mui-button-base": "../button-base/button-base"
+  }
+}

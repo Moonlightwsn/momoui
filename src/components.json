@@ -12,6 +12,7 @@
 
     "card": "./components/card/card",
     "card-actions": "./components/card-actions/card-actions",
+    "card-action-area": "./components/card-action-area/card-action-area",
     "card-content": "./components/card-content/card-content",
     "card-header": "./components/card-header/card-header",
     "card-media": "./components/card-media/card-media",

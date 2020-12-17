@@ -1,0 +1,6 @@
+<mui-button-base
+  m-class="mui mui-card-action-area-root {{mClass}}"
+  m-style="{{mStyle}}"
+>
+  <slot></slot>
+</mui-button-base>
