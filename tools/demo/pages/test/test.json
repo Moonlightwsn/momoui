@@ -39,7 +39,9 @@
     "mui-backdrop": "../../components/backdrop/backdrop",
     "mui-progress": "../../components/progress/progress",
     "mui-card": "../../components/card/card",
+    "mui-card-header": "../../components/card-header/card-header",
     "mui-card-content": "../../components/card-content/card-content",
+    "mui-card-media": "../../components/card-media/card-media",
     "mui-card-actions": "../../components/card-actions/card-actions"
   }
 }

@@ -177,6 +177,27 @@
   &.mui-card-root {
     overflow: hidden;
   }
+  &.mui-card-header-root, .mui-card-header-root {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    .card-header-avatar {
+      flex: 0 0 auto;
+      margin-right: 16px;
+      .avatar-img {
+        font-size: 40px;
+      }
+    }
+    .card-header-content {
+      flex: 1 1 auto;
+    }
+    .card-header-action {
+      flex: 0 0 auto;
+      align-self: flex-start;
+      margin-top: -8px;
+      margin-right: -8px;
+    }
+  }
   &.mui-card-content-root, .mui-card-content-root {
     padding: 16px;
   }
@@ -184,6 +205,17 @@
     display: flex;
     padding: 8px;
     align-items: center;
+  }
+  &.mui-card-media-root, .mui-card-media-root {
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .card-media-img {
+      width: 100%;
+      height: unset;
+      display: block;
+    }
   }
   /** mui-card end */
 
@@ -223,6 +255,9 @@
     }
     &.mui-avatar-icon {
       font-size: 24px;
+    }
+    &.mui-avatar-img {
+      font-size: 40px;
     }
   }
   /**  mui-avatar end */

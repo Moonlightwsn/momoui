@@ -11,7 +11,16 @@
     </mui-card-actions>
   </mui-card>
   <mui-card m-style="margin-top: 20px;">
-
+    <mui-card-header
+      title="Shrimp and Chorizo Paella"
+      subheader="September 14, 2016"
+      avatar="{{avatar}}"
+      action="{{action}}"
+    />
+    <mui-card-media
+      image="https://material-ui.com/static/images/cards/paella.jpg"
+      image-style="height: 194px;"
+    />
   </mui-card>
   <!--
   <mui-progress />

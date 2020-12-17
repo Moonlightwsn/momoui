@@ -1,0 +1,13 @@
+<view
+  class="mui mui-card-media-root {{mClass}}"
+  style="{{mStyle}}"
+>
+  <image
+    wx:if="{{image}}"
+    class="card-media-img {{imageClass}}"
+    style="{{imageStyle}}"
+    src="{{image}}"
+    mode="{{imageMode}}"
+  />
+  <slot></slot>
+</view>

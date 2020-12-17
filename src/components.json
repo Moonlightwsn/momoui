@@ -14,6 +14,7 @@
     "card-actions": "./components/card-actions/card-actions",
     "card-content": "./components/card-content/card-content",
     "card-header": "./components/card-header/card-header",
+    "card-media": "./components/card-media/card-media",
     "checkbox": "./components/checkbox/checkbox",
     "checkbox-group": "./components/checkbox-group/checkbox-group",
     "chip": "./components/chip/chip",

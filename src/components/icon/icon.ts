@@ -98,8 +98,7 @@ Component({
     }
   },
   observers: {
-    'name, color, size, mStyle, progressProps, mClass, rerender': function (name, color, size) {
-      const {src} = this.data
+    'name, color, size, src, mStyle, progressProps, mClass, rerender': function (name, color, size, src) {
       if (name && !src) {
         if (color && size) {
           this._readSvgAndGenBase64(name, color, `${size}px`)
@@ -115,6 +114,16 @@ Component({
             this._readSvgAndGenBase64(name, realColor, realSize)
           }).exec()
         }
+      } else if(src) {
+        this.createSelectorQuery().select('.mui-icon').fields({
+          computedStyle: ['fontSize'],
+        }, res => {
+          let {fontSize: querySize} = res || {}
+          querySize = querySize || '24px'
+          const realSize = size ? `${size}px` : querySize
+          const _innerStyles = `width:${realSize};height:${realSize};`
+          this.setData({_innerStyles})
+        }).exec()
       }
     }
   },

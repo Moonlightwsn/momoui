@@ -40,10 +40,13 @@ Page({
     open: false,
     avatar: {
       icon: 'pictures',
-      src: 'https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp'
+      // src: 'https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp'
     },
     avatar2: {
       icon: 'user',
+    },
+    action: {
+      icon: 'bullet-list',
     },
     listChecked: {
       0: false,
