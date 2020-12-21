@@ -1,11 +1,15 @@
 {
   "commonJs": [
-    "./behaviors/muiBase",
-    "./behaviors/muiController",
     "./behaviors/checkGroupController",
     "./behaviors/checkController",
     "./behaviors/formItem",
+    "./behaviors/muiBase",
+    "./behaviors/muiController",
+    "./behaviors/openType",
     "./behaviors/rippleBase",
-    "./behaviors/openType"
+    "./behaviors/transition/transition",
+    "./behaviors/transition/fade",
+    "./behaviors/transition/grow",
+    "./behaviors/transition/openCloseTransition"
   ]
 }

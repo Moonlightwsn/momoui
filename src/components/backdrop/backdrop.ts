@@ -1,5 +1,5 @@
 import muiBase from '../../behaviors/muiBase.ts'
-import openCloseTransition from '../../behaviors/openCloseTransition.ts'
+import openCloseTransition from '../../behaviors/transition/openCloseTransition.ts'
 
 Component({
   behaviors: [muiBase, openCloseTransition],

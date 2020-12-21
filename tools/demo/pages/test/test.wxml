@@ -1,4 +1,5 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <!--
   <mui-card raised>
     <mui-card-content>
       <mui-typography m-style="font-size: 14px;" color="textSecondary" gutterBottom>Word of the Day</mui-typography>
@@ -57,6 +58,7 @@
       </mui-card-action-area>
     </mui-collapse>
   </mui-card>
+  -->
   <!--
   <mui-progress />
   <mui-progress color="secondary" disableShrink />
@@ -111,7 +113,6 @@
     <mui-progress type="linear" color="secondary" variant="buffer" value="5" value-buffer="30" m-style="margin-top: 16px;"></mui-progress>
   </view>
   -->
-  <!--
   <mui-button bind:tap="onOpen">Open Dialog</mui-button>
   <mui-dialog
     actions="{{actions}}"
@@ -142,7 +143,6 @@
       <mui-button color="primary">AGREE</mui-button>
     </mui-dialog-actions>
   </mui-dialog>
-  -->
   <!--
   <mui-snack-bar open="{{open}}">
     <mui-alert
