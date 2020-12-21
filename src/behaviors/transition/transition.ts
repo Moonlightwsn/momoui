@@ -1,4 +1,4 @@
-import transitionType from '../../common/transitionType.ts'
+import transitionTypeMap from '../../common/transitionTypeMap.ts'
 
 export default Behavior({
   properties: {
@@ -21,37 +21,59 @@ export default Behavior({
   },
   data: {
     _transitionStyle: '',
+    _startStyle: '',
+    _endStyle: '',
   },
   methods: {
     _genTransitionsStyle(transitionProps) {
       this.generatedTransitionStyle = true
-      const {transitions = [], delay: defaultDelay = 0, duration: defaultDuration = 225, type} = transitionProps
+      const newData: any = {}
+      const {
+        transitions = [],
+        delay: defaultDelay = 0,
+        duration: defaultDuration = 225,
+        type
+      } = transitionProps
       const defaultTimingFunction = 'cubic-bezier(0.4, 0, 0.2, 1)'
-      let realTransition
+      let realTransition = []
       if (Array.isArray(transitions) && transitions.length > 0) {
         realTransition = transitions
-      } else {
-        realTransition = transitionType[type] ? transitionType[type].transition : []
+      } else if (type && transitionTypeMap[type]) {
+        realTransition = transitionTypeMap[type].transition
+        const {_startStyle, _endStyle} = this.data
+        newData._startStyle = _startStyle || transitionTypeMap[type].start
+        newData._endStyle = _endStyle || transitionTypeMap[type].end
       }
-      let _transitionStyle
       realTransition.forEach(item => {
-        const {
-          property,
+        let {
           duration = defaultDuration,
-          timingFunction = defaultTimingFunction,
           delay = defaultDelay,
         } = item
+        const {
+          property,
+          timingFunction = defaultTimingFunction,
+        } = item
         if (property) {
+          if (typeof duration === 'function') {
+            duration = duration(defaultDuration)
+          }
+          if (typeof delay === 'function') {
+            delay = delay(defaultDelay)
+          }
           const thisTransition = `${property} ${duration}ms ${timingFunction} ${delay}ms`
-          if (_transitionStyle) {
-            _transitionStyle = `${_transitionStyle}, ${thisTransition}`
+          if (newData._transitionStyle) {
+            newData._transitionStyle = `${newData._transitionStyle}, ${thisTransition}`
           } else {
-            _transitionStyle = `transition: ${thisTransition}`
+            newData._transitionStyle = `transition: ${thisTransition}`
           }
         }
       })
-      if (_transitionStyle) {
-        this.setData({_transitionStyle: `${_transitionStyle};`})
+      if (newData._transitionStyle) {
+        newData._transitionStyle = `${newData._transitionStyle};`
+      }
+      if (Object.keys(newData).length > 0) {
+        console.log(newData)
+        this.setData(newData)
       }
     }
   },

@@ -51,20 +51,6 @@
   box-sizing: border-box;
   /* mui base end */
 
-  /** transition */
-  &.transition-show-true {
-    opacity: 1;
-    transform: scale(1, 1);
-  }
-  &.transition-show-false {
-    opacity: 0;
-    transform: scale(0.75, 0.5625);
-    &.backdrop-transition {
-      transform: scale(1, 1);
-    }
-  }
-  /** transition end */
-
   /** mui-backdrop */
   &.mui-backdrop {
     top: 0;
@@ -401,14 +387,6 @@
     &.anchor-origin-top-right {
       top: 8px;
       justify-content: flex-end;
-    }
-    &.show-true {
-      opacity: 1;
-      transform: scale(1, 1);
-    }
-    &.show-false {
-      opacity: 0;
-      transform: scale(0.75, 0.5625);
     }
   }
 

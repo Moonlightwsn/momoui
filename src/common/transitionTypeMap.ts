@@ -11,9 +11,9 @@ export default {
       property: 'opacity',
     }, {
       property: 'transform',
-      duration: 225 * 0.666,
+      duration: (duration) => duration * 0.666,
     }],
-    start: `opacity: 0;transform: scale(0.75, ${0.75 ** 2})`,
-    end: 'opacity: 1;transform: scale(1, 1)',
+    start: `opacity: 0; transform: scale(0.75, ${0.75 ** 2});`,
+    end: 'opacity: 1; transform: scale(1, 1);',
   },
 }

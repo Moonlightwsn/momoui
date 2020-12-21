@@ -1,5 +1,5 @@
 import muiBase from '../../behaviors/muiBase.ts'
-import openCloseTransition from '../../behaviors/transition/openCloseTransition.ts'
+import openCloseTransition from '../../behaviors/transition/openClose.ts'
 
 Component({
   behaviors: [muiBase, openCloseTransition],
@@ -15,9 +15,13 @@ Component({
       type: String,
       value: null,
     },
+    transitionType: {
+      type: String,
+      value: 'grow',
+    },
   },
   options: {
-    // virtualHost: true,
+    virtualHost: true,
     pureDataPattern: /^_pure/,
     styleIsolation: 'apply-shared',
     multipleSlots: true,

@@ -1,4 +1,7 @@
+import transition from './transition.ts'
+
 export default Behavior({
+  behaviors: [transition],
   properties: {
     autoHideDuration: {
       type: Number,

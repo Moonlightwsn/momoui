@@ -8,8 +8,6 @@
     "./behaviors/openType",
     "./behaviors/rippleBase",
     "./behaviors/transition/transition",
-    "./behaviors/transition/fade",
-    "./behaviors/transition/grow",
-    "./behaviors/transition/openCloseTransition"
+    "./behaviors/transition/openClose"
   ]
 }

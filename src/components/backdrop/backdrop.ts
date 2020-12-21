@@ -1,5 +1,5 @@
 import muiBase from '../../behaviors/muiBase.ts'
-import openCloseTransition from '../../behaviors/transition/openCloseTransition.ts'
+import openCloseTransition from '../../behaviors/transition/openClose.ts'
 
 Component({
   behaviors: [muiBase, openCloseTransition],
@@ -16,6 +16,10 @@ Component({
       // @ts-ignore
       type: Function,
       value: null,
+    },
+    transitionType: {
+      type: String,
+      value: 'fade',
     },
   },
   methods: {

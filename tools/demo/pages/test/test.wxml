@@ -143,7 +143,6 @@
       <mui-button color="primary">AGREE</mui-button>
     </mui-dialog-actions>
   </mui-dialog>
-  <!--
   <mui-snack-bar open="{{open}}">
     <mui-alert
       closeIconProps="{{alert.closeIconProps}}"
@@ -156,7 +155,6 @@
       This is an success alert — <text style="font-weight: 700;">check it out!</text>
     </mui-alert>
   </mui-snack-bar>
-  -->
   <!--
   <mui-alert
     color="error"
