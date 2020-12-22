@@ -138,10 +138,6 @@ Component({
       type: Number,
       value: 1,
     },
-    required: {
-      type: Boolean,
-      value: false,
-    },
     selectionStart: {
       type: Number,
       value: -1,

@@ -1,5 +1,5 @@
 <view
-  class="mui mui-form-control {{mClass}}"
+  class="mui mui-form-control required-{{required}} {{mClass}}"
   style="{{mStyle}}"
 >
   <slot></slot>

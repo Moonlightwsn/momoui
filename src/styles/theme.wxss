@@ -818,6 +818,11 @@
     min-width: 0;
     flex-direction: column;
     vertical-align: top;
+    &.required-true {
+      .mui-input-label-asterisk {
+        display: inline-block;
+      }
+    }
   }
   /** mui-form-control end */
 
@@ -1560,6 +1565,10 @@
       &.mui-variant-filled {
         transform: translate(12px, 10px) scale(0.75);
       }
+    }
+    .mui-input-label-asterisk {
+      display: none;
+      margin-left: 4px;
     }
   }
   /** mui-input-label end */

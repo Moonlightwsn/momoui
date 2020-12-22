@@ -3,4 +3,5 @@
   style="{{mStyle}}"
 >
   <slot />
+  <view class="mui-input-label-asterisk">*</view>
 </label>

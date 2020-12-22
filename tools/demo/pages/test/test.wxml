@@ -606,10 +606,10 @@
     variant="outlined"
   />
   -->
-  <!--
   <mui-form-control
     color="{{color}}"
     focus
+    required
   >
     <mui-input-label>Label</mui-input-label>
     <mui-input
@@ -618,7 +618,7 @@
     <mui-form-helper-text>Some important helper text</mui-form-helper-text>
   </mui-form-control>
   <mui-button bindtap="trigger">Default</mui-button>
-  <mui-form-control m-style="margin-top: 12px;" variant="filled">
+  <mui-form-control required m-style="margin-top: 12px;" variant="filled">
     <mui-input-label>Label</mui-input-label>
     <mui-input
       value="INPUT"
@@ -631,14 +631,13 @@
     />
     <mui-form-helper-text disabled variant="filled">Disabled</mui-form-helper-text>
   </mui-form-control>
-  <mui-form-control m-style="margin-top: 12px;" variant="outlined" error>
+  <mui-form-control required m-style="margin-top: 12px;" variant="outlined" error>
     <mui-input-label>Label</mui-input-label>
     <mui-input
       value="INPUT"
     />
     <mui-form-helper-text error variant="outlined">Error</mui-form-helper-text>
   </mui-form-control>
-  -->
   <!--
   <mui-list subheader="Sub Header" dense>
     <mui-list-item

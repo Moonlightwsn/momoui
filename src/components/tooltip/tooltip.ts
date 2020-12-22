@@ -29,10 +29,16 @@ Component({
       type: String,
       value: '',
     },
+    transitionType: {
+      type: String,
+      value: 'grow',
+    },
   },
   data: {
     _positionStyle: '',
     _arrowPositionStyle: '',
+    _transitionStyle: '',
+    _defaultStyle: 'opacity: 0;',
   },
   lifetimes: {
     attached() {
@@ -65,6 +71,7 @@ Component({
     },
     _computePostion() {
       return new Promise((resolve) => {
+        this._computedPosition = true
         this.createSelectorQuery().select('.mui-tooltip-popper').fields({size: true}).exec(popperRes => {
           const [popperView] = popperRes
           const {width: popperWidth = 0, height: popperHeight = 0} = popperView
@@ -117,6 +124,25 @@ Component({
         })
       })
     }
+  },
+  observers: {
+    _open() {
+      this.setData({_transitionStyle: ''})
+    },
+    _show(show) {
+      if (this._computedPosition) {
+        const {
+          _endStyle,
+          _startStyle,
+          _enterStyle,
+          _exitStyle,
+        } = this.data
+        const _transitionStyle = show ? `${_endStyle}${_enterStyle}` : `${_startStyle}${_exitStyle}`
+        this.setData({
+          _transitionStyle,
+        })
+      }
+    },
   },
   options: {
     virtualHost: true,
