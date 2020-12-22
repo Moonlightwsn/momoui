@@ -1,5 +1,7 @@
 import transitionTypeMap from '../../common/transitionTypeMap.ts'
 
+const transitionPeriod = ['enter', 'exit']
+
 export default Behavior({
   properties: {
     transitions: {
@@ -8,10 +10,12 @@ export default Behavior({
     },
     transitionDelay: {
       type: Number,
+      optionalTypes: [Object],
       value: 0,
     },
     transitionDuration: {
       type: Number,
+      optionalTypes: [Object],
       value: 225,
     },
     transitionType: {
@@ -20,7 +24,8 @@ export default Behavior({
     },
   },
   data: {
-    _transitionStyle: '',
+    _enterStyle: '',
+    _exitStyle: '',
     _startStyle: '',
     _endStyle: '',
   },
@@ -41,38 +46,60 @@ export default Behavior({
       } else if (type && transitionTypeMap[type]) {
         realTransition = transitionTypeMap[type].transition
         const {_startStyle, _endStyle} = this.data
-        newData._startStyle = _startStyle || transitionTypeMap[type].start
-        newData._endStyle = _endStyle || transitionTypeMap[type].end
+        if (_startStyle || transitionTypeMap[type].start) {
+          newData._startStyle = _startStyle || transitionTypeMap[type].start
+        }
+        if (_endStyle || transitionTypeMap[type].end) {
+          newData._endStyle = _endStyle || transitionTypeMap[type].end
+        }
       }
       realTransition.forEach(item => {
-        let {
-          duration = defaultDuration,
-          delay = defaultDelay,
-        } = item
-        const {
-          property,
-          timingFunction = defaultTimingFunction,
-        } = item
-        if (property) {
-          if (typeof duration === 'function') {
-            duration = duration(defaultDuration)
+        transitionPeriod.forEach(period => {
+          const transitionProps = item
+          const {
+            property,
+            duration = defaultDuration,
+            delay = defaultDelay,
+            timingFunction = defaultTimingFunction,
+          } = transitionProps
+          if (property) {
+            let realProperty = property
+            if (property[period]) {
+              realProperty = property[period]
+            }
+            let realDuration = duration
+            if (duration[period]) {
+              realDuration = duration[period]
+            }
+            if (typeof realDuration === 'function') {
+              realDuration = realDuration(defaultDuration)
+            }
+            let realDelay = delay
+            if (delay[period]) {
+              realDelay = delay[period]
+            }
+            if (typeof realDelay === 'function') {
+              realDelay = realDelay(defaultDelay)
+            }
+            let realTimingFunction = timingFunction
+            if (timingFunction[period]) {
+              realTimingFunction = timingFunction[period]
+            }
+            const thisTransition = `${realProperty} ${realDuration}ms ${realTimingFunction} ${realDelay}ms`
+            if (newData[`_${period}Style`]) {
+              newData[`_${period}Style`] = `${newData._enterStyle}, ${thisTransition}`
+            } else {
+              newData[`_${period}Style`] = `transition: ${thisTransition}`
+            }
           }
-          if (typeof delay === 'function') {
-            delay = delay(defaultDelay)
-          }
-          const thisTransition = `${property} ${duration}ms ${timingFunction} ${delay}ms`
-          if (newData._transitionStyle) {
-            newData._transitionStyle = `${newData._transitionStyle}, ${thisTransition}`
-          } else {
-            newData._transitionStyle = `transition: ${thisTransition}`
-          }
+        })
+      })
+      transitionPeriod.forEach(period => {
+        if (newData[`_${period}Style`]) {
+          newData[`_${period}Style`] = `${newData[`_${period}Style`]};`
         }
       })
-      if (newData._transitionStyle) {
-        newData._transitionStyle = `${newData._transitionStyle};`
-      }
       if (Object.keys(newData).length > 0) {
-        console.log(newData)
         this.setData(newData)
       }
     }

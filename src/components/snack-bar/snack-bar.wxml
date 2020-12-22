@@ -1,7 +1,7 @@
 <view
   wx:if="{{_open}}"
   class="mui mui-snack-bar-root anchor-origin-{{anchorOrigin.vertical}}-{{anchorOrigin.horizontal}} {{mClass}}"
-  style="{{_show ? _endStyle : _startStyle}}{{_transitionStyle}}{{mStyle}}"
+  style="{{_defaultStyle}}{{_transitionStyle}}{{mStyle}}"
 >
   <mui-snack-bar-content wx:if="{{message}}" message="{{message}}">
     <slot name="message" slot="message"></slot>

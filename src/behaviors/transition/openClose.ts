@@ -30,20 +30,37 @@ export default Behavior({
     },
   },
   observers: {
-    open(open) {
+    async open(open) {
       clearTimeout(this.closeTimer)
       clearTimeout(this.openTimer)
-      const {autoHideDuration, transitionDuration} = this.data
+      const {
+        autoHideDuration,
+        transitionDuration,
+      } = this.data
       if (open) {
         if (autoHideDuration > 0) {
           this.closeTimer = setTimeout(() => {
             this._close()
           }, autoHideDuration)
         }
-        this.setData({_open: true})
-        this.openTimer = setTimeout(() => {
-          this.setData({_show: true})
-        }, 50)
+        this.setData({_open: true}, async () => {
+          let needUpdateData
+          if (this._onBeforeShow && typeof this._onBeforeShow === 'function') {
+            needUpdateData = await this._onBeforeShow()
+            if (needUpdateData) {
+              this.setData(needUpdateData, () => {
+                this.openTimer = setTimeout(() => {
+                  this.setData({_show: true})
+                }, 50)
+              })
+            }
+          }
+          if (!needUpdateData) {
+            this.openTimer = setTimeout(() => {
+              this.setData({_show: true})
+            }, 50)
+          }
+        })
       } else {
         this.setData({_show: false}, () => {
           this.closeTimer = setTimeout(() => {

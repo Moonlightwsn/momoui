@@ -16,4 +16,13 @@ export default {
     start: `opacity: 0; transform: scale(0.75, ${0.75 ** 2});`,
     end: 'opacity: 1; transform: scale(1, 1);',
   },
+  slide: {
+    transition: [{
+      property: 'transform',
+      timingFunction: {
+        enter: 'cubic-bezier(0, 0, 0.2, 1)',
+        exit: 'cubic-bezier(0.4, 0, 0.6, 1)',
+      },
+    }],
+  },
 }

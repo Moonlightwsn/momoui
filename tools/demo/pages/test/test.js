@@ -23,7 +23,7 @@ Page({
     invisible: false,
     anchorOrigin: {
       vertical: 'top',
-      horizontal: 'center',
+      horizontal: 'left',
     },
     alert: {
       iconProps: {

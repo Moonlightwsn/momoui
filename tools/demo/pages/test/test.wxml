@@ -114,6 +114,7 @@
   </view>
   -->
   <mui-button bind:tap="onOpen">Open Dialog</mui-button>
+  <!--
   <mui-dialog
     actions="{{actions}}"
     content="Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."
@@ -143,7 +144,8 @@
       <mui-button color="primary">AGREE</mui-button>
     </mui-dialog-actions>
   </mui-dialog>
-  <mui-snack-bar open="{{open}}">
+  -->
+  <mui-snack-bar open="{{open}}" anchorOrigin="{{anchorOrigin}}" transitionType="slide">
     <mui-alert
       closeIconProps="{{alert.closeIconProps}}"
       iconProps="{{alert.iconProps}}"
