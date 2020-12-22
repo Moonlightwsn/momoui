@@ -113,7 +113,7 @@
     <mui-progress type="linear" color="secondary" variant="buffer" value="5" value-buffer="30" m-style="margin-top: 16px;"></mui-progress>
   </view>
   -->
-  <mui-button bind:tap="onOpen">Open Dialog</mui-button>
+  <!-- <mui-button bind:tap="onOpen">Open Dialog</mui-button> -->
   <!--
   <mui-dialog
     actions="{{actions}}"
@@ -145,6 +145,7 @@
     </mui-dialog-actions>
   </mui-dialog>
   -->
+  <!--
   <mui-snack-bar open="{{open}}" anchorOrigin="{{anchorOrigin}}" transitionType="slide">
     <mui-alert
       closeIconProps="{{alert.closeIconProps}}"
@@ -157,6 +158,7 @@
       This is an success alert — <text style="font-weight: 700;">check it out!</text>
     </mui-alert>
   </mui-snack-bar>
+  -->
   <!--
   <mui-alert
     color="error"
@@ -212,8 +214,6 @@
     </mui-snack-bar-content>
   </mui-snack-bar>
   -->
-  <!--
-  <mui-button bind:tap="test">TEST</mui-button>
   <mui-tooltip m-class="tooltipWrapper" title="Add" arrow open="{{open}}" onClose="{{onClose}}" onOpen="{{onOpen}}">
     <mui-button variant="outlined">BOTTOM</mui-button>
   </mui-tooltip>
@@ -250,7 +250,6 @@
   <mui-tooltip m-class="tooltipWrapper" placement="top-end" title="Add" arrow>
     <mui-button variant="outlined">TOP END</mui-button>
   </mui-tooltip>
-  -->
   <!--
   <mui-chip
     label="Basic"

@@ -7,7 +7,7 @@
     bind:touchstart="_touchstart"
   >
     <slot></slot>
-    <view class="mui-tooltip {{tooltipClass}}" style="display: {{open ? 'inline-block' : 'none'}};opacity: {{_show ? 1 : 0}};{{_positionStyle}}{{tooltipStyle}}">
+    <view wx:if="{{_open}}" class="mui-tooltip {{tooltipClass}}" style="{{_show ? _endStyle : _startStyle}}{{_show ? _enterStyle : _exitStyle}}{{_positionStyle}}{{tooltipStyle}}">
       <block wx:if="{{title}}">
         {{title}}
       </block>

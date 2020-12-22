@@ -30,7 +30,7 @@ export default Behavior({
     },
   },
   observers: {
-    async open(open) {
+    open(open) {
       clearTimeout(this.closeTimer)
       clearTimeout(this.openTimer)
       const {
