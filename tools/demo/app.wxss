@@ -1,6 +1,27 @@
 @import './styles/static/fonts/roboto.wxss';
 @import './styles/common.wxss';
 
+.page {
+  padding: 24px 8px;
+}
+
+.mui.header2 {
+  margin: 32px 0 16px;
+}
+
+.mui.paragraph {
+  margin: 18px 0 8px;
+}
+
+.demo-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  padding: 12px;
+}
+
 [data-momoui-theme=light] {
   color: rgba(0, 0, 0, 0.87);
   background-color: #fff;
@@ -9,4 +30,8 @@
 [data-momoui-theme=dark] {
   color: #fff;
   background-color: #212121;
+}
+
+[data-momoui-theme=dark] .demo-box {
+  border-color: rgba(255, 255, 255, 0.12);
 }

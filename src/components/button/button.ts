@@ -16,6 +16,10 @@ Component({
       type: Boolean,
       value: false
     },
+    disableElevation: {
+      type: Boolean,
+      value: false,
+    },
     disableRipple: {
       type: Boolean,
       value: false,

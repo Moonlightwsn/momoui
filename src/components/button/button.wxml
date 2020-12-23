@@ -5,7 +5,7 @@
   disabled="{{disabled || loading}}"
   disableRipple="{{disableRipple}}"
   hover-class="{{(disabled || loading) ? '' : 'mui-button-hover'}}"
-  m-class="mui-button mui-shape-{{shape}} {{muiClasses}}"
+  m-class="mui-button disable-elevation-{{disableElevation}} mui-shape-{{shape}} {{muiClasses}}"
   m-style="{{inline ? '' : 'display: flex;'}}{{mStyle}}"
   form-type="{{formType}}"
   open-type="{{openType}}"

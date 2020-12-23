@@ -959,6 +959,12 @@
     }
     &.mui-button-hover {
       background-color: #0000000a;
+      &.disable-elevation-false {
+        box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+        &.mui-variant-outlined, &.mui-variant-text {
+          box-shadow: none;
+        }
+      }
       &.mui-color-primary {
         background-color: #1976d20a;
       }
@@ -966,7 +972,6 @@
         background-color: #dc004e0a;
       }
       &.mui-variant-contained {
-        box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
         background-color: #d5d5d5;
         &.mui-color-primary {
           background-color: @primary_color_2;

@@ -1,6 +1,6 @@
 module.exports = Behavior({
   data: {
-      theme: 'light'
+    theme: 'light'
   },
   attached: function() {
     const app = getApp()
@@ -12,10 +12,10 @@ module.exports = Behavior({
     app.unWatchThemeChange && app.unWatchThemeChange(this.themeChanged)
   },
   methods: {
-      themeChanged(theme) {
-          this.setData({
-              theme
-          })
-      }
+    themeChanged(theme) {
+      this.setData({
+        theme
+      })
+    }
   }
 })

@@ -1,0 +1,3 @@
+.mui-button.button {
+  margin: 6px;
+}

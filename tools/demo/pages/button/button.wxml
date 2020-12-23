@@ -1,0 +1,24 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography mClass="header2" variant="h5">Contained Buttons 实心按钮</mui-typography>
+  <view class="demo-box">
+    <mui-button mClass="button" variant="contained">DEFAULT</mui-button>
+    <mui-button mClass="button" variant="contained" color="primary">PRIMARY</mui-button>
+    <mui-button mClass="button" variant="contained" color="secondary">SECONDARY</mui-button>
+    <mui-button mClass="button" disabled variant="contained">DISABLED</mui-button>
+  </view>
+  <mui-typography mClass="paragraph" variant="body2">你也可以使用属性 disableElevation 属性来消除实心按钮的立体效果</mui-typography>
+  <view class="demo-box">
+    <mui-button mClass="button" variant="contained" color="primary" disableElevation>Disable elevation</mui-button>
+  </view>
+  <mui-typography mClass="header2" variant="h5">Text Buttons 文本按钮</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">文本按钮通常用于不太明显的操作</mui-typography>
+  <view class="demo-box">
+    <mui-button mClass="button">DEFAULT</mui-button>
+    <mui-button mClass="button" color="primary">PRIMARY</mui-button>
+    <mui-button mClass="button" color="secondary">SECONDARY</mui-button>
+    <mui-button mClass="button" disabled>DISABLED</mui-button>
+  </view>
+</view>
