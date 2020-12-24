@@ -4,7 +4,7 @@
   center-ripple="{{(shape === 'circle' && variant === 'text')}}"
   disabled="{{disabled || loading}}"
   disableRipple="{{disableRipple}}"
-  hover-class="{{(disabled || loading) ? '' : 'mui-button-hover ' + hoverClass}}"
+  hover-class="{{(disabled || loading) ? '' : (hoverClass ? hoverClass : 'mui-button-hover')}}"
   hover-stop-propagation="{{hoverStopPropagation}}"
   hover-start-time="{{hoverStartTime}}"
   hover-stay-time="{{hoverStayTime}}"
