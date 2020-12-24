@@ -11,7 +11,7 @@
   </view>
   <mui-typography mClass="paragraph" variant="body2">你也可以使用属性 disableElevation 属性来消除实心按钮的立体效果</mui-typography>
   <view class="demo-box">
-    <mui-button mClass="button" variant="contained" color="primary" disableElevation>Disable elevation</mui-button>
+    <mui-button mClass="button" variant="contained" color="default" disableElevation>Disable elevation</mui-button>
   </view>
   <mui-typography mClass="header2" variant="h5">Text Buttons 文本按钮</mui-typography>
   <mui-typography mClass="paragraph" variant="body2">文本按钮通常用于不太明显的操作</mui-typography>
@@ -21,4 +21,146 @@
     <mui-button mClass="button" color="secondary">SECONDARY</mui-button>
     <mui-button mClass="button" disabled>DISABLED</mui-button>
   </view>
+  <mui-typography mClass="header2" variant="h5">Outlined Buttons 描边按钮</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">描边按钮表示中等程度的强调</mui-typography>
+  <view class="demo-box">
+    <mui-button mClass="button" variant="outlined">DEFAULT</mui-button>
+    <mui-button mClass="button" variant="outlined"color="primary">PRIMARY</mui-button>
+    <mui-button mClass="button" variant="outlined" color="secondary">SECONDARY</mui-button>
+    <mui-button mClass="button" variant="outlined" disabled>DISABLED</mui-button>
+  </view>
+  <mui-typography mClass="header2" variant="h5">Handling clicks(tap) 处理点击</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">将处理程序绑定到按钮的tap事件上，用来处理各项事务</mui-typography>
+  <view class="demo-box">
+    <mui-button bind:tap="uploadImg" mClass="button" variant="contained" color="primary">UPLOAD</mui-button>
+    <mui-button
+      bind:tap="uploadImg"
+      mClass="button"
+      shape="circle"
+      icon="pictures"
+      color="primary"
+    />
+  </view>
+  <mui-typography mClass="header2" variant="h5">尺寸</mui-typography>
+  <view class="demo-box" style="overflow-x: auto;">
+    <view class="demo-row">
+      <mui-button mClass="button" size="small" color="primary">SMALL</mui-button>
+      <mui-button mClass="button" size="medium" color="primary">MEDIUM</mui-button>
+      <mui-button mClass="button" size="large" color="primary">LARGE</mui-button>
+    </view>
+    <view class="demo-row">
+      <mui-button mClass="button" size="small" color="primary" variant="outlined">SMALL</mui-button>
+      <mui-button mClass="button" size="medium" color="primary" variant="outlined">MEDIUM</mui-button>
+      <mui-button mClass="button" size="large" color="primary" variant="outlined">LARGE</mui-button>
+    </view>
+    <view class="demo-row">
+      <mui-button mClass="button" size="small" color="primary" variant="contained">SMALL</mui-button>
+      <mui-button mClass="button" size="medium" color="primary" variant="contained">MEDIUM</mui-button>
+      <mui-button mClass="button" size="large" color="primary" variant="contained">LARGE</mui-button>
+    </view>
+    <view class="demo-row">
+      <mui-button
+        mClass="button"
+        icon="arrow-down-1"
+        iconSize="16"
+        shape="circle"
+        size="small"
+      />
+      <mui-button
+        mClass="button"
+        icon="trash"
+        shape="circle"
+        size="small"
+      />
+      <mui-button
+        mClass="button"
+        color="primary"
+        icon="trash"
+        shape="circle"
+        size="medium"
+      />
+      <mui-button
+        mClass="button"
+        color="secondary"
+        icon="trash"
+        shape="circle"
+        size="large"
+      />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">带有icons（图标）和 label（标签）的按钮</mui-typography>
+  <view class="demo-box">
+    <mui-button mClass="button" icon="trash" variant="contained" color="secondary">DELETE</mui-button>
+    <mui-button mClass="button" icon="send" iconPosition="right" variant="contained" color="primary">SEND</mui-button>
+    <mui-button mClass="button" icon="arrow-up-1" variant="contained">UPLOAD</mui-button>
+    <mui-button mClass="button" icon="search" disabled variant="contained">SEARCH</mui-button>
+    <mui-button mClass="button" icon="save" iconColor="rgb(0,0,0,0.87)" size="small" variant="contained" color="primary">SAVE</mui-button>
+    <mui-button mClass="button" icon="progress-circle" iconSize="18" size="large" variant="contained" color="primary">LOADING</mui-button>
+    <mui-button mClass="button" loading size="large" variant="contained" color="primary">LOADING</mui-button>
+  </view>
+  <mui-typography mClass="header2" variant="h5">Icon Buttons（图标按钮）</mui-typography>
+  <view class="demo-box">
+    <mui-button
+      mClass="button"
+      shape="circle"
+      icon="trash"
+    />
+    <mui-button
+      mClass="button"
+      shape="circle"
+      icon="trash"
+      disabled
+    />
+    <mui-button
+      mClass="button"
+      shape="circle"
+      icon="close"
+      color="secondary"
+    />
+    <mui-button
+      mClass="button"
+      shape="circle"
+      icon="check"
+      color="primary"
+    />
+  </view>
+  <mui-typography mClass="header2" variant="h5">FAB (浮动操作按钮)</mui-typography>
+  <view class="demo-box" style="overflow-x:auto;justify-content: flex-start;">
+    <view class="demo-row">
+      <mui-button mClass="button" shape="circle" icon="plus" variant="contained" size="large" color="primary" />
+      <mui-button mClass="button" shape="circle" icon="like" variant="contained" size="large" color="secondary" />
+      <mui-button mClass="button" shape="extended" icon="share-arrow" variant="contained" size="large">Navigate</mui-button>
+      <mui-button mClass="button" disabled shape="circle" icon="like" variant="contained" size="large" />
+    </view>
+    <view class="demo-row">
+      <mui-button mClass="button" shape="circle" icon="plus" variant="contained" size="small" color="primary" />
+      <mui-button mClass="button" shape="circle" icon="plus" variant="contained" size="medium" color="primary" />
+      <mui-button mClass="button" shape="circle" icon="plus" variant="contained" size="large" color="primary" />
+    </view>
+    <view class="demo-row">
+      <mui-button mClass="button" shape="extended" icon="share-arrow" variant="contained" size="small" color="primary">EXTENDED</mui-button>
+      <mui-button mClass="button" shape="extended" icon="share-arrow" variant="contained" size="medium" color="primary">EXTENDED</mui-button>
+      <mui-button mClass="button" shape="extended" icon="share-arrow" variant="contained" size="large" color="primary">EXTENDED</mui-button>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">Not Inline</mui-typography>
+  <mui-button mClass="button" inline="{{false}}" variant="contained" color="primary" size="large">NOT INLINE</mui-button>
+  <mui-typography mClass="header2" variant="h5">Open Type (微信开放能力)</mui-typography>
+  <view class="demo-box">
+    <mui-button mClass="button" openType="getPhoneNumber" bind:getphonenumber="getPhoneNumber" variant="contained" color="primary">获取手机号</mui-button>
+  </view>
+  <mui-typography mClass="header2" variant="h5">Customized Buttons（自定义按钮）</mui-typography>
+  <view class="demo-box">
+    <mui-button mClass="button" mStyle="background-color: #9c27b0;" color="primary" variant="contained">Custom Style</mui-button>
+    <mui-button mClass="button" mStyle="color: #9c27b0;" rippleColor="#9c27b0">Ripple Color</mui-button>
+    <mui-button mClass="button custom-button" hoverClass="custom-button-hover" disableRipple variant="contained">Disable Ripple</mui-button>
+  </view>
 </view>
+<mui-button
+  mStyle="position: fixed;right: 16px;bottom: 16px;"
+  shape="circle"
+  icon="like"
+  variant="contained"
+  size="large"
+  color="secondary"
+/>

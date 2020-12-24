@@ -2,24 +2,32 @@
 @import './styles/common.wxss';
 
 .page {
-  padding: 24px 8px;
+  padding: 24px 12px;
 }
 
-.mui.header2 {
+.header2 {
   margin: 32px 0 16px;
 }
 
-.mui.paragraph {
+.paragraph {
   margin: 18px 0 8px;
 }
 
 .demo-box {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   padding: 12px;
+}
+
+.demo-box .demo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 [data-momoui-theme=light] {

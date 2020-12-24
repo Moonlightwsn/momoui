@@ -1,3 +1,10 @@
 .mui-button.button {
   margin: 6px;
 }
+button[size="mini"].mui-button.custom-button {
+  background-color: #4caf50;
+  color: #fff;
+}
+button[size="mini"].mui-button.custom-button-hover {
+  background-color: #8be28f;
+}

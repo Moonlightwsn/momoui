@@ -10,7 +10,7 @@
   "darkmode": true,
   "themeLocation": "theme.json",
   "window":{
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "MOMO UI",
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle",
     "backgroundColor": "@bgColor",

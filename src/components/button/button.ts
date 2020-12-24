@@ -28,6 +28,26 @@ Component({
       type: String,
       value: ''
     },
+    hoverClass: {
+      type: String,
+      value: '',
+    },
+    hoverStopPropagation: {
+      type: Boolean,
+      value: false,
+    },
+    hoverStartTime: {
+      type: Number,
+      value: 20,
+    },
+    hoverStayTime: {
+      type: Number,
+      value: 70,
+    },
+    lang: {
+      type: String,
+      value: 'en',
+    },
     inline: {
       type: Boolean,
       value: true
@@ -57,6 +77,10 @@ Component({
       value: false,
     },
     openType: {
+      type: String,
+      value: ''
+    },
+    rippleColor: {
       type: String,
       value: ''
     },
