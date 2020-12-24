@@ -31,6 +31,16 @@
 		},
 		"miniprogram": {
       "list": [
+				{
+          "name": "button",
+          "pathName": "pages/button/button",
+          "scene": null
+				},
+				{
+          "name": "button-group",
+          "pathName": "pages/button-group/button-group",
+          "scene": null
+        },
         {
           "name": "test",
           "pathName": "pages/test/test",

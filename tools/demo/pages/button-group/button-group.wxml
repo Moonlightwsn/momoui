@@ -1,0 +1,73 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography mClass="header2" variant="h5">Basic button group 基本的按钮组</mui-typography>
+  <view class="demo-box">
+    <mui-button-group mClass="button-group" color="primary">
+      <mui-button>ONE</mui-button>
+      <mui-button>TWO</mui-button>
+      <mui-button>THREE</mui-button>
+    </mui-button-group>
+    <mui-button-group mClass="button-group" color="primary" variant="contained">
+      <my-button class="mui-button-wrapper">ONE</my-button>
+      <my-button class="mui-button-wrapper">TWO</my-button>
+      <my-button class="mui-button-wrapper">THREE</my-button>
+    </mui-button-group>
+    <mui-button-group mClass="button-group" color="primary" variant="text">
+      <mui-button>ONE</mui-button>
+      <mui-button>TWO</mui-button>
+      <mui-button>THREE</mui-button>
+    </mui-button-group>
+  </view>
+  <mui-typography mClass="header2" variant="h5">大小和颜色</mui-typography>
+  <view class="demo-box">
+    <mui-button-group mClass="button-group" size="small">
+      <mui-button>ONE</mui-button>
+      <mui-button>TWO</mui-button>
+      <mui-button>THREE</mui-button>
+    </mui-button-group>
+    <mui-button-group mClass="button-group" color="secondary">
+      <mui-button>ONE</mui-button>
+      <mui-button>TWO</mui-button>
+      <mui-button>THREE</mui-button>
+    </mui-button-group>
+    <mui-button-group mClass="button-group" size="large" color="primary">
+      <mui-button>ONE</mui-button>
+      <mui-button>TWO</mui-button>
+      <mui-button>THREE</mui-button>
+    </mui-button-group>
+  </view>
+  <mui-typography mClass="header2" variant="h5">Vertical group 垂直组</mui-typography>
+  <view class="demo-box">
+    <mui-button-group mClass="button-group" orientation="vertical" color="primary">
+      <mui-button>ONE</mui-button>
+      <mui-button>TWO</mui-button>
+      <mui-button>THREE</mui-button>
+    </mui-button-group>
+    <mui-button-group mClass="button-group" orientation="vertical" color="primary" variant="contained">
+      <mui-button>ONE</mui-button>
+      <mui-button>TWO</mui-button>
+      <mui-button>THREE</mui-button>
+    </mui-button-group>
+    <mui-button-group mClass="button-group" orientation="vertical" color="primary" variant="text">
+      <mui-button>ONE</mui-button>
+      <mui-button>TWO</mui-button>
+      <mui-button>THREE</mui-button>
+    </mui-button-group>
+  </view>
+  <mui-typography mClass="header2" variant="h5">Split button 分体式按钮</mui-typography>
+  <view class="demo-box">
+    <mui-button-group mClass="button-group" color="primary" variant="contained">
+      <mui-button>MENU</mui-button>
+      <mui-button size="small"><mui-icon name="arrow-down-2" size="20" /></mui-button>
+    </mui-button-group>
+  </view>
+  <mui-typography mClass="header2" variant="h5">Disabled elevation 禁用立体效果（elevation）</mui-typography>
+  <view class="demo-box">
+    <mui-button-group mClass="button-group" disableElevation color="primary" variant="contained">
+      <mui-button>ONE</mui-button>
+      <mui-button>TWO</mui-button>
+    </mui-button-group>
+  </view>
+</view>

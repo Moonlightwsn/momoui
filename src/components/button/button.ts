@@ -28,6 +28,10 @@ Component({
       type: String,
       value: ''
     },
+    fullWidth: {
+      type: Boolean,
+      value: false,
+    },
     hoverClass: {
       type: String,
       value: '',
@@ -47,10 +51,6 @@ Component({
     lang: {
       type: String,
       value: 'en',
-    },
-    inline: {
-      type: Boolean,
-      value: true
     },
     icon: {
       type: String,
@@ -117,22 +117,54 @@ Component({
       value: 'text',
     },
   },
+  data: {
+    _groupStyle: '',
+  },
   relations: {
     '../button-group/button-group': {
       type: 'parent',
       linked(target) {
         if (target) {
-          const {data: {variant, color, size} = {}} = target
-          this.setData({
-            variant,
-            color,
-            size,
-          })
+          const {
+            data: {
+              variant,
+              color,
+              size,
+              disabled,
+              disableElevation,
+              disableRipple,
+            } = {}
+          } = target
+          const newData: any = {
+            disabled,
+            disableElevation,
+            disableRipple,
+            fullWidth: false,
+          }
+          if (!this._variantBeSet) {
+            newData.variant = variant
+          }
+          if (!this._colorBeSet) {
+            newData.color = color
+          }
+          if (!this._sizeBeSet) {
+            newData.size = size
+          }
+          this.setData(newData)
         }
       }
     }
   },
   observers: {
+    variant() {
+      this._variantBeSet = true
+    },
+    color() {
+      this._colorBeSet = true
+    },
+    size() {
+      this._sizeBeSet = true
+    },
   },
   options: {
     // virtualHost: true,

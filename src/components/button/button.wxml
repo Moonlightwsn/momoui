@@ -9,7 +9,7 @@
   hover-start-time="{{hoverStartTime}}"
   hover-stay-time="{{hoverStayTime}}"
   m-class="mui-button disable-elevation-{{disableElevation}} mui-shape-{{shape}} {{muiClasses}}"
-  m-style="{{inline ? '' : 'display: flex;'}}{{mStyle}}"
+  m-style="{{fullWidth ? 'width: 100%;' : ''}}{{_groupStyle}}{{mStyle}}"
   form-type="{{formType}}"
   lang="{{lang}}"
   open-type="{{openType}}"

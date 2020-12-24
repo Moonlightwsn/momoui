@@ -8,6 +8,26 @@ Component({
       type: String,
       value: 'default',
     },
+    disabled: {
+      type: Boolean,
+      value: false,
+    },
+    disableElevation: {
+      type: Boolean,
+      value: false,
+    },
+    disableRipple: {
+      type: Boolean,
+      value: false,
+    },
+    fullWidth: {
+      type: Boolean,
+      value: false,
+    },
+    orientation: {
+      type: String,
+      value: 'horizontal',
+    },
     variant: {
       type: String,
       value: 'outlined',

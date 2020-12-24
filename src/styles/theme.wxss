@@ -1182,30 +1182,99 @@
     border-color: unset;
     border-width: 0;
     border-radius: 4px;
-
-    mui-button, .mui-button-wrapper {
-      &:first-child {
-        .mui-button {
-          border-top-left-radius: 4px;
-          border-bottom-left-radius: 4px;
+    &.orientation-vertical {
+      flex-direction: column;
+      mui-button, .mui-button-wrapper {
+        &:first-child {
+          .mui-button {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+          }
+        }
+        &:last-child {
+          .mui-button {
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+          }
+        }
+        &:not(:last-child) {
+          .mui-button {
+            border-bottom-width: 0;
+          }
+        }
+        &:not(:last-child) {
+          .mui-button {
+            &.mui-variant-contained, &.mui-variant-text {
+              border-bottom-width: 1px;
+              border-bottom-style: solid;
+            }
+          }
         }
       }
-      &:last-child {
-        .mui-button {
-          border-top-right-radius: 4px;
-          border-bottom-right-radius: 4px;
+      .mui-button {
+        width: 100%;
+        &.mui-variant-contained {
+          &.mui-color-primary {
+            border-bottom-color: @primary_color_2;
+          }
+          &.mui-color-secondary {
+            border-bottom-color: @secondary_color_2;
+          }
+        }
+        &.mui-disabled {
+          &.mui-variant-text, &.mui-variant-outlined, &.mui-variant-contained {
+            border-left-color: rgba(0, 0, 0, 0.26);
+            border-top-color: rgba(0, 0, 0, 0.26);
+            border-right-color: rgba(0, 0, 0, 0.26);
+            border-bottom-color: rgba(0, 0, 0, 0.26);
+          }
         }
       }
-      &:not(:last-child) {
-        .mui-button {
-          border-right-width: 0;
+    }
+    &.orientation-horizontal {
+      mui-button, .mui-button-wrapper {
+        &:first-child {
+          .mui-button {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+          }
+        }
+        &:last-child {
+          .mui-button {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+          }
+        }
+        &:not(:last-child) {
+          .mui-button {
+            border-right-width: 0;
+          }
+        }
+        &:not(:last-child) {
+          .mui-button {
+            &.mui-variant-contained, &.mui-variant-text {
+              border-right-width: 1px;
+              border-right-style: solid;
+            }
+          }
         }
       }
-      &:not(:last-child) {
-        .mui-button {
-          &.mui-variant-contained, &.mui-variant-text {
-            border-right-width: 1px;
-            border-right-style: solid;
+      .mui-button {
+        height: 100%;
+        &.mui-variant-contained {
+          &.mui-color-primary {
+            border-right-color: @primary_color_2;
+          }
+          &.mui-color-secondary {
+            border-right-color: @secondary_color_2;
+          }
+        }
+        &.mui-disabled {
+          &.mui-variant-text, &.mui-variant-outlined, &.mui-variant-contained {
+            border-left-color: rgba(0, 0, 0, 0.26);
+            border-top-color: rgba(0, 0, 0, 0.26);
+            border-right-color: rgba(0, 0, 0, 0.26);
+            border-bottom-color: rgba(0, 0, 0, 0.26);
           }
         }
       }
@@ -1213,14 +1282,7 @@
     .mui-button {
       box-shadow: none;
       border-radius: 0;
-      &.mui-variant-contained {
-        &.mui-color-primary {
-          border-right-color: @primary_color_2;
-        }
-        &.mui-color-secondary {
-          border-right-color: @secondary_color_2;
-        }
-      }
+      min-width: 40px;
     }
   }
   /** mui-button-group end */
@@ -2772,6 +2834,16 @@
     &.mui-button-group {
       &.mui-variant-contained {
         background-color: transparent;
+      }
+      .mui-button {
+        &.mui-disabled {
+          &.mui-variant-text, &.mui-variant-outlined, &.mui-variant-contained {
+            border-left-color: rgba(255, 255, 255, 0.3);
+            border-top-color: rgba(255, 255, 255, 0.3);
+            border-right-color: rgba(255, 255, 255, 0.3);
+            border-bottom-color: rgba(255, 255, 255, 0.3);
+          }
+        }
       }
     }
 

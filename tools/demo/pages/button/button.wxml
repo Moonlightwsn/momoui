@@ -143,8 +143,8 @@
       <mui-button mClass="button" shape="extended" icon="share-arrow" variant="contained" size="large" color="primary">EXTENDED</mui-button>
     </view>
   </view>
-  <mui-typography mClass="header2" variant="h5">Not Inline</mui-typography>
-  <mui-button mClass="button" inline="{{false}}" variant="contained" color="primary" size="large">NOT INLINE</mui-button>
+  <mui-typography mClass="header2" variant="h5">FullWidth</mui-typography>
+  <mui-button fullWidth variant="contained" color="primary" size="large">FullWidth</mui-button>
   <mui-typography mClass="header2" variant="h5">Open Type (微信开放能力)</mui-typography>
   <view class="demo-box">
     <mui-button mClass="button" openType="getPhoneNumber" bind:getphonenumber="getPhoneNumber" variant="contained" color="primary">获取手机号</mui-button>

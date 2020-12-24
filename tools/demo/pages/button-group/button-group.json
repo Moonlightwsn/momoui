@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mui-icon": "../../components/icon/icon",
+    "my-button": "../../components/button/button",
+    "mui-button": "../../components/button/button",
+    "mui-button-group": "../../components/button-group/button-group",
+    "mui-typography": "../../components/typography/typography"
+  }
+}
