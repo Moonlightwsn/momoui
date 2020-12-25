@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mui-backdrop": "../backdrop/backdrop",
+    "mui-paper": "../paper/paper"
+  }
+}

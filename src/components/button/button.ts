@@ -48,10 +48,6 @@ Component({
       type: Number,
       value: 70,
     },
-    lang: {
-      type: String,
-      value: 'en',
-    },
     icon: {
       type: String,
       value: null,
@@ -71,6 +67,10 @@ Component({
     iconSpin: {
       type: Boolean,
       value: false,
+    },
+    lang: {
+      type: String,
+      value: 'en',
     },
     loading: {
       type: Boolean,

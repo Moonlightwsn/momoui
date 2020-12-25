@@ -1,0 +1,20 @@
+<view
+  class="mui mui-popover-anchor {{mClass}}"
+  style="{{mStyle}}"
+>
+  <slot></slot>
+</view>
+<mui-backdrop
+  class="_backdrop_in_popover"
+  m-style="z-index: 1300;"
+  invisible="{{true}}"
+  onClose="{{onClose}}"
+  open="{{open}}"
+  transitions="{{transitions}}"
+  transitionDelay="{{transitionDelay}}"
+  transitionDuration="{{transitionDuration}}"
+>
+  <mui-paper class="mui-popover-content" elevation="{{elevation}}" catch:tap="_clickPopoverContent">
+    <slot name="content"></slot>
+  </mui-paper>
+</mui-backdrop>

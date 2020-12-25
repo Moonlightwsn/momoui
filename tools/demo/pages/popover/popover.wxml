@@ -1,0 +1,16 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography mClass="header2" variant="h5">简单的弹出框</mui-typography>
+  <view class="demo-box">
+    <mui-popover
+      mClass="popover"
+      open="{{open}}"
+      onClose="{{onClose}}"
+    >
+      <mui-button bind:tap="openPopover" variant="contained">OPEN POPOVER</mui-button>
+      <mui-typography mStyle="padding: 16px;" slot="content">The content of the Popover.</mui-typography>
+    </mui-popover>
+  </view>
+</view>

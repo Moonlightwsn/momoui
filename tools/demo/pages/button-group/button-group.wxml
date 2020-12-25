@@ -57,6 +57,7 @@
     </mui-button-group>
   </view>
   <mui-typography mClass="header2" variant="h5">Split button 分体式按钮</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">按钮组组件也可用于创建分体式按钮。 下拉列表可以用于更改按钮相关的操作（如本例所示），或者用于立即触发一个相关的操作</mui-typography>
   <view class="demo-box">
     <mui-button-group mClass="button-group" color="primary" variant="contained">
       <mui-button>MENU</mui-button>
@@ -64,6 +65,7 @@
     </mui-button-group>
   </view>
   <mui-typography mClass="header2" variant="h5">Disabled elevation 禁用立体效果（elevation）</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">你也可以使用属性 disableElevation 属性来消除实心按钮的立体效果</mui-typography>
   <view class="demo-box">
     <mui-button-group mClass="button-group" disableElevation color="primary" variant="contained">
       <mui-button>ONE</mui-button>

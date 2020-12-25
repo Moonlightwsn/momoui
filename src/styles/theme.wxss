@@ -64,8 +64,17 @@
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
     -webkit-tap-highlight-color: transparent;
+    &.invisible-true {
+      background-color: transparent;
+    }
   }
-   /** mui-backdrop end */
+  /** mui-backdrop end */
+
+  /** popover */
+  &.mui-popover-anchor {
+    display: inline-block;
+  }
+  /** popover end */
 
   /** mui-paper */
   &.mui-paper {

@@ -71,7 +71,7 @@ Component({
     },
     _computePostion() {
       return new Promise((resolve) => {
-        this._computedPosition = true
+        this._positionComputed = true
         this.createSelectorQuery().select('.mui-tooltip-popper').fields({size: true}).exec(popperRes => {
           const [popperView] = popperRes
           const {width: popperWidth = 0, height: popperHeight = 0} = popperView
@@ -130,7 +130,7 @@ Component({
       this.setData({_transitionStyle: ''})
     },
     _show(show) {
-      if (this._computedPosition) {
+      if (this._positionComputed) {
         const {
           _endStyle,
           _startStyle,

@@ -49,6 +49,7 @@
     "list-subheader": "./components/list-subheader/list-subheader",
 
     "paper": "./components/paper/paper",
+    "popover": "./components/popover/popover",
     "progress": "./components/progress/progress",
     
     "radio": "./components/radio/radio",

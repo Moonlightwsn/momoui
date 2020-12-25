@@ -4,6 +4,8 @@
   onBackdropClick="{{onBackdropClick}}"
   onClose="{{onClose}}"
   open="{{open}}"
+  transitions="{{transitions}}"
+  transitionDelay="{{transitionDelay}}"
   transitionDuration="{{transitionDuration}}"
 >
   <view

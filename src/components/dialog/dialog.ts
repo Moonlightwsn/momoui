@@ -50,9 +50,19 @@ Component({
       type: String,
       value: null,
     },
+    transitions: {
+      type: Array,
+      value: [],
+    },
+    transitionDelay: {
+      type: Number,
+      optionalTypes: [Object],
+      value: 0,
+    },
     transitionDuration: {
       type: Number,
-      value: 255,
+      optionalTypes: [Object],
+      value: 225,
     },
   },
   methods: {

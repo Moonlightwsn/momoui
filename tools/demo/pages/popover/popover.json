@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mui-button": "../../components/button/button",
+    "mui-popover": "../../components/popover/popover",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

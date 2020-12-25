@@ -28,13 +28,13 @@ Component({
       type: String,
       value: 'horizontal',
     },
-    variant: {
-      type: String,
-      value: 'outlined',
-    },
     size: {
       type: String,
       value: 'medium',
+    },
+    variant: {
+      type: String,
+      value: 'outlined',
     },
   },
   relations: {

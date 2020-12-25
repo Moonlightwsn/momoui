@@ -45,8 +45,9 @@ export default Behavior({
         }
         this.setData({_open: true}, async () => {
           let needUpdateData
-          if (this._onBeforeShow && typeof this._onBeforeShow === 'function') {
-            needUpdateData = await this._onBeforeShow()
+          const {_onBeforeShow} = this
+          if (_onBeforeShow && typeof _onBeforeShow === 'function') {
+            needUpdateData = await _onBeforeShow()
             if (needUpdateData) {
               this.setData(needUpdateData, () => {
                 this.openTimer = setTimeout(() => {

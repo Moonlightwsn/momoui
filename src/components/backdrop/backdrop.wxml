@@ -1,6 +1,6 @@
 <view
   wx:if="{{_open}}"
-  class="mui mui-backdrop backdrop-transition {{mClass}}"
+  class="mui mui-backdrop invisible-{{invisible}} {{mClass}}"
   style="{{_show ? _endStyle : _startStyle}}{{_show ? _enterStyle : _exitStyle}}{{mStyle}}"
   bind:tap="_backdropClick"
 >

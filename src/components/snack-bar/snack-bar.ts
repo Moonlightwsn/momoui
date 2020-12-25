@@ -27,10 +27,10 @@ Component({
   methods: {
     _onBeforeShow() {
       const {transitions, transitionType} = this.data
-      if ((!transitions || transitions.length <= 0) && transitionType === 'slide' && !this._computedPosition) {
+      if ((!transitions || transitions.length <= 0) && transitionType === 'slide' && !this._positionComputed) {
         return this._computePosition()
       }
-      this._computedPosition = true
+      this._positionComputed = true
       return null
     },
     _computePosition() {
@@ -60,7 +60,7 @@ Component({
             right,
             bottom,
             left
-          } = res[0]
+          } = res[0] || {}
           position.top = top
           position.right = right
           position.bottom = bottom
@@ -71,7 +71,7 @@ Component({
           }
         })
       }).then((position: any) => {
-        this._computedPosition = true
+        this._positionComputed = true
         const _endStyle = 'transform: none;'
         let _startStyle = ''
         const {anchorOrigin: {vertical, horizontal}} = this.data
@@ -96,7 +96,7 @@ Component({
   },
   observers: {
     _show(show) {
-      if (this._computedPosition) {
+      if (this._positionComputed) {
         const {
           _endStyle,
           _startStyle,
