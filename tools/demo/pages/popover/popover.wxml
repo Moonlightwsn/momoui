@@ -32,7 +32,7 @@
     </view>
     <view class="demo-row">
       <mui-form-control>
-        <mui-typography color="textSecondary" variant="body2" mStyle="padding: 12px;">anchorReference</mui-typography>
+        <mui-form-label>anchorReference</mui-form-label>
         <mui-radio-group value="{{anchorReference}}" onChange="{{changeAnchorReference}}">
           <mui-radio value="anchorEl">anchorEl</mui-radio>
           <mui-radio value="anchorPosition">anchorPosition</mui-radio>

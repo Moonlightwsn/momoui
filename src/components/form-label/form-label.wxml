@@ -1,0 +1,6 @@
+<view
+  class="mui mui-form-label {{mClass}}"
+  style="{{mStyle}}"
+>
+  <slot></slot>
+</view>

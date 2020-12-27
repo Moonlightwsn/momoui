@@ -2,6 +2,7 @@
   "usingComponents": {
     "mui-button": "../../components/button/button",
     "mui-form-control": "../../components/form-control/form-control",
+    "mui-form-label": "../../components/form-label/form-label",
     "mui-input": "../../components/input/input",
     "mui-input-label": "../../components/input-label/input-label",
     "mui-popover": "../../components/popover/popover",

@@ -28,7 +28,9 @@
     "divider": "./components/divider/divider",
 
     "form-control": "./components/form-control/form-control",
+    "form-control-label": "./components/form-control-label/form-control-label",
     "form-helper-text": "./components/form-helper-text/form-helper-text",
+    "form-label": "./components/form-label/form-label",
 
     "grid": "./components/grid/grid",
     "grid-list": "./components/grid-list/grid-list",
