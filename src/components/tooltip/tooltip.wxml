@@ -1,18 +1,27 @@
 <view
   class="{{mClass}}"
-  style="{{mStyle}};display: inline-block"
+  style="{{mStyle}}"
 >
-  <view
-    class="mui mui-tooltip-popper"
-    bind:touchstart="_touchstart"
+  <mui-popover
+    anchorOrigin="{{anchorOrigin}}"
+    elevation="{{0}}"
+    onBackdropClick="{{_onBackdropClick}}"
+    onClose="{{onClose}}"
+    open="{{open}}"
+    transformOrigin="{{transformOrigin}}"
+    transitions="{{transitions}}"
+    transitionDelay="{{transitionDelay}}"
+    transitionDuration="{{transitionDuration}}"
   >
-    <slot></slot>
-    <view class="mui-tooltip {{tooltipClass}}" style="{{_defaultStyle}}{{_transitionStyle}}{{_positionStyle}}{{tooltipStyle}}">
-      <block wx:if="{{title}}">
-        {{title}}
-      </block>
-      <slot name="title"></slot>
-      <view wx:if="{{arrow}}" class="tooltip-arrow arrow-placement-{{placement}}" style="{{_arrowPositionStyle}}" />
+    <view bind:touchstart="_showTooltip">
+      <slot></slot>
     </view>
-  </view>
+    <view slot="content" class="mui-tooltip">
+      <view wx:if="{{title}}" class="tooltip-title arrow-placement-{{placement}}">
+        {{title}}
+        <view wx:if="{{arrow}}" class="tooltip-arrow arrow-placement-{{placement}}" />
+      </view>
+      <slot name="title"></slot>
+    </view>
+  </mui-popover>
 </view>

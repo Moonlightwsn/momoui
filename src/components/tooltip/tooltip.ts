@@ -1,16 +1,147 @@
 import muiBase from '../../behaviors/muiBase.ts'
-import openCloseTransition from '../../behaviors/transition/openClose.ts'
+
+const positionMap = {
+  bottom: {
+    anchorOrigin: {
+      vertical: 'bottom',
+      horizontal: 'center',
+    },
+    transformOrigin: {
+      vertical: 'top',
+      horizontal: 'center',
+    },
+  },
+  'bottom-start': {
+    anchorOrigin: {
+      vertical: 'bottom',
+      horizontal: 'left',
+    },
+    transformOrigin: {
+      vertical: 'top',
+      horizontal: 'left',
+    },
+  },
+  'bottom-end': {
+    anchorOrigin: {
+      vertical: 'bottom',
+      horizontal: 'right',
+    },
+    transformOrigin: {
+      vertical: 'top',
+      horizontal: 'right',
+    },
+  },
+  top: {
+    anchorOrigin: {
+      vertical: 'top',
+      horizontal: 'center',
+    },
+    transformOrigin: {
+      vertical: 'bottom',
+      horizontal: 'center',
+    },
+  },
+  'top-start': {
+    anchorOrigin: {
+      vertical: 'top',
+      horizontal: 'left',
+    },
+    transformOrigin: {
+      vertical: 'bottom',
+      horizontal: 'left',
+    },
+  },
+  'top-end': {
+    anchorOrigin: {
+      vertical: 'top',
+      horizontal: 'right',
+    },
+    transformOrigin: {
+      vertical: 'bottom',
+      horizontal: 'right',
+    },
+  },
+  left: {
+    anchorOrigin: {
+      vertical: 'center',
+      horizontal: 'left',
+    },
+    transformOrigin: {
+      vertical: 'center',
+      horizontal: 'right',
+    },
+  },
+  'left-start': {
+    anchorOrigin: {
+      vertical: 'top',
+      horizontal: 'left',
+    },
+    transformOrigin: {
+      vertical: 'top',
+      horizontal: 'right',
+    },
+  },
+  'left-end': {
+    anchorOrigin: {
+      vertical: 'bottom',
+      horizontal: 'left',
+    },
+    transformOrigin: {
+      vertical: 'bottom',
+      horizontal: 'right',
+    },
+  },
+  right: {
+    anchorOrigin: {
+      vertical: 'center',
+      horizontal: 'right',
+    },
+    transformOrigin: {
+      vertical: 'center',
+      horizontal: 'left',
+    },
+  },
+  'right-start': {
+    anchorOrigin: {
+      vertical: 'top',
+      horizontal: 'right',
+    },
+    transformOrigin: {
+      vertical: 'top',
+      horizontal: 'left',
+    },
+  },
+  'right-end': {
+    anchorOrigin: {
+      vertical: 'bottom',
+      horizontal: 'right',
+    },
+    transformOrigin: {
+      vertical: 'bottom',
+      horizontal: 'left',
+    },
+  },
+}
 
 Component({
-  behaviors: [muiBase, openCloseTransition],
+  behaviors: [muiBase],
   properties: {
     arrow: {
       type: Boolean,
       value: false,
     },
+    onClose: {
+      // @ts-ignore
+      type: Function,
+      value: null,
+    },
     onOpen: {
       // @ts-ignore
       type: Function,
+      value: null,
+    },
+    open: {
+      type: Boolean,
       value: null,
     },
     placement: {
@@ -21,127 +152,59 @@ Component({
       type: String,
       value: null,
     },
-    tooltipClass: {
-      type: String,
-      value: '',
+    transitions: {
+      type: Array,
+      value: [],
     },
-    tooltipStyle: {
-      type: String,
-      value: '',
+    transitionDelay: {
+      type: Number,
+      optionalTypes: [Object],
+      value: 0,
     },
-    transitionType: {
-      type: String,
-      value: 'grow',
+    transitionDuration: {
+      type: Number,
+      optionalTypes: [Object],
+      value: 225,
     },
   },
   data: {
-    _positionStyle: '',
-    _arrowPositionStyle: '',
-    _transitionStyle: '',
-    _defaultStyle: 'opacity: 0;',
+    anchorOrigin: {
+      vertical: 'bottom',
+      horizontal: 'center',
+    },
+    transformOrigin: {
+      vertical: 'top',
+      horizontal: 'center',
+    },
   },
   lifetimes: {
     attached() {
-      const {open} = this.data
-      if (typeof open === 'boolean') {
+      if (typeof this.data.open === 'boolean') {
         this._becontrolled = true
       }
-      if (open) {
-        this._computePostion()
-      }
-    }
-  },
-  methods: {
-    _touchstart(e) {
-      const newOpen = !this.data.open
-      const newData: any = {}
-      if (!this._becontrolled) {
-        newData.open = newOpen
-      }
-      const {onOpen, onClose} = this.data
-      if (newOpen && onOpen && typeof onOpen === 'function') {
-        onOpen(e)
-      } else if (onClose && onClose && typeof onClose === 'function') {
-        onClose(e)
-      }
-      this.setData(newData)
-    },
-    _onBeforeShow() {
-      return this._computePostion()
-    },
-    _computePostion() {
-      return new Promise((resolve) => {
-        this._positionComputed = true
-        this.createSelectorQuery().select('.mui-tooltip-popper').fields({size: true}).exec(popperRes => {
-          const [popperView] = popperRes
-          const {width: popperWidth = 0, height: popperHeight = 0} = popperView
-          this.createSelectorQuery().select('.mui-tooltip').fields({size: true}).exec(tooptipRes => {
-            const [tooptipView] = tooptipRes
-            const {width: tooltipWidth = 0, height: tooltipHeight = 0} = tooptipView
-            const {placement} = this.data
-            let _positionStyle = ''
-            let _arrowPositionStyle = ''
-            const tooltipMargin = 14
-            if (placement === 'bottom') {
-              _positionStyle = `top: ${popperHeight + tooltipMargin}px;left: ${(popperWidth - tooltipWidth) / 2}px;`
-              _arrowPositionStyle = `top: -7px;left: ${(tooltipWidth - 10) / 2}px;`
-            } else if (placement === 'bottom-start') {
-              _positionStyle = `top: ${popperHeight + tooltipMargin}px;left: 0;`
-              _arrowPositionStyle = `top: -7px;left: ${(tooltipWidth - 10) / 2}px;`
-            } else if (placement === 'bottom-end') {
-              _positionStyle = `top: ${popperHeight + tooltipMargin}px;right: 0;`
-              _arrowPositionStyle = `top: -7px;left: ${(tooltipWidth - 10) / 2}px;`
-            } else if (placement === 'top') {
-              _positionStyle = `top: -${tooltipHeight + tooltipMargin}px;left: ${(popperWidth - tooltipWidth) / 2}px;`
-              _arrowPositionStyle = `bottom: -7px;left: ${(tooltipWidth - 10) / 2}px;`
-            } else if (placement === 'top-start') {
-              _positionStyle = `top: -${tooltipHeight + tooltipMargin}px;left: 0;`
-              _arrowPositionStyle = `bottom: -7px;left: ${(tooltipWidth - 10) / 2}px;`
-            } else if (placement === 'top-end') {
-              _positionStyle = `top: -${tooltipHeight + tooltipMargin}px;right: 0;`
-              _arrowPositionStyle = `bottom: -7px;left: ${(tooltipWidth - 10) / 2}px;`
-            } else if (placement === 'left') {
-              _positionStyle = `top: ${(popperHeight - tooltipHeight) / 2}px;left: -${tooltipWidth + tooltipMargin}px;`
-              _arrowPositionStyle = `top: ${(tooltipHeight - 10) / 2}px;right: -7px;`
-            } else if (placement === 'left-start') {
-              _positionStyle = `top: 0;left: -${tooltipWidth + tooltipMargin}px;`
-              _arrowPositionStyle = `top: ${(tooltipHeight - 10) / 2}px;right: -7px;`
-            } else if (placement === 'left-end') {
-              _positionStyle = `bottom: 0;left: -${tooltipWidth + tooltipMargin}px;`
-              _arrowPositionStyle = `top: ${(tooltipHeight - 10) / 2}px;right: -7px;`
-            } else if (placement === 'right') {
-              _positionStyle = `top: ${(popperHeight - tooltipHeight) / 2}px;left: ${popperWidth + tooltipMargin}px;`
-              _arrowPositionStyle = `top: ${(tooltipHeight - 10) / 2}px;left: -7px;`
-            } else if (placement === 'right-start') {
-              _positionStyle = `top: 0;left: ${popperWidth + tooltipMargin}px;`
-              _arrowPositionStyle = `top: ${(tooltipHeight - 10) / 2}px;left: -7px;`
-            } else if (placement === 'right-end') {
-              _positionStyle = `bottom: 0;left: ${popperWidth + tooltipMargin}px;`
-              _arrowPositionStyle = `top: ${(tooltipHeight - 10) / 2}px;left: -7px;`
-            }
-            resolve({_positionStyle, _arrowPositionStyle})
-          })
-        })
+      this.setData({
+        _onBackdropClick: this._onBackdropClick.bind(this),
       })
     }
   },
-  observers: {
-    _open() {
-      this.setData({_transitionStyle: ''})
-    },
-    _show(show) {
-      if (this._positionComputed) {
-        const {
-          _endStyle,
-          _startStyle,
-          _enterStyle,
-          _exitStyle,
-        } = this.data
-        const _transitionStyle = show ? `${_endStyle}${_enterStyle}` : `${_startStyle}${_exitStyle}`
-        this.setData({
-          _transitionStyle,
-        })
+  methods: {
+    _showTooltip() {
+      if (!this._becontrolled) {
+        this.setData({open: true})
       }
+    },
+    _onBackdropClick() {
+      if (!this._becontrolled) {
+        this.setData({open: false})
+      }
+    },
+    _genPosition(placement) {
+      this.setData(positionMap[placement])
+    },
+  },
+  observers: {
+    placement(placement) {
+      this._genPosition(placement)
     },
   },
   options: {

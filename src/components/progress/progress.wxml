@@ -1,8 +1,8 @@
 <block wx:if="{{type === 'circular'}}">
   <mui-icon
     color="{{progressColor}}"
-    m-class="mui mui-color-{{color}} {{variant !== 'indeterminate' ? 'adjust-offset' : ''}} {{mClass}}"
-    m-style="{{mStyle}}"
+    mClass="mui mui-color-{{color}} {{variant !== 'indeterminate' ? 'adjust-offset' : ''}} {{mClass}}"
+    mStyle="{{mStyle}}"
     name="progress-circle"
     progress-props="{{_progressPropsForIcon}}"
     size="{{size}}"

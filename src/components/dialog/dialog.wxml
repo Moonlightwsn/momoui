@@ -1,5 +1,5 @@
 <mui-backdrop
-  m-style="z-index: 1300;"
+  mStyle="z-index: 1300;"
   disableBackdropClick="{{disableBackdropClick}}"
   onBackdropClick="{{onBackdropClick}}"
   onClose="{{onClose}}"
@@ -12,8 +12,8 @@
     class="mui mui-dialog-container dialog-scroll-{{scroll}}"
   >
     <mui-paper
-      m-class="dialog-paper dialog-paper-scroll-{{scroll}} maxWidth-{{maxWidth}} fullWidth-{{fullWidth}} fullScreen-{{fullScreen}} {{mClass}}"
-      m-style="{{mStyle}}"
+      mClass="dialog-paper dialog-paper-scroll-{{scroll}} maxWidth-{{maxWidth}} fullWidth-{{fullWidth}} fullScreen-{{fullScreen}} {{mClass}}"
+      mStyle="{{mStyle}}"
       elevation="24"
       catch:tap="_clickDialogContent"
     >

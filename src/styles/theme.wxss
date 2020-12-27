@@ -303,13 +303,10 @@
   /** mui-divider end */
 
   /** mui-tooltip */
-  &.mui-tooltip-popper {
+  .mui-tooltip {
     position: relative;
-    display: inline-flex;
-    margin: 0;
-    padding: 0;
-    .mui-tooltip {
-      position: absolute;
+    .tooltip-title {
+      position: relative;
       color: #fff;
       padding: 4px 8px;
       font-size: 0.625rem;
@@ -320,6 +317,18 @@
       line-height: 1.4em;
       border-radius: 4px;
       background-color: rgba(97, 97, 97, 0.9);
+      &.arrow-placement-bottom, &.arrow-placement-bottom-start, &.arrow-placement-bottom-end{
+        margin: 14px 0;
+      }
+      &.arrow-placement-top, &.arrow-placement-top-start, &.arrow-placement-top-end {
+        margin: 14px 0;
+      }
+      &.arrow-placement-left, &.arrow-placement-left-start, &.arrow-placement-left-end {
+        margin: 0 14px;
+      }
+      &.arrow-placement-right, &.arrow-placement-right-start, &.arrow-placement-right-end {
+        margin: 0 14px;
+      }
       .tooltip-arrow {
         color: rgba(97, 97, 97, 0.9);
         width: 10px;
@@ -337,16 +346,22 @@
           background-color: currentColor;
         }
         &.arrow-placement-bottom, &.arrow-placement-bottom-start, &.arrow-placement-bottom-end {
+          left: calc(50% - 5px);
+          top: -7px;
           &::after {
             transform-origin: 0 100%;
           }
         }
         &.arrow-placement-top, &.arrow-placement-top-start, &.arrow-placement-top-end {
+          left: calc(50% - 5px);
+          bottom: -7px;
           &::after {
             transform-origin: 100% 0;
           }
         }
         &.arrow-placement-left, &.arrow-placement-left-start, &.arrow-placement-left-end {
+          right: -7px;
+          top: calc(50% - 5px);
           height: 10px;
           width: 7px;
           &::after {
@@ -354,6 +369,8 @@
           }
         }
         &.arrow-placement-right, &.arrow-placement-right-start, &.arrow-placement-right-end {
+          left: -7px;
+          top: calc(50% - 5px);
           height: 10px;
           width: 7px;
           &::after {

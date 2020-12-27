@@ -2,8 +2,8 @@
   disabled="{{disabled}}"
   disableRipple="{{!button}}"
   component="{{button ? 'button' : 'view'}}"
-  m-class="mui mui-list-item divider-{{divider}} align-items-{{alignItems}} selected-{{selected}} button-{{button}} disable-gutters-{{disableGutters}} dense-{{dense}} {{mClass}}"
-  m-style="{{mStyle}}"
+  mClass="mui mui-list-item divider-{{divider}} align-items-{{alignItems}} selected-{{selected}} button-{{button}} disable-gutters-{{disableGutters}} dense-{{dense}} {{mClass}}"
+  mStyle="{{mStyle}}"
 >
   <mui-list-item-avatar wx:if="{{avatar}}">
     <mui-avatar src="{{avatar.src}}" icon="{{avatar.icon}}" />

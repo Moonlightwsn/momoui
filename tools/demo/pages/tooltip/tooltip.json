@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mui-button": "../../components/button/button",
+    "mui-tooptip": "../../components/tooltip/tooltip",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

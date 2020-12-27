@@ -3,5 +3,5 @@
   style="{{mStyle}}"
 >
   <slot></slot>
-  <mui-avatar wx:if="{{_more > 0}}" m-style="{{_moreStyle}}">+{{_more}}</mui-avatar>
+  <mui-avatar wx:if="{{_more > 0}}" mStyle="{{_moreStyle}}">+{{_more}}</mui-avatar>
 </view>

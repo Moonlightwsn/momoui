@@ -6,15 +6,16 @@
 </view>
 <mui-backdrop
   class="_backdrop_in_popover"
-  m-style="z-index: 1300;"
+  mStyle="z-index: 1300;"
   invisible="{{true}}"
+  onBackdropClick="{{onBackdropClick}}"
   onClose="{{onClose}}"
   open="{{open}}"
   transitions="{{transitions}}"
   transitionDelay="{{transitionDelay}}"
   transitionDuration="{{transitionDuration}}"
 >
-  <mui-paper class="mui-popover-content" elevation="{{elevation}}" catch:tap="_clickPopoverContent">
+  <mui-paper class="mui-popover-content" style="{{_contentStyle}}" elevation="{{elevation}}" catch:tap="_clickPopoverContent">
     <slot name="content"></slot>
   </mui-paper>
 </mui-backdrop>

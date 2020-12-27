@@ -47,6 +47,11 @@
           "scene": null
         },
         {
+          "name": "tooltip",
+          "pathName": "pages/tooltip/tooltip",
+          "scene": null
+        },
+        {
           "name": "test",
           "pathName": "pages/test/test",
           "scene": null

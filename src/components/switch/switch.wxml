@@ -5,8 +5,8 @@
   capture-bind:longpress="_checkControll"
 >
   <view class="switch-root">
-    <mui-button disabled="{{disabled}}" disableRipple="{{disableRipple}}" color="{{color}}" shape="circle" variant="text" m-style="padding: {{size === 'small' ? 4 : 9}}px;">
-      <mui-icon name="{{_currentIcon}}" m-class="check-icon switch-icon" />
+    <mui-button disabled="{{disabled}}" disableRipple="{{disableRipple}}" color="{{color}}" shape="circle" variant="text" mStyle="padding: {{size === 'small' ? 4 : 9}}px;">
+      <mui-icon name="{{_currentIcon}}" mClass="check-icon switch-icon" />
     </mui-button>
     <view class="switch-track" />
   </view>

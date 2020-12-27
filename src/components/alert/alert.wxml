@@ -1,6 +1,6 @@
 <mui-paper
-  m-class="mui-alert mui-color-{{color}} mui-variant-{{variant}} {{mClass}}"
-  m-style="{{mStyle}}"
+  mClass="mui-alert mui-color-{{color}} mui-variant-{{variant}} {{mClass}}"
+  mStyle="{{mStyle}}"
   elevation="0"
 >
   <view class="alert-icon">
@@ -8,7 +8,7 @@
     <slot wx:else name="icon"></slot>
   </view>
   <view class="alert-message">
-    <mui-typography wx:if="{{title}}" m-class="alert-title" gutterBottom>{{title}}</mui-typography>
+    <mui-typography wx:if="{{title}}" mClass="alert-title" gutterBottom>{{title}}</mui-typography>
     <block wx:if="{{message}}">
       {{message}}
     </block>
@@ -25,7 +25,7 @@
     </mui-button>
     <mui-button
       wx:elif="{{_hasAction}}"
-      m-style="padding: 3px;width: auto;height:auto;"
+      mStyle="padding: 3px;width: auto;height:auto;"
       color="inherit"
       shape="circle"
       icon="{{closeIcon || 'close-circle'}}"

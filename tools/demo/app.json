@@ -3,6 +3,7 @@
     "pages/button/button",
     "pages/button-group/button-group",
     "pages/popover/popover",
+    "pages/tooltip/tooltip",
     "pages/index/index",
     "pages/test/test",
     "pages/grid/grid",

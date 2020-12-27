@@ -23,8 +23,8 @@
     full-width="{{fullWidth}}"
     class="_mui-select-input"
     input-disabled
-    m-class="mui-select-input {{mClass}}"
-    m-style="{{mStyle}}"
+    mClass="mui-select-input {{mClass}}"
+    mStyle="{{mStyle}}"
     margin="{{margin}}"
     name="{{name}}"
     placeholder="{{placeholder}}"
@@ -34,8 +34,8 @@
     value="{{_display}}"
     variant="{{variant}}"
   >
-    <mui-input-adornment m-class="select-arrow" slot="endAdornment" position="end">
-      <mui-icon name="arrow-{{_focus ? 'up' : 'down'}}-2" m-style="font-size: 12px;" />
+    <mui-input-adornment mClass="select-arrow" slot="endAdornment" position="end">
+      <mui-icon name="arrow-{{_focus ? 'up' : 'down'}}-2" mStyle="font-size: 12px;" />
     </mui-input-adornment>
   </mui-input>
 </picker>

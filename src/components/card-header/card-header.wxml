@@ -9,8 +9,8 @@
       icon="{{avatar.icon}}"
       iconSize="{{avatar.size}}"
       iconColor="{{avatar.iconColor}}"
-      m-style="{{avatar.style}}"
-      m-class="{{src ? 'avatar-img ' : ''}}{{avatar.class}}"
+      mStyle="{{avatar.style}}"
+      mClass="{{src ? 'avatar-img ' : ''}}{{avatar.class}}"
       variant="{{avatar.variant || 'circle'}}"
     />
     <slot wx:else name="avatar"></slot>
@@ -18,7 +18,7 @@
   <view class="card-header-content">
     <block wx:if="{{title}}">
       <mui-typography
-        m-class="card-header-content-title"
+        mClass="card-header-content-title"
         variant="body2"
         display="block"
       >
@@ -28,7 +28,7 @@
     <slot wx:else name="title"></slot>
     <block wx:if="{{subheader}}">
       <mui-typography
-        m-class="card-header-content-subheader"
+        mClass="card-header-content-subheader"
         variant="body2"
         color="textSecondary"
         display="block"
@@ -46,8 +46,8 @@
       icon="{{action.icon}}"
       iconSize="{{action.iconSize || 24}}"
       iconColor="{{action.iconColor}}"
-      m-style="{{action.style}}"
-      m-class="{{action.class}}"
+      mStyle="{{action.style}}"
+      mClass="{{action.class}}"
       bind:tap="_headerActionClick"
     />
     <slot wx:else name="action"></slot>

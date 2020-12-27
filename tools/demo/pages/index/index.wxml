@@ -5,7 +5,7 @@
 >
   <view>
     <view style="margin-bottom: 12px;">
-      <mui-button-group color="primary" variant="contained" m-style="margin: 0 12px">
+      <mui-button-group color="primary" variant="contained" mStyle="margin: 0 12px">
         <mui-button bind:tap="gototestpage">ONE</mui-button>
         <mui-button disabled="{{true}}">TWO</mui-button>
         <mui-button>INJECT</mui-button>
@@ -13,7 +13,7 @@
       </mui-button-group>
     </view>
     <view style="margin-bottom: 12px;">
-      <mui-button-group color="primary" m-style="margin: 0 12px">
+      <mui-button-group color="primary" mStyle="margin: 0 12px">
         <mui-button>ONE</mui-button>
         <mui-button>TWO</mui-button>
         <mui-button disabled="{{true}}">INJECT</mui-button>
@@ -21,7 +21,7 @@
       </mui-button-group>
     </view>
     <view style="margin-bottom: 12px;">
-      <mui-button-group color="primary" variant="text" m-style="margin: 0 12px">
+      <mui-button-group color="primary" variant="text" mStyle="margin: 0 12px">
         <mui-button>ONE</mui-button>
         <mui-button>TWO</mui-button>
         <mui-button>INJECT</mui-button>
@@ -47,7 +47,7 @@
       EXTENDED
     </mui-button>
     <mui-button shape="extended" color="secondary" size="large" variant="contained">
-      <mui-icon m-style="margin-right:8px;" name="search" m-class="icon" />
+      <mui-icon mStyle="margin-right:8px;" name="search" mClass="icon" />
       EXTENDED
     </mui-button>
   </view>

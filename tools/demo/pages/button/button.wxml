@@ -125,19 +125,19 @@
     />
   </view>
   <mui-typography mClass="header2" variant="h5">FAB (浮动操作按钮)</mui-typography>
-  <view class="demo-box" style="overflow-x:auto;justify-content: flex-start;">
-    <view class="demo-row">
+  <view class="demo-box" style="overflow-x:auto;">
+    <view class="demo-row" style="justify-content: flex-start;">
       <mui-button mClass="button" shape="circle" icon="plus" variant="contained" size="large" color="primary" />
       <mui-button mClass="button" shape="circle" icon="like" variant="contained" size="large" color="secondary" />
       <mui-button mClass="button" shape="extended" icon="share-arrow" variant="contained" size="large">Navigate</mui-button>
       <mui-button mClass="button" disabled shape="circle" icon="like" variant="contained" size="large" />
     </view>
-    <view class="demo-row">
+    <view class="demo-row" style="justify-content: flex-start;">
       <mui-button mClass="button" shape="circle" icon="plus" variant="contained" size="small" color="primary" />
       <mui-button mClass="button" shape="circle" icon="plus" variant="contained" size="medium" color="primary" />
       <mui-button mClass="button" shape="circle" icon="plus" variant="contained" size="large" color="primary" />
     </view>
-    <view class="demo-row">
+    <view class="demo-row" style="justify-content: flex-start;">
       <mui-button mClass="button" shape="extended" icon="share-arrow" variant="contained" size="small" color="primary">EXTENDED</mui-button>
       <mui-button mClass="button" shape="extended" icon="share-arrow" variant="contained" size="medium" color="primary">EXTENDED</mui-button>
       <mui-button mClass="button" shape="extended" icon="share-arrow" variant="contained" size="large" color="primary">EXTENDED</mui-button>

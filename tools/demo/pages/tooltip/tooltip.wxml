@@ -1,0 +1,47 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography mClass="header2" variant="h5">简单的工具提示</mui-typography>
+  <view class="demo-box">
+    <mui-tooptip arrow title="delete">
+      <mui-button
+        shape="circle"
+        icon="trash"
+      />
+    </mui-tooptip>
+    <mui-tooptip mStyle="margin: 16px;" title="add">
+      <mui-button
+        shape="circle"
+        variant="contained"
+        color="primary"
+        icon="plus"
+        size="large"
+      />
+    </mui-tooptip>
+  </view>
+  <mui-typography mClass="header2" variant="h5">工具提示的定位</mui-typography>
+  <view class="demo-box">
+    <mui-tooptip
+      arrow
+      title="test"
+      placement="bottom-start"
+    >
+      <mui-button>TEST</mui-button>
+    </mui-tooptip>
+  </view>
+</view>
+<mui-tooptip
+  mStyle="position: fixed;right: 16px;bottom: 16px;"
+  arrow
+  title="like"
+  placement="top"
+>
+  <mui-button
+    shape="circle"
+    icon="like"
+    variant="contained"
+    size="large"
+    color="secondary"
+  />
+</mui-tooptip>

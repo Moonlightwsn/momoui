@@ -8,8 +8,8 @@
   hover-stop-propagation="{{hoverStopPropagation}}"
   hover-start-time="{{hoverStartTime}}"
   hover-stay-time="{{hoverStayTime}}"
-  m-class="mui-button disable-elevation-{{disableElevation}} mui-shape-{{shape}} {{muiClasses}}"
-  m-style="{{fullWidth ? 'width: 100%;' : ''}}{{_groupStyle}}{{mStyle}}"
+  mClass="mui-button disable-elevation-{{disableElevation}} mui-shape-{{shape}} {{muiClasses}}"
+  mStyle="{{fullWidth ? 'width: 100%;' : ''}}{{_groupStyle}}{{mStyle}}"
   form-type="{{formType}}"
   lang="{{lang}}"
   open-type="{{openType}}"
@@ -20,13 +20,13 @@
   send-message-img="{{sendMessageImg}}"
   show-message-card="{{showMessageCard}}"
 >
-  <mui-icon wx:if="{{loading}}" m-class="mui-button-loading" name="progress-circle" spin />
+  <mui-icon wx:if="{{loading}}" mClass="mui-button-loading" name="progress-circle" spin />
   <slot></slot>
   <mui-icon
     wx:if="{{icon}}"
     color="{{iconColor}}"
     name="{{icon}}"
-    m-class="icon-in-button icon-position-{{iconPosition}}"
+    mClass="icon-in-button icon-position-{{iconPosition}}"
     size="{{iconSize}}"
     spin="{{iconSpin}}"
   />

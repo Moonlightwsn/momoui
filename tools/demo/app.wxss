@@ -25,9 +25,11 @@
 
 .demo-box .demo-row {
   display: flex;
+  min-width: 100%;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
+  padding: 8px 0;
 }
 
 [data-momoui-theme=light] {

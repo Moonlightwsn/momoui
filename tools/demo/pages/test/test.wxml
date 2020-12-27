@@ -2,16 +2,16 @@
   <!--
   <mui-card raised>
     <mui-card-content>
-      <mui-typography m-style="font-size: 14px;" color="textSecondary" gutterBottom>Word of the Day</mui-typography>
+      <mui-typography mStyle="font-size: 14px;" color="textSecondary" gutterBottom>Word of the Day</mui-typography>
       <mui-typography variant="h5">be•nev•o•lent</mui-typography>
-      <mui-typography m-style="margin-bottom: 12px;" color="textSecondary">adjective</mui-typography>
+      <mui-typography mStyle="margin-bottom: 12px;" color="textSecondary">adjective</mui-typography>
       <mui-typography variant="body2">well meaning and kindly.<view />"a benevolent smile"</mui-typography>
     </mui-card-content>
     <mui-card-actions>
       <mui-button size="small">Learn More</mui-button>
     </mui-card-actions>
   </mui-card>
-  <mui-card m-style="margin-top: 20px;">
+  <mui-card mStyle="margin-top: 20px;">
     <mui-card-header
       title="Shrimp and Chorizo Paella"
       subheader="September 14, 2016"
@@ -70,7 +70,7 @@
       style="margin: 8px;position: relative;"
     >
       <mui-button
-        m-style="{{success ? 'background-color: #4caf50' : ''}}"
+        mStyle="{{success ? 'background-color: #4caf50' : ''}}"
         color="primary"
         shape="circle"
         icon="{{success ? 'check' : 'save'}}"
@@ -82,7 +82,7 @@
       />
       <mui-progress
         wx:if="{{loading}}"
-        m-style="color: #4caf50;position: absolute;top: -6px;left: -6px;zIndex: 1;"
+        mStyle="color: #4caf50;position: absolute;top: -6px;left: -6px;zIndex: 1;"
         size="68"
       />
     </view>
@@ -90,7 +90,7 @@
       style="margin: 8px;position: relative;"
     >
       <mui-button
-        m-style="{{success ? 'background-color: #4caf50' : ''}}"
+        mStyle="{{success ? 'background-color: #4caf50' : ''}}"
         disabled="{{loading}}"
         color="primary"
         variant="contained"
@@ -100,17 +100,17 @@
       </mui-button>
       <mui-progress
         wx:if="{{loading}}"
-        m-style="color: #4caf50;position: absolute;top: 50%;left: 50%;margin-top: -12px; margin-left: -12px"
+        mStyle="color: #4caf50;position: absolute;top: 50%;left: 50%;margin-top: -12px; margin-left: -12px"
         size="24"
       />
     </view>
   </view>
   <view>
     <mui-progress type="linear"></mui-progress>
-    <mui-progress type="linear" color="secondary" m-style="margin-top: 16px;"></mui-progress>
-    <mui-progress type="linear" variant="determinate" value="{{progress}}" m-style="margin-top: 16px;"></mui-progress>
-    <mui-progress type="linear" variant="buffer" value="10" value-buffer="15" m-style="margin-top: 16px;"></mui-progress>
-    <mui-progress type="linear" color="secondary" variant="buffer" value="5" value-buffer="30" m-style="margin-top: 16px;"></mui-progress>
+    <mui-progress type="linear" color="secondary" mStyle="margin-top: 16px;"></mui-progress>
+    <mui-progress type="linear" variant="determinate" value="{{progress}}" mStyle="margin-top: 16px;"></mui-progress>
+    <mui-progress type="linear" variant="buffer" value="10" value-buffer="15" mStyle="margin-top: 16px;"></mui-progress>
+    <mui-progress type="linear" color="secondary" variant="buffer" value="5" value-buffer="30" mStyle="margin-top: 16px;"></mui-progress>
   </view>
   -->
   <!-- <mui-button bind:tap="onOpen">Open Dialog</mui-button> -->
@@ -125,12 +125,12 @@
     <mui-list>
       <mui-list-item button primary="username@gmail.com" bind:tap="onClose">
         <mui-list-item-avatar>
-          <mui-avatar icon="user" m-style="background-color: #bbdefb;" iconColor="#1e88e5"></mui-avatar>
+          <mui-avatar icon="user" mStyle="background-color: #bbdefb;" iconColor="#1e88e5"></mui-avatar>
         </mui-list-item-avatar>
       </mui-list-item>
       <mui-list-item button primary="user02@gmail.com" bind:tap="onClose">
         <mui-list-item-avatar>
-          <mui-avatar icon="user"  m-style="background-color: #bbdefb;" iconColor="#1e88e5"></mui-avatar>
+          <mui-avatar icon="user"  mStyle="background-color: #bbdefb;" iconColor="#1e88e5"></mui-avatar>
         </mui-list-item-avatar>
       </mui-list-item>
       <mui-list-item button primary="Add account" bind:tap="onClose">
@@ -151,7 +151,7 @@
       closeIconProps="{{alert.closeIconProps}}"
       iconProps="{{alert.iconProps}}"
       title="Success"
-      m-style="margin-top: 16px;"
+      mStyle="margin-top: 16px;"
       variant="filled"
       onClose="{{onClose}}"
     >
@@ -173,7 +173,7 @@
     color="warning"
     title="Warning"
     onClose="{{onClose}}"
-    m-style="margin-top: 16px;"
+    mStyle="margin-top: 16px;"
     variant="filled"
   >
     This is an warning alert — <text style="font-weight: 700;">check it out!</text>
@@ -181,14 +181,14 @@
   <mui-alert
     color="info"
     title="Info"
-    m-style="margin-top: 16px;"
+    mStyle="margin-top: 16px;"
     variant="filled"
   >
     This is an info alert — <text style="font-weight: 700;">check it out!</text>
   </mui-alert>
   <mui-alert
     title="Success"
-    m-style="margin-top: 16px;"
+    mStyle="margin-top: 16px;"
     variant="filled"
   >
     This is an success alert — <text style="font-weight: 700;">check it out!</text>
@@ -197,7 +197,7 @@
   -->
   <!--
   <mui-snack-bar open="{{open}}" anchorOrigin="{{anchorOrigin}}" transitionDuration="1000" onClose="{{onClose}}">
-    <mui-snack-bar-content m-style="width: 400px;" message="TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST">
+    <mui-snack-bar-content mStyle="width: 400px;" message="TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST">
       <view slot="action">
         <mui-button color="secondary" bind:tap="onClose" size="small">
           UNDO
@@ -206,7 +206,7 @@
           bind:tap="onClose"
           shape="circle"
           icon="close"
-          m-style="padding: 3px;width: auto;height: auto;"
+          mStyle="padding: 3px;width: auto;height: auto;"
           iconColor="#fff"
           iconSize="20"
         />
@@ -214,40 +214,40 @@
     </mui-snack-bar-content>
   </mui-snack-bar>
   -->
-  <mui-tooltip m-class="tooltipWrapper" title="Add" arrow open="{{open}}" onClose="{{onClose}}" onOpen="{{onOpen}}">
+  <mui-tooltip mClass="tooltipWrapper" title="Add" arrow open="{{open}}" onClose="{{onClose}}" onOpen="{{onOpen}}">
     <mui-button variant="outlined">BOTTOM</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="bottom-start" title="Add" arrow onClose="{{onClose}}" onOpen="{{onOpen}}">
+  <mui-tooltip mClass="tooltipWrapper" placement="bottom-start" title="Add" arrow onClose="{{onClose}}" onOpen="{{onOpen}}">
     <mui-button variant="outlined">BOTTOM START</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="bottom-end" title="Add" arrow>
+  <mui-tooltip mClass="tooltipWrapper" placement="bottom-end" title="Add" arrow>
     <mui-button variant="outlined">BOTTOM END</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="left" title="Add" arrow>
+  <mui-tooltip mClass="tooltipWrapper" placement="left" title="Add" arrow>
     <mui-button variant="outlined">LEFT</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="left-start" title="Add" arrow>
+  <mui-tooltip mClass="tooltipWrapper" placement="left-start" title="Add" arrow>
     <mui-button variant="outlined">LEFT START</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="left-end" title="Add" arrow>
+  <mui-tooltip mClass="tooltipWrapper" placement="left-end" title="Add" arrow>
     <mui-button variant="outlined">LEFT END</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="right" title="Add" arrow>
+  <mui-tooltip mClass="tooltipWrapper" placement="right" title="Add" arrow>
     <mui-button variant="outlined">RIGHT</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="right-start" title="Add" arrow>
+  <mui-tooltip mClass="tooltipWrapper" placement="right-start" title="Add" arrow>
     <mui-button variant="outlined">RIGHT START</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="right-end" title="Add" arrow>
+  <mui-tooltip mClass="tooltipWrapper" placement="right-end" title="Add" arrow>
     <mui-button variant="outlined">RIGHT END</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="top" title="Add" arrow>
+  <mui-tooltip mClass="tooltipWrapper" placement="top" title="Add" arrow>
     <mui-button variant="outlined">TOP</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="top-start" title="Add" arrow>
+  <mui-tooltip mClass="tooltipWrapper" placement="top-start" title="Add" arrow>
     <mui-button variant="outlined">TOP START</mui-button>
   </mui-tooltip>
-  <mui-tooltip m-class="tooltipWrapper" placement="top-end" title="Add" arrow>
+  <mui-tooltip mClass="tooltipWrapper" placement="top-end" title="Add" arrow>
     <mui-button variant="outlined">TOP END</mui-button>
   </mui-tooltip>
   <!--
@@ -618,20 +618,20 @@
     <mui-form-helper-text>Some important helper text</mui-form-helper-text>
   </mui-form-control>
   <mui-button bindtap="trigger">Default</mui-button>
-  <mui-form-control required m-style="margin-top: 12px;" variant="filled">
+  <mui-form-control required mStyle="margin-top: 12px;" variant="filled">
     <mui-input-label>Label</mui-input-label>
     <mui-input
       value="INPUT"
     />
   </mui-form-control>
-  <mui-form-control m-style="margin-top: 12px;" variant="filled" disabled>
+  <mui-form-control mStyle="margin-top: 12px;" variant="filled" disabled>
     <mui-input-label>Label</mui-input-label>
     <mui-input
       value="INPUT"
     />
     <mui-form-helper-text disabled variant="filled">Disabled</mui-form-helper-text>
   </mui-form-control>
-  <mui-form-control required m-style="margin-top: 12px;" variant="outlined" error>
+  <mui-form-control required mStyle="margin-top: 12px;" variant="outlined" error>
     <mui-input-label>Label</mui-input-label>
     <mui-input
       value="INPUT"
@@ -649,40 +649,40 @@
     />
     <mui-list-item button primary="Inbox1" secondary="some secondary text1">
       <mui-list-item-icon>
-        <mui-icon name="send" m-style="font-size: 24px;" />
+        <mui-icon name="send" mStyle="font-size: 24px;" />
       </mui-list-item-icon>
     </mui-list-item>
     <mui-list-item button bindtap="setOpen">
       <mui-list-item-icon>
-        <mui-icon name="send" m-style="font-size: 24px;" />
+        <mui-icon name="send" mStyle="font-size: 24px;" />
       </mui-list-item-icon>
       <mui-list-item-text primary="Inbox1" secondary="some secondary text1" />
-      <mui-icon name="{{open ? 'arrow-up-2' : 'arrow-down-2'}}" m-style="font-size: 24px;" />
+      <mui-icon name="{{open ? 'arrow-up-2' : 'arrow-down-2'}}" mStyle="font-size: 24px;" />
     </mui-list-item>
     <mui-divider />
     <mui-collapse in="{{open}}">
       <mui-list disablePadding>
-        <mui-list-item m-style="padding-left: 32px;" button primary="Inbox1" secondary="some secondary text1">
+        <mui-list-item mStyle="padding-left: 32px;" button primary="Inbox1" secondary="some secondary text1">
           <mui-list-item-icon>
-            <mui-icon name="like" m-style="font-size: 24px;" />
+            <mui-icon name="like" mStyle="font-size: 24px;" />
           </mui-list-item-icon>
         </mui-list-item>
-        <mui-list-item m-style="padding-left: 32px;" button primary="Inbox1" secondary="some secondary text1">
+        <mui-list-item mStyle="padding-left: 32px;" button primary="Inbox1" secondary="some secondary text1">
           <mui-list-item-icon>
-            <mui-icon name="like" m-style="font-size: 24px;" />
+            <mui-icon name="like" mStyle="font-size: 24px;" />
           </mui-list-item-icon>
         </mui-list-item>
       </mui-list>
     </mui-collapse>
   </mui-list>
-  <mui-list m-style="width: 100%;max-width: 36ch;">
+  <mui-list mStyle="width: 100%;max-width: 36ch;">
     <mui-list-item alignItems="flex-start">
       <mui-list-item-avatar>
         <mui-avatar src="https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp" />
       </mui-list-item-avatar>
       <mui-list-item-text>
         <view slot="primary">Brunch this weekend?</view>
-        <view slot="secondary"><mui-typography variant="body2" color="textPrimary" m-style="display:inline;">Ali Connors</mui-typography> — I'll be in your neighborhood doing errands this…</view>
+        <view slot="secondary"><mui-typography variant="body2" color="textPrimary" mStyle="display:inline;">Ali Connors</mui-typography> — I'll be in your neighborhood doing errands this…</view>
       </mui-list-item-text>
     </mui-list-item>
     <mui-divider variant="inset" />
@@ -692,7 +692,7 @@
       </mui-list-item-avatar>
       <mui-list-item-text>
         <view slot="primary">Summer BBQ</view>
-        <view slot="secondary"><mui-typography variant="body2" color="textPrimary" m-style="display:inline;">to Scott, Alex, Jennifer</mui-typography> — Wish I could come, but I'm out of town this…</view>
+        <view slot="secondary"><mui-typography variant="body2" color="textPrimary" mStyle="display:inline;">to Scott, Alex, Jennifer</mui-typography> — Wish I could come, but I'm out of town this…</view>
       </mui-list-item-text>
     </mui-list-item>
     <mui-divider variant="inset" />
@@ -701,7 +701,7 @@
         <mui-avatar src="https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp" />
       </mui-list-item-avatar>
       <mui-list-item-text primary="Oui Oui">
-        <view slot="secondary"><mui-typography variant="body2" color="textPrimary" m-style="display:inline;">Sandra Adams</mui-typography> — Do you have Paris recommendations? Have you ever…</view>
+        <view slot="secondary"><mui-typography variant="body2" color="textPrimary" mStyle="display:inline;">Sandra Adams</mui-typography> — Do you have Paris recommendations? Have you ever…</view>
       </mui-list-item-text>
     </mui-list-item>
   </mui-list>
@@ -712,7 +712,7 @@
       </mui-list-item-icon>
       <mui-list-item-text primary="Line item {{index + 1}}" />
       <mui-list-item-secondary-action>
-        <mui-button catchtap="secondaryAction" icon="message" shape="circle" m-style="font-size: 24px;" />
+        <mui-button catchtap="secondaryAction" icon="message" shape="circle" mStyle="font-size: 24px;" />
       </mui-list-item-secondary-action>
     </mui-list-item>
   </mui-list>
@@ -720,7 +720,7 @@
   <mui-button-base disableRipple>BUTTON BASE</mui-button-base>
   -->
   <!--
-  <mui-button-base disabled component="button" centerRipple m-style="width: 140px;height: 42px;">Button Base</mui-button-base>
+  <mui-button-base disabled component="button" centerRipple mStyle="width: 140px;height: 42px;">Button Base</mui-button-base>
   <mui-button disabled color="primary" variant="outlined">TEST</mui-button>
   <view style="margin: 20px 0;">
     <mui-button-group variant="outlined">
@@ -741,33 +741,33 @@
   <form bindsubmit="submit" bindreset="reset">
     <mui-select
       name="mui-select"
-      m-class="input"
+      mClass="input"
       mode="region"
       header-text="TEST"
       color="secondary"
     />
-    <mui-input name="mui-input" m-class="input">
+    <mui-input name="mui-input" mClass="input">
       <mui-input-adornment slot="startAdornment" text="Kg" position="start" />
       <mui-input-adornment slot="endAdornment" text="Kg" position="end" />
     </mui-input>
-    <mui-input name="mui-textarea" m-class="input">
+    <mui-input name="mui-textarea" mClass="input">
       <mui-input-adornment slot="startAdornment" position="start">
         <mui-icon name="user" />
       </mui-input-adornment>
       <mui-input-adornment slot="endAdornment" position="end">
         <mui-button shape="circle" variant="text">
-          <mui-icon name="send" m-style="font-size: 24px;" />
+          <mui-icon name="send" mStyle="font-size: 24px;" />
         </mui-button>
       </mui-input-adornment>
     </mui-input>
-    <mui-input multiline m-class="input" name="textarea" />
+    <mui-input multiline mClass="input" name="textarea" />
     <input name="input" />
-    <mui-switch name="mui-switch" m-class="input" />
-    <mui-checkbox-group name="mui-checkbox" value="{{checkboxValue}}" onChange="{{onCheckboxChange}}" m-class="input">
+    <mui-switch name="mui-switch" mClass="input" />
+    <mui-checkbox-group name="mui-checkbox" value="{{checkboxValue}}" onChange="{{onCheckboxChange}}" mClass="input">
       <mui-checkbox value="c1" />
       <mui-checkbox value="c2" />
     </mui-checkbox-group>
-    <mui-radio-group name="mui-radio" value="{{radioValue}}" onChange="{{onRadioChange}}" m-class="input">
+    <mui-radio-group name="mui-radio" value="{{radioValue}}" onChange="{{onRadioChange}}" mClass="input">
       <mui-radio value="r1" />
       <mui-radio value="r2" />
     </mui-radio-group>
@@ -787,18 +787,18 @@
     </mui-avatar-group>
   </view>
   <view style="display: flex;">
-    <mui-badge overlap="{{overlap}}" m-style="margin:8px;" anchorOrigin="{{anchorOrigin}}">
+    <mui-badge overlap="{{overlap}}" mStyle="margin:8px;" anchorOrigin="{{anchorOrigin}}">
       <mui-avatar src="https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp"></mui-avatar>
-      <mui-avatar m-style="width:22px;height:22px;border: 2px solid #fff;" slot="content" src="https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp"></mui-avatar>
+      <mui-avatar mStyle="width:22px;height:22px;border: 2px solid #fff;" slot="content" src="https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp"></mui-avatar>
     </mui-badge>
-    <mui-badge m-style="margin:8px;" variant="dot" color="primary" overlap="{{overlap}}">
+    <mui-badge mStyle="margin:8px;" variant="dot" color="primary" overlap="{{overlap}}">
       <mui-avatar variant="rounded" icon="search" />
     </mui-badge>
-    <mui-badge m-style="margin:8px;" anchorOrigin="{{anchorOrigin}}" content="0" showZero color="primary" invisible="{{invisible}}" overlap="{{overlap}}" variant="{{badgeVariant}}">
+    <mui-badge mStyle="margin:8px;" anchorOrigin="{{anchorOrigin}}" content="0" showZero color="primary" invisible="{{invisible}}" overlap="{{overlap}}" variant="{{badgeVariant}}">
       <mui-avatar>H</mui-avatar>
     </mui-badge>
-    <mui-avatar m-style="margin: 8px;background-color: #ff5722;color:#fff" variant="square">N</mui-avatar>
-    <mui-avatar m-style="margin: 8px;background-color: #673ab7;color: #fff;">OP</mui-avatar>
+    <mui-avatar mStyle="margin: 8px;background-color: #ff5722;color:#fff" variant="square">N</mui-avatar>
+    <mui-avatar mStyle="margin: 8px;background-color: #673ab7;color: #fff;">OP</mui-avatar>
   </view>
   <mui-divider />
   <view style="margin: 8px;" />
