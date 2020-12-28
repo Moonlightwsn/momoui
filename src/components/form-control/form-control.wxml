@@ -1,6 +1,7 @@
 <view
   class="mui mui-form-control required-{{required}} {{mClass}}"
   style="{{mStyle}}"
+  bind:touchstart="_TouchStart"
 >
   <slot></slot>
 </view>

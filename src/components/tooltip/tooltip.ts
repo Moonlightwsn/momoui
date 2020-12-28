@@ -180,7 +180,7 @@ Component({
   lifetimes: {
     attached() {
       if (typeof this.data.open === 'boolean') {
-        this._becontrolled = true
+        this._controlled = true
       }
       this.setData({
         _onBackdropClick: this._onBackdropClick.bind(this),
@@ -189,12 +189,12 @@ Component({
   },
   methods: {
     _showTooltip() {
-      if (!this._becontrolled) {
+      if (!this._controlled) {
         this.setData({open: true})
       }
     },
     _onBackdropClick() {
-      if (!this._becontrolled) {
+      if (!this._controlled) {
         this.setData({open: false})
       }
     },

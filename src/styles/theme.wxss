@@ -2811,7 +2811,13 @@
     }
 
     .mui-form-label {
-      color: rgba(255, 255, 255, 0.7);
+      &.focus-false {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      &.mui-color-primary, &.mui-color-secondary {
+        background-color: unset;
+        border-color: unset;
+      }
       &.disabled-true {
         color: rgba(255, 255, 255, 0.5);
       }

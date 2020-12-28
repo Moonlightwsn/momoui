@@ -3,6 +3,15 @@ import themeMixin from '../../behaviors/theme'
 Page({
   behaviors: [themeMixin],
   data: {
+    color: 'secondary',
+  },
+  changeColor() {
+    this.setData({
+      color: this.data.color === 'primary' ? 'secondary' : 'primary',
+    })
+  }
+  /*
+  data: {
     test: {},
     checked: true,
     modelChecked: false,
@@ -66,4 +75,5 @@ Page({
   onRadioChange(checkedValue) {
     this.setData({ radioValue: checkedValue })
   }
+  */
 })

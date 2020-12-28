@@ -1,8 +1,18 @@
 <view
   data-momoui-theme="{{theme}}"
-  style="height: 100%;"
+  class="page"
 >
-<!--
+  <mui-button bind:tap="changeColor">切换Color</mui-button>
+  <mui-form-control color="{{color}}">
+    <mui-form-label>Gender</mui-form-label>
+    <mui-radio-group>
+      <mui-radio value="female">Female</mui-radio>
+      <mui-radio value="male">Male</mui-radio>
+      <mui-radio value="other">Other</mui-radio>
+      <mui-radio disabled>Disabled Option</mui-radio>
+    </mui-radio-group>
+  </mui-form-control>
+  <!--
   <form bindsubmit="submit" bindreset="reset">
     <view>
       <label>Switch<switch name="switch" /></label>
@@ -69,6 +79,7 @@
   <mui-input placeholder="Placeholder" multiline mStyle="margin: 8px;" />
   <mui-input inputChange="{{inputChange}}" password maxlength="{{3}}" />
   -->
+  <!--
   <view style="margin-bottom: 48px;">
     <form bindsubmit="submit">
       <mui-input name="mui-input" />
@@ -140,4 +151,5 @@
     <mui-input model:value="{{input}}" inputChange="{{inputChange}}" password maxlength="{{20}}" mStyle="margin: 8px;" />
     <mui-button bindtap="showInput">Show Input</mui-button>
   </view>
+  -->
 </view>

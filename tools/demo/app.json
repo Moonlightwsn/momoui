@@ -2,13 +2,13 @@
   "pages":[
     "pages/button/button",
     "pages/button-group/button-group",
+    "pages/form/form",
     "pages/popover/popover",
     "pages/tooltip/tooltip",
     "pages/index/index",
     "pages/test/test",
     "pages/grid/grid",
-    "pages/typography/typography",
-    "pages/form/form"
+    "pages/typography/typography"
   ],
   "darkmode": true,
   "themeLocation": "theme.json",

@@ -1,11 +1,10 @@
 import muiBase from '../../behaviors/muiBase.ts'
 import {ObserversForControlledPropsByAncestor} from '../../common/utils.ts'
 
-const beControlledProps: string[] = [
+const controlledProps: string[] = [
   'color',
   'disabled',
   'error',
-  'filled',
   'focus',
   'required',
 ]
@@ -42,23 +41,40 @@ Component({
     '../form-control/form-control': {
       type: 'ancestor',
       linked(target) {
-        if (target && Array.isArray(beControlledProps)) {
-          const newData = {}
-          beControlledProps.forEach(item => {
-            if (!this._propIsSet || !this._propIsSet[item]) {
-              newData[item] = target.data[item]
-            }
-          })
-          console.log(newData)
-          if (Object.keys(newData).length > 0) {
-            this.setData(newData)
-          }
+        console.log(1)
+        if (target) {
+          this._formControlComp = target
+          this._ReRenderControlledProps()
         }
       }
     }
   },
+  methods: {
+    _onBlur() {
+      this.setData({focus: false})
+    },
+    _onFocus() {
+      this.setData({focus: true})
+    },
+    _ReRenderControlledProps() {
+      console.log(2)
+      const target = this._formControlComp
+      if (target && Array.isArray(controlledProps)) {
+        const newData = {}
+        controlledProps.forEach(item => {
+          if (!this._propIsSet || !this._propIsSet[item]) {
+            console.log(4, item, target.data[item])
+            newData[item] = target.data[item]
+          }
+        })
+        if (Object.keys(newData).length > 0) {
+          this.setData(newData)
+        }
+      }
+    },
+  },
   observers: {
-    ...ObserversForControlledPropsByAncestor(beControlledProps),
+    ...ObserversForControlledPropsByAncestor(controlledProps),
   },
   options: {
     virtualHost: true,

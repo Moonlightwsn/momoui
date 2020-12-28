@@ -31,7 +31,7 @@
       </mui-popover>
     </view>
     <view class="demo-row">
-      <mui-form-control disabled>
+      <mui-form-control>
         <mui-form-label>anchorReference</mui-form-label>
         <mui-radio-group value="{{anchorReference}}" onChange="{{changeAnchorReference}}">
           <mui-radio value="anchorEl">anchorEl</mui-radio>

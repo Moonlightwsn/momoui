@@ -49,13 +49,13 @@ export default Behavior({
   },
   data: {
     _pure_one_way: false,
-    _pure_be_controlled: false,
+    _pure_is_controlled: false,
     _checked: false,
     _currentIcon: '',
     _checkedClass: 'mui-unchecked',
   },
   methods: {
-    genIcon({checked: checkedArg} = {}) {
+    _GenIcon({checked: checkedArg} = {}) {
       const {
         checkedIcon,
         icon,
@@ -82,13 +82,13 @@ export default Behavior({
       }
       return newData
     },
-    _checkControll() {
+    _CheckControll() {
       const {
         _checked,
         controlled,
         value,
         _pure_one_way: isOneWay,
-        _pure_be_controlled: thisBeControlled,
+        _pure_is_controlled: thisIsControlled,
         onChange,
       } = this.data
       const realChecked = isOneWay || !_checked
@@ -96,50 +96,50 @@ export default Behavior({
         if (onChange && typeof onChange === 'function') {
           onChange(realChecked)
         }
-        if (thisBeControlled && realChecked !== !!_checked && !controlled) {
+        if (thisIsControlled && realChecked !== !!_checked && !controlled) {
           this.setData({checked: realChecked})
         }
         if (this._group) {
           const {
             _pure_targets: targets,
-            _pure_be_controlled: beControlled,
+            _pure_is_controlled: isControlled,
             _pure_multiple: multiple
           } = this._group.data
           if (value) {
             // this._group直接调用innerchange，保证innerchange内部的this指向this._group
             this._group.innerchange({checked: realChecked, value})
           }
-          if (!beControlled) {
+          if (!isControlled) {
             if (realChecked && targets && !multiple) {
               Object.keys(targets).forEach(targetName => {
                 if (targetName !== value) {
-                  targets[targetName]._groupControll(false)
+                  targets[targetName]._GroupControll(false)
                 }
               })
             }
-            this.setData(this.genIcon({checked: realChecked}))
+            this.setData(this._GenIcon({checked: realChecked}))
           }
-        } else if (!thisBeControlled) {
-          this.setData(this.genIcon({checked: realChecked}))
+        } else if (!thisIsControlled) {
+          this.setData(this._GenIcon({checked: realChecked}))
         }
       }
     },
-    _groupControll(checked) {
-      this.setData(this.genIcon({checked}))
-    }
+    _GroupControll(checked) {
+      this.setData(this._GenIcon({checked}))
+    },
   },
   lifetimes: {
     attached() {
       const {checked, defaultChecked} = this.data
       let _checked = defaultChecked
-      let pureBeControlled = false
+      let pureIsControlled = false
       if (typeof checked === 'boolean') {
         _checked = checked
-        pureBeControlled = true
+        pureIsControlled = true
       }
       this.setData({
-        ...this.genIcon({checked: _checked}),
-        _pure_be_controlled: pureBeControlled
+        ...this._GenIcon({checked: _checked}),
+        _pure_is_controlled: pureIsControlled
       })
     }
   },
@@ -148,12 +148,12 @@ export default Behavior({
       const {_checked} = this.data
       if (checked !== !!_checked && !this._group) {
         if (checked !== !!_checked) {
-          this.setData(this.genIcon({checked}))
+          this.setData(this._GenIcon({checked}))
         }
       }
     },
     'size, disabled': function () {
-      this.setData(this.genIcon())
+      this.setData(this._GenIcon())
     },
   },
 })

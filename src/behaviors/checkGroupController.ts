@@ -22,7 +22,7 @@ export default Behavior({
   data: {
     _pure_targets: {},
     _pure_checked_value: {},
-    _pure_be_controlled: false,
+    _pure_is_controlled: false,
     _pure_multiple: true,
   },
   lifetimes: {
@@ -33,12 +33,12 @@ export default Behavior({
         _pure_multiple: isMultiple,
       } = this.data
       let checkedValue
-      let beControlled = false
+      let isControlled = false
       if (Array.isArray(value)) {
-        beControlled = true
+        isControlled = true
         checkedValue = value
       } else if (typeof value === 'string') {
-        beControlled = true
+        isControlled = true
         checkedValue = value.split(',')
       } else if (Array.isArray(defaultValue)) {
         checkedValue = defaultValue
@@ -56,9 +56,9 @@ export default Behavior({
             }
           })
         }
-        this.data._pure_be_controlled = beControlled
+        this.data._pure_is_controlled = isControlled
         this.data._pure_checked_value = checkedValueMap
-        if (!beControlled) {
+        if (!isControlled) {
           this.setData({
             value: checkedValue
           })
@@ -76,7 +76,7 @@ export default Behavior({
         _pure_checked_value: checkedValueFromThisData,
         onChange,
       } = this.data
-      if (this.data._pure_be_controlled) {
+      if (this.data._pure_is_controlled) {
         tmpCheckedValueMap = {...checkedValueFromThisData}
       }
       const checkedValueMap = this._trigger(value, checked, tmpCheckedValueMap)
@@ -85,8 +85,8 @@ export default Behavior({
       if (onChange && typeof onChange === 'function') {
         onChange(realCheckedValue)
       }
-      const {_pure_be_controlled: beControlled} = this.data
-      if (!beControlled) {
+      const {_pure_is_controlled: isControlled} = this.data
+      if (!isControlled) {
         this.setData({value: realCheckedValue})
       }
     },
@@ -124,7 +124,7 @@ export default Behavior({
         targetsKeyArr.forEach(targetName => {
           const realChecked = checkedValueMap[targetName] || false
           checkedValue[targetName] = realChecked
-          targets[targetName]._groupControll(realChecked)
+          targets[targetName]._GroupControll(realChecked)
         })
       }
     }

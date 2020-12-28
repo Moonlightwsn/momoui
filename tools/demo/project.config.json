@@ -42,6 +42,11 @@
           "scene": null
         },
         {
+          "name": "form",
+          "pathName": "pages/form/form",
+          "scene": null
+        },
+        {
           "name": "popover",
           "pathName": "pages/popover/popover",
           "scene": null
@@ -59,11 +64,6 @@
         {
           "name": "index",
           "pathName": "pages/index/index",
-          "scene": null
-        },
-        {
-          "name": "form",
-          "pathName": "pages/form/form",
           "scene": null
         },
         {

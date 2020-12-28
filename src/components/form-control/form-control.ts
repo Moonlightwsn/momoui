@@ -66,13 +66,12 @@ Component({
   },
   methods: {
     _linked(target, type) {
-      console.log(target, type)
-      /*
       if (target) {
         if (!this._formItems) {
           this._formItems = []
         }
         this._formItems.push({target, type})
+        /*
         const {
           color,
           disabled,
@@ -99,9 +98,9 @@ Component({
         if (type === 'input' && variant === 'outlined') {
           params.disableUnderline = true
         }
-        this._controlFormItem(params, target)
+        this._ControlFormItem(params, target)
+        */
       }
-      */
     },
     /*
     _onFocusOrBlur(focus, shrink) {
@@ -112,32 +111,42 @@ Component({
         })
       })
     },
-    _controlFormItem(parmas, target) {
+    _ControlFormItem(parmas, target) {
       if (target._formControlAction && typeof target._formControlAction === 'function') {
         target._formControlAction(parmas)
       }
     },
     */
-   _controlFormItem(method: string, formItemTypes: string[], params: any) {
-     const formItemTypesMap = {}
-     formItemTypes.forEach(type => {
-      formItemTypesMap[type] = true
-     })
-     this._formItems.filter(item => formItemTypesMap[item.type]).forEach(item => {
-       if (item.target[method] && typeof item.target[method] === 'function') {
-        item.target[method](params)
-       }
-     })
-   },
-   _onFocus() {
-      this._controlFormItem('_onFocus', ['form-label'], {focus: true})
+    _ControlFormItem(method: string, formItemTypes: string[], params: any) {
+      const formItemTypesMap = {}
+      formItemTypes.forEach(type => {
+        formItemTypesMap[type] = true
+      })
+      this._formItems.filter(item => formItemTypesMap[item.type]).forEach(item => {
+        if (item.target[method] && typeof item.target[method] === 'function') {
+          item.target[method](params)
+        }
+      })
     },
     _onBlur() {
-      this._controlFormItem('_onFocus', ['form-label'], {focus: false})
+      this._ControlFormItem('_onBlur', ['form-label'], {focus: false})
+    },
+    _onFocus() {
+      this._ControlFormItem('_onFocus', ['form-label'], {focus: true})
+    },
+    _TouchStart() {
+      this._onFocus()
     },
   },
   observers: {
-    'color, disabled, error, focus, fullWidth, margin, required, size, variant': function (color, disabled, error, focus, fullWidth, margin, required, size, variant) {
+    'color, disabled, error, focus, fullWidth, margin, required, size, variant': function (/* color, disabled, error, focus, fullWidth, margin, required, size, variant */) {
+      console.log(3)
+      if (this._formItems) {
+        this._formItems.forEach(item => {
+          item.target._ReRenderControlledProps()
+        })
+      }
+      /*
       const params: any = {
         color,
         disabled,
@@ -157,6 +166,7 @@ Component({
           item.target._formControlAction(params)
         })
       }
+      */
     }
   },
   options: {

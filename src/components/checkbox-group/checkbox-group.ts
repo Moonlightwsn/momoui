@@ -14,7 +14,7 @@ Component({
             this.setData({_pure_targets: targets})
           }
           const realChecked = this.data._pure_checked_value[value] || false
-          target._groupControll(realChecked)
+          target._GroupControll(realChecked)
           this._trigger(value, realChecked)
         }
       },

@@ -98,9 +98,9 @@ Component({
     attached() {
       const {mode, value} = this.data
       if (value === null || typeof value === 'undefined') {
-        this._becontrolled = false
+        this._controlled = false
       } else {
-        this._becontrolled = true
+        this._controlled = true
       }
       if (mode === 'region' && !Array.isArray(value)) {
         this.setData({value: []})
@@ -155,7 +155,7 @@ Component({
     },
     _change(e) {
       const {detail: {value}} = e
-      if (!this._becontrolled) {
+      if (!this._controlled) {
         this.setData({value})
       }
       this._inputBlur(e)
