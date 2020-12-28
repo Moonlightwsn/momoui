@@ -45,6 +45,12 @@ Component({
     },
   },
   relations: {
+    '../form-label/form-label': {
+      type: 'descendant',
+      linked(target) {
+        this._linked(target, 'form-label')
+      },
+    },
     '../input-label/input-label': {
       type: 'descendant',
       linked(target) {
@@ -60,6 +66,8 @@ Component({
   },
   methods: {
     _linked(target, type) {
+      console.log(target, type)
+      /*
       if (target) {
         if (!this._formItems) {
           this._formItems = []
@@ -93,7 +101,9 @@ Component({
         }
         this._controlFormItem(params, target)
       }
+      */
     },
+    /*
     _onFocusOrBlur(focus, shrink) {
       this._formItems.filter(item => item.type === 'input-label').forEach(item => {
         item.target._formControlAction({
@@ -103,7 +113,27 @@ Component({
       })
     },
     _controlFormItem(parmas, target) {
-      target._formControlAction(parmas)
+      if (target._formControlAction && typeof target._formControlAction === 'function') {
+        target._formControlAction(parmas)
+      }
+    },
+    */
+   _controlFormItem(method: string, formItemTypes: string[], params: any) {
+     const formItemTypesMap = {}
+     formItemTypes.forEach(type => {
+      formItemTypesMap[type] = true
+     })
+     this._formItems.filter(item => formItemTypesMap[item.type]).forEach(item => {
+       if (item.target[method] && typeof item.target[method] === 'function') {
+        item.target[method](params)
+       }
+     })
+   },
+   _onFocus() {
+      this._controlFormItem('_onFocus', ['form-label'], {focus: true})
+    },
+    _onBlur() {
+      this._controlFormItem('_onFocus', ['form-label'], {focus: false})
     },
   },
   observers: {

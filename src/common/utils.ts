@@ -6,6 +6,20 @@ const openTypeMap = {
   launchApp: 'launchapp',
 }
 
+const ObserversForControlledPropsByAncestor = (props: string[]) => {
+  const obs = {}
+  props.forEach(item => {
+    obs[item] = function () {
+      if (!this._propIsSet) {
+        this._propIsSet = {}
+      }
+      this._propIsSet[item] = true
+    }
+  })
+  return obs
+}
+
 export {
-  openTypeMap
+  openTypeMap,
+  ObserversForControlledPropsByAncestor,
 }

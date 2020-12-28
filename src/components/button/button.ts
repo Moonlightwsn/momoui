@@ -141,13 +141,13 @@ Component({
             disableRipple,
             fullWidth: false,
           }
-          if (!this._variantBeSet) {
+          if (!this._variantIsSet) {
             newData.variant = variant
           }
-          if (!this._colorBeSet) {
+          if (!this._colorIsSet) {
             newData.color = color
           }
-          if (!this._sizeBeSet) {
+          if (!this._sizeIsSet) {
             newData.size = size
           }
           this.setData(newData)
@@ -157,13 +157,13 @@ Component({
   },
   observers: {
     variant() {
-      this._variantBeSet = true
+      this._variantIsSet = true
     },
     color() {
-      this._colorBeSet = true
+      this._colorIsSet = true
     },
     size() {
-      this._sizeBeSet = true
+      this._sizeIsSet = true
     },
   },
   options: {

@@ -876,13 +876,35 @@
 
   /** mui-form-label */
   &.mui-form-label, .mui-form-label {
-    color: rgba(0, 0, 0, 0.54);
+    display: inline;
     padding: 0;
     font-size: 1rem;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 400;
     line-height: 1;
     letter-spacing: 0.00938em;
+    &.focus-false {
+      color: rgba(0, 0, 0, 0.54);
+    }
+    &.mui-color-primary, &.mui-color-secondary {
+      background-color: unset;
+      border-color: unset;
+    }
+    &.disabled-true {
+      color: rgba(0, 0, 0, 0.38);
+    }
+    &.error-true {
+      color: @error_color;
+    }
+    &.required-true {
+      .mui-form-label-asterisk {
+        display: inline-block;
+      }
+    }
+    .mui-form-label-asterisk {
+      display: none;
+      margin-left: 4px;
+    }
   }
   /** mui-form-label end */
 
@@ -2790,6 +2812,9 @@
 
     .mui-form-label {
       color: rgba(255, 255, 255, 0.7);
+      &.disabled-true {
+        color: rgba(255, 255, 255, 0.5);
+      }
     }
 
     &.mui-form-helper-text {

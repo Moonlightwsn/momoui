@@ -1,6 +1,7 @@
-<view
-  class="mui mui-form-label {{mClass}}"
+<label
+  class="mui mui-form-label mui-color-{{color}} focus-{{focus}} required-{{required}} disabled-{{disabled}} error-{{error}} {{mClass}}"
   style="{{mStyle}}"
 >
   <slot></slot>
-</view>
+  <view class="mui-form-label-asterisk">*</view>
+</label>

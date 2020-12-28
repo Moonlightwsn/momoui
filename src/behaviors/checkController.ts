@@ -106,7 +106,7 @@ export default Behavior({
             _pure_multiple: multiple
           } = this._group.data
           if (value) {
-            // this._group直接调用innerchange，保整innerchange内部的this指向this._group
+            // this._group直接调用innerchange，保证innerchange内部的this指向this._group
             this._group.innerchange({checked: realChecked, value})
           }
           if (!beControlled) {
