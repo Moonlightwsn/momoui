@@ -31,14 +31,6 @@ Component({
     },
   },
   relations: {
-    '../radio-group/radio-group': {
-      type: 'ancestor',
-      linked(target) {
-        if (target) {
-          this._group = target
-        }
-      },
-    },
     '../form-control-label/form-control-label': {
       type: 'ancestor',
       linked(target) {
@@ -47,7 +39,15 @@ Component({
           this._ReRenderControlledProps()
         }
       }
-    }
+    },
+    '../radio-group/radio-group': {
+      type: 'ancestor',
+      linked(target) {
+        if (target) {
+          this._group = target
+        }
+      },
+    },
   },
   methods: {
     _ReRenderControlledProps() {
@@ -66,7 +66,7 @@ Component({
     },
   },
   observers: {
-    ...ObserversForControlledPropsByAncestor(controlledProps)
+    ...ObserversForControlledPropsByAncestor(controlledProps),
   },
   options: {
     virtualHost: true,

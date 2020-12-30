@@ -65,7 +65,7 @@ Component({
     }
   },
   methods: {
-    _clickPopoverContent() {},
+    _ClickPopoverContent() {},
     _onBeforeShow() {
       return this._computePostion()
     },

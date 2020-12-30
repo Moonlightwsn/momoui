@@ -56,7 +56,7 @@ Component({
     _hasDelete: false,
   },
   methods: {
-    _click() {
+    _Click() {
       const {onClick} = this.data
       if (onClick && typeof onClick === 'function') {
         onClick()

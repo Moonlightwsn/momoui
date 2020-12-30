@@ -66,7 +66,7 @@ Component({
     },
   },
   methods: {
-    _clickDialogContent() {},
+    _ClickDialogContent() {},
     _confirm(e) {
       const {actions} = this.data
       if (actions && actions.onConfirm && typeof actions.onConfirm === 'function') {

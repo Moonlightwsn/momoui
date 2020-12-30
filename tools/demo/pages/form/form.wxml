@@ -2,24 +2,24 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
-  <mui-form-control color="{{color}}">
+  <mui-form-control disabled color="{{color}}">
     <mui-form-label>Gender</mui-form-label>
     <mui-form-group>
       <mui-form-control-label value="female" label="Female" onChange="{{onChange}}">
         <mui-radio />
       </mui-form-control-label>
       <mui-form-control-label value="male" label="Male" onChange="{{onChange}}">
-        <mui-radio />
+        <mui-checkbox />
       </mui-form-control-label>
-      <mui-form-control-label value="other" label="Other" onChange="{{onChange}}">
-        <mui-radio />
+      <mui-form-control-label value="other" disabled="{{false}}" label="Other" onChange="{{onChange}}">
+        <mui-checkbox />
       </mui-form-control-label>
-      <mui-form-control-label label="Disabled" checked disabled>
+      <mui-form-control-label label="Disabled" disabled="{{false}}">
         <mui-radio />
       </mui-form-control-label>
     </mui-form-group>
   </mui-form-control>
-  <mui-form-control color="secondary">
+  <mui-form-control disabled color="secondary">
     <mui-input-label>INPUT</mui-input-label>
     <mui-input />
   </mui-form-control>

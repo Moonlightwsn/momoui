@@ -2,7 +2,7 @@
   mClass="mui-chip disabled-{{disabled}} mui-color-{{color}} mui-variant-{{variant}} mui-size-{{size}} {{mClass}}"
   mStyle="{{mStyle}}"
   disableRipple="{{disabled || !(clickable || onClick)}}"
-  bindtap="_click"
+  bindtap="_Click"
 >
   <mui-avatar wx:if="{{_avatar}}" mClass="mui-chip-avatar {{_avatar && _avatar.icon ? 'icon' : ''}}" icon="{{_avatar.icon}}" src="{{_avatar.src}}">{{_avatar.text}}</mui-avatar>
   <slot wx:else name="avatar"></slot>

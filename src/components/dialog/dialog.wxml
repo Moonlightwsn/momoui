@@ -15,7 +15,7 @@
       mClass="dialog-paper dialog-paper-scroll-{{scroll}} maxWidth-{{maxWidth}} fullWidth-{{fullWidth}} fullScreen-{{fullScreen}} {{mClass}}"
       mStyle="{{mStyle}}"
       elevation="24"
-      catch:tap="_clickDialogContent"
+      catch:tap="_ClickDialogContent"
     >
       <mui-dialog-title wx:if="{{title}}">{{title}}</mui-dialog-title>
       <mui-dialog-content wx:if="{{content}}" dividers>{{content}}</mui-dialog-content>

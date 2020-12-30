@@ -45,27 +45,33 @@ Component({
     },
   },
   relations: {
+    '../form-control-label/form-control-label': {
+      type: 'descendant',
+      linked(target) {
+        this._Linked(target, 'form-control-label')
+      },
+    },
     '../form-label/form-label': {
       type: 'descendant',
       linked(target) {
-        this._linked(target, 'form-label')
+        this._Linked(target, 'form-label')
       },
     },
     '../input-label/input-label': {
       type: 'descendant',
       linked(target) {
-        this._linked(target, 'input-label')
+        this._Linked(target, 'input-label')
       },
     },
     '../input/input': {
       type: 'descendant',
       linked(target) {
-        this._linked(target, 'input')
+        this._Linked(target, 'input')
       },
     }
   },
   methods: {
-    _linked(target, type) {
+    _Linked(target, type) {
       if (target) {
         if (!this._formItems) {
           this._formItems = []

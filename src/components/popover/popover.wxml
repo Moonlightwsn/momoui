@@ -15,7 +15,7 @@
   transitionDelay="{{transitionDelay}}"
   transitionDuration="{{transitionDuration}}"
 >
-  <mui-paper class="mui-popover-content" style="{{_contentStyle}}" elevation="{{elevation}}" catch:tap="_clickPopoverContent">
+  <mui-paper class="mui-popover-content" style="{{_contentStyle}}" elevation="{{elevation}}" catch:tap="_ClickPopoverContent">
     <slot name="content"></slot>
   </mui-paper>
 </mui-backdrop>
