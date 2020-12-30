@@ -9,5 +9,5 @@
     src="{{image}}"
     mode="{{imageMode}}"
   />
-  <slot></slot>
+  <slot />
 </view>

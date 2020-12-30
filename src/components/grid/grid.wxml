@@ -2,5 +2,5 @@
   class="mui mui-grid {{_innerClasses}} {{mClass}}"
   style="{{_innerStyles}}{{mStyle}}"
 >
-  <slot></slot>
+  <slot />
 </view>

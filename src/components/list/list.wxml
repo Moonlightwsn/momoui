@@ -6,5 +6,5 @@
     {{subheader}}
   </mui-list-subheader>
   <slot wx:else name="subheader"></slot>
-  <slot></slot>
+  <slot />
 </view>

@@ -2,7 +2,7 @@
   class="mui mui-popover-anchor {{mClass}}"
   style="{{mStyle}}"
 >
-  <slot></slot>
+  <slot />
 </view>
 <mui-backdrop
   class="_backdrop_in_popover"

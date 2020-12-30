@@ -1,5 +1,5 @@
 <view
-  class="mui mui-switch {{_checkedClass}} {{disabled ? 'mui-disabled' : ''}} {{muiClasses}}"
+  class="mui mui-switch {{_checkedClass}} disabled-{{disabled}} {{muiClasses}}"
   style="{{mStyle}}"
   capture-bind:tap="_CheckControll"
   capture-bind:longpress="_CheckControll"
@@ -10,5 +10,5 @@
     </mui-button>
     <view class="switch-track" />
   </view>
-  <slot></slot>
+  <slot />
 </view>

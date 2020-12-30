@@ -1,6 +1,8 @@
 <view
-  class="mui mui-form-control-label {{mClass}}"
+  class="mui mui-form-control-label label-placement-{{labelPlacement}} disabled-{{disabled}} {{mClass}}"
   style="{{mStyle}}"
 >
-  <slot></slot>
+  <slot />
+  <label wx:if="{{label}}">{{label}}</label>
+  <slot name="label" />
 </view>

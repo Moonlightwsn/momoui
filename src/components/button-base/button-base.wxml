@@ -1,18 +1,18 @@
 <view
   wx:if="{{component === 'view'}}"
-  class="mui mui-button-base mui-ripple-base {{disabled ? 'mui-disabled' : ''}} {{mClass}}"
+  class="mui mui-button-base mui-ripple-base disabled-{{disabled}} {{mClass}}"
   bind:tap="_RippleAction"
   bind:longpress="_RippleAction"
   disabled="{{disabled}}"
   style="{{mStyle}}"
 >
-  <slot></slot>
+  <slot />
   <mui-ripple-container class="_mui-ripple-container"></mui-ripple-container>
 </view>
 <button
   wx:elif="{{component === 'button'}}"
   app-parameter="{{openType === 'launchApp' ? appParameter : ''}}"
-  class="mui mui-button-base mui-ripple-base {{disabled ? 'mui-disabled' : ''}} {{mClass}}"
+  class="mui mui-button-base mui-ripple-base disabled-{{disabled}} {{mClass}}"
   bind:tap="_RippleAction"
   bind:longpress="_RippleAction"
   bind:getphonenumber="{{openType === 'getPhoneNumber' ? '_openTypeEvent' : '' }}"
@@ -36,6 +36,6 @@
   style="{{mStyle}}"
   size="mini"
 >
-  <slot></slot>
+  <slot />
   <mui-ripple-container class="_mui-ripple-container"></mui-ripple-container>
 </button>

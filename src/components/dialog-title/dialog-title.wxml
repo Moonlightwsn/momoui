@@ -3,6 +3,6 @@
   style="{{mStyle}}"
 >
   <mui-typography variant="h6">
-    <slot></slot>
+    <slot />
   </mui-typography>
 </view>

@@ -37,11 +37,15 @@ Component({
       value: false,
     },
   },
+  lifetimes: {
+    attached() {
+      this._hasAttached = true
+    },
+  },
   relations: {
     '../form-control/form-control': {
       type: 'ancestor',
       linked(target) {
-        console.log(1)
         if (target) {
           this._formControlComp = target
           this._ReRenderControlledProps()
@@ -51,19 +55,21 @@ Component({
   },
   methods: {
     _onBlur() {
-      this.setData({focus: false})
+      if (!this._propIsSet || !this._propIsSet.focus) {
+        this.setData({focus: false})
+      }
     },
     _onFocus() {
-      this.setData({focus: true})
+      if (!this._propIsSet || !this._propIsSet.focus) {
+        this.setData({focus: true})
+      }
     },
     _ReRenderControlledProps() {
-      console.log(2)
       const target = this._formControlComp
       if (target && Array.isArray(controlledProps)) {
         const newData = {}
         controlledProps.forEach(item => {
           if (!this._propIsSet || !this._propIsSet[item]) {
-            console.log(4, item, target.data[item])
             newData[item] = target.data[item]
           }
         })

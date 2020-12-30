@@ -2,5 +2,5 @@
   class="mui mui-typography display-{{display}} gutterBottom-{{gutterBottom}} paragraph-{{paragraph}} {{muiClasses}}"
   style="{{mStyle}}"
 >
-  <slot></slot>
+  <slot />
 </view>

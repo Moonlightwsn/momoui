@@ -10,10 +10,12 @@ const ObserversForControlledPropsByAncestor = (props: string[]) => {
   const obs = {}
   props.forEach(item => {
     obs[item] = function () {
-      if (!this._propIsSet) {
-        this._propIsSet = {}
+      if (!this._hasAttached) {
+        if (!this._propIsSet) {
+          this._propIsSet = {}
+        }
+        this._propIsSet[item] = true
       }
-      this._propIsSet[item] = true
     }
   })
   return obs

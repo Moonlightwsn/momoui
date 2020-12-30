@@ -40,7 +40,7 @@ Component({
         600,
         () => {
           this.triggerEvent('clearripple', {
-            rippleKey: this.properties.rippleKey
+            rippleKey: this.data.rippleKey
           })
         }
       )

@@ -2,15 +2,26 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
-  <mui-button bind:tap="changeColor">切换Color</mui-button>
   <mui-form-control color="{{color}}">
     <mui-form-label>Gender</mui-form-label>
-    <mui-radio-group>
-      <mui-radio value="female">Female</mui-radio>
-      <mui-radio value="male">Male</mui-radio>
-      <mui-radio value="other">Other</mui-radio>
-      <mui-radio disabled>Disabled Option</mui-radio>
-    </mui-radio-group>
+    <mui-form-group>
+      <mui-form-control-label value="female" label="Female" onChange="{{onChange}}">
+        <mui-radio />
+      </mui-form-control-label>
+      <mui-form-control-label value="male" label="Male" onChange="{{onChange}}">
+        <mui-radio />
+      </mui-form-control-label>
+      <mui-form-control-label value="other" label="Other" onChange="{{onChange}}">
+        <mui-radio />
+      </mui-form-control-label>
+      <mui-form-control-label label="Disabled" checked disabled>
+        <mui-radio />
+      </mui-form-control-label>
+    </mui-form-group>
+  </mui-form-control>
+  <mui-form-control color="secondary">
+    <mui-input-label>INPUT</mui-input-label>
+    <mui-input />
   </mui-form-control>
   <!--
   <form bindsubmit="submit" bindreset="reset">

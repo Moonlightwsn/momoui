@@ -3,6 +3,6 @@
   style="{{mStyle}}"
 >
   <mui-typography mClass="dialog-content-text" variant="body1" color="textSecondary">
-    <slot></slot>
+    <slot />
   </mui-typography>
 </view>

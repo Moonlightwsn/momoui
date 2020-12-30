@@ -29,6 +29,7 @@
 
     "form-control": "./components/form-control/form-control",
     "form-control-label": "./components/form-control-label/form-control-label",
+    "form-group": "./components/form-group/form-group",
     "form-helper-text": "./components/form-helper-text/form-helper-text",
     "form-label": "./components/form-label/form-label",
 

@@ -2,5 +2,5 @@
   class="mui mui-list-item-secondary-action {{mClass}}"
   style="{{mStyle}}"
 >
-  <slot></slot>
+  <slot />
 </view>

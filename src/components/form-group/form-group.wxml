@@ -1,0 +1,6 @@
+<view
+  class="mui mui-form-group row-{{row}} {{mClass}}"
+  style="{{mStyle}}"
+>
+  <slot />
+</view>

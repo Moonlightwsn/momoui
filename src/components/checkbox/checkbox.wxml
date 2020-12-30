@@ -1,5 +1,5 @@
 <view
-  class="mui mui-checkbox {{_checkedClass}} {{disabled ? 'mui-disabled' : ''}} {{muiClasses}}"
+  class="mui mui-checkbox {{_checkedClass}} disabled-{{disabled}} {{muiClasses}}"
   style="{{mStyle}}"
   capture-bind:tap="_CheckControll"
   capture-bind:longpress="_CheckControll"
@@ -7,5 +7,5 @@
   <mui-button disabled="{{disabled}}" disableRipple="{{disableRipple}}" color="{{color}}" shape="circle" variant="text" mStyle="padding: 9px;">
     <mui-icon name="{{_currentIcon}}" mClass="check-icon" />
   </mui-button>
-  <slot></slot>
+  <slot />
 </view>

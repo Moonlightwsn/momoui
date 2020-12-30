@@ -4,5 +4,5 @@
   style="{{_show ? _endStyle : _startStyle}}{{_show ? _enterStyle : _exitStyle}}{{mStyle}}"
   bind:tap="_backdropClick"
 >
-  <slot></slot>
+  <slot />
 </view>

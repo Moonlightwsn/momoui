@@ -3,5 +3,5 @@
   style="{{mStyle}}"
   bind:touchstart="_TouchStart"
 >
-  <slot></slot>
+  <slot />
 </view>

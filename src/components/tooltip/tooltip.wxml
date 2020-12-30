@@ -14,7 +14,7 @@
     transitionDuration="{{transitionDuration}}"
   >
     <view bind:touchstart="_showTooltip">
-      <slot></slot>
+      <slot />
     </view>
     <view slot="content" class="mui-tooltip">
       <view wx:if="{{title}}" class="tooltip-title arrow-placement-{{placement}}">

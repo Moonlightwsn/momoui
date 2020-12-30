@@ -2,5 +2,5 @@
   mClass="mui mui-card-action-area-root {{mClass}}"
   mStyle="{{mStyle}}"
 >
-  <slot></slot>
+  <slot />
 </mui-button-base>

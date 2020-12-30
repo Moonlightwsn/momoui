@@ -1,6 +1,15 @@
 import muiBase from '../../behaviors/muiBase.ts'
 import muiController from '../../behaviors/muiController.ts'
 
+const controlledProps: string[] = [
+  'color',
+  'disabled',
+  'error',
+  'focus',
+  'margin',
+  'variant',
+]
+
 Component({
   behaviors: [muiBase, muiController, 'wx://form-field'],
   properties: {
@@ -168,11 +177,13 @@ Component({
     _textAutoHeight: true,
     _textareaHeight: 19,
     _formControl: false,
+    _hasInputLabel: false,
   },
   lifetimes: {
     attached() {
-      const {rows} = this.properties
-      this._adjustTextareaHeight(rows)
+      this._hasAttached = true
+      const {rows} = this.data
+      this._AdjustTextareaHeight(rows)
     },
   },
   relations: {
@@ -180,16 +191,12 @@ Component({
       type: 'ancestor',
       linked(target) {
         this._formControlComp = target
-        const {focus, value} = this.data
-        this._formControlComp._onFocusOrBlur(focus, !!value)
+        this._ReRenderControlledProps()
       }
     }
   },
   methods: {
-    _formControlAction(params) {
-      this.setData(params)
-    },
-    _adjustTextareaHeight(rows) {
+    _AdjustTextareaHeight(rows) {
       if (rows > 1) {
         const query = this.createSelectorQuery()
         query.select('.mui-input').fields({
@@ -213,7 +220,7 @@ Component({
     _onFocus(e) {
       this.setData({_focus: true})
       if (this._formControlComp) {
-        this._formControlComp._onFocusOrBlur(true, true)
+        this._formControlComp._ControlFormItem('_onFocus', ['input-label'], {shrink: true})
       }
       const {inputFocus} = this.data
       if (inputFocus && typeof inputFocus === 'function') {
@@ -223,7 +230,7 @@ Component({
     _onBlur(e) {
       this.setData({_focus: false})
       if (this._formControlComp) {
-        this._formControlComp._onFocusOrBlur(false, !!this.data.value)
+        this._formControlComp._ControlFormItem('_onBlur', ['input-label'], {shrink: !!e.detail.value})
       }
       const {inputBlur} = this.data
       if (inputBlur && typeof inputBlur === 'function') {
@@ -234,7 +241,7 @@ Component({
       const {inputChange} = this.data
       if (inputChange && typeof inputChange === 'function') {
         const {value, cursor, keyCode} = e.detail || {}
-        inputChange(value, cursor, keyCode)
+        inputChange(value, cursor, keyCode, e)
       }
     },
     _onConfirm(e) {
@@ -249,16 +256,33 @@ Component({
         inputKeyboardHeightChange(e)
       }
     },
-    _lineChange(e) {
+    _LineChange(e) {
       const {lineChange} = this.data
       if (lineChange && typeof lineChange === 'function') {
         lineChange(e)
       }
+    },
+    _ReRenderControlledProps() {
+      const target = this._formControlComp
+      if (target && Array.isArray(controlledProps)) {
+        const newData = {}
+        controlledProps.forEach(item => {
+          if (!this._propIsSet || !this._propIsSet[item]) {
+            newData[item] = target.data[item]
+          }
+        })
+        if (Object.keys(newData).length > 0) {
+          this.setData(newData)
+        }
+      }
+    },
+    _SetInputLabel() {
+      this.setData({_hasInputLabel: true})
     }
   },
   observers: {
     rows(rows) {
-      this._adjustTextareaHeight(rows)
+      this._AdjustTextareaHeight(rows)
     }
   },
   options: {

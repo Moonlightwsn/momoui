@@ -2,5 +2,5 @@
   class="mui mui-form-helper-text error-{{error}} disabled-{{disabled}} {{variant}} {{mClass}}"
   style="{{mStyle}}"
 >
-  <slot></slot>
+  <slot />
 </text>

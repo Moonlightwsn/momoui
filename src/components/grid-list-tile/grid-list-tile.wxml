@@ -3,6 +3,6 @@
   style="{{_innerStyles}}{{mStyle}}"
 >
   <view class="tile">
-    <slot></slot>
+    <slot />
   </view>
 </view>

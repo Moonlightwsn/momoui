@@ -2,5 +2,5 @@
   class="mui mui-button-group orientation-{{orientation}} {{muiClasses}}"
   style="{{mStyle}}"
 >
-  <slot></slot>
+  <slot />
 </view>

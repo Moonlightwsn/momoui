@@ -1,5 +1,5 @@
 <view
-  class="mui mui-input-root form-control-{{_formControl}} focus-{{_focus}} disable-underline-{{disableUnderline}} error-{{error}} {{disabled ? 'mui-disabled' : ''}} {{muiClasses}}"
+  class="mui mui-input-root form-control-{{_formControl}} margin-{{margin}} has-input-label-{{_hasInputLabel}} focus-{{_focus}} disable-underline-{{disableUnderline}} error-{{error}} disabled-{{disabled}} {{muiClasses}}"
   style="{{fullWidth ? 'width:100%;' : ''}}{{multiline ? 'min-width: 175px;' : ''}}{{mStyle}}"
 >
   <slot name="startAdornment"></slot>
@@ -12,7 +12,7 @@
     bindinput="_onChange"
     bindconfirm="_onConfirm"
     bindkeyboardheightchange="_onKeyboardHeightChange"
-    bindlinechange="_lineChange"
+    bindlinechange="_LineChange"
     class="mui-input"
     cursor="{{cursor}}"
     cursor-spacing="{{cursorSpacing}}"
@@ -29,7 +29,7 @@
     placeholder-class="mui-input-placeholder {{placeholderClass}}"
     selection-start="{{selectionStart}}"
     selection-end="{{selectionEnd}}"
-    style="{{margin === 'dense' ? 'padding-top:3px;' : ''}}height:{{_textareaHeight}}px"
+    style="height:{{_textareaHeight}}px"
     show-confirm-bar="{{showConfirmBar}}"
   />
   <input
@@ -58,7 +58,6 @@
     placeholder-class="mui-input-placeholder {{placeholderClass}}"
     selection-start="{{selectionStart}}"
     selection-end="{{selectionEnd}}"
-    style="{{margin === 'dense' ? 'padding-top:3px;' : ''}}"
     type="{{type}}"
   />
   <slot name="endAdornment"></slot>

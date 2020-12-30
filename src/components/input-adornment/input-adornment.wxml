@@ -4,6 +4,6 @@
 >
   <mui-typography wx:if="{{text}}" color="textSecondary" variant="body1">{{text}}</mui-typography>
   <block wx:else>
-    <slot></slot>
+    <slot />
   </block>
 </view>

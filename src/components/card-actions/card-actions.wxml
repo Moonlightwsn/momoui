@@ -2,5 +2,5 @@
   class="mui mui-card-actions-root disable-spacing-{{disableSpacing}} {{mClass}}"
   style="{{mStyle}}"
 >
-  <slot></slot>
+  <slot />
 </view>

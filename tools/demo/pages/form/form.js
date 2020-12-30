@@ -5,11 +5,19 @@ Page({
   data: {
     color: 'secondary',
   },
+  onLoad() {
+    this.setData({
+      onChange: this.onChange.bind(this),
+    })
+  },
   changeColor() {
     this.setData({
       color: this.data.color === 'primary' ? 'secondary' : 'primary',
     })
-  }
+  },
+  onChange(e) {
+    console.log(e)
+  },
   /*
   data: {
     test: {},

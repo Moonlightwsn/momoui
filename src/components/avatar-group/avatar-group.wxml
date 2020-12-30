@@ -2,6 +2,6 @@
   class="mui mui-avatar-group {{mClass}}"
   style="{{mStyle}}"
 >
-  <slot></slot>
+  <slot />
   <mui-avatar wx:if="{{_more > 0}}" mStyle="{{_moreStyle}}">+{{_more}}</mui-avatar>
 </view>

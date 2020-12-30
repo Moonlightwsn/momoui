@@ -1,5 +1,5 @@
 <label
-  class="mui mui-input-label form-control-{{_formControl}} margin-{{margin}} shrink-{{shrink}} error-{{error}} focus-{{focus}} animated-{{!disableAnimation}} {{disabled ? 'mui-disabled' : ''}} {{muiClasses}}"
+  class="mui mui-input-label form-control-{{_formControl}} margin-{{margin}} shrink-{{shrink}} error-{{error}} focus-{{focus}} animated-{{!disableAnimation}} disabled-{{disabled}} {{muiClasses}}"
   style="{{mStyle}}"
 >
   <slot />

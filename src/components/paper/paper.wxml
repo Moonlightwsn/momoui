@@ -2,5 +2,5 @@
   class="mui mui-paper {{muiClasses}} elevation-{{elevation}} {{square ? 'paper-square' : ''}}"
   style="{{mStyle}}"
 >
-  <slot></slot>
+  <slot />
 </view>

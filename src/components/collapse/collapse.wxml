@@ -4,7 +4,7 @@
 >
   <view class="mui-collapse-wrapper">
     <view class="mui-collapse-wrapper-inner">
-      <slot></slot>
+      <slot />
     </view>
   </view>
 </view>

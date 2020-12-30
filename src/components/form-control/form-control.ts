@@ -70,53 +70,15 @@ Component({
         if (!this._formItems) {
           this._formItems = []
         }
+        if (type === 'input-label' && !this._hasInputLabel) {
+          this._hasInputLabel = true
+        }
+        if (type === 'input' && this._hasInputLabel) {
+          target._SetInputLabel()
+        }
         this._formItems.push({target, type})
-        /*
-        const {
-          color,
-          disabled,
-          error,
-          focus,
-          fullWidth,
-          margin,
-          required,
-          size,
-          variant,
-        } = this.data
-        const params: any = {
-          _formControl: true,
-          color,
-          disabled,
-          error,
-          focus,
-          fullWidth,
-          margin,
-          required,
-          size,
-          variant,
-        }
-        if (type === 'input' && variant === 'outlined') {
-          params.disableUnderline = true
-        }
-        this._ControlFormItem(params, target)
-        */
       }
     },
-    /*
-    _onFocusOrBlur(focus, shrink) {
-      this._formItems.filter(item => item.type === 'input-label').forEach(item => {
-        item.target._formControlAction({
-          focus,
-          shrink,
-        })
-      })
-    },
-    _ControlFormItem(parmas, target) {
-      if (target._formControlAction && typeof target._formControlAction === 'function') {
-        target._formControlAction(parmas)
-      }
-    },
-    */
     _ControlFormItem(method: string, formItemTypes: string[], params: any) {
       const formItemTypesMap = {}
       formItemTypes.forEach(type => {
@@ -139,34 +101,12 @@ Component({
     },
   },
   observers: {
-    'color, disabled, error, focus, fullWidth, margin, required, size, variant': function (/* color, disabled, error, focus, fullWidth, margin, required, size, variant */) {
-      console.log(3)
+    'color, disabled, error, focus, fullWidth, margin, required, size, variant': function () {
       if (this._formItems) {
         this._formItems.forEach(item => {
           item.target._ReRenderControlledProps()
         })
       }
-      /*
-      const params: any = {
-        color,
-        disabled,
-        error,
-        focus,
-        fullWidth,
-        margin,
-        required,
-        size,
-        variant,
-      }
-      if (this._formItems) {
-        this._formItems.forEach(item => {
-          if (item.type === 'input' && variant === 'outlined') {
-            params.disableUnderline = true
-          }
-          item.target._formControlAction(params)
-        })
-      }
-      */
     }
   },
   options: {

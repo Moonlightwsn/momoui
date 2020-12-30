@@ -15,7 +15,7 @@ export default Behavior({
           color,
           variant,
           size,
-        } = this.properties
+        } = this.data
         this._defindMuiBehaviors({
           color,
           variant,
@@ -32,7 +32,7 @@ export default Behavior({
       styleProps.forEach(sp => {
         muiClassesArr.push(params[sp] ? `mui-${sp}-${params[sp]}` : '')
       })
-      const {mClass} = this.properties
+      const {mClass} = this.data
       if (mClass) {
         muiClassesArr.push(mClass)
       }

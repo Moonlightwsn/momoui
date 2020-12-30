@@ -33,17 +33,17 @@ export default Behavior({
       type: String,
       value: '',
     },
+    onChange: {
+      // @ts-ignore
+      type: Function,
+      value: null,
+    },
     size: {
       type: String,
       value: 'medium',
     },
     value: {
       type: String,
-      value: null,
-    },
-    onChange: {
-      // @ts-ignore
-      type: Function,
       value: null,
     },
   },

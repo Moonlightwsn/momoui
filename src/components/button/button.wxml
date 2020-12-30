@@ -21,7 +21,7 @@
   show-message-card="{{showMessageCard}}"
 >
   <mui-icon wx:if="{{loading}}" mClass="mui-button-loading" name="progress-circle" spin />
-  <slot></slot>
+  <slot />
   <mui-icon
     wx:if="{{icon}}"
     color="{{iconColor}}"

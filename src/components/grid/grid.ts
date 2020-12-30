@@ -99,7 +99,7 @@ Component({
       md,
       lg,
       xl,
-    } = this.properties
+    } = this.data
     this._defineGridClasses({
       container,
       item,

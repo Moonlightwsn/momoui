@@ -19,7 +19,7 @@
     >
       <mui-dialog-title wx:if="{{title}}">{{title}}</mui-dialog-title>
       <mui-dialog-content wx:if="{{content}}" dividers>{{content}}</mui-dialog-content>
-      <slot></slot>
+      <slot />
       <mui-dialog-actions wx:if="{{actions}}">
         <mui-button
           color="secondary"

@@ -20,7 +20,7 @@ Component({
       type: 'parent',
       linked(target) {
         if (target) {
-          const {cols: thisCols, rows: thisRows} = this.properties
+          const {cols: thisCols, rows: thisRows} = this.data
           const {data: {cols: targetCols, spacing, cellHeight} = {}} = target
           const padding = spacing / 2
           const _innerStyles = `width:${(thisCols / targetCols) * 100}%;height:${cellHeight * thisRows + spacing}px;padding:${padding}px;`
