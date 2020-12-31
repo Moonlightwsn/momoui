@@ -102,6 +102,9 @@ Component({
     _onFocus() {
       this._ControlFormItem('_onFocus', ['form-label'], {focus: true})
     },
+    _SetInputLabelShrink(shrink) {
+      this._ControlFormItem('_SetShrink', ['input-label'], {shrink})
+    },
     _TouchStart() {
       this._onFocus()
     },

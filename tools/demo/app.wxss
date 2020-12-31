@@ -32,6 +32,14 @@
   padding: 8px 0;
 }
 
+.demo-box .demo-row.start {
+  justify-content: flex-start;
+}
+
+.demo-box .demo-row.end {
+  justify-content: flex-end;
+}
+
 [data-momoui-theme=light] {
   color: rgba(0, 0, 0, 0.87);
   background-color: #fff;

@@ -95,6 +95,9 @@ Component({
         }
       }
     },
+    _SetShrink(params) {
+      this.setData(params)
+    }
   },
   observers: {
     ...ObserversForControlledPropsByAncestor(controlledProps),

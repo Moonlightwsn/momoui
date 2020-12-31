@@ -1,5 +1,6 @@
 import muiBase from '../../behaviors/muiBase.ts'
 import muiController from '../../behaviors/muiController.ts'
+import {ObserversForControlledPropsByAncestor} from '../../common/utils.ts'
 
 const controlledProps: string[] = [
   'color',
@@ -191,6 +192,7 @@ Component({
       type: 'ancestor',
       linked(target) {
         this._formControlComp = target
+        this._formControlComp._SetInputLabelShrink(!!this.data.value)
         this._ReRenderControlledProps()
       }
     }
@@ -283,7 +285,13 @@ Component({
   observers: {
     rows(rows) {
       this._AdjustTextareaHeight(rows)
-    }
+    },
+    value(value) {
+      if (this._formControlComp) {
+        this._formControlComp._SetInputLabelShrink(!!value)
+      }
+    },
+    ...ObserversForControlledPropsByAncestor(controlledProps),
   },
   options: {
     // virtualHost: true,

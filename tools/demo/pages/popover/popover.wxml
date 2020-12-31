@@ -30,23 +30,23 @@
         <mui-typography mStyle="padding: 16px;" slot="content">The content of the Popover.</mui-typography>
       </mui-popover>
     </view>
-    <view class="demo-row">
+    <view class="demo-row start">
       <mui-form-control>
         <mui-form-label>anchorReference</mui-form-label>
-        <mui-radio-group value="{{anchorReference}}" onChange="{{changeAnchorReference}}">
-          <mui-radio value="anchorEl">anchorEl</mui-radio>
-          <mui-radio value="anchorPosition">anchorPosition</mui-radio>
+        <mui-radio-group row value="{{anchorReference}}" onChange="{{changeAnchorReference}}">
+          <mui-form-control-label label="anchorEl" value="anchorEl"><mui-radio /></mui-form-control-label>
+          <mui-form-control-label label="anchorPosition" value="anchorPosition"><mui-radio /></mui-form-control-label>
         </mui-radio-group>
       </mui-form-control>
     </view>
     <block wx:if="{{anchorReference === 'anchorPosition'}}">
-      <view class="demo-row">
+      <view class="demo-row start">
         <mui-form-control>
           <mui-input-label>anchorPosition.top</mui-input-label>
           <mui-input model:value="{{anchorPositionTop}}" />
         </mui-form-control>
       </view>
-      <view class="demo-row">
+      <view class="demo-row start">
         <mui-form-control>
           <mui-input-label>anchorPosition.left</mui-input-label>
           <mui-input model:value="{{anchorPositionLeft}}" />
@@ -54,43 +54,43 @@
       </view>
     </block>
     <block wx:else>
-      <view class="demo-row">
+      <view class="demo-row start">
         <mui-form-control>
-          <mui-typography color="textSecondary" variant="body2" mStyle="padding: 12px;">anchorOrigin.vertical</mui-typography>
+          <mui-form-label>anchorOrigin.vertical</mui-form-label>
           <mui-radio-group value="{{anchorOrigin2.vertical}}" onChange="{{changeAnchorOriginVertical}}">
-            <mui-radio value="top">Top</mui-radio>
-            <mui-radio value="center">Center</mui-radio>
-            <mui-radio value="bottom">Bottom</mui-radio>
+            <mui-form-control-label label="Top" value="top"><mui-radio /></mui-form-control-label>
+            <mui-form-control-label label="Center" value="center"><mui-radio /></mui-form-control-label>
+            <mui-form-control-label label="Bottom" value="bottom"><mui-radio /></mui-form-control-label>
           </mui-radio-group>
         </mui-form-control>
       </view>
-      <view class="demo-row">
+      <view class="demo-row start">
         <mui-form-control>
-          <mui-typography color="textSecondary" variant="body2" mStyle="padding: 12px;">anchorOrigin.horizontal</mui-typography>
+          <mui-form-label>anchorOrigin.horizontal</mui-form-label>
           <mui-radio-group value="{{anchorOrigin2.horizontal}}" onChange="{{changeAnchorOriginHorizontal}}">
-            <mui-radio value="left">Left</mui-radio>
-            <mui-radio value="center">Center</mui-radio>
-            <mui-radio value="right">Right</mui-radio>
+            <mui-form-control-label label="Left" value="left"><mui-radio /></mui-form-control-label>
+            <mui-form-control-label label="Center" value="center"><mui-radio /></mui-form-control-label>
+            <mui-form-control-label label="Right" value="right"><mui-radio /></mui-form-control-label>
           </mui-radio-group>
         </mui-form-control>
       </view>
-      <view class="demo-row">
+      <view class="demo-row start">
         <mui-form-control>
-          <mui-typography color="textSecondary" variant="body2" mStyle="padding: 12px;">transformOrigin.vertical</mui-typography>
+          <mui-form-label>transformOrigin.vertical</mui-form-label>
           <mui-radio-group value="{{transformOrigin2.vertical}}" onChange="{{changeTransformOriginVertical}}">
-            <mui-radio color="primary" value="top">Top</mui-radio>
-            <mui-radio color="primary" value="center">Center</mui-radio>
-            <mui-radio color="primary" value="bottom">Bottom</mui-radio>
+            <mui-form-control-label label="top" value="top"><mui-radio color="primary" /></mui-form-control-label>
+            <mui-form-control-label label="Center" value="center"><mui-radio color="primary" /></mui-form-control-label>
+            <mui-form-control-label label="Bottom" value="bottom"><mui-radio color="primary" /></mui-form-control-label>
           </mui-radio-group>
         </mui-form-control>
       </view>
-      <view class="demo-row">
+      <view class="demo-row start">
         <mui-form-control>
-          <mui-typography color="textSecondary" variant="body2" mStyle="padding: 12px;">transformOrigin.horizontal</mui-typography>
+          <mui-form-label>transformOrigin.horizontal</mui-form-label>
           <mui-radio-group value="{{transformOrigin2.horizontal}}" onChange="{{changeTransformOriginHorizontal}}">
-            <mui-radio color="primary" value="left">Left</mui-radio>
-            <mui-radio color="primary" value="center">Center</mui-radio>
-            <mui-radio color="primary" value="right">Right</mui-radio>
+            <mui-form-control-label label="Left" value="left"><mui-radio color="primary" /></mui-form-control-label>
+            <mui-form-control-label label="Center" value="center"><mui-radio color="primary" /></mui-form-control-label>
+            <mui-form-control-label label="Right" value="right"><mui-radio color="primary" /></mui-form-control-label>
           </mui-radio-group>
         </mui-form-control>
       </view>
