@@ -1,5 +1,15 @@
 import muiBase from '../../behaviors/muiBase.ts'
 import muiController from '../../behaviors/muiController.ts'
+import {ObserversForControlledPropsByAncestor} from '../../common/utils.ts'
+
+const controlledProps: string[] = [
+  'color',
+  'disabled',
+  'disableElevation',
+  'disableRipple',
+  'size',
+  'variant',
+]
 
 Component({
   behaviors: [muiBase, muiController, 'wx://form-field-button'],
@@ -120,59 +130,46 @@ Component({
   data: {
     _groupStyle: '',
   },
+  lifetimes: {
+    attached() {
+      this._hasAttached = true
+    },
+  },
   relations: {
     '../button-group/button-group': {
       type: 'parent',
       linked(target) {
         if (target) {
-          const {
-            data: {
-              variant,
-              color,
-              size,
-              disabled,
-              disableElevation,
-              disableRipple,
-            } = {}
-          } = target
-          const newData: any = {
-            disabled,
-            disableElevation,
-            disableRipple,
-            fullWidth: false,
-          }
-          if (!this._variantIsSet) {
-            newData.variant = variant
-          }
-          if (!this._colorIsSet) {
-            newData.color = color
-          }
-          if (!this._sizeIsSet) {
-            newData.size = size
-          }
-          this.setData(newData)
+          this._buttonGrouplComp = target
+          this._ReRenderControlledProps()
         }
       }
     },
   },
   methods: {
+    _ReRenderControlledProps() {
+      const target = this._buttonGrouplComp
+      if (target && Array.isArray(controlledProps)) {
+        const newData = {}
+        controlledProps.forEach(item => {
+          if (!this._propIsSet || !this._propIsSet[item]) {
+            newData[item] = target.data[item]
+          }
+        })
+        if (Object.keys(newData).length > 0) {
+          this.setData(newData)
+        }
+      }
+    },
     _TriggerRipple(e) {
       const buttonBase = this.selectComponent('._mui-base-in-button')
       if (buttonBase) {
         buttonBase._RippleAction(e)
       }
-    }
+    },
   },
   observers: {
-    variant() {
-      this._variantIsSet = true
-    },
-    color() {
-      this._colorIsSet = true
-    },
-    size() {
-      this._sizeIsSet = true
-    },
+    ...ObserversForControlledPropsByAncestor(controlledProps),
   },
   options: {
     // virtualHost: true,

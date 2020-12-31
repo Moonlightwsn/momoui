@@ -40,6 +40,23 @@ Component({
   relations: {
     '../button/button': {
       type: 'child',
+      linked(target) {
+        if (target) {
+          if (!this.buttonChildren) {
+            this.buttonChildren = []
+          }
+          this.buttonChildren.push(target)
+        }
+      },
+    }
+  },
+  observers: {
+    'color, disabled, disableElevation, disableRipple, size, variant': function () {
+      if (this._formItems) {
+        this._formItems.forEach(item => {
+          item.target._ReRenderControlledProps()
+        })
+      }
     }
   },
   options: {
