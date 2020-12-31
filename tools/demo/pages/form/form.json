@@ -7,6 +7,7 @@
     "mui-form-control-label": "../../components/form-control-label/form-control-label",
     "mui-form-group": "../../components/form-group/form-group",
     "mui-form-label": "../../components/form-label/form-label",
+    "mui-form-helper-text": "../../components/form-helper-text/form-helper-text",
     "mui-icon": "../../components/icon/icon",
     "mui-input": "../../components/input/input",
     "mui-input-label": "../../components/input-label/input-label",

@@ -2,24 +2,39 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
-  <mui-form-control disabled color="{{color}}">
+  <mui-form-control color="{{color}}" mStyle="margin: 24px;">
     <mui-form-label>Gender</mui-form-label>
-    <mui-form-group>
-      <mui-form-control-label value="female" label="Female" onChange="{{onChange}}">
+    <mui-radio-group>
+      <mui-form-control-label value="female" label="Female">
         <mui-radio />
       </mui-form-control-label>
-      <mui-form-control-label value="male" label="Male" onChange="{{onChange}}">
-        <mui-checkbox />
-      </mui-form-control-label>
-      <mui-form-control-label value="other" disabled="{{false}}" label="Other" onChange="{{onChange}}">
-        <mui-checkbox />
-      </mui-form-control-label>
-      <mui-form-control-label label="Disabled" disabled="{{false}}">
+      <mui-form-control-label checked value="male" label="Male">
         <mui-radio />
       </mui-form-control-label>
-    </mui-form-group>
+      <mui-form-control-label value="other" label="Other">
+        <mui-radio />
+      </mui-form-control-label>
+      <mui-form-control-label label="Disabled" disabled>
+        <mui-radio />
+      </mui-form-control-label>
+    </mui-radio-group>
   </mui-form-control>
-  <mui-form-control disabled color="secondary">
+  <mui-form-control color="{{color}}" mStyle="margin: 24px;">
+    <mui-form-label>Assign responsibility</mui-form-label>
+    <mui-checkbox-group>
+      <mui-form-control-label value="gilad" label="Gilad Gray" labelPlacement="start">
+        <mui-checkbox />
+      </mui-form-control-label>
+      <mui-form-control-label value="jason" label="Jason Killian">
+        <mui-checkbox />
+      </mui-form-control-label>
+      <mui-form-control-label value="antoine" label="Antoine Llorca">
+        <mui-checkbox />
+      </mui-form-control-label>
+    </mui-checkbox-group>
+    <mui-form-helper-text>Be careful</mui-form-helper-text>
+  </mui-form-control>
+  <mui-form-control disabled color="secondary" mStyle="margin: 24px;">
     <mui-input-label>INPUT</mui-input-label>
     <mui-input />
   </mui-form-control>

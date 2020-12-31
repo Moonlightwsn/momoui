@@ -1,6 +1,7 @@
-<view
-  class="mui-radio-group {{mClass}}"
-  style="{{mStyle}}"
+<mui-form-group
+  mClass="{{mClass}}"
+  mStyle="{{mStyle}}"
+  row="{{row}}"
 >
   <slot />
-</view>
+</mui-form-group>

@@ -4,6 +4,6 @@
   capture-catch:tap="_Click"
 >
   <slot />
-  <label wx:if="{{label}}">{{label}}</label>
+  <mui-typography wx:if="{{label}}">{{label}}</mui-typography>
   <slot name="label" />
 </view>

@@ -872,6 +872,7 @@
     margin-left: -11px;
     margin-right: 16px;
     vertical-align: middle;
+    width: 100%;
     -webkit-tap-highlight-color: transparent;
     &.label-placement-start {
       margin-left: 16px;

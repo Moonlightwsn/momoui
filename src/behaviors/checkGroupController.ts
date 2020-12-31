@@ -3,11 +3,6 @@ import muiBase from './muiBase.ts'
 export default Behavior({
   behaviors: [muiBase, 'wx://form-field'],
   properties: {
-    value: {
-      type: Array,
-      optionalTypes: [String],
-      value: null,
-    },
     defaultValue: {
       type: Array,
       optionalTypes: [String],
@@ -16,6 +11,15 @@ export default Behavior({
     onChange: {
       // @ts-ignore
       type: Function,
+      value: null,
+    },
+    row: {
+      type: Boolean,
+      value: false,
+    },
+    value: {
+      type: Array,
+      optionalTypes: [String],
       value: null,
     },
   },

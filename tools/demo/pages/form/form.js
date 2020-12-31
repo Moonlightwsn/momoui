@@ -3,7 +3,7 @@ import themeMixin from '../../behaviors/theme'
 Page({
   behaviors: [themeMixin],
   data: {
-    color: 'secondary',
+    color: 'primary',
   },
   onLoad() {
     this.setData({
