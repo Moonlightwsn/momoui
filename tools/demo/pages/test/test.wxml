@@ -771,7 +771,7 @@
       <mui-radio value="r1" />
       <mui-radio value="r2" />
     </mui-radio-group>
-    <mui-button color="primary" form-type="submit">Submit</mui-button>
+    <mui-button color="primary" formType="submit">Submit</mui-button>
   </form>
   <mui-button shape="circle" color="primary" variant="outlined">A</mui-button>
   -->

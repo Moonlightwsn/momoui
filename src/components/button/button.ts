@@ -153,6 +153,14 @@ Component({
           this.setData(newData)
         }
       }
+    },
+  },
+  methods: {
+    _TriggerRipple(e) {
+      const buttonBase = this.selectComponent('._mui-base-in-button')
+      if (buttonBase) {
+        buttonBase._RippleAction(e)
+      }
     }
   },
   observers: {

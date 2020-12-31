@@ -49,20 +49,44 @@ Component({
         }
       },
     },
-    '../radio/radio': {
-      type: 'descendant',
-      linked(target) {
-        this._Linked(target, 'radio')
-      },
-    },
     '../checkbox/checkbox': {
       type: 'descendant',
       linked(target) {
         this._Linked(target, 'checkbox')
       },
     },
+    '../switch/switch': {
+      type: 'descendant',
+      linked(target) {
+        this._Linked(target, 'switch')
+      },
+    },
+    '../radio/radio': {
+      type: 'descendant',
+      linked(target) {
+        this._Linked(target, 'radio')
+      },
+    },
   },
   methods: {
+    _Click() {
+      if (this._formItems) {
+        this._formItems.forEach(item => {
+          if (item.type === 'radio' || item.type === 'checkbox' || item.type === 'switch') {
+            item.target._CheckControll()
+            const buttonInFormItem = item.target.selectComponent('._mui-inner-button')
+            if (buttonInFormItem) {
+              buttonInFormItem._TriggerRipple({
+                detail: {
+                  x: 0,
+                  y: 0,
+                }
+              })
+            }
+          }
+        })
+      }
+    },
     _Linked(target, type) {
       if (target) {
         if (!this._formItems) {

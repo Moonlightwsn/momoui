@@ -69,7 +69,7 @@ Component({
   observers: {
   },
   options: {
-    virtualHost: true,
+    // virtualHost: true,
     pureDataPattern: /^_pure/,
     styleIsolation: 'apply-shared',
   }
