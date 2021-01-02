@@ -2,7 +2,7 @@
   class="mui mui-popover-anchor {{mClass}}"
   style="{{mStyle}}"
 >
-  <slot />
+  <slot name="anchor" />
 </view>
 <mui-backdrop
   class="_backdrop_in_popover"
@@ -16,6 +16,6 @@
   transitionDuration="{{transitionDuration}}"
 >
   <mui-paper class="mui-popover-content" style="{{_contentStyle}}" elevation="{{elevation}}" catch:tap="_ClickPopoverContent">
-    <slot name="content"></slot>
+    <slot />
   </mui-paper>
 </mui-backdrop>

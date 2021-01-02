@@ -3,6 +3,7 @@
     "pages/button/button",
     "pages/button-group/button-group",
     "pages/form/form",
+    "pages/menu/menu",
     "pages/popover/popover",
     "pages/tooltip/tooltip",
     "pages/index/index",

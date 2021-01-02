@@ -11,8 +11,8 @@
       onClose="{{onClose1}}"
       transformOrigin="{{transformOrigin1}}"
     >
-      <mui-button bind:tap="openPopover1" variant="contained" color="primary">OPEN POPOVER</mui-button>
-      <mui-typography mStyle="padding: 16px;" slot="content">The content of the Popover.</mui-typography>
+      <mui-button slot="anchor" bind:tap="openPopover1" variant="contained" color="primary">OPEN POPOVER</mui-button>
+      <mui-typography mStyle="padding: 16px;">The content of the Popover.</mui-typography>
     </mui-popover>
   </view>
   <mui-typography mClass="header2" variant="h5">锚点（Anchor）测试</mui-typography>
@@ -26,8 +26,8 @@
         onClose="{{onClose2}}"
         transformOrigin="{{transformOrigin2}}"
       >
-        <mui-button bind:tap="openPopover2" variant="contained">OPEN POPOVER</mui-button>
-        <mui-typography mStyle="padding: 16px;" slot="content">The content of the Popover.</mui-typography>
+        <mui-button slot="anchor" bind:tap="openPopover2" variant="contained">OPEN POPOVER</mui-button>
+        <mui-typography mStyle="padding: 16px;">The content of the Popover.</mui-typography>
       </mui-popover>
     </view>
     <view class="demo-row start">

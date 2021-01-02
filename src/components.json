@@ -51,6 +51,10 @@
     "list-item-text": "./components/list-item-text/list-item-text",
     "list-subheader": "./components/list-subheader/list-subheader",
 
+    "menu": "./components/menu/menu",
+    "menu-item": "./components/menu-item/menu-item",
+    "menu-list": "./components/menu-list/menu-list",
+
     "paper": "./components/paper/paper",
     "popover": "./components/popover/popover",
     "progress": "./components/progress/progress",

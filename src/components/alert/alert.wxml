@@ -5,14 +5,14 @@
 >
   <view class="alert-icon">
     <mui-icon wx:if="{{icon}}" name="{{icon}}" color="{{iconProps.color}}" size="{{iconProps.size}}" />
-    <slot wx:else name="icon"></slot>
+    <slot wx:else name="icon" />
   </view>
   <view class="alert-message">
     <mui-typography wx:if="{{title}}" mClass="alert-title" gutterBottom>{{title}}</mui-typography>
     <block wx:if="{{message}}">
       {{message}}
     </block>
-    <slot wx:else></slot>
+    <slot wx:else />
   </view>
   <view class="alert-action">
     <mui-button
@@ -33,6 +33,6 @@
       iconSize="{{closeIconProps.size}}"
       catchtap="_close"
     />
-    <slot wx:else name="action"></slot>
+    <slot wx:else name="action" />
   </view>
 </mui-paper>

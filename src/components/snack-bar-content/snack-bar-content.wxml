@@ -3,9 +3,9 @@
     <block wx:if="{{message}}">
       {{message}}
     </block>
-    <slot wx:else name="message"></slot>
+    <slot wx:else name="message" />
   </view>
   <view class="snack-bar-content-action">
-    <slot name="action"></slot>
+    <slot name="action" />
   </view>
 </mui-paper>

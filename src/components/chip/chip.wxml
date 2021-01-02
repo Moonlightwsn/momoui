@@ -5,7 +5,7 @@
   bindtap="_Click"
 >
   <mui-avatar wx:if="{{_avatar}}" mClass="mui-chip-avatar {{_avatar && _avatar.icon ? 'icon' : ''}}" icon="{{_avatar.icon}}" src="{{_avatar.src}}">{{_avatar.text}}</mui-avatar>
-  <slot wx:else name="avatar"></slot>
+  <slot wx:else name="avatar" />
   <mui-icon mClass="mui-chip-icon" wx:if="{{icon}}" name="{{icon}}" />
   <slot wx:else name="icon" />
   <view class="mui-chip-label">

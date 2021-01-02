@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mui-list-item": "../list-item/list-item"
+  }
+}

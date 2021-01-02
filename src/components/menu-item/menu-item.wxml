@@ -1,0 +1,17 @@
+<mui-list-item
+  alignItems="{{alignItems}}"
+  avatar="{{avatar}}"
+  button="{{button}}"
+  dense="{{dense}}"
+  disabled="{{disabled}}"
+  disableGutters="{{disableGutters}}"
+  divider="{{divider}}"
+  mClass="mui-menu-item {{mClass}}"
+  mStyle="{{mStyle}}"
+  primary="{{primary}}"
+  secondary="{{secondary}}"
+  secondaryAction="{{secondaryAction}}"
+  selected="{{selected}}"
+>
+  <slot />
+</mui-list-item>

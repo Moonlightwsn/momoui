@@ -1,7 +1,8 @@
 <mui-button-base
+  component="{{button ? 'button' : 'view'}}"
   disabled="{{disabled}}"
   disableRipple="{{!button}}"
-  component="{{button ? 'button' : 'view'}}"
+  hoverClass="mui-list-item-hover"
   mClass="mui mui-list-item divider-{{divider}} align-items-{{alignItems}} selected-{{selected}} button-{{button}} disable-gutters-{{disableGutters}} dense-{{dense}} {{mClass}}"
   mStyle="{{mStyle}}"
 >

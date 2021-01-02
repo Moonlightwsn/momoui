@@ -1,0 +1,6 @@
+<mui-list
+  mClass="mui mui-menu-list {{mClass}}"
+  mStyle="{{mStyle}}"
+>
+  <slot />
+</mui-list>

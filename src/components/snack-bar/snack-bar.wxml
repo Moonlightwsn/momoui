@@ -4,8 +4,8 @@
   style="{{_defaultStyle}}{{_transitionStyle}}{{mStyle}}"
 >
   <mui-snack-bar-content wx:if="{{message}}" message="{{message}}">
-    <slot name="message" slot="message"></slot>
-    <slot name="action" slot="action"></slot>
+    <slot name="message" slot="message" />
+    <slot name="action" slot="action" />
   </mui-snack-bar-content>
   <slot />
 </view>

@@ -13,15 +13,15 @@
     transitionDelay="{{transitionDelay}}"
     transitionDuration="{{transitionDuration}}"
   >
-    <view bind:touchstart="_showTooltip">
+    <view slot="anchor" bind:touchstart="_showTooltip">
       <slot />
     </view>
-    <view slot="content" class="mui-tooltip">
+    <view class="mui-tooltip">
       <view wx:if="{{title}}" class="tooltip-title arrow-placement-{{placement}}">
         {{title}}
         <view wx:if="{{arrow}}" class="tooltip-arrow arrow-placement-{{placement}}" />
       </view>
-      <slot name="title"></slot>
+      <slot name="title" />
     </view>
   </mui-popover>
 </view>

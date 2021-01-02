@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "mui-button": "../../components/button/button",
+    "mui-list": "../../components/list/list",
+    "mui-list-item": "../../components/list-item/list-item",
+    "mui-menu": "../../components/menu/menu",
+    "mui-menu-item": "../../components/menu-item/menu-item",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

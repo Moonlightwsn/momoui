@@ -48,22 +48,7 @@ Component({
       value: false,
     },
   },
-  methods: {
-    _secondaryAction(e) {
-      const {secondaryAction = {}} = this.data
-      const {action} = secondaryAction
-      if (action && typeof action === 'function') {
-        action(e)
-      }
-    },
-    _secondaryLongpress(e) {
-      const {secondaryAction = {}} = this.data
-      const {longpress} = secondaryAction
-      if (longpress && typeof longpress === 'function') {
-        longpress(e)
-      }
-    }
-  },
+  observers: {},
   options: {
     virtualHost: true,
     pureDataPattern: /^_pure/,

@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mui-menu-list": "../menu-list/menu-list",
+    "mui-paper": "../paper/paper",
+    "mui-popover": "../popover/popover"
+  }
+}

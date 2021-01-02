@@ -47,6 +47,11 @@
           "scene": null
         },
         {
+          "name": "menu",
+          "pathName": "pages/menu/menu",
+          "scene": null
+        },
+        {
           "name": "popover",
           "pathName": "pages/popover/popover",
           "scene": null

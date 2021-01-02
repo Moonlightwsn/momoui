@@ -1,0 +1,17 @@
+<mui-popover
+  anchorOrigin="{{anchorOrigin}}"
+  mClass="{{mClass}}"
+  mStyle="{{mStyle}}"
+  onClose="{{onClose}}"
+  open="{{open}}"
+  transformOrigin="{{transformOrigin}}"
+  transitions="{{transitions}}"
+  transitionDelay="{{transitionDelay}}"
+  transitionDuration="{{transitionDuration}}"
+  transitionType="{{transitionType}}"
+>
+  <slot slot="anchor" name="anchor" />
+  <mui-menu-list mClass="mui-menu-list">
+    <slot />
+  </mui-menu-list>
+</mui-popover>

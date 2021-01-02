@@ -9,6 +9,6 @@
         {{_content}}
       </block>
     </block>
-    <slot wx:else name="content"></slot>
+    <slot wx:else name="content" />
   </view>
 </view>

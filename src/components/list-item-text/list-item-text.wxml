@@ -4,10 +4,10 @@
 >
   <mui-typography display="block">
     <block wx:if="{{primary}}">{{primary}}</block>
-    <slot wx:else name="primary"></slot>
+    <slot wx:else name="primary" />
   </mui-typography>
   <mui-typography display="block" variant="body2" color="textSecondary">
     <block wx:if="{{secondary}}">{{secondary}}</block>
-    <slot wx:else name="secondary"></slot>
+    <slot wx:else name="secondary" />
   </mui-typography>
 </view>

@@ -3,5 +3,5 @@
   style="{{_groupStyles}}{{mStyle}}"
 >
   <mui-icon wx:if="{{src || icon}}" src="{{src}}" name="{{icon}}" color="{{iconColor}}" size="{{iconSize}}" />
-  <slot wx:else></slot>
+  <slot wx:else />
 </view>
