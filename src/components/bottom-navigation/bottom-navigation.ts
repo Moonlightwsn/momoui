@@ -1,5 +1,19 @@
 import muiBase from '../../behaviors/muiBase.ts'
 
+/* eslint-disable */
+const app = getApp()
+/* eslint-disable */
+let currentTheme = app.momouiTheme
+if (!currentTheme) {
+  try {
+    const sysInfo = wx.getSystemInfoSync()
+    currentTheme = (sysInfo && sysInfo.theme) || 'light'
+  } catch(e) {
+    console.log(e)
+    currentTheme = 'light'
+  }
+}
+
 Component({
   behaviors: [muiBase],
   properties: {
@@ -19,10 +33,25 @@ Component({
     },
   },
   lifetimes: {
+    created() {
+      this._currentTheme = currentTheme
+    },
     ready() {
       if (this._actions) {
-        this._actions.forEach(item => {
+        if (this._actions.length > 3) {
+          this._hideInactiveAction = true
+        }
+        this._actions.forEach((item, index) => {
+          item._defaultValue = index
           item._ReRenderControlledProps()
+        })
+        wx.onThemeChange((obj) => {
+          if (obj && obj.theme) {
+            this._actions.forEach(item => {
+              this._currentTheme = currentTheme = obj.theme
+              item._ReRenderControlledProps()
+            })
+          }
         })
       }
     }
@@ -36,10 +65,6 @@ Component({
             this._actions = []
           }
           this._actions.push(target)
-          target._defaultValue = this._actions.length - 1
-          if (this._actions.length > 3) {
-            this._hideInactiveAction = true
-          }
         }
       },
     },

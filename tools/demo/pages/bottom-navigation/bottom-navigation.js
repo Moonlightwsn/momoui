@@ -14,5 +14,5 @@ Page({
     this.setData({
       value,
     })
-  }
+  },
 })

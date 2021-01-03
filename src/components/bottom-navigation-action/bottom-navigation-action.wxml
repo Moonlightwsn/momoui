@@ -15,6 +15,10 @@
     src="{{icon.src}}"
   />
   <slot wx:else name="icon" />
-  <label wx:if="{{label}}" class="mui-bottom-navigation-action-label">{{label}}</label>
-  <slot wx:else name="label" />
+  <label class="mui-bottom-navigation-action-label">
+    <block wx:if="{{label}}">
+      {{label}}
+    </block>
+    <slot wx:else name="label" />
+  </label>
 </mui-button-base>

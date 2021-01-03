@@ -16,11 +16,11 @@ Component({
     },
     activeIconColor: {
       type: String,
-      value: '#1976d2',
+      value: null,
     },
     inactiveIconColor: {
       type: String,
-      value: 'rgba(0, 0, 0, 0.54)',
+      value: null,
     },
     label: {
       type: String,
@@ -62,19 +62,19 @@ Component({
       if (target) {
         const newData:any = {}
         newData._selected = false
-        newData._iconColor = this.data.inactiveIconColor
+        newData._iconColor = this.data.inactiveIconColor || (target._currentTheme === 'light' ? 'rgba(0, 0, 0, 0.54)' : 'rgba(255, 255, 255, 0.7)')
         newData._hideInactiveAction = !!target._hideInactiveAction
         let currentValue = this.data.value
         if (!this._propIsSet || !this._propIsSet.showLabel) {
           newData.showLabel = target.data.showLabels
         }
-        if (!this._propIsSet || this._propIsSet.value) {
+        if (!this._propIsSet || !this._propIsSet.value) {
           newData.value = this._defaultValue
           currentValue = newData.value
         }
         if (currentValue === target.data.value) {
           newData._selected = true
-          newData._iconColor = this.data.activeIconColor
+          newData._iconColor = this.data.activeIconColor || (target._currentTheme === 'light' ? '#1976d2' : '#90caf9')
         }
         this.setData(newData)
       }

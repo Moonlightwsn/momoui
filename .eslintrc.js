@@ -52,6 +52,7 @@ module.exports = {
     ],
     'import/prefer-default-export': 'off',
     'linebreak-style': 'off',
+    "max-len" : ["error", {code : 300}],
     'no-catch-shadow': 'error',
     'no-continue': 'off',
     'no-div-regex': 'warn',
