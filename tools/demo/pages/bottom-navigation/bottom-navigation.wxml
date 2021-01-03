@@ -1,0 +1,24 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography mClass="header2" variant="h5">底部导航栏</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">当只有 三个 导航项时，导航栏会始终显示图标和文本标签。</mui-typography>
+  <view class="demo-box" style="background-color: {{theme === 'dark' ? '#333' : '#f5f5f5'}};">
+    <mui-bottom-navigation mStyle="width: 320px;" value="{{value}}" onChange="{{SetValue}}">
+      <mui-bottom-navigation-action icon="clock" label="Recents" />
+      <mui-bottom-navigation-action icon="like" label="Favorites" />
+      <mui-bottom-navigation-action icon="location" label="Nearby" />
+    </mui-bottom-navigation>
+  </view>
+  <mui-typography mClass="header2" variant="h5">无标签的底部导航栏</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">如果有四个或五个导航项，那些未被选中的导航项会以图标的样式显示。</mui-typography>
+  <view class="demo-box" style="background-color: {{theme === 'dark' ? '#333' : '#f5f5f5'}};">
+    <mui-bottom-navigation mStyle="width: 320px;" value="{{value}}" onChange="{{SetValue}}">
+      <mui-bottom-navigation-action icon="clock" label="Recents" />
+      <mui-bottom-navigation-action icon="like" label="Favorites" />
+      <mui-bottom-navigation-action icon="location" label="Nearby" />
+      <mui-bottom-navigation-action icon="folder" label="Folder" />
+    </mui-bottom-navigation>
+  </view>
+</view>

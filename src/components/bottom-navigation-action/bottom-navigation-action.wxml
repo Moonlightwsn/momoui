@@ -1,0 +1,20 @@
+<mui-button-base
+  class="mui mui-bottom-navigation-action"
+  mClass="mui-bottom-navigation-action-wrapper selected-{{_selected}} only-icon-{{!(showLabel || _selected || !_hideInactiveAction)}} {{mClass}}"
+  mStyle="{{mStyle}}"
+  bind:tap="_Select"
+>
+  <mui-icon
+    wx:if="{{icon}}"
+    color="{{icon.color || _iconColor}}"
+    mClass="mui-bottom-navigation-action-icon {{icon.class}}"
+    mStyle="{{icon.style}}"
+    name="{{icon.name || icon}}"
+    size="{{icon.size}}"
+    spin="{{icon.spin}}"
+    src="{{icon.src}}"
+  />
+  <slot wx:else name="icon" />
+  <label wx:if="{{label}}" class="mui-bottom-navigation-action-label">{{label}}</label>
+  <slot wx:else name="label" />
+</mui-button-base>

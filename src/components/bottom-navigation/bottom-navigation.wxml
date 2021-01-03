@@ -1,0 +1,6 @@
+<view
+  class="mui mui-bottom-navigation {{mClass}}"
+  style="{{mStyle}}"
+>
+  <slot />
+</view>

@@ -29,20 +29,20 @@ Component({
         variant: 'indeterminate',
       }
     },
-    size: {
-      type: Number,
+    rerender: {
+      type: null,
       value: null,
     },
-    src: {
-      type: String,
+    size: {
+      type: Number,
       value: null,
     },
     spin: {
       type: Boolean,
       value: false,
     },
-    rerender: {
-      type: null,
+    src: {
+      type: String,
       value: null,
     },
   },
@@ -98,7 +98,7 @@ Component({
     }
   },
   observers: {
-    'name, color, size, src, mStyle, progressProps, mClass, rerender': function (name, color, size, src) {
+    'name, color, size, src, mClass, mStyle, progressProps, rerender': function (name, color, size, src) {
       if (name && !src) {
         if (color && size) {
           this._readSvgAndGenBase64(name, color, `${size}px`)

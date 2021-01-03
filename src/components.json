@@ -6,6 +6,8 @@
 
     "backdrop": "./components/backdrop/backdrop",
     "badge": "./components/badge/badge",
+    "bottom-navigation": "./components/bottom-navigation/bottom-navigation",
+    "bottom-navigation-action": "./components/bottom-navigation-action/bottom-navigation-action",
     "button": "./components/button/button",
     "button-base": "./components/button-base/button-base",
     "button-group": "./components/button-group/button-group",
