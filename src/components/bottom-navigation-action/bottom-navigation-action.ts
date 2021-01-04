@@ -49,6 +49,9 @@ Component({
           this._navigationComp = target
         }
       },
+      unlinked() {
+        this._navigationComp = undefined
+      },
     }
   },
   data: {

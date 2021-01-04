@@ -14,11 +14,14 @@
       <my-button class="mui-button-wrapper">TWO</my-button>
       <my-button class="mui-button-wrapper">THREE</my-button>
     </mui-button-group>
-    <mui-button-group mClass="button-group" color="primary" variant="text">
+    <mui-button-group mClass="button-group" color="{{buttonGroupColor[colorIndex]}}" variant="{{buttonGroupVariant[variantIndex]}}" size="{{buttonGroupSize[sizeIndex]}}">
       <mui-button>ONE</mui-button>
       <mui-button>TWO</mui-button>
       <mui-button>THREE</mui-button>
     </mui-button-group>
+    <mui-button bind:tap="testColor">COLOR</mui-button>
+    <mui-button bind:tap="testSize">SIZE</mui-button>
+    <mui-button bind:tap="testVariant">VARIANT</mui-button>
   </view>
   <mui-typography mClass="header2" variant="h5">大小和颜色</mui-typography>
   <view class="demo-box">

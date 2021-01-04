@@ -1,5 +1,6 @@
 import muiBase from '../../behaviors/muiBase.ts'
 import muiController from '../../behaviors/muiController.ts'
+import {debounce} from '../../common/utils.ts'
 
 Component({
   behaviors: [muiBase, muiController],
@@ -37,25 +38,43 @@ Component({
       value: 'outlined',
     },
   },
+  data: {
+    _pureButtons: [],
+  },
+  lifetimes: {
+    created() {
+      if (!this._ArrangeButtons) {
+        this._ArrangeButtons = debounce(() => {
+          const newButtons = this.data._pureButtons
+          if (newButtons.length > 0) {
+            newButtons.forEach(item => {
+              item._ReRenderControlledProps()
+            })
+          }
+        }, 50)
+      }
+    }
+  },
   relations: {
     '../button/button': {
       type: 'child',
       linked(target) {
         if (target) {
-          if (!this.buttonChildren) {
-            this.buttonChildren = []
-          }
-          this.buttonChildren.push(target)
+          this.data._pureButtons.push(target)
+          this.setData({_pureButtons: this.data._pureButtons})
         }
+      },
+      unlinked(target) {
+        const _targetIndex = this.data._pureButtons.findIndex(item => item === target)
+        this.data._pureButtons.splice(_targetIndex, 1)
+        this.setData({_pureButtons: this.data._pureButtons})
       },
     }
   },
   observers: {
-    'color, disabled, disableElevation, disableRipple, size, variant': function () {
-      if (this._formItems) {
-        this._formItems.forEach(item => {
-          item.target._ReRenderControlledProps()
-        })
+    'color, disabled, disableElevation, disableRipple, size, variant, _pureButtons': function () {
+      if (this._ArrangeButtons) {
+        this._ArrangeButtons()
       }
     }
   },

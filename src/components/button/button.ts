@@ -143,7 +143,10 @@ Component({
           this._buttonGrouplComp = target
           this._ReRenderControlledProps()
         }
-      }
+      },
+      unlinked() {
+        this._buttonGrouplComp = undefined
+      },
     },
   },
   methods: {

@@ -49,8 +49,8 @@ Component({
               item._ReRenderControlledProps()
             })
             if (!this._hasBindThemeChanged) {
+              this._hasBindThemeChanged = true
               wx.onThemeChange((obj) => {
-                this._hasBindThemeChanged = true
                 if (obj && obj.theme) {
                   newActions.forEach(item => {
                     this._currentTheme = currentTheme = obj.theme
@@ -60,7 +60,7 @@ Component({
               })
             }
           }
-        })
+        }, 50)
       }
     },
   },

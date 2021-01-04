@@ -55,7 +55,7 @@ Component({
               _moreStyle: moreStyle
             })
           }
-        })
+        }, 50)
       }
     },
   },

@@ -16,9 +16,10 @@
   <view class="demo-box" style="background-color: {{theme === 'dark' ? '#333' : '#f5f5f5'}};">
     <mui-bottom-navigation value="{{value}}" onChange="{{SetValue}}">
       <mui-bottom-navigation-action icon="clock" label="Recents" />
-      <mui-bottom-navigation-action icon="like" label="Favorites" />
+      <mui-bottom-navigation-action wx:if="{{test}}" icon="like" label="Favorites" />
       <mui-bottom-navigation-action icon="location" label="Nearby" />
       <mui-bottom-navigation-action icon="folder" label="Folder" />
     </mui-bottom-navigation>
   </view>
+  <mui-button bind:tap="test">TEST</mui-button>
 </view>
