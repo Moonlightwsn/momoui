@@ -1,4 +1,5 @@
 import muiBase from '../../behaviors/muiBase.ts'
+import {debounce} from '../../common/utils.ts'
 
 Component({
   behaviors: [muiBase],
@@ -13,51 +14,72 @@ Component({
     },
   },
   data: {
-    _pure_avatars: [],
+    _pureAvatars: [],
     _more: 0,
     _moreStyle: '',
   },
   lifetimes: {
-    ready() {
-      this.setData({
-        _more: this.data._more,
-        _moreStyle: this.data._moreStyle,
-      })
-    }
+    created() {
+      if (!this._ArrangeAvatars) {
+        this._ArrangeAvatars = debounce(() => {
+          const newAvatars = this.data._pureAvatars
+          if (newAvatars.length > 0) {
+            const {
+              max,
+              spacing,
+            } = this.data
+            let more = 0
+            let moreStyle
+            newAvatars.forEach((item, index) => {
+              const targetStyles: any = {'z-index': 0, 'margin-left': '-8px'}
+              if (index === 0) {
+                targetStyles['margin-left'] = '0'
+              } else if (!Number.isNaN(Number(spacing))) {
+                targetStyles['margin-left'] = `-${spacing}px`
+              } else if (spacing === 'small') {
+                targetStyles['margin-left'] = '-16px'
+              }
+              if (index >= max) {
+                more += 1
+                targetStyles.display = 'none'
+                if (!moreStyle) {
+                  moreStyle = `z-index: 0;margin-left: ${targetStyles['margin-left']};`
+                }
+              } else {
+                targetStyles['z-index'] = max - index
+              }
+              item._groupControlAction(targetStyles)
+            })
+            this.setData({
+              _more: more,
+              _moreStyle: moreStyle
+            })
+          }
+        })
+      }
+    },
   },
   relations: {
     '../avatar/avatar': {
       type: 'child',
       linked(target) {
         if (target) {
-          const {
-            max,
-            spacing,
-            _pure_avatars: avatars,
-          } = this.data
-          avatars.push(target)
-          const targetStyles: any = {'z-index': 0, 'margin-left': '-8px'}
-          const targetIndex = avatars.length
-          if (targetIndex === 1) {
-            targetStyles['margin-left'] = '0'
-          } else if (!Number.isNaN(Number(spacing))) {
-            targetStyles['margin-left'] = `-${spacing}px`
-          } else if (spacing === 'small') {
-            targetStyles['margin-left'] = '-16px'
-          }
-
-          if (targetIndex > max) {
-            this.data._more += 1
-            if (!this.data._moreStyle) {
-              this.data._moreStyle = `z-index: 0;margin-left: ${targetStyles['margin-left']};`
-            }
-            targetStyles.display = 'none'
-          } else {
-            targetStyles['z-index'] = max - targetIndex + 1
-          }
-          target._groupControlAction(targetStyles)
+          this.data._pureAvatars.push(target)
+          this.setData({_pureAvatars: this.data._pureAvatars})
         }
       },
+      unlinked(target) {
+        const _targetIndex = this.data._pureAvatars.findIndex(item => item === target)
+        this.data._pureAvatars.splice(_targetIndex, 1)
+        this.setData({_pureAvatars: this.data._pureAvatars})
+      },
+    }
+  },
+  observers: {
+    'max, spacing, _pureAvatars': function () {
+      if (this._ArrangeAvatars) {
+        this._ArrangeAvatars()
+      }
     }
   },
   options: {

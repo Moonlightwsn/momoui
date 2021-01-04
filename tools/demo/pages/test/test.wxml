@@ -1,4 +1,13 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <mui-avatar-group>
+    <mui-avatar>M</mui-avatar>
+    <mui-avatar>M</mui-avatar>
+    <mui-avatar>M</mui-avatar>
+    <mui-avatar>M</mui-avatar>
+    <mui-avatar>M</mui-avatar>
+    <mui-avatar wx:if="{{open}}">M</mui-avatar>
+  </mui-avatar-group>
+  <mui-button bind:tap="setOpen">TEST</mui-button>
   <!--
   <mui-card raised>
     <mui-card-content>
@@ -214,6 +223,7 @@
     </mui-snack-bar-content>
   </mui-snack-bar>
   -->
+  <!--
   <mui-tooltip mClass="tooltipWrapper" title="Add" arrow open="{{open}}" onClose="{{onClose}}" onOpen="{{onOpen}}">
     <mui-button variant="outlined">BOTTOM</mui-button>
   </mui-tooltip>
@@ -250,6 +260,7 @@
   <mui-tooltip mClass="tooltipWrapper" placement="top-end" title="Add" arrow>
     <mui-button variant="outlined">TOP END</mui-button>
   </mui-tooltip>
+  -->
   <!--
   <mui-chip
     label="Basic"
@@ -606,6 +617,7 @@
     variant="outlined"
   />
   -->
+  <!--
   <mui-form-control
     color="{{color}}"
     focus
@@ -638,6 +650,7 @@
     />
     <mui-form-helper-text error variant="outlined">Error</mui-form-helper-text>
   </mui-form-control>
+  -->
   <!--
   <mui-list subheader="Sub Header" dense>
     <mui-list-item
