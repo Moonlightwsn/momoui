@@ -1,4 +1,5 @@
 import muiBase from '../../behaviors/muiBase.ts'
+import {debounce} from '../../common/utils.ts'
 
 /* eslint-disable */
 const app = getApp()
@@ -32,40 +33,51 @@ Component({
       value: null,
     },
   },
+  data: {
+    _pureActions: [],
+  },
   lifetimes: {
     created() {
       this._currentTheme = currentTheme
-    },
-    ready() {
-      if (this._actions) {
-        if (this._actions.length > 3) {
-          this._hideInactiveAction = true
-        }
-        this._actions.forEach((item, index) => {
-          item._defaultValue = index
-          item._ReRenderControlledProps()
-        })
-        wx.onThemeChange((obj) => {
-          if (obj && obj.theme) {
-            this._actions.forEach(item => {
-              this._currentTheme = currentTheme = obj.theme
+      if (!this._ArrangeActions) {
+        this._ArrangeActions = debounce(() => {
+          if (this.data._pureActions.length > 0) {
+            this._hideInactiveAction = this.data._pureActions.length > 3
+            this.data._pureActions.forEach((item, index) => {
+              item._defaultValue = index
               item._ReRenderControlledProps()
             })
+            if (!this._hasBindThemeChanged) {
+              wx.onThemeChange((obj) => {
+                this._hasBindThemeChanged = true
+                if (obj && obj.theme) {
+                  this.data._pureActions.forEach(item => {
+                    this._currentTheme = currentTheme = obj.theme
+                    item._ReRenderControlledProps()
+                  })
+                }
+              })
+            }
           }
         })
       }
-    }
+    },
   },
   relations: {
     '../bottom-navigation-action/bottom-navigation-action': {
       type: 'descendant',
       linked(target) {
         if (target) {
-          if (!this._actions) {
-            this._actions = []
-          }
-          this._actions.push(target)
+          this.data._pureActions.push(target)
+          this.setData({_pureActions: this.data._pureActions})
         }
+      },
+      unlinked(target) {
+        const _targetIndex = this.data._pureActions.findIndex(item => {
+          return item === target
+        });
+        this.data._pureActions.splice(_targetIndex, 1)
+        this.setData({_pureActions: this.data._pureActions})
       },
     },
   },
@@ -78,13 +90,11 @@ Component({
     },
   },
   observers: {
-    'showLabels, value': function () {
-      if (this._actions) {
-        this._actions.forEach(item => {
-          item._ReRenderControlledProps()
-        })
+    'showLabels, value, _pureActions': function () {
+      if (this._ArrangeActions) {
+        this._ArrangeActions()
       }
-    }
+    },
   },
   options: {
     pureDataPattern: /^_pure/,

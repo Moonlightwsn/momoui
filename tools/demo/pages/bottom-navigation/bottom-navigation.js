@@ -4,6 +4,7 @@ Page({
   behaviors: [themeMixin],
   data: {
     value: 0,
+    test: true,
   },
   onLoad() {
     this.setData({
@@ -15,4 +16,9 @@ Page({
       value,
     })
   },
+  test() {
+    this.setData({
+      test: !this.data.test,
+    })
+  }
 })
