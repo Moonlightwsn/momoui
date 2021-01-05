@@ -5,11 +5,10 @@
   <mui-typography mClass="header2" variant="h5">简单的应用栏</mui-typography>
   <view class="demo-box">
     <view style="flex-grow: 1;">
-      <mui-app-bar>
+      <mui-app-bar position="static">
         <mui-toolbar>
-          <mui-button
+          <mui-icon-button
             icon="menu"
-            shape="circle"
             color="inherit"
             mStyle="margin-right: 16px;"
           />
@@ -22,11 +21,10 @@
   <mui-typography mClass="header2" variant="h5">带一个主搜索输入框的应用栏</mui-typography>
   <view class="demo-box">
     <view style="flex-grow: 1;">
-      <mui-app-bar>
+      <mui-app-bar position="static">
         <mui-toolbar>
-          <mui-button
+          <mui-icon-button
             icon="menu"
-            shape="circle"
             color="inherit"
             mStyle="margin-right: 16px;"
           />
@@ -109,6 +107,47 @@
                 <mui-menu-item bind:tap="CloseMenu3">Profile</mui-menu-item>
                 <mui-menu-item bind:tap="CloseMenu3">My account</mui-menu-item>
               </mui-menu>
+            </mui-menu>
+          </view>
+        </mui-toolbar>
+      </mui-app-bar>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">带有菜单的应用栏</mui-typography>
+  <view class="demo-box">
+    <view style="flex-grow: 1;">
+      <mui-form-control>
+        <mui-form-control-label
+          label="{{auth ? 'Logout' : 'Login'}}"
+          checked="{{auth}}"
+          onChange="{{changeAuth}}"
+        >
+          <mui-checkbox />
+        </mui-form-control-label>
+      </mui-form-control>
+      <mui-app-bar position="static">
+        <mui-toolbar>
+          <mui-icon-button
+            icon="menu"
+            color="inherit"
+            mStyle="margin-right: 16px;"
+          />
+          <mui-typography mStyle="flex-grow: 1;" variant="h6">Photos</mui-typography>
+          <view wx:if="{{auth}}">
+            <mui-menu
+              anchorOrigin="{{ {vertical: 'top', horizontal: 'right'} }}"
+              open="{{openMenu4}}"
+              onClose="{{CloseMenu4}}"
+              transformOrigin="{{ {vertical: 'top', horizontal: 'right'} }}"
+            >
+              <mui-icon-button
+                bind:tap="OpenMenu4"
+                color="inherit"
+                icon="user"
+                slot="anchor"
+              />
+              <mui-menu-item bind:tap="CloseMenu4">Profile</mui-menu-item>
+              <mui-menu-item bind:tap="CloseMenu4">My account</mui-menu-item>
             </mui-menu>
           </view>
         </mui-toolbar>

@@ -3,11 +3,15 @@
     "mui-app-bar": "../../components/app-bar/app-bar",
     "mui-badge": "../../components/badge/badge",
     "mui-button": "../../components/button/button",
+    "mui-form-control": "../../components/form-control/form-control",
+    "mui-form-control-label": "../../components/form-control-label/form-control-label",
     "mui-icon": "../../components/icon/icon",
     "mui-icon-button": "../../components/icon-button/icon-button",
     "mui-input": "../../components/input/input",
     "mui-menu": "../../components/menu/menu",
     "mui-menu-item": "../../components/menu-item/menu-item",
+    "mui-switch": "../../components/switch/switch",
+    "mui-checkbox": "../../components/checkbox/checkbox",
     "mui-toolbar": "../../components/toolbar/toolbar",
     "mui-typography": "../../components/typography/typography"
   }
