@@ -194,6 +194,33 @@
   }
   /** mui-paper end */
 
+  /** mui-app-bar */
+  &.mui-app-bar {
+    width: 100%;
+    display: flex;
+    z-index: 1100;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    flex-direction: column;
+    &.position-static {
+      position: static;
+    }
+  }
+  /** mui-app-bar end */
+
+  &.mui-tool-bar {
+    display: flex;
+    position: relative;
+    align-items: center;
+    &.gutters-true {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    &.variant-regular {
+      min-height: 56px;
+    }
+  }
+
   /** mui-card */
   &.mui-card-root {
     overflow: hidden;
@@ -2533,6 +2560,15 @@
 /** mui-grid media */
 @media (min-width: 600px) {
   .mui {
+    &.mui-tool-bar {
+      &.gutters-true {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      &.variant-regular {
+        min-height: 64px;
+      }
+    }
     &.mui-menu-item {
       min-height: auto;
     }

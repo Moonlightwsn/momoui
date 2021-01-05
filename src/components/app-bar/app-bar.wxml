@@ -1,0 +1,7 @@
+<mui-paper
+  mClass="mui mui-app-bar position-{{position}} mui-color-{{color}} {{mClass}}"
+  mStyle="{{mStyle}}"
+  elevation="{{4}}"
+>
+  <slot />
+</mui-paper>
