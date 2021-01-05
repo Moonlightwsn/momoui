@@ -55,6 +55,48 @@ export default Behavior({
     _checkedClass: 'mui-unchecked',
   },
   methods: {
+    _CheckControll() {
+      const {
+        _checked,
+        controlled,
+        value,
+        _pureOneWay: isOneWay,
+        _pureIsControlled: thisIsControlled,
+        onChange,
+      } = this.data
+      const realChecked = isOneWay || !_checked
+      if (realChecked !== !!_checked) {
+        if (onChange && typeof onChange === 'function') {
+          onChange(realChecked)
+        }
+        if (thisIsControlled && realChecked !== !!_checked && !controlled) {
+          this.setData({checked: realChecked})
+        }
+        if (this._group) {
+          const {
+            _pureTargets: targets,
+            _pureIsControlled: isControlled,
+            _pureMultiple: multiple
+          } = this._group.data
+          if (value) {
+            // this._group直接调用_InnerChange，保证_InnerChange内部的this指向this._group
+            this._group._InnerChange({checked: realChecked, value})
+          }
+          if (!isControlled) {
+            if (realChecked && targets && !multiple) {
+              Object.keys(targets).forEach(targetName => {
+                if (targetName !== value) {
+                  targets[targetName]._GroupControll(false)
+                }
+              })
+            }
+            this.setData(this._GenIcon({checked: realChecked}))
+          }
+        } else if (!thisIsControlled) {
+          this.setData(this._GenIcon({checked: realChecked}))
+        }
+      }
+    },
     _GenIcon({checked: checkedArg} = {}) {
       const {
         checkedIcon,
@@ -82,48 +124,6 @@ export default Behavior({
       }
       return newData
     },
-    _CheckControll() {
-      const {
-        _checked,
-        controlled,
-        value,
-        _pureOneWay: isOneWay,
-        _pureIsControlled: thisIsControlled,
-        onChange,
-      } = this.data
-      const realChecked = isOneWay || !_checked
-      if (realChecked !== !!_checked) {
-        if (onChange && typeof onChange === 'function') {
-          onChange(realChecked)
-        }
-        if (thisIsControlled && realChecked !== !!_checked && !controlled) {
-          this.setData({checked: realChecked})
-        }
-        if (this._group) {
-          const {
-            _pureTargets: targets,
-            _pureIsControlled: isControlled,
-            _pureMultiple: multiple
-          } = this._group.data
-          if (value) {
-            // this._group直接调用innerchange，保证innerchange内部的this指向this._group
-            this._group.innerchange({checked: realChecked, value})
-          }
-          if (!isControlled) {
-            if (realChecked && targets && !multiple) {
-              Object.keys(targets).forEach(targetName => {
-                if (targetName !== value) {
-                  targets[targetName]._GroupControll(false)
-                }
-              })
-            }
-            this.setData(this._GenIcon({checked: realChecked}))
-          }
-        } else if (!thisIsControlled) {
-          this.setData(this._GenIcon({checked: realChecked}))
-        }
-      }
-    },
     _GroupControll(checked) {
       this.setData(this._GenIcon({checked}))
     },
@@ -150,6 +150,11 @@ export default Behavior({
         if (checked !== !!_checked) {
           this.setData(this._GenIcon({checked}))
         }
+      }
+    },
+    value(value) {
+      if (value && this._group) {
+        this._group._BindValue(value, this)
       }
     },
     'size, disabled': function () {

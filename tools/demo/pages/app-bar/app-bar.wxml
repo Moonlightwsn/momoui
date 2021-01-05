@@ -1,0 +1,22 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography mClass="header2" variant="h5">简单的应用栏</mui-typography>
+  <view class="demo-box">
+    <view style="flex-grow: 1;">
+      <mui-app-bar>
+        <mui-toolbar>
+          <mui-button
+            icon="bullet-list"
+            shape="circle"
+            color="inherit"
+            mStyle="margin-right: 16px;"
+          />
+          <mui-typography variant="h6" mStyle="flex-grow: 1;">News</mui-typography>
+          <mui-button color="inherit">LOGIN</mui-button>
+        </mui-toolbar>
+      </mui-app-bar>
+    </view>
+  </view>
+</view>

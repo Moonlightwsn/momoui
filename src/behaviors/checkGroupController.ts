@@ -71,7 +71,13 @@ export default Behavior({
     }
   },
   methods: {
-    innerchange(detail) {
+    _BindValue(value, target) {
+      if (value && target) {
+        this.data._pureTargets[value] = target
+        this.setData({_pureTargets: this.data._pureTargets})
+      }
+    },
+    _InnerChange(detail) {
       const {value, checked} = detail
       let checkedValue: Array<String> = []
       let tmpCheckedValueMap = false
@@ -83,7 +89,7 @@ export default Behavior({
       if (this.data._pureIsControlled) {
         tmpCheckedValueMap = {...checkedValueFromThisData}
       }
-      const checkedValueMap = this._trigger(value, checked, tmpCheckedValueMap)
+      const checkedValueMap = this._Trigger(value, checked, tmpCheckedValueMap)
       checkedValue = Object.keys(checkedValueMap).filter(item => (checkedValueMap[item]))
       const realCheckedValue = isMultiple ? checkedValue : checkedValue[0]
       if (onChange && typeof onChange === 'function') {
@@ -94,7 +100,7 @@ export default Behavior({
         this.setData({value: realCheckedValue})
       }
     },
-    _trigger(value, checked, checkedValueMap) {
+    _Trigger(value, checked, checkedValueMap) {
       if (value) {
         const {
           _pureMultiple: isMultiple,
@@ -108,6 +114,12 @@ export default Behavior({
         return realCheckedValue
       }
       return null
+    },
+    _UnbindValue(value, target) {
+      if (value && target) {
+        delete this.data._pureTargets[value]
+        this.setData({_pureTargets: this.data._pureTargets})
+      }
     },
   },
   observers: {

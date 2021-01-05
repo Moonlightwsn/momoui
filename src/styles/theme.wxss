@@ -202,6 +202,9 @@
     box-sizing: border-box;
     flex-shrink: 0;
     flex-direction: column;
+    &.mui-color-primary, &.mui-color-secondary {
+      color: #fff;
+    }
     &.position-static {
       position: static;
     }

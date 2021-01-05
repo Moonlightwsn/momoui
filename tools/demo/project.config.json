@@ -32,6 +32,11 @@
 		"miniprogram": {
       "list": [
         {
+          "name": "app-bar",
+          "pathName": "pages/app-bar/app-bar",
+          "scene": null
+        },
+        {
           "name": "bottom-navigation",
           "pathName": "pages/bottom-navigation/bottom-navigation",
           "scene": null

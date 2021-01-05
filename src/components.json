@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "alert": "./components/alert/alert",
+    "app-bar": "./components/app-bar/app-bar",
     "avatar": "./components/avatar/avatar",
     "avatar-group": "./components/avatar-group/avatar-group",
 
@@ -71,6 +72,7 @@
     "snack-bar": "./components/snack-bar/snack-bar",
     "snack-bar-content": "./components/snack-bar-content/snack-bar-content",
     
+    "toolbar": "./components/toolbar/toolbar",
     "tooltip": "./components/tooltip/tooltip",
     "typography": "./components/typography/typography"
   }

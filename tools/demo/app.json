@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/app-bar/app-bar",
     "pages/bottom-navigation/bottom-navigation",
     "pages/button/button",
     "pages/button-group/button-group",

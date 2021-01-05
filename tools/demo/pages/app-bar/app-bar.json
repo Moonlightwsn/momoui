@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mui-app-bar": "../../components/app-bar/app-bar",
+    "mui-button": "../../components/button/button",
+    "mui-toolbar": "../../components/toolbar/toolbar",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

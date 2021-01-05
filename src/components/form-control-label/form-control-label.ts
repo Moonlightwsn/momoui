@@ -34,9 +34,11 @@ Component({
       value: null,
     },
   },
+  data: {
+    _pureFormItems: [],
+  },
   lifetimes: {
-    attached() {
-      this._hasAttached = true
+    created() {
       if (!this._ArrangeFormItems) {
         this._ArrangeFormItems = debounce(() => {
           const newFormItems = this.data._pureFormItems
@@ -47,6 +49,9 @@ Component({
           }
         }, 50)
       }
+    },
+    attached() {
+      this._hasAttached = true
     }
   },
   relations: {

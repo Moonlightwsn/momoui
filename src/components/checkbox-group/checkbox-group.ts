@@ -15,7 +15,7 @@ Component({
           }
           const realChecked = this.data._pureCheckedValue[value] || false
           target._GroupControll(realChecked)
-          this._trigger(value, realChecked)
+          this._Trigger(value, realChecked)
         }
       },
       unlinked(target) {
@@ -25,7 +25,7 @@ Component({
             const {_pureTargets: targets} = this.data
             delete targets[value]
             this.setData({_pureTargets: targets})
-            this._trigger(value, false)
+            this._Trigger(value, false)
           }
         }
       },

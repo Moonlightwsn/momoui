@@ -12,23 +12,19 @@ Component({
         if (target) {
           const {value} = target.data
           if (value) {
-            const {_pureTargets: targets} = this.data
-            targets[value] = target
-            this.setData({_pureTargets: targets})
+            this._BindValue(value, target)
+            const realChecked = this.data._pureCheckedValue[value] || false
+            target._GroupControll(realChecked)
+            this._Trigger(value, realChecked)
           }
-          const realChecked = this.data._pureCheckedValue[value] || false
-          target._GroupControll(realChecked)
-          this._trigger(value, realChecked)
         }
       },
       unlinked(target) {
         if (target && target.data) {
           const {value} = target.data
           if (value) {
-            const {_pureTargets: targets} = this.data
-            delete targets[value]
-            this.setData({_pureTargets: targets})
-            this._trigger(value, false)
+            this._UnbindValue(value, target)
+            this._Trigger(value, false)
           }
         }
       },

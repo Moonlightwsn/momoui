@@ -21,6 +21,7 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   padding: 12px;
+  background-color: #f5f5f5;
 }
 
 .demo-box .demo-row {
@@ -52,4 +53,5 @@
 
 [data-momoui-theme=dark] .demo-box {
   border-color: rgba(255, 255, 255, 0.12);
+  background-color: #333;
 }

@@ -2,6 +2,7 @@
   mClass="mui mui-app-bar position-{{position}} mui-color-{{color}} {{mClass}}"
   mStyle="{{mStyle}}"
   elevation="{{4}}"
+  square
 >
   <slot />
 </mui-paper>
