@@ -19,7 +19,7 @@ Component({
     }
   },
   data: {
-    _pure_is_switch: true,
+    _pureIsSwitch: true,
   },
   observers: {
   },

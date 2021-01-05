@@ -1,5 +1,5 @@
 import muiBase from '../../behaviors/muiBase.ts'
-import {ObserversForControlledPropsByAncestor} from '../../common/utils.ts'
+import {ObserversForControlledPropsByAncestor, debounce} from '../../common/utils.ts'
 
 const controlledProps: string[] = [
   'disabled',
@@ -37,6 +37,16 @@ Component({
   lifetimes: {
     attached() {
       this._hasAttached = true
+      if (!this._ArrangeFormItems) {
+        this._ArrangeFormItems = debounce(() => {
+          const newFormItems = this.data._pureFormItems
+          if (newFormItems.length > 0) {
+            newFormItems.forEach(item => {
+              item.target._ReRenderControlledProps()
+            })
+          }
+        }, 50)
+      }
     }
   },
   relations: {
@@ -45,8 +55,10 @@ Component({
       linked(target) {
         if (target) {
           this._formControlComp = target
-          this._ReRenderControlledProps()
         }
+      },
+      unlinked() {
+        this._formControlComp = undefined
       },
     },
     '../checkbox/checkbox': {
@@ -70,8 +82,8 @@ Component({
   },
   methods: {
     _Click() {
-      if (this._formItems) {
-        this._formItems.forEach(item => {
+      if (this.data._pureFormItems) {
+        this.data._pureFormItems.forEach(item => {
           if (item.type === 'radio' || item.type === 'checkbox' || item.type === 'switch') {
             item.target._CheckControll()
             const buttonInFormItem = item.target.selectComponent('._mui-inner-button')
@@ -89,10 +101,11 @@ Component({
     },
     _Linked(target, type) {
       if (target) {
-        if (!this._formItems) {
-          this._formItems = []
-        }
-        this._formItems.push({target, type})
+        this.data._pureFormItems.push({
+          target,
+          type,
+        })
+        this.setData({_pureFormItems: this.data._pureFormItems})
       }
     },
     _ReRenderControlledProps() {
@@ -111,11 +124,9 @@ Component({
     },
   },
   observers: {
-    'checked, disabled, onChange, value': function () {
-      if (this._formItems) {
-        this._formItems.forEach(item => {
-          item.target._ReRenderControlledProps()
-        })
+    'checked, disabled, onChange, value, _pureFormItems': function () {
+      if (this._ArrangeFormItems) {
+        this._ArrangeFormItems()
       }
     },
     ...ObserversForControlledPropsByAncestor(controlledProps),

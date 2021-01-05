@@ -3,7 +3,7 @@ import checkGroupController from '../../behaviors/checkGroupController.ts'
 Component({
   behaviors: [checkGroupController],
   data: {
-    _pure_multiple: false,
+    _pureMultiple: false,
   },
   relations: {
     '../radio/radio': {
@@ -12,11 +12,11 @@ Component({
         if (target) {
           const {value} = target.data
           if (value) {
-            const {_pure_targets: targets} = this.data
+            const {_pureTargets: targets} = this.data
             targets[value] = target
-            this.setData({_pure_targets: targets})
+            this.setData({_pureTargets: targets})
           }
-          const realChecked = this.data._pure_checked_value[value] || false
+          const realChecked = this.data._pureCheckedValue[value] || false
           target._GroupControll(realChecked)
           this._trigger(value, realChecked)
         }
@@ -24,7 +24,12 @@ Component({
       unlinked(target) {
         if (target && target.data) {
           const {value} = target.data
-          this._trigger(value, false)
+          if (value) {
+            const {_pureTargets: targets} = this.data
+            delete targets[value]
+            this.setData({_pureTargets: targets})
+            this._trigger(value, false)
+          }
         }
       },
     }

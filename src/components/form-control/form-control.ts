@@ -1,4 +1,5 @@
 import muiBase from '../../behaviors/muiBase.ts'
+import {debounce} from '../../common/utils.ts'
 
 Component({
   behaviors: [muiBase],
@@ -44,6 +45,28 @@ Component({
       value: 'standard',
     },
   },
+  data: {
+    _pureFormItems: [],
+  },
+  lifetimes: {
+    created() {
+      if (!this._ArrangeFormItems) {
+        this._ArrangeFormItems = debounce(() => {
+          const newFormItems = this.data._pureFormItems
+          if (newFormItems.length > 0) {
+            const _hasInputLabel = newFormItems.some(item => item.type === 'input-label')
+            newFormItems.forEach(item => {
+              if (item.type === 'input') {
+                item.target._ReRenderControlledProps(_hasInputLabel)
+              } else {
+                item.target._ReRenderControlledProps()
+              }
+            })
+          }
+        }, 50)
+      }
+    },
+  },
   relations: {
     '../form-control-label/form-control-label': {
       type: 'descendant',
@@ -73,16 +96,11 @@ Component({
   methods: {
     _Linked(target, type) {
       if (target) {
-        if (!this._formItems) {
-          this._formItems = []
-        }
-        if (type === 'input-label' && !this._hasInputLabel) {
-          this._hasInputLabel = true
-        }
-        if (type === 'input' && this._hasInputLabel) {
-          target._SetInputLabel()
-        }
-        this._formItems.push({target, type})
+        this.data._pureFormItems.push({
+          target,
+          type,
+        })
+        this.setData({_pureFormItems: this.data._pureFormItems})
       }
     },
     _ControlFormItem(method: string, formItemTypes: string[], params: any) {
@@ -90,7 +108,7 @@ Component({
       formItemTypes.forEach(type => {
         formItemTypesMap[type] = true
       })
-      this._formItems.filter(item => formItemTypesMap[item.type]).forEach(item => {
+      this.data._pureFormItems.filter(item => formItemTypesMap[item.type]).forEach(item => {
         if (item.target[method] && typeof item.target[method] === 'function') {
           item.target[method](params)
         }
@@ -110,11 +128,9 @@ Component({
     },
   },
   observers: {
-    'color, disabled, error, focus, fullWidth, margin, required, size, variant': function () {
-      if (this._formItems) {
-        this._formItems.forEach(item => {
-          item.target._ReRenderControlledProps()
-        })
+    'color, disabled, error, focus, fullWidth, margin, required, size, variant, _pureFormItems': function () {
+      if (this._ArrangeFormItems) {
+        this._ArrangeFormItems()
       }
     }
   },

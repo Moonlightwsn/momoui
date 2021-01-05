@@ -33,15 +33,20 @@ Component({
           this._group = target
         }
       },
+      unlinked() {
+        this._group = undefined
+      },
     },
     '../form-control-label/form-control-label': {
       type: 'ancestor',
       linked(target) {
         if (target) {
           this._formControlLabelComp = target
-          this._ReRenderControlledProps()
         }
-      }
+      },
+      unlinked() {
+        this._formControlLabelComp = undefined
+      },
     },
   },
   methods: {

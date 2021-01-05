@@ -23,7 +23,7 @@ Component({
     },
   },
   data: {
-    _pure_one_way: true,
+    _pureOneWay: true,
   },
   lifetimes: {
     attached() {
@@ -36,9 +36,11 @@ Component({
       linked(target) {
         if (target) {
           this._formControlLabelComp = target
-          this._ReRenderControlledProps()
         }
-      }
+      },
+      unlinked() {
+        this._formControlLabelComp = undefined
+      },
     },
     '../radio-group/radio-group': {
       type: 'ancestor',
@@ -46,6 +48,9 @@ Component({
         if (target) {
           this._group = target
         }
+      },
+      unlinked() {
+        this._group = undefined
       },
     },
   },

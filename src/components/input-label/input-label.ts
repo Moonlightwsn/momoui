@@ -67,7 +67,11 @@ Component({
         this._formControlComp = target
         this._ReRenderControlledProps()
         this.setData({_formControl: true})
-      }
+      },
+      unlinked() {
+        this._formControlComp = undefined
+        this.setData({_formControl: false})
+      },
     }
   },
   methods: {

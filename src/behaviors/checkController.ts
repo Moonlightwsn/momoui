@@ -48,8 +48,8 @@ export default Behavior({
     },
   },
   data: {
-    _pure_one_way: false,
-    _pure_is_controlled: false,
+    _pureOneWay: false,
+    _pureIsControlled: false,
     _checked: false,
     _currentIcon: '',
     _checkedClass: 'mui-unchecked',
@@ -60,7 +60,7 @@ export default Behavior({
         checkedIcon,
         icon,
         _checked,
-        _pure_is_switch: isSwitch,
+        _pureIsSwitch: isSwitch,
       } = this.data
       let checked = _checked
       if (typeof checkedArg !== 'undefined') {
@@ -87,8 +87,8 @@ export default Behavior({
         _checked,
         controlled,
         value,
-        _pure_one_way: isOneWay,
-        _pure_is_controlled: thisIsControlled,
+        _pureOneWay: isOneWay,
+        _pureIsControlled: thisIsControlled,
         onChange,
       } = this.data
       const realChecked = isOneWay || !_checked
@@ -101,9 +101,9 @@ export default Behavior({
         }
         if (this._group) {
           const {
-            _pure_targets: targets,
-            _pure_is_controlled: isControlled,
-            _pure_multiple: multiple
+            _pureTargets: targets,
+            _pureIsControlled: isControlled,
+            _pureMultiple: multiple
           } = this._group.data
           if (value) {
             // this._group直接调用innerchange，保证innerchange内部的this指向this._group
@@ -139,7 +139,7 @@ export default Behavior({
       }
       this.setData({
         ...this._GenIcon({checked: _checked}),
-        _pure_is_controlled: pureIsControlled
+        _pureIsControlled: pureIsControlled
       })
     }
   },

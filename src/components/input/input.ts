@@ -193,8 +193,10 @@ Component({
       linked(target) {
         this._formControlComp = target
         this._formControlComp._SetInputLabelShrink(!!this.data.value)
-        this._ReRenderControlledProps()
-      }
+      },
+      unlinked() {
+        this._formControlComp = undefined
+      },
     }
   },
   methods: {
@@ -264,10 +266,13 @@ Component({
         lineChange(e)
       }
     },
-    _ReRenderControlledProps() {
+    _ReRenderControlledProps(hasInputLabel) {
       const target = this._formControlComp
       if (target && Array.isArray(controlledProps)) {
-        const newData = {}
+        const newData: any = {}
+        if (typeof hasInputLabel !== 'undefined') {
+          newData._hasInputLabel = hasInputLabel
+        }
         controlledProps.forEach(item => {
           if (!this._propIsSet || !this._propIsSet[item]) {
             newData[item] = target.data[item]

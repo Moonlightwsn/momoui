@@ -24,17 +24,17 @@ export default Behavior({
     },
   },
   data: {
-    _pure_targets: {},
-    _pure_checked_value: {},
-    _pure_is_controlled: false,
-    _pure_multiple: true,
+    _pureTargets: {},
+    _pureCheckedValue: {},
+    _pureIsControlled: false,
+    _pureMultiple: true,
   },
   lifetimes: {
     attached() {
       const {
         value,
         defaultValue,
-        _pure_multiple: isMultiple,
+        _pureMultiple: isMultiple,
       } = this.data
       let checkedValue
       let isControlled = false
@@ -50,7 +50,7 @@ export default Behavior({
         checkedValue = defaultValue.split(',')
       }
       if (checkedValue) {
-        const {_pure_checked_value: checkedValueMap} = this.data
+        const {_pureCheckedValue: checkedValueMap} = this.data
         if (!isMultiple && checkedValue[0]) {
           checkedValueMap[checkedValue[0]] = true
         } else {
@@ -60,8 +60,8 @@ export default Behavior({
             }
           })
         }
-        this.data._pure_is_controlled = isControlled
-        this.data._pure_checked_value = checkedValueMap
+        this.data._pureIsControlled = isControlled
+        this.data._pureCheckedValue = checkedValueMap
         if (!isControlled) {
           this.setData({
             value: checkedValue
@@ -76,11 +76,11 @@ export default Behavior({
       let checkedValue: Array<String> = []
       let tmpCheckedValueMap = false
       const {
-        _pure_multiple: isMultiple,
-        _pure_checked_value: checkedValueFromThisData,
+        _pureMultiple: isMultiple,
+        _pureCheckedValue: checkedValueFromThisData,
         onChange,
       } = this.data
-      if (this.data._pure_is_controlled) {
+      if (this.data._pureIsControlled) {
         tmpCheckedValueMap = {...checkedValueFromThisData}
       }
       const checkedValueMap = this._trigger(value, checked, tmpCheckedValueMap)
@@ -89,7 +89,7 @@ export default Behavior({
       if (onChange && typeof onChange === 'function') {
         onChange(realCheckedValue)
       }
-      const {_pure_is_controlled: isControlled} = this.data
+      const {_pureIsControlled: isControlled} = this.data
       if (!isControlled) {
         this.setData({value: realCheckedValue})
       }
@@ -97,8 +97,8 @@ export default Behavior({
     _trigger(value, checked, checkedValueMap) {
       if (value) {
         const {
-          _pure_multiple: isMultiple,
-          _pure_checked_value: checkedValue,
+          _pureMultiple: isMultiple,
+          _pureCheckedValue: checkedValue,
         } = this.data
         let realCheckedValue = checkedValueMap || checkedValue
         if (!isMultiple) {
@@ -113,7 +113,7 @@ export default Behavior({
   observers: {
     value(value) {
       let checkedValueArr = []
-      const {_pure_targets: targets, _pure_checked_value: checkedValue} = this.data
+      const {_pureTargets: targets, _pureCheckedValue: checkedValue} = this.data
       const targetsKeyArr = Object.keys(targets)
       if (targetsKeyArr.length) {
         if (typeof value === 'string') {

@@ -48,9 +48,11 @@ Component({
       linked(target) {
         if (target) {
           this._formControlComp = target
-          this._ReRenderControlledProps()
         }
-      }
+      },
+      unlinked() {
+        this._formControlComp = undefined
+      },
     }
   },
   methods: {
