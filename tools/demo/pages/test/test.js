@@ -56,6 +56,7 @@ Page({
     },
   },
   onLoad() {
+    [1,2,3,4]
     this.setData({
       onCheckboxChange: this.onCheckboxChange.bind(this),
       onRadioChange: this.onRadioChange.bind(this),

@@ -1,0 +1,12 @@
+<mui-button
+  color="{{color}}"
+  disabled="{{disabled}}"
+  disableRipple="{{disableRipple}}"
+  mClass="edge-{{edge}} {{mClass}}"
+  mStyle="overflow: visible;{{mStyle}}"
+  shape="circle"
+  size="{{size}}"
+  variant="text"
+>
+  <slot slot="icon" />
+</mui-button>

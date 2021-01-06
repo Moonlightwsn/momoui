@@ -42,6 +42,7 @@
     "grid-list-tile-bar": "./components/grid-list-tile-bar/grid-list-tile-bar",
 
     "icon": "./components/icon/icon",
+    "icon-button": "./components/icon-button/icon-button",
     "input": "./components/input/input",
     "input-adornment": "./components/input-adornment/input-adornment",
     "input-label": "./components/input-label/input-label",

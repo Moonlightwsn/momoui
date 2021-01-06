@@ -34,10 +34,12 @@
     </mui-checkbox-group>
     <mui-form-helper-text>Be careful</mui-form-helper-text>
   </mui-form-control>
-  <mui-form-control disabled color="secondary" mStyle="margin: 24px;">
+  <mui-form-control color="secondary" mStyle="margin: 24px;">
     <mui-input-label>INPUT</mui-input-label>
-    <mui-input />
+    <mui-input placeholder="Placeholder" />
   </mui-form-control>
+  <input placeholder="Placeholder" />
+  <mui-input placeholder="Placeholder" />
   <!--
   <form bindsubmit="submit" bindreset="reset">
     <view>

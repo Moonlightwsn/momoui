@@ -8,13 +8,109 @@
       <mui-app-bar>
         <mui-toolbar>
           <mui-button
-            icon="bullet-list"
+            icon="menu"
             shape="circle"
             color="inherit"
             mStyle="margin-right: 16px;"
           />
           <mui-typography variant="h6" mStyle="flex-grow: 1;">News</mui-typography>
           <mui-button color="inherit">LOGIN</mui-button>
+        </mui-toolbar>
+      </mui-app-bar>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">带一个主搜索输入框的应用栏</mui-typography>
+  <view class="demo-box">
+    <view style="flex-grow: 1;">
+      <mui-app-bar>
+        <mui-toolbar>
+          <mui-button
+            icon="menu"
+            shape="circle"
+            color="inherit"
+            mStyle="margin-right: 16px;"
+          />
+          <mui-typography mClass="title" variant="h6" noWrap>Material-UI</mui-typography>
+          <view class="search">
+            <view class="searchIcon">
+              <mui-icon name="search" size="24" />
+            </view>
+            <mui-input
+              mClass="searchInput"
+              mStyle="color: inherit;"
+              disableUnderline
+              placeholder="Search…"
+              placeholderStyle="{{theme === 'dark' ? 'color:#5b778e;' : ''}}"
+            />
+          </view>
+          <view style="flex-grow: 1;" />
+          <view class="sectionDesktop">
+            <mui-icon-button color="inherit">
+              <mui-badge content="{{4}}" color="secondary">
+                <mui-icon name="mail" />
+              </mui-badge>
+            </mui-icon-button>
+            <mui-icon-button color="inherit">
+              <mui-badge content="{{17}}" color="secondary">
+                <mui-icon name="message" />
+              </mui-badge>
+            </mui-icon-button>
+            <mui-menu
+              anchorOrigin="{{ {vertical: 'top', horizontal: 'right'} }}"
+              open="{{openMenu}}"
+              onClose="{{CloseMenu}}"
+              transformOrigin="{{ {vertical: 'top', horizontal: 'right'} }}"
+            >
+              <mui-icon-button bind:tap="OpenMenu" slot="anchor" color="inherit" edge="end">
+                <mui-icon name="user" />
+              </mui-icon-button>
+              <mui-menu-item bind:tap="CloseMenu">Profile</mui-menu-item>
+              <mui-menu-item bind:tap="CloseMenu">My account</mui-menu-item>
+            </mui-menu>
+          </view>
+          <view class="sectionMobile">
+            <mui-menu
+              anchorOrigin="{{ {vertical: 'top', horizontal: 'right'} }}"
+              open="{{openMenu2}}"
+              onClose="{{CloseMenu2}}"
+              transformOrigin="{{ {vertical: 'top', horizontal: 'right'} }}"
+            >
+              <mui-icon-button bind:tap="OpenMenu2" slot="anchor" color="inherit">
+                <mui-icon name="menu" />
+              </mui-icon-button>
+              <mui-menu-item>
+                <mui-icon-button color="inherit">
+                  <mui-badge content="{{4}}" color="secondary">
+                    <mui-icon name="mail" />
+                  </mui-badge>
+                </mui-icon-button>
+                <mui-typography>Mail</mui-typography>
+              </mui-menu-item>
+              <mui-menu-item>
+                <mui-icon-button color="inherit">
+                  <mui-badge content="{{17}}" color="secondary">
+                    <mui-icon name="message" />
+                  </mui-badge>
+                </mui-icon-button>
+                <mui-typography>Message</mui-typography>
+              </mui-menu-item>
+              <mui-menu
+                anchorOrigin="{{ {vertical: 'top', horizontal: 'right'} }}"
+                open="{{openMenu3}}"
+                onClose="{{CloseMenu3}}"
+                transformOrigin="{{ {vertical: 'top', horizontal: 'right'} }}"
+              >
+                <mui-menu-item bind:tap="OpenMenu3" slot="anchor">
+                  <mui-icon-button color="inherit">
+                    <mui-icon name="user" />
+                  </mui-icon-button>
+                  <mui-typography>Profile</mui-typography>
+                </mui-menu-item>
+                <mui-menu-item bind:tap="CloseMenu3">Profile</mui-menu-item>
+                <mui-menu-item bind:tap="CloseMenu3">My account</mui-menu-item>
+              </mui-menu>
+            </mui-menu>
+          </view>
         </mui-toolbar>
       </mui-app-bar>
     </view>

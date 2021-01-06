@@ -13,7 +13,7 @@ Component({
     },
     button: {
       type: Boolean,
-      value: false,
+      value: true,
     },
     dense: {
       type: Boolean,

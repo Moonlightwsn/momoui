@@ -178,5 +178,6 @@ Component({
     // virtualHost: true,
     pureDataPattern: /^_pure/,
     styleIsolation: 'apply-shared',
+    multipleSlots: true,
   },
 })

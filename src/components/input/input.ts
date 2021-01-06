@@ -179,6 +179,7 @@ Component({
     _textareaHeight: 19,
     _formControl: false,
     _hasInputLabel: false,
+    _inputLabelShrink: false,
   },
   lifetimes: {
     attached() {
@@ -192,7 +193,9 @@ Component({
       type: 'ancestor',
       linked(target) {
         this._formControlComp = target
-        this._formControlComp._SetInputLabelShrink(!!this.data.value)
+        const shrink = !!this.data.value
+        this.setData({_inputLabelShrink: shrink})
+        this._formControlComp._SetInputLabelShrink(shrink)
       },
       unlinked() {
         this._formControlComp = undefined
@@ -224,7 +227,9 @@ Component({
     _onFocus(e) {
       this.setData({_focus: true})
       if (this._formControlComp) {
-        this._formControlComp._ControlFormItem('_onFocus', ['input-label'], {shrink: true})
+        const shrink = true
+        this.setData({_inputLabelShrink: shrink})
+        this._formControlComp._ControlFormItem('_onFocus', ['input-label'], {shrink})
       }
       const {inputFocus} = this.data
       if (inputFocus && typeof inputFocus === 'function') {
@@ -234,7 +239,9 @@ Component({
     _onBlur(e) {
       this.setData({_focus: false})
       if (this._formControlComp) {
-        this._formControlComp._ControlFormItem('_onBlur', ['input-label'], {shrink: !!e.detail.value})
+        const shrink = !!e.detail.value
+        this.setData({_inputLabelShrink: shrink})
+        this._formControlComp._ControlFormItem('_onBlur', ['input-label'], {shrink})
       }
       const {inputBlur} = this.data
       if (inputBlur && typeof inputBlur === 'function') {
@@ -283,18 +290,10 @@ Component({
         }
       }
     },
-    _SetInputLabel() {
-      this.setData({_hasInputLabel: true})
-    }
   },
   observers: {
     rows(rows) {
       this._AdjustTextareaHeight(rows)
-    },
-    value(value) {
-      if (this._formControlComp) {
-        this._formControlComp._SetInputLabelShrink(!!value)
-      }
     },
     ...ObserversForControlledPropsByAncestor(controlledProps),
   },

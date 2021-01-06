@@ -31,4 +31,5 @@
     size="{{iconSize}}"
     spin="{{iconSpin}}"
   />
+  <slot wx:else name="icon" />
 </mui-button-base>
