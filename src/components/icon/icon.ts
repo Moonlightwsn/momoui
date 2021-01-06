@@ -17,6 +17,10 @@ Component({
       type: String,
       value: null,
     },
+    disableThemeWatcher: {
+      type: Boolean,
+      value: false,
+    },
     name: {
       type: String,
       value: 'default'
@@ -50,8 +54,55 @@ Component({
     base64Content: '',
     _innerStyles: 'width:24px;height:24px;',
   },
+  lifetimes: {
+    created() {
+      if (!this._hasBindThemeChanged) {
+        this._hasBindThemeChanged = true
+        wx.onThemeChange((obj) => {
+          const {disableThemeWatcher} = this.data
+          if (!disableThemeWatcher && obj && obj.theme) {
+            const {
+              name,
+              color,
+              size,
+              src,
+            } = this.data
+            this._Pretreatment(name, color, size, src)
+          }
+        })
+      }
+    },
+  },
   methods: {
-    async _readSvgAndGenBase64(iconName: string, color: string, size: string) {
+    _Pretreatment(name, color, size, src) {
+      if (name && !src) {
+        if (color && size) {
+          this._ReadSvgAndGenBase64(name, color, `${size}px`)
+        } else {
+          this.createSelectorQuery().select('.mui-icon').fields({
+            computedStyle: ['color','fontSize'],
+          }, res => {
+            let {color: queryColor, fontSize: querySize} = res || {}
+            queryColor = queryColor || 'currentColor'
+            querySize = querySize || '24px'
+            const realColor = color || queryColor
+            const realSize = size ? `${size}px` : querySize
+            this._ReadSvgAndGenBase64(name, realColor, realSize)
+          }).exec()
+        }
+      } else if(src) {
+        this.createSelectorQuery().select('.mui-icon').fields({
+          computedStyle: ['fontSize'],
+        }, res => {
+          let {fontSize: querySize} = res || {}
+          querySize = querySize || '24px'
+          const realSize = size ? `${size}px` : querySize
+          const _innerStyles = `width:${realSize};height:${realSize};`
+          this.setData({_innerStyles})
+        }).exec()
+      }
+    },
+    async _ReadSvgAndGenBase64(iconName: string, color: string, size: string) {
       if (iconName) {
         const iconPath = `${momouiRootPath}${muiIconPath}${iconName}.svg`
         try {
@@ -98,33 +149,8 @@ Component({
     }
   },
   observers: {
-    'name, color, size, src, mClass, mStyle, progressProps, rerender': function (name, color, size, src) {
-      if (name && !src) {
-        if (color && size) {
-          this._readSvgAndGenBase64(name, color, `${size}px`)
-        } else {
-          this.createSelectorQuery().select('.mui-icon').fields({
-            computedStyle: ['color','fontSize'],
-          }, res => {
-            let {color: queryColor, fontSize: querySize} = res || {}
-            queryColor = queryColor || 'currentColor'
-            querySize = querySize || '24px'
-            const realColor = color || queryColor
-            const realSize = size ? `${size}px` : querySize
-            this._readSvgAndGenBase64(name, realColor, realSize)
-          }).exec()
-        }
-      } else if(src) {
-        this.createSelectorQuery().select('.mui-icon').fields({
-          computedStyle: ['fontSize'],
-        }, res => {
-          let {fontSize: querySize} = res || {}
-          querySize = querySize || '24px'
-          const realSize = size ? `${size}px` : querySize
-          const _innerStyles = `width:${realSize};height:${realSize};`
-          this.setData({_innerStyles})
-        }).exec()
-      }
+    'name, color, size, src, mClass, mStyle, progressProps, rerender': function (name, color, size, src, mClass, mStyle, progressProps, rerender) {
+      this._Pretreatment(name, color, size, src)
     }
   },
   options: {

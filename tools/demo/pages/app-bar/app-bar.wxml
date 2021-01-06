@@ -78,18 +78,18 @@
               <mui-icon-button bind:tap="OpenMenu2" slot="anchor" color="inherit">
                 <mui-icon name="menu" />
               </mui-icon-button>
-              <mui-menu-item>
+              <mui-menu-item bind:tap="CloseMenu2">
                 <mui-icon-button color="inherit">
                   <mui-badge content="{{4}}" color="secondary">
-                    <mui-icon name="mail" />
+                    <mui-icon name="mail" color="{{theme === 'dark' ? '#fff' : 'rgba(0, 0, 0, 0.87)'}}" />
                   </mui-badge>
                 </mui-icon-button>
                 <mui-typography>Mail</mui-typography>
               </mui-menu-item>
-              <mui-menu-item>
+              <mui-menu-item bind:tap="CloseMenu2">
                 <mui-icon-button color="inherit">
                   <mui-badge content="{{17}}" color="secondary">
-                    <mui-icon name="message" />
+                    <mui-icon name="message" color="{{theme === 'dark' ? '#fff' : 'rgba(0, 0, 0, 0.87)'}}" />
                   </mui-badge>
                 </mui-icon-button>
                 <mui-typography>Message</mui-typography>
@@ -102,7 +102,7 @@
               >
                 <mui-menu-item bind:tap="OpenMenu3" slot="anchor">
                   <mui-icon-button color="inherit">
-                    <mui-icon name="user" />
+                    <mui-icon name="user" color="{{theme === 'dark' ? '#fff' : 'rgba(0, 0, 0, 0.87)'}}" />
                   </mui-icon-button>
                   <mui-typography>Profile</mui-typography>
                 </mui-menu-item>

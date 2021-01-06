@@ -27,9 +27,9 @@ Page({
     this.setData({openMenu2: false})
   },
   OpenMenu3() {
-    this.setData({openMenu2: true})
+    this.setData({openMenu3: true})
   },
   CloseMenu3() {
-    this.setData({openMenu2: false})
+    this.setData({openMenu3: false})
   },
 })
