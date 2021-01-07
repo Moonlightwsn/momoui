@@ -33,12 +33,11 @@
   <mui-typography mClass="paragraph" variant="body2">将处理程序绑定到按钮的tap事件上，用来处理各项事务</mui-typography>
   <view class="demo-box">
     <mui-button bind:tap="uploadImg" mClass="button" variant="contained" color="primary">UPLOAD</mui-button>
-    <mui-button
-      bind:tap="uploadImg"
+    <mui-icon-button
       mClass="button"
-      shape="circle"
-      icon="pictures"
+      bind:tap="uploadImg"
       color="primary"
+      icon="pictures"
     />
   </view>
   <mui-typography mClass="header2" variant="h5">尺寸</mui-typography>
@@ -59,33 +58,30 @@
       <mui-button mClass="button" size="large" color="primary" variant="contained">LARGE</mui-button>
     </view>
     <view class="demo-row">
-      <mui-button
+      <mui-icon-button
         mClass="button"
         icon="arrow-down-1"
         iconSize="16"
-        shape="circle"
         size="small"
       />
-      <mui-button
+      <mui-icon-button
         mClass="button"
         icon="trash"
-        shape="circle"
         size="small"
       />
-      <mui-button
+      <mui-icon-button
         mClass="button"
         color="primary"
         icon="trash"
-        shape="circle"
         size="medium"
       />
-      <mui-button
+      <mui-icon-button
         mClass="button"
         color="secondary"
-        icon="trash"
-        shape="circle"
         size="large"
-      />
+      >
+        <mui-icon name="trash" />
+      </mui-icon-button>
     </view>
   </view>
   <mui-typography mClass="header2" variant="h5">带有icons（图标）和 label（标签）的按钮</mui-typography>
@@ -100,26 +96,22 @@
   </view>
   <mui-typography mClass="header2" variant="h5">Icon Buttons（图标按钮）</mui-typography>
   <view class="demo-box">
-    <mui-button
+    <mui-icon-button
       mClass="button"
-      shape="circle"
       icon="trash"
     />
-    <mui-button
+    <mui-icon-button
       mClass="button"
-      shape="circle"
       icon="trash"
       disabled
     />
-    <mui-button
+    <mui-icon-button
       mClass="button"
-      shape="circle"
       icon="close"
       color="secondary"
     />
-    <mui-button
+    <mui-icon-button
       mClass="button"
-      shape="circle"
       icon="check"
       color="primary"
     />
@@ -127,20 +119,20 @@
   <mui-typography mClass="header2" variant="h5">FAB (浮动操作按钮)</mui-typography>
   <view class="demo-box" style="overflow-x:auto;">
     <view class="demo-row" style="justify-content: flex-start;">
-      <mui-button mClass="button" shape="circle" icon="plus" variant="contained" size="large" color="primary" />
-      <mui-button mClass="button" shape="circle" icon="like" variant="contained" size="large" color="secondary" />
-      <mui-button mClass="button" shape="extended" icon="share-arrow" variant="contained" size="large">Navigate</mui-button>
-      <mui-button mClass="button" disabled shape="circle" icon="like" variant="contained" size="large" />
+      <mui-fab mClass="button" color="primary" icon="plus" />
+      <mui-fab mClass="button" color="secondary" icon="like" />
+      <mui-fab mClass="button" color="default" icon="share-arrow" variant="extended">Navigate</mui-fab>
+      <mui-fab mClass="button" color="default" icon="like" />
     </view>
     <view class="demo-row" style="justify-content: flex-start;">
-      <mui-button mClass="button" shape="circle" icon="plus" variant="contained" size="small" color="primary" />
-      <mui-button mClass="button" shape="circle" icon="plus" variant="contained" size="medium" color="primary" />
-      <mui-button mClass="button" shape="circle" icon="plus" variant="contained" size="large" color="primary" />
+      <mui-fab mClass="button" color="primary" icon="plus" size="small" />
+      <mui-fab mClass="button" color="primary" icon="plus" size="medium" />
+      <mui-fab mClass="button" color="primary" icon="plus" />
     </view>
     <view class="demo-row" style="justify-content: flex-start;">
-      <mui-button mClass="button" shape="extended" icon="share-arrow" variant="contained" size="small" color="primary">EXTENDED</mui-button>
-      <mui-button mClass="button" shape="extended" icon="share-arrow" variant="contained" size="medium" color="primary">EXTENDED</mui-button>
-      <mui-button mClass="button" shape="extended" icon="share-arrow" variant="contained" size="large" color="primary">EXTENDED</mui-button>
+      <mui-fab mClass="button" color="primary" icon="share-arrow" size="small" variand="extended" />
+      <mui-fab mClass="button" color="primary" icon="share-arrow" size="medium" variand="extended" />
+      <mui-fab mClass="button" color="primary" icon="share-arrow" variand="extended" />
     </view>
   </view>
   <mui-typography mClass="header2" variant="h5">FullWidth</mui-typography>
@@ -156,11 +148,8 @@
     <mui-button mClass="button custom-button" hoverClass="custom-button-hover" disableRipple variant="contained">Disable Ripple</mui-button>
   </view>
 </view>
-<mui-button
+<mui-fab
   mStyle="position: fixed;right: 16px;bottom: 16px;"
-  shape="circle"
-  icon="like"
-  variant="contained"
-  size="large"
   color="secondary"
+  icon="like"  
 />

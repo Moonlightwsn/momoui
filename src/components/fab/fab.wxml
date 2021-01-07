@@ -5,12 +5,13 @@
   icon="{{icon}}"
   iconColor="{{iconColor}}"
   iconSize="{{iconSize}}"
+  iconPosition="{{iconPosition}}"
   iconSpin="{{iconSpin}}"
-  mClass="edge-{{edge}} {{mClass}}"
-  mStyle="overflow: visible;{{mStyle}}"
-  shape="circle"
+  mClass="{{mClass}}"
+  mStyle="{{mStyle}}"
+  shape="{{variant === 'round' ? 'circle' : variant}}"
   size="{{size}}"
-  variant="text"
+  variant="contained"
 >
-  <slot slot="icon" />
+  <slot />
 </mui-button>

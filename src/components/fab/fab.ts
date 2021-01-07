@@ -15,10 +15,6 @@ Component({
       type: Boolean,
       value: false,
     },
-    edge: {
-      type: String,
-      value: '',
-    },
     icon: {
       type: String,
       value: null,
@@ -31,13 +27,21 @@ Component({
       type: String,
       value: null,
     },
+    iconPosition: {
+      type: String,
+      value: 'left',
+    },
     iconSpin: {
       type: Boolean,
       value: false,
     },
     size: {
       type: String,
-      value: 'medium',
+      value: 'large',
+    },
+    variant: {
+      type: String,
+      value: 'round',
     },
   },
   observers: {},
