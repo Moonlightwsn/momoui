@@ -5,8 +5,8 @@
 .search {
   width: 100%;
   position: relative;
-  margin-left: 0;
-  margin-right: 16px;
+  margin-left: 8px;
+  margin-right: 8px;
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.15);
 }
@@ -52,6 +52,9 @@
 
 @media (min-width: 768px) {
   .mui-input-root.searchInput .mui-input {
+    width: 12ch;
+  }
+  .mui-input-root.searchInput.focus-true .mui-input {
     width: 20ch;
   }
   .sectionDesktop {

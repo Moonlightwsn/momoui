@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "mui-fab": "../../components/fab/fab",
     "mui-icon": "../../components/icon/icon",
     "mui-avatar-group": "../../components/avatar-group/avatar-group",
     "mui-avatar": "../../components/avatar/avatar",

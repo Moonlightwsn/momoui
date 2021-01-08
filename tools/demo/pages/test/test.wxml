@@ -1,4 +1,7 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <mui-fab mClass="test" icon="plus" variant="extended">Extended</mui-fab>
+  <mui-fab mClass="test" icon="plus" />
+  <!--
   <mui-avatar-group>
     <mui-avatar>M</mui-avatar>
     <mui-avatar>M</mui-avatar>
@@ -8,6 +11,7 @@
     <mui-avatar wx:if="{{open}}">M</mui-avatar>
   </mui-avatar-group>
   <mui-button bind:tap="setOpen">TEST</mui-button>
+  -->
   <!--
   <mui-card raised>
     <mui-card-content>

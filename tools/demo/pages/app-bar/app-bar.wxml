@@ -122,7 +122,7 @@
           checked="{{auth}}"
           onChange="{{changeAuth}}"
         >
-          <mui-checkbox />
+          <mui-switch />
         </mui-form-control-label>
       </mui-form-control>
       <mui-app-bar position="static">
@@ -153,5 +153,79 @@
         </mui-toolbar>
       </mui-app-bar>
     </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">带有搜索输入框的应用栏</mui-typography>
+  <view class="demo-box">
+    <view style="flex-grow: 1;">
+      <mui-app-bar position="static">
+        <mui-toolbar>
+          <mui-icon-button
+            icon="menu"
+            color="inherit"
+            mStyle="margin-right: 16px;"
+          />
+          <mui-typography mClass="title" mStyle="flex-grow: 1;" variant="h6" noWrap>Material-UI</mui-typography>
+          <view class="search">
+            <view class="searchIcon">
+              <mui-icon name="search" size="24" />
+            </view>
+            <mui-input
+              mClass="searchInput focus-{{searchInputFocus}}"
+              mStyle="color: inherit;"
+              disableUnderline
+              focus="{{searchInputFocus}}"
+              inputFocus="{{inputFocusOrBlur}}"
+              inputBlur="{{inputFocusOrBlur}}"
+              placeholder="Search…"
+              placeholderStyle="{{theme === 'dark' ? 'color:#5b778e;' : ''}}"
+            />
+          </view>
+        </mui-toolbar>
+      </mui-app-bar>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">紧凑模式</mui-typography>
+  <view class="demo-box">
+    <view style="flex-grow: 1;">
+      <mui-app-bar position="static">
+        <mui-toolbar variant="dense">
+          <mui-icon-button
+            icon="menu"
+            color="inherit"
+            mStyle="margin-right: 16px;"
+          />
+           <mui-typography mStyle="flex-grow: 1;" variant="h6" noWrap>Photos</mui-typography>
+        </mui-toolbar>
+      </mui-app-bar>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">突出模式</mui-typography>
+  <view class="demo-box">
+    <view style="flex-grow: 1;">
+      <mui-app-bar position="static">
+        <mui-toolbar mStyle="min-height: 128px;align-items: flex-start;padding-top: 8px;padding-bottom: 16px;">
+          <mui-icon-button
+            edge="start"
+            icon="menu"
+            color="inherit"
+            mStyle="margin-right: 16px;"
+          />
+          <mui-typography mStyle="flex-grow: 1;align-self: flex-end" variant="h5" noWrap>Material-UI</mui-typography>
+          <mui-icon-button
+            icon="search"
+            color="inherit"
+          />
+          <mui-icon-button
+            edge="end"
+            icon="user"
+            color="inherit"
+          />
+        </mui-toolbar>
+      </mui-app-bar>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">底部应用栏</mui-typography>
+  <view class="demo-box">
+    <view style="flex-grow: 1;"></view>
   </view>
 </view>

@@ -25,11 +25,6 @@ Component({
   data: {
     _pureOneWay: true,
   },
-  lifetimes: {
-    attached() {
-      this._hasAttached = true
-    },
-  },
   relations: {
     '../form-control-label/form-control-label': {
       type: 'ancestor',

@@ -1,0 +1,72 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography mClass="header2" variant="h5">简易列表</mui-typography>
+  <view class="demo-box">
+    <view class="list-wrapper">
+      <mui-list>
+        <mui-list-item button>
+          <mui-list-item-icon>
+            <mui-icon name="mail" />
+          </mui-list-item-icon>
+          <mui-list-item-text primary="Inbox" />
+        </mui-list-item>
+        <mui-list-item button icon="{{ {name: 'mail'} }}" primary="Drafts" />
+      </mui-list>
+      <mui-divider />
+      <mui-list>
+        <mui-list-item button>
+          <mui-list-item-text primary="Trash" />
+        </mui-list-item>
+        <mui-list-item button>
+          <mui-list-item-text primary="Spam" />
+        </mui-list-item>
+      </mui-list>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">嵌套列表</mui-typography>
+  <view class="demo-box">
+    <view class="list-wrapper">
+      <mui-list subheader="Nested List Items">
+        <mui-list-item button icon="{{ {name: 'send'} }}" primary="Sent mail" />
+        <mui-list-item button icon="{{ {name: 'mail'} }}" primary="Drafts" />
+        <mui-list-item button bind:tap="handleTap">
+          <mui-list-item-icon>
+            <mui-icon name="mail" />
+          </mui-list-item-icon>
+          <mui-list-item-text primary="Inbox" />
+          <mui-icon name="arrow-{{open ? 'up' : 'down'}}-2" />
+        </mui-list-item>
+        <mui-collapse in="{{open}}">
+          <mui-list disablePadding nested>
+            <mui-list-item mClass="nested" button icon="{{ {name: 'like'} }}" primary="Starred" />
+          </mui-list>
+        </mui-collapse>
+      </mui-list>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">文件夹列表</mui-typography>
+  <view class="demo-box">
+    <view class="list-wrapper">
+      <mui-list>
+        <mui-list-item
+          avatar="{{ {icon: 'pictures'} }}"
+          primary="Photos"
+          secondary="Jan 9, 2014"
+        />
+        <mui-list-item>
+          <mui-list-item-avatar>
+            <mui-avatar icon="default" />
+          </mui-list-item-avatar>
+          <mui-list-item-text primary="Work" secondary="Jan 7, 2014" />
+        </mui-list-item>
+        <mui-list-item
+          avatar="{{ {icon: 'like'} }}"
+          primary="Vacation"
+          secondary="July 20, 2014"
+        />
+      </mui-list>
+    </view>
+  </view>
+</view>

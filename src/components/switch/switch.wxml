@@ -2,10 +2,9 @@
   class="mui mui-switch {{_checkedClass}} disabled-{{disabled}} {{muiClasses}}"
   style="{{mStyle}}"
   capture-bind:tap="_CheckControll"
-  capture-bind:longpress="_CheckControll"
 >
   <view class="switch-root">
-    <mui-button disabled="{{disabled}}" disableRipple="{{disableRipple}}" color="{{color}}" shape="circle" variant="text" mStyle="padding: {{size === 'small' ? 4 : 9}}px;">
+    <mui-button class="_mui-inner-button" disabled="{{disabled}}" disableRipple="{{disableRipple}}" color="{{color}}" shape="circle" variant="text" mStyle="padding: {{size === 'small' ? 4 : 9}}px;">
       <mui-icon name="{{_currentIcon}}" mClass="check-icon switch-icon" />
     </mui-button>
     <view class="switch-track" />

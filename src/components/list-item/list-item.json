@@ -1,10 +1,12 @@
 {
   "component": true,
   "usingComponents": {
-    "mui-button-base": "../button-base/button-base",
+    "mui-avatar": "../avatar/avatar",
     "mui-button": "../button/button",
-    "mui-avatar": "../avatar/avatar", 
+    "mui-button-base": "../button-base/button-base",
+    "mui-icon": "../icon/icon",
     "mui-list-item-avatar": "../list-item-avatar/list-item-avatar",
+    "mui-list-item-icon": "../list-item-icon/list-item-icon",
     "mui-list-item-text": "../list-item-text/list-item-text",
     "mui-list-item-secondary-action": "../list-item-secondary-action/list-item-secondary-action"
   }

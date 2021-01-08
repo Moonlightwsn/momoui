@@ -1,0 +1,15 @@
+{
+  "usingComponents" : {
+    "mui-avatar": "../../components/avatar/avatar",
+    "mui-collapse": "../../components/collapse/collapse",
+    "mui-divider": "../../components/divider/divider",
+    "mui-icon": "../../components/icon/icon",
+    "mui-list": "../../components/list/list",
+    "mui-list-item": "../../components/list-item/list-item",
+    "mui-list-item-avatar": "../../components/list-item-avatar/list-item-avatar",
+    "mui-list-item-icon": "../../components/list-item-icon/list-item-icon",
+    "mui-list-item-text": "../../components/list-item-text/list-item-text",
+    "mui-list-subheader": "../../components/list-subheader/list-subheader",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

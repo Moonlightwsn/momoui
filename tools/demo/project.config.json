@@ -57,6 +57,11 @@
           "scene": null
         },
         {
+          "name": "list",
+          "pathName": "pages/list/list",
+          "scene": null
+        },
+        {
           "name": "menu",
           "pathName": "pages/menu/menu",
           "scene": null

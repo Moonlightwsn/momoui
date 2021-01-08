@@ -15,3 +15,6 @@
 .tooltipWrapper {
   margin: 24px 48px;
 }
+.mui-button.test {
+  margin: 8px;
+}

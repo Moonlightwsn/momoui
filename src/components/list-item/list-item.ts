@@ -31,6 +31,10 @@ Component({
       type: Boolean,
       value: false,
     },
+    icon: {
+      type: Object,
+      value: null,
+    },
     primary: {
       type: String,
       value: null,

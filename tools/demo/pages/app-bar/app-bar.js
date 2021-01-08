@@ -8,6 +8,7 @@ Page({
     openMenu3: false,
     openMenu4: false,
     auth: true,
+    searchInputFocus: false,
   },
   onLoad() {
     this.setData({
@@ -16,6 +17,7 @@ Page({
       CloseMenu3: this.CloseMenu3.bind(this),
       CloseMenu4: this.CloseMenu4.bind(this),
       changeAuth: this.changeAuth.bind(this),
+      inputFocusOrBlur: this.inputFocusOrBlur.bind(this),
     })
   },
   OpenMenu() {
@@ -44,5 +46,12 @@ Page({
   },
   changeAuth() {
     this.setData({auth: !this.data.auth})
+  },
+  inputFocusOrBlur(e) {
+    if (e.type === 'focus') {
+      this.setData({searchInputFocus: true})
+    } else if (e.type === 'blur') {
+      this.setData({searchInputFocus: false})
+    }
   },
 })

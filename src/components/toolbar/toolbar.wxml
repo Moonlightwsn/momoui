@@ -1,5 +1,5 @@
 <view
-  class="mui mui-tool-bar gutters-{{!disableGutters}} variant-{{variant}} {{mClass}}"
+  class="mui mui-toolbar gutters-{{!disableGutters}} variant-{{variant}} {{mClass}}"
   style="{{mStyle}}"
 >
   <slot />

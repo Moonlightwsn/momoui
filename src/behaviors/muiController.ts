@@ -15,11 +15,13 @@ export default Behavior({
           color,
           variant,
           size,
+          mClass,
         } = this.data
         this._defindMuiBehaviors({
           color,
           variant,
           size,
+          mClass,
         })
       }
     }
@@ -32,9 +34,8 @@ export default Behavior({
       styleProps.forEach(sp => {
         muiClassesArr.push(params[sp] ? `mui-${sp}-${params[sp]}` : '')
       })
-      const {mClass} = this.data
-      if (mClass) {
-        muiClassesArr.push(mClass)
+      if (params.mClass) {
+        muiClassesArr.push(params.mClass)
       }
       newData.muiClasses = muiClassesArr.join(' ')
       this.setData(newData)
@@ -42,12 +43,13 @@ export default Behavior({
 
   },
   observers: {
-    'color, variant, size': function (color, variant, size) {
+    'color, variant, size, mClass': function (color, variant, size, mClass) {
       this._firstOberverForMuiClass = true
       this._defindMuiBehaviors({
         color,
         variant,
         size,
+        mClass,
       })
     },
   },

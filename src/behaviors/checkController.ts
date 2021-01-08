@@ -54,6 +54,22 @@ export default Behavior({
     _currentIcon: '',
     _checkedClass: 'mui-unchecked',
   },
+  lifetimes: {
+    attached() {
+      this._hasAttached = true
+      const {checked, defaultChecked} = this.data
+      let _checked = defaultChecked
+      let pureIsControlled = false
+      if (typeof checked === 'boolean') {
+        _checked = checked
+        pureIsControlled = true
+      }
+      this.setData({
+        ...this._GenIcon({checked: _checked}),
+        _pureIsControlled: pureIsControlled
+      })
+    }
+  },
   methods: {
     _CheckControll() {
       const {
@@ -127,21 +143,6 @@ export default Behavior({
     _GroupControll(checked) {
       this.setData(this._GenIcon({checked}))
     },
-  },
-  lifetimes: {
-    attached() {
-      const {checked, defaultChecked} = this.data
-      let _checked = defaultChecked
-      let pureIsControlled = false
-      if (typeof checked === 'boolean') {
-        _checked = checked
-        pureIsControlled = true
-      }
-      this.setData({
-        ...this._GenIcon({checked: _checked}),
-        _pureIsControlled: pureIsControlled
-      })
-    }
   },
   observers: {
     checked(checked) {

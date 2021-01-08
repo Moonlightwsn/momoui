@@ -7,8 +7,23 @@
   mStyle="{{mStyle}}"
 >
   <mui-list-item-avatar wx:if="{{avatar}}">
-    <mui-avatar src="{{avatar.src}}" icon="{{avatar.icon}}" />
+    <mui-avatar
+      icon="{{avatar.icon}}"
+      iconColor="{{avatar.iconColor}}"
+      iconSize="{{avatar.iconSize}}"
+      src="{{avatar.src}}"
+      variant="{{avatar.variant}}"
+    />
   </mui-list-item-avatar>
+  <mui-list-item-icon wx:if="{{icon}}">
+    <mui-icon
+      color="{{icon.color}}"
+      name="{{icon.name}}"
+      size="{{icon.size}}"
+      spin="{{icon.spin}}"
+      src="{{icon.src}}"
+    />
+  </mui-list-item-icon>
   <slot />
   <mui-list-item-text wx:if="{{primary}}" primary="{{primary}}" secondary="{{secondary}}" />
   <mui-list-item-secondary-action>
