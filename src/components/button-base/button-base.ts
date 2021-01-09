@@ -66,8 +66,7 @@ Component({
       value: '',
     },
   },
-  observers: {
-  },
+  observers: {},
   options: {
     // virtualHost: true,
     pureDataPattern: /^_pure/,

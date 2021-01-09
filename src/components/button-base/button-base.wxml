@@ -23,7 +23,7 @@
   hoverClass="{{hoverClass}}"
   hoverStopPropagation="{{hoverStopPropagation}}"
   hoverStartTime="{{hoverStartTime}}"
-  hover-stay-time="{{hoverStayTime}}"
+  hoverStayTime="{{hoverStayTime}}"
   lang="{{lang}}"
   openType="{{openType}}"
   sessionFrom="{{openType === 'contact' ? sessionFrom : ''}}"

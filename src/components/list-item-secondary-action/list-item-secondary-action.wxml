@@ -1,4 +1,5 @@
 <view
+  catch:tap="_catchTapAction"
   class="mui mui-list-item-secondary-action {{mClass}}"
   style="{{mStyle}}"
 >

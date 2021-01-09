@@ -94,18 +94,6 @@ Component({
       type: String,
       value: ''
     },
-    size: {
-      type: String,
-      value: 'medium'
-    },
-    shape: {
-      type: String,
-      value: 'normal'
-    },
-    sessionFrom: {
-      type: String,
-      value: '',
-    },
     sendMessageTitle: {
       type: String,
       value: ''
@@ -118,9 +106,21 @@ Component({
       type: String,
       value: ''
     },
+    sessionFrom: {
+      type: String,
+      value: '',
+    },
+    shape: {
+      type: String,
+      value: 'normal'
+    },
     showMessageCard: {
       type: String,
       value: '',
+    },
+    size: {
+      type: String,
+      value: 'medium'
     },
     variant: {
       type: String,

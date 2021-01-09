@@ -55,6 +55,12 @@ Component({
     }
   },
   relations: {
+    '../checkbox/checkbox': {
+      type: 'descendant',
+      linked(target) {
+        this._Linked(target, 'checkbox')
+      },
+    },
     '../form-control/form-control': {
       type: 'ancestor',
       linked(target) {
@@ -66,22 +72,16 @@ Component({
         this._formControlComp = undefined
       },
     },
-    '../checkbox/checkbox': {
+    '../radio/radio': {
       type: 'descendant',
       linked(target) {
-        this._Linked(target, 'checkbox')
+        this._Linked(target, 'radio')
       },
     },
     '../switch/switch': {
       type: 'descendant',
       linked(target) {
         this._Linked(target, 'switch')
-      },
-    },
-    '../radio/radio': {
-      type: 'descendant',
-      linked(target) {
-        this._Linked(target, 'radio')
       },
     },
   },

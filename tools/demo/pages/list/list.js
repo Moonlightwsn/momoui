@@ -7,6 +7,12 @@ Page({
     dense: false,
     secondary: false,
     selectedIndex: 0,
+    checked: {
+      0: true,
+      1: false,
+      2: false,
+      3: false,
+    },
   },
   onLoad() {
     this.setData({
@@ -25,7 +31,21 @@ Page({
       this.setData({selectedIndex: index})
     }
   },
-  onChangeDense(checked) {
+  handleSecondaryActionTap(e) {
+    console.log(e)
+  },
+  handleToggle(e) {
+    const {dataset: {index}} = e.currentTarget
+    const {checked} = this.data
+    const newChecked = {
+      ...checked,
+      [index]: !checked[index],
+    };
+    this.setData({
+      checked: newChecked,
+    })
+  },
+  onChangeDense() {
     this.setData({
       dense: !this.data.dense,
     })

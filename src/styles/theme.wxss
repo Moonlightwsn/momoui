@@ -1092,10 +1092,12 @@
     }
     &.mui-icon-button {
       flex: 0 0 auto;
-      color: rgba(0, 0, 0, 0.54);
       overflow: visible;
       text-align: center;
       transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      &.mui-color-default {
+        color: rgba(0, 0, 0, 0.54);
+      }
     }
     &.edge-start {
       margin-left: -12px;
@@ -2287,6 +2289,13 @@
     .mui-icon {
       font-size: 24px;
     }
+    .mui-avatar {
+      &.mui-avatar-img {
+        .mui-icon {
+          font-size: 40px;
+        }
+      }
+    }
   }
   /** mui-list-item end */
 
@@ -3152,7 +3161,9 @@
 
     &.mui-button {
       &.mui-icon-button {
-        color: #fff;
+        &.mui-color-default {
+          color: #fff;
+        }
       }
       &.mui-button-hover {
         background-color: #ffffff14;

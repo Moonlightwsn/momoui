@@ -4,7 +4,7 @@
   capture-bind:tap="_CheckControll"
 >
   <view class="switch-root">
-    <mui-button class="_mui-inner-button" disabled="{{disabled}}" disableRipple="{{disableRipple}}" color="{{color}}" shape="circle" variant="text" mStyle="padding: {{size === 'small' ? 4 : 9}}px;">
+    <mui-button class="_mui-inner-button" color="{{color}}" disabled="{{disabled}}" disableRipple="{{disableRipple}}" mClass="mui-icon-button edge-{{edge}}" mStyle="padding: {{size === 'small' ? 4 : 9}}px;" shape="circle" variant="text">
       <mui-icon name="{{_currentIcon}}" mClass="check-icon switch-icon" />
     </mui-button>
     <view class="switch-track" />

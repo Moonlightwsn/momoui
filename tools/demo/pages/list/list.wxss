@@ -13,7 +13,7 @@
 }
 
 .demo-box {
-  padding: 24px;
+  padding: 24px 12px;
 }
 
 [data-momoui-theme=dark] .list-wrapper {

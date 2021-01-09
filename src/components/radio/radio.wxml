@@ -3,7 +3,7 @@
   style="{{mStyle}}"
   capture-bind:tap="_CheckControll"
 >
-  <mui-button class="_mui-inner-button" disabled="{{disabled}}" disableRipple="{{disableRipple}}" color="{{color}}" shape="circle" variant="text" mStyle="padding: 9px;">
+  <mui-button class="_mui-inner-button" color="{{color}}" disabled="{{disabled}}" disableRipple="{{disableRipple}}" mClass="mui-icon-button edge-{{edge}}" mStyle="padding: 9px;" shape="circle" variant="text">
     <mui-icon name="{{_currentIcon}}" mClass="check-icon" />
   </mui-button>
   <slot />

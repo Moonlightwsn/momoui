@@ -27,47 +27,43 @@
   </view>
   <mui-typography mClass="header2" variant="h5">嵌套列表</mui-typography>
   <view class="demo-box">
-    <view class="list-wrapper">
-      <mui-list subheader="Nested List Items">
-        <mui-list-item button icon="{{ {name: 'send'} }}" primary="Sent mail" />
-        <mui-list-item button icon="{{ {name: 'mail'} }}" primary="Drafts" />
-        <mui-list-item button bind:tap="handleTap">
-          <mui-list-item-icon>
-            <mui-icon name="mail" />
-          </mui-list-item-icon>
-          <mui-list-item-text primary="Inbox" />
-          <mui-icon name="arrow-{{open ? 'up' : 'down'}}-2" />
-        </mui-list-item>
-        <mui-collapse in="{{open}}">
-          <mui-list disablePadding nested>
-            <mui-list-item mClass="nested" button icon="{{ {name: 'like'} }}" primary="Starred" />
-          </mui-list>
-        </mui-collapse>
-      </mui-list>
-    </view>
+    <mui-list mClass="list-wrapper" subheader="Nested List Items">
+      <mui-list-item button icon="{{ {name: 'send'} }}" primary="Sent mail" />
+      <mui-list-item button icon="{{ {name: 'mail'} }}" primary="Drafts" />
+      <mui-list-item button bind:tap="handleTap">
+        <mui-list-item-icon>
+          <mui-icon name="mail" />
+        </mui-list-item-icon>
+        <mui-list-item-text primary="Inbox" />
+        <mui-icon name="arrow-{{open ? 'up' : 'down'}}-2" />
+      </mui-list-item>
+      <mui-collapse in="{{open}}">
+        <mui-list disablePadding nested>
+          <mui-list-item mClass="nested" button icon="{{ {name: 'like'} }}" primary="Starred" />
+        </mui-list>
+      </mui-collapse>
+    </mui-list>
   </view>
   <mui-typography mClass="header2" variant="h5">文件夹列表</mui-typography>
   <view class="demo-box">
-    <view class="list-wrapper">
-      <mui-list>
-        <mui-list-item
-          avatar="{{ {icon: 'pictures'} }}"
-          primary="Photos"
-          secondary="Jan 9, 2014"
-        />
-        <mui-list-item>
-          <mui-list-item-avatar>
-            <mui-avatar icon="default" />
-          </mui-list-item-avatar>
-          <mui-list-item-text primary="Work" secondary="Jan 7, 2014" />
-        </mui-list-item>
-        <mui-list-item
-          avatar="{{ {icon: 'like'} }}"
-          primary="Vacation"
-          secondary="July 20, 2014"
-        />
-      </mui-list>
-    </view>
+    <mui-list mClass="list-wrapper">
+      <mui-list-item
+        avatar="{{ {icon: 'pictures'} }}"
+        primary="Photos"
+        secondary="Jan 9, 2014"
+      />
+      <mui-list-item>
+        <mui-list-item-avatar>
+          <mui-avatar icon="default" />
+        </mui-list-item-avatar>
+        <mui-list-item-text primary="Work" secondary="Jan 7, 2014" />
+      </mui-list-item>
+      <mui-list-item
+        avatar="{{ {icon: 'like'} }}"
+        primary="Vacation"
+        secondary="July 20, 2014"
+      />
+    </mui-list>
   </view>
   <mui-typography mClass="header2" variant="h5">交互</mui-typography>
   <view class="demo-box">
@@ -164,5 +160,75 @@
         </mui-list-item>
       </mui-list>
     </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">对齐列表项</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">若想显示3行或者更多行时，您应该设置列表项的对齐属性为 alignItems="flex-start"</mui-typography>
+  <view class="demo-box">
+    <mui-list mClass="list-wrapper">
+      <mui-list-item alignItems="flex-start">
+        <mui-list-item-avatar>
+          <mui-avatar src="https://material-ui.com/static/images/avatar/1.jpg" />
+        </mui-list-item-avatar>
+        <mui-list-item-text>
+          <text slot="primary">Brunch this weekend?</text>
+          <view slot="secondary">
+            <mui-typography mStyle="display: inline;" color="textPrimary" variant="body2">Ali Connors</mui-typography>
+              — I'll be in your neighborhood doing errands this…
+          </view>
+        </mui-list-item-text>
+      </mui-list-item>
+      <mui-list-item alignItems="flex-start">
+        <mui-list-item-avatar>
+          <mui-avatar src="https://material-ui.com/static/images/avatar/2.jpg" />
+        </mui-list-item-avatar>
+        <mui-list-item-text>
+          <text slot="primary">Summer BBQ</text>
+          <view slot="secondary">
+            <mui-typography mStyle="display: inline;" color="textPrimary" variant="body2">to Scott, Alex, Jennifer</mui-typography>
+              — Wish I could come, but I'm out of town this…
+          </view>
+        </mui-list-item-text>
+      </mui-list-item>
+      <mui-list-item alignItems="flex-start">
+        <mui-list-item-avatar>
+          <mui-avatar src="https://material-ui.com/static/images/avatar/3.jpg" />
+        </mui-list-item-avatar>
+        <mui-list-item-text>
+          <text slot="primary">Oui Oui</text>
+          <view slot="secondary">
+            <mui-typography mStyle="display: inline;" color="textPrimary" variant="body2">Sandra Adams</mui-typography>
+              — Do you have Paris recommendations? Have you ever…
+          </view>
+        </mui-list-item-text>
+      </mui-list-item>
+    </mui-list>
+  </view>
+  <mui-typography mClass="header2" variant="h5">列表控件</mui-typography>
+  <mui-typography variant="h6">Checkbox 选择框</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">一个选择框既可以是主操作，又可以是辅助操作</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">选择框执行了主要的操作，也是该列表子项的状态指示器。 而评论按钮则执行了辅助的操作，并且一个单独的目标</mui-typography>
+  <view class="demo-box">
+    <mui-list mClass="list-wrapper">
+      <mui-list-item
+        wx:for="{{ [0,1,2,3] }}"
+        wx:key="item"
+        button
+        bind:tap="handleToggle"
+        data-index="{{index}}"
+        dense
+        primary="Line item {{index + 1}}"
+      >
+        <mui-list-item-icon>
+          <mui-checkbox
+            checked="{{checked[index]}}"
+            disableRipple
+            edge="start"
+          />
+        </mui-list-item-icon>
+        <mui-list-item-secondary-action>
+          <mui-icon-button bind:tap="handleSecondaryActionTap" hoverStopPropagation icon="message" />
+        </mui-list-item-secondary-action>
+      </mui-list-item>
+    </mui-list>
   </view>
 </view>

@@ -29,6 +29,10 @@ export default Behavior({
       type: Boolean,
       value: false,
     },
+    edge: {
+      type: String,
+      value: '',
+    },
     icon: {
       type: String,
       value: '',
