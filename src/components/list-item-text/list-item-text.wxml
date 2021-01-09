@@ -1,5 +1,5 @@
 <view
-  class="mui mui-list-item-text {{mClass}}"
+  class="mui mui-list-item-text inset-{{inset}} {{mClass}}"
   style="{{mStyle}}"
 >
   <mui-typography display="block">

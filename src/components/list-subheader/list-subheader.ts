@@ -13,7 +13,7 @@ Component({
     },
     disableSticky: {
       type: Boolean,
-      value: true,
+      value: false,
     },
     inset: {
       type: Boolean,

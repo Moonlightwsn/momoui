@@ -4,7 +4,7 @@
   disableRipple="{{!button}}"
   hoverClass="mui-list-item-hover"
   mClass="mui mui-list-item divider-{{divider}} align-items-{{alignItems}} selected-{{selected}} button-{{button}} disable-gutters-{{disableGutters}} dense-{{dense}} {{mClass}}"
-  mStyle="{{mStyle}}"
+  mStyle="{{_paddingLeftStyle}}{{mStyle}}"
 >
   <mui-list-item-avatar wx:if="{{avatar}}">
     <mui-avatar

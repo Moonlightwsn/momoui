@@ -4,6 +4,15 @@
   background-color: #fff;
 }
 
+.list-wrapper-scroll {
+  width: 100%;
+  overflow: auto;
+  position: relative;
+  max-width: 360px;
+  max-height: 300px;
+  background-color: #fff;
+}
+
 .title {
   margin: 32px 0 16px;
 }
@@ -17,6 +26,10 @@
 }
 
 [data-momoui-theme=dark] .list-wrapper {
+  background-color: #424242;
+}
+
+[data-momoui-theme=dark] .list-wrapper-scroll {
   background-color: #424242;
 }
 

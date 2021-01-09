@@ -35,6 +35,10 @@ Component({
       type: Object,
       value: null,
     },
+    indent: {
+      type: Number,
+      value: null,
+    },
     primary: {
       type: String,
       value: null,
@@ -52,6 +56,9 @@ Component({
       value: false,
     },
   },
+  data: {
+    _paddingLeftStyle: '',
+  },
   methods: {
     _secondaryAction(e) {
       const {secondaryAction = {}} = this.data
@@ -67,6 +74,15 @@ Component({
         longpress(e)
       }
     }
+  },
+  observers: {
+    indent(indent) {
+      let _paddingLeftStyle = ''
+      if (typeof indent === 'number') {
+        _paddingLeftStyle = `padding-left: ${indent}px;`
+      }
+      this.setData({_paddingLeftStyle})
+    },
   },
   options: {
     virtualHost: true,

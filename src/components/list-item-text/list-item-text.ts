@@ -3,6 +3,10 @@ import muiBase from '../../behaviors/muiBase.ts'
 Component({
   behaviors: [muiBase],
   properties: {
+    inset: {
+      type: Boolean,
+      value: false,
+    },
     primary: {
       type: String,
       value: null,

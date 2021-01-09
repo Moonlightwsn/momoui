@@ -38,8 +38,8 @@
         <mui-icon name="arrow-{{open ? 'up' : 'down'}}-2" />
       </mui-list-item>
       <mui-collapse in="{{open}}">
-        <mui-list disablePadding nested>
-          <mui-list-item mClass="nested" button icon="{{ {name: 'like'} }}" primary="Starred" />
+        <mui-list disablePadding>
+          <mui-list-item button icon="{{ {name: 'like'} }}" indent="{{32}}" primary="Starred" />
         </mui-list>
       </mui-collapse>
     </mui-list>
@@ -83,7 +83,7 @@
             <mui-list dense="{{dense}}">
               <mui-list-item
                 wx:for="{{[1,2,3]}}"
-                wx:key="index"
+                wx:key="item"
                 primary="Single-line item"
                 secondary="{{secondary ? 'Secondary text' : null}}"
               />
@@ -96,7 +96,7 @@
             <mui-list dense="{{dense}}">
               <mui-list-item
                 wx:for="{{[1,2,3]}}"
-                wx:key="index"
+                wx:key="item"
                 icon="{{ {name: 'folder'} }}"
                 primary="Single-line item"
                 secondary="{{secondary ? 'Secondary text' : null}}"
@@ -112,7 +112,7 @@
             <mui-list dense="{{dense}}">
               <mui-list-item
                 wx:for="{{[1,2,3]}}"
-                wx:key="index"
+                wx:key="item"
                 avatar="{{ {icon: 'folder'} }}"
                 primary="Single-line item"
                 secondary="{{secondary ? 'Secondary text' : null}}"
@@ -126,7 +126,7 @@
             <mui-list dense="{{dense}}">
               <mui-list-item
                 wx:for="{{[1,2,3]}}"
-                wx:key="index"
+                wx:key="item"
                 avatar="{{ {icon: 'folder'} }}"
                 primary="Single-line item"
                 secondary="{{secondary ? 'Secondary text' : null}}"
@@ -214,13 +214,13 @@
         wx:key="item"
         button
         bind:tap="handleToggle"
-        data-index="{{index}}"
+        data-index="{{item}}"
         dense
-        primary="Line item {{index + 1}}"
+        primary="Line item {{item + 1}}"
       >
         <mui-list-item-icon>
           <mui-checkbox
-            checked="{{checked[index]}}"
+            checked="{{checked[item]}}"
             disableRipple
             edge="start"
           />
@@ -228,6 +228,71 @@
         <mui-list-item-secondary-action>
           <mui-icon-button bind:tap="handleSecondaryActionTap" hoverStopPropagation icon="message" />
         </mui-list-item-secondary-action>
+      </mui-list-item>
+    </mui-list>
+  </view>
+  <mui-typography mClass="paragraph" variant="body2">该复选框执行了列表项的辅助操作，并且是一个单独的目标</mui-typography>
+  <view class="demo-box">
+    <mui-list dense mClass="list-wrapper">
+      <mui-list-item
+        wx:for="{{ [0,1,2,3] }}"
+        wx:key="item"
+        button
+        avatar="{{ {src: 'https://material-ui.com/static/images/avatar/' + (item + 1) + '.jpg'} }}"
+        primary="Line item {{item + 1}}"
+      >
+        <mui-list-item-secondary-action>
+          <mui-checkbox />
+        </mui-list-item-secondary-action>
+      </mui-list-item>
+    </mui-list>
+  </view>
+  <mui-typography variant="h6">Switch 开关</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">该开关作用为一个辅助操作和一个单独的目标</mui-typography>
+  <view class="demo-box">
+    <mui-list mClass="list-wrapper" subheader="Settings">
+      <mui-list-item
+        icon="{{ {name: 'default'} }}"
+        primary="Wi-Fi"
+      >
+        <mui-list-item-secondary-action>
+          <mui-switch />
+        </mui-list-item-secondary-action>
+      </mui-list-item>
+      <mui-list-item
+        icon="{{ {name: 'default'} }}"
+        primary="Bluetooth"
+      >
+        <mui-list-item-secondary-action>
+          <mui-switch />
+        </mui-list-item-secondary-action>
+      </mui-list-item>
+    </mui-list>
+  </view>
+  <mui-typography mClass="header2" variant="h5">固定的副标题列表</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">在滚动列表时，子标题保持固定在屏幕的顶端，直到被下一个子标题推离屏幕</mui-typography>
+  <view class="demo-box">
+    <mui-list mClass="list-subheader list-wrapper-scroll">
+      <block
+        wx:for="{{ [0, 1, 2, 3, 4] }}"
+        wx:for-item="subheaderItem"
+        wx:key="subheaderItem"
+      >
+        <mui-list-subheader>I'm sticky {{subheaderItem}}</mui-list-subheader>
+        <mui-list-item
+          wx:for="{{ [0, 1, 2] }}"
+          wx:key="item"
+          primary="{{'item ' + item}}"
+        />
+      </block>
+    </mui-list>
+  </view>
+  <mui-typography mClass="header2" variant="h5">嵌入列表</mui-typography>
+  <view class="demo-box">
+    <mui-list mClass="list-wrapper">
+      <mui-list-item button icon="{{ {name: 'like'} }}" primary="Chelsea Otakan" />
+      <mui-list-item button>
+        <mui-list-item-text inset primary="Eric Hoffman" />
       </mui-list-item>
     </mui-list>
   </view>

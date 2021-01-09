@@ -1,5 +1,5 @@
 <view
-  class="mui mui-list disable-padding-{{disablePadding}} dense-{{dense}} nested-{{nested}}{{subheader ? ' list-subheader ' : ' '}}{{mClass}}"
+  class="mui mui-list disable-padding-{{disablePadding}} dense-{{dense}} {{subheader ? ' list-subheader ' : ' '}}{{mClass}}"
   style="{{mStyle}}"
 >
   <mui-list-subheader wx:if="{{subheader}}">

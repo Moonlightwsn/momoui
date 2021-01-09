@@ -11,10 +11,6 @@ Component({
       type: Boolean,
       value: false,
     },
-    nested: {
-      type: Boolean,
-      value: false,
-    },
     subheader: {
       type: String,
       value: '',
