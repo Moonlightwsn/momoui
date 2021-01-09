@@ -20,13 +20,13 @@ App({
   },
   watchThemeChange(listener) {
     if (themeListeners.indexOf(listener) < 0) {
-        themeListeners.push(listener)
+      themeListeners.push(listener)
     }
   },
   unWatchThemeChange(listener) {
     const index = themeListeners.indexOf(listener)
     if (index > -1) {
-        themeListeners.splice(index, 1)
+      themeListeners.splice(index, 1)
     }
   },
   momouiRootPath: '/',

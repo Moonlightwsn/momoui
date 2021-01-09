@@ -69,4 +69,100 @@
       </mui-list>
     </view>
   </view>
+  <mui-typography mClass="header2" variant="h5">交互</mui-typography>
+  <view class="demo-box">
+    <view style="flex-grow: 1; max-width: 752px;">
+      <mui-checkbox-group row>
+        <mui-form-control-label label="Enable dense" checked="{{dense}}" onChange="{{onChangeDense}}">
+          <mui-checkbox />
+        </mui-form-control-label>
+        <mui-form-control-label label="Enable secondary text" checked="{{secondary}}" onChange="{{onChangeSecondary}}">
+          <mui-checkbox />
+        </mui-form-control-label>
+      </mui-checkbox-group>
+      <mui-grid container spacing="{{2}}">
+        <mui-grid item sm="{{6}}" xs="{{12}}">
+          <mui-typography mClass="title" variant="h6">Text only</mui-typography>
+          <view class="demo">
+            <mui-list dense="{{dense}}">
+              <mui-list-item
+                wx:for="{{[1,2,3]}}"
+                wx:key="index"
+                primary="Single-line item"
+                secondary="{{secondary ? 'Secondary text' : null}}"
+              />
+            </mui-list>
+          </view>
+        </mui-grid>
+        <mui-grid item sm="{{6}}" xs="{{12}}">
+          <mui-typography mClass="title" variant="h6">Icon with text</mui-typography>
+          <view class="demo">
+            <mui-list dense="{{dense}}">
+              <mui-list-item
+                wx:for="{{[1,2,3]}}"
+                wx:key="index"
+                icon="{{ {name: 'folder'} }}"
+                primary="Single-line item"
+                secondary="{{secondary ? 'Secondary text' : null}}"
+              />
+            </mui-list>
+          </view>
+        </mui-grid>
+      </mui-grid>
+      <mui-grid container spacing="{{2}}">
+        <mui-grid item sm="{{6}}" xs="{{12}}">
+          <mui-typography mClass="title" variant="h6">Avatar with text</mui-typography>
+          <view class="demo">
+            <mui-list dense="{{dense}}">
+              <mui-list-item
+                wx:for="{{[1,2,3]}}"
+                wx:key="index"
+                avatar="{{ {icon: 'folder'} }}"
+                primary="Single-line item"
+                secondary="{{secondary ? 'Secondary text' : null}}"
+              />
+            </mui-list>
+          </view>
+        </mui-grid>
+        <mui-grid item sm="{{6}}" xs="{{12}}">
+          <mui-typography mClass="title" variant="h6">Avatar with text and icon</mui-typography>
+          <view class="demo">
+            <mui-list dense="{{dense}}">
+              <mui-list-item
+                wx:for="{{[1,2,3]}}"
+                wx:key="index"
+                avatar="{{ {icon: 'folder'} }}"
+                primary="Single-line item"
+                secondary="{{secondary ? 'Secondary text' : null}}"
+                secondaryAction="{{ {icon: 'trash'} }}"
+              />
+            </mui-list>
+          </view>
+        </mui-grid>
+      </mui-grid>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">可选的列表子项</mui-typography>
+  <view class="demo-box">
+    <view class="list-wrapper">
+      <mui-list>
+        <mui-list-item button bind:tap="handleSelect" data-index="{{0}}" selected="{{selectedIndex === 0}}">
+          <mui-list-item-icon>
+            <mui-icon name="mail" />
+          </mui-list-item-icon>
+          <mui-list-item-text primary="Inbox" />
+        </mui-list-item>
+        <mui-list-item button icon="{{ {name: 'mail'} }}" primary="Drafts" bind:tap="handleSelect" data-index="{{1}}" selected="{{selectedIndex === 1}}" />
+      </mui-list>
+      <mui-divider />
+      <mui-list>
+        <mui-list-item button bind:tap="handleSelect" data-index="{{2}}" selected="{{selectedIndex === 2}}">
+          <mui-list-item-text primary="Trash" />
+        </mui-list-item>
+        <mui-list-item button bind:tap="handleSelect" data-index="{{3}}" selected="{{selectedIndex === 3}}">
+          <mui-list-item-text primary="Spam" />
+        </mui-list-item>
+      </mui-list>
+    </view>
+  </view>
 </view>

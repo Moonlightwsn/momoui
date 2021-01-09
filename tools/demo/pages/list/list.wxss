@@ -4,6 +4,22 @@
   background-color: #fff;
 }
 
+.title {
+  margin: 32px 0 16px;
+}
+
+.demo {
+  background-color: #fff;
+}
+
 .demo-box {
   padding: 24px;
+}
+
+[data-momoui-theme=dark] .list-wrapper {
+  background-color: #424242;
+}
+
+[data-momoui-theme=dark] .demo {
+  background-color: #424242;
 }

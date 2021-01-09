@@ -10,6 +10,15 @@ if (app.momouiRootPath) {
 }
 const muiIconPath = 'styles/static/icons/'
 
+const themeListeners = []
+wx.onThemeChange((obj) => {
+  if (obj && obj.theme) {
+    themeListeners.forEach((listener) => {
+      listener()
+    })
+  }
+})
+
 Component({
   behaviors: [muiBase],
   properties: {
@@ -55,21 +64,27 @@ Component({
     _innerStyles: 'width:24px;height:24px;',
   },
   lifetimes: {
-    created() {
-      if (!this._hasBindThemeChanged) {
-        this._hasBindThemeChanged = true
-        wx.onThemeChange((obj) => {
-          const {disableThemeWatcher} = this.data
-          if (!disableThemeWatcher && obj && obj.theme) {
-            const {
-              name,
-              color,
-              size,
-              src,
-            } = this.data
-            this._Pretreatment(name, color, size, src)
-          }
-        })
+    attached() {
+      const {disableThemeWatcher} = this.data
+      if (!disableThemeWatcher) {
+        this.listener = () => {
+          const {
+            name,
+            color,
+            size,
+            src,
+          } = this.data
+          this._Pretreatment(name, color, size, src)
+        }
+        themeListeners.push(this.listener)
+      }
+    },
+    detached() {
+      if (this.listener) {
+        const index = themeListeners.indexOf(this.listener)
+        if (index > -1) {
+          themeListeners.splice(index, 1)
+        }
       }
     },
   },

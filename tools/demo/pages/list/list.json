@@ -1,8 +1,12 @@
 {
   "usingComponents" : {
     "mui-avatar": "../../components/avatar/avatar",
+    "mui-checkbox": "../../components/checkbox/checkbox",
+    "mui-checkbox-group": "../../components/checkbox-group/checkbox-group",
     "mui-collapse": "../../components/collapse/collapse",
     "mui-divider": "../../components/divider/divider",
+    "mui-form-control-label": "../../components/form-control-label/form-control-label",
+    "mui-grid": "../../components/grid/grid",
     "mui-icon": "../../components/icon/icon",
     "mui-list": "../../components/list/list",
     "mui-list-item": "../../components/list-item/list-item",

@@ -15,6 +15,15 @@ if (!currentTheme) {
   }
 }
 
+const themeListeners = []
+wx.onThemeChange((obj) => {
+  if (obj && obj.theme) {
+    themeListeners.forEach((listener) => {
+      listener(obj.theme)
+    })
+  }
+})
+
 Component({
   behaviors: [muiBase],
   properties: {
@@ -48,21 +57,26 @@ Component({
               item._defaultValue = index
               item._ReRenderControlledProps()
             })
-            if (!this._hasBindThemeChanged) {
-              this._hasBindThemeChanged = true
-              wx.onThemeChange((obj) => {
-                if (obj && obj.theme) {
-                  newActions.forEach(item => {
-                    this._currentTheme = currentTheme = obj.theme
-                    item._ReRenderControlledProps()
-                  })
-                }
-              })
-            }
           }
         }, 50)
       }
+      this.listener = (theme) => {
+        const newActions = this.data._pureActions
+        this._currentTheme = currentTheme = theme
+        newActions.forEach(item => {
+          item._ReRenderControlledProps()
+        })
+      }
+      themeListeners.push(this.listener)
     },
+  },
+  detached() {
+    if (this.listener) {
+      const index = themeListeners.indexOf(this.listener)
+      if (index > -1) {
+        themeListeners.splice(index, 1)
+      }
+    }
   },
   relations: {
     '../bottom-navigation-action/bottom-navigation-action': {
