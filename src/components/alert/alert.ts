@@ -16,6 +16,7 @@ Component({
     },
     closeIcon: {
       type: String,
+      optionalTypes: [Object],
       value: null,
     },
     closeIconProps: {
@@ -28,12 +29,8 @@ Component({
     },
     icon: {
       type: Boolean,
-      optionalTypes: [String],
+      optionalTypes: [String, Object],
       value: null,
-    },
-    iconProps: {
-      type: Object,
-      value: {},
     },
     message: {
       type: String,

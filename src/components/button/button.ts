@@ -60,6 +60,7 @@ Component({
     },
     icon: {
       type: String,
+      optionalTypes: [Object],
       value: null,
     },
     iconSize: {

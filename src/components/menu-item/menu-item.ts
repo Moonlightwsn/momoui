@@ -8,7 +8,8 @@ Component({
       value: 'center',
     },
     avatar: {
-      type: Object,
+      type: String,
+      optionalTypes: [Object],
       value: null,
     },
     button: {

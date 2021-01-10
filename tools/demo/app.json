@@ -12,6 +12,7 @@
     "pages/index/index",
     "pages/test/test",
     "pages/grid/grid",
+    "pages/tabs/tabs",
     "pages/typography/typography"
   ],
   "darkmode": true,

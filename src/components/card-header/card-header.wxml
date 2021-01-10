@@ -6,8 +6,8 @@
     <mui-avatar
       wx:if="{{avatar}}"
       src="{{avatar.src}}"
-      icon="{{avatar.icon}}"
-      iconSize="{{avatar.size}}"
+      icon="{{avatar.icon || avatar}}"
+      iconSize="{{avatar.iconSize}}"
       iconColor="{{avatar.iconColor}}"
       mStyle="{{avatar.style}}"
       mClass="{{src ? 'avatar-img ' : ''}}{{avatar.class}}"

@@ -1,0 +1,9 @@
+<mui-button-base
+  mClass="mui mui-tab-root {{mClass}}"
+  mStyle="{{mStyle}}"
+>
+  <view class="mui-tab-wrapper">
+    <block wx:if="label">{{label}}</block>
+    <slot name="label" />
+  </view>
+</mui-button-base>

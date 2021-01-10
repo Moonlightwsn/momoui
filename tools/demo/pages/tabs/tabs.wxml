@@ -1,0 +1,17 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography mClass="header2" variant="h5">简单的选项卡</mui-typography>
+  <view class="demo-box">
+    <view style="flex-grow: 1;">
+      <mui-app-bar position="static">
+        <mui-tabs>
+          <mui-tab label="Item One" />
+          <mui-tab label="Item Two" />
+          <mui-tab label="Item Three" />
+        </mui-tabs>
+      </mui-app-bar>
+    </view>
+  </view>
+</view>

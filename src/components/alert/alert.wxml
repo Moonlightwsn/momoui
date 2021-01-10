@@ -4,7 +4,7 @@
   elevation="0"
 >
   <view class="alert-icon">
-    <mui-icon wx:if="{{icon}}" name="{{icon}}" color="{{iconProps.color}}" size="{{iconProps.size}}" />
+    <mui-icon wx:if="{{icon}}" name="{{icon.name || icon}}" color="{{icon.color}}" size="{{icon.size}}" />
     <slot wx:else name="icon" />
   </view>
   <view class="alert-message">
@@ -28,7 +28,7 @@
       mStyle="padding: 3px;width: auto;height:auto;"
       color="inherit"
       shape="circle"
-      icon="{{closeIcon || 'close-circle'}}"
+      icon="{{closeIcon ? (closeIcon.name || closeIcon) : 'close-circle'}}"
       iconColor="{{closeIconProps.color}}"
       iconSize="{{closeIconProps.size}}"
       catchtap="_close"

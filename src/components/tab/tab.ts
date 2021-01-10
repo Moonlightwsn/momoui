@@ -3,37 +3,37 @@ import muiBase from '../../behaviors/muiBase.ts'
 Component({
   behaviors: [muiBase],
   properties: {
-    action: {
-      type: Object,
-      value: null,
+    disabled: {
+      type: Boolean,
+      value: false,
     },
-    avatar: {
+    disableRipple: {
+      type: Boolean,
+      value: false,
+    },
+    icon: {
       type: String,
       optionalTypes: [Object],
       value: null,
     },
-    disableTypography: {
+    label: {
+      type: String,
+      value: null,
+    },
+    value: {
+      type: String,
+      optionalTypes: [Number, Array, Object],
+      value: null,
+    },
+    variant: {
+      type: String,
+      value: 'standard',
+    },
+    wrapped: {
       type: Boolean,
       value: false,
     },
-    subheader: {
-      type: String,
-      value: null,
-    },
-    title: {
-      type: String,
-      value: null,
-    },
   },
-  methods: {
-    _headerActionClick(e) {
-      const {action} = this.data
-      if (action && action.onClick && typeof action.onClick === 'function') {
-        action.onClick(e)
-      }
-    },
-  },
-  observers: {},
   options: {
     virtualHost: true,
     pureDataPattern: /^_pure/,

@@ -40,6 +40,31 @@
   display: flex;
 }
 
+.inner-body {
+  position: relative;
+  border: none;
+  height: 400px;
+  max-width: 400px;
+  flex-grow: 1;
+  overflow: auto;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+.list-wrapper {
+  background-color: #fff;
+}
+
+.fab {
+  position: absolute;
+  z-index: 1;
+  top: -30px;
+  left: calc(50% - 28px);
+}
+
+[data-momoui-theme=dark] .list-wrapper {
+  background-color: #424242;
+}
+
 @media (min-width: 600px) {
   .title {
     display: block;

@@ -235,7 +235,6 @@
       position: static;
     }
   }
-  /** mui-app-bar end */
 
   &.mui-toolbar {
     display: flex;
@@ -252,6 +251,48 @@
       min-height: 48px;
     }
   }
+  /** mui-app-bar end */
+
+  /* mui-tabs */
+  &.mui-tabs {
+    display: flex;
+    overflow: hidden;
+    min-height: 48px;
+    -webkit-overflow-scrolling: touch;
+    .mui-tabs-scroller {
+      flex: 1 1 auto;
+      display: inline-block;
+      position: relative;
+      white-space: nowrap;
+    }
+    .mui-tabs-fixed {
+      width: 100%;
+      overflow-x: hidden;
+    }
+    .mui-tabs-flex-container {
+      display: flex;
+    }
+  }
+
+  &.mui-tab-root {
+    padding: 6px 12px;
+    overflow: hidden;
+    position: relative;
+    font-size: 0.875rem;
+    max-width: 264px;
+    min-width: 72px;
+    box-sizing: border-box;
+    min-height: 48px;
+    text-align: center;
+    flex-shrink: 0;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.75;
+    white-space: normal;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+  }
+  /* mui-tabs end */
 
   /** mui-card */
   &.mui-card-root {
@@ -2652,6 +2693,9 @@
       &.variant-regular {
         min-height: 64px;
       }
+    }
+    &.mui-tab-root {
+      min-width: 160px;
     }
     &.mui-menu-item {
       min-height: auto;

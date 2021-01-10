@@ -5,10 +5,6 @@ export default Behavior({
       type: Boolean,
       value: null,
     },
-    checkedIcon: {
-      type: String,
-      value: '',
-    },
     color: {
       type: String,
       value: 'secondary',
@@ -34,8 +30,8 @@ export default Behavior({
       value: '',
     },
     icon: {
-      type: String,
-      value: '',
+      type: Object,
+      value: {},
     },
     onChange: {
       // @ts-ignore
@@ -119,7 +115,6 @@ export default Behavior({
     },
     _GenIcon({checked: checkedArg} = {}) {
       const {
-        checkedIcon,
         icon,
         _checked,
         _pureIsSwitch: isSwitch,
@@ -128,7 +123,8 @@ export default Behavior({
       if (typeof checkedArg !== 'undefined') {
         checked = checkedArg
       }
-      let _currentIcon = icon
+      const {checked: checkedIcon, unchecked: uncheckedIcon} = icon
+      let _currentIcon = uncheckedIcon
       let _checkedClass = 'mui-unchecked'
       if (checked) {
         _currentIcon = checkedIcon

@@ -72,6 +72,11 @@
           "scene": null
         },
         {
+          "name": "tabs",
+          "pathName": "pages/tabs/tabs",
+          "scene": null
+        },
+        {
           "name": "tooltip",
           "pathName": "pages/tooltip/tooltip",
           "scene": null

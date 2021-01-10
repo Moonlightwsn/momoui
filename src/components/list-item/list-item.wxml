@@ -8,17 +8,21 @@
 >
   <mui-list-item-avatar wx:if="{{avatar}}">
     <mui-avatar
-      icon="{{avatar.icon}}"
-      iconColor="{{avatar.iconColor}}"
+      icon="{{avatar.icon || avatar}}"
       iconSize="{{avatar.iconSize}}"
+      iconColor="{{avatar.iconColor}}"
+      mStyle="{{avatar.style}}"
+      mClass="{{avatar.class}}"
       src="{{avatar.src}}"
-      variant="{{avatar.variant}}"
+      variant="{{avatar.variant || 'circle'}}"
     />
   </mui-list-item-avatar>
   <mui-list-item-icon wx:if="{{icon}}">
     <mui-icon
       color="{{icon.color}}"
-      name="{{icon.name}}"
+      mClass="{{icon.class}}"
+      mStyle="{{icon.style}}"
+      name="{{icon.name || icon}}"
       size="{{icon.size}}"
       spin="{{icon.spin}}"
       src="{{icon.src}}"

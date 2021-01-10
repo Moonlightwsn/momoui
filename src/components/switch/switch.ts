@@ -12,13 +12,9 @@ const controlledProps: string[] = [
 Component({
   behaviors: [muiBase, muiController, checkController],
   properties: {
-    checkedIcon: {
-      type: String,
-      value: 'circle',
-    },
     icon: {
-      type: String,
-      value: 'circle',
+      type: Object,
+      value: {checked: 'circle', unchecked: 'circle'},
     },
     value: {
       type: Boolean,

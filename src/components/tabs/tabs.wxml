@@ -1,0 +1,10 @@
+<view
+  class="mui mui-tabs {{mClass}}"
+  style="{{mStyle}}"
+>
+  <view class="mui-tabs-scroller mui-tabs-fixed">
+    <view class="mui-tabs-flex-container">
+      <slot />
+    </view>
+  </view>
+</view>

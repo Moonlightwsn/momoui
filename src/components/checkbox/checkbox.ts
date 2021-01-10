@@ -12,13 +12,9 @@ const controlledProps: string[] = [
 Component({
   behaviors: [muiBase, muiController, checkController],
   properties: {
-    checkedIcon: {
-      type: String,
-      value: 'square-check-fill',
-    },
     icon: {
-      type: String,
-      value: 'square',
+      type: Object,
+      value: {checked: 'square-check-fill', unchecked: 'square'},
     },
     indeterminate: {
       type: Boolean,
@@ -68,7 +64,7 @@ Component({
   observers: {
     indeterminate(indeterminate) {
       if (indeterminate) {
-        this.setData({checkedIcon: 'square-indeterminate-fill'})
+        this.setData({icon: {checked: 'square-indeterminate-fill', unchecked: 'square'}})
       }
     }
   },

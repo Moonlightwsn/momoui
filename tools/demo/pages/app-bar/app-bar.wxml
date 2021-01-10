@@ -226,6 +226,38 @@
   </view>
   <mui-typography mClass="header2" variant="h5">底部应用栏</mui-typography>
   <view class="demo-box">
-    <view style="flex-grow: 1;"></view>
+    <view class="inner-body">
+      <mui-paper square>
+        <mui-typography gutterBottom mStyle="padding: 16px 16px 0px;" variant="h5">Inbox</mui-typography>
+        <mui-list mClass="list-subheader list-wrapper" mStyle="margin-bottom: 16px;">
+          <block
+            wx:for="{{messages}}"
+            wx:key="id"
+          >
+            <mui-list-subheader wx:if="{{item.id === 1}}">
+              Today
+            </mui-list-subheader>
+            <mui-list-subheader wx:if="{{item.id === 3}}">
+              Yesterday
+            </mui-list-subheader>
+            <mui-list-item
+              button
+              avatar="{{ {src: item.person} }}"
+              primary="{{ item.primary }}"
+              secondary="{{ item.secondary }}"
+            />
+          </block>
+        </mui-list>
+      </mui-paper>
+      <mui-app-bar color="primary" mStyle="top: auto;bottom: 0;" position="sticky">
+        <mui-toolbar>
+          <mui-icon-button color="inherit" edge="start" icon="menu" />
+          <mui-fab color="secondary" icon="plus" nativeNodeClass="fab" />
+          <view style="flex-grow: 1;" />
+          <mui-icon-button color="inherit" icon="search" />
+          <mui-icon-button color="inherit" edge="end" icon="user" />
+        </mui-toolbar>
+      </mui-app-bar>
+    </view>
   </view>
 </view>

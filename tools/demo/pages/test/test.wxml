@@ -1,4 +1,24 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <mui-checkbox />
+  <mui-radio />
+  <mui-switch />
+  <mui-avatar icon="{{ {name: 'default', size: 32} }}" src="https://material-ui.com/static/images/avatar/4.jpg" />
+  <mui-button icon="default" iconColor="red">BUTTON</mui-button>
+  <mui-button icon="{{ {name: 'default', color: 'green'} }}" />
+  <mui-chip
+    variant="outlined"
+    label="Clickable deletable"
+    icon="user"
+    onClick="{{chipClick}}"
+    onDelete="{{chipDelete}}"
+  />
+  <mui-chip
+    variant="outlined"
+    label="Clickable deletable"
+    avatar="user"
+    onClick="{{chipClick}}"
+    onDelete="{{chipDelete}}"
+  />
   <!--
   <mui-fab mClass="test" icon="plus" variant="extended">Extended</mui-fab>
   <mui-fab mClass="test" icon="plus" />
@@ -164,7 +184,6 @@
   <mui-snack-bar open="{{open}}" anchorOrigin="{{anchorOrigin}}" transitionType="slide">
     <mui-alert
       closeIconProps="{{alert.closeIconProps}}"
-      iconProps="{{alert.iconProps}}"
       title="Success"
       mStyle="margin-top: 16px;"
       variant="filled"

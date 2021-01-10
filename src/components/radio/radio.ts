@@ -13,13 +13,9 @@ const controlledProps: string[] = [
 Component({
   behaviors: [muiBase, muiController, checkController],
   properties: {
-    checkedIcon: {
-      type: String,
-      value: 'radio-box',
-    },
     icon: {
-      type: String,
-      value: 'round',
+      type: Object,
+      value: {checked: 'radio-box', unchecked: 'round'},
     },
   },
   data: {

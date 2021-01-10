@@ -69,11 +69,13 @@
     "ripple": "./components/ripple/ripple",
     "ripple-container": "./components/ripple-container/ripple-container",
 
-    "switch": "./components/switch/switch",
     "select": "./components/select/select",
     "snack-bar": "./components/snack-bar/snack-bar",
     "snack-bar-content": "./components/snack-bar-content/snack-bar-content",
+    "switch": "./components/switch/switch",
     
+    "tabs": "./components/tabs/tabs",
+    "tab": "./components/tab/tab",
     "toolbar": "./components/toolbar/toolbar",
     "tooltip": "./components/tooltip/tooltip",
     "typography": "./components/typography/typography"

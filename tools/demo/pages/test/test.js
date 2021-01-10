@@ -26,10 +26,6 @@ Page({
       horizontal: 'left',
     },
     alert: {
-      iconProps: {
-        color: '#fff',
-        size: 22,
-      },
       closeIconProps: {
         color: '#fff',
         size: 20

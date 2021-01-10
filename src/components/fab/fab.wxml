@@ -1,5 +1,6 @@
 <mui-button
   appParameter="{{appParameter}}"
+  class="{{nativeNodeClass}}"
   color="{{color}}"
   disabled="{{disabled}}"
   disableRipple="{{disableRipple}}"

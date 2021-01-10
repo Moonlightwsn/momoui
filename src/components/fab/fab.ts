@@ -41,6 +41,7 @@ Component({
     },
     icon: {
       type: String,
+      optionalTypes: [Object],
       value: null,
     },
     iconSize: {
@@ -62,6 +63,10 @@ Component({
     lang: {
       type: String,
       value: 'en',
+    },
+    nativeNodeClass: {
+      type: String,
+      value: '',
     },
     openType: {
       type: String,

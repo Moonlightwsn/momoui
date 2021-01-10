@@ -5,6 +5,7 @@ Component({
   properties: {
     icon: {
       type: String,
+      optionalTypes: [Object],
       value: null,
     },
     iconColor: {

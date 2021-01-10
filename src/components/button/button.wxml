@@ -25,11 +25,12 @@
   <slot />
   <mui-icon
     wx:if="{{icon}}"
-    color="{{iconColor}}"
-    name="{{icon}}"
-    mClass="icon-in-button icon-position-{{iconPosition}}"
-    size="{{iconSize}}"
-    spin="{{iconSpin}}"
+    color="{{iconColor || icon.color}}"
+    name="{{icon.name || icon}}"
+    mClass="icon-in-button icon-position-{{iconPosition || icon.position}} {{icon.class}}"
+    mStyle="{{icon.style}}"
+    size="{{iconSize || icon.size}}"
+    spin="{{iconSpin || icon.spin}}"
   />
   <slot wx:else name="icon" />
 </mui-button-base>

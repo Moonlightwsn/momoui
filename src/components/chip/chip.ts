@@ -4,8 +4,8 @@ Component({
   behaviors: [muiBase],
   properties: {
     avatar: {
-      type: Object,
-      optionalTypes: [String],
+      type: String,
+      optionalTypes: [Object],
       value: null,
     },
     clickable: {
@@ -26,6 +26,7 @@ Component({
     },
     icon: {
       type: String,
+      optionalTypes: [Object],
       value: null,
     },
     label: {
@@ -52,7 +53,6 @@ Component({
     },
   },
   data: {
-    _avatar: null,
     _hasDelete: false,
   },
   methods: {
@@ -70,21 +70,6 @@ Component({
     }
   },
   observers: {
-    avatar(avatar) {
-      const _avatar: {
-        text?:string
-        icon?:string
-        src?:string
-      } = {}
-      if (typeof avatar === 'string') {
-        _avatar.text = avatar
-        this.setData({_avatar})
-      } else if (typeof avatar === 'object' && avatar) {
-        _avatar.icon = avatar.icon
-        _avatar.src = avatar.src
-        this.setData({_avatar})
-      }
-    },
     onDelete(onDelete) {
       if (onDelete) {
         this.setData({_hasDelete: true})
