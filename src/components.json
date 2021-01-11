@@ -76,6 +76,7 @@
     
     "tabs": "./components/tabs/tabs",
     "tab": "./components/tab/tab",
+    "tab-panel": "./components/tab-panel/tab-panel",
     "toolbar": "./components/toolbar/toolbar",
     "tooltip": "./components/tooltip/tooltip",
     "typography": "./components/typography/typography"

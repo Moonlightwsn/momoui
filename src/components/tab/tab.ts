@@ -1,4 +1,9 @@
 import muiBase from '../../behaviors/muiBase.ts'
+import {ObserversForControlledPropsByAncestor} from '../../common/utils.ts'
+
+const controlledProps: string[] = [
+  'value',
+]
 
 Component({
   behaviors: [muiBase],
@@ -33,6 +38,54 @@ Component({
       type: Boolean,
       value: false,
     },
+  },
+  data: {
+    _selected: false,
+  },
+  lifetimes: {
+    attached() {
+      this._hasAttached = true
+    },
+  },
+  relations: {
+    '../tabs/tabs': {
+      type: 'ancestor',
+      linked(target) {
+        if (target) {
+          this._tabsComp = target
+        }
+      },
+      unlinked() {
+        this._tabsComp = undefined
+      }
+    },
+  },
+  methods: {
+    _ReRenderControlledProps() {
+      const target = this._tabsComp
+      if (target) {
+        const newData:any = {}
+        newData._selected = false
+        let currentValue = this.data.value
+        if (!this._propIsSet || !this._propIsSet.value) {
+          newData.value = this._defaultValue
+          currentValue = newData.value
+        }
+        if (currentValue === target.data.value) {
+          newData._selected = true
+        }
+        this.setData(newData)
+      }
+    },
+    _Select(e) {
+      const target = this._tabsComp
+      if (target) {
+        target._onChange(e, this.data.value)
+      }
+    },
+  },
+  observers: {
+    ...ObserversForControlledPropsByAncestor(controlledProps),
   },
   options: {
     virtualHost: true,

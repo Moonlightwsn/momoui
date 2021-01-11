@@ -36,6 +36,11 @@ Component({
       value: null,
     },
   },
+  data: {
+    _selected: false,
+    _iconColor: null,
+    _hideInactiveAction: true,
+  },
   lifetimes: {
     attached() {
       this._hasAttached = true
@@ -53,11 +58,6 @@ Component({
         this._navigationComp = undefined
       },
     }
-  },
-  data: {
-    _selected: false,
-    _iconColor: null,
-    _hideInactiveAction: true,
   },
   methods: {
     _ReRenderControlledProps() {

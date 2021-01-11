@@ -259,6 +259,34 @@
     overflow: hidden;
     min-height: 48px;
     -webkit-overflow-scrolling: touch;
+    &.mui-tabs-text-color-inherit {
+      .mui-tab-root {
+        color: inherit;
+        opacity: 0.7;
+        &.selected-true {
+          opacity: 1;
+        }
+      }
+    }
+    &.mui-tabs-text-color-primary, &.mui-tabs-text-color-secondary {
+      .mui-tab-root {
+        color: rgba(0, 0, 0, 0.54);
+      }
+    }
+    &.mui-tabs-text-color-primary {
+      .mui-tab-root {
+        &.selected-true {
+          color: @primary_color;
+        }
+      }
+    }
+    &.mui-tabs-text-color-secondary {
+      .mui-tab-root {
+        &.selected-true {
+          color: @secondary_color;
+        }
+      }
+    }
     .mui-tabs-scroller {
       flex: 1 1 auto;
       display: inline-block;
@@ -291,6 +319,26 @@
     white-space: normal;
     letter-spacing: 0.02857em;
     text-transform: uppercase;
+    &::after {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      position: absolute;
+      transform: scaleX(0);
+      transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+      border-bottom: 2px solid @secondary_color;
+      pointer-events: none;
+    }
+    &.selected-true {
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &.mui-tab-panel {
+    padding: 24px;
   }
   /* mui-tabs end */
 
@@ -3072,6 +3120,34 @@
     &.mui-app-bar {
       &.mui-color-primary, &.mui-color-secondary {
         color: rgba(0, 0, 0, 0.87);
+      }
+    }
+
+    &.mui-tabs {
+      &.mui-tabs-text-color-primary, &.mui-tabs-text-color-secondary {
+        .mui-tab-root {
+          color: rgba(255, 255, 255, 0.7);
+        }
+      }
+      &.mui-tabs-text-color-primary {
+        .mui-tab-root {
+          &.selected-true {
+            color: @primary_dark_color;
+          }
+        }
+      }
+      &.mui-tabs-text-color-secondary {
+        .mui-tab-root {
+          &.selected-true {
+            color: @secondary_dark_color;
+          }
+        }
+      }
+    }
+
+    &.mui-tab-root {
+      &::after {
+        border-bottom-color: @secondary_dark_color;
       }
     }
 

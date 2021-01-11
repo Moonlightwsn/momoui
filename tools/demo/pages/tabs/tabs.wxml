@@ -4,14 +4,23 @@
 >
   <mui-typography mClass="header2" variant="h5">简单的选项卡</mui-typography>
   <view class="demo-box">
-    <view style="flex-grow: 1;">
+    <view class="tabs-wrapper">
       <mui-app-bar position="static">
-        <mui-tabs>
+        <mui-tabs value="{{value}}" onChange="{{SetValue}}">
           <mui-tab label="Item One" />
           <mui-tab label="Item Two" />
           <mui-tab label="Item Three" />
         </mui-tabs>
       </mui-app-bar>
+      <mui-tab-panel wx:if="{{value === 0}}">
+        Item One
+      </mui-tab-panel>
+      <mui-tab-panel wx:if="{{value === 1}}">
+        Item Two
+      </mui-tab-panel>
+      <mui-tab-panel wx:if="{{value === 2}}">
+        Item Three
+      </mui-tab-panel>
     </view>
   </view>
 </view>
