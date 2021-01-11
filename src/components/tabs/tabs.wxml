@@ -1,5 +1,5 @@
 <view
-  class="mui mui-tabs mui-tabs-text-color-{{textColor}} {{mClass}}"
+  class="mui mui-tabs mui-tabs-text-color-{{textColor}} mui-tabs-indicator-color-{{indicatorColor}} {{mClass}}"
   style="{{mStyle}}"
 >
   <view class="mui-tabs-scroller mui-tabs-fixed">

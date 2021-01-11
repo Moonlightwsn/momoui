@@ -78,8 +78,9 @@ Component({
       }
     },
     _Select(e) {
+      const {disabled} = this.data
       const target = this._tabsComp
-      if (target) {
+      if (target && !disabled) {
         target._onChange(e, this.data.value)
       }
     },

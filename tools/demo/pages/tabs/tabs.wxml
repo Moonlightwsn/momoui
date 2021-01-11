@@ -23,4 +23,38 @@
       </mui-tab-panel>
     </view>
   </view>
+  <!--
+  <mui-typography mClass="header2" variant="h5">包装的标签</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">对于那些比较长的标签，它们会被自动包装成选项卡。 如果标签超出了选项卡的长度，它则会溢出，并且文本会隐藏</mui-typography>
+  <view class="demo-box">
+    <view class="tabs-wrapper">
+      <mui-app-bar position="static">
+        <mui-tabs value="{{value2}}" onChange="{{SetValue2}}">
+          <mui-tab wrapped label="New Arrivals in the Longest Text of Nonfiction" value="one" />
+          <mui-tab label="Item Two" value="two" />
+          <mui-tab label="Item Three" value="three" />
+        </mui-tabs>
+      </mui-app-bar>
+      <mui-tab-panel wx:if="{{value === 'one'}}">
+        Item One
+      </mui-tab-panel>
+      <mui-tab-panel wx:if="{{value === 'two'}}">
+        Item Two
+      </mui-tab-panel>
+      <mui-tab-panel wx:if="{{value === 'three'}}">
+        Item Three
+      </mui-tab-panel>
+    </view>
+  </view>
+  -->
+  <mui-typography mClass="header2" variant="h5">不可用的选项卡</mui-typography>
+  <view class="demo-box">
+    <mui-paper square>
+      <mui-tabs value="{{value}}" indicatorColor="primary" textColor="primary" onChange="{{SetValue}}">
+        <mui-tab label="Active" />
+        <mui-tab disabled label="Disabled" />
+        <mui-tab label="Active" />
+      </mui-tabs>
+    </mui-paper>
+  </view>
 </view>

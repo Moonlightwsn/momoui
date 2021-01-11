@@ -271,6 +271,9 @@
     &.mui-tabs-text-color-primary, &.mui-tabs-text-color-secondary {
       .mui-tab-root {
         color: rgba(0, 0, 0, 0.54);
+        &.disabled-true {
+          color: rgba(0, 0, 0, 0.38);
+        }
       }
     }
     &.mui-tabs-text-color-primary {
@@ -284,6 +287,20 @@
       .mui-tab-root {
         &.selected-true {
           color: @secondary_color;
+        }
+      }
+    }
+    &.mui-tabs-indicator-color-primary {
+      .mui-tab-root {
+        &::after {
+          border-bottom: 2px solid @primary_color;
+        }
+      }
+    }
+    &.mui-tabs-indicator-color-secondary {
+      .mui-tab-root {
+        &::after {
+          border-bottom: 2px solid @secondary_color;
         }
       }
     }
@@ -311,6 +328,7 @@
     min-width: 72px;
     box-sizing: border-box;
     min-height: 48px;
+    height: 100%;
     text-align: center;
     flex-shrink: 0;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -327,13 +345,23 @@
       position: absolute;
       transform: scaleX(0);
       transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
-      border-bottom: 2px solid @secondary_color;
       pointer-events: none;
+    }
+    &.wrapped-true {
+      font-size: 0.75rem;
+      line-height: 1.5;
     }
     &.selected-true {
       &::after {
         transform: scaleX(1);
       }
+    }
+    .mui-tab-wrapper {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
     }
   }
 
@@ -3127,6 +3155,9 @@
       &.mui-tabs-text-color-primary, &.mui-tabs-text-color-secondary {
         .mui-tab-root {
           color: rgba(255, 255, 255, 0.7);
+          &.disabled-true {
+            color: rgba(255, 255, 255, 0.5);
+          }
         }
       }
       &.mui-tabs-text-color-primary {
@@ -3143,11 +3174,19 @@
           }
         }
       }
-    }
-
-    &.mui-tab-root {
-      &::after {
-        border-bottom-color: @secondary_dark_color;
+      &.mui-tabs-indicator-color-primary {
+        .mui-tab-root {
+          &::after {
+            border-bottom-color: @primary_dark_color;
+          }
+        }
+      }
+      &.mui-tabs-indicator-color-secondary {
+        .mui-tab-root {
+          &::after {
+            border-bottom-color: @secondary_dark_color;
+          }
+        }
       }
     }
 

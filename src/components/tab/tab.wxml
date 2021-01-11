@@ -1,5 +1,5 @@
 <mui-button-base
-  mClass="mui mui-tab-root mui-variant-{{variant}} selected-{{_selected}} {{mClass}}"
+  mClass="mui mui-tab-root mui-variant-{{variant}} selected-{{_selected}} wrapped-{{wrapped}} {{mClass}}"
   mStyle="{{mStyle}}"
   bind:tap="_Select"
   color="inherit"

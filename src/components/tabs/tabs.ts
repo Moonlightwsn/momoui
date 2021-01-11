@@ -8,6 +8,10 @@ Component({
       type: Boolean,
       value: false,
     },
+    indicatorColor: {
+      type: String,
+      value: 'secondary',
+    },
     onChange: {
       // @ts-ignore
       type: Function,
