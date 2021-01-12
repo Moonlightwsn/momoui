@@ -1,5 +1,7 @@
 {
   "usingComponents": {
+    "mui-tabs": "../../components/tabs/tabs",
+    "mui-tab": "../../components/tab/tab",
     "mui-fab": "../../components/fab/fab",
     "mui-icon": "../../components/icon/icon",
     "mui-avatar-group": "../../components/avatar-group/avatar-group",

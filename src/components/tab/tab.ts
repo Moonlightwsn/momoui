@@ -61,6 +61,19 @@ Component({
     },
   },
   methods: {
+    _Rect() {
+      return new Promise((resolve) => {
+        const query = this.createSelectorQuery()
+        query.select('._mui-tab-root').fields({
+          size: true,
+        })
+        query.exec(res => {
+          const [view] = res || []
+          const {width = 0} = view || {}
+          resolve(width)
+        })
+      })
+    },
     _ReRenderControlledProps() {
       const target = this._tabsComp
       if (target) {
@@ -73,6 +86,7 @@ Component({
         }
         if (currentValue === target.data.value) {
           newData._selected = true
+          target._ComputeIndicatorPosition(this._defaultValue)
         }
         this.setData(newData)
       }

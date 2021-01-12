@@ -18,3 +18,40 @@
 .mui-button.test {
   margin: 8px;
 }
+
+.test-tabs {
+  display: flex;
+  overflow: hidden;
+}
+.test-tab {
+  overflow: hidden;
+  white-space: normal;
+  box-sizing: border-box;
+  padding: 6px 12px;
+  max-width: 264px;
+  min-width: 72px;
+}
+
+.test2-tabs {
+  display: flex;
+  overflow: hidden;
+}
+.test2-tabs-scroll {
+  flex: 1 1 auto;
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+}
+.test2-tabs-container {
+  display: flex;
+}
+.test2-tab {
+  flex-shrink: 0;
+  max-width: 264px;
+  min-width: 72px;
+  box-sizing: border-box;
+  min-height: 48px;
+  height: 100%;
+  overflow: hidden;
+  white-space: normal;
+}

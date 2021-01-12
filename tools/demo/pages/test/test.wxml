@@ -1,4 +1,30 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <view class="demo-box">
+    <view class="test-tabs">
+      <view class="test-tab">New Arrivals in the Longest Text of Nonfiction</view>
+      <view class="test-tab">Item Two</view>
+      <view class="test-tab">Item Three</view>
+    </view>
+  </view>
+  <view class="demo-box">
+    <view class="test2-tabs">
+      <view class="test2-tabs-scroll">
+        <view class="test2-tabs-container">
+          <mui-button-base class="test2-tab">New Arrivals in the Longest Text of Nonfiction New Arrivals in the Longest Text of Nonfiction New Arrivals in the Longest Text of Nonfiction New Arrivals in the Longest Text of Nonfiction</mui-button-base>
+          <mui-button-base class="test2-tab">Item Two</mui-button-base>
+          <mui-button-base class="test2-tab">Item Three</mui-button-base>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="demo-box">
+    <mui-tabs value="one">
+      <mui-tab wrapped label="New Arrivals in the Longest Text of Nonfiction" value="one" />
+      <mui-tab label="Item Two" value="two" />
+      <mui-tab label="Item Three" value="three" />
+    </mui-tabs>
+  </view>
+  <!--
   <mui-checkbox />
   <mui-radio />
   <mui-switch />
@@ -19,6 +45,7 @@
     onClick="{{chipClick}}"
     onDelete="{{chipDelete}}"
   />
+  -->
   <!--
   <mui-fab mClass="test" icon="plus" variant="extended">Extended</mui-fab>
   <mui-fab mClass="test" icon="plus" />

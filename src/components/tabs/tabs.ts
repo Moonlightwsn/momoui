@@ -37,6 +37,7 @@ Component({
   },
   data: {
     _pureTabs: [],
+    _indicatorStyle: '',
   },
   lifetimes: {
     created() {
@@ -66,10 +67,24 @@ Component({
         const _targetIndex = this.data._pureTabs.findIndex(item => item === target)
         this.data._pureTabs.splice(_targetIndex, 1)
         this.setData({_pureTabs: this.data._pureTabs})
-      }
-    }
+      },
+    },
   },
   methods: {
+    _ComputeIndicatorPosition(activeIndex) {
+      Promise.all(this.data._pureTabs.map(item => item._Rect())).then((values) => {
+        if (activeIndex < values.length) {
+          let offset = 0
+          const width = values[activeIndex]
+          for (let i = 0; i < activeIndex; i += 1) {
+            offset += Number(values[i])
+          }
+          this.setData({
+            _indicatorStyle: `left: ${offset}px; width: ${width}px;`
+          })
+        }
+      }).catch(e => console.log(e))
+    },
     _onChange(e, value) {
       const {onChange} = this.data
       if (onChange && typeof onChange === 'function') {
@@ -78,7 +93,7 @@ Component({
     },
   },
   observers: {
-    value() {
+    'value, _pureTabs': function () {
       if (this._ArrangeTabs) {
         this._ArrangeTabs()
       }

@@ -23,7 +23,6 @@
       </mui-tab-panel>
     </view>
   </view>
-  <!--
   <mui-typography mClass="header2" variant="h5">包装的标签</mui-typography>
   <mui-typography mClass="paragraph" variant="body2">对于那些比较长的标签，它们会被自动包装成选项卡。 如果标签超出了选项卡的长度，它则会溢出，并且文本会隐藏</mui-typography>
   <view class="demo-box">
@@ -46,7 +45,6 @@
       </mui-tab-panel>
     </view>
   </view>
-  -->
   <mui-typography mClass="header2" variant="h5">不可用的选项卡</mui-typography>
   <view class="demo-box">
     <mui-paper square>
@@ -56,5 +54,37 @@
         <mui-tab label="Active" />
       </mui-tabs>
     </mui-paper>
+  </view>
+  <mui-typography mClass="header2" variant="h5">固定的选项卡</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">固定的标签应与定量的选项卡一起使用，而将它们整齐放置则会有助于用户的肌肉记忆</mui-typography>
+  <mui-typography mClass="header2" variant="h5">全宽</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">若是较小的视图，则应使用 variant="fullWidth" 属性。 在这个演示中你还可以借鉴用 swiper 来展示tab-panel</mui-typography>
+  <view class="demo-box">
+    <view class="tabs-wrapper">
+      <mui-app-bar position="static" color="default">
+        <mui-tabs value="{{value}}" onChange="{{SetValue}}" variant="fullWidth">
+          <mui-tab label="Item One" />
+          <mui-tab label="Item Two" />
+          <mui-tab label="Item Three" />
+        </mui-tabs>
+      </mui-app-bar>
+      <swiper current="{{value}}">
+        <swiper-item catchtouchmove="true">
+          <mui-tab-panel>
+            Item One
+          </mui-tab-panel>
+        </swiper-item>
+        <swiper-item catchtouchmove="true">
+          <mui-tab-panel>
+            Item Two
+          </mui-tab-panel>
+        </swiper-item>
+        <swiper-item catchtouchmove="true">
+          <mui-tab-panel>
+            Item Three
+          </mui-tab-panel>
+        </swiper-item>
+      </swiper>
+    </view>
   </view>
 </view>

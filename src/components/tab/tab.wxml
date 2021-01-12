@@ -1,8 +1,9 @@
 <mui-button-base
-  mClass="mui mui-tab-root mui-variant-{{variant}} selected-{{_selected}} wrapped-{{wrapped}} {{mClass}}"
+  class="_mui-tab-root mui mui-tab-root mui-variant-{{variant}} selected-{{_selected}} wrapped-{{wrapped}}"
+  mClass="{{mClass}}"
   mStyle="{{mStyle}}"
   bind:tap="_Select"
-  color="inherit"
+  component="button"
   disabled="{{disabled}}"
   disableRipple="{{disableRipple}}"
 >

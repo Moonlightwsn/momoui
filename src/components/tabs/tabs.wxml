@@ -1,10 +1,11 @@
 <view
-  class="mui mui-tabs mui-tabs-text-color-{{textColor}} mui-tabs-indicator-color-{{indicatorColor}} {{mClass}}"
+  class="mui mui-tabs mui-tabs-text-color-{{textColor}} mui-tabs-variant-{{variant}} {{mClass}}"
   style="{{mStyle}}"
 >
   <view class="mui-tabs-scroller mui-tabs-fixed">
     <view class="mui-tabs-flex-container">
       <slot />
+      <view class="mui-tabs-indicator indicator-color-{{indicatorColor}}" style="{{_indicatorStyle}}" />
     </view>
   </view>
 </view>
