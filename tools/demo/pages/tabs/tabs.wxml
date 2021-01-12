@@ -68,23 +68,40 @@
           <mui-tab label="Item Three" />
         </mui-tabs>
       </mui-app-bar>
-      <swiper current="{{value}}">
-        <swiper-item catchtouchmove="true">
+      <swiper current="{{value}}" bindchange="SetValue">
+        <swiper-item>
           <mui-tab-panel>
             Item One
           </mui-tab-panel>
         </swiper-item>
-        <swiper-item catchtouchmove="true">
+        <swiper-item>
           <mui-tab-panel>
             Item Two
           </mui-tab-panel>
         </swiper-item>
-        <swiper-item catchtouchmove="true">
+        <swiper-item>
           <mui-tab-panel>
             Item Three
           </mui-tab-panel>
         </swiper-item>
       </swiper>
     </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">居中对齐</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">而对于较大的视图，则应使用 centered 属性</mui-typography>
+  <view class="demo-box">
+    <mui-paper class="tabs-wrapper">
+      <mui-tabs
+        indicatorColor="primary"
+        textColor="primary"
+        value="{{value}}"
+        onChange="{{SetValue}}"
+        centered
+      >
+        <mui-tab label="Item One" />
+        <mui-tab label="Item Two" />
+        <mui-tab label="Item Three" />
+      </mui-tabs>
+    </mui-paper>
   </view>
 </view>

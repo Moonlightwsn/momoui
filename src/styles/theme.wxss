@@ -316,6 +316,9 @@
     }
     .mui-tabs-flex-container {
       display: flex;
+      &.centered-true {
+        justify-content: center;
+      }
       .mui-tabs-indicator {
         width: 100%;
         bottom: 0;

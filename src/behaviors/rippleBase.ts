@@ -32,16 +32,16 @@ export default Behavior({
           })
           query.selectViewport().scrollOffset()
           query.exec((res) => {
-            const [view = {}, viewPort = {}] = res || {}
+            const [view, viewPort] = res || {}
             const {
               width = 0,
               height = 0,
               left = 0,
               top = 0,
               borderRadius = 0,
-            } = view
+            } = view || {}
             if (width > 0 && height > 0) {
-              const {scrollLeft = 0, scrollTop = 0} = viewPort
+              const {scrollLeft = 0, scrollTop = 0} = viewPort || {}
               const {rippleColor} = this.data
               this._muiRippleContainer._RippleAction({
                 width,

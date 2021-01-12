@@ -61,16 +61,24 @@ Component({
     },
   },
   methods: {
-    _Rect() {
+    _QueryTab() {
       return new Promise((resolve) => {
         const query = this.createSelectorQuery()
         query.select('._mui-tab-root').fields({
           size: true,
+          rect: true,
         })
+        // query.selectViewport().scrollOffset()
         query.exec(res => {
-          const [view] = res || []
-          const {width = 0} = view || {}
-          resolve(width)
+          const [view/* , viewPort */] = res || {}
+          const {width = 0, left = 0} = view || {}
+          // const {scrollLeft = 0} = viewPort || {}
+          const queryRes = {
+            width,
+            left,
+            // scrollLeft,
+          }
+          resolve(queryRes)
         })
       })
     },

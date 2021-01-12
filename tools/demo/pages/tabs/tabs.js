@@ -12,14 +12,16 @@ Page({
       SetValue2: this.SetValue2.bind(this)
     })
   },
-  SetValue(e, value) {
+  SetValue(e) {
+    const {current} = e.detail
     this.setData({
-      value,
+      value: current,
     })
   },
-  SetValue2(e, value) {
+  SetValue2(e) {
+    const {current} = e.detail
     this.setData({
-      value2: value,
+      value2: current,
     })
   },
 })

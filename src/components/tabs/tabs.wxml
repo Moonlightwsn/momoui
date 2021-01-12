@@ -3,7 +3,7 @@
   style="{{mStyle}}"
 >
   <view class="mui-tabs-scroller mui-tabs-fixed">
-    <view class="mui-tabs-flex-container">
+    <view class="mui-tabs-flex-container centered-{{centered}}">
       <slot />
       <view class="mui-tabs-indicator indicator-color-{{indicatorColor}}" style="{{_indicatorStyle}}" />
     </view>
