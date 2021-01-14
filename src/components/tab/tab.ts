@@ -71,11 +71,12 @@ Component({
         // query.selectViewport().scrollOffset()
         query.exec(res => {
           const [view/* , viewPort */] = res || {}
-          const {width = 0, left = 0} = view || {}
+          const {width = 0, left = 0, right = 0} = view || {}
           // const {scrollLeft = 0} = viewPort || {}
           const queryRes = {
             width,
             left,
+            right,
             // scrollLeft,
           }
           resolve(queryRes)

@@ -92,11 +92,11 @@
   <view class="demo-box">
     <mui-paper class="tabs-wrapper">
       <mui-tabs
+        centered
         indicatorColor="primary"
         textColor="primary"
         value="{{value}}"
         onChange="{{SetValue}}"
-        centered
       >
         <mui-tab label="Item One" />
         <mui-tab label="Item Two" />
