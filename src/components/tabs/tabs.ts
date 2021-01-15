@@ -39,6 +39,7 @@ Component({
     _pureTabs: [],
     _indicatorStyle: '',
     _translateX: 0,
+    _showArrow: true,
   },
   lifetimes: {
     created() {
@@ -74,14 +75,14 @@ Component({
   methods: {
     _AdjustTabsOffset(activeIndex, tabsLeft, tabLeft, tabsRight, tabRight) {
       const lastActiveIndex = this._lastActiveIndex || 0
-      let _translateX = 0
+      let _translateX = this.data._translateX
       let _detal = 0
       if (lastActiveIndex < activeIndex && tabsRight < tabRight) {
         _detal = tabsRight - tabRight
-        _translateX = this.data._translateX + _detal
+        _translateX += _detal
       } else if (lastActiveIndex > activeIndex && tabsLeft > tabLeft) {
         _detal = tabsLeft - tabLeft
-        _translateX = this.data._translateX + _detal
+        _translateX += _detal
       }
       this._lastActiveIndex = activeIndex
       return {_translateX, _detal}
@@ -105,6 +106,7 @@ Component({
         const {left: tabLeft = 0, right: tabRight = 0, width: tabWidth = 0} = tabView || {}
         let _positionAtStart = false
         let _positionAtEnd = false
+        let _showArrow = true
         const IndicatorOffset = tabLeft - containerLeft
         const indicatorWidth = tabWidth
         const {_translateX, _detal} = this._AdjustTabsOffset(activeIndex, tabsLeft, tabLeft, tabsRight, tabRight)
@@ -117,12 +119,16 @@ Component({
           if (tabsRight >= (lastTabRight + _detal)) {
             _positionAtEnd = true
           }
+          if (_positionAtEnd && _positionAtStart) {
+            _showArrow = false
+          }
         }
         this.setData({
           _indicatorStyle: `left: ${IndicatorOffset}px; width: ${indicatorWidth}px;`,
           _translateX,
           _positionAtEnd,
           _positionAtStart,
+          _showArrow,
         })
       }).catch(e => console.log(e))
     },
@@ -137,21 +143,41 @@ Component({
         const {left: tabsLeft, right: tabsRight = 0, width: tabsWidth} = tabsView
         const {left: tabLeft, right: tabRight = 0} = tabView
         let _detal = direction === 'left' ? (tabsLeft - tabLeft) : (tabsRight - tabRight)
-        if (direction === 'left' && _detal > tabsWidth) {
-          _detal = tabsWidth
-        } else if (direction === 'right' && -_detal > tabsWidth) {
-          _detal = -tabsWidth
+        const newData: any = {}
+        if (direction === 'left') {
+          if (_detal > 0) {
+            newData._positionAtEnd = false
+          }
+          if (_detal > tabsWidth) {
+            _detal = tabsWidth
+          } else {
+            newData._positionAtStart = true
+          }
+        } else if (direction === 'right') {
+          if (-_detal > 0) {
+            newData._positionAtStart = false
+          }
+          if (-_detal > tabsWidth) {
+            _detal = -tabsWidth
+          } else {
+            newData._positionAtEnd = true
+          }
         }
-        this.setData({
-          _translateX: _translateX + _detal
-        })
+        newData._translateX = _translateX + _detal
+        this.setData(newData)
       }).catch(e => console.log(e))
     },
     _MoveToLeft() {
-      this._Move('left')
+      const {_positionAtStart} = this.data
+      if (!_positionAtStart) {
+        this._Move('left')
+      }
     },
     _MoveToRight() {
-      this._Move('right')
+      const {_positionAtEnd} = this.data
+      if (!_positionAtEnd) {
+        this._Move('right')
+      }
     },
     _QueryTabsContainer() {
       return new Promise((resolve) => {

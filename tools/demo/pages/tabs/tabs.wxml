@@ -28,7 +28,7 @@
   <view class="demo-box">
     <view class="tabs-wrapper">
       <mui-app-bar position="static">
-        <mui-tabs value="{{value2}}" onChange="{{SetValue2}}" variant="scrollable">
+        <mui-tabs value="{{value2}}" onChange="{{SetValue2}}">
           <mui-tab wrapped label="New Arrivals in the Longest Text of Nonfiction" value="one" />
           <mui-tab label="Item Two" value="two" />
           <mui-tab label="Item Three" value="three" />
@@ -103,5 +103,21 @@
         <mui-tab label="Item Three" />
       </mui-tabs>
     </mui-paper>
+  </view>
+  <mui-typography mClass="header2" variant="h5">可滚动的选项卡</mui-typography>
+  <view class="demo-box">
+    <view class="tabs-wrapper" style="width: 100%;">
+      <mui-app-bar position="static" color="default">
+        <mui-tabs value="{{value2}}" onChange="{{SetValue2}}" variant="scrollable">
+          <mui-tab label="Item One" value="one" />
+          <mui-tab label="Item Two" value="two" />
+          <mui-tab label="Item Three" value="three" />
+          <mui-tab label="Item Four" value="four" />
+          <mui-tab label="Item Five" value="five" />
+          <mui-tab label="Item Six" value="six" />
+          <mui-tab label="Item Seven" value="seven" />
+        </mui-tabs>
+      </mui-app-bar>
+    </view>
   </view>
 </view>

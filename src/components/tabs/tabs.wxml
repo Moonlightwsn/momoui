@@ -3,7 +3,7 @@
   style="{{mStyle}}"
 >
   <mui-button-base
-    wx:if="{{variant === 'scrollable'}}"
+    wx:if="{{variant === 'scrollable' && _showArrow}}"
     bind:tap="_MoveToLeft"
     class="mui-tabs-scroll-button"
     component="button"
@@ -18,7 +18,7 @@
     </view>
   </view>
   <mui-button-base
-    wx:if="{{variant === 'scrollable'}}"
+    wx:if="{{variant === 'scrollable' && _showArrow}}"
     bind:tap="_MoveToRight"
     class="mui-tabs-scroll-button"
     component="button"

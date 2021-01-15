@@ -308,7 +308,7 @@
       opacity: 0.8;
       flex-shrink: 0;
       .mui-button-base {
-        width: 32px;
+        width: 40px;
         height: 100%;
         &.disabled-true {
           opacity: 0;
