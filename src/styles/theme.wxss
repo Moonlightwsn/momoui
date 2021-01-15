@@ -304,10 +304,22 @@
         }
       }
     }
+    .mui-tabs-scroll-button {
+      opacity: 0.8;
+      flex-shrink: 0;
+      .mui-button-base {
+        width: 32px;
+        height: 100%;
+        &.disabled-true {
+          opacity: 0;
+          cursor: default;
+          pointer-events: none;
+        }
+      }
+    }
     .mui-tabs-scroller {
       flex: 1 1 auto;
       display: inline-block;
-      position: relative;
       white-space: nowrap;
     }
     .mui-tabs-fixed {
@@ -315,23 +327,24 @@
       overflow-x: hidden;
     }
     .mui-tabs-flex-container {
+      position: relative;
       display: flex;
       transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
       &.centered-true {
         justify-content: center;
       }
-    }
-    .mui-tabs-indicator {
-      width: 100%;
-      bottom: 0;
-      height: 2px;
-      position: absolute;
-      transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-      &.indicator-color-primary {
-        background-color: @primary_color;
-      }
-      &.indicator-color-secondary {
-        background-color: @secondary_color;
+      .mui-tabs-indicator {
+        width: 100%;
+        bottom: 0;
+        height: 2px;
+        position: absolute;
+        transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        &.indicator-color-primary {
+          background-color: @primary_color;
+        }
+        &.indicator-color-secondary {
+          background-color: @secondary_color;
+        }
       }
     }
   }

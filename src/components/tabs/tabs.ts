@@ -75,61 +75,116 @@ Component({
     _AdjustTabsOffset(activeIndex, tabsLeft, tabLeft, tabsRight, tabRight) {
       const lastActiveIndex = this._lastActiveIndex || 0
       let _translateX = 0
+      let _detal = 0
       if (lastActiveIndex < activeIndex && tabsRight < tabRight) {
-        _translateX = this.data._translateX + (tabsRight - tabRight)
+        _detal = tabsRight - tabRight
+        _translateX = this.data._translateX + _detal
       } else if (lastActiveIndex > activeIndex && tabsLeft > tabLeft) {
-        _translateX = this.data._translateX + (tabsLeft - tabLeft)
+        _detal = tabsLeft - tabLeft
+        _translateX = this.data._translateX + _detal
       }
       this._lastActiveIndex = activeIndex
-      return _translateX
+      return {_translateX, _detal}
+    },
+    _ComputeTabsPosition(activeIndex) {
+      const {_pureTabs: Tabs, variant} = this.data
+      const endTabIndex = Tabs.length - 1
+      const promises = [
+        this._QueryTabsScroller(),
+        this._QueryTabsContainer(),
+        Tabs[activeIndex]._QueryTab(),
+      ]
+      if (variant === 'scrollable') {
+        promises.push(activeIndex === 0 ? undefined : Tabs[0]._QueryTab())
+        promises.push(activeIndex === endTabIndex ? undefined : Tabs[endTabIndex]._QueryTab())
+      }
+      Promise.all(promises).then((values: any) => {
+        const [tabsView, containerView, tabView, firstTabView, lastTabView] = values
+        const {left: tabsLeft = 0, right: tabsRight = 0} = tabsView || {}
+        const {left: containerLeft = 0} = containerView || {}
+        const {left: tabLeft = 0, right: tabRight = 0, width: tabWidth = 0} = tabView || {}
+        let _positionAtStart = false
+        let _positionAtEnd = false
+        const IndicatorOffset = tabLeft - containerLeft
+        const indicatorWidth = tabWidth
+        const {_translateX, _detal} = this._AdjustTabsOffset(activeIndex, tabsLeft, tabLeft, tabsRight, tabRight)
+        if (variant === 'scrollable') {
+          const {left: firstTabLeft = 0} = firstTabView || tabView || {}
+          const {right: lastTabRight = 0} = lastTabView || tabView || {}
+          if (tabsLeft <= (firstTabLeft + _detal)) {
+            _positionAtStart = true
+          }
+          if (tabsRight >= (lastTabRight + _detal)) {
+            _positionAtEnd = true
+          }
+        }
+        this.setData({
+          _indicatorStyle: `left: ${IndicatorOffset}px; width: ${indicatorWidth}px;`,
+          _translateX,
+          _positionAtEnd,
+          _positionAtStart,
+        })
+      }).catch(e => console.log(e))
+    },
+    _Move(direction) {
+      const {_pureTabs: Tabs, _translateX} = this.data
+      const tabIndex = direction === 'left' ? 0 : Tabs.length - 1
+      Promise.all([
+        this._QueryTabsScroller(),
+        Tabs[tabIndex]._QueryTab(),
+      ]).then(values => {
+        const [tabsView, tabView] = values
+        const {left: tabsLeft, right: tabsRight = 0, width: tabsWidth} = tabsView
+        const {left: tabLeft, right: tabRight = 0} = tabView
+        let _detal = direction === 'left' ? (tabsLeft - tabLeft) : (tabsRight - tabRight)
+        if (direction === 'left' && _detal > tabsWidth) {
+          _detal = tabsWidth
+        } else if (direction === 'right' && -_detal > tabsWidth) {
+          _detal = -tabsWidth
+        }
+        this.setData({
+          _translateX: _translateX + _detal
+        })
+      }).catch(e => console.log(e))
+    },
+    _MoveToLeft() {
+      this._Move('left')
+    },
+    _MoveToRight() {
+      this._Move('right')
+    },
+    _QueryTabsContainer() {
+      return new Promise((resolve) => {
+        const query = this.createSelectorQuery()
+        query.select('.mui-tabs-flex-container').fields({
+          rect: true,
+        })
+        // query.selectViewport().scrollOffset()
+        query.exec(res => {
+          const [view/* , viewPort */] = res || {}
+          const {left = 0} = view || {}
+          // const {scrollLeft = 0} = viewPort || {}
+          const queryRes = {left}
+          resolve(queryRes)
+        })
+      })
     },
     _QueryTabsScroller() {
       return new Promise((resolve) => {
         const query = this.createSelectorQuery()
         query.select('.mui-tabs-scroller').fields({
           rect: true,
+          size: true,
         })
         // query.selectViewport().scrollOffset()
         query.exec(res => {
           const [view/* , viewPort */] = res || {}
-          const {left = 0, right = 0} = view || {}
+          const {left = 0, right = 0, width = 0} = view || {}
           // const {scrollLeft = 0} = viewPort || {}
-          const queryRes = {left, right}
+          const queryRes = {left, right, width}
           resolve(queryRes)
         })
       })
-    },
-    _ComputeIndicatorPosition(activeIndex) {
-      Promise.all([this._QueryTabsScroller(), this.data._pureTabs[activeIndex]._QueryTab()]).then((values: any) => {
-        const [tabsView, tabView] = values
-        const {left: tabsLeft = 0, right: tabsRight} = tabsView || {}
-        const {left: tabLeft = 0, right: tabRight, width: tabWidth = 0} = tabView || {}
-        const IndicatorOffset = tabLeft - tabsLeft
-        const indicatorWidth = tabWidth
-        const _translateX = this._AdjustTabsOffset(activeIndex, tabsLeft, tabLeft, tabsRight, tabRight)
-        this.setData({
-          _indicatorStyle: `left: ${IndicatorOffset}px; width: ${indicatorWidth}px;`,
-          _translateX,
-        })
-      }).catch(e => console.log(e))
-      /*
-      Promise.all(this.data._pureTabs.map(item => item._QueryTab())).then((values: any) => {
-        if (activeIndex < values.length) {
-          let offset = 0
-          const {width} = values[activeIndex]
-          for (let i = 0; i < activeIndex; i += 1) {
-            if (i === 0) {
-              console.log(values[i].scrollLeft)
-              offset += Number(values[i].scrollLeft)
-            }
-            offset += Number(values[i].width)
-          }
-          this.setData({
-            _indicatorStyle: `left: ${offset}px; width: ${width}px;`
-          })
-        }
-      }).catch(e => console.log(e))
-      */
     },
     _onChange(e, value) {
       const {onChange} = this.data

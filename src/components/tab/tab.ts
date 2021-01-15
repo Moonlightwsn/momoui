@@ -95,7 +95,7 @@ Component({
         }
         if (currentValue === target.data.value) {
           newData._selected = true
-          target._ComputeIndicatorPosition(this._defaultValue)
+          target._ComputeTabsPosition(this._defaultValue)
         }
         this.setData(newData)
       }

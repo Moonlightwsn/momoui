@@ -28,7 +28,7 @@
   <view class="demo-box">
     <view class="tabs-wrapper">
       <mui-app-bar position="static">
-        <mui-tabs value="{{value2}}" onChange="{{SetValue2}}">
+        <mui-tabs value="{{value2}}" onChange="{{SetValue2}}" variant="scrollable">
           <mui-tab wrapped label="New Arrivals in the Longest Text of Nonfiction" value="one" />
           <mui-tab label="Item Two" value="two" />
           <mui-tab label="Item Three" value="three" />
