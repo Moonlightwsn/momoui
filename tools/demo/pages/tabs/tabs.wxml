@@ -2,6 +2,7 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
+  <!--
   <mui-typography mClass="header2" variant="h5">简单的选项卡</mui-typography>
   <view class="demo-box">
     <view class="tabs-wrapper">
@@ -104,6 +105,7 @@
       </mui-tabs>
     </mui-paper>
   </view>
+  -->
   <mui-typography mClass="header2" variant="h5">可滚动的选项卡</mui-typography>
   <view class="demo-box">
     <view class="tabs-wrapper" style="width: 100%;">
@@ -118,6 +120,26 @@
           <mui-tab label="Item Seven" value="seven" />
         </mui-tabs>
       </mui-app-bar>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">垂直的选项卡</mui-typography>
+  <view class="demo-box">
+    <view class="tabs-wrapper" style="display: flex;height: 224px;">
+      <mui-tabs
+        mStyle="border-right: 1px solid rgba(0, 0, 0, 0.12);"
+        orientation="vertical"
+        variant="scrollable"
+        value="{{value2}}"
+        onChange="{{SetValue2}}"
+      >
+        <mui-tab label="Item One" value="one" />
+        <mui-tab label="Item Two" value="two" />
+        <mui-tab label="Item Three" value="three" />
+        <mui-tab label="Item Four" value="four" />
+        <mui-tab label="Item Five" value="five" />
+        <mui-tab label="Item Six" value="six" />
+        <mui-tab label="Item Seven" value="seven" />
+      </mui-tabs>
     </view>
   </view>
 </view>

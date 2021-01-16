@@ -21,16 +21,15 @@
   sessionFrom="{{sessionFrom}}"
   showMessageCard="{{showMessageCard}}"
 >
-  <mui-icon wx:if="{{loading}}" mClass="mui-button-loading" name="progress-circle" spin />
   <slot />
   <mui-icon
-    wx:if="{{icon}}"
+    wx:if="{{loading || icon}}"
     color="{{iconColor || icon.color}}"
-    name="{{icon.name || icon}}"
-    mClass="icon-in-button icon-position-{{iconPosition || icon.position}} {{icon.class}}"
+    name="{{loading ? 'progress-circle' : (icon.name || icon)}}"
+    mClass="icon-in-button icon-position-{{iconPosition || icon.position}} {{loading ? 'mui-button-loading' : ''}} {{icon.class}}"
     mStyle="{{icon.style}}"
     size="{{iconSize || icon.size}}"
-    spin="{{iconSpin || icon.spin}}"
+    spin="{{loading || iconSpin || icon.spin}}"
   />
   <slot wx:else name="icon" />
 </mui-button-base>

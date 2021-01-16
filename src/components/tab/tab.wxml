@@ -1,11 +1,12 @@
 <mui-button-base
   class="_mui-tab-root mui mui-tab-root mui-variant-{{variant}} selected-{{_selected}} wrapped-{{wrapped}}"
-  mClass="{{mClass}}"
+  mClass="mui-button {{mClass}}"
   mStyle="{{mStyle}}"
   bind:tap="_Select"
   component="button"
   disabled="{{disabled}}"
   disableRipple="{{disableRipple}}"
+  hoverClass="{{disabled ? '' : (hoverClass ? hoverClass : 'mui-button-hover')}}"
 >
   <view class="mui-tab-wrapper">
     <block wx:if="label">{{label}}</block>

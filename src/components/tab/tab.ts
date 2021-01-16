@@ -68,16 +68,23 @@ Component({
           size: true,
           rect: true,
         })
-        // query.selectViewport().scrollOffset()
         query.exec(res => {
-          const [view/* , viewPort */] = res || {}
-          const {width = 0, left = 0, right = 0} = view || {}
-          // const {scrollLeft = 0} = viewPort || {}
+          const [view] = res || {}
+          const {
+            width = 0,
+            height = 0,
+            left = 0,
+            right = 0,
+            top = 0,
+            bottom = 0,
+          } = view || {}
           const queryRes = {
             width,
+            height,
             left,
             right,
-            // scrollLeft,
+            top,
+            bottom,
           }
           resolve(queryRes)
         })
