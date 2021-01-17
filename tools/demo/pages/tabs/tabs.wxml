@@ -2,15 +2,14 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
-  <!--
   <mui-typography mClass="header2" variant="h5">简单的选项卡</mui-typography>
   <view class="demo-box">
     <view class="tabs-wrapper">
       <mui-app-bar position="static">
         <mui-tabs value="{{value}}" onChange="{{SetValue}}">
-          <mui-tab label="Item One" />
-          <mui-tab label="Item Two" />
-          <mui-tab label="Item Three" />
+          <mui-tab label="Item One" icon="like" />
+          <mui-tab label="Item Two" icon="user" />
+          <mui-tab label="Item Three" icon="mail" />
         </mui-tabs>
       </mui-app-bar>
       <mui-tab-panel wx:if="{{value === 0}}">
@@ -50,7 +49,7 @@
   <view class="demo-box">
     <mui-paper square>
       <mui-tabs value="{{value}}" indicatorColor="primary" textColor="primary" onChange="{{SetValue}}">
-        <mui-tab label="Active" />
+        <mui-tab label="Active" icon="like" />
         <mui-tab disabled label="Disabled" />
         <mui-tab label="Active" />
       </mui-tabs>
@@ -105,7 +104,6 @@
       </mui-tabs>
     </mui-paper>
   </view>
-  -->
   <mui-typography mClass="header2" variant="h5">可滚动的选项卡</mui-typography>
   <view class="demo-box">
     <view class="tabs-wrapper" style="width: 100%;">

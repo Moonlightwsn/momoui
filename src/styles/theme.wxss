@@ -418,6 +418,9 @@
       align-items: center;
       flex-direction: column;
       justify-content: center;
+      .mui-tab-icon {
+        font-size: 24px;
+      }
     }
   }
 

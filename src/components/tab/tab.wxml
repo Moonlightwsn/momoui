@@ -9,6 +9,18 @@
   hoverClass="{{disabled ? '' : (hoverClass ? hoverClass : 'mui-button-hover')}}"
 >
   <view class="mui-tab-wrapper">
+    <mui-icon
+      wx:if="{{icon}}"
+      color="{{icon.color}}"
+      mClass="mui-tab-icon {{icon.class}}"
+      mStyle="{{icon.style}}"
+      name="{{icon.name || icon}}"
+      size="{{icon.size}}"
+      spin="{{icon.spin}}"
+      src="{{icon.src}}"
+      rerender="{{_selected}}"
+    />
+    <slot wx:else name="icon" />
     <block wx:if="label">{{label}}</block>
     <slot name="label" />
   </view>

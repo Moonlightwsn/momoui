@@ -164,7 +164,7 @@ Component({
     }
   },
   observers: {
-    'name, color, size, src, mClass, mStyle, progressProps, rerender': function (name, color, size, src, mClass, mStyle, progressProps, rerender) {
+    'name, color, size, src, mClass, mStyle, progressProps, rerender': function (name, color, size, src) {
       this._Pretreatment(name, color, size, src)
     }
   },
