@@ -262,7 +262,12 @@
     &.orientation-vertical {
       height: 100%;
       flex-direction: column;
+      .mui-tabs-fixed {
+        height: 100%;
+        overflow-y: hidden;
+      }
       .mui-tabs-flex-container {
+        height: 100%;
         flex-direction: column;
         .mui-tabs-indicator {
           height: 0;
@@ -278,6 +283,10 @@
       }
     }
     &.orientation-horizontal {
+      .mui-tabs-fixed {
+        width: 100%;
+        overflow-x: hidden;
+      }
       .mui-tabs-flex-container {
         .mui-tabs-indicator {
           width: 0;
@@ -353,10 +362,6 @@
       flex: 1 1 auto;
       display: inline-block;
       white-space: nowrap;
-    }
-    .mui-tabs-fixed {
-      width: 100%;
-      overflow-x: hidden;
     }
     .mui-tabs-flex-container {
       position: relative;
