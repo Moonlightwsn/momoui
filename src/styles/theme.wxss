@@ -96,11 +96,29 @@
   }
   /** mui-backdrop end */
 
-  /** popover */
-  &.mui-popover-anchor {
-    /* display: inline-block; */
+  /** mui-drawer */
+  &.mui-drawer-root {
+    &.drawer-docker {
+      flex: 0 0 auto;
+    }
+    .drawer-paper {
+      top: 0;
+      flex: 1 0 auto;
+      height: 100%;
+      display: flex;
+      outline: 0;
+      z-index: 1200;
+      position: fixed;
+      overflow-y: auto;
+      flex-direction: column;
+      -webkit-overflow-scrolling: touch;
+      &.anchor-left {
+        left: 0;
+        right: auto;
+      }
+    }
   }
-  /** popover end */
+  /** mui-drawer end */
 
   /** mui-paper */
   &.mui-paper-root {

@@ -1,0 +1,13 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography mClass="header2" variant="h5">永久抽屉</mui-typography>
+  <view class="demo-box">
+    <view style="flex-grow: 1;">
+      <mui-drawer variant="permanent">
+        <view>test</view>
+      </mui-drawer>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<template name="drawer">
+  <view
+    class="mui mui-drawer-root drawer-{{drawerType}} {{mClass}}"
+    style="{{mStyle}}"
+  >
+    <mui-paper
+      elevation="{{elevation}}"
+      mClass="drawer-paper anchor-{{anchor}}"
+      mStyle="width: {{width}}px;{{_transitionStyle}}"
+    >
+      <slot />
+    </mui-paper>
+  </view>
+</template>
+<block wx:if="{{variant !== 'temporary'}}">
+  <template is="drawer" data="{{ ...{anchor: anchor, elevation: 0, mClass: mClass, mStyle: mStyle, drawerType: 'docker', width: width, _transitionStyle: _transitionStyle} }}" />
+</block>
+<block wx:else>
+  <template is="drawer" data="{{ ...{anchor: anchor, elevation: elevation, mClass: mClass, mStyle: mStyle, drawerType: 'modal', width: width, _transitionStyle: _transitionStyle} }}" />
+</block>

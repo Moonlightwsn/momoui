@@ -4,6 +4,7 @@
     "pages/bottom-navigation/bottom-navigation",
     "pages/button/button",
     "pages/button-group/button-group",
+    "pages/drawer/drawer",
     "pages/form/form",
     "pages/list/list",
     "pages/menu/menu",

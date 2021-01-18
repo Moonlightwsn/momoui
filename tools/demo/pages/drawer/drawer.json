@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mui-drawer": "../../components/drawer/drawer",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

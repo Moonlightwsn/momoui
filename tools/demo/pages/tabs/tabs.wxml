@@ -34,13 +34,13 @@
           <mui-tab label="Item Three" value="three" />
         </mui-tabs>
       </mui-app-bar>
-      <mui-tab-panel wx:if="{{value === 'one'}}">
+      <mui-tab-panel wx:if="{{value2 === 'one'}}">
         Item One
       </mui-tab-panel>
-      <mui-tab-panel wx:if="{{value === 'two'}}">
+      <mui-tab-panel wx:if="{{value2 === 'two'}}">
         Item Two
       </mui-tab-panel>
-      <mui-tab-panel wx:if="{{value === 'three'}}">
+      <mui-tab-panel wx:if="{{value2 === 'three'}}">
         Item Three
       </mui-tab-panel>
     </view>
@@ -48,7 +48,7 @@
   <mui-typography mClass="header2" variant="h5">不可用的选项卡</mui-typography>
   <view class="demo-box">
     <mui-paper square>
-      <mui-tabs value="{{value}}" indicatorColor="primary" textColor="primary" onChange="{{SetValue}}">
+      <mui-tabs value="{{value}}" indicatorColor="primary" textColor="secondary" onChange="{{SetValue}}">
         <mui-tab label="Active" icon="like" />
         <mui-tab disabled label="Disabled" />
         <mui-tab label="Active" />
@@ -138,6 +138,27 @@
         <mui-tab label="Item Six" value="six" />
         <mui-tab label="Item Seven" value="seven" />
       </mui-tabs>
+      <mui-tab-panel wx:if="{{value2 === 'one'}}">
+        Item One
+      </mui-tab-panel>
+      <mui-tab-panel wx:if="{{value2 === 'two'}}">
+        Item Two
+      </mui-tab-panel>
+      <mui-tab-panel wx:if="{{value2 === 'three'}}">
+        Item Three
+      </mui-tab-panel>
+      <mui-tab-panel wx:if="{{value2 === 'four'}}">
+        Item Four
+      </mui-tab-panel>
+      <mui-tab-panel wx:if="{{value2 === 'five'}}">
+        Item Five
+      </mui-tab-panel>
+      <mui-tab-panel wx:if="{{value2 === 'six'}}">
+        Item Six
+      </mui-tab-panel>
+      <mui-tab-panel wx:if="{{value2 === 'seven'}}">
+        Item Seven
+      </mui-tab-panel>
     </view>
   </view>
 </view>

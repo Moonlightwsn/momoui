@@ -52,6 +52,11 @@
           "scene": null
         },
         {
+          "name": "drawer",
+          "pathName": "pages/drawer/drawer",
+          "scene": null
+				},
+        {
           "name": "form",
           "pathName": "pages/form/form",
           "scene": null

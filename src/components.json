@@ -29,6 +29,7 @@
     "dialog-content": "./components/dialog-content/dialog-content",
     "dialog-title": "./components/dialog-title/dialog-title",
     "divider": "./components/divider/divider",
+    "drawer": "./components/drawer/drawer",
 
     "fab": "./components/fab/fab",
     "form-control": "./components/form-control/form-control",

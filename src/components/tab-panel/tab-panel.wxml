@@ -2,5 +2,7 @@
   class="mui mui-tab-panel {{mClass}}"
   style="{{mStyle}}"
 >
-  <slot />
+  <mui-typography>
+    <slot />
+  </mui-typography>
 </view>
