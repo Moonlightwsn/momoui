@@ -1,29 +1,6 @@
 import muiBase from '../../behaviors/muiBase.ts'
 import {debounce} from '../../common/utils.ts'
 
-/* eslint-disable */
-const app = getApp()
-/* eslint-disable */
-let currentTheme = app.momouiTheme
-if (!currentTheme) {
-  try {
-    const sysInfo = wx.getSystemInfoSync()
-    currentTheme = (sysInfo && sysInfo.theme) || 'light'
-  } catch(e) {
-    console.log(e)
-    currentTheme = 'light'
-  }
-}
-
-const themeListeners = []
-wx.onThemeChange((obj) => {
-  if (obj && obj.theme) {
-    themeListeners.forEach((listener) => {
-      listener(obj.theme)
-    })
-  }
-})
-
 Component({
   behaviors: [muiBase],
   properties: {
@@ -47,7 +24,6 @@ Component({
   },
   lifetimes: {
     created() {
-      this._currentTheme = currentTheme
       if (!this._ArrangeActions) {
         this._ArrangeActions = debounce(() => {
           const newActions = this.data._pureActions
@@ -60,23 +36,7 @@ Component({
           }
         }, 50)
       }
-      this.listener = (theme) => {
-        const newActions = this.data._pureActions
-        this._currentTheme = currentTheme = theme
-        newActions.forEach(item => {
-          item._ReRenderControlledProps()
-        })
-      }
-      themeListeners.push(this.listener)
     },
-  },
-  detached() {
-    if (this.listener) {
-      const index = themeListeners.indexOf(this.listener)
-      if (index > -1) {
-        themeListeners.splice(index, 1)
-      }
-    }
   },
   relations: {
     '../bottom-navigation-action/bottom-navigation-action': {
@@ -98,7 +58,8 @@ Component({
     _onChange(e, value) {
       const {onChange} = this.data
       if (onChange && typeof onChange === 'function') {
-        onChange(e, value)
+        e.detail.current = value
+        onChange(e)
       }
     },
   },

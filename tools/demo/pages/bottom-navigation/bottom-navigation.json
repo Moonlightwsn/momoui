@@ -4,6 +4,8 @@
     "mui-bottom-navigation-action": "../../components/bottom-navigation-action/bottom-navigation-action",
     "mui-button": "../../components/button/button",
     "mui-icon": "../../components/icon/icon",
+    "mui-tabs": "../../components/tabs/tabs",
+    "mui-tab": "../../components/tab/tab",
     "mui-typography": "../../components/typography/typography"
   }
 }

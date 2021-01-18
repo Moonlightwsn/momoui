@@ -14,14 +14,6 @@ Component({
       optionalTypes: [Object],
       value: null,
     },
-    activeIconColor: {
-      type: String,
-      value: null,
-    },
-    inactiveIconColor: {
-      type: String,
-      value: null,
-    },
     label: {
       type: String,
       value: null,
@@ -38,7 +30,6 @@ Component({
   },
   data: {
     _selected: false,
-    _iconColor: null,
     _hideInactiveAction: true,
   },
   lifetimes: {
@@ -65,7 +56,6 @@ Component({
       if (target) {
         const newData:any = {}
         newData._selected = false
-        newData._iconColor = this.data.inactiveIconColor || (target._currentTheme === 'light' ? 'rgba(0, 0, 0, 0.54)' : 'rgba(255, 255, 255, 0.7)')
         newData._hideInactiveAction = !!target._hideInactiveAction
         let currentValue = this.data.value
         if (!this._propIsSet || !this._propIsSet.showLabel) {
@@ -77,7 +67,6 @@ Component({
         }
         if (currentValue === target.data.value) {
           newData._selected = true
-          newData._iconColor = this.data.activeIconColor || (target._currentTheme === 'light' ? '#1976d2' : '#90caf9')
         }
         this.setData(newData)
       }

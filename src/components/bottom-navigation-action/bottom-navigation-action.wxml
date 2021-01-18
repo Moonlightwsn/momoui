@@ -1,25 +1,29 @@
 <mui-button-base
-  class="mui mui-bottom-navigation-action"
-  mClass="mui-bottom-navigation-action-wrapper selected-{{_selected}} only-icon-{{!(showLabel || _selected || !_hideInactiveAction)}} {{mClass}}"
+  class="mui mui-bottom-navigation-action selected-{{_selected}} only-icon-{{!(showLabel || _selected || !_hideInactiveAction)}}"
+  mClass="mui-button {{mClass}}"
   mStyle="{{mStyle}}"
   bind:tap="_Select"
+  component="button"
+  hoverClass="{{disabled ? '' : (hoverClass ? hoverClass : 'mui-button-hover')}}"
 >
-  <mui-icon
-    wx:if="{{icon}}"
-    color="{{icon.color || _iconColor}}"
-    disableThemeWatcher
-    mClass="mui-bottom-navigation-action-icon {{icon.class}}"
-    mStyle="{{icon.style}}"
-    name="{{icon.name || icon}}"
-    size="{{icon.size}}"
-    spin="{{icon.spin}}"
-    src="{{icon.src}}"
-  />
-  <slot wx:else name="icon" />
-  <label class="mui-bottom-navigation-action-label">
-    <block wx:if="{{label}}">
-      {{label}}
-    </block>
-    <slot wx:else name="label" />
-  </label>
+  <view class="mui-bottom-navigation-action-wrapper">
+    <mui-icon
+      wx:if="{{icon}}"
+      color="{{icon.color}}"
+      mClass="mui-bottom-navigation-action-icon {{icon.class}}"
+      mStyle="{{icon.style}}"
+      name="{{icon.name || icon}}"
+      size="{{icon.size}}"
+      spin="{{icon.spin}}"
+      src="{{icon.src}}"
+      rerender="{{_selected}}"
+    />
+    <slot wx:else name="icon" />
+    <label class="mui-bottom-navigation-action-label">
+      <block wx:if="{{label}}">
+        {{label}}
+      </block>
+      <slot wx:else name="label" />
+    </label>
+  </view>
 </mui-button-base>

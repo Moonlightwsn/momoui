@@ -4,6 +4,7 @@ Page({
   behaviors: [themeMixin],
   data: {
     value: 0,
+    icon: 'like',
     test: true,
   },
   onLoad() {
@@ -11,9 +12,10 @@ Page({
       SetValue: this.SetValue.bind(this)
     })
   },
-  SetValue(e, value) {
+  SetValue(e) {
+    const {current} = e.detail
     this.setData({
-      value,
+      value: current,
     })
   },
   test() {
