@@ -96,30 +96,6 @@
   }
   /** mui-backdrop end */
 
-  /** mui-drawer */
-  &.mui-drawer-root {
-    &.drawer-docker {
-      flex: 0 0 auto;
-    }
-    .drawer-paper {
-      top: 0;
-      flex: 1 0 auto;
-      height: 100%;
-      display: flex;
-      outline: 0;
-      z-index: 1200;
-      position: fixed;
-      overflow-y: auto;
-      flex-direction: column;
-      -webkit-overflow-scrolling: touch;
-      &.anchor-left {
-        left: 0;
-        right: auto;
-      }
-    }
-  }
-  /** mui-drawer end */
-
   /** mui-paper */
   &.mui-paper-root {
     display: block;
@@ -212,6 +188,42 @@
     }
   }
   /** mui-paper end */
+
+  /** mui-drawer */
+  &.mui-drawer-root {
+    &.drawer-docker {
+      flex: 0 0 auto;
+      height: 100%;
+      .drawer-paper {
+        &.anchor-left {
+          border-right: 1px solid rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+    .drawer-paper {
+      top: 0;
+      flex: 1 0 auto;
+      height: 100%;
+      display: flex;
+      outline: 0;
+      z-index: 1200;
+      overflow-y: auto;
+      overflow-x: hidden;
+      flex-direction: column;
+      -webkit-overflow-scrolling: touch;
+      &.position-fixed {
+        position: fixed;
+      }
+      &.position-absolute {
+        position: absolute;
+      }
+      &.anchor-left {
+        left: 0;
+        right: auto;
+      }
+    }
+  }
+  /** mui-drawer end */
 
   /** mui-app-bar */
   &.mui-app-bar {

@@ -12,6 +12,10 @@ Component({
       type: Number,
       value: 16,
     },
+    position: {
+      type: String,
+      value: 'fixed',
+    },
     transitionType: {
       type: String,
       value: 'slide',
@@ -22,16 +26,11 @@ Component({
     },
     width: {
       type: Number,
-      value: 80,
+      value: 57,
     },
   },
   data: {
     _transitionStyle: '',
-  },
-  lifetimes: {
-    attached() {
-      console.log(this.data.width)
-    }
   },
   observers: {},
   options: {

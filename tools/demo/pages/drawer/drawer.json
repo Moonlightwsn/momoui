@@ -1,6 +1,11 @@
 {
   "usingComponents": {
+    "mui-app-bar": "../../components/app-bar/app-bar",
+    "mui-divider": "../../components/divider/divider",
     "mui-drawer": "../../components/drawer/drawer",
+    "mui-list": "../../components/list/list",
+    "mui-list-item": "../../components/list-item/list-item",
+    "mui-toolbar": "../../components/toolbar/toolbar",
     "mui-typography": "../../components/typography/typography"
   }
 }

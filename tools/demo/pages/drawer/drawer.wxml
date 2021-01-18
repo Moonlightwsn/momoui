@@ -2,12 +2,37 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
-  <mui-typography mClass="header2" variant="h5">永久抽屉</mui-typography>
+  <mui-typography mClass="header2" variant="h5">迷你变体抽屉</mui-typography>
   <view class="demo-box">
-    <view style="flex-grow: 1;">
-      <mui-drawer variant="permanent">
-        <view>test</view>
-      </mui-drawer>
+    <view style="flex-grow: 1;position: relative;height: 400px;">
+      <mui-app-bar position="absolute" mStyle="width: calc(100% - {{width}}px);margin-left: {{width}}px;">
+        <mui-toolbar>
+          <mui-typography variant="h6" noWrap>
+            Responsive drawer
+          </mui-typography>
+        </mui-toolbar>
+      </mui-app-bar>
+      <view style="width: {{width}}px;flex-shrink: 0;">
+        <mui-drawer variant="permanent" position="absolute" width="{{width}}" mStyle="flex-shrink: 0;white-space: nowrap;">
+          <view class="mui mui-toolbar gutters-true variant-regular" />
+          <mui-divider />
+          <mui-list>
+            <mui-list-item button icon="send" primary="Sent mail" />
+            <mui-list-item button icon="mail" primary="Drafts" />
+            <mui-list-item button icon="mail" primary="Inbox" />
+            <mui-list-item button icon="send" primary="Sent mail" />
+          </mui-list>
+          <mui-divider />
+          <mui-list>
+            <mui-list-item button icon="send" primary="Sent mail" />
+            <mui-list-item button icon="mail" primary="Drafts" />
+            <mui-list-item button icon="mail" primary="Inbox" />
+          </mui-list>
+        </mui-drawer>
+      </view>
+      <view style="flex-grow: 1;padding: 24px;">
+        <view />
+      </view>
     </view>
   </view>
 </view>
