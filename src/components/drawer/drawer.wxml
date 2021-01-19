@@ -18,5 +18,12 @@
   <template is="drawer" data="{{ ...{..._templateData, _open: _open, _transitionStyle: _transitionStyle} }}" />
 </block>
 <block wx:else>
-  <template is="drawer" data="{{ ...{..._templateData, _open: _open, _transitionStyle: _transitionStyle} }}" />
+  <view
+    wx:if="{{_open}}"
+    class="mui mui-backdrop"
+    style="z-index: 1199;"
+    bind:tap="_BackdropClick"
+  >
+    <template is="drawer" data="{{ ...{..._templateData, _transitionStyle: _transitionStyle} }}" />
+  </view>
 </block>

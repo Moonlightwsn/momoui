@@ -1,7 +1,61 @@
+<template name="drawer-list">
+  <block>
+    <mui-list>
+      <mui-list-item button icon="send" primary="Sent mail" />
+      <mui-list-item button icon="mail" primary="Drafts" />
+      <mui-list-item button icon="mail" primary="Inbox" />
+      <mui-list-item button icon="send" primary="Sent mail" />
+    </mui-list>
+    <mui-divider />
+    <mui-list>
+      <mui-list-item button icon="send" primary="Sent mail" />
+      <mui-list-item button icon="mail" primary="Drafts" />
+      <mui-list-item button icon="mail" primary="Inbox" />
+    </mui-list>
+  </block>
+</template>
+<template name="content">
+  <block>
+    <mui-typography paragraph>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
+      facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
+      gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
+      donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
+      adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
+      Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
+      imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
+      arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
+      donec massa sapien faucibus et molestie ac.
+    </mui-typography>
+    <mui-typography paragraph>
+      Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
+      facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
+      tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
+      consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
+      vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
+      hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
+      tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
+      nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
+      accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
+    </mui-typography>
+  </block>
+</template>
 <view
   data-momoui-theme="{{theme}}"
   class="page"
 >
+  <mui-typography mClass="header2" variant="h5">临时抽屉</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">你可以打开或关闭一个临时的导航抽屉。 抽屉组件的默认状态是关闭，而选中一个区则会触发抽屉组件在任何其他内容之上呈现</mui-typography>
+  <view class="demo-box">
+    <mui-button bindtap="Open" data-anchor="left">LEFT</mui-button>
+    <mui-button bindtap="Open" data-anchor="right">RIGHT</mui-button>
+    <mui-button bindtap="Open" data-anchor="top">TOP</mui-button>
+    <mui-button bindtap="Open" data-anchor="bottom">BOTTOM</mui-button>
+    <mui-drawer anchor="{{anchor}}" open="{{open}}" onClose="{{Close}}">
+      <template is="drawer-list" />
+    </mui-drawer>
+  </view>
   <mui-typography mClass="header2" variant="h5">持久的抽屉</mui-typography>
   <mui-typography mClass="paragraph" variant="body2">持久抽屉可以在打开或关闭状态之间切换。 抽屉与内容位于同一表面的高度上。 它默认情况下是关闭的，可通过选择菜单图标打开，直到用户选择关闭之前，它都会保持打开状态</mui-typography>
   <view class="demo-box">
@@ -19,45 +73,12 @@
           <mui-icon-button bindtap="Close2" icon="arrow-left-1" />
         </view>
         <mui-divider />
-        <mui-list>
-          <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="mail" primary="Drafts" />
-          <mui-list-item button icon="mail" primary="Inbox" />
-          <mui-list-item button icon="send" primary="Sent mail" />
-        </mui-list>
-        <mui-divider />
-        <mui-list>
-          <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="mail" primary="Drafts" />
-          <mui-list-item button icon="mail" primary="Inbox" />
-        </mui-list>
+        <template is="drawer-list" />
       </mui-drawer>
       <view class="{{open2 ? 'open-content' : 'close-content'}}" style="overflow-y: auto;height: 100%;">
         <view style="flex-grow: 1;padding: 24px;">
           <view class="mui mui-toolbar gutters-true variant-regular" />
-          <mui-typography paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-            facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-            gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-            donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-            adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-            Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-            imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-            arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-            donec massa sapien faucibus et molestie ac.
-          </mui-typography>
-          <mui-typography paragraph>
-            Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-            facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-            tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-            consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-            vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-            hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-            tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-            nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-            accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-          </mui-typography>
+          <template is="content" />
         </view>
       </view>
     </view>
@@ -66,7 +87,7 @@
   <mui-typography mClass="paragraph" variant="body2">在这种情况下，持久的抽屉会更改其宽度。 它的静止状态是一个与其内容相同的迷你抽屉，由一个应用栏夹住。 展开后，它将显示为标准的持久的导航抽屉</mui-typography>
   <view class="demo-box">
     <view style="flex-grow: 1;position: relative;height: 400px;display: flex;">
-      <mui-app-bar position="absolute" mStyle="width: calc(100% - {{width3}}px);margin-left: {{width3}}px;">
+      <mui-app-bar position="absolute" mClass="{{open3 ? 'open-app-bar' : 'close-app-bar'}}" mStyle="width: calc(100% - {{width3}}px);margin-left: {{width3}}px;">
         <mui-toolbar>
           <mui-icon-button wx:if="{{!open3}}" bindtap="Open3" color="inherit" edge="start" icon="menu" mStyle="margin-right: 16px;" />
           <mui-typography variant="h6" noWrap>
@@ -95,35 +116,15 @@
       <view style="overflow-y: auto;height: 100%;">
         <view style="flex-grow: 1;padding: 24px;">
           <view class="mui mui-toolbar gutters-true variant-regular" />
-          <mui-typography paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-            facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-            gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-            donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-            adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-            Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-            imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-            arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-            donec massa sapien faucibus et molestie ac.
-          </mui-typography>
-          <mui-typography paragraph>
-            Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-            facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-            tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-            consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-            vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-            hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-            tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-            nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-            accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-          </mui-typography>
+          <template is="content" />
         </view>
       </view>
     </view>
   </view>
   <mui-typography mClass="header2" variant="h5">永久抽屉</mui-typography>
   <mui-typography mClass="paragraph" variant="body2">永久抽屉始终可见并固定在左侧，与内容或背景位于同一高度。 他们无法被关闭</mui-typography>
+  <mui-typography mClass="header2" variant="h5">全高导航栏</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">一个从左到右层次结构的信息消费，是应用程序需要重视的</mui-typography>
   <view class="demo-box">
     <view style="flex-grow: 1;position: relative;height: 400px;display: flex;">
       <mui-app-bar position="absolute" mStyle="width: calc(100% - {{width}}px);margin-left: {{width}}px;">
@@ -152,29 +153,75 @@
       <view style="overflow-y: auto;height: 100%;">
         <view style="flex-grow: 1;padding: 24px;">
           <view class="mui mui-toolbar gutters-true variant-regular" />
-          <mui-typography paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-            facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-            gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-            donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-            adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-            Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-            imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-            arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-            donec massa sapien faucibus et molestie ac.
+          <template is="content" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="demo-box" style="margin-top: 24px">
+    <view style="flex-grow: 1;position: relative;height: 400px;display: flex;">
+      <mui-app-bar position="absolute" mStyle="width: calc(100% - {{width}}px);margin-right: {{width}}px;">
+        <mui-toolbar>
+          <mui-typography variant="h6" noWrap>
+            Responsive drawer
           </mui-typography>
-          <mui-typography paragraph>
-            Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-            facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-            tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-            consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-            vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-            hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-            tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-            nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-            accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
+        </mui-toolbar>
+      </mui-app-bar>
+      <view style="overflow-y: auto;height: 100%;">
+        <view style="flex-grow: 1;padding: 24px;">
+          <view class="mui mui-toolbar gutters-true variant-regular" />
+          <template is="content" />
+        </view>
+      </view>
+      <mui-drawer anchor="right" variant="permanent" position="absolute" width="{{width}}" mStyle="width: {{width}}px;flex-shrink: 0;">
+        <view class="mui mui-toolbar gutters-true variant-regular" />
+        <mui-divider />
+        <mui-list>
+          <mui-list-item button icon="send" primary="Sent mail" />
+          <mui-list-item button icon="mail" primary="Drafts" />
+          <mui-list-item button icon="mail" primary="Inbox" />
+          <mui-list-item button icon="send" primary="Sent mail" />
+        </mui-list>
+        <mui-divider />
+        <mui-list>
+          <mui-list-item button icon="send" primary="Sent mail" />
+          <mui-list-item button icon="mail" primary="Drafts" />
+          <mui-list-item button icon="mail" primary="Inbox" />
+        </mui-list>
+      </mui-drawer>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">从应用栏下开始分割</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">一些专注于生产力的应用，需要保持在整个屏幕上的平衡</mui-typography>
+  <view class="demo-box">
+    <view style="flex-grow: 1;position: relative;height: 400px;display: flex;">
+      <mui-app-bar position="absolute" mStyle="z-index: 1201;">
+        <mui-toolbar>
+          <mui-typography variant="h6" noWrap>
+            Responsive drawer
           </mui-typography>
+        </mui-toolbar>
+      </mui-app-bar>
+      <mui-drawer variant="permanent" position="absolute" width="{{width}}" mStyle="width: {{width}}px;flex-shrink: 0;">
+        <view class="mui mui-toolbar gutters-true variant-regular" />
+        <mui-divider />
+        <mui-list>
+          <mui-list-item button icon="send" primary="Sent mail" />
+          <mui-list-item button icon="mail" primary="Drafts" />
+          <mui-list-item button icon="mail" primary="Inbox" />
+          <mui-list-item button icon="send" primary="Sent mail" />
+        </mui-list>
+        <mui-divider />
+        <mui-list>
+          <mui-list-item button icon="send" primary="Sent mail" />
+          <mui-list-item button icon="mail" primary="Drafts" />
+          <mui-list-item button icon="mail" primary="Inbox" />
+        </mui-list>
+      </mui-drawer>
+      <view style="overflow-y: auto;height: 100%;">
+        <view style="flex-grow: 1;padding: 24px;">
+          <view class="mui mui-toolbar gutters-true variant-regular" />
+          <template is="content" />
         </view>
       </view>
     </view>

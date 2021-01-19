@@ -195,8 +195,14 @@
       flex: 0 0 auto;
       height: 100%;
       .drawer-paper {
+        border-width: 0;
+        border-color: rgba(0, 0, 0, 0.12);
+        border-style: solid;
         &.anchor-left {
-          border-right: 1px solid rgba(0, 0, 0, 0.12);
+          border-right-width: 1px;
+        }
+        &.anchor-right {
+          border-left-width: 1px;
         }
       }
     }
@@ -220,6 +226,24 @@
       &.anchor-left {
         left: 0;
         right: auto;
+      }
+      &.anchor-right {
+        left: auto;
+        right: 0;
+      }
+      &.anchor-top {
+        top: 0;
+        bottom: auto;
+        left: 0;
+        right: 0;
+        max-height: 100%;
+      }
+      &.anchor-bottom {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-height: 100%;
       }
     }
   }
@@ -3261,6 +3285,14 @@
       background-color: #424242;
       &.mui-variant-outlined {
         border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+    }
+
+    &.mui-drawer-root {
+      &.drawer-docker {
+        .drawer-paper {
+          border-color: rgba(255, 255, 255, 0.12);
+        }
       }
     }
 

@@ -23,7 +23,7 @@ Component({
     },
   },
   methods: {
-    _backdropClick() {
+    _BackdropClick() {
       const {disableBackdropClick, onBackdropClick} = this.data
       if (onBackdropClick && typeof onBackdropClick === 'function') {
         onBackdropClick()

@@ -8,6 +8,10 @@ Component({
       type: String,
       value: 'left',
     },
+    disableBackdropClick: {
+      type: Boolean,
+      value: false,
+    },
     elevation: {
       type: Number,
       value: 16,
@@ -15,6 +19,11 @@ Component({
     height: {
       type: Number,
       value: 256,
+    },
+    onBackdropClick: {
+      // @ts-ignore
+      type: Function,
+      value: null,
     },
     position: {
       type: String,
@@ -47,6 +56,15 @@ Component({
     },
   },
   methods: {
+    _BackdropClick() {
+      const {disableBackdropClick, onBackdropClick} = this.data
+      if (onBackdropClick && typeof onBackdropClick === 'function') {
+        onBackdropClick()
+      }
+      if (!disableBackdropClick) {
+        this._close()
+      }
+    },
     _GenTemplateData(params) {
       this._initTemplateData = true
       const {
@@ -66,15 +84,18 @@ Component({
         persistent: false,
         position,
       }
+      let _transitionStyle = ''
       if (variant !== 'temporary') {
         _templateData.drawerType = 'docker'
         _templateData.elevation = 0
+        if (variant === 'permanent') {
+          _transitionStyle = 'transition: width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;'
+        } else if (variant === 'persistent') {
+          _templateData.persistent = true
+        }
       } else {
         _templateData.drawerType = 'modal'
         _templateData.elevation = elevation
-      }
-      if (variant === 'persistent') {
-        _templateData.persistent = true
       }
       let _sizeStyle = ''
       let translate = 0
@@ -99,7 +120,7 @@ Component({
       const _startStyle = `transform: translate${direction}(${translate}px);`
       _templateData._startStyle = _startStyle
       _templateData._sizeStyle = _sizeStyle
-      this.setData({_templateData, _startStyle})
+      this.setData({_templateData, _startStyle, _transitionStyle})
     },
   },
   observers: {

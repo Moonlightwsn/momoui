@@ -8,6 +8,19 @@ Page({
     width3: 57,
     open2: false,
     open3: false,
+    anchor: 'left',
+  },
+  onLoad() {
+    this.setData({
+      Close: this.Close.bind(this),
+    })
+  },
+  Open(e) {
+    const {target: {dataset: {anchor = 'left'}}} = e
+    this.setData({open: true, anchor})
+  },
+  Close() {
+    this.setData({open: false})
   },
   Open2() {
     this.setData({open2: true})
