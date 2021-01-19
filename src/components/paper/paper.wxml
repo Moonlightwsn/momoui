@@ -1,6 +1,24 @@
-<view
-  class="mui mui-paper-root {{muiClasses}} elevation-{{elevation}} {{square ? 'paper-square' : ''}}"
-  style="{{mStyle}}"
->
-  <slot />
-</view>
+<block wx:if="{{scrollView}}">
+  <scroll-view
+    class="mui mui-paper-root {{muiClasses}} elevation-{{elevation}} {{square ? 'paper-square' : ''}}"
+    style="{{mStyle}}"
+    scrollX="{{scrollX}}"
+    scrollY="{{scrollY}}"
+    scrollTop="{{scrollTop}}"
+    scrollLeft="{{scrollLeft}}"
+    scrollIntoView="{{scrollIntoView}}"
+    scrollWithAnimation="{{scrollWithAnimation}}"
+    enableFlex="{{enableFlex}}"
+    bindscroll="_scroll"
+  >
+    <slot />
+  </scroll-view>
+</block>
+<block wx:else>
+  <view
+    class="mui mui-paper-root {{muiClasses}} elevation-{{elevation}} {{square ? 'paper-square' : ''}}"
+    style="{{mStyle}}"
+  >
+    <slot />
+  </view>
+</block>

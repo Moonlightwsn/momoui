@@ -71,7 +71,6 @@ Component({
     },
     _computePostion() {
       return new Promise((resolve) => {
-        this._positionComputed = true
         let count = 0
         const position: any = {}
         const {anchorPosition} = this.data

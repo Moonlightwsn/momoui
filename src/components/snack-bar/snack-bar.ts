@@ -27,10 +27,9 @@ Component({
   methods: {
     _onBeforeShow() {
       const {transitions, transitionType} = this.data
-      if ((!transitions || transitions.length <= 0) && transitionType === 'slide' && !this._positionComputed) {
+      if ((!transitions || transitions.length <= 0) && transitionType === 'slide') {
         return this._computePosition()
       }
-      this._positionComputed = true
       return null
     },
     _computePosition() {
@@ -56,11 +55,11 @@ Component({
         })
         query.exec(res => {
           const {
-            top,
-            right,
-            bottom,
-            left
-          } = res[0] || {}
+            top = 0,
+            right = 0,
+            bottom = 0,
+            left = 0,
+          } = res ? (res[0] || {}) : {}
           position.top = top
           position.right = right
           position.bottom = bottom
@@ -71,7 +70,6 @@ Component({
           }
         })
       }).then((position: any) => {
-        this._positionComputed = true
         const _endStyle = 'transform: none;'
         let _startStyle = ''
         const {anchorOrigin: {vertical, horizontal}} = this.data
@@ -96,18 +94,16 @@ Component({
   },
   observers: {
     _show(show) {
-      if (this._positionComputed) {
-        const {
-          _endStyle,
-          _startStyle,
-          _enterStyle,
-          _exitStyle,
-        } = this.data
-        const _transitionStyle = show ? `${_endStyle}${_enterStyle}` : `${_startStyle}${_exitStyle}`
-        this.setData({
-          _transitionStyle,
-        })
-      }
+      const {
+        _endStyle,
+        _startStyle,
+        _enterStyle,
+        _exitStyle,
+      } = this.data
+      const _transitionStyle = show ? `${_endStyle}${_enterStyle}` : `${_startStyle}${_exitStyle}`
+      this.setData({
+        _transitionStyle,
+      })
     }
   },
   options: {

@@ -6,7 +6,8 @@
     <mui-paper
       elevation="{{elevation}}"
       mClass="drawer-paper anchor-{{anchor}} position-{{position}}"
-      mStyle="width: {{width}}px;{{_transitionStyle}}"
+      mStyle="{{_sizeStyle}}{{_transitionStyle}}{{(persistent && !_open) ? 'visibility: hidden;' : ''}}"
+      scrollView
       square
     >
       <slot />
@@ -14,8 +15,8 @@
   </view>
 </template>
 <block wx:if="{{variant !== 'temporary'}}">
-  <template is="drawer" data="{{ ...{anchor: anchor, drawerType: 'docker', elevation: 0, mClass: mClass, mStyle: mStyle, position: position, width: width, _transitionStyle: _transitionStyle} }}" />
+  <template is="drawer" data="{{ ...{..._templateData, _open: _open, _transitionStyle: _transitionStyle} }}" />
 </block>
 <block wx:else>
-  <template is="drawer" data="{{ ...{anchor: anchor, drawerType: 'modal', elevation: elevation, mClass: mClass, mStyle: mStyle, position: position, width: width, _transitionStyle: _transitionStyle} }}" />
+  <template is="drawer" data="{{ ...{..._templateData, _open: _open, _transitionStyle: _transitionStyle} }}" />
 </block>

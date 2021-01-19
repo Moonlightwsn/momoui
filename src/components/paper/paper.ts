@@ -1,8 +1,9 @@
 import muiBase from '../../behaviors/muiBase.ts'
 import muiController from '../../behaviors/muiController.ts'
+import scrollView from '../../behaviors/scrollView.ts'
 
 Component({
-  behaviors: [muiBase, muiController],
+  behaviors: [muiBase, muiController, scrollView],
   properties: {
     elevation: {
       type: Number,
@@ -13,6 +14,10 @@ Component({
       value: 'elevation',
     },
     square: {
+      type: Boolean,
+      value: false,
+    },
+    scrollView: {
       type: Boolean,
       value: false,
     },

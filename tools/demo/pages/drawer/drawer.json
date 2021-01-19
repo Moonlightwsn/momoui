@@ -3,6 +3,7 @@
     "mui-app-bar": "../../components/app-bar/app-bar",
     "mui-divider": "../../components/divider/divider",
     "mui-drawer": "../../components/drawer/drawer",
+    "mui-icon-button": "../../components/icon-button/icon-button",
     "mui-list": "../../components/list/list",
     "mui-list-item": "../../components/list-item/list-item",
     "mui-toolbar": "../../components/toolbar/toolbar",
