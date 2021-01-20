@@ -743,6 +743,9 @@
       top: 8px;
       justify-content: flex-end;
     }
+    .snack-bar-content-native-wrapper {
+      width: 100%;
+    }
   }
 
   &.mui-snack-bar-root .snack-bar-content-root, &.snack-bar-content-root {
@@ -759,7 +762,6 @@
     letter-spacing: 0.01071em;
     background-color: rgb(49, 49, 49);
     word-break:break-all;
-    
     .snack-bar-content-message {
       padding: 8px 0;
     }
@@ -2956,6 +2958,10 @@
         left: auto;
         right: 24px;
         top: 24px;
+      }
+      .snack-bar-content-native-wrapper {
+        flex-grow: initial;
+        min-width: 288px;
       }
     }
     

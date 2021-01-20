@@ -6,7 +6,7 @@
   <mui-snack-bar-content
     wx:if="{{message || action}}"
     message="{{message}}"
-    action="{{actoin}}"
+    action="{{action}}"
   />
   <slot wx:else />
 </view>

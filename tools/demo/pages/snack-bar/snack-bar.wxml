@@ -3,15 +3,13 @@
   class="page"
 >
   <mui-typography mClass="header2" variant="h5">简单的消息条</mui-typography>
-  <mui-typography mClass="" variant="body2">一个简单的消息条旨在重现谷歌 Keep 消息条的行为</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">一个简单的消息条旨在重现谷歌 Keep 消息条的行为</mui-typography>
   <view class="demo-box">
     <mui-button bindtap="Open">Open simple snackbar</mui-button>
     <mui-snack-bar
-      autoHideDuration="{{3000}}"
       open="{{open}}"
       onClose="{{Close}}"
-    >
-      <view>TEST</view>
-    </mui-snack-bar>
+      message="Note archived"
+    />
   </view>
 </view>
