@@ -4,6 +4,11 @@ import openCloseTransition from '../../behaviors/transition/openClose.ts'
 Component({
   behaviors: [muiBase, openCloseTransition],
   properties: {
+    action: {
+      type: String,
+      optionalTypes: [Object],
+      value: null,
+    },
     anchorOrigin: {
       type: Object,
       value: {
@@ -23,6 +28,11 @@ Component({
   data: {
     _transitionStyle: '',
     _defaultStyle: 'opacity: 0;',
+  },
+  lifetimes: {
+    attached() {
+      this._onBeforeShow = this._onBeforeShow.bind(this)
+    },
   },
   methods: {
     _onBeforeShow() {

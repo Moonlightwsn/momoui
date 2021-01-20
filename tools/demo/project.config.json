@@ -62,6 +62,16 @@
           "scene": null
         },
         {
+          "name": "grid",
+          "pathName": "pages/grid/grid",
+          "scene": null
+				},
+        {
+          "name": "index",
+          "pathName": "pages/index/index",
+          "scene": null
+        },
+        {
           "name": "list",
           "pathName": "pages/list/list",
           "scene": null
@@ -77,13 +87,13 @@
           "scene": null
         },
         {
-          "name": "tabs",
-          "pathName": "pages/tabs/tabs",
+          "name": "snack-bar",
+          "pathName": "pages/snack-bar/snack-bar",
           "scene": null
         },
         {
-          "name": "tooltip",
-          "pathName": "pages/tooltip/tooltip",
+          "name": "tabs",
+          "pathName": "pages/tabs/tabs",
           "scene": null
         },
         {
@@ -92,15 +102,10 @@
           "scene": null
         },
         {
-          "name": "index",
-          "pathName": "pages/index/index",
+          "name": "tooltip",
+          "pathName": "pages/tooltip/tooltip",
           "scene": null
         },
-        {
-          "name": "grid",
-          "pathName": "pages/grid/grid",
-          "scene": null
-				},
 				{
           "name": "typography",
           "pathName": "pages/typography/typography",

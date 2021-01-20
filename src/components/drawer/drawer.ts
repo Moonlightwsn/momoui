@@ -84,19 +84,6 @@ Component({
         persistent: false,
         position,
       }
-      let _transitionStyle = ''
-      if (variant !== 'temporary') {
-        _templateData.drawerType = 'docker'
-        _templateData.elevation = 0
-        if (variant === 'permanent') {
-          _transitionStyle = 'transition: width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;'
-        } else if (variant === 'persistent') {
-          _templateData.persistent = true
-        }
-      } else {
-        _templateData.drawerType = 'modal'
-        _templateData.elevation = elevation
-      }
       let _sizeStyle = ''
       let translate = 0
       let direction = ''
@@ -118,6 +105,22 @@ Component({
         _sizeStyle = `height: ${height}px;`
       }
       const _startStyle = `transform: translate${direction}(${translate}px);`
+      let _transitionStyle = ''
+      if (variant !== 'temporary') {
+        _templateData.drawerType = 'docker'
+        _templateData.elevation = 0
+        if (variant === 'permanent') {
+          _transitionStyle = 'transition: width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;'
+        } else if (variant === 'persistent') {
+          _templateData.persistent = true
+        }
+      } else {
+        _templateData.drawerType = 'modal'
+        _templateData.elevation = elevation
+      }
+      if (!_transitionStyle) {
+        _transitionStyle = `${_startStyle}${this.data._exitStyle}`
+      }
       _templateData._startStyle = _startStyle
       _templateData._sizeStyle = _sizeStyle
       this.setData({_templateData, _startStyle, _transitionStyle})

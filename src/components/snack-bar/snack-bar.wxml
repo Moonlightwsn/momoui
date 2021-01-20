@@ -3,9 +3,10 @@
   class="mui mui-snack-bar-root anchor-origin-{{anchorOrigin.vertical}}-{{anchorOrigin.horizontal}} {{mClass}}"
   style="{{_defaultStyle}}{{_transitionStyle}}{{mStyle}}"
 >
-  <mui-snack-bar-content wx:if="{{message}}" message="{{message}}">
-    <slot name="message" slot="message" />
-    <slot name="action" slot="action" />
-  </mui-snack-bar-content>
-  <slot />
+  <mui-snack-bar-content
+    wx:if="{{message || action}}"
+    message="{{message}}"
+    action="{{actoin}}"
+  />
+  <slot wx:else />
 </view>

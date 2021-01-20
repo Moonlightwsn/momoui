@@ -52,7 +52,7 @@
     <mui-button bindtap="Open" data-anchor="right">RIGHT</mui-button>
     <mui-button bindtap="Open" data-anchor="top">TOP</mui-button>
     <mui-button bindtap="Open" data-anchor="bottom">BOTTOM</mui-button>
-    <mui-drawer anchor="{{anchor}}" open="{{open}}" onClose="{{Close}}">
+    <mui-drawer wx:if="{{open}}" anchor="{{anchor}}" open="{{open}}" onClose="{{Close}}">
       <template is="drawer-list" />
     </mui-drawer>
   </view>
@@ -195,7 +195,7 @@
   <mui-typography mClass="paragraph" variant="body2">一些专注于生产力的应用，需要保持在整个屏幕上的平衡</mui-typography>
   <view class="demo-box">
     <view style="flex-grow: 1;position: relative;height: 400px;display: flex;">
-      <mui-app-bar position="absolute" mStyle="z-index: 1201;">
+      <mui-app-bar position="absolute" mStyle="z-index: 1101;">
         <mui-toolbar>
           <mui-typography variant="h6" noWrap>
             Responsive drawer

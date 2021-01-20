@@ -6,6 +6,16 @@
     <slot wx:else name="message" />
   </view>
   <view class="snack-bar-content-action">
-    <slot name="action" />
+    <mui-icon-button
+      wx:if="{{action}}"
+      color="inherit"
+      icon="{{action.icon || action}}"
+      iconColor="{{action.iconColor}}"
+      iconSize="{{action.iconSize}}"
+      mClass="{{action.class}}"
+      mStyle="{{action.style}}"
+      size="small"
+    />
+    <slot wx:else name="action" />
   </view>
 </mui-paper>

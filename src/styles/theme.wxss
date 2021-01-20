@@ -198,6 +198,7 @@
         border-width: 0;
         border-color: rgba(0, 0, 0, 0.12);
         border-style: solid;
+        z-index: 1100;
         &.anchor-left {
           border-right-width: 1px;
         }
@@ -206,13 +207,17 @@
         }
       }
     }
+    &.drawer-modal {
+      .drawer-paper {
+        z-index: 1201;
+      }
+    }
     .drawer-paper {
       top: 0;
       flex: 1 0 auto;
       height: 100%;
       display: flex;
       outline: 0;
-      z-index: 1200;
       overflow-y: auto;
       overflow-x: hidden;
       flex-direction: column;
