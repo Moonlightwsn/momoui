@@ -6,6 +6,8 @@ Page({
     open: false,
     open2: false,
     open3: false,
+    open4: false,
+    message: '',
     anchorOrigin3: {
       vertical: 'top',
       horizontal: 'center',
@@ -16,6 +18,7 @@ Page({
       Close: this.Close.bind(this),
       Close2: this.Close2.bind(this),
       Close3: this.Close3.bind(this),
+      Close4: this.Close4.bind(this),
     })
   },
   Open() {
@@ -50,5 +53,16 @@ Page({
   },
   Close3() {
     this.setData({open3: false})
+  },
+  Open4(e) {
+    const {target: {dataset: {message = ''} = {}} = {}} = {} = e || {}
+    this.setData({open4: false}, () => {
+      setTimeout(() => {
+        this.setData({open4: true, message})
+      }, 200)
+    })
+  },
+  Close4() {
+    this.setData({open4: false})
   },
 })

@@ -1,3 +1,6 @@
+<template name="action">
+  <mui-button color="secondary" size="small">lorem ipsum dolorem</mui-button>
+</template>
 <view
   data-momoui-theme="{{theme}}"
   class="page"
@@ -18,11 +21,11 @@
       open="{{open}}"
       onClose="{{Close}}"
     >
-      <mui-snack-bar-content wx:if="{{open}}">
+      <mui-snack-bar-content>
         <label slot="message">Note archived</label>
         <view slot="action">
           <mui-button color="secondary" size="small" bindtap="Close">UNDO</mui-button>
-          <mui-icon-button color="secondary" icon="close" size="small" bindtap="Close" />
+          <mui-icon-button wx:if="{{open}}" color="secondary" icon="close" size="small" bindtap="Close" />
         </view>
       </mui-snack-bar-content>
     </mui-snack-bar>
@@ -82,4 +85,49 @@
       open="{{open3}}"
     />
   </view>
+  <mui-typography mClass="header2" variant="h5">消息的长度</mui-typography>
+  <view class="demo-box">
+    <view style="max-width: 600px;width: 100%;">
+      <mui-snack-bar-content message="I love snacks.">
+        <view slot="action">
+          <template is="action" />
+        </view>
+      </mui-snack-bar-content>
+      <mui-snack-bar-content mStyle="margin-top: 16px;" message="I love candy. I love cookies. I love cupcakes. I love cheesecake. I love chocolate.">
+      </mui-snack-bar-content>
+      <mui-snack-bar-content mStyle="margin-top: 16px;" message="II love candy. I love cookies. I love cupcakes.">
+        <view slot="action">
+          <template is="action" />
+        </view>
+      </mui-snack-bar-content>
+      <mui-snack-bar-content mStyle="margin-top: 16px;" message="ove candy. I love cookies. I love cupcakes. I love cheesecake. I love chocolate.">
+        <view slot="action">
+          <template is="action" />
+        </view>
+      </mui-snack-bar-content>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">过渡动画</mui-typography>
+  <mui-typography mClass="header2" variant="h5">连续的消息条</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">当需要显示多个消息条的时候，一次应该只显示一个</mui-typography>
+  <view class="demo-box">
+    <mui-button bindtap="Open4" data-message="Message A">SHOW MESSAGE A</mui-button>
+    <mui-button bindtap="Open4" data-message="Message B">SHOW MESSAGE B</mui-button>
+    <mui-snack-bar autoHideDuration="{{6000}}" anchorOrigin="{{ {vertical: 'bottom', horizontal: 'center'} }}" open="{{open4}}" onClose="{{Close4}}">
+      <mui-snack-bar-content message="{{message}}">
+        <view slot="action">
+          <mui-button bindtap="Close4" color="secondary" size="small">UNDO</mui-button>
+          <mui-icon-button
+            wx:if="{{open4}}"
+            bindtap="Close4"
+            color="inherit"
+            icon="close"
+            size="small"
+          />
+        </view>
+      </mui-snack-bar-content>
+    </mui-snack-bar>
+  </view>
+  <mui-typography mClass="header2" variant="h5">消息条（Snackbars）和悬浮按钮（FABs）</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">消息条应当显示在悬浮按钮的上方（这是在移动设备上）</mui-typography>
 </view>
