@@ -12,6 +12,26 @@ Component({
       type: String,
       value: null,
     },
+    onClose: {
+      // @ts-ignore
+      type: Function,
+      value: null,
+    },
+  },
+  methods: {
+    _ActionHandler() {
+      const {
+        action,
+        onClose,
+      } = this.data
+      if (action) {
+        if (action.action && typeof action.action === 'function') {
+          action.action()
+        } else if (onClose && typeof onClose === 'function') {
+          onClose()
+        }
+      }
+    },
   },
   options: {
     virtualHost: true,

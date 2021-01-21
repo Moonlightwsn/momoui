@@ -19,10 +19,6 @@ Component({
       optionalTypes: [Object],
       value: null,
     },
-    closeIconProps: {
-      type: Object,
-      value: {},
-    },
     color: {
       type: String,
       value: 'success'

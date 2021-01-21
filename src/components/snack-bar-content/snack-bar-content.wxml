@@ -8,7 +8,8 @@
   <view class="snack-bar-content-action">
     <mui-icon-button
       wx:if="{{action}}"
-      color="inherit"
+      bind:tap="_ActionHandler"
+      color="{{action.color || 'inherit'}}"
       icon="{{action.icon || action}}"
       iconColor="{{action.iconColor}}"
       iconSize="{{action.iconSize}}"

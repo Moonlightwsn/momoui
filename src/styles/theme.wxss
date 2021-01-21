@@ -748,6 +748,9 @@
     }
   }
 
+  &.mui-snack-bar-root .snack-bar-slot-content-root, &.snack-bar-slot-content-root {
+    flex-grow: 1;
+  }
   &.mui-snack-bar-root .snack-bar-content-root, &.snack-bar-content-root {
     color: #fff;
     display: flex;
@@ -2965,6 +2968,10 @@
       }
     }
     
+    &.mui-snack-bar-root .snack-bar-slot-content-root, &.snack-bar-slot-content-root {
+      flex-grow: initial;
+      min-width: 288px;
+    }
     &.mui-snack-bar-root .snack-bar-content-root, &.snack-bar-content-root {
       flex-grow: initial;
       min-width: 288px;
@@ -3621,11 +3628,9 @@
       }
     }
 
-    &.mui-snack-bar-root {
-      .snack-bar-content-root {
-        color: rgba(0, 0, 0, 0.87);
-        background-color: rgb(250, 250, 250);
-      }
+    &.mui-snack-bar-root .snack-bar-content-root, &.snack-bar-content-root {
+      color: rgba(0, 0, 0, 0.87);
+      background-color: rgb(250, 250, 250);
     }
 
     &.mui-checkbox, &.mui-radio, &.mui-switch {

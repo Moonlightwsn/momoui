@@ -52,8 +52,8 @@
     <mui-button bindtap="Open" data-anchor="right">RIGHT</mui-button>
     <mui-button bindtap="Open" data-anchor="top">TOP</mui-button>
     <mui-button bindtap="Open" data-anchor="bottom">BOTTOM</mui-button>
-    <mui-drawer wx:if="{{open}}" anchor="{{anchor}}" open="{{open}}" onClose="{{Close}}">
-      <template is="drawer-list" />
+    <mui-drawer anchor="{{anchor}}" open="{{open}}" onClose="{{Close}}">
+      <template wx:if="{{open}}" is="drawer-list" />
     </mui-drawer>
   </view>
   <mui-typography mClass="header2" variant="h5">持久的抽屉</mui-typography>

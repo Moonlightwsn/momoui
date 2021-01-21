@@ -7,9 +7,79 @@
   <view class="demo-box">
     <mui-button bindtap="Open">Open simple snackbar</mui-button>
     <mui-snack-bar
+      action="close"
+      autoHideDuration="{{null}}"
       open="{{open}}"
       onClose="{{Close}}"
       message="Note archived"
+    />
+    <mui-snack-bar
+      anchorOrigin="{{ {vertical: 'bottom', horizontal: 'center'} }}"
+      open="{{open}}"
+      onClose="{{Close}}"
+    >
+      <mui-snack-bar-content wx:if="{{open}}">
+        <label slot="message">Note archived</label>
+        <view slot="action">
+          <mui-button color="secondary" size="small" bindtap="Close">UNDO</mui-button>
+          <mui-icon-button color="secondary" icon="close" size="small" bindtap="Close" />
+        </view>
+      </mui-snack-bar-content>
+    </mui-snack-bar>
+  </view>
+  <mui-typography mClass="header2" variant="h5">自定义的消息条</mui-typography>
+  <view class="demo-box">
+    <mui-button bindtap="Open2" variant="outlined">Open success snackbar</mui-button>
+    <mui-snack-bar autoHideDuration="{{null}}" open="{{open2}}" onClose="{{Close2}}">
+      <mui-alert
+        wx:if="{{open2}}"
+        color="success"
+        onClose="{{Close2}}"
+        message="This is a success message!"
+        variant="filled"
+      />
+    </mui-snack-bar>
+    <view style="width: 100%;">
+      <mui-alert
+        mStyle="margin-top: 16px;"
+        color="error"
+        message="This is a error message!"
+        variant="filled"
+      />
+      <mui-alert
+        mStyle="margin-top: 16px;"
+        color="warning"
+        message="This is a warning message!"
+        variant="filled"
+      />
+      <mui-alert
+        mStyle="margin-top: 16px;"
+        color="info"
+        message="This is a info message!"
+        variant="filled"
+      />
+      <mui-alert
+        mStyle="margin-top: 16px;"
+        color="success"
+        message="This is a success message!"
+        variant="filled"
+      />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">定位的消息条</mui-typography>
+  <view class="demo-box">
+    <mui-button bindtap="Open3" data-anchor="top-center">TOP-CENTER</mui-button>
+    <mui-button bindtap="Open3" data-anchor="top-right">TOP-RIGHT</mui-button>
+    <mui-button bindtap="Open3" data-anchor="bottom-right">BOTTOM-RIGHT</mui-button>
+    <mui-button bindtap="Open3" data-anchor="bottom-center">BOTTOM-CENTER</mui-button>
+    <mui-button bindtap="Open3" data-anchor="bottom-left">BOTTOM-LEFT</mui-button>
+    <mui-button bindtap="Open3" data-anchor="top-left">TOP-LEFT</mui-button>
+    <mui-snack-bar
+      action="close"
+      anchorOrigin="{{anchorOrigin3}}"
+      message="I love snacks"
+      onClose="{{Close3}}"
+      open="{{open3}}"
     />
   </view>
 </view>
