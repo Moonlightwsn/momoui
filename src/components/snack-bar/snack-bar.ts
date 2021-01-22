@@ -20,6 +20,10 @@ Component({
       type: String,
       value: null,
     },
+    position: {
+      type: String,
+      value: 'fixed',
+    },
     transitionType: {
       type: String,
       value: 'grow',

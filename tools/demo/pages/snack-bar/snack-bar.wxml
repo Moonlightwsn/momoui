@@ -130,4 +130,29 @@
   </view>
   <mui-typography mClass="header2" variant="h5">消息条（Snackbars）和悬浮按钮（FABs）</mui-typography>
   <mui-typography mClass="paragraph" variant="body2">消息条应当显示在悬浮按钮的上方（这是在移动设备上）</mui-typography>
+  <view class="demo-box">
+    <view class="container">
+      <mui-app-bar position="static" color="primary">
+        <mui-toolbar>
+          <mui-icon-button
+            color="inherit"
+            edge="start"
+            icon="menu"
+            mStyle="margin-right: 16px;"
+          />
+          <mui-typography color="inherit" variant="h6">App Bar</mui-typography>
+        </mui-toolbar>
+      </mui-app-bar>
+      <mui-fab color="secondary" icon="plus" mStyle="position:absolute;right:16px;bottom:16px;" />
+      <mui-snack-bar
+        anchorOrigin="{{ {vertical: 'bottom', horizontal: 'center'} }}"
+        open
+        message="Archived"
+        mStyle="bottom: 90px;"
+        position="absolute"
+      >
+        <mui-button color="inherit" size="small" slot="action">Undo</mui-button>
+      </mui-snack-bar>
+    </view>
+  </view>
 </view>

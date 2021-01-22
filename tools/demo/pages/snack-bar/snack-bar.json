@@ -1,10 +1,13 @@
 {
   "usingComponents": {
     "mui-alert": "../../components/alert/alert",
+    "mui-app-bar": "../../components/app-bar/app-bar",
     "mui-button": "../../components/button/button",
+    "mui-fab": "../../components/fab/fab",
     "mui-icon-button": "../../components/icon-button/icon-button",
     "mui-snack-bar": "../../components/snack-bar/snack-bar",
     "mui-snack-bar-content": "../../components/snack-bar-content/snack-bar-content",
+    "mui-toolbar": "../../components/toolbar/toolbar",
     "mui-typography": "../../components/typography/typography"
   }
 }

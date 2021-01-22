@@ -718,9 +718,14 @@
     right: 8px;
     display: flex;
     z-index: 1400;
-    position: fixed;
     align-items: center;
     justify-content: center;
+    &.position-fixed {
+      position: fixed;
+    }
+    &.position-absolute {
+      position: absolute;
+    }
     &.anchor-origin-bottom-left {
       bottom: 8px;
       justify-content: flex-start;

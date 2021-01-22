@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  position: relative;
+  background-color: #fff;
+}
+
+[data-momoui-theme=dark] {
+  background-color: #424242;
+}

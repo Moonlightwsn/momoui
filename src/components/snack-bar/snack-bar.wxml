@@ -1,6 +1,6 @@
 <view
   wx:if="{{_open}}"
-  class="mui mui-snack-bar-root anchor-origin-{{anchorOrigin.vertical}}-{{anchorOrigin.horizontal}} {{mClass}}"
+  class="mui mui-snack-bar-root anchor-origin-{{anchorOrigin.vertical}}-{{anchorOrigin.horizontal}} position-{{position}} {{mClass}}"
   style="{{mStyle}}"
 >
   <mui-snack-bar-content
