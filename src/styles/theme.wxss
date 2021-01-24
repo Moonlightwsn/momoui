@@ -749,7 +749,7 @@
       justify-content: flex-end;
     }
     .snack-bar-content-native-wrapper {
-      width: 100%;
+      flex-grow: 1;
     }
   }
 
@@ -760,7 +760,6 @@
     color: #fff;
     display: flex;
     padding: 6px 16px;
-    flex-grow: 1;
     flex-wrap: wrap;
     font-size: 0.875rem;
     align-items: center;
@@ -2974,10 +2973,6 @@
     }
     
     &.mui-snack-bar-root .snack-bar-slot-content-root, &.snack-bar-slot-content-root {
-      flex-grow: initial;
-      min-width: 288px;
-    }
-    &.mui-snack-bar-root .snack-bar-content-root, &.snack-bar-content-root {
       flex-grow: initial;
       min-width: 288px;
     }

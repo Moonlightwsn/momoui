@@ -7,13 +7,13 @@
     wx:if="{{message || action}}"
     action="{{action}}"
     message="{{message}}"
-    mStyle="{{_defaultStyle}}{{_transitionStyle}}"
+    mStyle="{{_transitionStyle}}"
     onClose="{{onClose}}"
   >
     <slot wx:if="{{!message}}" name="message" slot="message" />
     <slot wx:if="{{!action}}" name="action" slot="action" />
   </mui-snack-bar-content>
-  <view wx:else class="snack-bar-slot-content-root" style="{{_defaultStyle}}{{_transitionStyle}}">
+  <view wx:else class="snack-bar-slot-content-root" style="{{_transitionStyle}}">
     <slot />
   </view>
 </view>

@@ -30,7 +30,7 @@ export default Behavior({
     _endStyle: '',
   },
   methods: {
-    _genTransitionsStyle(transitionProps) {
+    __GenTransitionsStyle(transitionProps) {
       this.generatedTransitionStyle = true
       const newData: any = {}
       const {
@@ -45,13 +45,8 @@ export default Behavior({
         realTransition = transitions
       } else if (type && transitionTypeMap[type]) {
         realTransition = transitionTypeMap[type].transition
-        const {_startStyle, _endStyle} = this.data
-        if (_startStyle || transitionTypeMap[type].start) {
-          newData._startStyle = _startStyle || transitionTypeMap[type].start
-        }
-        if (_endStyle || transitionTypeMap[type].end) {
-          newData._endStyle = _endStyle || transitionTypeMap[type].end
-        }
+        newData._startStyle = transitionTypeMap[type].start || ''
+        newData._endStyle = transitionTypeMap[type].end || ''
       }
       realTransition.forEach(item => {
         transitionPeriod.forEach(period => {
@@ -113,7 +108,7 @@ export default Behavior({
           transitionDuration,
           transitionType,
         } = this.data
-        this._genTransitionsStyle({
+        this.__GenTransitionsStyle({
           transition,
           delay: transitionDelay,
           duration: transitionDuration,
@@ -124,7 +119,7 @@ export default Behavior({
   },
   observers: {
     'transition,transitionDelay,transitionDuration,transitionType': function (transitions, delay, duration, type) {
-      this._genTransitionsStyle({
+      this.__GenTransitionsStyle({
         transitions,
         delay,
         duration,

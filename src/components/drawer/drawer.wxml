@@ -2,6 +2,7 @@
   <view
     class="mui mui-drawer-root drawer-{{drawerType}} {{mClass}}"
     style="{{mStyle}}"
+    catchtap="{{true}}"
   >
     <mui-paper
       elevation="{{elevation}}"

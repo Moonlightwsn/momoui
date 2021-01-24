@@ -20,6 +20,7 @@
       anchorOrigin="{{ {vertical: 'bottom', horizontal: 'center'} }}"
       open="{{open}}"
       onClose="{{Close}}"
+      transitionType="slide"
     >
       <mui-snack-bar-content>
         <label slot="message">Note archived</label>
@@ -33,7 +34,7 @@
   <mui-typography mClass="header2" variant="h5">自定义的消息条</mui-typography>
   <view class="demo-box">
     <mui-button bindtap="Open2" variant="outlined">Open success snackbar</mui-button>
-    <mui-snack-bar autoHideDuration="{{null}}" open="{{open2}}" onClose="{{Close2}}">
+    <mui-snack-bar autoHideDuration="{{null}}" open="{{open2}}" onClose="{{Close2}}" transitionType="slide">
       <mui-alert
         wx:if="{{open2}}"
         color="success"
@@ -148,11 +149,27 @@
         anchorOrigin="{{ {vertical: 'bottom', horizontal: 'center'} }}"
         open
         message="Archived"
-        mStyle="bottom: 90px;"
+        mClass="snack-bar-in-container"
         position="absolute"
       >
         <mui-button color="inherit" size="small" slot="action">Undo</mui-button>
       </mui-snack-bar>
     </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">更改过渡动画</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">Grow 是默认的过渡动画，但你可以使用不同的过渡动画</mui-typography>
+  <view class="demo-box">
+    <mui-button bindtap="Open5" data-transition="grow">GROW</mui-button>
+    <mui-button bindtap="Open5" data-transition="fade">FADE</mui-button>
+    <mui-button bindtap="Open5" data-transition="slide">Slide</mui-button>
+    <mui-snack-bar
+      action="close"
+      anchorOrigin="{{ {vertical: 'top', horizontal: 'center'} }}"
+      onClose="{{Close5}}"
+      open="{{open5}}"
+      message="I love snacks"
+      mStyle="top: 90px;"
+      transitionType="{{transition}}"
+    />
   </view>
 </view>

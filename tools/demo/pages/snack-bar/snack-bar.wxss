@@ -5,6 +5,15 @@
   position: relative;
   background-color: #fff;
 }
+.container .snack-bar-in-container.mui.mui-snack-bar-root.anchor-origin-bottom-center {
+  bottom: 90px;
+  right: 8px;
+  left: 8px;
+  transform: none;
+}
+.container .snack-bar-in-container.mui.mui-snack-bar-root.anchor-origin-bottom-center .snack-bar-content-native-wrapper {
+  flex-grow: 1;
+}
 
 [data-momoui-theme=dark] {
   background-color: #424242;

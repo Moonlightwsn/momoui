@@ -7,7 +7,9 @@ Page({
     open2: false,
     open3: false,
     open4: false,
+    open5: false,
     message: '',
+    transition: 'grow',
     anchorOrigin3: {
       vertical: 'top',
       horizontal: 'center',
@@ -19,6 +21,7 @@ Page({
       Close2: this.Close2.bind(this),
       Close3: this.Close3.bind(this),
       Close4: this.Close4.bind(this),
+      Close5: this.Close5.bind(this),
     })
   },
   Open() {
@@ -41,28 +44,30 @@ Page({
       horizontal: anchorArr[1],
     }
     this.setData({
-      open3: false,
-    }, () => {
-      setTimeout(() => {
-        this.setData({
-          open3: true,
-          anchorOrigin3: anchorOrigin,
-        })
-      }, 200)
-    });
+      open3: true,
+      anchorOrigin3: anchorOrigin,
+    })
   },
   Close3() {
     this.setData({open3: false})
   },
   Open4(e) {
     const {target: {dataset: {message = ''} = {}} = {}} = {} = e || {}
-    this.setData({open4: false}, () => {
-      setTimeout(() => {
-        this.setData({open4: true, message})
-      }, 200)
-    })
+    this.setData({open4: true, message})
   },
   Close4() {
     this.setData({open4: false})
   },
+  Open5(e) {
+    const {target: {dataset: {transition = 'grow'} = {}} = {}} = {} = e || {}
+    const {transition: currentTransition} = this.data
+    if (currentTransition !== transition) {
+      this.setData({transition, open5: true})
+    } else {
+      this.setData({open5: true})
+    }
+  },
+  Close5() {
+    this.setData({open5: false})
+  }
 })
