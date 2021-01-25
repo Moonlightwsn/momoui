@@ -64,7 +64,7 @@
   <view class="demo-box">
     <mui-button-group mClass="button-group" color="primary" variant="contained">
       <mui-button>MENU</mui-button>
-      <mui-button size="small"><mui-icon name="chevron-down" size="20" /></mui-button>
+      <mui-button size="small"><mui-icon name="menu-down" size="20" /></mui-button>
     </mui-button-group>
   </view>
   <mui-typography mClass="header2" variant="h5">Disabled elevation 禁用立体效果（elevation）</mui-typography>

@@ -45,7 +45,7 @@
           <view class="sectionDesktop">
             <mui-icon-button color="inherit">
               <mui-badge content="{{4}}" color="secondary">
-                <mui-icon name="mail" />
+                <mui-icon name="email" />
               </mui-badge>
             </mui-icon-button>
             <mui-icon-button color="inherit">
@@ -79,7 +79,7 @@
               <mui-menu-item bind:tap="CloseMenu2">
                 <mui-icon-button color="inherit">
                   <mui-badge content="{{4}}" color="secondary">
-                    <mui-icon name="mail" color="{{theme === 'dark' ? '#fff' : 'rgba(0, 0, 0, 0.87)'}}" />
+                    <mui-icon name="email" color="{{theme === 'dark' ? '#fff' : 'rgba(0, 0, 0, 0.87)'}}" />
                   </mui-badge>
                 </mui-icon-button>
                 <mui-typography>Mail</mui-typography>

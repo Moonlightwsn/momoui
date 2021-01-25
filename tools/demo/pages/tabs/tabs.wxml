@@ -9,7 +9,7 @@
         <mui-tabs value="{{value}}" onChange="{{SetValue}}">
           <mui-tab label="Item One" icon="heart" />
           <mui-tab label="Item Two" icon="account-circle" />
-          <mui-tab label="Item Three" icon="mail" />
+          <mui-tab label="Item Three" icon="email" />
         </mui-tabs>
       </mui-app-bar>
       <mui-tab-panel wx:if="{{value === 0}}">

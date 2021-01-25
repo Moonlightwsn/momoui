@@ -1,10 +1,10 @@
 import muiBase from '../../behaviors/muiBase.ts'
 
 const color2icon = {
-  success: 'check-circle',
-  info: 'info',
-  warning: 'info',
-  error: 'info'
+  success: 'checkbox-marked-circle-outline',
+  info: 'info-outline',
+  warning: 'alert-outline',
+  error: 'alert-circle-outline'
 }
 
 Component({

@@ -2,11 +2,15 @@ import muiBase from '../../behaviors/muiBase.ts'
 import Base64 from '../../common/base64.ts'
 
 let momouiRootPath = '/miniprogram_npm/momoui-miniprogram/'
+let customizedIconsPath
 /* eslint-disable */
 const app = getApp()
 /* eslint-disable */
 if (app.momouiRootPath) {
   momouiRootPath = app.momouiRootPath
+}
+if (app.customizedIconsPath) {
+  customizedIconsPath = app.customizedIconsPath
 }
 const muiIconPath = 'styles/static/icons/'
 
@@ -26,13 +30,17 @@ Component({
       type: String,
       value: null,
     },
+    customized: {
+      type: Boolean,
+      value: false,
+    },
     disableThemeWatcher: {
       type: Boolean,
       value: false,
     },
     name: {
       type: String,
-      value: 'default'
+      value: 'svg'
     },
     progressProps: {
       type: Object,
@@ -73,8 +81,9 @@ Component({
             color,
             size,
             src,
+            customized,
           } = this.data
-          this._Pretreatment(name, color, size, src)
+          this._Pretreatment(name, color, size, src, customized)
         }
         themeListeners.push(this.listener)
       }
@@ -89,10 +98,10 @@ Component({
     },
   },
   methods: {
-    _Pretreatment(name, color, size, src) {
+    _Pretreatment(name, color, size, src, customized) {
       if (name && !src) {
         if (color && size) {
-          this._ReadSvgAndGenBase64(name, color, `${size}px`)
+          this._ReadSvgAndGenBase64(name, color, `${size}px`, customized)
         } else {
           this.createSelectorQuery().select('.mui-icon').fields({
             computedStyle: ['color','fontSize'],
@@ -102,7 +111,7 @@ Component({
             querySize = querySize || '24px'
             const realColor = color || queryColor
             const realSize = size ? `${size}px` : querySize
-            this._ReadSvgAndGenBase64(name, realColor, realSize)
+            this._ReadSvgAndGenBase64(name, realColor, realSize, customized)
           }).exec()
         }
       } else if(src) {
@@ -117,9 +126,9 @@ Component({
         }).exec()
       }
     },
-    async _ReadSvgAndGenBase64(iconName: string, color: string, size: string) {
+    async _ReadSvgAndGenBase64(iconName: string, color: string, size: string, customized: boolean) {
       if (iconName) {
-        const iconPath = `${momouiRootPath}${muiIconPath}${iconName}.svg`
+        const iconPath = customized ? `${customizedIconsPath || ''}${iconName}.svg` : `${momouiRootPath}${muiIconPath}${iconName}.svg`
         try {
           const fileRes = await wx.getFileSystemManager().readFileSync(iconPath, 'binary')
           if (fileRes) {
@@ -134,8 +143,9 @@ Component({
             if (iconName === 'loading') {
               const {progressProps} = this.data
               insertStyle = `
-                circle {
-                  stroke: ${color};
+                <style type="text/css">
+                  circle {
+                    stroke: ${color};
               `
               if (progressProps.disableShrink) {
                 insertStyle = `${insertStyle}
@@ -172,8 +182,8 @@ Component({
     }
   },
   observers: {
-    'name, color, size, src, mClass, mStyle, progressProps, rerender': function (name, color, size, src) {
-      this._Pretreatment(name, color, size, src)
+    'name, color, size, src, customized, mClass, mStyle, progressProps, rerender': function (name, color, size, src, customized) {
+      this._Pretreatment(name, color, size, src, customized)
     }
   },
   options: {

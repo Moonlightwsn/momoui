@@ -8,11 +8,11 @@
       <mui-list>
         <mui-list-item button>
           <mui-list-item-icon>
-            <mui-icon name="mail" />
+            <mui-icon name="email" />
           </mui-list-item-icon>
           <mui-list-item-text primary="Inbox" />
         </mui-list-item>
-        <mui-list-item button icon="{{ {name: 'mail'} }}" primary="Drafts" />
+        <mui-list-item button icon="{{ {name: 'email'} }}" primary="Drafts" />
       </mui-list>
       <mui-divider />
       <mui-list>
@@ -29,10 +29,10 @@
   <view class="demo-box">
     <mui-list mClass="list-wrapper" subheader="Nested List Items">
       <mui-list-item button icon="{{ {name: 'send'} }}" primary="Sent mail" />
-      <mui-list-item button icon="{{ {name: 'mail'} }}" primary="Drafts" />
+      <mui-list-item button icon="{{ {name: 'email'} }}" primary="Drafts" />
       <mui-list-item button bind:tap="handleTap">
         <mui-list-item-icon>
-          <mui-icon name="mail" />
+          <mui-icon name="email" />
         </mui-list-item-icon>
         <mui-list-item-text primary="Inbox" />
         <mui-icon name="chevron-{{open ? 'up' : 'down'}}" />
@@ -144,11 +144,11 @@
       <mui-list>
         <mui-list-item button bind:tap="handleSelect" data-index="{{0}}" selected="{{selectedIndex === 0}}">
           <mui-list-item-icon>
-            <mui-icon name="mail" />
+            <mui-icon name="email" />
           </mui-list-item-icon>
           <mui-list-item-text primary="Inbox" />
         </mui-list-item>
-        <mui-list-item button icon="{{ {name: 'mail'} }}" primary="Drafts" bind:tap="handleSelect" data-index="{{1}}" selected="{{selectedIndex === 1}}" />
+        <mui-list-item button icon="{{ {name: 'email'} }}" primary="Drafts" bind:tap="handleSelect" data-index="{{1}}" selected="{{selectedIndex === 1}}" />
       </mui-list>
       <mui-divider />
       <mui-list>

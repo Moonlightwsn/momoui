@@ -2,15 +2,15 @@
   <block>
     <mui-list>
       <mui-list-item button icon="send" primary="Sent mail" />
-      <mui-list-item button icon="mail" primary="Drafts" />
-      <mui-list-item button icon="mail" primary="Inbox" />
+      <mui-list-item button icon="email" primary="Drafts" />
+      <mui-list-item button icon="email" primary="Inbox" />
       <mui-list-item button icon="send" primary="Sent mail" />
     </mui-list>
     <mui-divider />
     <mui-list>
       <mui-list-item button icon="send" primary="Sent mail" />
-      <mui-list-item button icon="mail" primary="Drafts" />
-      <mui-list-item button icon="mail" primary="Inbox" />
+      <mui-list-item button icon="email" primary="Drafts" />
+      <mui-list-item button icon="email" primary="Inbox" />
     </mui-list>
   </block>
 </template>
@@ -102,15 +102,15 @@
         <mui-divider />
         <mui-list>
           <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="mail" primary="Drafts" />
-          <mui-list-item button icon="mail" primary="Inbox" />
+          <mui-list-item button icon="email" primary="Drafts" />
+          <mui-list-item button icon="email" primary="Inbox" />
           <mui-list-item button icon="send" primary="Sent mail" />
         </mui-list>
         <mui-divider />
         <mui-list>
           <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="mail" primary="Drafts" />
-          <mui-list-item button icon="mail" primary="Inbox" />
+          <mui-list-item button icon="email" primary="Drafts" />
+          <mui-list-item button icon="email" primary="Inbox" />
         </mui-list>
       </mui-drawer>
       <view style="overflow-y: auto;height: 100%;">
@@ -139,15 +139,15 @@
         <mui-divider />
         <mui-list>
           <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="mail" primary="Drafts" />
-          <mui-list-item button icon="mail" primary="Inbox" />
+          <mui-list-item button icon="email" primary="Drafts" />
+          <mui-list-item button icon="email" primary="Inbox" />
           <mui-list-item button icon="send" primary="Sent mail" />
         </mui-list>
         <mui-divider />
         <mui-list>
           <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="mail" primary="Drafts" />
-          <mui-list-item button icon="mail" primary="Inbox" />
+          <mui-list-item button icon="email" primary="Drafts" />
+          <mui-list-item button icon="email" primary="Inbox" />
         </mui-list>
       </mui-drawer>
       <view style="overflow-y: auto;height: 100%;">
@@ -178,15 +178,15 @@
         <mui-divider />
         <mui-list>
           <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="mail" primary="Drafts" />
-          <mui-list-item button icon="mail" primary="Inbox" />
+          <mui-list-item button icon="email" primary="Drafts" />
+          <mui-list-item button icon="email" primary="Inbox" />
           <mui-list-item button icon="send" primary="Sent mail" />
         </mui-list>
         <mui-divider />
         <mui-list>
           <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="mail" primary="Drafts" />
-          <mui-list-item button icon="mail" primary="Inbox" />
+          <mui-list-item button icon="email" primary="Drafts" />
+          <mui-list-item button icon="email" primary="Inbox" />
         </mui-list>
       </mui-drawer>
     </view>
@@ -207,15 +207,15 @@
         <mui-divider />
         <mui-list>
           <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="mail" primary="Drafts" />
-          <mui-list-item button icon="mail" primary="Inbox" />
+          <mui-list-item button icon="email" primary="Drafts" />
+          <mui-list-item button icon="email" primary="Inbox" />
           <mui-list-item button icon="send" primary="Sent mail" />
         </mui-list>
         <mui-divider />
         <mui-list>
           <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="mail" primary="Drafts" />
-          <mui-list-item button icon="mail" primary="Inbox" />
+          <mui-list-item button icon="email" primary="Drafts" />
+          <mui-list-item button icon="email" primary="Inbox" />
         </mui-list>
       </mui-drawer>
       <view style="overflow-y: auto;height: 100%;">

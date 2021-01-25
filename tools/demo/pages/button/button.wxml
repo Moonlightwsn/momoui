@@ -37,7 +37,7 @@
       mClass="button"
       bind:tap="uploadImg"
       color="primary"
-      icon="image-multiple"
+      icon="camera"
     />
   </view>
   <mui-typography mClass="header2" variant="h5">尺寸</mui-typography>
@@ -88,8 +88,8 @@
   <view class="demo-box">
     <mui-button mClass="button" icon="delete" variant="contained" color="secondary">DELETE</mui-button>
     <mui-button mClass="button" icon="send" iconPosition="right" variant="contained" color="primary">SEND</mui-button>
-    <mui-button mClass="button" icon="arrow-up" variant="contained">UPLOAD</mui-button>
-    <mui-button mClass="button" icon="search" disabled variant="contained">SEARCH</mui-button>
+    <mui-button mClass="button" icon="cloud-upload" variant="contained">UPLOAD</mui-button>
+    <mui-button mClass="button" icon="microphone" disabled variant="contained">Talk</mui-button>
     <mui-button mClass="button" icon="save" iconColor="rgb(0,0,0,0.87)" size="small" variant="contained" color="primary">SAVE</mui-button>
     <mui-button mClass="button" icon="loading" iconSize="18" size="large" variant="contained" color="primary">LOADING</mui-button>
     <mui-button mClass="button" loading size="large" variant="contained" color="primary">LOADING</mui-button>
@@ -107,12 +107,12 @@
     />
     <mui-icon-button
       mClass="button"
-      icon="close"
+      icon="alarm"
       color="secondary"
     />
     <mui-icon-button
       mClass="button"
-      icon="check"
+      icon="cart"
       color="primary"
     />
   </view>
@@ -121,8 +121,8 @@
     <view class="demo-row" style="justify-content: flex-start;">
       <mui-fab mClass="button" color="primary" icon="plus" />
       <mui-fab mClass="button" color="secondary" icon="heart" />
-      <mui-fab mClass="button" color="default" icon="reply" variant="extended">Navigate</mui-fab>
-      <mui-fab mClass="button" color="default" icon="heart" />
+      <mui-fab mClass="button" color="default" icon="navigation" variant="extended">Navigate</mui-fab>
+      <mui-fab mClass="button" color="default" disabled icon="heart" />
     </view>
     <view class="demo-row" style="justify-content: flex-start;">
       <mui-fab mClass="button" color="primary" icon="plus" size="small" />
@@ -130,9 +130,9 @@
       <mui-fab mClass="button" color="primary" icon="plus" />
     </view>
     <view class="demo-row" style="justify-content: flex-start;">
-      <mui-fab mClass="button" color="primary" icon="reply" size="small" variand="extended" />
-      <mui-fab mClass="button" color="primary" icon="reply" size="medium" variand="extended" />
-      <mui-fab mClass="button" color="primary" icon="reply" variand="extended" />
+      <mui-fab mClass="button" color="primary" icon="navigation" size="small" variand="extended" />
+      <mui-fab mClass="button" color="primary" icon="navigation" size="medium" variand="extended" />
+      <mui-fab mClass="button" color="primary" icon="navigation" variand="extended" />
     </view>
   </view>
   <mui-typography mClass="header2" variant="h5">FullWidth</mui-typography>
