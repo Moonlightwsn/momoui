@@ -15,7 +15,7 @@ Component({
   properties: {
     icon: {
       type: Object,
-      value: {checked: 'radio-box', unchecked: 'round'},
+      value: {checked: 'radiobox-marked', unchecked: 'radiobox-blank'},
     },
   },
   data: {

@@ -4,7 +4,7 @@ Page({
   behaviors: [themeMixin],
   data: {
     value: 0,
-    icon: 'like',
+    icon: 'heart',
     test: true,
   },
   onLoad() {

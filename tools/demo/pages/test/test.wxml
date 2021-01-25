@@ -1,4 +1,7 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <mui-icon name="account" />
+  <mui-icon name="account-circle" />
+  <!--
   <view class="demo-box">
     <view class="test-tabs">
       <view class="test-tab">New Arrivals in the Longest Text of Nonfiction</view>
@@ -24,6 +27,7 @@
       <mui-tab label="Item Three" value="three" />
     </mui-tabs>
   </view>
+  -->
   <!--
   <mui-checkbox />
   <mui-radio />
@@ -34,14 +38,14 @@
   <mui-chip
     variant="outlined"
     label="Clickable deletable"
-    icon="user"
+    icon="account"
     onClick="{{chipClick}}"
     onDelete="{{chipDelete}}"
   />
   <mui-chip
     variant="outlined"
     label="Clickable deletable"
-    avatar="user"
+    avatar="account"
     onClick="{{chipClick}}"
     onDelete="{{chipDelete}}"
   />
@@ -91,9 +95,9 @@
       </mui-typography>
     </mui-card-content>
     <mui-card-actions disableSpacing>
-      <mui-button icon="like" shape="circle" iconSize="24" />
+      <mui-button icon="heart" shape="circle" iconSize="24" />
       <mui-button icon="share" shape="circle" iconSize="24" />
-      <mui-button style="margin-left: auto;" icon="{{open ? 'arrow-up-2' : 'arrow-down-2'}}" shape="circle" iconSize="24" bind:tap="setOpen" />
+      <mui-button style="margin-left: auto;" icon="{{open ? 'chevron-up' : 'chevron-down'}}" shape="circle" iconSize="24" bind:tap="setOpen" />
     </mui-card-actions>
     <mui-collapse in="{{open}}">
       <mui-card-action-area>
@@ -187,12 +191,12 @@
     <mui-list>
       <mui-list-item button primary="username@gmail.com" bind:tap="onClose">
         <mui-list-item-avatar>
-          <mui-avatar icon="user" mStyle="background-color: #bbdefb;" iconColor="#1e88e5"></mui-avatar>
+          <mui-avatar icon="account" mStyle="background-color: #bbdefb;" iconColor="#1e88e5"></mui-avatar>
         </mui-list-item-avatar>
       </mui-list-item>
       <mui-list-item button primary="user02@gmail.com" bind:tap="onClose">
         <mui-list-item-avatar>
-          <mui-avatar icon="user"  mStyle="background-color: #bbdefb;" iconColor="#1e88e5"></mui-avatar>
+          <mui-avatar icon="account"  mStyle="background-color: #bbdefb;" iconColor="#1e88e5"></mui-avatar>
         </mui-list-item-avatar>
       </mui-list-item>
       <mui-list-item button primary="Add account" bind:tap="onClose">
@@ -333,7 +337,7 @@
   />
   <mui-chip
     label="Clickable deletable"
-    icon="user"
+    icon="account"
     onClick="{{chipClick}}"
     onDelete="{{chipDelete}}"
   />
@@ -356,7 +360,7 @@
     clickable
     deleteIcon="check"
     label="Primary clickable"
-    icon="user"
+    icon="account"
     onDelete="{{chipDelete}}"
   />
   <mui-chip
@@ -377,7 +381,7 @@
     clickable
     deleteIcon="check"
     label="Secondary clickable"
-    icon="user"
+    icon="account"
     onDelete="{{chipDelete}}"
   />
   <mui-chip
@@ -409,7 +413,7 @@
   <mui-chip
     variant="outlined"
     label="Clickable deletable"
-    icon="user"
+    icon="account"
     onClick="{{chipClick}}"
     onDelete="{{chipDelete}}"
   />
@@ -435,7 +439,7 @@
     clickable
     deleteIcon="check"
     label="Primary clickable"
-    icon="user"
+    icon="account"
     onDelete="{{chipDelete}}"
   />
   <mui-chip
@@ -459,7 +463,7 @@
     clickable
     deleteIcon="check"
     label="Secondary clickable"
-    icon="user"
+    icon="account"
     onDelete="{{chipDelete}}"
   />
   <mui-chip
@@ -492,7 +496,7 @@
   />
   <mui-chip
     label="Clickable deletable"
-    icon="user"
+    icon="account"
     onClick="{{chipClick}}"
     onDelete="{{chipDelete}}"
     size="small"
@@ -518,7 +522,7 @@
     clickable
     deleteIcon="check"
     label="Primary clickable"
-    icon="user"
+    icon="account"
     onDelete="{{chipDelete}}"
     size="small"
   />
@@ -542,7 +546,7 @@
     clickable
     deleteIcon="check"
     label="Secondary clickable"
-    icon="user"
+    icon="account"
     onDelete="{{chipDelete}}"
     size="small"
   />
@@ -580,7 +584,7 @@
   <mui-chip
     variant="outlined"
     label="Clickable deletable"
-    icon="user"
+    icon="account"
     onClick="{{chipClick}}"
     onDelete="{{chipDelete}}"
     size="small"
@@ -609,7 +613,7 @@
     clickable
     deleteIcon="check"
     label="Primary clickable"
-    icon="user"
+    icon="account"
     onDelete="{{chipDelete}}"
     size="small"
   />
@@ -636,7 +640,7 @@
     clickable
     deleteIcon="check"
     label="Secondary clickable"
-    icon="user"
+    icon="account"
     onDelete="{{chipDelete}}"
     size="small"
   />
@@ -722,19 +726,19 @@
         <mui-icon name="send" mStyle="font-size: 24px;" />
       </mui-list-item-icon>
       <mui-list-item-text primary="Inbox1" secondary="some secondary text1" />
-      <mui-icon name="{{open ? 'arrow-up-2' : 'arrow-down-2'}}" mStyle="font-size: 24px;" />
+      <mui-icon name="{{open ? 'chevron-up' : 'chevron-down'}}" mStyle="font-size: 24px;" />
     </mui-list-item>
     <mui-divider />
     <mui-collapse in="{{open}}">
       <mui-list disablePadding>
         <mui-list-item mStyle="padding-left: 32px;" button primary="Inbox1" secondary="some secondary text1">
           <mui-list-item-icon>
-            <mui-icon name="like" mStyle="font-size: 24px;" />
+            <mui-icon name="heart" mStyle="font-size: 24px;" />
           </mui-list-item-icon>
         </mui-list-item>
         <mui-list-item mStyle="padding-left: 32px;" button primary="Inbox1" secondary="some secondary text1">
           <mui-list-item-icon>
-            <mui-icon name="like" mStyle="font-size: 24px;" />
+            <mui-icon name="heart" mStyle="font-size: 24px;" />
           </mui-list-item-icon>
         </mui-list-item>
       </mui-list>
@@ -817,7 +821,7 @@
     </mui-input>
     <mui-input name="mui-textarea" mClass="input">
       <mui-input-adornment slot="startAdornment" position="start">
-        <mui-icon name="user" />
+        <mui-icon name="account" />
       </mui-input-adornment>
       <mui-input-adornment slot="endAdornment" position="end">
         <mui-button shape="circle" variant="text">

@@ -14,7 +14,7 @@ Component({
   properties: {
     icon: {
       type: Object,
-      value: {checked: 'square-check-fill', unchecked: 'square'},
+      value: {checked: 'checkbox-marked', unchecked: 'checkbox-blank-outline'},
     },
     indeterminate: {
       type: Boolean,
@@ -64,7 +64,7 @@ Component({
   observers: {
     indeterminate(indeterminate) {
       if (indeterminate) {
-        this.setData({icon: {checked: 'square-indeterminate-fill', unchecked: 'square'}})
+        this.setData({icon: {checked: 'checkbox-intermediate', unchecked: 'checkbox-blank-outline'}})
       }
     }
   },

@@ -35,9 +35,9 @@
     <mui-button shape="circle" color="secondary" size="large" icon="default" iconSize="20" />
   </view>
   <view style="margin-bottom: 12px;">
-    <mui-button shape="circle" size="small" variant="contained" icon="progress-circle" iconSize="16" iconSpin />
-    <mui-button shape="circle" color="primary" variant="contained" icon="progress-circle" iconSize="20" iconSpin />
-    <mui-button shape="circle" color="secondary" size="large" variant="contained" icon="progress-circle" iconSize="24" iconSpin />
+    <mui-button shape="circle" size="small" variant="contained" icon="loading" iconSize="16" iconSpin />
+    <mui-button shape="circle" color="primary" variant="contained" icon="loading" iconSize="20" iconSpin />
+    <mui-button shape="circle" color="secondary" size="large" variant="contained" icon="loading" iconSize="24" iconSpin />
   </view>
   <view style="margin-bottom: 12px;">
     <mui-button shape="extended" size="small" variant="contained" icon="search" iconSize="16">
@@ -119,7 +119,7 @@
       <mui-button
         variant="contained"
         color="primary"
-        icon="trash"
+        icon="delete"
         iconSize="20"
         iconPosition="right"
       >CONTAINED</mui-button>

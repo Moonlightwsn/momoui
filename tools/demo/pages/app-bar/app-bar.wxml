@@ -60,7 +60,7 @@
               transformOrigin="{{ {vertical: 'top', horizontal: 'right'} }}"
             >
               <mui-icon-button bind:tap="OpenMenu" slot="anchor" color="inherit" edge="end">
-                <mui-icon name="user" />
+                <mui-icon name="account-circle" />
               </mui-icon-button>
               <mui-menu-item bind:tap="CloseMenu">Profile</mui-menu-item>
               <mui-menu-item bind:tap="CloseMenu">My account</mui-menu-item>
@@ -100,7 +100,7 @@
               >
                 <mui-menu-item bind:tap="OpenMenu3" slot="anchor">
                   <mui-icon-button color="inherit">
-                    <mui-icon name="user" color="{{theme === 'dark' ? '#fff' : 'rgba(0, 0, 0, 0.87)'}}" />
+                    <mui-icon name="account-circle" color="{{theme === 'dark' ? '#fff' : 'rgba(0, 0, 0, 0.87)'}}" />
                   </mui-icon-button>
                   <mui-typography>Profile</mui-typography>
                 </mui-menu-item>
@@ -143,7 +143,7 @@
               <mui-icon-button
                 bind:tap="OpenMenu4"
                 color="inherit"
-                icon="user"
+                icon="account-circle"
                 slot="anchor"
               />
               <mui-menu-item bind:tap="CloseMenu4">Profile</mui-menu-item>
@@ -217,7 +217,7 @@
           />
           <mui-icon-button
             edge="end"
-            icon="user"
+            icon="account-circle"
             color="inherit"
           />
         </mui-toolbar>
@@ -255,7 +255,7 @@
           <mui-fab color="secondary" icon="plus" nativeNodeClass="fab" />
           <view style="flex-grow: 1;" />
           <mui-icon-button color="inherit" icon="search" />
-          <mui-icon-button color="inherit" edge="end" icon="user" />
+          <mui-icon-button color="inherit" edge="end" icon="account-circle" />
         </mui-toolbar>
       </mui-app-bar>
     </view>

@@ -3,7 +3,7 @@
     color="{{progressColor}}"
     mClass="mui mui-color-{{color}} {{variant !== 'indeterminate' ? 'adjust-offset' : ''}} {{mClass}}"
     mStyle="{{mStyle}}"
-    name="progress-circle"
+    name="loading"
     progress-props="{{_progressPropsForIcon}}"
     size="{{size}}"
     spin="{{variant === 'indeterminate'}}"

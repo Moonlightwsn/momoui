@@ -7,7 +7,7 @@
     <mui-tooptip arrow title="delete">
       <mui-button
         shape="circle"
-        icon="trash"
+        icon="delete"
       />
     </mui-tooptip>
     <mui-tooptip mStyle="margin: 16px;" title="add">
@@ -39,7 +39,7 @@
 >
   <mui-button
     shape="circle"
-    icon="like"
+    icon="heart"
     variant="contained"
     size="large"
     color="secondary"

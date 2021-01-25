@@ -70,7 +70,7 @@
       </mui-app-bar>
       <mui-drawer open="{{open2}}" variant="persistent" position="absolute" width="{{width2}}" mStyle="width: {{width2}}px;flex-shrink: 0;">
         <view class="mui mui-toolbar gutters-true variant-regular" style="justify-content: flex-end;">
-          <mui-icon-button bindtap="Close2" icon="arrow-left-1" />
+          <mui-icon-button bindtap="Close2" icon="arrow-left" />
         </view>
         <mui-divider />
         <template is="drawer-list" />
@@ -97,7 +97,7 @@
       </mui-app-bar>
       <mui-drawer variant="permanent" position="absolute" width="{{width3}}" mStyle="width: {{width3}}px;flex-shrink: 0;white-space: nowrap;">
         <view class="mui mui-toolbar gutters-true variant-regular" style="justify-content: flex-end;">
-          <mui-icon-button wx:if="{{open3}}" bindtap="Close3" icon="arrow-left-1" />
+          <mui-icon-button wx:if="{{open3}}" bindtap="Close3" icon="arrow-left" />
         </view>
         <mui-divider />
         <mui-list>

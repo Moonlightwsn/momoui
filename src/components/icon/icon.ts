@@ -124,10 +124,14 @@ Component({
           const fileRes = await wx.getFileSystemManager().readFileSync(iconPath, 'binary')
           if (fileRes) {
             let svgdata = String(fileRes)
-            const dstr = '<style type="text/css">'
-            const styleIndex = svgdata.indexOf(dstr)
-            let insertStyle = `path { fill: ${color}; }`
-            if (iconName === 'progress-circle') {
+            const dstr = '<svg'
+            const svgStartIndex = svgdata.indexOf(dstr)
+            const styleIndex = svgdata.indexOf('>', svgStartIndex)
+            let insertStyle = `
+              <style type="text/css">
+                path { fill: ${color}; }
+            `
+            if (iconName === 'loading') {
               const {progressProps} = this.data
               insertStyle = `
                 circle {
@@ -147,7 +151,11 @@ Component({
                 }
               `
             }
-            svgdata = `${svgdata.slice(0, styleIndex + dstr.length)}${insertStyle}${svgdata.slice(styleIndex + dstr.length)}`
+            insertStyle = `
+                ${insertStyle}
+              </style>
+            `
+            svgdata = `${svgdata.slice(0, styleIndex + 1)}${insertStyle}${svgdata.slice(styleIndex + 1)}`
             const base64 = new Base64()
             const svgtobase64 = base64.encode(svgdata)
             const base64Content = `data:image/svg+xml;base64,${svgtobase64}`

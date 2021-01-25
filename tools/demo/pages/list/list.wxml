@@ -17,7 +17,7 @@
       <mui-divider />
       <mui-list>
         <mui-list-item button>
-          <mui-list-item-text primary="Trash" />
+          <mui-list-item-text primary="Delete" />
         </mui-list-item>
         <mui-list-item button>
           <mui-list-item-text primary="Spam" />
@@ -35,11 +35,11 @@
           <mui-icon name="mail" />
         </mui-list-item-icon>
         <mui-list-item-text primary="Inbox" />
-        <mui-icon name="arrow-{{open ? 'up' : 'down'}}-2" />
+        <mui-icon name="chevron-{{open ? 'up' : 'down'}}" />
       </mui-list-item>
       <mui-collapse in="{{open}}">
         <mui-list disablePadding>
-          <mui-list-item button icon="{{ {name: 'like'} }}" indent="{{32}}" primary="Starred" />
+          <mui-list-item button icon="{{ {name: 'heart'} }}" indent="{{32}}" primary="Starred" />
         </mui-list>
       </mui-collapse>
     </mui-list>
@@ -48,7 +48,7 @@
   <view class="demo-box">
     <mui-list mClass="list-wrapper">
       <mui-list-item
-        avatar="{{ {icon: 'pictures'} }}"
+        avatar="{{ {icon: 'image-multiple'} }}"
         primary="Photos"
         secondary="Jan 9, 2014"
       />
@@ -59,7 +59,7 @@
         <mui-list-item-text primary="Work" secondary="Jan 7, 2014" />
       </mui-list-item>
       <mui-list-item
-        avatar="{{ {icon: 'like'} }}"
+        avatar="{{ {icon: 'heart'} }}"
         primary="Vacation"
         secondary="July 20, 2014"
       />
@@ -130,7 +130,7 @@
                 avatar="{{ {icon: 'folder'} }}"
                 primary="Single-line item"
                 secondary="{{secondary ? 'Secondary text' : null}}"
-                secondaryAction="{{ {icon: 'trash'} }}"
+                secondaryAction="{{ {icon: 'delete'} }}"
               />
             </mui-list>
           </view>
@@ -153,7 +153,7 @@
       <mui-divider />
       <mui-list>
         <mui-list-item button bind:tap="handleSelect" data-index="{{2}}" selected="{{selectedIndex === 2}}">
-          <mui-list-item-text primary="Trash" />
+          <mui-list-item-text primary="Delete" />
         </mui-list-item>
         <mui-list-item button bind:tap="handleSelect" data-index="{{3}}" selected="{{selectedIndex === 3}}">
           <mui-list-item-text primary="Spam" />
@@ -290,7 +290,7 @@
   <mui-typography mClass="header2" variant="h5">嵌入列表</mui-typography>
   <view class="demo-box">
     <mui-list mClass="list-wrapper">
-      <mui-list-item button icon="{{ {name: 'like'} }}" primary="Chelsea Otakan" />
+      <mui-list-item button icon="{{ {name: 'heart'} }}" primary="Chelsea Otakan" />
       <mui-list-item button>
         <mui-list-item-text inset primary="Eric Hoffman" />
       </mui-list-item>

@@ -35,14 +35,14 @@ Page({
     badgeVariant: 'standard',
     open: true,
     avatar: {
-      icon: 'pictures',
+      icon: 'image-multiple',
       // src: 'https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp'
     },
     avatar2: {
-      icon: 'user',
+      icon: 'account',
     },
     action: {
-      icon: 'bullet-list',
+      icon: 'dots-vertical',
     },
     listChecked: {
       0: false,
@@ -57,7 +57,7 @@ Page({
       onCheckboxChange: this.onCheckboxChange.bind(this),
       onRadioChange: this.onRadioChange.bind(this),
       secondaryAction: {
-        icon: 'trash',
+        icon: 'delete',
         color: 'primary',
         action: this.secondaryAction.bind(this),
         longpress: this.secondaryLongpress.bind(this),

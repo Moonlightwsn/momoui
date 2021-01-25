@@ -7,8 +7,8 @@
     <view class="tabs-wrapper">
       <mui-app-bar position="static">
         <mui-tabs value="{{value}}" onChange="{{SetValue}}">
-          <mui-tab label="Item One" icon="like" />
-          <mui-tab label="Item Two" icon="user" />
+          <mui-tab label="Item One" icon="heart" />
+          <mui-tab label="Item Two" icon="account-circle" />
           <mui-tab label="Item Three" icon="mail" />
         </mui-tabs>
       </mui-app-bar>
@@ -49,7 +49,7 @@
   <view class="demo-box">
     <mui-paper square>
       <mui-tabs value="{{value}}" indicatorColor="primary" textColor="secondary" onChange="{{SetValue}}">
-        <mui-tab label="Active" icon="like" />
+        <mui-tab label="Active" icon="heart" />
         <mui-tab disabled label="Disabled" />
         <mui-tab label="Active" />
       </mui-tabs>

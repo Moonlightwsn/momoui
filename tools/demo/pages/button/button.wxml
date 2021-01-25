@@ -37,7 +37,7 @@
       mClass="button"
       bind:tap="uploadImg"
       color="primary"
-      icon="pictures"
+      icon="image-multiple"
     />
   </view>
   <mui-typography mClass="header2" variant="h5">尺寸</mui-typography>
@@ -60,19 +60,19 @@
     <view class="demo-row">
       <mui-icon-button
         mClass="button"
-        icon="arrow-down-1"
+        icon="arrow-down"
         iconSize="16"
         size="small"
       />
       <mui-icon-button
         mClass="button"
-        icon="trash"
+        icon="delete"
         size="small"
       />
       <mui-icon-button
         mClass="button"
         color="primary"
-        icon="trash"
+        icon="delete"
         size="medium"
       />
       <mui-icon-button
@@ -80,29 +80,29 @@
         color="secondary"
         size="large"
       >
-        <mui-icon name="trash" />
+        <mui-icon name="delete" />
       </mui-icon-button>
     </view>
   </view>
   <mui-typography mClass="header2" variant="h5">带有icons（图标）和 label（标签）的按钮</mui-typography>
   <view class="demo-box">
-    <mui-button mClass="button" icon="trash" variant="contained" color="secondary">DELETE</mui-button>
+    <mui-button mClass="button" icon="delete" variant="contained" color="secondary">DELETE</mui-button>
     <mui-button mClass="button" icon="send" iconPosition="right" variant="contained" color="primary">SEND</mui-button>
-    <mui-button mClass="button" icon="arrow-up-1" variant="contained">UPLOAD</mui-button>
+    <mui-button mClass="button" icon="arrow-up" variant="contained">UPLOAD</mui-button>
     <mui-button mClass="button" icon="search" disabled variant="contained">SEARCH</mui-button>
     <mui-button mClass="button" icon="save" iconColor="rgb(0,0,0,0.87)" size="small" variant="contained" color="primary">SAVE</mui-button>
-    <mui-button mClass="button" icon="progress-circle" iconSize="18" size="large" variant="contained" color="primary">LOADING</mui-button>
+    <mui-button mClass="button" icon="loading" iconSize="18" size="large" variant="contained" color="primary">LOADING</mui-button>
     <mui-button mClass="button" loading size="large" variant="contained" color="primary">LOADING</mui-button>
   </view>
   <mui-typography mClass="header2" variant="h5">Icon Buttons（图标按钮）</mui-typography>
   <view class="demo-box">
     <mui-icon-button
       mClass="button"
-      icon="trash"
+      icon="delete"
     />
     <mui-icon-button
       mClass="button"
-      icon="trash"
+      icon="delete"
       disabled
     />
     <mui-icon-button
@@ -120,9 +120,9 @@
   <view class="demo-box" style="overflow-x:auto;">
     <view class="demo-row" style="justify-content: flex-start;">
       <mui-fab mClass="button" color="primary" icon="plus" />
-      <mui-fab mClass="button" color="secondary" icon="like" />
-      <mui-fab mClass="button" color="default" icon="share-arrow" variant="extended">Navigate</mui-fab>
-      <mui-fab mClass="button" color="default" icon="like" />
+      <mui-fab mClass="button" color="secondary" icon="heart" />
+      <mui-fab mClass="button" color="default" icon="reply" variant="extended">Navigate</mui-fab>
+      <mui-fab mClass="button" color="default" icon="heart" />
     </view>
     <view class="demo-row" style="justify-content: flex-start;">
       <mui-fab mClass="button" color="primary" icon="plus" size="small" />
@@ -130,9 +130,9 @@
       <mui-fab mClass="button" color="primary" icon="plus" />
     </view>
     <view class="demo-row" style="justify-content: flex-start;">
-      <mui-fab mClass="button" color="primary" icon="share-arrow" size="small" variand="extended" />
-      <mui-fab mClass="button" color="primary" icon="share-arrow" size="medium" variand="extended" />
-      <mui-fab mClass="button" color="primary" icon="share-arrow" variand="extended" />
+      <mui-fab mClass="button" color="primary" icon="reply" size="small" variand="extended" />
+      <mui-fab mClass="button" color="primary" icon="reply" size="medium" variand="extended" />
+      <mui-fab mClass="button" color="primary" icon="reply" variand="extended" />
     </view>
   </view>
   <mui-typography mClass="header2" variant="h5">FullWidth</mui-typography>
@@ -151,5 +151,5 @@
 <mui-fab
   mStyle="position: fixed;right: 16px;bottom: 16px;"
   color="secondary"
-  icon="like"  
+  icon="heart"  
 />
