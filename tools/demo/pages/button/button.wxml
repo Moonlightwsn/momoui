@@ -2,6 +2,7 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
+  <mui-typography variant="h4">Button 按钮</mui-typography>
   <mui-typography mClass="header2" variant="h5">Contained Buttons 实心按钮</mui-typography>
   <view class="demo-box">
     <mui-button mClass="button" variant="contained">DEFAULT</mui-button>
@@ -11,7 +12,7 @@
   </view>
   <mui-typography mClass="paragraph" variant="body2">你也可以使用属性 disableElevation 属性来消除实心按钮的立体效果</mui-typography>
   <view class="demo-box">
-    <mui-button mClass="button" variant="contained" color="default" disableElevation>Disable elevation</mui-button>
+    <mui-button mClass="button" variant="contained" color="primary" disableElevation>Disable elevation</mui-button>
   </view>
   <mui-typography mClass="header2" variant="h5">Text Buttons 文本按钮</mui-typography>
   <mui-typography mClass="paragraph" variant="body2">文本按钮通常用于不太明显的操作</mui-typography>
@@ -61,13 +62,12 @@
       <mui-icon-button
         mClass="button"
         icon="arrow-down"
-        iconSize="16"
         size="small"
       />
       <mui-icon-button
         mClass="button"
         icon="delete"
-        size="small"
+        iconSize="20"
       />
       <mui-icon-button
         mClass="button"
@@ -86,12 +86,12 @@
   </view>
   <mui-typography mClass="header2" variant="h5">带有icons（图标）和 label（标签）的按钮</mui-typography>
   <view class="demo-box">
-    <mui-button mClass="button" icon="delete" variant="contained" color="secondary">DELETE</mui-button>
-    <mui-button mClass="button" icon="send" iconPosition="right" variant="contained" color="primary">SEND</mui-button>
+    <mui-button mClass="button" icon="delete" color="secondary" variant="contained">DELETE</mui-button>
+    <mui-button mClass="button" icon="send" iconPosition="right" color="primary" variant="contained">SEND</mui-button>
     <mui-button mClass="button" icon="cloud-upload" variant="contained">UPLOAD</mui-button>
     <mui-button mClass="button" icon="microphone" disabled variant="contained">Talk</mui-button>
     <mui-button mClass="button" icon="save" iconColor="rgb(0,0,0,0.87)" size="small" variant="contained" color="primary">SAVE</mui-button>
-    <mui-button mClass="button" icon="loading" iconSize="18" size="large" variant="contained" color="primary">LOADING</mui-button>
+    <mui-button mClass="button" icon="loading" iconSize="18" iconSpin size="large" variant="contained" color="primary">LOADING</mui-button>
     <mui-button mClass="button" loading size="large" variant="contained" color="primary">LOADING</mui-button>
   </view>
   <mui-typography mClass="header2" variant="h5">Icon Buttons（图标按钮）</mui-typography>
@@ -130,9 +130,9 @@
       <mui-fab mClass="button" color="primary" icon="plus" />
     </view>
     <view class="demo-row" style="justify-content: flex-start;">
-      <mui-fab mClass="button" color="primary" icon="navigation" size="small" variand="extended" />
-      <mui-fab mClass="button" color="primary" icon="navigation" size="medium" variand="extended" />
-      <mui-fab mClass="button" color="primary" icon="navigation" variand="extended" />
+      <mui-fab mClass="button" color="primary" icon="navigation" size="small" variant="extended">Extended</mui-fab>
+      <mui-fab mClass="button" color="primary" icon="navigation" size="medium" variant="extended">Extended</mui-fab>
+      <mui-fab mClass="button" color="primary" icon="navigation" variant="extended">Extended</mui-fab>
     </view>
   </view>
   <mui-typography mClass="header2" variant="h5">FullWidth</mui-typography>

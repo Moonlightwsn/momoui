@@ -19,7 +19,7 @@ export default Behavior({
     },
     value: {
       type: Array,
-      optionalTypes: [String],
+      optionalTypes: [String, Number],
       value: null,
     },
   },
@@ -44,10 +44,15 @@ export default Behavior({
       } else if (typeof value === 'string') {
         isControlled = true
         checkedValue = value.split(',')
+      } else if (typeof value === 'number') {
+        isControlled = true
+        checkedValue = [value]
       } else if (Array.isArray(defaultValue)) {
         checkedValue = defaultValue
       } else if (typeof defaultValue === 'string') {
         checkedValue = defaultValue.split(',')
+      } else if (typeof defaultValue === 'number') {
+        checkedValue = [defaultValue]
       }
       if (checkedValue) {
         const {_pureCheckedValue: checkedValueMap} = this.data
@@ -77,7 +82,13 @@ export default Behavior({
         this.setData({_pureTargets: this.data._pureTargets})
       }
     },
-    _InnerChange(detail) {
+    _UnbindValue(value, target) {
+      if (value && target) {
+        delete this.data._pureTargets[value]
+        this.setData({_pureTargets: this.data._pureTargets})
+      }
+    },
+    _InnerChange(detail, event) {
       const {value, checked} = detail
       let checkedValue: Array<String> = []
       let tmpCheckedValueMap = false
@@ -93,11 +104,34 @@ export default Behavior({
       checkedValue = Object.keys(checkedValueMap).filter(item => (checkedValueMap[item]))
       const realCheckedValue = isMultiple ? checkedValue : checkedValue[0]
       if (onChange && typeof onChange === 'function') {
-        onChange(realCheckedValue)
+        onChange(realCheckedValue, event)
       }
       const {_pureIsControlled: isControlled} = this.data
       if (!isControlled) {
         this.setData({value: realCheckedValue})
+      }
+    },
+    _Linked(target, val) {
+      if (target && target.data) {
+        let value = val
+        if (typeof val === 'undefined') {
+          ({value} = target.data)
+        }
+        if (value) {
+          this._BindValue(value, target)
+          const realChecked = this.data._pureCheckedValue[value] || false
+          target._GroupControll(realChecked)
+          this._Trigger(value, realChecked)
+        }
+      }
+    },
+    _UnLinked(target) {
+      if (target && target.data) {
+        const {value} = target.data
+        if (value) {
+          this._UnbindValue(value, target)
+          this._Trigger(value, false)
+        }
       }
     },
     _Trigger(value, checked, checkedValueMap) {
@@ -114,12 +148,6 @@ export default Behavior({
         return realCheckedValue
       }
       return null
-    },
-    _UnbindValue(value, target) {
-      if (value && target) {
-        delete this.data._pureTargets[value]
-        this.setData({_pureTargets: this.data._pureTargets})
-      }
     },
   },
   observers: {

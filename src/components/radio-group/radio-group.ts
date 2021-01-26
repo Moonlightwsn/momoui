@@ -9,24 +9,10 @@ Component({
     '../radio/radio': {
       type: 'descendant',
       linked(target) {
-        if (target) {
-          const {value} = target.data
-          if (value) {
-            this._BindValue(value, target)
-            const realChecked = this.data._pureCheckedValue[value] || false
-            target._GroupControll(realChecked)
-            this._Trigger(value, realChecked)
-          }
-        }
+        this._Linked(target)
       },
       unlinked(target) {
-        if (target && target.data) {
-          const {value} = target.data
-          if (value) {
-            this._UnbindValue(value, target)
-            this._Trigger(value, false)
-          }
-        }
+        this._UnLinked(target)
       },
     }
   },

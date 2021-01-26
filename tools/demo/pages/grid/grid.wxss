@@ -1,5 +1,8 @@
-.image {
-  max-height: 100%;
-  max-width: 100%;
-  display: block;
+.paper-in-gird {
+  height: 140px;
+  width: 100px;
+}
+.paper-in-grid2 {
+  padding: 16px;
+  text-align: center;
 }

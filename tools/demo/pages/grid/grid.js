@@ -3,15 +3,49 @@ import themeMixin from '../../behaviors/theme'
 Page({
   behaviors: [themeMixin],
   data: {
-    papers: [],
+    spacing: 2,
+    direction: 'row',
+    directions: [
+      'row',
+      'row-reverse',
+      'column',
+      'column-reverse',
+    ],
+    justify: 'center',
+    justifys: [
+      'flex-start',
+      'center',
+      'flex-end',
+      'space-around',
+      'space-evenly',
+    ],
+    alignItem: 'center',
+    alignItems: [
+      'flex-start',
+      'center',
+      'flex-end',
+      'stretch',
+      'baseline',
+    ],
   },
   onLoad() {
-    const papers = [];
-    for (let i = 0; i < 25; i+=1) { papers.push(i) }  
-    
     this.setData({
-      papers,
+      ChangeSpacing: this.ChangeSpacing.bind(this),
+      ChangeDirection: this.ChangeDirection.bind(this),
+      ChangeJustify: this.ChangeJustify.bind(this),
+      ChangeAlignItem: this.ChangeAlignItem.bind(this)
     })
-  }
+  },
+  ChangeSpacing(spacing) {
+    this.setData({spacing})
+  },
+  ChangeDirection(direction) {
+    this.setData({direction})
+  },
+  ChangeJustify(justify) {
+    this.setData({justify})
+  },
+  ChangeAlignItem(alignItem) {
+    this.setData({alignItem})
+  },
 })
-

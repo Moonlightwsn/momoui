@@ -2,6 +2,7 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
+  <mui-typography variant="h4">Button Groups 按钮组</mui-typography>
   <mui-typography mClass="header2" variant="h5">Basic button group 基本的按钮组</mui-typography>
   <view class="demo-box">
     <mui-button-group mClass="button-group" color="primary">
@@ -19,9 +20,6 @@
       <mui-button>TWO</mui-button>
       <mui-button>THREE</mui-button>
     </mui-button-group>
-    <mui-button bind:tap="testColor">COLOR</mui-button>
-    <mui-button bind:tap="testSize">SIZE</mui-button>
-    <mui-button bind:tap="testVariant">VARIANT</mui-button>
   </view>
   <mui-typography mClass="header2" variant="h5">大小和颜色</mui-typography>
   <view class="demo-box">

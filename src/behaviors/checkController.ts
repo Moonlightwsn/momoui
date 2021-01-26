@@ -44,6 +44,7 @@ export default Behavior({
     },
     value: {
       type: String,
+      optionalTypes: [Number],
       value: null,
     },
   },
@@ -71,7 +72,7 @@ export default Behavior({
     }
   },
   methods: {
-    _CheckControll() {
+    _CheckControll(e) {
       const {
         _checked,
         controlled,
@@ -96,7 +97,7 @@ export default Behavior({
           } = this._group.data
           if (value) {
             // this._group直接调用_InnerChange，保证_InnerChange内部的this指向this._group
-            this._group._InnerChange({checked: realChecked, value})
+            this._group._InnerChange({checked: realChecked, value}, e)
           }
           if (!isControlled) {
             if (realChecked && targets && !multiple) {

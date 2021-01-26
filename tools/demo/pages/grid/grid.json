@@ -1,13 +1,12 @@
 {
   "usingComponents": {
-    "mui-icon": "../../components/icon/icon",
     "mui-button-base": "../../components/button-base/button-base",
-    "mui-button": "../../components/button/button",
-    "mui-paper": "../../components/paper/paper",
+    "mui-form-label": "../../components/form-label/form-label",
+    "mui-form-control-label": "../../components/form-control-label/form-control-label",
     "mui-grid": "../../components/grid/grid",
-    "mui-grid-list": "../../components/grid-list/grid-list",
-    "mui-grid-list-tile": "../../components/grid-list-tile/grid-list-tile",
-    "mui-grid-list-tile-bar": "../../components/grid-list-tile-bar/grid-list-tile-bar",
-    "mui-list-subheader": "../../components/list-subheader/list-subheader"
+    "mui-paper": "../../components/paper/paper",
+    "mui-radio": "../../components/radio/radio",
+    "mui-radio-group": "../../components/radio-group/radio-group",
+    "mui-typography": "../../components/typography/typography"
   }
 }

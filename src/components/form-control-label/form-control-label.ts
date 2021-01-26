@@ -86,11 +86,11 @@ Component({
     },
   },
   methods: {
-    _Click() {
+    _Click(e) {
       if (this.data._pureFormItems) {
         this.data._pureFormItems.forEach(item => {
           if (item.type === 'radio' || item.type === 'checkbox' || item.type === 'switch') {
-            item.target._CheckControll()
+            item.target._CheckControll(e)
             const buttonInFormItem = item.target.selectComponent('._mui-inner-button')
             if (buttonInFormItem) {
               buttonInFormItem._TriggerRipple({

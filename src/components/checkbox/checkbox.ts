@@ -52,6 +52,9 @@ Component({
         const newData = {}
         controlledProps.forEach(item => {
           if (!this._propIsSet || !this._propIsSet[item]) {
+            if (item === 'value' && this._group) {
+              this._group._Linked(this, target.data[item])
+            }
             newData[item] = target.data[item]
           }
         })
