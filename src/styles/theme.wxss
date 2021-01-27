@@ -2407,6 +2407,9 @@
       max-width: none;
       flex-basis: auto;
     }
+    &.zero-min-width-true {
+      min-width: 0;
+    }
   }
   /** mui-grid end */
 

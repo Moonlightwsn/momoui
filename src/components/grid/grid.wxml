@@ -1,5 +1,5 @@
 <view
-  class="mui mui-grid {{_innerClasses}} {{mClass}}"
+  class="mui mui-grid zero-min-width-{{zeroMinWidth}} {{_innerClasses}} {{mClass}}"
   style="{{_innerStyles}}{{mStyle}}"
 >
   <slot />

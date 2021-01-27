@@ -27,7 +27,7 @@ Component({
       type: String,
       value: '',
     },
-    tilePosition: {
+    titlePosition: {
       type: String,
       value: 'bottom',
     },

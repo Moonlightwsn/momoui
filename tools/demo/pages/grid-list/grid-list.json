@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "mui-grid-list": "../../components/grid-list/grid-list",
+    "mui-grid-list-tile": "../../components/grid-list-tile/grid-list-tile",
+    "mui-grid-list-tile-bar": "../../components/grid-list-tile-bar/grid-list-tile-bar",
+    "mui-icon": "../../components/icon/icon",
+    "mui-icon-button": "../../components/icon-button/icon-button",
+    "mui-list-subheader": "../../components/list-subheader/list-subheader",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

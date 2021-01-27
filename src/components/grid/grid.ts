@@ -22,14 +22,6 @@ const gridClassesMap = {
 Component({
   behaviors: [muiBase],
   properties: {
-    container: {
-      type: Boolean,
-      value: false,
-    },
-    item: {
-      type: Boolean,
-      value: false,
-    },
     alignContent: {
       type: String,
       value: 'stretch',
@@ -38,9 +30,17 @@ Component({
       type: String,
       value: 'stretch',
     },
+    container: {
+      type: Boolean,
+      value: false,
+    },
     direction: {
       type: String,
       value: 'row',
+    },
+    item: {
+      type: Boolean,
+      value: false,
     },
     justify: {
       type: String,
@@ -77,6 +77,10 @@ Component({
     xl: {
       type: Boolean,
       optionalTypes: [Number, String],
+      value: false,
+    },
+    zeroMinWidth: {
+      type: Boolean,
       value: false,
     },
   },

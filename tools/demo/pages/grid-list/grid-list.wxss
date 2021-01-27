@@ -1,0 +1,17 @@
+.grid-list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.mui.tile-bar {
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%);
+}
+.mui.tile-bar .title-wrap, .mui.tile-bar .mui-button.mui-icon-button .mui-icon {
+  color: #1976d2;
+}
+
+[data-momoui-theme=dark] .mui.tile-bar .title-wrap, [data-momoui-theme=dark] .mui.tile-bar .mui-button.mui-icon-button .mui-icon {
+  color: #90caf9;
+}

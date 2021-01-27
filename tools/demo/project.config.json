@@ -65,7 +65,12 @@
           "name": "grid",
           "pathName": "pages/grid/grid",
           "scene": null
-				},
+        },
+        {
+          "name": "grid-list",
+          "pathName": "pages/grid-list/grid-list",
+          "scene": null
+        },
         {
           "name": "index",
           "pathName": "pages/index/index",

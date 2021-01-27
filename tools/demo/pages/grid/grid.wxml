@@ -1,3 +1,14 @@
+<template name="form-row">
+  <mui-grid item xs="{{4}}">
+    <mui-paper mStyle="padding: 8px;text-align: center;">item</mui-paper>
+  </mui-grid>
+  <mui-grid item xs="{{4}}">
+    <mui-paper mStyle="padding: 8px;text-align: center;">item</mui-paper>
+  </mui-grid>
+  <mui-grid item xs="{{4}}">
+    <mui-paper mStyle="padding: 8px;text-align: center;">item</mui-paper>
+  </mui-grid>
+</template>
 <view
   data-momoui-theme="{{theme}}"
   class="page"
@@ -174,8 +185,8 @@
       </mui-grid>
     </view>
   </view>
-  <mui-typography>复杂的栅格</mui-typography>
-  <mui-typography>以下的演示说明了如何使用栅格构建复杂的布局</mui-typography>
+  <mui-typography mClass="header2" variant="h5">复杂的栅格</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">以下的演示说明了如何使用栅格构建复杂的布局</mui-typography>
   <view class="demo-box">
     <view style="flex-grow: 1;">
       <mui-paper mStyle="padding: 16px;margin: auto;max-width: 500px;">
@@ -212,6 +223,23 @@
           </mui-grid>
         </mui-grid>
       </mui-paper>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">嵌套栅格</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">容器（container） 和 子项（item） 是栅格两个独立的属性, 它们可以组合起来使用</mui-typography>
+  <view class="demo-box">
+    <view style="flex-grow: 1;">
+      <mui-grid container spacing="{{1}}">
+        <mui-grid container item xs="{{12}}" spacing="{{3}}">
+          <template is="form-row" />
+        </mui-grid>
+        <mui-grid container item xs="{{12}}" spacing="{{3}}">
+          <template is="form-row" />
+        </mui-grid>
+        <mui-grid container item xs="{{12}}" spacing="{{3}}">
+          <template is="form-row" />
+        </mui-grid>
+      </mui-grid>
     </view>
   </view>
 </view>
