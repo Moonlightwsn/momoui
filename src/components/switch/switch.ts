@@ -9,13 +9,11 @@ const controlledProps: string[] = [
   'value',
 ]
 
+const defaultIcon = {checked: 'circle', unchecked: 'circle'}
+
 Component({
   behaviors: [muiBase, muiController, checkController],
   properties: {
-    icon: {
-      type: Object,
-      value: {checked: 'circle', unchecked: 'circle'},
-    },
     value: {
       type: Boolean,
       value: false,
@@ -23,6 +21,11 @@ Component({
   },
   data: {
     _pureIsSwitch: true,
+  },
+  lifetimes: {
+    created() {
+      this.defaultIcon = defaultIcon
+    }
   },
   relations: {
     '../form-control-label/form-control-label': {

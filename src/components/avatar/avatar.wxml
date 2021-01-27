@@ -5,6 +5,8 @@
   <mui-icon
     wx:if="{{src || icon}}"
     src="{{src}}"
+    mClass="{{icon && icon.class}}"
+    mStyle="{{icon && icon.style}}"
     name="{{icon.name || icon}}"
     color="{{iconColor || icon.color}}"
     size="{{src ? null : (iconSize || icon.size)}}"

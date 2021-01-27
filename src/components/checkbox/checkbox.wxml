@@ -3,8 +3,15 @@
   style="{{mStyle}}"
   capture-bind:tap="_CheckControll"
 >
-  <mui-button class="_mui-inner-button" color="{{color}}" disabled="{{disabled}}" disableRipple="{{disableRipple}}" hoverStopPropagation mClass="mui-icon-button edge-{{edge}}" mStyle="padding: 9px;" shape="circle" variant="text">
-    <mui-icon name="{{_currentIcon}}" mClass="check-icon" />
+  <mui-button class="_mui-inner-button" color="{{color}}" disabled="{{disabled}}" disableRipple="{{disableRipple}}" hoverStopPropagation mClass="mui-icon-button edge-{{edge}}" mStyle="padding: 9px;" rippleColor="{{rippleColor}}" shape="circle" variant="text">
+    <mui-icon
+      color="{{icon && icon.color}}"
+      mClass="{{icon && icon.class}}"
+      mStyle="{{icon && icon.style}}"
+      name="{{_currentIcon}}"
+      size="{{icon && icon.size}}"
+      mClass="check-icon"
+    />
   </mui-button>
   <slot />
 </view>

@@ -1,0 +1,6 @@
+.mui.custom-checkbox.mui-unchecked .mui-button .check-icon {
+  color: #66bb6a;
+}
+.mui.custom-checkbox.mui-checked .mui-button .check-icon {
+  color: #43a047;
+}

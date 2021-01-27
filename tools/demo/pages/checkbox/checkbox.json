@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mui-checkbox": "../../components/checkbox/checkbox",
+    "mui-checkbox-group": "../../components/checkbox-group/checkbox-group",
+    "mui-form-control-label": "../../components/form-control-label/form-control-label",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

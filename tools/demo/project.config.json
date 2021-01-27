@@ -52,6 +52,11 @@
           "scene": null
         },
         {
+          "name": "checkbox",
+          "pathName": "pages/checkbox/checkbox",
+          "scene": null
+				},
+        {
           "name": "drawer",
           "pathName": "pages/drawer/drawer",
           "scene": null

@@ -1,0 +1,53 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography variant="h4">Checkbox 多选框</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">在一个集合内，用户可以通过多选框组件进行一项或者多项选择</mui-typography>
+  <mui-typography mClass="header2" variant="h5">简单的多选框</mui-typography>
+  <view class="demo-box">
+    <view>
+      <mui-checkbox checked />
+      <mui-checkbox checked="{{checked}}" color="primary" onChange="{{HandleChange}}" />
+      <mui-checkbox />
+      <mui-checkbox disabled />
+      <mui-checkbox disabled checked />
+      <mui-checkbox defaultChecked indeterminate />
+      <mui-checkbox checked color="default" />
+      <mui-checkbox defaultChecked size="small" />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">带有 FormControlLabel 的多选框</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">借助 FormControlLabel 组件，多选框组件可以和标签一起使用</mui-typography>
+  <view class="demo-box">
+    <mui-checkbox-group row>
+      <mui-form-control-label label="Secondary">
+        <mui-checkbox />
+      </mui-form-control-label>
+      <mui-form-control-label checked="{{checked}}" onChange="{{HandleChange}}" label="primary">
+        <mui-checkbox color="primary" />
+      </mui-form-control-label>
+      <mui-form-control-label label="Uncontrolled">
+        <mui-checkbox />
+      </mui-form-control-label>
+      <mui-form-control-label disabled label="Disabled">
+        <mui-checkbox />
+      </mui-form-control-label>
+      <mui-form-control-label disabled label="Disabled">
+        <mui-checkbox checked />
+      </mui-form-control-label>
+      <mui-form-control-label label="Indeterminate">
+        <mui-checkbox checked indeterminate />
+      </mui-form-control-label>
+      <mui-form-control-label label="Custom color">
+        <mui-checkbox checked mClass="custom-checkbox" rippleColor="#66bb6a" />
+      </mui-form-control-label>
+      <mui-form-control-label label="Custom icon">
+        <mui-checkbox checked icon="{{ {checked: 'heart', unchecked: 'heart-broken'} }}" size="small" />
+      </mui-form-control-label>
+      <mui-form-control-label label="Custom size">
+        <mui-checkbox checked icon="{{ {size: 16} }}" size="small" />
+      </mui-form-control-label>
+    </mui-checkbox-group>
+  </view>
+</view>

@@ -10,16 +10,17 @@ const controlledProps: string[] = [
   'value',
 ]
 
+const defaultIcon = {checked: 'radiobox-marked', unchecked: 'radiobox-blank'}
+
 Component({
   behaviors: [muiBase, muiController, checkController],
-  properties: {
-    icon: {
-      type: Object,
-      value: {checked: 'radiobox-marked', unchecked: 'radiobox-blank'},
-    },
-  },
   data: {
     _pureOneWay: true,
+  },
+  lifetimes: {
+    created() {
+      this.defaultIcon = defaultIcon
+    }
   },
   relations: {
     '../form-control-label/form-control-label': {

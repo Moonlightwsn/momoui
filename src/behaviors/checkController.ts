@@ -31,11 +31,15 @@ export default Behavior({
     },
     icon: {
       type: Object,
-      value: {},
+      value: null,
     },
     onChange: {
       // @ts-ignore
       type: Function,
+      value: null,
+    },
+    rippleColor: {
+      type: String,
       value: null,
     },
     size: {
@@ -84,7 +88,7 @@ export default Behavior({
       const realChecked = isOneWay || !_checked
       if (realChecked !== !!_checked) {
         if (onChange && typeof onChange === 'function') {
-          onChange(realChecked)
+          onChange(realChecked, e)
         }
         if (thisIsControlled && realChecked !== !!_checked && !controlled) {
           this.setData({checked: realChecked})
@@ -124,7 +128,8 @@ export default Behavior({
       if (typeof checkedArg !== 'undefined') {
         checked = checkedArg
       }
-      const {checked: checkedIcon, unchecked: uncheckedIcon} = icon
+      const mergeIcon = {...this.defaultIcon || {}, ...icon}
+      const {checked: checkedIcon, unchecked: uncheckedIcon} = mergeIcon
       let _currentIcon = uncheckedIcon
       let _checkedClass = 'mui-unchecked'
       if (checked) {

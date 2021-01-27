@@ -9,16 +9,19 @@ const controlledProps: string[] = [
   'value',
 ]
 
+const defaultIcon = {checked: 'checkbox-marked', unchecked: 'checkbox-blank-outline'}
+
 Component({
   behaviors: [muiBase, muiController, checkController],
   properties: {
-    icon: {
-      type: Object,
-      value: {checked: 'checkbox-marked', unchecked: 'checkbox-blank-outline'},
-    },
     indeterminate: {
       type: Boolean,
       value: false,
+    }
+  },
+  lifetimes: {
+    created() {
+      this.defaultIcon = defaultIcon
     }
   },
   relations: {
@@ -67,7 +70,8 @@ Component({
   observers: {
     indeterminate(indeterminate) {
       if (indeterminate) {
-        this.setData({icon: {checked: 'checkbox-intermediate', unchecked: 'checkbox-blank-outline'}})
+        const {icon} = this.data
+        this.setData({icon: {...icon, checked: 'checkbox-intermediate'}})
       }
     }
   },
