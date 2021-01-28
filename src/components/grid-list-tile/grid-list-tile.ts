@@ -22,8 +22,12 @@ Component({
         if (target) {
           const {cols: thisCols, rows: thisRows} = this.data
           const {data: {cols: targetCols, spacing, cellHeight} = {}} = target
+          let realCellHeigth = 'height:auto'
+          if (typeof cellHeight === 'number') {
+            realCellHeigth = `height:${cellHeight * thisRows + spacing}px`
+          }
           const padding = spacing / 2
-          const _innerStyles = `width:${(thisCols / targetCols) * 100}%;height:${cellHeight * thisRows + spacing}px;padding:${padding}px;`
+          const _innerStyles = `width:${(thisCols / targetCols) * 100}%;${realCellHeigth};padding:${padding}px;`
           this.setData({
             _innerStyles
           })

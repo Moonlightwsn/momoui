@@ -9,10 +9,6 @@ export default Behavior({
       type: String,
       value: 'secondary',
     },
-    controlled: {
-      type: Boolean,
-      value: false,
-    },
     defaultChecked: {
       type: Boolean,
       value: false,
@@ -79,7 +75,6 @@ export default Behavior({
     _CheckControll(e) {
       const {
         _checked,
-        controlled,
         value,
         _pureOneWay: isOneWay,
         _pureIsControlled: thisIsControlled,
@@ -90,7 +85,7 @@ export default Behavior({
         if (onChange && typeof onChange === 'function') {
           onChange(realChecked, e)
         }
-        if (thisIsControlled && realChecked !== !!_checked && !controlled) {
+        if (thisIsControlled && realChecked !== !!_checked) {
           this.setData({checked: realChecked})
         }
         if (this._group) {
