@@ -68,7 +68,7 @@
         </mui-checkbox-group>
         <mui-form-helper-text>Be careful</mui-form-helper-text>
       </mui-form-control>
-      <mui-form-control mStyle="margin: 24px;" disabled required error="{{error}}">
+      <mui-form-control mStyle="margin: 24px;" required error="{{error}}">
         <mui-form-label>Pick two</mui-form-label>
         <mui-checkbox-group value="{{groupValue}}" onChange="{{HandleGroupChange}}">
           <mui-form-control-label label="Gilad Gray">
@@ -81,7 +81,7 @@
             <mui-checkbox value="antoine" />
           </mui-form-control-label>
         </mui-checkbox-group>
-        <mui-form-helper-text>You can display an error</mui-form-helper-text>
+        <mui-form-helper-text margin="dense">You can display an error</mui-form-helper-text>
       </mui-form-control>
     </view>
   </view>

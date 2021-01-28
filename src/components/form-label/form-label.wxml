@@ -1,5 +1,5 @@
 <label
-  class="mui mui-form-label mui-color-{{color}} focus-{{focus}} required-{{required}} disabled-{{disabled}} error-{{error}} {{mClass}}"
+  class="mui mui-form-label mui-color-{{color}} focus-{{focus}} required-{{required}} filled-{{filled}} disabled-{{disabled}} error-{{error}} {{mClass}}"
   style="{{mStyle}}"
 >
   <slot />

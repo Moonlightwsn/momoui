@@ -1291,11 +1291,14 @@
       margin-left: 12px;
       margin-right: 12px;
     }
-    &.error-true {
-      color: @error_color;
+    &.margin-dense {
+      margin-top: 4px;
     }
     &.disabled-true {
       color:rgba(0, 0, 0, 0.38);
+    }
+    &.error-true {
+      color: @error_color;
     }
   }
   /** mui-form-helper-text end */
@@ -3449,15 +3452,18 @@
       &.disabled-true {
         color: rgba(255, 255, 255, 0.5);
       }
+      &.error-true {
+        color: @error_color;
+      }
     }
 
     &.mui-form-helper-text {
       color: rgba(255, 255, 255, 0.7);
-      &.error-true {
-        color: @error_color;
-      }
       &.disabled-true {
         color: rgba(255, 255, 255, 0.5);
+      }
+      &.error-true {
+        color: @error_color;
       }
     }
 

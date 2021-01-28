@@ -1,5 +1,5 @@
 <text
-  class="mui mui-form-helper-text error-{{error}} disabled-{{disabled}} {{variant}} {{mClass}}"
+  class="mui mui-form-helper-text error-{{error}} disabled-{{disabled}} focus-{{focus}} required-{{required}} filled-{{filled}} margin-{{margin}} {{variant}} {{mClass}}"
   style="{{mStyle}}"
 >
   <slot />

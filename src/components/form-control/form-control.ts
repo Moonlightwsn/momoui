@@ -74,6 +74,12 @@ Component({
         this._Linked(target, 'form-control-label')
       },
     },
+    '../form-helper-text/form-helper-text': {
+      type: 'descendant',
+      linked(target) {
+        this._Linked(target, 'form-helper-text')
+      },
+    },
     '../form-label/form-label': {
       type: 'descendant',
       linked(target) {
@@ -91,7 +97,7 @@ Component({
       linked(target) {
         this._Linked(target, 'input')
       },
-    }
+    },
   },
   methods: {
     _Linked(target, type) {
