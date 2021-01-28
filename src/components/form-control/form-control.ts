@@ -115,16 +115,18 @@ Component({
       })
     },
     _onBlur() {
-      this._ControlFormItem('_onBlur', ['form-label'], {focus: false})
+      this.setData({focus: false})
+      // this._ControlFormItem('_onBlur', ['form-label'], {focus: false})
     },
     _onFocus() {
-      this._ControlFormItem('_onFocus', ['form-label'], {focus: true})
+      this.setData({focus: true})
+      // this._ControlFormItem('_onFocus', ['form-label'], {focus: true})
     },
     _SetInputLabelShrink(shrink) {
       this._ControlFormItem('_SetShrink', ['input-label'], {shrink})
     },
     _TouchStart() {
-      this._onFocus()
+      // this._onFocus()
     },
   },
   observers: {

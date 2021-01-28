@@ -20,6 +20,7 @@ Component({
   lifetimes: {
     created() {
       this.defaultIcon = defaultIcon
+      this.controlledProps = controlledProps
     }
   },
   relations: {
@@ -44,25 +45,6 @@ Component({
       unlinked() {
         this._group = undefined
       },
-    },
-  },
-  methods: {
-    _ReRenderControlledProps() {
-      const target = this._formControlLabelComp
-      if (target && Array.isArray(controlledProps)) {
-        const newData = {}
-        controlledProps.forEach(item => {
-          if (!this._propIsSet || !this._propIsSet[item]) {
-            if (item === 'value' && this._group) {
-              this._group._Linked(this, target.data[item])
-            }
-            newData[item] = target.data[item]
-          }
-        })
-        if (Object.keys(newData).length > 0) {
-          this.setData(newData)
-        }
-      }
     },
   },
   observers: {

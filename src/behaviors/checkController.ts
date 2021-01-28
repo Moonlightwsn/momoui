@@ -149,6 +149,23 @@ export default Behavior({
     _GroupControll(checked) {
       this.setData(this._GenIcon({checked}))
     },
+    _ReRenderControlledProps() {
+      const target = this._formControlLabelComp
+      if (target && Array.isArray(this.controlledProps)) {
+        const newData = {}
+        this.controlledProps.forEach(item => {
+          if (!this._propIsSet || !this._propIsSet[item]) {
+            if (item === 'value' && this._group) {
+              this._group._Linked(this, target.data[item])
+            }
+            newData[item] = target.data[item]
+          }
+        })
+        if (Object.keys(newData).length > 0) {
+          this.setData(newData)
+        }
+      }
+    },
   },
   observers: {
     checked(checked) {

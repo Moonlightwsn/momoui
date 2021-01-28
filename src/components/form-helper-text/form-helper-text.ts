@@ -11,6 +11,22 @@ Component({
       type: Boolean,
       value: false,
     },
+    filled: {
+      type: Boolean,
+      value: false,
+    },
+    focus: {
+      type: Boolean,
+      value: false,
+    },
+    margin: {
+      type: String,
+      value: 'dense',
+    },
+    required: {
+      type: Boolean,
+      value: false,
+    },
     variant: {
       type: String,
       value: 'standard',

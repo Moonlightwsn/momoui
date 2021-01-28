@@ -1,6 +1,7 @@
 import muiBase from '../../behaviors/muiBase.ts'
 import muiController from '../../behaviors/muiController.ts'
 import checkController from '../../behaviors/checkController.ts'
+import {ObserversForControlledPropsByAncestor} from '../../common/utils.ts'
 
 const controlledProps: string[] = [
   'checked',
@@ -22,6 +23,7 @@ Component({
   lifetimes: {
     created() {
       this.defaultIcon = defaultIcon
+      this.controlledProps = controlledProps
     }
   },
   relations: {
@@ -48,26 +50,8 @@ Component({
       },
     },
   },
-  methods: {
-    _ReRenderControlledProps() {
-      const target = this._formControlLabelComp
-      if (target && Array.isArray(controlledProps)) {
-        const newData = {}
-        controlledProps.forEach(item => {
-          if (!this._propIsSet || !this._propIsSet[item]) {
-            if (item === 'value' && this._group) {
-              this._group._Linked(this, target.data[item])
-            }
-            newData[item] = target.data[item]
-          }
-        })
-        if (Object.keys(newData).length > 0) {
-          this.setData(newData)
-        }
-      }
-    },
-  },
   observers: {
+    ...ObserversForControlledPropsByAncestor(controlledProps),
     indeterminate(indeterminate) {
       if (indeterminate) {
         const {icon} = this.data

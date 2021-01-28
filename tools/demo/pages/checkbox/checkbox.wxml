@@ -21,11 +21,11 @@
   <mui-typography mClass="paragraph" variant="body2">借助 FormControlLabel 组件，多选框组件可以和标签一起使用</mui-typography>
   <view class="demo-box">
     <mui-checkbox-group row>
-      <mui-form-control-label label="Secondary">
+      <mui-form-control-label checked="{{checked}}" onChange="{{HandleChange}}" label="Secondary">
         <mui-checkbox />
       </mui-form-control-label>
-      <mui-form-control-label checked="{{checked}}" onChange="{{HandleChange}}" label="primary">
-        <mui-checkbox color="primary" />
+      <mui-form-control-label label="primary">
+        <mui-checkbox color="primary" checked="{{checked}}" onChange="{{HandleChange}}" />
       </mui-form-control-label>
       <mui-form-control-label label="Uncontrolled">
         <mui-checkbox />
@@ -33,8 +33,8 @@
       <mui-form-control-label disabled label="Disabled">
         <mui-checkbox />
       </mui-form-control-label>
-      <mui-form-control-label disabled label="Disabled">
-        <mui-checkbox checked />
+      <mui-form-control-label label="Disabled">
+        <mui-checkbox checked disabled />
       </mui-form-control-label>
       <mui-form-control-label label="Indeterminate">
         <mui-checkbox checked indeterminate />
@@ -43,11 +43,66 @@
         <mui-checkbox checked mClass="custom-checkbox" rippleColor="#66bb6a" />
       </mui-form-control-label>
       <mui-form-control-label label="Custom icon">
-        <mui-checkbox checked icon="{{ {checked: 'heart', unchecked: 'heart-broken'} }}" size="small" />
+        <mui-checkbox icon="{{ {checked: 'heart', unchecked: 'heart-outline'} }}" size="small" />
       </mui-form-control-label>
       <mui-form-control-label label="Custom size">
-        <mui-checkbox checked icon="{{ {size: 16} }}" size="small" />
+        <mui-checkbox icon="{{ {size: 16, checked: 'heart', unchecked: 'heart-broken'} }}" size="small" />
       </mui-form-control-label>
     </mui-checkbox-group>
+  </view>
+  <mui-typography mClass="header2" variant="h5">使用分组（CheckboxGroup）控制多个多选框</mui-typography>
+  <view class="demo-box">
+    <view style="display: flex;">
+      <mui-form-control mStyle="margin: 24px;">
+        <mui-form-label>Assign responsibility</mui-form-label>
+        <mui-checkbox-group value="{{groupValue}}" onChange="{{HandleGroupChange}}">
+          <mui-form-control-label label="Gilad Gray">
+            <mui-checkbox value="gilad" />
+          </mui-form-control-label>
+          <mui-form-control-label label="Jason Killian">
+            <mui-checkbox value="jason" />
+          </mui-form-control-label>
+          <mui-form-control-label label="Antoine Llorca">
+            <mui-checkbox value="antoine" />
+          </mui-form-control-label>
+        </mui-checkbox-group>
+        <mui-form-helper-text>Be careful</mui-form-helper-text>
+      </mui-form-control>
+      <mui-form-control mStyle="margin: 24px;" disabled required error="{{error}}">
+        <mui-form-label>Pick two</mui-form-label>
+        <mui-checkbox-group value="{{groupValue}}" onChange="{{HandleGroupChange}}">
+          <mui-form-control-label label="Gilad Gray">
+            <mui-checkbox value="gilad" />
+          </mui-form-control-label>
+          <mui-form-control-label label="Jason Killian">
+            <mui-checkbox value="jason" />
+          </mui-form-control-label>
+          <mui-form-control-label label="Antoine Llorca">
+            <mui-checkbox value="antoine" />
+          </mui-form-control-label>
+        </mui-checkbox-group>
+        <mui-form-helper-text>You can display an error</mui-form-helper-text>
+      </mui-form-control>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">标签放置</mui-typography>
+  <view class="demo-box">
+    <mui-form-control>
+      <mui-form-label>Label Placement</mui-form-label>
+      <mui-checkbox-group row>
+        <mui-form-control-label label="Top" labelPlacement="top">
+          <mui-checkbox color="primary" />
+        </mui-form-control-label>
+        <mui-form-control-label label="Start" labelPlacement="start">
+          <mui-checkbox color="primary" />
+        </mui-form-control-label>
+        <mui-form-control-label label="Bottom" labelPlacement="bottom">
+          <mui-checkbox color="primary" />
+        </mui-form-control-label>
+        <mui-form-control-label label="End" labelPlacement="end">
+          <mui-checkbox color="primary" />
+        </mui-form-control-label>
+      </mui-checkbox-group>
+    </mui-form-control>
   </view>
 </view>
