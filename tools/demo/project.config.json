@@ -97,6 +97,11 @@
           "scene": null
         },
         {
+          "name": "radio",
+          "pathName": "pages/radio/radio",
+          "scene": null
+        },
+        {
           "name": "snack-bar",
           "pathName": "pages/snack-bar/snack-bar",
           "scene": null

@@ -13,6 +13,7 @@
     "pages/list/list",
     "pages/menu/menu",
     "pages/popover/popover",
+    "pages/radio/radio",
     "pages/snack-bar/snack-bar",
     "pages/tabs/tabs",
     "pages/test/test",

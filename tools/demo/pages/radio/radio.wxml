@@ -1,0 +1,78 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography variant="h4">Radio 单选框组件</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">用户可以通过单选按钮从一组中选择一个选项</mui-typography>
+  <mui-typography mClass="header2" variant="h5">RadioGroup 单选框组</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">RadioGroup 适用于一组 Radio，它提供相对简单的 API 并且能够使用键盘对该 RadioGroup 进行控制</mui-typography>
+  <view class="demo-box">
+    <mui-form-control>
+      <mui-form-label>Gender</mui-form-label>
+      <mui-radio-group value="{{gender}}" onChange="{{ChangeGender}}">
+        <mui-form-control-label value="female" label="Female">
+          <mui-radio />
+        </mui-form-control-label>
+        <mui-form-control-label value="male" label="Male">
+          <mui-radio />
+        </mui-form-control-label>
+        <mui-form-control-label value="other" label="Other">
+          <mui-radio />
+        </mui-form-control-label>
+        <mui-form-control-label value="disabled" disabled label="(Disabled option)">
+          <mui-radio />
+        </mui-form-control-label>
+      </mui-radio-group>
+    </mui-form-control>
+  </view>
+  <mui-typography mClass="header2" variant="h5">Standalone radio buttons 独立的单选框按钮</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">Radio 也可以单独使用，无需额外的 RadioGroup wrapper</mui-typography>
+  <view class="demo-box">
+    <view>
+      <mui-radio value="a" onChange="{{ChangeSelectValue}}" checked="{{selectedValue === 'a'}}" />
+      <mui-radio value="b" onChange="{{ChangeSelectValue}}" checked="{{selectedValue === 'b'}}" />
+      <mui-radio value="c" onChange="{{ChangeSelectValue}}" checked="{{selectedValue === 'c'}}" mClass="custom-radio" rippleColor="#66bb6a" />
+      <mui-radio value="d" onChange="{{ChangeSelectValue}}" checked="{{selectedValue === 'd'}}" color="default" />
+      <mui-radio value="e" onChange="{{ChangeSelectValue}}" checked="{{selectedValue === 'e'}}" color="default" size="small" />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">标签放置</mui-typography>
+  <view class="demo-box">
+    <mui-form-control>
+      <mui-form-label>Label Placement</mui-form-label>
+      <mui-radio-group row>
+        <mui-form-control-label label="Top" labelPlacement="top">
+          <mui-radio value="top" color="primary" />
+        </mui-form-control-label>
+        <mui-form-control-label label="Start" labelPlacement="start">
+          <mui-radio value="start" color="primary" />
+        </mui-form-control-label>
+        <mui-form-control-label label="Bottom" labelPlacement="bottom">
+          <mui-radio value="bottom" color="primary" />
+        </mui-form-control-label>
+        <mui-form-control-label label="End" labelPlacement="end">
+          <mui-radio value="end" color="primary" />
+        </mui-form-control-label>
+      </mui-radio-group>
+    </mui-form-control>
+  </view>
+  <mui-typography mClass="header2" variant="h5">显示错误</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">一般来说，单选按钮应带有一个默认选中的值。 如果不是这种情况，若用户在提交表单时如果未选择任何值，您可以让其显示一个错误：</mui-typography>
+  <view class="demo-box">
+    <form bindsubmit="submit">
+      <mui-form-control mStyle="margin: 24px;" error="{{error}}">
+        <mui-form-label>Pop quiz: Material-UI is...</mui-form-label>
+        <mui-radio-group name="quiz" value="{{groupValue}}" onChange="{{HandleGroupChange}}">
+          <mui-form-control-label value="best" label="The best!">
+            <mui-radio />
+          </mui-form-control-label>
+          <mui-form-control-label value="worst" label="The worst.">
+            <mui-radio />
+          </mui-form-control-label>
+        </mui-radio-group>
+        <mui-form-helper-text>{{helperText}}</mui-form-helper-text>
+        <mui-button formType="submit" variant="outlined" color="primary" mStyle="margin: 8px 8px 0 0;">Check Answer</mui-button>
+      </mui-form-control>
+    </form>
+  </view>
+</view>

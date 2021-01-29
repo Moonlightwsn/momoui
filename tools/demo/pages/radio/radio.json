@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "mui-button": "../../components/button/button",
+    "mui-form-control": "../../components/form-control/form-control",
+    "mui-form-control-label": "../../components/form-control-label/form-control-label",
+    "mui-form-helper-text": "../../components/form-helper-text/form-helper-text",
+    "mui-form-label": "../../components/form-label/form-label",
+    "mui-radio": "../../components/radio/radio",
+    "mui-radio-group": "../../components/radio-group/radio-group",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

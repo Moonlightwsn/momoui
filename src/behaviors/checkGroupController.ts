@@ -5,7 +5,7 @@ export default Behavior({
   properties: {
     defaultValue: {
       type: Array,
-      optionalTypes: [String],
+      optionalTypes: [String, Number],
       value: null,
     },
     onChange: {
