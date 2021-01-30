@@ -10,9 +10,9 @@
   range-key="{{rangeKey}}"
   start="{{start}}"
   style="{{fullWidth ? '' : 'display: inline-flex;'}}"
-  bindchange="_change"
-  bindcancel="_cancel"
-  bindtap="_inputFocus"
+  bindchange="_Change"
+  bindcancel="_Cancel"
+  bindtap="_InputFocus"
 >
   <mui-input
     color="{{color}}"
@@ -35,7 +35,7 @@
     variant="{{variant}}"
   >
     <mui-input-adornment mClass="select-arrow" slot="endAdornment" position="end">
-      <mui-icon name="arrow-{{_focus ? 'up' : 'down'}}-2" mStyle="font-size: 12px;" />
+      <mui-icon name="menu-{{_focus ? 'up' : 'down'}}" mStyle="font-size: 24px;" />
     </mui-input-adornment>
   </mui-input>
 </picker>

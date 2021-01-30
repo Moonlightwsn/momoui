@@ -1,0 +1,29 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography variant="h4">Select 选择器</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">选择器组件能从一个选项列表中去获得用户所提供的信息</mui-typography>
+  <mui-typography mClass="header2" variant="h5">简单的选择器</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">Select组件对小程序原生组件Picker做了封装，可以像使用Picker一样来使用Select</mui-typography>
+  <view class="demo-box">
+    <view>
+      <mui-form-control>
+        <mui-input-label>Age</mui-input-label>
+        <mui-select
+          range="{{range}}"
+          rangeKey="display"
+        />
+      </mui-form-control>
+      <mui-form-control>
+        <mui-input-label>Age</mui-input-label>
+        <mui-select
+          bindchange="Change"
+          range="{{range}}"
+          rangeKey="display"
+          value="{{value}}"
+        />
+      </mui-form-control>
+    </view>
+  </view>
+</view>

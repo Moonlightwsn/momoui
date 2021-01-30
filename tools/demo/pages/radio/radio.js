@@ -35,7 +35,6 @@ Page({
     const formValue = e.detail.value
     let error = true
     let helperText = 'Please select an option.'
-    console.log(formValue)
     if (formValue) {
       if (formValue.quiz === 'best') {
         error = false
@@ -44,7 +43,6 @@ Page({
         helperText = 'Sorry, wrong answer!'
       }
     }
-    console.log({error, helperText})
     this.setData({error, helperText})
   },
 })

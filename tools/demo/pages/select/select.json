@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mui-form-control": "../../components/form-control/form-control",
+    "mui-input": "../../components/input/input",
+    "mui-input-label": "../../components/input-label/input-label",
+    "mui-select": "../../components/select/select",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

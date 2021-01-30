@@ -96,44 +96,45 @@ Component({
   },
   lifetimes: {
     attached() {
+      this._hasAttached = true
       const {mode, value} = this.data
-      if (value === null || typeof value === 'undefined') {
-        this._controlled = false
-      } else {
-        this._controlled = true
-      }
       if (mode === 'region' && !Array.isArray(value)) {
         this.setData({value: []})
       }
     }
   },
-  methods: {
-    _value2display(val) {
-      const {
-        range,
-        rangeKey
-      } = this.data
-      let _display
-      if (Array.isArray(range)) {
-        if (Array.isArray(val)) {
-          _display = val.map((item, i) => {
-            const index = Number(item)
-            return (rangeKey ? range[i][index][rangeKey] : range[i][index])
-          }).join(' ')
-        } else {
-          const index = Number(val)
-          _display = rangeKey ? range[index][rangeKey] : range[index]
+  relations: {
+    '../form-control/form-control': {
+      type: 'ancestor',
+      linked(target) {
+        if (!this._muiSelectInput) {
+          const _muiSelectInput = this.selectComponent('._mui-select-input')
+          this._muiSelectInput = _muiSelectInput
         }
-      } else if (Array.isArray(val)) {
-        _display = val.join(' ')
-      } else {
-        _display = val
-      }
-      this.setData({
-        _display
-      })
+        this._muiSelectInput._Linked(target)
+      },
     },
-    _inputBlur(e) {
+  },
+  methods: {
+    _Cancel(e) {
+      this.triggerEvent('cancel', e.detail)
+    },
+    _Change(e) {
+      const {detail: {value}} = e
+      if (!this._controlled) {
+        this.setData({value})
+      }
+      const _display = this._Value2Display(value)
+      this._InputBlur({
+        ...e,
+        detail: {
+          ...e.detail,
+          value: _display,
+        }
+      })
+      this.triggerEvent('change', e.detail)
+    },
+    _InputBlur(e) {
       if (!this._muiSelectInput) {
         const _muiSelectInput = this.selectComponent('._mui-select-input')
         this._muiSelectInput = _muiSelectInput
@@ -143,7 +144,7 @@ Component({
       }
       this.setData({_focus: false})
     },
-    _inputFocus(e) {
+    _InputFocus(e) {
       if (!this._muiSelectInput) {
         const _muiSelectInput = this.selectComponent('._mui-select-input')
         this._muiSelectInput = _muiSelectInput
@@ -153,22 +154,54 @@ Component({
       }
       this.setData({_focus: true})
     },
-    _change(e) {
-      const {detail: {value}} = e
-      if (!this._controlled) {
-        this.setData({value})
+    _ReRenderControlledProps(params) {
+      if (!this._muiSelectInput) {
+        const _muiSelectInput = this.selectComponent('._mui-select-input')
+        this._muiSelectInput = _muiSelectInput
       }
-      this._inputBlur(e)
-      this.triggerEvent('change', e.detail)
+      this._muiSelectInput._ReRenderControlledProps(params)
     },
-    _cancel(e) {
-      this._inputBlur(e)
-      this.triggerEvent('cancel', e.detail)
-    }
+    _Value2Display(val) {
+      const {
+        range,
+        rangeKey
+      } = this.data
+      let _display = ''
+      let isValid = false
+      if (Array.isArray(val)) {
+        isValid = val.every(item => (typeof item === 'string'))
+      } else if (typeof val === 'string' || typeof val === 'number') {
+        isValid = true
+      }
+      if (isValid) {
+        if (Array.isArray(range)) {
+          if (Array.isArray(val)) {
+            _display = val.map((item, i) => {
+              const index = Number(item)
+              return (rangeKey ? range[i][index][rangeKey] : range[i][index])
+            }).join(' ')
+          } else if (!(val === null || typeof val === 'undefined' || val === '')) {
+            const index = Number(val)
+            _display = rangeKey ? range[index][rangeKey] : range[index]
+          }
+        } else if (Array.isArray(val)) {
+          _display = val.join(' ')
+        } else {
+          _display = val
+        }
+      }
+      return _display
+    },
   },
   observers: {
     value(val) {
-      this._value2display(val)
+      if (!this._hasAttached) {
+        this._controlled = true
+      }
+      const _display = this._Value2Display(val)
+      this.setData({
+        _display
+      })
     }
   },
   options: {

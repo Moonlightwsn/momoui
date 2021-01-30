@@ -56,7 +56,7 @@ Component({
           if (newFormItems.length > 0) {
             const _hasInputLabel = newFormItems.some(item => item.type === 'input-label')
             newFormItems.forEach(item => {
-              if (item.type === 'input') {
+              if (item.type === 'input' || item.type === 'select') {
                 item.target._ReRenderControlledProps(_hasInputLabel)
               } else {
                 item.target._ReRenderControlledProps()
@@ -96,6 +96,12 @@ Component({
       type: 'descendant',
       linked(target) {
         this._Linked(target, 'input')
+      },
+    },
+    '../select/select': {
+      type: 'descendant',
+      linked(target) {
+        this._Linked(target, 'select')
       },
     },
   },

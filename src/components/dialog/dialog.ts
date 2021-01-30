@@ -73,7 +73,7 @@ Component({
         actions.onConfirm(e)
       }
     },
-    _cancel(e) {
+    _Cancel(e) {
       const {actions} = this.data
       if (actions && actions.onCancel && typeof actions.onCancel === 'function') {
         actions.onCancel(e)

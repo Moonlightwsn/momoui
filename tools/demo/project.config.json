@@ -102,6 +102,11 @@
           "scene": null
         },
         {
+          "name": "select",
+          "pathName": "pages/select/select",
+          "scene": null
+        },
+        {
           "name": "snack-bar",
           "pathName": "pages/snack-bar/snack-bar",
           "scene": null

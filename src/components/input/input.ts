@@ -177,7 +177,6 @@ Component({
     _focus: false,
     _textAutoHeight: true,
     _textareaHeight: 19,
-    _formControl: false,
     _hasInputLabel: false,
     _inputLabelShrink: false,
   },
@@ -192,10 +191,7 @@ Component({
     '../form-control/form-control': {
       type: 'ancestor',
       linked(target) {
-        this._formControlComp = target
-        const shrink = !!this.data.value
-        this.setData({_inputLabelShrink: shrink})
-        this._formControlComp._SetInputLabelShrink(shrink)
+        this._Linked(target)
       },
       unlinked() {
         this._formControlComp = undefined
@@ -271,6 +267,14 @@ Component({
       const {lineChange} = this.data
       if (lineChange && typeof lineChange === 'function') {
         lineChange(e)
+      }
+    },
+    _Linked(target) {
+      if (target) {
+        this._formControlComp = target
+        const shrink = !!this.data.value
+        this.setData({_inputLabelShrink: shrink})
+        this._formControlComp._SetInputLabelShrink(shrink)
       }
     },
     _ReRenderControlledProps(hasInputLabel) {

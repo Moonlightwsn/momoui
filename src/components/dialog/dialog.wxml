@@ -29,7 +29,7 @@
         </mui-button>
         <mui-button
           color="primary"
-          bind:tap="_cancel"
+          bind:tap="_Cancel"
         >
           {{actions.confirmText || 'Confirm'}}
         </mui-button>
