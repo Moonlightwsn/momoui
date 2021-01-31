@@ -2118,18 +2118,26 @@
       &.mui-color-primary, &.mui-color-secondary {
         color: rgba(0, 0, 0, 0.38); 
       }
+      &.mui-select-input {
+        .select-arrow {
+          color: rgba(0, 0, 0, 0.38);
+        }
+      }
       .mui-input {
         opacity: 0.38;
       }
     }
+    &.error-true {
+      color: @error_color;
+    }
     &.mui-select-input {
-      .select-arrow {
-        margin: 0 10px;
-      }
       &.mui-variant-filled, &.mui-variant-outlined {
         .select-arrow {
           margin: 0 15px;
         }
+      }
+      .select-arrow {
+        margin: 0 10px;
       }
     }
   }
@@ -3781,9 +3789,17 @@
         &.mui-color-primary, &.mui-color-secondary {
           color: rgba(255, 255, 255, 0.5); 
         }
+        &.mui-select-input {
+          .select-arrow {
+            color: rgba(255, 255, 255, 0.5); 
+          }
+        }
         .mui-input {
           opacity: 1;
         }
+      }
+      &.error-true {
+        color: @error_color;
       }
       /*
       // textarea 暗黑模式下 placeholder 样式不生效，暂时注释掉 

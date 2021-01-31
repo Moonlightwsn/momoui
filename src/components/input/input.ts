@@ -294,6 +294,9 @@ Component({
         }
       }
     },
+    _SetInputLabel(hasInputLabel) {
+      this.setData({_hasInputLabel: hasInputLabel})
+    }
   },
   observers: {
     rows(rows) {

@@ -1,4 +1,13 @@
 import muiBase from '../../behaviors/muiBase.ts'
+import {ObserversForControlledPropsByAncestor} from '../../common/utils.ts'
+
+const controlledProps: string[] = [
+  'color',
+  'disabled',
+  'error',
+  'margin',
+  'variant',
+]
 
 Component({
   behaviors: [muiBase, 'wx://form-field'],
@@ -71,6 +80,10 @@ Component({
       type: Array,
       value: null,
     },
+    rangeIndex: {
+      type: String,
+      value: null,
+    },
     rangeKey: {
       type: String,
       value: null,
@@ -93,13 +106,16 @@ Component({
   data: {
     _display: null,
     _focus: false,
+    _value: null,
   },
   lifetimes: {
     attached() {
       this._hasAttached = true
-      const {mode, value} = this.data
-      if (mode === 'region' && !Array.isArray(value)) {
-        this.setData({value: []})
+      if (!this._controlled) {
+        const {mode, value} = this.data
+        if (mode === 'region' && !Array.isArray(value)) {
+          this.setData({value: []})
+        }
       }
     }
   },
@@ -112,26 +128,36 @@ Component({
           this._muiSelectInput = _muiSelectInput
         }
         this._muiSelectInput._Linked(target)
+        if (target) {
+          this._formControlComp = target
+        }
       },
     },
   },
   methods: {
     _Cancel(e) {
+      const {_display} = this.data
+      this._InputBlur({
+        detail: {
+          value: _display,
+        }
+      })
       this.triggerEvent('cancel', e.detail)
     },
     _Change(e) {
       const {detail: {value}} = e
-      if (!this._controlled) {
+      const {range, rangeIndex, rangeKey} = this.data
+      if (range && Array.isArray(range) && rangeIndex && rangeKey) {
+        const rangeItem = range[Number(value)]
+        if (typeof rangeItem === 'object') {
+          e.detail.value = rangeItem[rangeIndex]
+        }
+        if (!this._controlled) {
+          this.setData({value: e.detail.value})
+        }
+      } else if (!this._controlled) {
         this.setData({value})
       }
-      const _display = this._Value2Display(value)
-      this._InputBlur({
-        ...e,
-        detail: {
-          ...e.detail,
-          value: _display,
-        }
-      })
       this.triggerEvent('change', e.detail)
     },
     _InputBlur(e) {
@@ -145,28 +171,45 @@ Component({
       this.setData({_focus: false})
     },
     _InputFocus(e) {
-      if (!this._muiSelectInput) {
-        const _muiSelectInput = this.selectComponent('._mui-select-input')
-        this._muiSelectInput = _muiSelectInput
+      const {disabled} = this.data
+      if (!disabled) {
+        if (!this._muiSelectInput) {
+          const _muiSelectInput = this.selectComponent('._mui-select-input')
+          this._muiSelectInput = _muiSelectInput
+        }
+        if (this._muiSelectInput) {
+          this._muiSelectInput._onFocus(e)
+        }
+        this.setData({_focus: true})
       }
-      if (this._muiSelectInput) {
-        this._muiSelectInput._onFocus(e)
-      }
-      this.setData({_focus: true})
     },
-    _ReRenderControlledProps(params) {
+    _ReRenderControlledProps(hasInputLabel) {
+      const target = this._formControlComp
+      if (target && Array.isArray(controlledProps)) {
+        const newData: any = {}
+        controlledProps.forEach(item => {
+          if (!this._propIsSet || !this._propIsSet[item]) {
+            newData[item] = target.data[item]
+          }
+        })
+        if (Object.keys(newData).length > 0) {
+          this.setData(newData)
+        }
+      }
       if (!this._muiSelectInput) {
         const _muiSelectInput = this.selectComponent('._mui-select-input')
         this._muiSelectInput = _muiSelectInput
       }
-      this._muiSelectInput._ReRenderControlledProps(params)
+      this._muiSelectInput._SetInputLabel(hasInputLabel)
     },
     _Value2Display(val) {
       const {
         range,
+        rangeIndex,
         rangeKey
       } = this.data
       let _display = ''
+      let _index
       let isValid = false
       if (Array.isArray(val)) {
         isValid = val.every(item => (typeof item === 'string'))
@@ -176,13 +219,38 @@ Component({
       if (isValid) {
         if (Array.isArray(range)) {
           if (Array.isArray(val)) {
-            _display = val.map((item, i) => {
-              const index = Number(item)
-              return (rangeKey ? range[i][index][rangeKey] : range[i][index])
+            _index = []
+            _display = val.map((valItem, i) => {
+              if (rangeIndex && rangeKey) {
+                let displayItem = ''
+                range.some((rangeItem, index) => {
+                  if (typeof rangeItem === 'object' && valItem === rangeItem[rangeIndex]) {
+                    _index.push(index)
+                    displayItem = rangeItem[rangeKey]
+                    return true
+                  }
+                  return false
+                })
+                return displayItem
+              } else {
+                const index = Number(valItem)
+                return ((rangeKey && typeof range[i][index] === 'object') ? range[i][index][rangeKey] : range[i][index])
+              }
             }).join(' ')
           } else if (!(val === null || typeof val === 'undefined' || val === '')) {
-            const index = Number(val)
-            _display = rangeKey ? range[index][rangeKey] : range[index]
+            if (rangeIndex && rangeKey) {
+              range.some((rangeItem, index) => {
+                if (typeof rangeItem === 'object' && val === rangeItem[rangeIndex]) {
+                  _index = index
+                  _display = rangeItem[rangeKey]
+                  return true
+                }
+                return false
+              })
+            } else {
+              const index = Number(val)
+              _display = (rangeKey && typeof range[index] === 'object') ? range[index][rangeKey] : range[index]
+            }
           }
         } else if (Array.isArray(val)) {
           _display = val.join(' ')
@@ -190,19 +258,34 @@ Component({
           _display = val
         }
       }
-      return _display
+      return {_display, _index}
     },
   },
   observers: {
     value(val) {
+      let _value = val
+      const {mode, value} = this.data
       if (!this._hasAttached) {
         this._controlled = true
+        if (mode === 'region' && !Array.isArray(value)) {
+          _value = []
+        }
       }
-      const _display = this._Value2Display(val)
-      this.setData({
-        _display
+      const {_display, _index} = this._Value2Display(_value)
+      this._InputBlur({
+        detail: {
+          value: _display,
+        }
       })
-    }
+      if (!(typeof _index === 'undefined')) {
+        _value = _index
+      }
+      this.setData({
+        _display,
+        _value,
+      })
+    },
+    ...ObserversForControlledPropsByAncestor(controlledProps),
   },
   options: {
     virtualHost: true,

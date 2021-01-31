@@ -4,7 +4,7 @@
   end="{{end}}"
   fields="{{fields}}"
   headerText="{{headerText}}"
-  value="{{value}}"
+  value="{{_value}}"
   mode="{{mode}}"
   range="{{range}}"
   range-key="{{rangeKey}}"
@@ -35,7 +35,7 @@
     variant="{{variant}}"
   >
     <mui-input-adornment mClass="select-arrow" slot="endAdornment" position="end">
-      <mui-icon name="menu-{{_focus ? 'up' : 'down'}}" mStyle="font-size: 24px;" />
+      <mui-icon name="menu-{{_focus ? 'up' : 'down'}}" mStyle="font-size: 24px;" rerender="{{disabled}}" />
     </mui-input-adornment>
   </mui-input>
 </picker>

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "mui-form-control": "../../components/form-control/form-control",
+    "mui-form-helper-text": "../../components/form-helper-text/form-helper-text",
     "mui-input": "../../components/input/input",
     "mui-input-label": "../../components/input-label/input-label",
     "mui-select": "../../components/select/select",

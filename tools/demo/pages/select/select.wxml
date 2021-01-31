@@ -8,20 +8,74 @@
   <mui-typography mClass="paragraph" variant="body2">Select组件对小程序原生组件Picker做了封装，可以像使用Picker一样来使用Select</mui-typography>
   <view class="demo-box">
     <view>
-      <mui-form-control>
+      <mui-form-control mClass="form-control">
         <mui-input-label>Age</mui-input-label>
         <mui-select
           range="{{range}}"
           rangeKey="display"
         />
       </mui-form-control>
-      <mui-form-control>
+      <mui-form-control mClass="form-control">
         <mui-input-label>Age</mui-input-label>
         <mui-select
           bindchange="Change"
           range="{{range}}"
           rangeKey="display"
           value="{{value}}"
+        />
+        <mui-form-helper-text>Some important helper text</mui-form-helper-text>
+      </mui-form-control>
+      <mui-form-control mClass="form-control">
+        <mui-select
+          bindchange="Change2"
+          mClass="has-input-label-true"
+          range="{{range1}}"
+          rangeIndex="key"
+          rangeKey="display"
+          value="{{key}}"
+        />
+        <mui-form-helper-text>Without label</mui-form-helper-text>
+      </mui-form-control>
+      <mui-form-control mClass="form-control" color="secondary">
+        <mui-input-label>Age</mui-input-label>
+        <mui-select
+          bindchange="Change2"
+          range="{{range}}"
+          rangeIndex="key"
+          rangeKey="display"
+          value="{{key}}"
+        />
+      </mui-form-control>
+      <mui-form-control mClass="form-control" disabled>
+        <mui-input-label>Name</mui-input-label>
+        <mui-select
+          bindchange="Change2"
+          range="{{range}}"
+          rangeIndex="key"
+          rangeKey="display"
+          value="{{key}}"
+        />
+        <mui-form-helper-text>Disabled</mui-form-helper-text>
+      </mui-form-control>
+      <mui-form-control mClass="form-control" error required>
+        <mui-input-label>Name</mui-input-label>
+        <mui-select
+          bindchange="Change2"
+          range="{{range}}"
+          rangeIndex="key"
+          rangeKey="display"
+          value="{{key}}"
+        />
+        <mui-form-helper-text>Error and Required</mui-form-helper-text>
+      </mui-form-control>
+      <mui-form-control mClass="form-control" variant="filled">
+        <mui-input-label>Age</mui-input-label>
+        <mui-select
+          bindchange="Change2"
+          range="{{range}}"
+          rangeIndex="key"
+          rangeKey="display"
+          value="{{key}}"
         />
       </mui-form-control>
     </view>

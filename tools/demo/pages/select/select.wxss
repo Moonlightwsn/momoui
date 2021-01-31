@@ -1,0 +1,3 @@
+.mui.form-control {
+  margin: 8px;
+}
