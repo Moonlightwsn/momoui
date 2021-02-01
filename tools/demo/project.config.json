@@ -112,6 +112,11 @@
           "scene": null
         },
         {
+          "name": "switch",
+          "pathName": "pages/switch/switch",
+          "scene": null
+        },
+        {
           "name": "tabs",
           "pathName": "pages/tabs/tabs",
           "scene": null

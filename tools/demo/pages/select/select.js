@@ -47,7 +47,6 @@ Page({
     })
   },
   ColumnChange2(e) {
-    console.log(222, e)
     const data = {
       range2: this.data.range2,
       value2: this.data.value2
@@ -106,7 +105,6 @@ Page({
         data.value2[2] = 0;
         break;
     }
-    console.log(data.value2);
     this.setData(data);
   },
 })

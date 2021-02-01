@@ -60,18 +60,19 @@ export default Behavior({
       this._hasAttached = true
       const {checked, defaultChecked} = this.data
       let _checked = defaultChecked
-      let pureIsControlled = false
       if (typeof checked === 'boolean') {
         _checked = checked
-        pureIsControlled = true
+        this._CheckedBeControl(true)
       }
       this.setData({
         ...this._GenIcon({checked: _checked}),
-        _pureIsControlled: pureIsControlled
       })
     }
   },
   methods: {
+    _CheckedBeControl(isControled) {
+      this.setData({_pureIsControlled: isControled})
+    },
     _CheckControll(e) {
       const {
         _checked,

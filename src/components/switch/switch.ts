@@ -1,6 +1,7 @@
 import muiBase from '../../behaviors/muiBase.ts'
 import muiController from '../../behaviors/muiController.ts'
 import checkController from '../../behaviors/checkController.ts'
+import {ObserversForControlledPropsByAncestor} from '../../common/utils.ts'
 
 const controlledProps: string[] = [
   'checked',
@@ -26,7 +27,7 @@ Component({
     created() {
       this.defaultIcon = defaultIcon
       this.controlledProps = controlledProps
-    }
+    },
   },
   relations: {
     '../form-control-label/form-control-label': {
@@ -34,14 +35,21 @@ Component({
       linked(target) {
         if (target) {
           this._formControlLabelComp = target
+          const {checked} = target.data
+          if (typeof checked === 'boolean') {
+            this._CheckedBeControl(true)
+          }
         }
       },
       unlinked() {
         this._formControlLabelComp = undefined
+        this._CheckedBeControl(false)
       },
     },
   },
-  observers: {},
+  observers: {
+    ...ObserversForControlledPropsByAncestor(controlledProps),
+  },
   options: {
     virtualHost: true,
     pureDataPattern: /^_pure/,

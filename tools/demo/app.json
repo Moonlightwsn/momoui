@@ -16,6 +16,7 @@
     "pages/radio/radio",
     "pages/select/select",
     "pages/snack-bar/snack-bar",
+    "pages/switch/switch",
     "pages/tabs/tabs",
     "pages/test/test",
     "pages/tooltip/tooltip",

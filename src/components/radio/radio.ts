@@ -29,10 +29,15 @@ Component({
       linked(target) {
         if (target) {
           this._formControlLabelComp = target
+          const {checked} = target.data
+          if (typeof checked === 'boolean') {
+            this._CheckedBeControl(true)
+          }
         }
       },
       unlinked() {
         this._formControlLabelComp = undefined
+        this._CheckedBeControl(false)
       },
     },
     '../radio-group/radio-group': {

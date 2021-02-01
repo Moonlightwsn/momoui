@@ -10,7 +10,7 @@ Component({
   properties: {
     checked: {
       type: Boolean,
-      value: false,
+      value: null,
     },
     disabled: {
       type: Boolean,

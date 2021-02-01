@@ -1,0 +1,40 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography variant="h4">Switch 开关组件</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">在移动设备上调整设置时，Switches 是一个首选方式。 开关控制的选项，以及它当前所处的状态，都应该在相应的描述标签中明确说明。</mui-typography>
+  <mui-typography mClass="header2" variant="h5">基本的开关</mui-typography>
+  <view class="demo-box">
+    <view>
+      <mui-switch defaultChecked />
+      <mui-switch color="primary" checked="{{checked1}}" onChange="{{Change1}}" />
+      <mui-switch color="default" />
+      <mui-switch disabled />
+      <mui-switch defaultChecked disabled />
+      <mui-switch color="default" checked />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">带有 FormControlLabel 的开关</mui-typography>
+  <view class="demo-box">
+    <view>
+      <mui-form-group row>
+        <mui-form-control-label checked="{{checked2}}" label="Secondary" onChange="{{Change2}}">
+          <mui-switch />
+        </mui-form-control-label>
+        <mui-form-control-label checked="{{checked2}}" label="Primary" onChange="{{Change2}}">
+          <mui-switch color="primary" />
+        </mui-form-control-label>
+        <mui-form-control-label label="Uncontrolled">
+          <mui-switch color="default" />
+        </mui-form-control-label>
+        <mui-form-control-label disabled label="Disabled">
+          <mui-switch />
+        </mui-form-control-label>
+        <mui-form-control-label checked disabled label="Disabled">
+          <mui-switch />
+        </mui-form-control-label>
+      </mui-form-group>
+    </view>
+  </view>
+</view>

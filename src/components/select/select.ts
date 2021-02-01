@@ -160,9 +160,8 @@ Component({
       }
       this.triggerEvent('change', e.detail)
     },
-    __ColumnChange(e) {
-      console.log(e)
-      // to do
+    _ColumnChange(e) {
+      this.triggerEvent('columnchange', e.detail)
     },
     _InputBlur(e) {
       if (!this._muiSelectInput) {
