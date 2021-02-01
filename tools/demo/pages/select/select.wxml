@@ -2,6 +2,7 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
+  <!--
   <mui-typography variant="h4">Select 选择器</mui-typography>
   <mui-typography mClass="paragraph" variant="body1">选择器组件能从一个选项列表中去获得用户所提供的信息</mui-typography>
   <mui-typography mClass="header2" variant="h5">简单的选择器</mui-typography>
@@ -27,55 +28,79 @@
       </mui-form-control>
       <mui-form-control mClass="form-control">
         <mui-select
-          bindchange="Change2"
+          bindchange="Change1"
           mClass="has-input-label-true"
           range="{{range1}}"
           rangeIndex="key"
           rangeKey="display"
-          value="{{key}}"
+          value="{{value1}}"
         />
         <mui-form-helper-text>Without label</mui-form-helper-text>
       </mui-form-control>
       <mui-form-control mClass="form-control" color="secondary">
         <mui-input-label>Age</mui-input-label>
         <mui-select
-          bindchange="Change2"
+          bindchange="Change1"
           range="{{range}}"
           rangeIndex="key"
           rangeKey="display"
-          value="{{key}}"
+          value="{{value1}}"
         />
       </mui-form-control>
       <mui-form-control mClass="form-control" disabled>
         <mui-input-label>Name</mui-input-label>
         <mui-select
-          bindchange="Change2"
+          bindchange="Change1"
           range="{{range}}"
           rangeIndex="key"
           rangeKey="display"
-          value="{{key}}"
+          value="{{value1}}"
         />
         <mui-form-helper-text>Disabled</mui-form-helper-text>
       </mui-form-control>
       <mui-form-control mClass="form-control" error required>
         <mui-input-label>Name</mui-input-label>
         <mui-select
-          bindchange="Change2"
+          bindchange="Change1"
           range="{{range}}"
           rangeIndex="key"
           rangeKey="display"
-          value="{{key}}"
+          value="{{value1}}"
         />
         <mui-form-helper-text>Error and Required</mui-form-helper-text>
       </mui-form-control>
       <mui-form-control mClass="form-control" variant="filled">
         <mui-input-label>Age</mui-input-label>
         <mui-select
-          bindchange="Change2"
+          bindchange="Change1"
           range="{{range}}"
           rangeIndex="key"
           rangeKey="display"
-          value="{{key}}"
+          value="{{value1}}"
+        />
+      </mui-form-control>
+    </view>
+  </view>
+  -->
+  <mui-typography mClass="header2" variant="h5">多列选择器</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">选择一个或多个选项</mui-typography>
+  <view class="demo-box">
+    <view>
+      <mui-form-control mClass="form-control">
+        <mui-input-label>Biological species</mui-input-label>
+        <mui-select
+          mode="multiSelector"
+          range="{{range2}}"
+        />
+      </mui-form-control>
+      <mui-form-control mClass="form-control">
+        <mui-input-label>Biological species</mui-input-label>
+        <mui-select
+          bindchange="Change2"
+          bindcolumnchange="ColumnChange2"
+          mode="multiSelector"
+          range="{{range2}}"
+          value="{{value2}}"
         />
       </mui-form-control>
     </view>

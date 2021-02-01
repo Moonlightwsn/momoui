@@ -11,6 +11,7 @@
   start="{{start}}"
   style="{{fullWidth ? '' : 'display: inline-flex;'}}"
   bindchange="_Change"
+  bindcolumnchange="_ColumnChange"
   bindcancel="_Cancel"
   bindtap="_InputFocus"
 >

@@ -160,6 +160,10 @@ Component({
       }
       this.triggerEvent('change', e.detail)
     },
+    __ColumnChange(e) {
+      console.log(e)
+      // to do
+    },
     _InputBlur(e) {
       if (!this._muiSelectInput) {
         const _muiSelectInput = this.selectComponent('._mui-select-input')
@@ -212,7 +216,7 @@ Component({
       let _index
       let isValid = false
       if (Array.isArray(val)) {
-        isValid = val.every(item => (typeof item === 'string'))
+        isValid = val.every(item => (typeof item === 'string' || typeof item === 'number'))
       } else if (typeof val === 'string' || typeof val === 'number') {
         isValid = true
       }
@@ -234,6 +238,7 @@ Component({
                 return displayItem
               } else {
                 const index = Number(valItem)
+                _index.push(index)
                 return ((rangeKey && typeof range[i][index] === 'object') ? range[i][index][rangeKey] : range[i][index])
               }
             }).join(' ')
