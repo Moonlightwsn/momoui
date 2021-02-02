@@ -10,6 +10,7 @@
     "pages/grid/grid",
     "pages/grid-list/grid-list",
     "pages/index/index",
+    "pages/input/input",
     "pages/list/list",
     "pages/menu/menu",
     "pages/popover/popover",

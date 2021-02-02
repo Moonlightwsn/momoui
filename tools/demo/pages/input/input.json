@@ -1,10 +1,9 @@
 {
   "usingComponents": {
     "mui-form-control": "../../components/form-control/form-control",
-    "mui-form-control-label": "../../components/form-control-label/form-control-label",
-    "mui-form-group": "../../components/form-group/form-group",
     "mui-form-helper-text": "../../components/form-helper-text/form-helper-text",
-    "mui-form-label": "../../components/form-label/form-label",
+    "mui-input": "../../components/input/input",
+    "mui-input-label": "../../components/input-label/input-label",
     "mui-switch": "../../components/switch/switch",
     "mui-typography": "../../components/typography/typography"
   }

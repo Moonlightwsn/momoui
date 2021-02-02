@@ -148,6 +148,10 @@ Component({
       type: Number,
       value: 1,
     },
+    rowsMax: {
+      type: Number,
+      value: 0,
+    },
     selectionStart: {
       type: Number,
       value: -1,
@@ -176,15 +180,13 @@ Component({
   data: {
     _focus: false,
     _textAutoHeight: true,
-    _textareaHeight: 19,
+    _textareaHeight: 0,
     _hasInputLabel: false,
     _inputLabelShrink: false,
   },
   lifetimes: {
     attached() {
       this._hasAttached = true
-      const {rows} = this.data
-      this._AdjustTextareaHeight(rows)
     },
   },
   relations: {
@@ -199,26 +201,14 @@ Component({
     }
   },
   methods: {
-    _AdjustTextareaHeight(rows) {
-      if (rows > 1) {
-        const query = this.createSelectorQuery()
-        query.select('.mui-input').fields({
-          computedStyle: ['height'],
-        })
-        query.exec(res => {
-          const [view] = res || []
-          let {height} = view || {}
-          if (height && height.slice(-2) === 'px') {
-            height = Number(height.slice(0, -2))
-            if (!Number.isNaN(height)) {
-              this.setData({
-                _textareaHeight: height * rows,
-                _textAutoHeight: false,
-              })
-            }
-          }
-        })
+    _AdjustTextareaHeight(height, autoHeight) {
+      if (!this._initTextareaHeigth) {
+        this._initTextareaHeigth = true
       }
+      this.setData({
+        _textareaHeight: height,
+        _textAutoHeight: autoHeight,
+      })
     },
     _onFocus(e) {
       this.setData({_focus: true})
@@ -264,7 +254,26 @@ Component({
       }
     },
     _LineChange(e) {
-      const {lineChange} = this.data
+      const {lineChange, rowsMax, rows} = this.data
+      const {detail: {height = 0, lineHeight = 0, lineCount = 0} = {}} = e || {}
+      let textareaHeight = height
+      let autoHeight = true
+      this._lineHeight = lineHeight
+      this._hasChangedLine = true
+      if (!this._initTextareaHeigth && this._hasObserverdRows) {
+        if (rows > 1) {
+          autoHeight = false
+          textareaHeight = (rows * this._lineHeight)
+          this._AdjustTextareaHeight(textareaHeight, autoHeight)
+        }
+      }
+      if (rows <= 1 && rowsMax > 0) {
+        if ((lineCount + 1) >= rowsMax) {
+          autoHeight = false
+          textareaHeight = rowsMax * this._lineHeight
+        }
+        this._AdjustTextareaHeight(textareaHeight, autoHeight)
+      }
       if (lineChange && typeof lineChange === 'function') {
         lineChange(e)
       }
@@ -300,7 +309,14 @@ Component({
   },
   observers: {
     rows(rows) {
-      this._AdjustTextareaHeight(rows)
+      this._hasObserverdRows = true
+      if (this._initTextareaHeigth || this._hasChangedLine) {
+        if (rows > 1) {
+          this._AdjustTextareaHeight((this._lineHeight * rows), true)
+        } else {
+          this._AdjustTextareaHeight(0, false)
+        }
+      }
     },
     ...ObserversForControlledPropsByAncestor(controlledProps),
   },

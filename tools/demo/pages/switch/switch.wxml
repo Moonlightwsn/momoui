@@ -37,4 +37,54 @@
       </mui-form-group>
     </view>
   </view>
+  <mui-typography mClass="header2" variant="h5">带有 FormGroup 的开关</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">FormGroup 则提供了相对简单的 API，它能够包装组件，进行控件的分组。（CheckboxGroup 和 RadioGroup 是基于 FormGroup 的样式实现的）</mui-typography>
+  <mui-view class="demo-box">
+    <mui-form-control>
+      <mui-form-label>Assign responsibility</mui-form-label>
+      <mui-form-group>
+        <mui-form-control-label label="Gilad Gray">
+          <mui-switch />
+        </mui-form-control-label>
+        <mui-form-control-label label="Jason Killian">
+          <mui-switch />
+        </mui-form-control-label>
+        <mui-form-control-label label="Antoine Llorca">
+          <mui-switch />
+        </mui-form-control-label>
+      </mui-form-group>
+      <mui-form-helper-text>Be careful</mui-form-helper-text>
+    </mui-form-control>
+  </mui-view>
+  <mui-typography mClass="header2" variant="h5">尺寸</mui-typography>
+  <view class="demo-box">
+    <mui-form-group>
+      <mui-form-control-label label="Samll">
+        <mui-switch size="small" />
+      </mui-form-control-label>
+      <mui-form-control-label label="Normal">
+        <mui-switch />
+      </mui-form-control-label>
+    </mui-form-group>
+  </view>
+  <mui-typography mClass="header2" variant="h5">标签放置</mui-typography>
+  <view class="demo-box">
+    <mui-form-control>
+      <mui-form-label>Label Placement</mui-form-label>
+      <mui-form-group row>
+        <mui-form-control-label label="Top" labelPlacement="top">
+          <mui-switch color="primary" />
+        </mui-form-control-label>
+        <mui-form-control-label label="Start" labelPlacement="start">
+          <mui-switch color="primary" />
+        </mui-form-control-label>
+        <mui-form-control-label label="Bottom" labelPlacement="bottom">
+          <mui-switch color="primary" />
+        </mui-form-control-label>
+        <mui-form-control-label label="End" labelPlacement="end">
+          <mui-switch color="primary" />
+        </mui-form-control-label>
+      </mui-form-group>
+    </mui-form-control>
+  </view>
 </view>

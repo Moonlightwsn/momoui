@@ -82,6 +82,11 @@
           "scene": null
         },
         {
+          "name": "input",
+          "pathName": "pages/input/input",
+          "scene": null
+        },
+        {
           "name": "list",
           "pathName": "pages/list/list",
           "scene": null
