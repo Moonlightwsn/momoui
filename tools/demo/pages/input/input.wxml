@@ -105,18 +105,18 @@
   <view class="demo-box">
     <form>
       <view>
-      <!--
         <mui-form-control mClass="form-control" color="primary">
           <mui-input-label>Multiline</mui-input-label>
-          <mui-input model:value="{{multilineValue}}" multiline rowsMax="{{4}}" />
+          <mui-input multiline rowsMax="{{4}}" />
         </mui-form-control>
         <mui-form-control mClass="form-control" color="primary">
           <mui-input-label>Multiline Placeholder</mui-input-label>
           <mui-input multiline placeholder="Placeholder" />
-        </mui-form-control> -->
+        </mui-form-control>
+        
         <mui-form-control mClass="form-control" color="primary">
           <mui-input-label>Multiline</mui-input-label>
-          <mui-input multiline rowsMax="{{4}}" />
+          <mui-input multiline rows="{{4}}" />
         </mui-form-control>
       </view>
     </form>

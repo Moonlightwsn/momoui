@@ -201,13 +201,44 @@ Component({
     }
   },
   methods: {
-    _AdjustTextareaHeight(height, autoHeight) {
-      if (!this._initTextareaHeigth) {
-        this._initTextareaHeigth = true
+    _AdjustTextareaHeight(rows, rowsMax) {
+      const {multiline} = this.data
+      if (multiline) {
+        this._hasInitTextareaHeight = true
+        if ((rows > 1 || rowsMax > 0)) {
+          const query = this.createSelectorQuery()
+          query.select('.mui-input').fields({
+            computedStyle: ['line-height'],
+          })
+          query.exec(res => {
+            const [view] = res || []
+            let lineHeight = view['line-height']
+            if (lineHeight && lineHeight.slice(-2) === 'px') {
+              lineHeight = Number(lineHeight.slice(0, -2))
+              if (!Number.isNaN(lineHeight)) {
+                this.data._pureLineHeight = lineHeight
+                this._CalcTextareaHeight(rows, rowsMax)
+              }
+            }
+          })
+        } else {
+          this._CalcTextareaHeight(rows, rowsMax)
+        }
+      }
+    },
+    _CalcTextareaHeight(rows, rowsMax) {
+      let _textAutoHeight = true
+      let _textareaHeight = 0
+      if (rows > 1) {
+        _textareaHeight = this.data._pureLineHeight * rows
+        _textAutoHeight = false
+      } else if (rowsMax > 0 && (this.data._pureLineCount || 0) >= rowsMax) {
+        _textareaHeight = this.data._pureLineHeight * rowsMax
+        _textAutoHeight = false
       }
       this.setData({
-        _textareaHeight: height,
-        _textAutoHeight: autoHeight,
+        _textareaHeight,
+        _textAutoHeight,
       })
     },
     _onFocus(e) {
@@ -254,25 +285,22 @@ Component({
       }
     },
     _LineChange(e) {
-      const {lineChange, rowsMax, rows} = this.data
-      const {detail: {height = 0, lineHeight = 0, lineCount = 0} = {}} = e || {}
-      let textareaHeight = height
-      let autoHeight = true
-      this._lineHeight = lineHeight
-      this._hasChangedLine = true
-      if (!this._initTextareaHeigth && this._hasObserverdRows) {
-        if (rows > 1) {
-          autoHeight = false
-          textareaHeight = (rows * this._lineHeight)
-          this._AdjustTextareaHeight(textareaHeight, autoHeight)
+      const {
+        lineChange,
+        rows,
+        rowsMax,
+        multiline
+      } = this.data
+      if (multiline) {
+        const {detail: {lineHeight = 0, lineCount = 0} = {}} = e || {}
+        this.data._pureLineHeight = lineHeight
+        this.data._pureLineCount = lineCount
+        this._hasChangedLine = true
+        if (this._hasObserverdRows) {
+          if (rows <= 1 || !this._hasInitTextareaHeight) {
+            this._AdjustTextareaHeight(rows, rowsMax)
+          }
         }
-      }
-      if (rows <= 1 && rowsMax > 0) {
-        if ((lineCount + 1) >= rowsMax) {
-          autoHeight = false
-          textareaHeight = rowsMax * this._lineHeight
-        }
-        this._AdjustTextareaHeight(textareaHeight, autoHeight)
       }
       if (lineChange && typeof lineChange === 'function') {
         lineChange(e)
@@ -308,14 +336,10 @@ Component({
     }
   },
   observers: {
-    rows(rows) {
+    'rows, rowsMax': function (rows, rowsMax) {
       this._hasObserverdRows = true
-      if (this._initTextareaHeigth || this._hasChangedLine) {
-        if (rows > 1) {
-          this._AdjustTextareaHeight((this._lineHeight * rows), true)
-        } else {
-          this._AdjustTextareaHeight(0, false)
-        }
+      if (this._hasChangedLine) {
+        this._AdjustTextareaHeight(rows, rowsMax)
       }
     },
     ...ObserversForControlledPropsByAncestor(controlledProps),
