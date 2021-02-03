@@ -2,8 +2,11 @@
   "usingComponents": {
     "mui-form-control": "../../components/form-control/form-control",
     "mui-form-helper-text": "../../components/form-helper-text/form-helper-text",
+    "mui-grid": "../../components/grid/grid",
+    "mui-icon": "../../components/icon/icon",
     "mui-input": "../../components/input/input",
     "mui-input-label": "../../components/input-label/input-label",
+    "mui-input-adornment": "../../components/input-adornment/input-adornment",
     "mui-switch": "../../components/switch/switch",
     "mui-typography": "../../components/typography/typography"
   }

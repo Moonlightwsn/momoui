@@ -2,7 +2,6 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
-  <!--
   <mui-typography variant="h4">文本框</mui-typography>
   <mui-typography mClass="paragraph" variant="body1">用户可以在文本框内输入或编辑文字</mui-typography>
   <mui-typography mClass="header2" variant="h5">多样的文本框</mui-typography>
@@ -10,11 +9,11 @@
     <form>
       <mui-form-control mClass="form-control">
         <mui-input-label>Standard</mui-input-label>
-        <mui-input />
+        <mui-input model:value="{{inputValue}}" />
       </mui-form-control>
       <mui-form-control mClass="form-control" variant="filled">
         <mui-input-label>Standard</mui-input-label>
-        <mui-input />
+        <mui-input model:value="{{inputValue}}" />
       </mui-form-control>
       <mui-form-control mClass="form-control" variant="outlined">
         <mui-input-label>Standard</mui-input-label>
@@ -26,46 +25,46 @@
   <view class="demo-box">
     <form>
       <view>
-        <mui-form-control mClass="form-control" required color="primary">
+        <mui-form-control mClass="form-control" required>
           <mui-input-label>Required</mui-input-label>
           <mui-input value="Hello World" />
         </mui-form-control>
-        <mui-form-control mClass="form-control" disabled color="primary">
+        <mui-form-control mClass="form-control" disabled>
           <mui-input-label>Disabled</mui-input-label>
           <mui-input value="Hello World" />
         </mui-form-control>
-        <mui-form-control mClass="form-control" color="primary">
+        <mui-form-control mClass="form-control">
           <mui-input-label>Password</mui-input-label>
           <mui-input password />
         </mui-form-control>
-        <mui-form-control mClass="form-control" color="primary">
+        <mui-form-control mClass="form-control">
           <mui-input-label>Number</mui-input-label>
           <mui-input type="number" />
         </mui-form-control>
-        <mui-form-control mClass="form-control" color="primary">
+        <mui-form-control mClass="form-control">
           <mui-input-label>Helper text</mui-input-label>
           <mui-input value="Hello World" />
           <mui-form-helper-text>Some important text</mui-form-helper-text>
         </mui-form-control>
       </view>
       <view>
-        <mui-form-control mClass="form-control" variant="filled" required color="primary">
+        <mui-form-control mClass="form-control" variant="filled" required>
           <mui-input-label>Required</mui-input-label>
           <mui-input value="Hello World" />
         </mui-form-control>
-        <mui-form-control mClass="form-control" variant="filled" disabled color="primary">
+        <mui-form-control mClass="form-control" variant="filled" disabled>
           <mui-input-label>Disabled</mui-input-label>
           <mui-input value="Hello World" />
         </mui-form-control>
-        <mui-form-control mClass="form-control" variant="filled" color="primary">
+        <mui-form-control mClass="form-control" variant="filled">
           <mui-input-label>Password</mui-input-label>
           <mui-input password />
         </mui-form-control>
-        <mui-form-control mClass="form-control" variant="filled" color="primary">
+        <mui-form-control mClass="form-control" variant="filled">
           <mui-input-label>Number</mui-input-label>
           <mui-input type="number" />
         </mui-form-control>
-        <mui-form-control mClass="form-control" variant="filled" color="primary">
+        <mui-form-control mClass="form-control" variant="filled">
           <mui-input-label>Helper text</mui-input-label>
           <mui-input value="Hello World" />
           <mui-form-helper-text>Some important text</mui-form-helper-text>
@@ -100,25 +99,63 @@
       </view>
     </form>
   </view>
-  -->
   <mui-typography mClass="header2" variant="h5">多行属性</mui-typography>
   <view class="demo-box">
     <form>
       <view>
-        <mui-form-control mClass="form-control" color="primary">
+        <mui-form-control mClass="form-control">
           <mui-input-label>Multiline</mui-input-label>
           <mui-input multiline rowsMax="{{4}}" />
         </mui-form-control>
-        <mui-form-control mClass="form-control" color="primary">
+        <mui-form-control mClass="form-control">
           <mui-input-label>Multiline Placeholder</mui-input-label>
           <mui-input multiline placeholder="Placeholder" />
         </mui-form-control>
-        
-        <mui-form-control mClass="form-control" color="primary">
+        <mui-form-control mClass="form-control">
+          <mui-input-label>Multiline</mui-input-label>
+          <mui-input multiline rows="{{4}}" />
+        </mui-form-control>
+      </view>
+      <view>
+        <mui-form-control mClass="form-control" variant="filled">
+          <mui-input-label>Multiline</mui-input-label>
+          <mui-input multiline rowsMax="{{4}}" />
+        </mui-form-control>
+        <mui-form-control mClass="form-control" variant="filled">
+          <mui-input-label>Multiline Placeholder</mui-input-label>
+          <mui-input multiline placeholder="Placeholder" />
+        </mui-form-control>
+        <mui-form-control mClass="form-control" variant="filled">
           <mui-input-label>Multiline</mui-input-label>
           <mui-input multiline rows="{{4}}" />
         </mui-form-control>
       </view>
     </form>
+  </view>
+  <mui-typography mClass="header2" variant="h5">图标</mui-typography>
+  <view class="demo-box">
+    <view>
+      <mui-form-control mClass="form-control">
+        <mui-input-label>With a start adornment</mui-input-label>
+        <mui-input>
+          <mui-input-adornment slot="startAdornment" position="start">
+            <mui-icon name="account-circle" />
+          </mui-input-adornment>
+        </mui-input>
+      </mui-form-control>
+      <view class="form-control">
+        <mui-grid container spacing="{{1}}" alignItems="flex-end">
+          <mui-grid item>
+            <mui-icon name="account-circle" size="{{24}}" />
+          </mui-grid>
+          <mui-grid item>
+            <mui-form-control>
+              <mui-input-label>With a grid</mui-input-label>
+              <mui-input />
+            </mui-form-control>
+          </mui-grid>
+        </mui-grid>
+      </view>
+    </view>
   </view>
 </view>

@@ -43,20 +43,41 @@ export default Behavior({
             this._close()
           }, autoHideDuration)
         }
-        this.setData({_open: true}, async () => {
+        this.setData({_open: true}, () => {
           let needUpdateData
           const {_onBeforeShow} = this
           if (_onBeforeShow && typeof _onBeforeShow === 'function') {
-            needUpdateData = await _onBeforeShow()
-            if (needUpdateData) {
-              this.setData(needUpdateData, () => {
+            const onBeforeShowRes = _onBeforeShow()
+            if (!onBeforeShowRes.then) {
+              needUpdateData = onBeforeShowRes
+              if (needUpdateData) {
+                this.setData(needUpdateData, () => {
+                  this.openTimer = setTimeout(() => {
+                    this.setData({_show: true})
+                  }, 50)
+                })
+              } else {
                 this.openTimer = setTimeout(() => {
                   this.setData({_show: true})
                 }, 50)
-              })
+              }
+            } else {
+              _onBeforeShow().then(theNeedUpdateData => {
+                needUpdateData = theNeedUpdateData
+                if (needUpdateData) {
+                  this.setData(needUpdateData, () => {
+                    this.openTimer = setTimeout(() => {
+                      this.setData({_show: true})
+                    }, 50)
+                  })
+                } else {
+                  this.openTimer = setTimeout(() => {
+                    this.setData({_show: true})
+                  }, 50)
+                }
+              }).catch(e => console.log(e))
             }
-          }
-          if (!needUpdateData) {
+          } else {
             this.openTimer = setTimeout(() => {
               this.setData({_show: true})
             }, 50)
