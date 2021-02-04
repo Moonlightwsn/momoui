@@ -2073,6 +2073,23 @@
         padding: 18.5px 14px;
       }
     }
+    &.mui-variant-filled, &.mui-variant-outlined {
+      .mui-input-adornment {
+        &.position-start {
+          margin-left: 12px;
+        }
+        &.position-end {
+          margin-right: 12px;
+        }
+      }
+    }
+    &.mui-variant-filled {
+      .mui-input-adornment {
+        &.position-start {
+          margin-top: 16px;
+        }
+      }
+    }
     &.margin-dense {
       .mui-input {
         padding-top: 3px;
@@ -2130,6 +2147,7 @@
     &.error-true {
       color: @error_color;
     }
+    /*
     &.mui-select-input {
       &.mui-variant-filled, &.mui-variant-outlined {
         .select-arrow {
@@ -2140,6 +2158,7 @@
         margin: 0 10px;
       }
     }
+    */
   }
   /** mui-input end */
 

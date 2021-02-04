@@ -4,6 +4,7 @@
     "mui-form-helper-text": "../../components/form-helper-text/form-helper-text",
     "mui-grid": "../../components/grid/grid",
     "mui-icon": "../../components/icon/icon",
+    "mui-icon-button": "../../components/icon-button/icon-button",
     "mui-input": "../../components/input/input",
     "mui-input-label": "../../components/input-label/input-label",
     "mui-input-adornment": "../../components/input-adornment/input-adornment",

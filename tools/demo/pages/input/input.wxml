@@ -5,6 +5,7 @@
   <mui-typography variant="h4">文本框</mui-typography>
   <mui-typography mClass="paragraph" variant="body1">用户可以在文本框内输入或编辑文字</mui-typography>
   <mui-typography mClass="header2" variant="h5">多样的文本框</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">MuiInput组件基于小程序input组件实现，input组件并不能完全受控（value属性只设定初始值），但MuiInput依然可以使用双向绑定的特性</mui-typography>
   <view class="demo-box">
     <form>
       <mui-form-control mClass="form-control">
@@ -155,6 +156,70 @@
             </mui-form-control>
           </mui-grid>
         </mui-grid>
+      </view>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h6">修饰输入框</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">一个主流的方法是使用 InputAdornment 组件。 这些可用于向输入添加前缀、后缀或动作. 例如，可以用一个图标按钮来隐藏或者显示输入框里的密码</mui-typography>
+  <view class="demo-box">
+    <view style="display: flex;flex-wrap: wrap;">
+      <view>
+        <mui-form-control mClass="form-control">
+          <mui-input-label>With normal TextField</mui-input-label>
+          <mui-input>
+            <mui-input-adornment text="Kg" position="start" slot="startAdornment" />
+          </mui-input>
+        </mui-form-control>
+        <mui-form-control mClass="form-control">
+          <mui-input mClass="has-input-label-true">
+            <mui-input-adornment text="Kg" position="end" slot="endAdornment" />
+          </mui-input>
+          <mui-form-helper-text>Weight</mui-form-helper-text>
+        </mui-form-control>
+        <mui-form-control mClass="form-control">
+          <mui-input-label>Password</mui-input-label>
+          <mui-input password="{{isPassword}}">
+            <mui-input-adornment position="end" slot="endAdornment">
+              <mui-icon-button bindtap="ShowPassword" icon="{{isPassword ? 'eye' : 'eye-off'}}" />
+            </mui-input-adornment>
+          </mui-input>
+          <mui-form-helper-text>Weight</mui-form-helper-text>
+        </mui-form-control>
+        <mui-form-control fullWidth mClass="form-control">
+          <mui-input-label>Amount</mui-input-label>
+          <mui-input value="FullWidth">
+            <mui-input-adornment text="$" position="start" slot="startAdornment" />
+          </mui-input>
+        </mui-form-control>
+      </view>
+      <view>
+        <mui-form-control variant="filled" mClass="form-control">
+          <mui-input-label>With normal TextField</mui-input-label>
+          <mui-input>
+            <mui-input-adornment text="Kg" position="start" slot="startAdornment" />
+          </mui-input>
+        </mui-form-control>
+        <mui-form-control variant="filled" mClass="form-control">
+          <mui-input mClass="has-input-label-true">
+            <mui-input-adornment text="Kg" position="end" slot="endAdornment" />
+          </mui-input>
+          <mui-form-helper-text>Weight</mui-form-helper-text>
+        </mui-form-control>
+        <mui-form-control variant="filled" mClass="form-control">
+          <mui-input-label>Password</mui-input-label>
+          <mui-input password="{{isPassword}}">
+            <mui-input-adornment position="end" slot="endAdornment">
+              <mui-icon-button bindtap="ShowPassword" icon="{{isPassword ? 'eye' : 'eye-off'}}" />
+            </mui-input-adornment>
+          </mui-input>
+          <mui-form-helper-text>Weight</mui-form-helper-text>
+        </mui-form-control>
+        <mui-form-control variant="filled" fullWidth mClass="form-control">
+          <mui-input-label>Amount</mui-input-label>
+          <mui-input value="FullWidth">
+            <mui-input-adornment text="$" position="start" slot="startAdornment" />
+          </mui-input>
+        </mui-form-control>
       </view>
     </view>
   </view>

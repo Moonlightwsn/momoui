@@ -5,7 +5,9 @@ const controlledProps: string[] = [
   'color',
   'disabled',
   'error',
+  'fullWidth',
   'margin',
+  'size',
   'variant',
 ]
 
@@ -123,16 +125,24 @@ Component({
     '../form-control/form-control': {
       type: 'ancestor',
       linked(target) {
-        if (!this._muiSelectInput) {
-          const _muiSelectInput = this.selectComponent('._mui-select-input')
-          this._muiSelectInput = _muiSelectInput
-        }
-        this._muiSelectInput._Linked(target)
+        this._GetSelectInput()._Linked(target)
         if (target) {
           this._formControlComp = target
         }
       },
+      unlinked() {
+        this._GetSelectInput()._UnLinked()
+      }
     },
+    '../input-adornment/input-adornment': {
+      type: 'descendant',
+      linked(target) {
+        this._GetSelectInput()._LinkedAdornment(target)
+      },
+      unlinked() {
+        this._GetSelectInput()._UnLinkedAdornment()
+      },
+    }
   },
   methods: {
     _Cancel(e) {
@@ -164,27 +174,21 @@ Component({
       this.triggerEvent('columnchange', e.detail)
     },
     _InputBlur(e) {
-      if (!this._muiSelectInput) {
-        const _muiSelectInput = this.selectComponent('._mui-select-input')
-        this._muiSelectInput = _muiSelectInput
-      }
-      if (this._muiSelectInput) {
-        this._muiSelectInput._onBlur(e)
-      }
+      this._GetSelectInput()._onBlur(e)
       this.setData({_focus: false})
     },
     _InputFocus(e) {
       const {disabled} = this.data
       if (!disabled) {
-        if (!this._muiSelectInput) {
-          const _muiSelectInput = this.selectComponent('._mui-select-input')
-          this._muiSelectInput = _muiSelectInput
-        }
-        if (this._muiSelectInput) {
-          this._muiSelectInput._onFocus(e)
-        }
+        this._GetSelectInput()._onFocus(e)
         this.setData({_focus: true})
       }
+    },
+    _GetSelectInput() {
+      if (!this._muiSelectInput) {
+        this._muiSelectInput = this.selectComponent('._mui-select-input')
+      }
+      return this._muiSelectInput
     },
     _ReRenderControlledProps(hasInputLabel) {
       const target = this._formControlComp
@@ -199,11 +203,7 @@ Component({
           this.setData(newData)
         }
       }
-      if (!this._muiSelectInput) {
-        const _muiSelectInput = this.selectComponent('._mui-select-input')
-        this._muiSelectInput = _muiSelectInput
-      }
-      this._muiSelectInput._SetInputLabel(hasInputLabel)
+      this._GetSelectInput()._SetInputLabel(hasInputLabel)
     },
     _Value2Display(val) {
       const {
@@ -292,8 +292,8 @@ Component({
     ...ObserversForControlledPropsByAncestor(controlledProps),
   },
   options: {
-    virtualHost: true,
     pureDataPattern: /^_pure/,
     styleIsolation: 'apply-shared',
+    multipleSlots: true,
   },
 })

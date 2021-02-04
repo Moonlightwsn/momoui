@@ -21,5 +21,4 @@
       <mui-bottom-navigation-action icon="folder" label="Folder" />
     </mui-bottom-navigation>
   </view>
-  <mui-button bind:tap="test">TEST</mui-button>
 </view>

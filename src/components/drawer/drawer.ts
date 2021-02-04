@@ -33,6 +33,10 @@ Component({
       type: String,
       value: 'slide',
     },
+    transitionDuration: {
+      type: Number,
+      value: 225,
+    },
     variant: {
       type: String,
       value: 'temporary',

@@ -6,8 +6,10 @@ const controlledProps: string[] = [
   'color',
   'disabled',
   'error',
+  'fullWidth',
   'focus',
   'margin',
+  'size',
   'variant',
 ]
 
@@ -60,7 +62,7 @@ Component({
     },
     fullWidth: {
       type: Boolean,
-      value: true,
+      value: false,
     },
     fixed: {
       type: Boolean,
@@ -164,6 +166,10 @@ Component({
       type: Boolean,
       value: true,
     },
+    size: {
+      type: String,
+      value: 'medium',
+    },
     type: {
       type: String,
       value: 'text',
@@ -196,9 +202,18 @@ Component({
         this._Linked(target)
       },
       unlinked() {
-        this._formControlComp = undefined
+        this._UnLinked()
       },
-    }
+    },
+    '../input-adornment/input-adornment': {
+      type: 'descendant',
+      linked(target) {
+        this._LinkedAdornment(target)
+      },
+      unlinked() {
+        this._UnLinkedAdornment()
+      }
+    },
   },
   methods: {
     _AdjustTextareaHeight(rows, rowsMax) {
@@ -245,8 +260,8 @@ Component({
       this.setData({_focus: true})
       if (this._formControlComp) {
         const shrink = true
-        this.setData({_inputLabelShrink: shrink})
-        this._formControlComp._ControlFormItem('_onFocus', ['input-label'], {shrink})
+        this._SetInputLabelShrink(shrink)
+        this._formControlComp._ControlFormItem('_onFocus', ['input-label'], {})
       }
       const {inputFocus} = this.data
       if (inputFocus && typeof inputFocus === 'function') {
@@ -257,8 +272,8 @@ Component({
       this.setData({_focus: false})
       if (this._formControlComp) {
         const shrink = !!e.detail.value
-        this.setData({_inputLabelShrink: shrink})
-        this._formControlComp._ControlFormItem('_onBlur', ['input-label'], {shrink})
+        this._SetInputLabelShrink(shrink)
+        this._formControlComp._ControlFormItem('_onBlur', ['input-label'], {})
       }
       const {inputBlur} = this.data
       if (inputBlur && typeof inputBlur === 'function') {
@@ -310,9 +325,26 @@ Component({
       if (target) {
         this._formControlComp = target
         const shrink = !!this.data.value
-        this.setData({_inputLabelShrink: shrink})
-        this._formControlComp._SetInputLabelShrink(shrink)
+        this._SetInputLabelShrink(shrink)
       }
+    },
+    _UnLinked() {
+      this._formControlComp = undefined
+    },
+    _LinkedAdornment(target) {
+      this._permanentShrink = undefined
+      this._hasLinkedToInputAdornment = true
+      if (target) {
+        const {position} = target.data
+        if (position === 'start') {
+          this._permanentShrink = true
+          const shrink = !!this.data.value
+          this._SetInputLabelShrink(shrink)
+        }
+      }
+    },
+    _UnLinkedAdornment() {
+      this._permanentShrink = undefined
     },
     _ReRenderControlledProps(hasInputLabel) {
       const target = this._formControlComp
@@ -333,7 +365,14 @@ Component({
     },
     _SetInputLabel(hasInputLabel) {
       this.setData({_hasInputLabel: hasInputLabel})
-    }
+    },
+    _SetInputLabelShrink(shrink) {
+      if (this._formControlComp) {
+        const _shrink = this._permanentShrink || shrink
+        this.setData({_inputLabelShrink: _shrink})
+        this._formControlComp._SetInputLabelShrink(_shrink)
+      }
+    },
   },
   observers: {
     'rows, rowsMax': function (rows, rowsMax) {

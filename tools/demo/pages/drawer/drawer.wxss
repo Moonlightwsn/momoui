@@ -5,7 +5,7 @@
 }
 
 .mui-app-bar.close-app-bar {
-  transition: margin 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms,width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+  transition: margin 325ms cubic-bezier(0.4, 0, 0.6, 1) 0ms,width 325ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
 }
 
 .open-content {
@@ -13,6 +13,6 @@
 }
 
 .close-content {
-  transition: margin 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+  transition: margin 325ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
   margin-left: -180px;
 }
