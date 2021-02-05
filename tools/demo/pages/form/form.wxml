@@ -168,8 +168,8 @@
     <mui-switch size="small" disabled="{{disabled}}" defaultChecked color="primary">(Disabled)</mui-switch>
   </view>
   <view style="margin-top: 12px;">
-    <mui-button mStyle="margin-left: 12px;" bind:tap="changeSize">Chagen Size</mui-button>
-    <mui-button mStyle="margin-left: 12px;" bind:tap="changeDisabled">Chagen Disabled</mui-button>
+    <mui-button mStyle="margin-left: 12px;" bindtap="changeSize">Chagen Size</mui-button>
+    <mui-button mStyle="margin-left: 12px;" bindtap="changeDisabled">Chagen Disabled</mui-button>
   </view>
   <view style="margin-bottom: 60px;">
     <mui-input placeholder="Placeholder" rows="{{3}}" multiline mStyle="margin: 8px;" />

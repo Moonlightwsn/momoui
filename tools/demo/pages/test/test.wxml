@@ -63,7 +63,7 @@
     <mui-avatar>M</mui-avatar>
     <mui-avatar wx:if="{{open}}">M</mui-avatar>
   </mui-avatar-group>
-  <mui-button bind:tap="setOpen">TEST</mui-button>
+  <mui-button bindtap="setOpen">TEST</mui-button>
   -->
   <!--
   <mui-card raised>
@@ -97,7 +97,7 @@
     <mui-card-actions disableSpacing>
       <mui-button icon="heart" shape="circle" iconSize="24" />
       <mui-button icon="share" shape="circle" iconSize="24" />
-      <mui-button style="margin-left: auto;" icon="{{open ? 'chevron-up' : 'chevron-down'}}" shape="circle" iconSize="24" bind:tap="setOpen" />
+      <mui-button style="margin-left: auto;" icon="{{open ? 'chevron-up' : 'chevron-down'}}" shape="circle" iconSize="24" bindtap="setOpen" />
     </mui-card-actions>
     <mui-collapse in="{{open}}">
       <mui-card-action-area>
@@ -144,7 +144,7 @@
         size="large"
         iconSize="24"
         iconColor="#fff"
-        bind:tap="setLoading"
+        bindtap="setLoading"
       />
       <mui-progress
         wx:if="{{loading}}"
@@ -160,7 +160,7 @@
         disabled="{{loading}}"
         color="primary"
         variant="contained"
-        bind:tap="setLoading"
+        bindtap="setLoading"
       >
         ACCEPT TERMS
       </mui-button>
@@ -179,7 +179,7 @@
     <mui-progress type="linear" color="secondary" variant="buffer" value="5" value-buffer="30" mStyle="margin-top: 16px;"></mui-progress>
   </view>
   -->
-  <!-- <mui-button bind:tap="onOpen">Open Dialog</mui-button> -->
+  <!-- <mui-button bindtap="onOpen">Open Dialog</mui-button> -->
   <!--
   <mui-dialog
     actions="{{actions}}"
@@ -189,17 +189,17 @@
     title="Set backup account"
   >
     <mui-list>
-      <mui-list-item button primary="username@gmail.com" bind:tap="onClose">
+      <mui-list-item button primary="username@gmail.com" bindtap="onClose">
         <mui-list-item-avatar>
           <mui-avatar icon="account" mStyle="background-color: #bbdefb;" iconColor="#1e88e5"></mui-avatar>
         </mui-list-item-avatar>
       </mui-list-item>
-      <mui-list-item button primary="user02@gmail.com" bind:tap="onClose">
+      <mui-list-item button primary="user02@gmail.com" bindtap="onClose">
         <mui-list-item-avatar>
           <mui-avatar icon="account"  mStyle="background-color: #bbdefb;" iconColor="#1e88e5"></mui-avatar>
         </mui-list-item-avatar>
       </mui-list-item>
-      <mui-list-item button primary="Add account" bind:tap="onClose">
+      <mui-list-item button primary="Add account" bindtap="onClose">
         <mui-list-item-avatar>
           <mui-avatar icon="plus" iconColor="#fff"></mui-avatar>
         </mui-list-item-avatar>
@@ -264,11 +264,11 @@
   <mui-snack-bar open="{{open}}" anchorOrigin="{{anchorOrigin}}" transitionDuration="1000" onClose="{{onClose}}">
     <mui-snack-bar-content mStyle="width: 400px;" message="TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST">
       <view slot="action">
-        <mui-button color="secondary" bind:tap="onClose" size="small">
+        <mui-button color="secondary" bindtap="onClose" size="small">
           UNDO
         </mui-button>
         <mui-button
-          bind:tap="onClose"
+          bindtap="onClose"
           shape="circle"
           icon="close"
           mStyle="padding: 3px;width: auto;height: auto;"

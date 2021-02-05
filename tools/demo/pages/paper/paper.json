@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mui-paper": "../../components/paper/paper",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

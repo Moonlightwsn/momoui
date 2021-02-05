@@ -1,0 +1,22 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography variant="h4">Paper 纸张组件</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">应用程序的的背景类似纸张一样平坦、不透明，而其行为也像纸张一样，能够改变大小、与其他纸张绑定或者调换顺序。</mui-typography>
+  <view class="demo-box">
+    <view style="display: flex;flex-wrap: wrap;">
+      <mui-paper mClass="paper" elevation="{{0}}" />
+      <mui-paper mClass="paper" />
+      <mui-paper mClass="paper" elevation="{{3}}" />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">变体</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">如果你想要一个轮廓的曲面，你可以使用 variant 属性</mui-typography>
+  <view class="demo-box" style="background-color: #fff;">
+    <view style="display: flex;">
+      <mui-paper mClass="paper" variant="outlined" />
+      <mui-paper mClass="paper" variant="outlined" square />
+    </view>
+  </view>
+</view>

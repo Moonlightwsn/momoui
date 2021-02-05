@@ -11,7 +11,7 @@
       onClose="{{onClose1}}"
       transformOrigin="{{transformOrigin1}}"
     >
-      <mui-button slot="anchor" bind:tap="openPopover1" variant="contained" color="primary">OPEN POPOVER</mui-button>
+      <mui-button slot="anchor" bindtap="openPopover1" variant="contained" color="primary">OPEN POPOVER</mui-button>
       <mui-typography mStyle="padding: 16px;">The content of the Popover.</mui-typography>
     </mui-popover>
   </view>
@@ -26,7 +26,7 @@
         onClose="{{onClose2}}"
         transformOrigin="{{transformOrigin2}}"
       >
-        <mui-button slot="anchor" bind:tap="openPopover2" variant="contained">OPEN POPOVER</mui-button>
+        <mui-button slot="anchor" bindtap="openPopover2" variant="contained">OPEN POPOVER</mui-button>
         <mui-typography mStyle="padding: 16px;">The content of the Popover.</mui-typography>
       </mui-popover>
     </view>

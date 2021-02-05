@@ -6,7 +6,7 @@
   <view>
     <view style="margin-bottom: 12px;">
       <mui-button-group color="primary" variant="contained" mStyle="margin: 0 12px">
-        <mui-button bind:tap="gototestpage">ONE</mui-button>
+        <mui-button bindtap="gototestpage">ONE</mui-button>
         <mui-button disabled="{{true}}">TWO</mui-button>
         <mui-button>INJECT</mui-button>
         <mui-button>THREE</mui-button>
@@ -76,7 +76,7 @@
         color="primary"
         size="small"
         variant="contained"
-        bind:tap="changeButtonColor"
+        bindtap="changeButtonColor"
         bind:longpress="testLongPress"
       >CONTAINED</mui-button>
     </view>
@@ -95,7 +95,7 @@
         color="secondary"
         size="small"
         variant="contained"
-        bind:tap="changeDisabled"
+        bindtap="changeDisabled"
       >CONTAINED</mui-button>
     </view>
   </view>

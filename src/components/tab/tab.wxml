@@ -2,7 +2,7 @@
   class="_mui-tab-root mui mui-tab-root mui-variant-{{variant}} selected-{{_selected}} wrapped-{{wrapped}}"
   mClass="mui-button {{mClass}}"
   mStyle="{{mStyle}}"
-  bind:tap="_Select"
+  bindtap="_Select"
   component="button"
   disabled="{{disabled}}"
   disableRipple="{{disableRipple}}"

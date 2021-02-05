@@ -2,7 +2,7 @@
   class="mui mui-bottom-navigation-action selected-{{_selected}} only-icon-{{!(showLabel || _selected || !_hideInactiveAction)}}"
   mClass="mui-button {{mClass}}"
   mStyle="{{mStyle}}"
-  bind:tap="_Select"
+  bindtap="_Select"
   component="button"
   hoverClass="{{disabled ? '' : (hoverClass ? hoverClass : 'mui-button-hover')}}"
 >

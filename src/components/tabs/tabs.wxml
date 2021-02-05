@@ -4,12 +4,12 @@
 >
   <mui-button-base
     wx:if="{{variant === 'scrollable' && _showArrow}}"
-    bind:tap="_MoveToLeft"
+    bindtap="_MoveToLeft"
     class="mui-tabs-scroll-button"
     component="button"
     disabled="{{_positionAtStart}}"
   >
-    <mui-icon name="arrow-{{orientation === 'horizontal' ? 'left' : 'up'}}-2" size="20" />
+    <mui-icon name="chevron-{{orientation === 'horizontal' ? 'left' : 'up'}}" size="20" />
   </mui-button-base>
   <view class="mui-tabs-scroller mui-tabs-fixed">
     <view class="mui-tabs-flex-container centered-{{centered}}" style="transform: translate({{orientation === 'horizontal' ? _translate : 0}}px, {{orientation === 'vertical' ? _translate : 0}}px)">
@@ -19,11 +19,11 @@
   </view>
   <mui-button-base
     wx:if="{{variant === 'scrollable' && _showArrow}}"
-    bind:tap="_MoveToRight"
+    bindtap="_MoveToRight"
     class="mui-tabs-scroll-button"
     component="button"
     disabled="{{_positionAtEnd}}"
   >
-    <mui-icon name="arrow-{{orientation === 'horizontal' ? 'right' : 'down'}}-2" size="20" />
+    <mui-icon name="chevron-{{orientation === 'horizontal' ? 'right' : 'down'}}" size="20" />
   </mui-button-base>
 </view>

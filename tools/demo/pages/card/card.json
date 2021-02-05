@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "mui-avatar": "../../components/avatar/avatar",
+    "mui-button": "../../components/button/button",
+    "mui-card": "../../components/card/card",
+    "mui-card-actions": "../../components/card-actions/card-actions",
+    "mui-card-content": "../../components/card-content/card-content",
+    "mui-card-header": "../../components/card-header/card-header",
+    "mui-icon-button": "../../components/icon-button/icon-button",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

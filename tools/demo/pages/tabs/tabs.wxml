@@ -2,6 +2,8 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
+  <mui-typography variant="h4">Tabs 选项卡</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">使用选项卡，你可以轻松地浏览和切换不同的视图</mui-typography>
   <mui-typography mClass="header2" variant="h5">简单的选项卡</mui-typography>
   <view class="demo-box">
     <view class="tabs-wrapper">

@@ -23,13 +23,13 @@
       <mui-dialog-actions wx:if="{{actions}}">
         <mui-button
           color="secondary"
-          bind:tap="_confirm"
+          bindtap="_confirm"
         >
           {{actions.cancelText || 'Cancel'}}
         </mui-button>
         <mui-button
           color="primary"
-          bind:tap="_Cancel"
+          bindtap="_Cancel"
         >
           {{actions.confirmText || 'Confirm'}}
         </mui-button>

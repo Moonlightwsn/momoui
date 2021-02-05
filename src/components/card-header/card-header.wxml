@@ -48,7 +48,7 @@
       iconColor="{{action.iconColor}}"
       mStyle="{{action.style}}"
       mClass="{{action.class}}"
-      bind:tap="_headerActionClick"
+      bindtap="_headerActionClick"
     />
     <slot wx:else name="action" />
   </view>

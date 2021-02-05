@@ -51,6 +51,10 @@ Component({
       optionalTypes: [Object],
       value: 225,
     },
+    transitionType: {
+      type: String,
+      value: 'fade',
+    },
   },
   data: {
     _contentStyle: '',

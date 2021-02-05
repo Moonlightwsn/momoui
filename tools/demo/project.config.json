@@ -52,6 +52,11 @@
           "scene": null
         },
         {
+          "name": "card",
+          "pathName": "pages/card/card",
+          "scene": null
+				},
+        {
           "name": "checkbox",
           "pathName": "pages/checkbox/checkbox",
           "scene": null
@@ -94,6 +99,11 @@
         {
           "name": "menu",
           "pathName": "pages/menu/menu",
+          "scene": null
+        },
+        {
+          "name": "paper",
+          "pathName": "pages/paper/paper",
           "scene": null
         },
         {

@@ -1,7 +1,7 @@
 <view
   class="mui mui-checkbox {{_checkedClass}} disabled-{{disabled}} {{muiClasses}}"
   style="{{mStyle}}"
-  capture-bind:tap="_CheckControll"
+  capture-bindtap="_CheckControll"
 >
   <mui-button class="_mui-inner-button" color="{{color}}" disabled="{{disabled}}" disableRipple="{{disableRipple}}" hoverStopPropagation mClass="mui-icon-button edge-{{edge}}" mStyle="padding: 9px;" rippleColor="{{rippleColor}}" shape="circle" variant="text">
     <mui-icon

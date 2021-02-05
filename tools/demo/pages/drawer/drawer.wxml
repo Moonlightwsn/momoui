@@ -1,15 +1,15 @@
 <template name="drawer-list">
   <block>
     <mui-list>
-      <mui-list-item button icon="send" primary="Sent mail" />
-      <mui-list-item button icon="email" primary="Drafts" />
+      <mui-list-item button icon="email" primary="Sent mail" />
+      <mui-list-item button icon="inbox" primary="Drafts" />
       <mui-list-item button icon="email" primary="Inbox" />
-      <mui-list-item button icon="send" primary="Sent mail" />
+      <mui-list-item button icon="inbox" primary="Sent mail" />
     </mui-list>
     <mui-divider />
     <mui-list>
-      <mui-list-item button icon="send" primary="Sent mail" />
-      <mui-list-item button icon="email" primary="Drafts" />
+      <mui-list-item button icon="email" primary="Sent mail" />
+      <mui-list-item button icon="inbox" primary="Drafts" />
       <mui-list-item button icon="email" primary="Inbox" />
     </mui-list>
   </block>
@@ -45,6 +45,8 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
+  <mui-typography variant="h4">Drawer（抽屉）</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">导航抽屉提供了一个访问您应用中的目标地址的途径。侧边栏被固定在屏幕的左侧或右侧，而它包含了一些补充内容。</mui-typography>
   <mui-typography mClass="header2" variant="h5">临时抽屉</mui-typography>
   <mui-typography mClass="paragraph" variant="body2">你可以打开或关闭一个临时的导航抽屉。 抽屉组件的默认状态是关闭，而选中一个区则会触发抽屉组件在任何其他内容之上呈现</mui-typography>
   <view class="demo-box">
@@ -100,18 +102,7 @@
           <mui-icon-button wx:if="{{open3}}" bindtap="Close3" icon="arrow-left" />
         </view>
         <mui-divider />
-        <mui-list>
-          <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="email" primary="Drafts" />
-          <mui-list-item button icon="email" primary="Inbox" />
-          <mui-list-item button icon="send" primary="Sent mail" />
-        </mui-list>
-        <mui-divider />
-        <mui-list>
-          <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="email" primary="Drafts" />
-          <mui-list-item button icon="email" primary="Inbox" />
-        </mui-list>
+        <template is="drawer-list" />
       </mui-drawer>
       <view style="overflow-y: auto;height: 100%;">
         <view style="flex-grow: 1;padding: 24px;">
@@ -137,18 +128,7 @@
       <mui-drawer variant="permanent" position="absolute" width="{{width}}" mStyle="width: {{width}}px;flex-shrink: 0;">
         <view class="mui mui-toolbar gutters-true variant-regular" />
         <mui-divider />
-        <mui-list>
-          <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="email" primary="Drafts" />
-          <mui-list-item button icon="email" primary="Inbox" />
-          <mui-list-item button icon="send" primary="Sent mail" />
-        </mui-list>
-        <mui-divider />
-        <mui-list>
-          <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="email" primary="Drafts" />
-          <mui-list-item button icon="email" primary="Inbox" />
-        </mui-list>
+        <template is="drawer-list" />
       </mui-drawer>
       <view style="overflow-y: auto;height: 100%;">
         <view style="flex-grow: 1;padding: 24px;">
@@ -176,18 +156,7 @@
       <mui-drawer anchor="right" variant="permanent" position="absolute" width="{{width}}" mStyle="width: {{width}}px;flex-shrink: 0;">
         <view class="mui mui-toolbar gutters-true variant-regular" />
         <mui-divider />
-        <mui-list>
-          <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="email" primary="Drafts" />
-          <mui-list-item button icon="email" primary="Inbox" />
-          <mui-list-item button icon="send" primary="Sent mail" />
-        </mui-list>
-        <mui-divider />
-        <mui-list>
-          <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="email" primary="Drafts" />
-          <mui-list-item button icon="email" primary="Inbox" />
-        </mui-list>
+        <template is="drawer-list" />
       </mui-drawer>
     </view>
   </view>
@@ -205,18 +174,7 @@
       <mui-drawer variant="permanent" position="absolute" width="{{width}}" mStyle="width: {{width}}px;flex-shrink: 0;">
         <view class="mui mui-toolbar gutters-true variant-regular" />
         <mui-divider />
-        <mui-list>
-          <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="email" primary="Drafts" />
-          <mui-list-item button icon="email" primary="Inbox" />
-          <mui-list-item button icon="send" primary="Sent mail" />
-        </mui-list>
-        <mui-divider />
-        <mui-list>
-          <mui-list-item button icon="send" primary="Sent mail" />
-          <mui-list-item button icon="email" primary="Drafts" />
-          <mui-list-item button icon="email" primary="Inbox" />
-        </mui-list>
+        <template is="drawer-list" />
       </mui-drawer>
       <view style="overflow-y: auto;height: 100%;">
         <view style="flex-grow: 1;padding: 24px;">
@@ -226,5 +184,4 @@
       </view>
     </view>
   </view>
-  -->
 </view>

@@ -11,7 +11,7 @@
   transitionType="{{transitionType}}"
 >
   <slot slot="anchor" name="anchor" />
-  <mui-menu-list mClass="mui-menu-list">
+  <mui-menu-list mClass="mui mui-menu-list">
     <slot />
   </mui-menu-list>
 </mui-popover>

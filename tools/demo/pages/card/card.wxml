@@ -1,0 +1,50 @@
+<template name="bull">
+  <label style="display: inline-block;margin: 0 2px; transform: scale(0.8);">•</label>
+</template>
+<template name="simple-card">
+  <mui-card mStyle="min-width: 275px;" variant="{{variant || 'elevation'}}">
+    <mui-card-content>
+      <mui-typography mStyle="font-size: 14px;" color="textSecondary" gutterBottom>Word of the Day</mui-typography>
+      <mui-typography variant="h5">
+        be<template is="bull" />nev<template is="bull" />o<template is="bull" />lent
+      </mui-typography>
+      <mui-typography mStyle="margin-bottom: 12px;" color="textSecondary">
+        adjective
+      </mui-typography>
+      <mui-typography variant="body2">
+        well meaning and kindly.
+        <view />
+        "a benevolent smile"
+      </mui-typography>
+    </mui-card-content>
+    <mui-card-actions>
+      <mui-button size="small">Learn More</mui-button>
+    </mui-card-actions>
+  </mui-card>
+</template>
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography variant="h4">Card 卡片</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">卡片组件能够承载与单个主题相关的内容和操作。</mui-typography>
+  <mui-typography mClass="header2" variant="h5">简单的卡片</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">尽管卡片支持多操作、多个 UI 控件和一个加长的菜单，但请不要滥用它，卡片只能作为那些复杂且详细信息的一个入口</mui-typography>
+  <view class="demo-box">
+    <template is="simple-card" />
+  </view>
+  <mui-typography mClass="header2" variant="h5">描边卡片 Outlined Card</mui-typography>
+  <view class="demo-box">
+    <template is="simple-card" data="{{ ...{variant: 'outlined'} }}" />
+  </view>
+  <mui-typography mClass="header2" variant="h5">复杂的交互情况</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">卡片内容是可以展开的</mui-typography>
+  <view class="demo-box">
+    <mui-card mStyle="max-width: 345px;">
+      <mui-card-header title="Shrimp and Chorizo Paella" subheader="September 14, 2016">
+        <mui-avatar slot="avatar" mStyle="background-color: #f44336">R</mui-avatar>
+        <mui-icon-button slot="action" icon="dots-vertical" />
+      </mui-card-header>
+    </mui-card>
+  </view>
+</view>

@@ -106,6 +106,9 @@
     &.mui-variant-outlined {
       border: 1px solid rgba(0, 0, 0, 0.12);
     }
+    &.mui-variant-outlined {
+      background-color: #fff;
+    }
     &.mui-variant-elevation {
       &.elevation-0 {
         box-shadow: none;
@@ -3340,6 +3343,7 @@
       background-color: #424242;
       &.mui-variant-outlined {
         border: 1px solid rgba(255, 255, 255, 0.12);
+        background-color: #424242;
       }
     }
 

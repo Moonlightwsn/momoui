@@ -2,7 +2,7 @@
   wx:if="{{_open}}"
   class="mui mui-backdrop invisible-{{invisible}} {{mClass}}"
   style="{{_show ? _endStyle : _startStyle}}{{_show ? _enterStyle : _exitStyle}}{{mStyle}}"
-  bind:tap="_BackdropClick"
+  bindtap="_BackdropClick"
 >
   <slot />
 </view>

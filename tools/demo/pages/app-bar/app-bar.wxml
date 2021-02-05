@@ -2,6 +2,8 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
+  <mui-typography variant="h4">App Bar 应用栏</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">应用栏组件展示了与当前屏幕息息相关的信息和操作</mui-typography>
   <mui-typography mClass="header2" variant="h5">简单的应用栏</mui-typography>
   <view class="demo-box">
     <view style="flex-grow: 1;">
@@ -59,11 +61,11 @@
               onClose="{{CloseMenu}}"
               transformOrigin="{{ {vertical: 'top', horizontal: 'right'} }}"
             >
-              <mui-icon-button bind:tap="OpenMenu" slot="anchor" color="inherit" edge="end">
+              <mui-icon-button bindtap="OpenMenu" slot="anchor" color="inherit" edge="end">
                 <mui-icon name="account-circle" />
               </mui-icon-button>
-              <mui-menu-item bind:tap="CloseMenu">Profile</mui-menu-item>
-              <mui-menu-item bind:tap="CloseMenu">My account</mui-menu-item>
+              <mui-menu-item bindtap="CloseMenu">Profile</mui-menu-item>
+              <mui-menu-item bindtap="CloseMenu">My account</mui-menu-item>
             </mui-menu>
           </view>
           <view class="sectionMobile">
@@ -73,10 +75,10 @@
               onClose="{{CloseMenu2}}"
               transformOrigin="{{ {vertical: 'top', horizontal: 'right'} }}"
             >
-              <mui-icon-button bind:tap="OpenMenu2" slot="anchor" color="inherit">
+              <mui-icon-button bindtap="OpenMenu2" slot="anchor" color="inherit">
                 <mui-icon name="menu" />
               </mui-icon-button>
-              <mui-menu-item bind:tap="CloseMenu2">
+              <mui-menu-item bindtap="CloseMenu2">
                 <mui-icon-button color="inherit">
                   <mui-badge content="{{4}}" color="secondary">
                     <mui-icon name="email" color="{{theme === 'dark' ? '#fff' : 'rgba(0, 0, 0, 0.87)'}}" />
@@ -84,7 +86,7 @@
                 </mui-icon-button>
                 <mui-typography>Mail</mui-typography>
               </mui-menu-item>
-              <mui-menu-item bind:tap="CloseMenu2">
+              <mui-menu-item bindtap="CloseMenu2">
                 <mui-icon-button color="inherit">
                   <mui-badge content="{{17}}" color="secondary">
                     <mui-icon name="message" color="{{theme === 'dark' ? '#fff' : 'rgba(0, 0, 0, 0.87)'}}" />
@@ -98,14 +100,14 @@
                 onClose="{{CloseMenu3}}"
                 transformOrigin="{{ {vertical: 'top', horizontal: 'right'} }}"
               >
-                <mui-menu-item bind:tap="OpenMenu3" slot="anchor">
+                <mui-menu-item bindtap="OpenMenu3" slot="anchor">
                   <mui-icon-button color="inherit">
                     <mui-icon name="account-circle" color="{{theme === 'dark' ? '#fff' : 'rgba(0, 0, 0, 0.87)'}}" />
                   </mui-icon-button>
                   <mui-typography>Profile</mui-typography>
                 </mui-menu-item>
-                <mui-menu-item bind:tap="CloseMenu3">Profile</mui-menu-item>
-                <mui-menu-item bind:tap="CloseMenu3">My account</mui-menu-item>
+                <mui-menu-item bindtap="CloseMenu3">Profile</mui-menu-item>
+                <mui-menu-item bindtap="CloseMenu3">My account</mui-menu-item>
               </mui-menu>
             </mui-menu>
           </view>
@@ -141,13 +143,13 @@
               transformOrigin="{{ {vertical: 'top', horizontal: 'right'} }}"
             >
               <mui-icon-button
-                bind:tap="OpenMenu4"
+                bindtap="OpenMenu4"
                 color="inherit"
                 icon="account-circle"
                 slot="anchor"
               />
-              <mui-menu-item bind:tap="CloseMenu4">Profile</mui-menu-item>
-              <mui-menu-item bind:tap="CloseMenu4">My account</mui-menu-item>
+              <mui-menu-item bindtap="CloseMenu4">Profile</mui-menu-item>
+              <mui-menu-item bindtap="CloseMenu4">My account</mui-menu-item>
             </mui-menu>
           </view>
         </mui-toolbar>

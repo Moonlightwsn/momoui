@@ -2,7 +2,7 @@
   <view
     class="mui mui-drawer-root drawer-{{drawerType}} {{mClass}}"
     style="{{mStyle}}"
-    catchtap="{{true}}"
+    catchtap="_CatchTap"
   >
     <mui-paper
       elevation="{{elevation}}"
@@ -23,7 +23,7 @@
     wx:if="{{_open}}"
     class="mui mui-backdrop"
     style="z-index: 1200;"
-    bind:tap="_BackdropClick"
+    bindtap="_BackdropClick"
   >
     <template is="drawer" data="{{ ...{..._templateData, _transitionStyle: _transitionStyle} }}" />
   </view>

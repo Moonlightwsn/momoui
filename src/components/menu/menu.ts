@@ -40,7 +40,7 @@ Component({
     },
     transitionType: {
       type: String,
-      value: 'grow',
+      value: 'fade',
     },
   },
   observers: {},

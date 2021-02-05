@@ -2,18 +2,18 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
+  <mui-typography variant="h4">Menu 菜单</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">菜单在临时出现的位置上显示了一系列的选项</mui-typography>
   <mui-typography mClass="header2" variant="h5">简单菜单</mui-typography>
   <view class="demo-box">
     <mui-menu
       open="{{open}}"
       onClose="{{onClose}}"
     >
-      <mui-button slot="anchor" bind:tap="OpenMenu">OPEN MENU</mui-button>
-      <block>
-        <mui-menu-item bind:tap="onClose">Profile</mui-menu-item>
-        <mui-menu-item bind:tap="onClose">My account</mui-menu-item>
-        <mui-menu-item>Logout</mui-menu-item>
-      </block>
+      <mui-button slot="anchor" bindtap="OpenMenu">OPEN MENU</mui-button>
+      <mui-menu-item bindtap="onClose">Profile</mui-menu-item>
+      <mui-menu-item bindtap="onClose">My account</mui-menu-item>
+      <mui-menu-item>Logout</mui-menu-item>
     </mui-menu>
   </view>
   <mui-typography mClass="header2" variant="h5">选择菜单</mui-typography>
@@ -25,22 +25,46 @@
       <mui-list slot="anchor">
         <mui-list-item
           button
-          bind:tap="OpenMenu2"
+          bindtap="OpenMenu2"
           primary="When device is locked"
           secondary="{{options[secondaryIndex]}}"
         />
       </mui-list>
-      <block>
-        <mui-menu-item
-          wx:key="item"
-          wx:for="{{options}}"
-          bind:tap="selectOption"
-          data-index="{{index}}"
-          selected="{{secondaryIndex === index}}"
-        >
-          {{options[index]}}
-        </mui-menu-item>
-      </block>
+      <mui-menu-item
+        wx:key="item"
+        wx:for="{{options}}"
+        bindtap="selectOption"
+        data-index="{{index}}"
+        selected="{{secondaryIndex === index}}"
+      >
+        {{options[index]}}
+      </mui-menu-item>
     </mui-menu>
+  </view>
+  <mui-typography mClass="header2" variant="h5">MenuList 组合</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">在菜单组件的内部，其实使用了 Popover 组件。 但是，您可能想要使用不同的元素定位的方式，或者您不想禁止页面的滚动。 为了满足这些需求，我们公开了一个 MenuList 组件，您可以像下面例子中这样结合 Popper 来编写自己的菜单组件。</mui-typography>
+  <view class="demo-box">
+    <view style="display: flex;">
+      <mui-paper mStyle="margin: 16px;">
+        <mui-menu-list>
+          <mui-menu-item>Profile</mui-menu-item>
+          <mui-menu-item>My account</mui-menu-item>
+          <mui-menu-item>Logout</mui-menu-item>
+        </mui-menu-list>
+      </mui-paper>
+    </view>
+    <view>
+      <mui-popover
+        anchorOrigin="{{ {vertical: 'top', horizontal: 'center'} }}"
+        open="{{open3}}"
+        onClose="{{onClose3}}"
+        transformOrigin="{{ {vertical: 'bottom', horizontal: 'center'} }}"
+      >
+        <mui-button bindtap="OpenMenu3" slot="anchor">Toggle Menu</mui-button>
+        <mui-menu-item>Profile</mui-menu-item>
+        <mui-menu-item>My account</mui-menu-item>
+        <mui-menu-item>Logout</mui-menu-item>
+      </mui-popover>
+    </view>
   </view>
 </view>

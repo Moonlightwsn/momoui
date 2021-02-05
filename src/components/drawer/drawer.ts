@@ -69,6 +69,7 @@ Component({
         this._close()
       }
     },
+    _CatchTap() {},
     _GenTemplateData(params) {
       this._initTemplateData = true
       const {

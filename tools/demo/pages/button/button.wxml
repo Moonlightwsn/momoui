@@ -33,10 +33,10 @@
   <mui-typography mClass="header2" variant="h5">Handling clicks(tap) 处理点击</mui-typography>
   <mui-typography mClass="paragraph" variant="body2">将处理程序绑定到按钮的tap事件上，用来处理各项事务</mui-typography>
   <view class="demo-box">
-    <mui-button bind:tap="uploadImg" mClass="button" variant="contained" color="primary">UPLOAD</mui-button>
+    <mui-button bindtap="uploadImg" mClass="button" variant="contained" color="primary">UPLOAD</mui-button>
     <mui-icon-button
       mClass="button"
-      bind:tap="uploadImg"
+      bindtap="uploadImg"
       color="primary"
       icon="camera"
     />

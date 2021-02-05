@@ -5,6 +5,7 @@ Page({
   data: {
     open: false,
     open2: false,
+    open3: false,
     options: [
       'Show some love to Material-UI',
       'Show all notification content',
@@ -17,6 +18,7 @@ Page({
     this.setData({
       onClose: this.onClose.bind(this),
       onClose2: this.onClose2.bind(this),
+      onClose3: this.onClose3.bind(this),
     })
   },
   OpenMenu() {
@@ -29,6 +31,11 @@ Page({
       open2: true,
     })
   },
+  OpenMenu3() {
+    this.setData({
+      open3: true
+    })
+  },
   onClose() {
     this.setData({
       open: false,
@@ -37,6 +44,11 @@ Page({
   onClose2() {
     this.setData({
       open2: false,
+    })
+  },
+  onClose3() {
+    this.setData({
+      open3: false,
     })
   },
   selectOption(e) {

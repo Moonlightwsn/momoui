@@ -4,7 +4,10 @@
     "mui-list": "../../components/list/list",
     "mui-list-item": "../../components/list-item/list-item",
     "mui-menu": "../../components/menu/menu",
+    "mui-menu-list": "../../components/menu-list/menu-list",
     "mui-menu-item": "../../components/menu-item/menu-item",
+    "mui-paper": "../../components/paper/paper",
+    "mui-popover": "../../components/popover/popover",
     "mui-typography": "../../components/typography/typography"
   }
 }
