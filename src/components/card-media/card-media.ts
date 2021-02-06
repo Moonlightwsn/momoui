@@ -13,15 +13,11 @@ Component({
     },
     imageMode: {
       type: String,
-      value: 'center',
+      value: 'scaleToFill',
     },
     imageStyle: {
       type: String,
       value: '',
-    },
-    src: {
-      type: String,
-      value: null,
     },
   },
   data: {

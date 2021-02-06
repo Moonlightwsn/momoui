@@ -77,6 +77,7 @@
       <mui-button size="small">Learn More</mui-button>
     </mui-card-actions>
   </mui-card>
+  -->
   <mui-card mStyle="margin-top: 20px;">
     <mui-card-header
       title="Shrimp and Chorizo Paella"
@@ -84,6 +85,7 @@
       avatar="{{avatar}}"
       action="{{action}}"
     />
+    <!--
     <mui-card-media
       image="https://material-ui.com/static/images/cards/paella.jpg"
       image-style="height: 194px;"
@@ -123,8 +125,8 @@
         </mui-card-content>
       </mui-card-action-area>
     </mui-collapse>
+    -->
   </mui-card>
-  -->
   <!--
   <mui-progress />
   <mui-progress color="secondary" disableShrink />

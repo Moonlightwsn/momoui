@@ -3,6 +3,10 @@ import muiBase from '../../behaviors/muiBase.ts'
 Component({
   behaviors: [muiBase],
   properties: {
+    nativeNodeClass: {
+      type: String,
+      value: '',
+    },
     raised: {
       type: Boolean,
       value: false,

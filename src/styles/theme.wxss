@@ -547,8 +547,6 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      width: 100%;
-      height: unset;
     }
   }
   &.mui-card-action-area-root, .mui-card-action-area-root {
