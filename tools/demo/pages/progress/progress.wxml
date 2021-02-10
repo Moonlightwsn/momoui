@@ -82,4 +82,8 @@
       <mui-typography variant="body2" color="textSecondary">{{progress}}%</mui-typography>
     </view>
   </view>
+  <mui-typography mClass="header2" variant="h5">disableShrink</mui-typography>
+  <view class="demo-box">
+    <mui-progress disableShrink />
+  </view>
 </view>

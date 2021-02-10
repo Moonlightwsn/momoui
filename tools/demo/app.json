@@ -6,6 +6,7 @@
     "pages/button-group/button-group",
     "pages/card/card",
     "pages/checkbox/checkbox",
+    "pages/dialog/dialog",
     "pages/drawer/drawer",
     "pages/form/form",
     "pages/grid/grid",

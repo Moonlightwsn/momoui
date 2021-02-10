@@ -34,7 +34,7 @@ Component({
     },
     cursorSpacing: {
       type: Number,
-      value: 0,
+      value: 24,
     },
     confirmType: {
       type: String,

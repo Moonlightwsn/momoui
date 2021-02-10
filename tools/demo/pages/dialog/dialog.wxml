@@ -1,0 +1,71 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography variant="h4">Dialog 对话框</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">对话框将一个任务告知给用户，它承载了一些需要用户进行确认的关键信息或者多个任务。</mui-typography>
+  <mui-typography mClass="header2" variant="h5">简单的对话框</mui-typography>
+  <view class="demo-box">
+    <view>
+      <mui-typography variant="subtitle1">Selected: {{selectedValue}}</mui-typography>
+      <view style="height: 17px;" />
+      <mui-button bindtap="OpenDialog" variant="outlined" color="primary">Open simple dialog</mui-button>
+      <mui-dialog open="{{open}}" title="Set backup account" onClose="{{CloseDialog}}">
+        <mui-list>
+          <mui-list-item
+            wx:for="{{emails}}"
+            wx:key="item"
+            bindtap="HandleListItemTap"
+            data-email="{{item}}"
+            button
+          >
+            <mui-list-item-avatar><mui-avatar wx:if="{{open}}" mStyle="color: #1e88e5;background-color: #bbdefb;" icon="account" /></mui-list-item-avatar>
+            <mui-list-item-text primary="{{item}}" />
+          </mui-list-item>
+          <mui-list-item button bindtap="CloseDialog">
+            <mui-list-item-avatar><mui-avatar wx:if="{{open}}" icon="plus" /></mui-list-item-avatar>
+            <mui-list-item-text primary="Add account" />
+          </mui-list-item>
+        </mui-list>
+      </mui-dialog>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">警告框</mui-typography>
+  <view class="demo-box">
+    <mui-button variant="outlined" color="primary" bindtap="OpenDialog2">Open alert dialog</mui-button>
+    <mui-dialog
+      open="{{open2}}"
+      onClose="{{CloseDialog2}}"
+      title="Use Google's location service?"
+    >
+      <mui-dialog-content text="Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running." />
+      <mui-dialog-actions>
+        <mui-button bindtap="CloseDialog2" color="secondary">Disagree</mui-button>
+        <mui-button bindtap="CloseDialog2" color="primary" mStyle="margin-left: 8px;">Agree</mui-button>
+      </mui-dialog-actions>
+    </mui-dialog>
+  </view>
+  <mui-typography mClass="header2" variant="h5">表单对话框</mui-typography>
+  <view class="demo-box">
+    <mui-button variant="outlined" color="primary" bindtap="OpenDialog3">Open form dialog</mui-button>
+    <mui-dialog
+      open="{{open3}}"
+      onClose="{{CloseDialog3}}"
+      title="Subscribe"
+    >
+      <mui-dialog-content>
+        <mui-dialog-content-text>
+          To subscribe to this website, please enter your email address here. We will send updates occasionally.
+        </mui-dialog-content-text>
+        <mui-form-control fullWidth>
+          <mui-input-label>Email Address</mui-input-label>
+          <mui-input />
+        </mui-form-control>
+      </mui-dialog-content>
+      <mui-dialog-actions>
+        <mui-button bindtap="CloseDialog3" color="primary">Cancel</mui-button>
+        <mui-button bindtap="CloseDialog3" color="primary" mStyle="margin-left: 8px;">Subscribe</mui-button>
+      </mui-dialog-actions>
+    </mui-dialog>
+  </view>
+</view>

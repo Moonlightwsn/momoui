@@ -1,0 +1,3 @@
+<mui-typography mClass="dialog-content-text {{mClass}}" mStyle="{{mStyle}}" variant="body1" color="textSecondary">
+  <slot />
+</mui-typography>

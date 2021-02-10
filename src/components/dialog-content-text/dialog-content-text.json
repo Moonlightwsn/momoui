@@ -1,7 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "mui-dialog-content-text": "../dialog-content-text/dialog-content-text",
     "mui-typography": "../typography/typography"
   }
 }

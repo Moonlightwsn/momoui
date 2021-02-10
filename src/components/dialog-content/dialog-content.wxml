@@ -2,7 +2,6 @@
   class="mui mui-dialog-content-root dividers-{{dividers}} {{mClass}}"
   style="{{mStyle}}"
 >
-  <mui-typography mClass="dialog-content-text" variant="body1" color="textSecondary">
-    <slot />
-  </mui-typography>
+  <mui-dialog-content-text wx:if="{{text}}">{{text}}</mui-dialog-content-text>
+  <slot />
 </view>

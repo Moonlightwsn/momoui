@@ -1,0 +1,18 @@
+{
+  "usingComponents": {
+    "mui-avatar": "../../components/avatar/avatar",
+    "mui-button": "../../components/button/button",
+    "mui-dialog": "../../components/dialog/dialog",
+    "mui-dialog-actions": "../../components/dialog-actions/dialog-actions",
+    "mui-dialog-content": "../../components/dialog-content/dialog-content",
+    "mui-dialog-content-text": "../../components/dialog-content-text/dialog-content-text",
+    "mui-form-control": "../../components/form-control/form-control",
+    "mui-input": "../../components/input/input",
+    "mui-input-label": "../../components/input-label/input-label",
+    "mui-list": "../../components/list/list",
+    "mui-list-item": "../../components/list-item/list-item",
+    "mui-list-item-avatar": "../../components/list-item-avatar/list-item-avatar",
+    "mui-list-item-text": "../../components/list-item-text/list-item-text",
+    "mui-typography": "../../components/typography/typography"
+  }
+}
