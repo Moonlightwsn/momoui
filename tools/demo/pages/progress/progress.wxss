@@ -1,0 +1,16 @@
+.margin {
+  margin: 8px;
+}
+.fabProgress {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  z-index: 1;
+}
+.buttonProgress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -12px;
+  margin-left: -12px;
+}

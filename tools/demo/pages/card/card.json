@@ -4,6 +4,7 @@
     "mui-button": "../../components/button/button",
     "mui-card": "../../components/card/card",
     "mui-card-actions": "../../components/card-actions/card-actions",
+    "mui-card-action-area": "../../components/card-action-area/card-action-area",
     "mui-card-content": "../../components/card-content/card-content",
     "mui-card-header": "../../components/card-header/card-header",
     "mui-card-media": "../../components/card-media/card-media",

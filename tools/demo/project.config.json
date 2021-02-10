@@ -112,6 +112,11 @@
           "scene": null
         },
         {
+          "name": "progress",
+          "pathName": "pages/progress/progress",
+          "scene": null
+        },
+        {
           "name": "radio",
           "pathName": "pages/radio/radio",
           "scene": null

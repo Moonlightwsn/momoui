@@ -1,0 +1,85 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography variant="h4">Progress 进度条组件</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">Progress indicators（进度指示器）也称为微调器 (spinners) ，它表示了一个不明确的等待时间，或者显示处理过程的时间长短。 动画效果通过 CSS 实现，而不是 JavaScript。</mui-typography>
+  <mui-typography mClass="header2" variant="h5">环状进度条</mui-typography>
+  <mui-typography mClass="header2" variant="h6">不定量的环形进度条</mui-typography>
+  <view class="demo-box">
+    <mui-progress mClass="margin" />
+    <mui-progress mClass="margin" color="secondary" />
+  </view>
+  <mui-typography mClass="header2" variant="h6">定量的环形进度条</mui-typography>
+  <view class="demo-box">
+    <mui-progress mClass="margin" variant="determinate" value="{{25}}" />
+    <mui-progress mClass="margin" variant="determinate" value="{{50}}" />
+    <mui-progress mClass="margin" variant="determinate" value="{{75}}" />
+    <mui-progress mClass="margin" variant="determinate" value="{{100}}" />
+  </view>
+  <mui-typography mClass="header2" variant="h6">交互集成</mui-typography>
+  <view class="demo-box">
+    <view style="margin: 8px;position: relative;">
+      <mui-fab mStyle="{{success ? 'background-color: #4caf50;' : ''}}" bindtap="handleLoadingTap" color="primary" icon="{{success ? 'check' : 'save'}}" />
+      <mui-progress
+        wx:if="{{loading}}"
+        size="{{68}}"
+        mStyle="color: #4caf50;"
+        mClass="fabProgress"
+      />
+    </view>
+    <view style="margin: 8px;position: relative;">
+      <mui-button
+        mStyle="{{success ? 'background-color: #4caf50;' : ''}}"
+        bindtap="handleLoadingTap"
+        color="primary"
+        disabled="{{loading}}"
+        variant="contained"
+      >
+        ACCEPT TERMS
+      </mui-button>
+      <mui-progress
+        wx:if="{{loading}}"
+        size="{{24}}"
+        mStyle="color: #4caf50;"
+        mClass="buttonProgress"
+      />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h6">带标签的环状进度条</mui-typography>
+  <view class="demo-box">
+    <view style="position: relative;display: inline-flex;">
+      <mui-progress variant="determinate" value="{{progress}}" />
+      <mui-typography mStyle="display: flex; align-items: center; justify-content: center;position: absolute;top: 0;right: 0;bottom: 0;left: 0;" variant="caption" color="textSecondary">{{progress}}%</mui-typography>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">线性进度条</mui-typography>
+  <mui-typography mClass="header2" variant="h6">不定量的线性进度条</mui-typography>
+  <view class="demo-box">
+    <view style="width: 100%;">
+      <mui-progress type="linear" mClass="margin" />
+      <mui-progress type="linear" mClass="margin" color="secondary" />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h6">定量的线性进度条</mui-typography>
+  <view class="demo-box">
+    <view style="width: 100%;">
+      <mui-progress type="linear" mClass="margin" variant="determinate" value="{{progress}}" />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h6">线性缓冲条</mui-typography>
+  <view class="demo-box">
+    <view style="width: 100%;">
+      <mui-progress type="linear" mClass="margin" variant="buffer" value="{{progress2}}" valueBuffer="{{progress2Buffer}}" />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h6">带标签的线性进度条</mui-typography>
+  <view class="demo-box">
+    <view style="flex-grow: 1;margin-right: 8px;">
+      <mui-progress type="linear" mClass="margin" variant="determinate" value="{{progress}}" />
+    </view>
+    <view style="min-width: 35px;">
+      <mui-typography variant="body2" color="textSecondary">{{progress}}%</mui-typography>
+    </view>
+  </view>
+</view>

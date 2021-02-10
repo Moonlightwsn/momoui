@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mui-button": "../../components/button/button",
+    "mui-fab": "../../components/fab/fab",
+    "mui-icon-button": "../../components/icon-button/icon-button",
+    "mui-progress": "../../components/progress/progress",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

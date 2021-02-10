@@ -39,52 +39,97 @@
   </view>
   <mui-typography mClass="header2" variant="h5">复杂的交互情况</mui-typography>
   <mui-typography mClass="paragraph" variant="body2">卡片内容是可以展开的</mui-typography>
-  <view class="demo-box" style="display: block">
-    <mui-card mStyle="max-width: 345px;margin: auto;">
-      <mui-card-header title="Shrimp and Chorizo Paella" subheader="September 14, 2016">
-        <mui-avatar slot="avatar" mStyle="background-color: #f44336">R</mui-avatar>
-        <mui-icon-button slot="action" icon="dots-vertical" />
-      </mui-card-header>
-      <mui-card-media
-        image="../../assets/paella.jpg"
-        imageStyle="width: 100%; max-height: 194px;"
-      />
-      <mui-card-content>
-        <mui-typography variant="body2" color="textSecondary">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
-        </mui-typography>
-      </mui-card-content>
-      <mui-card-actions disableSpacing>
-        <mui-icon-button icon="heart" />
-        <mui-icon-button icon="share-variant" />
-        <view style="flex-grow: 1;" />
-        <mui-icon-button icon="{{open ? 'chevron-up' : 'chevron-down'}}" bindtap="handleExpandTap" />
-      </mui-card-actions>
-      <mui-collapse in="{{open}}">
+  <view class="demo-box">
+    <view style="max-width: 345px;">
+      <mui-card>
+        <mui-card-header title="Shrimp and Chorizo Paella" subheader="September 14, 2016">
+          <mui-avatar slot="avatar" mStyle="background-color: #f44336">R</mui-avatar>
+          <mui-icon-button slot="action" icon="dots-vertical" />
+        </mui-card-header>
+        <mui-card-media
+          image="../../assets/paella.jpg"
+          imageStyle="width: 100%; max-height: 194px;"
+        />
+        <mui-card-content>
+          <mui-typography variant="body2" color="textSecondary">
+            This impressive paella is a perfect party dish and a fun meal to cook together with your
+            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          </mui-typography>
+        </mui-card-content>
+        <mui-card-actions disableSpacing>
+          <mui-icon-button icon="heart" />
+          <mui-icon-button icon="share-variant" />
+          <view style="flex-grow: 1;" />
+          <mui-icon-button icon="{{open ? 'chevron-up' : 'chevron-down'}}" bindtap="handleExpandTap" />
+        </mui-card-actions>
+        <mui-collapse in="{{open}}">
+          <mui-card-action-area>
+            <mui-card-content>
+              <mui-typography paragraph>Method:</mui-typography>
+              <mui-typography paragraph>Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes.</mui-typography>
+              <mui-typography paragraph>
+                Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
+                heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
+                browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken
+                and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and
+                pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add
+                saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
+              </mui-typography>
+              <mui-typography paragraph>
+                Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook
+                without stirring, until most of the liquid is absorbed, 15 to 18 minutes. Reduce heat to
+                medium-low, add reserved shrimp and mussels, tucking them down into the rice, and cook
+                again without stirring, until mussels have opened and rice is just tender, 5 to 7
+                minutes more. (Discard any mussels that don’t open.)
+              </mui-typography>
+              <mui-typography>Set aside off of the heat to let rest for 10 minutes, and then serve.</mui-typography>
+            </mui-card-content>
+          </mui-card-action-area>
+        </mui-collapse>
+      </mui-card>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">Media 多媒体内容</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">下面的例子则一个使用图像来增强内容的卡片</mui-typography>
+  <view class="demo-box">
+    <view style="max-width: 345px;">
+      <mui-card>
         <mui-card-action-area>
+          <mui-card-media
+            image="../../assets/contemplative-reptile.jpg"
+            imageStyle="width: 100%;height: 140px;"
+          />
           <mui-card-content>
-            <mui-typography paragraph>Method:</mui-typography>
-            <mui-typography paragraph>Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes.</mui-typography>
-            <mui-typography paragraph>
-              Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
-              heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
-              browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken
-              and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and
-              pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add
-              saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
-            </mui-typography>
-            <mui-typography paragraph>
-              Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook
-              without stirring, until most of the liquid is absorbed, 15 to 18 minutes. Reduce heat to
-              medium-low, add reserved shrimp and mussels, tucking them down into the rice, and cook
-              again without stirring, until mussels have opened and rice is just tender, 5 to 7
-              minutes more. (Discard any mussels that don’t open.)
-            </mui-typography>
-            <mui-typography>Set aside off of the heat to let rest for 10 minutes, and then serve.</mui-typography>
+            <mui-typography gutterBottom variant="h5">Lizard</mui-typography>
+            <mui-typography variant="body2" color="textSecondary">Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica</mui-typography>
           </mui-card-content>
         </mui-card-action-area>
-      </mui-collapse>
+        <mui-card-actions>
+          <mui-button color="primary" size="small">Share</mui-button>
+          <mui-button color="primary" size="small">Learn More</mui-button>
+        </mui-card-actions>
+      </mui-card>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">UI 控件</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">卡片内部的一些补充操作可使用图标、文本和 UI 控件显式调用，我们通常将其放在卡片组件的底部</mui-typography>
+  <view class="demo-box">
+    <mui-card mStyle="display: flex;">
+      <view style="display: flex;flex-direction: column;">
+        <mui-card-content>
+          <mui-typography variant="h5">Live From Space</mui-typography>
+          <mui-typography variant="subtitle1" color="textSecondary">Mac Miller</mui-typography>
+        </mui-card-content>
+        <view style="display: flex;align-items: center;padding-left: 8px;padding-right: 8px;">
+          <mui-icon-button icon="skip-previous" />
+          <mui-icon-button icon="play" iconSize="{{38}}" />
+          <mui-icon-button icon="skip-next" />
+        </view>
+      </view>
+      <mui-card-media
+        image="../../assets/live-from-space.jpg"
+        imageStyle="width: 151px;height: 100%;"
+      />
     </mui-card>
   </view>
 </view>

@@ -16,6 +16,7 @@
     "pages/menu/menu",
     "pages/paper/paper",
     "pages/popover/popover",
+    "pages/progress/progress",
     "pages/radio/radio",
     "pages/select/select",
     "pages/snack-bar/snack-bar",
