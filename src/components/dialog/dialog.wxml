@@ -12,6 +12,7 @@
     class="mui mui-dialog-container dialog-scroll-{{scroll}}"
   >
     <mui-paper
+      style="display: flex; justify-content: center;{{fullScreen ? 'width: 100%;height:100%;' : ''}}{{fullWidth ? 'width: 100%;' : ''}}"
       mClass="dialog-paper dialog-paper-scroll-{{scroll}} maxWidth-{{maxWidth}} fullWidth-{{fullWidth}} fullScreen-{{fullScreen}} {{mClass}}"
       mStyle="{{mStyle}}"
       elevation="24"

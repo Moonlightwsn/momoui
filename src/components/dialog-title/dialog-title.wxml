@@ -5,4 +5,5 @@
   <mui-typography variant="h6">
     <slot />
   </mui-typography>
+  <mui-icon-button wx:if="{{_close}}" bindtap="_onClose" mClass="dialog-title-close" icon="close" />
 </view>

@@ -68,4 +68,109 @@
       </mui-dialog-actions>
     </mui-dialog>
   </view>
+  <mui-typography mClass="header2" variant="h5">自定义对话框</mui-typography>
+  <view class="demo-box">
+    <view>
+      <mui-button bindtap="OpenDialog4" variant="outlined" color="primary">Open dialog</mui-button>
+      <mui-dialog
+        open="{{open4}}"
+        onClose="{{CloseDialog4}}"
+      >
+        <mui-dialog-title wx:if="{{open4}}" onClose="{{CloseDialog4}}" close="{{close}}">Modal title</mui-dialog-title>
+        <mui-dialog-content dividers>
+          <mui-typography gutterBottom>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+          </mui-typography>
+          <mui-typography gutterBottom>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+            lacus vel augue laoreet rutrum faucibus dolor auctor.
+          </mui-typography>
+          <mui-typography gutterBottom>
+            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+            scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+            auctor fringilla.
+          </mui-typography>
+        </mui-dialog-content>
+        <mui-dialog-actions>
+          <mui-button bindtap="CloseDialog4" color="primary">Save changes</mui-button>
+        </mui-dialog-actions>
+      </mui-dialog>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">全屏对话框</mui-typography>
+  <view class="demo-box">
+    <view>
+      <mui-button bindtap="OpenDialog5" variant="outlined" color="primary">Open full-screen dialog</mui-button>
+      <mui-dialog
+        open="{{open5}}"
+        fullScreen
+      >
+        <mui-app-bar mStyle="position: relative;">
+          <mui-toolbar>
+            <mui-icon-button wx:if="{{open5}}" bindtap="CloseDialog5" edge="start" color="inherit" icon="close" />
+            <mui-typography mStyle="flex: 1;" variant="h6">Sound</mui-typography>
+            <mui-button color="inherit" bindtap="CloseDialog5">save</mui-button>
+          </mui-toolbar>
+        </mui-app-bar>
+        <mui-list>
+          <mui-list-item button primary="Phone ringtone" secondary="Titania" />
+          <mui-divider />
+          <mui-list-item button primary="Default notification ringtone" secondary="Tethys" />
+        </mui-list>
+      </mui-dialog>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">大小选择项</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">您可以使用 maxWidth的 enumerable 和 fullWidth的 boolean 来设定对话框的最大宽度。 当 fullWidth 属性为true时，对话框将根据 maxWidth 的值进行自我调整</mui-typography>
+  <view class="demo-box">
+    <mui-button variant="outlined" color="primary" bindtap="OpenDialog6">Open max-width dialog</mui-button>
+    <mui-dialog
+      fullWidth="{{fullWidth}}"
+      maxWidth="{{maxWidth}}"
+      open="{{open6}}"
+      onClose="{{CloseDialog6}}"
+      title="Optional sizes"
+    >
+      <mui-dialog-content text="You can set my maximum width and whether to adapt or not.">
+        <view style="display: flex;flex-direction: column;margin: auto;width: fit-content;">
+          <mui-form-control mStyle="margin-top: 16px;min-width: 120px;">
+            <mui-input-label>maxWidth</mui-input-label>
+            <mui-select bindchange="HandleMaxWidthChange" range="{{maxWidthRange}}" rangeIndex="key" rangeKey="value" value="{{maxWidth}}" />
+          </mui-form-control>
+          <mui-form-control-label mStyle="margin-top: 8px;" label="Full width">
+            <mui-switch wx:if="{{open6}}" checked="{{fullWidth}}" onChange="{{HandleFullWidthChange}}" />
+          </mui-form-control-label>
+        </view>
+      </mui-dialog-content>
+      <mui-dialog-actions>
+        <mui-button bindtap="CloseDialog6" color="primary">Close</mui-button>
+      </mui-dialog-actions>
+    </mui-dialog>
+  </view>
+  <mui-typography mClass="header2" variant="h5">长内容滚动</mui-typography>
+  <view class="demo-box">
+    <mui-button bindtap="OpenDialog7" data-scroll="paper">scroll=paper</mui-button>
+    <mui-button bindtap="OpenDialog7" data-scroll="body">scroll=body</mui-button>
+    <mui-dialog
+      open="{{open7}}"
+      scroll="{{scroll}}"
+    >
+      <mui-dialog-title wx:if="{{open7}}" onClose="{{CloseDialog7}}">Subscribe</mui-dialog-title>
+      <mui-dialog-content dividers="{{scroll === 'paper'}}">
+        <mui-dialog-content-text>
+          <label wx:for="{{dialogTexts}}">
+            Cras mattis consectetur purus sit amet fermentum.
+            Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+          </label>
+        </mui-dialog-content-text>
+      </mui-dialog-content>
+      <mui-dialog-actions>
+        <mui-button bindtap="CloseDialog7" color="primary">Cancel</mui-button>
+        <mui-button bindtap="CloseDialog7" color="primary">Subscribe</mui-button>
+      </mui-dialog-actions>
+    </mui-dialog>
+  </view>
 </view>

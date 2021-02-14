@@ -804,7 +804,7 @@
       overflow-y: auto;
       &.dialog-paper-scroll-paper {
         display: flex;
-        max-height: calc(100% - 64px);
+        max-height: calc(100vh - 64px);
         flex-direction: column;
       }
       &.dialog-paper-scroll-body {
@@ -848,6 +848,12 @@
     flex: 0 0 auto;
     margin: 0;
     padding: 16px 24px;
+    .dialog-title-close {
+      top: 8px;
+      color: #9e9e9e;
+      right: 8px;
+      position: absolute;
+    }
   }
 
   &.mui-dialog-content-root {
@@ -1245,6 +1251,11 @@
     &.row-true {
       flex-direction: row;
     }
+    &.row-false {
+      .mui-form-control-label {
+        width: 100%;
+      }
+    }
     &.disabled-true {
       color: rgba(0, 0, 0, 0.38);
     }
@@ -1259,7 +1270,6 @@
     margin-left: -11px;
     margin-right: 16px;
     vertical-align: middle;
-    width: 100%;
     -webkit-tap-highlight-color: transparent;
     &.label-placement-start {
       margin-left: 16px;

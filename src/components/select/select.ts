@@ -216,7 +216,7 @@ Component({
       let isValid = false
       if (Array.isArray(val)) {
         isValid = val.every(item => (typeof item === 'string' || typeof item === 'number'))
-      } else if (typeof val === 'string' || typeof val === 'number') {
+      } else if (typeof val === 'string' || typeof val === 'number' || typeof val === 'boolean') {
         isValid = true
       }
       if (isValid) {
