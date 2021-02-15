@@ -37,6 +37,21 @@
           "scene": null
         },
         {
+          "name": "avatar",
+          "pathName": "pages/avatar/avatar",
+          "scene": null
+        },
+        {
+          "name": "backdrop",
+          "pathName": "pages/backdrop/backdrop",
+          "scene": null
+        },
+        {
+          "name": "badge",
+          "pathName": "pages/badge/badge",
+          "scene": null
+        },
+        {
           "name": "bottom-navigation",
           "pathName": "pages/bottom-navigation/bottom-navigation",
           "scene": null

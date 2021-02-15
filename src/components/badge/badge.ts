@@ -12,7 +12,7 @@ Component({
     },
     content: {
       type: String,
-      value: null,
+      value: '',
     },
     color: {
       type: String,
@@ -40,7 +40,7 @@ Component({
     },
   },
   data: {
-    _content: null,
+    _content: '',
   },
   observers: {
     content(content) {
@@ -49,7 +49,7 @@ Component({
       if (!Number.isNaN(numberContent)) {
         const {max, showZero} = this.data
         if (numberContent === 0) {
-          _content = showZero ? '0' : null
+          _content = showZero ? '0' : ''
         } else {
           _content = numberContent > Number(max) ? `${max}+` : content
         }

@@ -1,0 +1,57 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography variant="h4">Avatar 头像组件</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">在整个 material design 中，无论是在表格中还是到对话框菜单中，都可以找到使用头像的身影</mui-typography>
+  <mui-typography mClass="header2" variant="h5">图片头像</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">通过将标准 img 的属性 src 传递到组件中，您可以创建图片头像</mui-typography>
+  <view class="demo-box">
+    <mui-avatar mStyle="margin: 8px;" src="../../assets/avatar1.jpg" />
+    <mui-avatar mStyle="margin: 8px;" src="https://material-ui.com/static/images/avatar/2.jpg" />
+    <mui-avatar mStyle="margin: 8px;" src="https://material-ui.com/static/images/avatar/3.jpg" />
+  </view>
+  <mui-typography mClass="header2" variant="h5">字母头像</mui-typography>
+  <view class="demo-box">
+    <mui-avatar mStyle="margin: 8px;">H</mui-avatar>
+    <mui-avatar mStyle="margin: 8px;background-color: #ff5722;">N</mui-avatar>
+    <mui-avatar mStyle="margin: 8px;background-color: #673ab7;color: #fff;">OP</mui-avatar>
+  </view>
+  <mui-typography mClass="header2" variant="h5">尺寸</mui-typography>
+  <view class="demo-box">
+    <mui-avatar mStyle="margin: 8px;width: 24px;height: 24px;font-size: 24px;" src="../../assets/avatar1.jpg" />
+    <mui-avatar mStyle="margin: 8px;" src="../../assets/avatar1.jpg" />
+    <mui-avatar mStyle="margin: 8px;width: 56px;height: 56px;font-size: 56px;" src="../../assets/avatar1.jpg" />
+  </view>
+  <mui-typography mClass="header2" variant="h5">图标头像</mui-typography>
+  <view class="demo-box">
+    <mui-avatar mStyle="margin: 8px;" icon="folder" />
+    <mui-avatar mStyle="margin: 8px;background-color: #e91e63;color: #fff;" icon="card-search" />
+    <mui-avatar mStyle="margin: 8px;background-color: #4caf50;color: #fff;" icon="clipboard-text" />
+  </view>
+  <mui-typography mClass="header2" variant="h5">变种</mui-typography>
+  <view class="demo-box">
+    <mui-avatar variant="square" mStyle="margin: 8px;background-color: #ff5722;color: #fff;">N</mui-avatar>
+    <mui-avatar variant="rounded" mStyle="margin: 8px;background-color: #4caf50;color: #fff;" icon="clipboard-text" />
+  </view>
+  <mui-typography mClass="header2" variant="h5">分组</mui-typography>
+  <view class="demo-box">
+    <mui-avatar-group max="{{3}}">
+      <mui-avatar src="../../assets/avatar1.jpg" />
+      <mui-avatar src="https://material-ui.com/static/images/avatar/2.jpg" />
+      <mui-avatar src="https://material-ui.com/static/images/avatar/3.jpg" />
+      <mui-avatar src="https://material-ui.com/static/images/avatar/4.jpg" />
+      <mui-avatar src="https://material-ui.com/static/images/avatar/5.jpg" />
+    </mui-avatar-group>
+  </view>
+  <mui-typography mClass="header2" variant="h5">带有徽章的组件</mui-typography>
+  <view class="demo-box">
+    <mui-badge mStyle="margin:8px;" mClass="badge" overlap="circle" variant="dot" anchorOrigin="{{ {vertical: 'bottom', horizontal: 'right'} }}">
+      <mui-avatar src="../../assets/avatar1.jpg" />
+    </mui-badge>
+    <mui-badge mStyle="margin:8px;" overlap="circle" anchorOrigin="{{ {vertical: 'bottom', horizontal: 'right'} }}">
+      <mui-avatar src="https://material-ui.com/static/images/avatar/2.jpg" />
+      <mui-avatar slot="content" mStyle="border: 2px solid #fff;width: 22px;height: 22px;font-size: 18px;" src="../../assets/avatar1.jpg" />
+    </mui-badge>
+  </view>
+</view>

@@ -4,6 +4,7 @@
 >
   <mui-icon
     wx:if="{{src || icon}}"
+    customized="{{customized}}"
     src="{{src}}"
     mClass="{{icon && icon.class}}"
     mStyle="{{icon && icon.style}}"

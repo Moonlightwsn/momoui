@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "mui-badge": "../../components/badge/badge",
+    "mui-button": "../../components/button/button",
+    "mui-button-group": "../../components/button-group/button-group",
+    "mui-form-control": "../../components/form-control/form-control",
+    "mui-form-control-label": "../../components/form-control-label/form-control-label",
+    "mui-form-label": "../../components/form-label/form-label",
+    "mui-icon": "../../components/icon/icon",
+    "mui-icon-button": "../../components/icon-button/icon-button",
+    "mui-radio": "../../components/radio/radio",
+    "mui-radio-group": "../../components/radio-group/radio-group",
+    "mui-switch": "../../components/switch/switch",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

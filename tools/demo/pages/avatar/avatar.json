@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mui-avatar": "../../components/avatar/avatar",
+    "mui-avatar-group": "../../components/avatar-group/avatar-group",
+    "mui-badge": "../../components/badge/badge",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

@@ -3,6 +3,10 @@ import muiBase from '../../behaviors/muiBase.ts'
 Component({
   behaviors: [muiBase],
   properties: {
+    customized: {
+      type: Boolean,
+      value: false,
+    },
     icon: {
       type: String,
       optionalTypes: [Object],

@@ -1,0 +1,13 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography variant="h4">Backdrop 背景暗化</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">背景暗化组件用于提供针对特定元素或这个元素一部分的强调</mui-typography>
+  <view class="demo-box">
+    <mui-button bindtap="Open" variant="outlined" color="primary">Show backdrop</mui-button>
+    <mui-backdrop mStyle="z-index: 1201; color: #fff;" open="{{open}}" onBackdropClick="{{Close}}">
+      <mui-progress wx:if="{{open}}" color="inherit" />
+    </mui-backdrop>
+  </view>
+</view>

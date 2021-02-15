@@ -109,13 +109,13 @@
   <mui-typography mClass="header2" variant="h5">时间选择器</mui-typography>
   <view class="demo-box">
     <view>
-      <mui-form-control>
+      <mui-form-control mClass="form-control">
         <mui-input-label>Time</mui-input-label>
         <mui-select
           mode="time"
         />
       </mui-form-control>
-      <mui-form-control>
+      <mui-form-control mClass="form-control">
         <mui-input-label>Time</mui-input-label>
         <mui-select
           mode="time"
@@ -129,13 +129,13 @@
   <mui-typography mClass="header2" variant="h5">日期选择器</mui-typography>
   <view class="demo-box">
     <view>
-      <mui-form-control>
+      <mui-form-control mClass="form-control">
         <mui-input-label>Date</mui-input-label>
         <mui-select
           mode="date"
         />
       </mui-form-control>
-      <mui-form-control>
+      <mui-form-control mClass="form-control">
         <mui-input-label>Date</mui-input-label>
         <mui-select
           mode="date"

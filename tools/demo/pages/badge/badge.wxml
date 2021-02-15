@@ -1,0 +1,128 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography variant="h4">Badge 徽章</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">徽章组件会在其子项（们）的右上角生成一个小徽章</mui-typography>
+  <mui-typography mClass="header2" variant="h5">基本徽章</mui-typography>
+  <view class="demo-box">
+    <mui-badge mStyle="margin: 8px;" content="{{4}}" color="primary">
+      <mui-icon name="email" size="{{24}}" />
+    </mui-badge>
+    <mui-badge mStyle="margin: 8px;" content="{{4}}" color="secondary">
+      <mui-icon name="email" size="{{24}}" />
+    </mui-badge>
+    <mui-badge mStyle="margin: 8px;" content="{{4}}" color="error">
+      <mui-icon name="email" size="{{24}}" />
+    </mui-badge>
+  </view>
+  <mui-typography mClass="header2" variant="h5">自定义徽章</mui-typography>
+  <view class="demo-box">
+    <mui-icon-button>
+      <mui-badge mClass="badge" content="{{4}}" color="secondary">
+        <mui-icon name="cart" />
+      </mui-badge>
+    </mui-icon-button>
+  </view>
+  <mui-typography mClass="header2" variant="h5">徽章组件的可见性</mui-typography>
+  <view class="demo-box">
+    <view style="display: flex;flex-direction: column;">
+      <view>
+        <mui-badge mStyle="margin-right: 32px;" content="{{badgeContent}}" color="secondary">
+          <mui-icon name="email" size="{{24}}" />
+        </mui-badge>
+        <mui-button-group>
+          <mui-button data-operation="minus" bindtap="SetCount"><mui-icon name="minus" /></mui-button>
+          <mui-button data-operation="plus" bindtap="SetCount"><mui-icon name="plus" /></mui-button>
+        </mui-button-group>
+      </view>
+      <view style="margin-top: 16px;">
+        <mui-badge mStyle="margin-right: 32px;" color="secondary" variant="dot" invisible="{{invisible}}">
+          <mui-icon name="email" size="{{24}}" />
+        </mui-badge>
+        <mui-form-control-label label="Show Badge" checked="{{!invisible}}" onChange="{{HandleChange}}">
+          <mui-switch color="primary" />
+        </mui-form-control-label>
+      </view>
+    </view>
+  </view>
+  <mui-typography mClass="paragraph" variant="body2">当 badgeContent 为零时，徽章组件将会自动隐藏。 您可以使用 showZero 属性覆盖它</mui-typography>
+  <view class="demo-box">
+    <mui-badge mStyle="margin: 8px;" color="secondary" content="{{0}}">
+      <mui-icon name="email" size="{{24}}" />
+    </mui-badge>
+    <mui-badge mStyle="margin: 8px;" color="secondary" content="{{0}}" showZero>
+      <mui-icon name="email" size="{{24}}" />
+    </mui-badge>
+  </view>
+  <mui-typography mClass="header2" variant="h5">最大值</mui-typography>
+  <view class="demo-box">
+    <mui-badge mStyle="margin: 16px;" color="secondary" content="{{99}}">
+      <mui-icon name="email" size="{{24}}" />
+    </mui-badge>
+    <mui-badge mStyle="margin: 16px;" color="secondary" content="{{100}}" max="{{99}}">
+      <mui-icon name="email" size="{{24}}" />
+    </mui-badge>
+    <mui-badge mStyle="margin: 16px;" color="secondary" content="{{1000}}" max="{{999}}">
+      <mui-icon name="email" size="{{24}}" />
+    </mui-badge>
+  </view>
+  <mui-typography mClass="header2" variant="h5">圆点徽章</mui-typography>
+  <view class="demo-box">
+    <mui-badge mStyle="margin: 16px;" color="secondary" variant="dot">
+      <mui-icon name="email" size="{{24}}" />
+    </mui-badge>
+    <mui-badge mStyle="margin: 16px;" color="secondary" variant="dot">
+      <mui-typography>Typography</mui-typography>
+    </mui-badge>
+  </view>
+  <mui-typography mClass="header2" variant="h5">徽章组件的 overlap 属性</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">你可以使用 overlap 属性来将徽章组件放置到到封装的元素一个相对位置的角落</mui-typography>
+  <view class="demo-box">
+    <mui-badge mStyle="margin: 8px;" badgeContent=" " color="secondary">
+      <view style="width: 40px;height: 40px;background-color: #1976d2;" />
+    </mui-badge><mui-badge mStyle="margin: 8px;" badgeContent=" " color="secondary" variant="dot">
+      <view style="width: 40px;height: 40px;background-color: #1976d2;" />
+    </mui-badge>
+    <mui-badge mStyle="margin: 8px;" badgeContent=" " color="secondary" overlap="circle">
+      <view style="width: 40px;height: 40px;background-color: #1976d2;border-radius: 50%;" />
+    </mui-badge>
+    <mui-badge mStyle="margin: 8px;" badgeContent=" " color="secondary" overlap="circle" variant="dot">
+      <view style="width: 40px;height: 40px;background-color: #1976d2;border-radius: 50%;" />
+    </mui-badge>
+  </view>
+  <mui-typography mClass="header2" variant="h5">徽章组件的校准</mui-typography>
+  <view class="demo-box">
+    <view style="display: flex;flex-direction: column;">
+      <view>
+        <mui-form-control mStyle="margin: 24px;">
+          <mui-form-label>Vertical</mui-form-label>
+          <mui-radio-group value="{{vertical}}" onChange="{{HandleChange2}}">
+            <mui-form-control-label label="Top" value="top">
+              <mui-radio />
+            </mui-form-control-label>
+            <mui-form-control-label label="Bottom" value="bottom">
+              <mui-radio />
+            </mui-form-control-label>
+          </mui-radio-group>
+        </mui-form-control>
+        <mui-form-control mStyle="margin: 24px;">
+          <mui-form-label>Horizontal</mui-form-label>
+          <mui-radio-group value="{{horizontal}}" onChange="{{HandleChange3}}">
+            <mui-form-control-label label="Right" value="right">
+              <mui-radio />
+            </mui-form-control-label>
+            <mui-form-control-label label="Left" value="left">
+              <mui-radio />
+            </mui-form-control-label>
+          </mui-radio-group>
+        </mui-form-control>
+      </view>
+      <view style="margin: 16px 0;display: flex;justify-content: center;">
+        <mui-badge anchorOrigin="{{ {vertical: vertical, horizontal: horizontal} }}" color="secondary" content="{{1}}">
+          <mui-icon name="email" size="{{24}}" />
+        </mui-badge>
+      </view>
+    </view>
+  </view>
+</view>

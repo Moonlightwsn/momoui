@@ -1,0 +1,6 @@
+.badge.mui.mui-badge-root .mui-badge.badge-anchor-origin-top-right-rectangle {
+  right: -3px;
+  top: 13px;
+  border: 2px solid #fff;
+  padding: 0 4px;
+}
