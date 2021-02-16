@@ -265,7 +265,7 @@ Component({
       }
       const {inputFocus} = this.data
       if (inputFocus && typeof inputFocus === 'function') {
-        inputFocus(e)
+        inputFocus(e, this.dataset)
       }
     },
     _onBlur(e) {
@@ -277,26 +277,26 @@ Component({
       }
       const {inputBlur} = this.data
       if (inputBlur && typeof inputBlur === 'function') {
-        inputBlur(e)
+        inputBlur(e, this.dataset)
       }
     },
     _onChange(e) {
       const {inputChange} = this.data
       if (inputChange && typeof inputChange === 'function') {
         const {value, cursor, keyCode} = e.detail || {}
-        inputChange(value, cursor, keyCode, e)
+        inputChange(value, cursor, keyCode, e, this.dataset)
       }
     },
     _onConfirm(e) {
       const {inputConfirm} = this.data
       if (inputConfirm && typeof inputConfirm === 'function') {
-        inputConfirm(e)
+        inputConfirm(e, this.dataset)
       }
     },
     _onKeyboardHeightChange(e) {
       const {inputKeyboardHeightChange} = this.data
       if (inputKeyboardHeightChange && typeof inputKeyboardHeightChange === 'function') {
-        inputKeyboardHeightChange(e)
+        inputKeyboardHeightChange(e, this.dataset)
       }
     },
     _LineChange(e) {
@@ -318,7 +318,7 @@ Component({
         }
       }
       if (lineChange && typeof lineChange === 'function') {
-        lineChange(e)
+        lineChange(e, this.dataset)
       }
     },
     _Linked(target) {

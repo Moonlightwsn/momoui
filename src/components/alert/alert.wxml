@@ -7,8 +7,8 @@
     <mui-icon
       wx:if="{{icon}}"
       color="{{icon.color}}"
-      mClass="{{icon.class}}"
-      mStyle="{{icon.style}}"
+      mClass="{{icon.class || ''}}"
+      mStyle="{{icon.style || ''}}"
       name="{{icon.name || icon}}"
       size="{{icon.size}}"
     />

@@ -6,21 +6,21 @@
 >
   <mui-avatar
     wx:if="{{avatar}}"
-    mClass="mui-chip-avatar {{avatar && avatar.src ? '' : 'icon'}} {{avatar.class}}"
-    icon="{{avatar.icon || avatar}}"
+    mClass="mui-chip-avatar {{_avatarIconStyle}} {{avatar.class || ''}}"
+    icon="{{_avatarIcon}}"
     iconSize="{{avatar.iconSize}}"
     iconColor="{{avatar.iconColor}}"
-    mStyle="{{avatar.style}}"
-    src="{{avatar.src}}"
+    mStyle="{{avatar.style || ''}}"
+    src="{{_avatarSrc}}"
     variant="{{avatar.variant || 'circle'}}"
   >
-    {{_avatar.text}}
+    {{_avatarText}}
   </mui-avatar>
   <slot wx:else name="avatar" />
   <mui-icon
     wx:if="{{icon}}"
-    mClass="mui-chip-icon {{icon.class}}"
-    mStyle="{{icon.style}}"
+    mClass="mui-chip-icon {{icon.class || ''}}"
+    mStyle="{{icon.style || ''}}"
     name="{{icon.name || icon}}"
     color="{{icon.color}}"
     size="{{icon.size}}"

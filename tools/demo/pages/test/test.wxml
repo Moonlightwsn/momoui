@@ -1,7 +1,9 @@
 <view data-momoui-theme="{{theme}}" style="padding: 24px 12px 60px;">
+  <mui-switch />
+  <!--
+  <mui-chip avatar="{{ {src: '../../assets/avatar1.jpg'} }}" />
   <mui-icon name="account" />
   <mui-icon name="account-circle" />
-  <!--
   <view class="demo-box">
     <view class="test-tabs">
       <view class="test-tab">New Arrivals in the Longest Text of Nonfiction</view>
@@ -78,14 +80,14 @@
     </mui-card-actions>
   </mui-card>
   -->
+  <!--<mui-avatar src="https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp" />-->
+  <!--
   <mui-card mStyle="margin-top: 20px;">
     <mui-card-header
       title="Shrimp and Chorizo Paella"
       subheader="September 14, 2016"
       avatar="{{avatar}}"
-      action="{{action}}"
     />
-    <!--
     <mui-card-media
       image="https://material-ui.com/static/images/cards/paella.jpg"
       image-style="height: 194px;"
@@ -125,8 +127,9 @@
         </mui-card-content>
       </mui-card-action-area>
     </mui-collapse>
-    -->
+    
   </mui-card>
+  -->
   <!--
   <mui-progress />
   <mui-progress color="secondary" disableShrink />

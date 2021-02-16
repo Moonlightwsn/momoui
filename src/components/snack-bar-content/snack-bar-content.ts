@@ -19,16 +19,16 @@ Component({
     },
   },
   methods: {
-    _ActionHandler() {
+    _ActionHandler(e) {
       const {
         action,
         onClose,
       } = this.data
       if (action) {
         if (action.action && typeof action.action === 'function') {
-          action.action()
+          action.action(e, this.dataset)
         } else if (onClose && typeof onClose === 'function') {
-          onClose()
+          onClose(e, this.dataset)
         }
       }
     },

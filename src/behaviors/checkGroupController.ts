@@ -104,7 +104,7 @@ export default Behavior({
       checkedValue = Object.keys(checkedValueMap).filter(item => (checkedValueMap[item]))
       const realCheckedValue = isMultiple ? checkedValue : checkedValue[0]
       if (onChange && typeof onChange === 'function') {
-        onChange(realCheckedValue, event)
+        onChange(realCheckedValue, event, this.dataset)
       }
       const {_pureIsControlled: isControlled} = this.data
       if (!isControlled) {

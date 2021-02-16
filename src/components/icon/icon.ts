@@ -114,7 +114,7 @@ Component({
             this._ReadSvgAndGenBase64(name, realColor, realSize, customized)
           }).exec()
         }
-      } else if(src) {
+      } else if (src) {
         this.createSelectorQuery().select('.mui-icon').fields({
           computedStyle: ['fontSize'],
         }, res => {
@@ -122,7 +122,7 @@ Component({
           querySize = querySize || '24px'
           const realSize = size ? `${size}px` : querySize
           const _innerStyles = `width:${realSize};height:${realSize};`
-          this.setData({_innerStyles})
+          this.setData({_innerStyles, base64Content: src})
         }).exec()
       }
     },

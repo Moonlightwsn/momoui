@@ -12,8 +12,8 @@
     <mui-icon
       wx:if="{{icon}}"
       color="{{icon.color}}"
-      mClass="mui-tab-icon {{icon.class}}"
-      mStyle="{{icon.style}}"
+      mClass="mui-tab-icon {{icon.class || ''}}"
+      mStyle="{{icon.style || ''}}"
       name="{{icon.name || icon}}"
       size="{{icon.size}}"
       spin="{{icon.spin}}"

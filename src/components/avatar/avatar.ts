@@ -31,6 +31,7 @@ Component({
   },
   data: {
     _groupStyles: '',
+    _iconStyle: '',
   },
   relations: {
     '../avatar-group/avatar-group': {
@@ -45,6 +46,17 @@ Component({
       })
       this.setData({_groupStyles})
     }
+  },
+  observers: {
+    'src, icon': function (src, icon) {
+      let _iconStyle = ''
+      if (src) {
+        _iconStyle = 'mui-avatar-img'
+      } else if (icon) {
+        _iconStyle = 'mui-avatar-icon'
+      }
+      this.setData({_iconStyle})
+    },
   },
   options: {
     virtualHost: true,

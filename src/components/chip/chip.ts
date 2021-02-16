@@ -53,23 +53,50 @@ Component({
     },
   },
   data: {
+    _avatarIcon: '',
+    _avatarIconStyle: '',
     _hasDelete: false,
   },
   methods: {
-    _Click() {
+    _Click(e) {
       const {onClick} = this.data
       if (onClick && typeof onClick === 'function') {
-        onClick()
+        onClick(e, this.dataset)
       }
     },
-    _delete() {
+    _delete(e) {
       const {onDelete} = this.data
       if (onDelete && typeof onDelete === 'function') {
-        onDelete()
+        onDelete(e, this.dataset)
       }
     }
   },
   observers: {
+    avatar(avatar) {
+      let _avatarIcon = ''
+      let _avatarText = ''
+      let _avatarSrc = ''
+      let _avatarIconStyle = ''
+      if (avatar) {
+        if (avatar.src) {
+          _avatarSrc = avatar.src
+        } else if (avatar.icon) {
+          _avatarIcon = avatar.icon
+          _avatarIconStyle = 'icon'
+        } else if (typeof avatar === 'string') {
+          _avatarIcon = avatar
+          _avatarIconStyle = 'icon'
+        } else if (avatar.text && typeof avatar.text === 'string') {
+          _avatarText = avatar.text
+        }
+      }
+      this.setData({
+        _avatarIcon,
+        _avatarText,
+        _avatarSrc,
+        _avatarIconStyle,
+      })
+    },
     onDelete(onDelete) {
       if (onDelete) {
         this.setData({_hasDelete: true})

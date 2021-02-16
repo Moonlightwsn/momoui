@@ -25,6 +25,9 @@ Component({
       value: null,
     },
   },
+  data: {
+    _avatarImgStyle: '',
+  },
   methods: {
     _headerActionClick(e) {
       const {action} = this.data

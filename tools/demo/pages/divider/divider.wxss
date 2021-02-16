@@ -1,0 +1,40 @@
+.container {
+  width: 100%;
+  max-width: 360px;
+  background-color: #fff;
+}
+
+.section1 {
+  margin: 24px 16px;
+}
+
+.section2 {
+  margin: 16px;
+}
+
+.section3 {
+  margin: 24px 8px 8px;
+}
+
+.grid {
+  color: rgba(0, 0, 0, 0.54);
+  width: fit-content;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 24px;
+}
+
+.grid .mui-icon {
+  margin: 12px;
+}
+
+[data-momoui-theme=dark] .container {
+  background-color: #424242;
+}
+
+[data-momoui-theme=dark] .grid {
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: #424242;
+}

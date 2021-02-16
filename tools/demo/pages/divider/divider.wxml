@@ -1,0 +1,83 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography variant="h4">Divider 分隔线</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">分隔线是对列表和布局中的内容进行分组的一条细线</mui-typography>
+  <mui-typography mClass="header2" variant="h5">列表分隔线</mui-typography>
+  <view class="demo-box">
+    <mui-list mClass="container">
+      <mui-list-item button primary="Inbox" />
+      <mui-divider />
+      <mui-list-item button primary="Drafts" divider />
+      <mui-list-item button primary="Trash" />
+      <mui-divider light />
+      <mui-list-item button primary="Spam" />
+    </mui-list>
+  </view>
+  <mui-typography mClass="header2" variant="h6">内凹分隔线</mui-typography>
+  <view class="demo-box">
+    <mui-list mClass="container">
+      <mui-list-item avatar="image" primary="Photos" secondary="Jan 9, 2014" />
+      <mui-divider variant="inset" />
+      <mui-list-item avatar="briefcase" primary="Work" secondary="Jan 7, 2014" />
+      <mui-divider variant="inset" />
+      <mui-list-item avatar="beach" primary="Vacation" secondary="July 20, 2014" />
+    </mui-list>
+  </view>
+  <mui-typography mClass="header2" variant="h6">副标题分隔符</mui-typography>
+  <view class="demo-box">
+    <mui-list mClass="container">
+      <mui-list-item primary="Photos" secondary="Jan 9, 2014" />
+      <mui-divider />
+      <mui-list-item primary="Work" secondary="Jan 7, 2014" />
+      <mui-divider variant="inset" />
+      <mui-list-item avatar="beach" primary="Vacation" secondary="July 20, 2014" />
+    </mui-list>
+  </view>
+  <mui-typography mClass="header2" variant="h5">中段分隔线</mui-typography>
+  <view class="demo-box">
+    <view class="container">
+      <view class="section1">
+        <mui-grid container alignItems="center">
+          <mui-grid item xs>
+            <mui-typography gutterBottom variant="h4">Toothbrush</mui-typography>
+          </mui-grid>
+          <mui-grid item>
+            <mui-typography gutterBottom variant="h6">$4.50</mui-typography>
+          </mui-grid>
+        </mui-grid>
+        <mui-typography color="textSecondary" variant="body2">Pinstriped cornflower blue cotton blouse takes you on a walk to the park or just down the hall.</mui-typography>
+      </view>
+      <mui-divider variant="middle" />
+      <view class="section2">
+        <mui-typography gutterBottom variant="body1">
+          Select type
+        </mui-typography>
+        <view>
+          <mui-chip mStyle="margin: 4px;" label="Extra Soft" />
+          <mui-chip mStyle="margin: 4px;" color="primary" label="Soft" />
+          <mui-chip mStyle="margin: 4px;" label="Medium" />
+          <mui-chip mStyle="margin: 4px;" label="Hard" />
+        </view>
+      </view>
+      <view class="section3">
+        <mui-button color="primary">Add to cart</mui-button>
+      </view>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">垂直分隔线</mui-typography>
+  <view class="demo-box">
+    <view>
+      <mui-grid container alignItems="center" mClass="grid">
+        <mui-icon name="format-align-left" />
+        <mui-icon name="format-align-center" />
+        <mui-icon name="format-align-right" />
+        <mui-divider mStyle="margin: 0 4px;" orientation="vertical" flexItem />
+        <mui-icon name="format-bold" />
+        <mui-icon name="format-italic" />
+        <mui-icon name="format-underline" />
+      </mui-grid>
+    </view>
+  </view>
+</view>

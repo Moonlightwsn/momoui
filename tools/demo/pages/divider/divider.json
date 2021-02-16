@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "mui-button": "../../components/button/button",
+    "mui-chip": "../../components/chip/chip",
+    "mui-divider": "../../components/divider/divider",
+    "mui-grid": "../../components/grid/grid",
+    "mui-list": "../../components/list/list",
+    "mui-list-item": "../../components/list-item/list-item",
+    "mui-icon": "../../components/icon/icon",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

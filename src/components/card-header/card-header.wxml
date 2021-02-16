@@ -6,11 +6,11 @@
     <mui-avatar
       wx:if="{{avatar}}"
       src="{{avatar.src}}"
-      icon="{{avatar.icon || avatar}}"
+      icon="{{avatar.icon || (avatar.src ? '' : avatar)}}"
       iconSize="{{avatar.iconSize}}"
       iconColor="{{avatar.iconColor}}"
-      mStyle="{{avatar.style}}"
-      mClass="{{src ? 'avatar-img ' : ''}}{{avatar.class}}"
+      mStyle="{{avatar.style || ''}}"
+      mClass="{{avatar.class || ''}}"
       variant="{{avatar.variant || 'circle'}}"
     />
     <slot wx:else name="avatar" />

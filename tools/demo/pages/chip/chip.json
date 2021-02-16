@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mui-avatar": "../../components/avatar/avatar",
+    "mui-chip": "../../components/chip/chip",
+    "mui-icon": "../../components/icon/icon",
+    "mui-paper": "../../components/paper/paper",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

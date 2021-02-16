@@ -35,8 +35,9 @@ Page({
     badgeVariant: 'standard',
     open: true,
     avatar: {
-      icon: 'image-multiple',
-      // src: 'https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp'
+      // icon: 'image-multiple',
+      src: 'https://i0.hdslb.com/bfs/face/fbf1064cea4c3356282b53c93fbbd750adb0c5a1.jpg@68w_68h.webp',
+      class: 'avatar-img',
     },
     avatar2: {
       icon: 'account',

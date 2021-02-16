@@ -1,0 +1,60 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography variant="h4">Chip 纸片组件</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">纸片组件是用来表示输入框、属性或操作的紧凑元素</mui-typography>
+  <mui-typography mClass="header2" variant="h5">纸片组件</mui-typography>
+  <view class="demo-box">
+    <mui-chip mStyle="margin: 4px;" label="Basic" />
+    <mui-chip mStyle="margin: 4px;" disabled label="Disabled" />
+    <mui-chip mStyle="margin: 4px;" avatar="{{ {text: 'M'} }}" label="Clickable" onClick="{{HandleClick}}" />
+    <mui-chip mStyle="margin: 4px;" avatar="{{avatar}}" label="Deletable" onDelete="{{HandleDelete}}" />
+    <mui-chip mStyle="margin: 4px;" avatar="face-woman" label="Clickable deletable" onClick="{{HandleClick}}" onDelete="{{HandleDelete}}" />
+    <mui-chip mStyle="margin: 4px;" label="Custom delete icon" onClick="{{HandleClick}}" onDelete="{{HandleDelete}}" deleteIcon="check" />
+    <mui-chip mStyle="margin: 4px;" avatar="{{ {text: 'M'} }}" color="primary" clickable label="Primary clickable" />
+    <mui-chip mStyle="margin: 4px;" avatar="{{ {icon: 'face-man'} }}" color="primary" clickable label="Primary clickable" onDelete="{{HandleDelete}}" deleteIcon="check" />
+    <mui-chip mStyle="margin: 4px;" color="primary" label="Deletable primary" onDelete="{{HandleDelete}}" />
+    <mui-chip mStyle="margin: 4px;" avatar="face-man" color="secondary" label="Deletable secondary" onDelete="{{HandleDelete}}" />
+  </view>
+  <mui-typography mClass="header2" variant="h5">描边纸片</mui-typography>
+  <view class="demo-box">
+    <mui-chip mStyle="margin: 4px;" label="Basic" variant="outlined" />
+    <mui-chip mStyle="margin: 4px;" disabled label="Disabled" variant="outlined" />
+    <mui-chip mStyle="margin: 4px;" avatar="{{ {text: 'M'} }}" label="Clickable" variant="outlined" onClick="{{HandleClick}}" />
+    <mui-chip mStyle="margin: 4px;" avatar="{{avatar}}" label="Deletable" variant="outlined" onDelete="{{HandleDelete}}" />
+    <mui-chip mStyle="margin: 4px;" avatar="face-woman" label="Clickable deletable" variant="outlined" onClick="{{HandleClick}}" onDelete="{{HandleDelete}}" />
+    <mui-chip mStyle="margin: 4px;" label="Custom delete icon" onClick="{{HandleClick}}" variant="outlined" onDelete="{{HandleDelete}}" deleteIcon="check" />
+    <mui-chip mStyle="margin: 4px;" avatar="{{ {text: 'M'} }}" color="primary" clickable label="Primary clickable" variant="outlined" />
+    <mui-chip mStyle="margin: 4px;" avatar="{{ {icon: 'face-man'} }}" color="primary" clickable label="Primary clickable" variant="outlined" onDelete="{{HandleDelete}}" deleteIcon="check" />
+    <mui-chip mStyle="margin: 4px;" color="primary" label="Deletable primary" variant="outlined" onDelete="{{HandleDelete}}" />
+    <mui-chip mStyle="margin: 4px;" avatar="face-man" color="secondary" label="Deletable secondary" variant="outlined" onDelete="{{HandleDelete}}" />
+  </view>
+  <mui-typography mClass="header2" variant="h5">纸片阵列</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">下面是一个通过数组呈现多个纸片的示例。 删除一个纸片元素，则会将其从纸片组的数组中删除。</mui-typography>
+  <view class="demo-box">
+    <mui-paper mStyle="display: flex;justify-content: center;flex-wrap: wrap;padding: 4px;margin: 0;">
+      <view wx:for="{{chips}}" wx:key="key">
+        <mui-chip
+          mStyle="margin: 4px;"
+          data-key="{{item.key}}"
+          label="{{item.label}}"
+          onDelete="{{HandleDelete2}}"
+        />
+      </view>
+    </mui-paper>
+  </view>
+  <mui-typography mClass="header2" variant="h5">小型纸片组件</mui-typography>
+  <view class="demo-box">
+    <mui-chip mStyle="margin: 4px;" label="Basic" size="small" />
+    <mui-chip mStyle="margin: 4px;" disabled label="Disabled" size="small" />
+    <mui-chip mStyle="margin: 4px;" avatar="{{ {text: 'M'} }}" label="Clickable" size="small" onClick="{{HandleClick}}" />
+    <mui-chip mStyle="margin: 4px;" avatar="{{avatar}}" label="Deletable" size="small" onDelete="{{HandleDelete}}" />
+    <mui-chip mStyle="margin: 4px;" avatar="face-woman" label="Clickable deletable" size="small" onClick="{{HandleClick}}" onDelete="{{HandleDelete}}" />
+    <mui-chip mStyle="margin: 4px;" label="Custom delete icon" onClick="{{HandleClick}}" size="small" variant="outlined" onDelete="{{HandleDelete}}" deleteIcon="check" />
+    <mui-chip mStyle="margin: 4px;" avatar="{{ {text: 'M'} }}" color="primary" clickable label="Primary clickable" size="small" variant="outlined" />
+    <mui-chip mStyle="margin: 4px;" avatar="{{ {icon: 'face-man'} }}" color="primary" clickable label="Primary clickable" size="small" variant="outlined" onDelete="{{HandleDelete}}" deleteIcon="check" />
+    <mui-chip mStyle="margin: 4px;" color="primary" label="Deletable primary" size="small" variant="outlined" onDelete="{{HandleDelete}}" />
+    <mui-chip mStyle="margin: 4px;" avatar="face-man" color="secondary" label="Deletable secondary" size="small" variant="outlined" onDelete="{{HandleDelete}}" />
+  </view>
+</view>

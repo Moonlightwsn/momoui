@@ -22,10 +22,10 @@ export default Behavior({
     _show: false,
   },
   methods: {
-    _close() {
+    _close(e) {
       const {onClose} = this.data
       if (onClose && typeof onClose === 'function') {
-        onClose()
+        onClose(e, this.dataset)
       }
     },
   },

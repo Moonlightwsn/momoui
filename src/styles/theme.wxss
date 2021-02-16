@@ -512,8 +512,12 @@
     .card-header-avatar {
       flex: 0 0 auto;
       margin-right: 16px;
-      .avatar-img {
-        font-size: 40px;
+      .mui-avatar {
+        &.mui-avatar-img {
+          .mui-icon {
+            font-size: 40px;
+          }
+        }
       }
     }
     .card-header-content {
@@ -1593,7 +1597,13 @@
       margin-left: 5px;
       margin-right: -6px;
       &.icon {
-        font-size: 17px;
+        font-size: 24px;
+      }
+      &.mui-avatar-img {
+        font-size: 24px;
+      }
+      &.icon, &.mui-avatar-img {
+        background-color: transparent;
       }
     }
     .mui-chip-icon {
@@ -1623,6 +1633,9 @@
       background-color: @primary_color;
       .mui-chip-avatar {
         background-color: @primary_color_2;
+        &.icon {
+          background-color: @primary_color;
+        }
       }
     }
     &.mui-color-secondary {
@@ -1630,11 +1643,17 @@
       background-color: @secondary_color;
       .mui-chip-avatar {
         background-color: @secondary_color_2;
+        &.icon {
+          background-color: @secondary_color;
+        }
       }
     }
     &.mui-color-primary, &.mui-color-secondary {
       .mui-chip-avatar {
         color: #fff;
+        &.icon, &.mui-avatar-img {
+          background-color: transparent;
+        }
       }
       .mui-chip-icon {
         color: inherit;
@@ -1643,12 +1662,29 @@
         color: rgba(255, 255, 255, 0.7);
       }
     }
+    &.mui-color-default {
+      .mui-chip-avatar {
+        &.icon, &.mui-avatar-img {
+          background-color: transparent;
+        }
+      }
+    }
     &.mui-variant-outlined {
       border: 1px solid rgba(0, 0, 0, 0.23);
       background-color: transparent;
+      .mui-chip-avatar {
+        &.icon, &.mui-avatar-img {
+          background-color: transparent;
+        }
+      }
       &.mui-color-primary {
         color: @primary_color;
         border: 1px solid @primary_color;
+        .mui-chip-avatar {
+          &.icon {
+            color: #1976d2b3;
+          }
+        }
         .mui-chip-delete {
           color: #1976d2b3;
         }
@@ -1656,6 +1692,11 @@
       &.mui-color-secondary {
         color: @secondary_color;
         border: 1px solid @secondary_color;
+        .mui-chip-avatar {
+          &.icon {
+            color: #dc004eb3;
+          }
+        }
         .mui-chip-delete {
           color: #dc004eb3;
         }
@@ -1670,7 +1711,10 @@
         margin-left: 4px;
         margin-right: -4px;
         &.icon {
-          font-size: 13px;
+          font-size: 18px;
+        }
+        &.mui-avatar-img {
+          font-size: 18px;
         }
       }
       .mui-chip-icon {
@@ -1695,6 +1739,13 @@
     &.disabled-true {
       opacity: 0.5;
       pointer-events: none;
+      background-color: #e0e0e0;
+      &.mui-color-primary, &.mui-color-secondary {
+        color: rgba(0, 0, 0, 0.87);
+      }
+      &.mui-variant-outlined {
+        border-width: 0;
+      }
     }
   }
   /**  mui-chip end */
@@ -3644,6 +3695,9 @@
         background-color: @primary_dark_color;
         .mui-chip-avatar {
           background-color: @primary_dark_color_2;
+          &.icon {
+            background-color: @primary_dark_color;
+          }
         }
       }
       &.mui-color-secondary {
@@ -3651,6 +3705,9 @@
         background-color: @secondary_dark_color;
         .mui-chip-avatar {
           background-color: @secondary_dark_color_2;
+          &.icon {
+            background-color: @secondary_dark_color;
+          }
         }
       }
       &.mui-color-primary, &.mui-color-secondary {
@@ -3667,9 +3724,19 @@
       &.mui-variant-outlined {
         border: 1px solid rgba(255, 255, 255, 0.23);;
         background-color: transparent;
+        .mui-chip-avatar {
+          &.icon {
+            background-color: transparent;
+          }
+        }
         &.mui-color-primary {
           color: @primary_dark_color;
           border: 1px solid @primary_dark_color;
+          .mui-chip-avatar {
+            &.icon {
+              color: #90caf9b3;
+            }
+          }
           .mui-chip-delete {
             color: #90caf9b3;
           }
@@ -3677,9 +3744,23 @@
         &.mui-color-secondary {
           color: @secondary_dark_color;
           border: 1px solid @secondary_dark_color;
+          .mui-chip-avatar {
+            &.icon {
+              color: #f48fb1b3;
+            }
+          }
           .mui-chip-delete {
             color: #f48fb1b3;
           }
+        }
+      }
+      &.disabled-true {
+        background-color: #616161;
+        &.mui-color-primary, &.mui-color-secondary {
+          color: #fff;
+        }
+        &.mui-variant-outlined {
+          border-width: 0;
         }
       }
     }

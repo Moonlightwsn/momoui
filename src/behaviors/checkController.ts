@@ -84,7 +84,7 @@ export default Behavior({
       const realChecked = isOneWay || !_checked
       if (realChecked !== !!_checked) {
         if (onChange && typeof onChange === 'function') {
-          onChange(realChecked, value, e)
+          onChange(realChecked, value, e, this.dataset)
         }
         if (!thisIsControlled && realChecked !== !!_checked) {
           this.setData({checked: realChecked})

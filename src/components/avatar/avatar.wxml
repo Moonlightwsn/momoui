@@ -1,13 +1,13 @@
 <view
-  class="mui mui-avatar avatar-color-default avatar-variant-{{variant}} {{src ? 'mui-avatar-img' : ''}} {{icon ? 'mui-avatar-icon' : ''}} {{mClass}}"
+  class="mui mui-avatar avatar-color-default avatar-variant-{{variant}} {{_iconStyle}} {{mClass}}"
   style="{{_groupStyles}}{{mStyle}}"
 >
   <mui-icon
     wx:if="{{src || icon}}"
     customized="{{customized}}"
     src="{{src}}"
-    mClass="{{icon && icon.class}}"
-    mStyle="{{icon && icon.style}}"
+    mClass="{{icon && (icon.class || '')}}"
+    mStyle="{{icon && (icon.style || '')}}"
     name="{{icon.name || icon}}"
     color="{{iconColor || icon.color}}"
     size="{{src ? null : (iconSize || icon.size)}}"

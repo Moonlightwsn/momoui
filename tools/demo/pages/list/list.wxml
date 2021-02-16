@@ -48,18 +48,18 @@
   <view class="demo-box">
     <mui-list mClass="list-wrapper">
       <mui-list-item
-        avatar="{{ {icon: 'image-multiple'} }}"
+        avatar="{{ {icon: 'image'} }}"
         primary="Photos"
         secondary="Jan 9, 2014"
       />
       <mui-list-item>
         <mui-list-item-avatar>
-          <mui-avatar icon="default" />
+          <mui-avatar icon="briefcase" />
         </mui-list-item-avatar>
         <mui-list-item-text primary="Work" secondary="Jan 7, 2014" />
       </mui-list-item>
       <mui-list-item
-        avatar="{{ {icon: 'heart'} }}"
+        avatar="{{ {icon: 'beach'} }}"
         primary="Vacation"
         secondary="July 20, 2014"
       />
@@ -226,7 +226,7 @@
           />
         </mui-list-item-icon>
         <mui-list-item-secondary-action>
-          <mui-icon-button bindtap="handleSecondaryActionTap" hoverStopPropagation icon="message" />
+          <mui-icon-button bindtap="handleSecondaryActionTap" hoverStopPropagation icon="message-reply-text" />
         </mui-list-item-secondary-action>
       </mui-list-item>
     </mui-list>
@@ -252,7 +252,7 @@
   <view class="demo-box">
     <mui-list mClass="list-wrapper" subheader="Settings">
       <mui-list-item
-        icon="{{ {name: 'default'} }}"
+        icon="{{ {name: 'wifi'} }}"
         primary="Wi-Fi"
       >
         <mui-list-item-secondary-action>
@@ -260,7 +260,7 @@
         </mui-list-item-secondary-action>
       </mui-list-item>
       <mui-list-item
-        icon="{{ {name: 'default'} }}"
+        icon="{{ {name: 'bluetooth'} }}"
         primary="Bluetooth"
       >
         <mui-list-item-secondary-action>

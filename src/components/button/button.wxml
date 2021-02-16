@@ -26,8 +26,8 @@
     wx:if="{{loading || icon}}"
     color="{{iconColor || icon.color}}"
     name="{{loading ? 'loading' : (icon.name || icon)}}"
-    mClass="icon-in-button icon-position-{{iconPosition || icon.position}} {{loading ? 'mui-button-loading' : ''}} {{icon.class}}"
-    mStyle="{{icon.style}}"
+    mClass="icon-in-button icon-position-{{iconPosition || icon.position}} {{loading ? 'mui-button-loading' : ''}} {{icon.class || ''}}"
+    mStyle="{{icon.style || ''}}"
     size="{{iconSize || icon.size}}"
     spin="{{loading || iconSpin || icon.spin}}"
   />

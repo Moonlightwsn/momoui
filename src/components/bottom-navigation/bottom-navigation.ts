@@ -59,7 +59,7 @@ Component({
       const {onChange} = this.data
       if (onChange && typeof onChange === 'function') {
         e.detail.current = value
-        onChange(e)
+        onChange(e, this.dataset)
       }
     },
   },

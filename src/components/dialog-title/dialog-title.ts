@@ -16,7 +16,7 @@ Component({
     _onClose(e) {
       const {onClose} = this.data
       if (onClose && typeof onClose === 'function') {
-        onClose(e)
+        onClose(e, this.dataset)
       }
     },
   },

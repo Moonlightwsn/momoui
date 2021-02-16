@@ -10,8 +10,8 @@
     <mui-icon
       wx:if="{{icon}}"
       color="{{icon.color}}"
-      mClass="mui-bottom-navigation-action-icon {{icon.class}}"
-      mStyle="{{icon.style}}"
+      mClass="mui-bottom-navigation-action-icon {{icon.class || ''}}"
+      mStyle="{{icon.style || ''}}"
       name="{{icon.name || icon}}"
       size="{{icon.size}}"
       spin="{{icon.spin}}"

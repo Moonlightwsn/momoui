@@ -77,8 +77,18 @@
           "scene": null
         },
         {
+          "name": "chip",
+          "pathName": "pages/chip/chip",
+          "scene": null
+        },
+        {
           "name": "dialog",
           "pathName": "pages/dialog/dialog",
+          "scene": null
+				},
+        {
+          "name": "divider",
+          "pathName": "pages/divider/divider",
           "scene": null
 				},
         {

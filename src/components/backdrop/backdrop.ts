@@ -23,10 +23,10 @@ Component({
     },
   },
   methods: {
-    _BackdropClick() {
+    _BackdropClick(e) {
       const {disableBackdropClick, onBackdropClick} = this.data
       if (onBackdropClick && typeof onBackdropClick === 'function') {
-        onBackdropClick()
+        onBackdropClick(e, this.dataset)
       }
       if (!disableBackdropClick) {
         this._close()
