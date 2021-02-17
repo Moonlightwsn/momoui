@@ -37,7 +37,7 @@
     <mui-snack-bar autoHideDuration="{{null}}" open="{{open2}}" onClose="{{Close2}}" transitionType="slide">
       <mui-alert
         wx:if="{{open2}}"
-        color="success"
+        severity="success"
         onClose="{{Close2}}"
         message="This is a success message!"
         variant="filled"
@@ -46,25 +46,25 @@
     <view style="width: 100%;">
       <mui-alert
         mStyle="margin-top: 16px;"
-        color="error"
+        severity="error"
         message="This is a error message!"
         variant="filled"
       />
       <mui-alert
         mStyle="margin-top: 16px;"
-        color="warning"
+        severity="warning"
         message="This is a warning message!"
         variant="filled"
       />
       <mui-alert
         mStyle="margin-top: 16px;"
-        color="info"
+        severity="info"
         message="This is a info message!"
         variant="filled"
       />
       <mui-alert
         mStyle="margin-top: 16px;"
-        color="success"
+        severity="success"
         message="This is a success message!"
         variant="filled"
       />

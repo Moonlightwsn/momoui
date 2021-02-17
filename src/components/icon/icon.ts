@@ -83,7 +83,11 @@ Component({
             src,
             customized,
           } = this.data
-          this._Pretreatment(name, color, size, src, customized)
+          let _name = name
+          if (typeof name === 'string' && (name === 'false' || name === 'null' || name === 'undefined')) {
+            _name = ''
+          }
+          this._Pretreatment(_name, color, size, src, customized)
         }
         themeListeners.push(this.listener)
       }
@@ -183,7 +187,11 @@ Component({
   },
   observers: {
     'name, color, size, src, customized, mClass, mStyle, progressProps, rerender': function (name, color, size, src, customized) {
-      this._Pretreatment(name, color, size, src, customized)
+      let _name = name
+      if (typeof name === 'string' && (name === 'false' || name === 'null' || name === 'undefined')) {
+        _name = ''
+      }
+      this._Pretreatment(_name, color, size, src, customized)
     }
   },
   options: {

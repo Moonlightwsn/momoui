@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "alert": "./components/alert/alert",
+    "alert-title": "./components/alert-title/alert-title",
     "app-bar": "./components/app-bar/app-bar",
     "avatar": "./components/avatar/avatar",
     "avatar-group": "./components/avatar-group/avatar-group",

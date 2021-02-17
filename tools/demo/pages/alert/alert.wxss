@@ -1,0 +1,9 @@
+.demo-box {
+  background-color: #fff;
+}
+.alert-wrapper {
+  width: 100%;
+}
+.alert-wrapper .mui-alert {
+  margin: 16px 0;
+}

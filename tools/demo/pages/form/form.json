@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "mui-alert": "../../components/alert/alert",
     "mui-button": "../../components/button/button",
     "mui-checkbox": "../../components/checkbox/checkbox",
     "mui-checkbox-group": "../../components/checkbox-group/checkbox-group",
@@ -13,6 +14,8 @@
     "mui-input-label": "../../components/input-label/input-label",
     "mui-radio-group": "../../components/radio-group/radio-group",
     "mui-radio": "../../components/radio/radio",
+    "mui-select": "../../components/select/select",
+    "mui-snack-bar": "../../components/snack-bar/snack-bar",
     "mui-switch": "../../components/switch/switch",
     "mui-typography": "../../components/typography/typography"
   }

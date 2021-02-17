@@ -1,5 +1,5 @@
 <view
-  class="{{mClass}}"
+  class="mui mui-tooltip-root {{mClass}}"
   style="{{mStyle}}"
 >
   <mui-popover

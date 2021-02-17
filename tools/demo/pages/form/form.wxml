@@ -2,182 +2,57 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
-  <mui-form-control color="{{color}}" mStyle="margin: 24px;">
-    <mui-form-label>Gender</mui-form-label>
-    <mui-radio-group>
-      <mui-form-control-label value="female" label="Female">
-        <mui-radio />
-      </mui-form-control-label>
-      <mui-form-control-label checked value="male" label="Male">
-        <mui-radio />
-      </mui-form-control-label>
-      <mui-form-control-label value="other" label="Other">
-        <mui-radio />
-      </mui-form-control-label>
-      <mui-form-control-label label="Disabled" disabled>
-        <mui-radio />
-      </mui-form-control-label>
-    </mui-radio-group>
-  </mui-form-control>
-  <mui-form-control color="{{color}}" mStyle="margin: 24px;">
-    <mui-form-label>Assign responsibility</mui-form-label>
-    <mui-checkbox-group>
-      <mui-form-control-label value="gilad" label="Gilad Gray" labelPlacement="start">
-        <mui-checkbox />
-      </mui-form-control-label>
-      <mui-form-control-label value="jason" label="Jason Killian">
-        <mui-checkbox />
-      </mui-form-control-label>
-      <mui-form-control-label value="antoine" label="Antoine Llorca">
-        <mui-checkbox />
-      </mui-form-control-label>
-    </mui-checkbox-group>
-    <mui-form-helper-text>Be careful</mui-form-helper-text>
-  </mui-form-control>
-  <mui-form-control color="secondary" mStyle="margin: 24px;">
-    <mui-input-label>INPUT</mui-input-label>
-    <mui-input placeholder="Placeholder" />
-  </mui-form-control>
-  <input placeholder="Placeholder" />
-  <mui-input placeholder="Placeholder" />
-  <!--
-  <form bindsubmit="submit" bindreset="reset">
-    <view>
-      <label>Switch<switch name="switch" /></label>
+  <mui-typography variant="h4">Form 表单</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">你可以为表单类组件添加name属性，并在bindsubmit事件中或者所有表单类组件的值</mui-typography>
+  <view class="demo-box">
+    <view style="width: 100%;">
+      <form bindsubmit="Submit">
+        <view style="margin: 16px 0;">
+          <mui-form-control-label label="Switch">
+            <mui-switch name="switch" />
+          </mui-form-control-label>
+        </view>
+        <view style="margin: 16px 0;">
+          <mui-form-control>
+            <mui-form-label>Radio Group</mui-form-label>
+            <mui-radio-group name="radio">
+              <mui-form-control-label label="Radio 1" value="radio 1"><mui-radio /></mui-form-control-label>
+              <mui-form-control-label label="Radio 2" value="radio 2"><mui-radio /></mui-form-control-label>
+            </mui-radio-group>
+          </mui-form-control>
+        </view>
+        <view style="margin: 16px 0;">
+          <mui-form-control>
+            <mui-form-label>Checkbox Group</mui-form-label>
+            <mui-checkbox-group name="checkbox">
+              <mui-form-control-label label="Checkbox 1" value="checkbox 1"><mui-checkbox /></mui-form-control-label>
+              <mui-form-control-label label="Checkbox 2" value="checkbox 2"><mui-checkbox /></mui-form-control-label>
+            </mui-checkbox-group>
+          </mui-form-control>
+        </view>
+        <view style="margin: 16px 0;">
+          <mui-form-control>
+            <mui-input-label>Input</mui-input-label>
+            <mui-input name="input" />
+          </mui-form-control>
+        </view>
+        <view style="margin: 16px 0;">
+          <mui-form-control>
+            <mui-input-label>Select</mui-input-label>
+            <mui-select name="select" mode="time" />
+          </mui-form-control>
+        </view>
+        <view style="margin: 16px 0;">
+          <mui-button color="primary" variant="contained" formType="submit">Submit</mui-button>
+        </view>
+      </form>
     </view>
-    <view>
-      Radio
-      <radio-group name="radio">
-        <label><radio value="radio1" />选项一</label>
-        <label><radio value="radio2" />选项二</label>
-      </radio-group>
-    </view>
-    <view>
-      Checkbox
-      <checkbox-group name="checkbox">
-        <label><checkbox value="checkbox1" />选项一</label>
-        <label><checkbox value="checkbox2" />选项二</label>
-      </checkbox-group>
-    </view>
-    <view>
-      Slider<slider value="50" name="slider" show-value ></slider>
-    </view>
-    <view>
-      Input<input class="weui-input" name="input" placeholder="这是一个输入框" />
-    </view>
-    <view class="btn-area">
-        <button style="margin: 30rpx 0" type="primary" formType="submit">Submit</button>
-        <button style="margin: 30rpx 0" formType="reset">Reset</button>
-      </view>
-  </form>
--->
-  <!--
-  <mui-checkbox-group onChange="{{groupChange}}" value="{{checkedValue}}">
-    <mui-checkbox value="A">A</mui-checkbox>
-    <mui-checkbox value="B" color="primary">B</mui-checkbox>
-    <mui-checkbox value="C" indeterminate defaultChecked>C</mui-checkbox>
-    <mui-checkbox value="D">D</mui-checkbox>
-    <mui-checkbox value="E" color="default">E</mui-checkbox>
-    <mui-checkbox value="F" disabled>F</mui-checkbox>
-  </mui-checkbox-group>
-  <mui-checkbox value="B" model:checked="{{checked}}" color="primary" onChange="{{trigger}}" size="{{size}}">B</mui-checkbox>
-  <mui-checkbox value="C" defaultChecked>C</mui-checkbox>
-  <view />
-  <mui-radio onChange="{{radioChange}}">A</mui-radio>
-  <mui-radio onChange="{{radioChange}}" defaultChecked disabled color="primary">B</mui-radio>
-  <mui-radio onChange="{{radioChange}}" checked="{{checked}}" color="default" size="small">c</mui-radio>
-  <mui-radio />
-  <mui-radio-group onChange="{{groupChange}}" value="{{checkedValue}}">
-    <mui-radio value="A" disableRipple>A</mui-radio>
-    <mui-radio color="primary" value="B">B</mui-radio>
-    <mui-radio value="C">C</mui-radio>
-    <mui-radio value="D" disabled>D</mui-radio>
-  </mui-radio-group>
-  <mui-switch model:checked="{{checked}}" onChange="{{trigger}}">Secondary</mui-switch>
-  <mui-switch color="primary" size="small" />
-  <mui-switch color="default" />
-  <mui-switch disabled />
-  <mui-switch disabled defaultChecked />
-  <view />
-  <mui-button bindtap="showInput">Show Input</mui-button>
-  <view />
-  <mui-input placeholder="Placeholder" rows="{{3}}" multiline mStyle="margin: 8px;" />
-  <mui-input margin="dense" color="secondary" mStyle="margin: 8px;" value="Disabled" disabled />
-  <mui-input placeholder="Placeholder" color="secondary" mStyle="margin: 8px;" />
-  <mui-input placeholder="Placeholder" multiline mStyle="margin: 8px;" />
-  <mui-input inputChange="{{inputChange}}" password maxlength="{{3}}" />
-  -->
-  <!--
-  <view style="margin-bottom: 48px;">
-    <form bindsubmit="submit">
-      <mui-input name="mui-input" />
-      <mui-input name="mui-textarea" multiline />
-      <mui-switch name="mui-switch" />
-      <mui-checkbox-group name="mui-checkbox" value="{{checkboxValue}}" onChange="{{onCheckboxChange}}">
-        <mui-checkbox value="c1" />
-        <mui-checkbox value="c2" />
-      </mui-checkbox-group>
-      <mui-radio-group name="mui-radio" value="{{radioValue}}" onChange="{{onRadioChange}}">
-        <mui-radio value="r1" />
-        <mui-radio value="r2" />
-      </mui-radio-group>
-      <mui-button color="primary" formType="submit">Submit</mui-button>
-    </form>
   </view>
-  <view>
-    <mui-checkbox size="{{size}}">Checkbox</mui-checkbox>
-    <mui-checkbox color="primary" />
-    <mui-checkbox color="default" />
-    <mui-checkbox defaultChecked />
-    <mui-checkbox defaultChecked color="primary" />
-    <mui-checkbox defaultChecked color="default" />
-    <mui-checkbox defaultChecked indeterminate />
-    <mui-checkbox disabled />
-    <mui-checkbox disabled color="primary" />
-    <mui-checkbox disabled color="default" />
-    <mui-checkbox disabled defaultChecked />
-    <mui-checkbox disabled defaultChecked color="primary" />
-    <mui-checkbox size="small" disabled="{{disabled}}" defaultChecked color="primary">(Disabled)</mui-checkbox>
-  </view>
-  <view>
-    <mui-radio size="{{size}}">Radio</mui-radio>
-    <mui-radio color="primary" />
-    <mui-radio color="default" />
-    <mui-radio defaultChecked />
-    <mui-radio defaultChecked color="primary" />
-    <mui-radio defaultChecked color="default" />
-    <mui-radio disabled />
-    <mui-radio disabled color="primary" />
-    <mui-radio disabled color="default" />
-    <mui-radio disabled defaultChecked />
-    <mui-radio disabled defaultChecked color="primary" />
-    <mui-radio size="small" disabled="{{disabled}}" defaultChecked color="primary">(Disabled)</mui-radio>
-  </view>
-  <view>
-    <mui-switch size="{{size}}">Switch</mui-switch>
-    <mui-switch color="primary" />
-    <mui-switch color="default" />
-    <mui-switch defaultChecked />
-    <mui-switch defaultChecked color="primary" />
-    <mui-switch defaultChecked color="default" />
-    <mui-switch disabled />
-    <mui-switch disabled color="primary" />
-    <mui-switch disabled color="default" />
-    <mui-switch disabled defaultChecked />
-    <mui-switch disabled defaultChecked color="primary" />
-    <mui-switch size="small" disabled="{{disabled}}" defaultChecked color="primary">(Disabled)</mui-switch>
-  </view>
-  <view style="margin-top: 12px;">
-    <mui-button mStyle="margin-left: 12px;" bindtap="changeSize">Chagen Size</mui-button>
-    <mui-button mStyle="margin-left: 12px;" bindtap="changeDisabled">Chagen Disabled</mui-button>
-  </view>
-  <view style="margin-bottom: 60px;">
-    <mui-input placeholder="Placeholder" rows="{{3}}" multiline mStyle="margin: 8px;" />
-    <mui-input margin="dense" color="secondary" mStyle="margin: 8px;" value="Disabled" disabled />
-    <mui-input placeholder="Placeholder" color="secondary" mStyle="margin: 8px;" />
-    <mui-input placeholder="Placeholder" multiline mStyle="margin: 8px;" />
-    <mui-input model:value="{{input}}" inputChange="{{inputChange}}" password maxlength="{{20}}" mStyle="margin: 8px;" />
-    <mui-button bindtap="showInput">Show Input</mui-button>
-  </view>
-  -->
+  <mui-snack-bar open="{{open}}" onClose="{{Close}}" transitionType="slide">
+    <mui-alert wx:if="{{open}}" title="Form Values" onClose="{{Close}}" severity="success" variant="filled">
+      <mui-typography wx:for="{{formValues}}" wx:key="key" display="block" gutterBottom>
+        {{item.key}}: {{item.value}}
+      </mui-typography>
+    </mui-alert>
+  </mui-snack-bar>
 </view>

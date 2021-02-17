@@ -1,6 +1,6 @@
 import muiBase from '../../behaviors/muiBase.ts'
 
-const color2icon = {
+const severity2icon = {
   success: 'checkbox-marked-circle-outline',
   info: 'info-outline',
   warning: 'alert-outline',
@@ -21,7 +21,7 @@ Component({
     },
     color: {
       type: String,
-      value: 'success'
+      value: null,
     },
     icon: {
       type: Boolean,
@@ -35,6 +35,10 @@ Component({
       // @ts-ignore
       type: Function,
       value: null,
+    },
+    severity: {
+      type: String,
+      value: 'success',
     },
     title: {
       type: String,
@@ -57,8 +61,8 @@ Component({
     },
   },
   methods: {
-    _setIcon(color) {
-      this.setData({icon: color2icon[color] || 'info'})
+    _setIcon(severity) {
+      this.setData({icon: severity2icon[severity] || 'success'})
     },
     _close(e) {
       const {onClose} = this.data
@@ -68,9 +72,9 @@ Component({
     }
   },
   observers: {
-    'color, icon': function (color, icon) {
+    'icon, severity': function (icon, severity) {
       if (typeof icon !== 'boolean' && !icon) {
-        this._setIcon(color)
+        this._setIcon(severity)
       }
     },
     'onClose, closeText': function (onClose, closeText) {
@@ -79,7 +83,7 @@ Component({
       } else {
         this.setData({_hasAction: false})
       }
-    }
+    },
   },
   options: {
     virtualHost: true,

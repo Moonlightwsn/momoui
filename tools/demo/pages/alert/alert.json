@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mui-alert": "../../components/alert/alert",
+    "mui-alert-title": "../../components/alert-title/alert-title",
+    "mui-button": "../../components/button/button",
+    "mui-collapse": "../../components/collapse/collapse",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

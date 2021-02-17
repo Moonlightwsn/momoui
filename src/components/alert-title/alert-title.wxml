@@ -1,0 +1,3 @@
+<mui-typography mClass="alert-title" gutterBottom>
+  <slot />
+</mui-typography>

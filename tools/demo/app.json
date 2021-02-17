@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/alert/alert",
     "pages/app-bar/app-bar",
     "pages/avatar/avatar",
     "pages/backdrop/backdrop",
@@ -28,7 +29,6 @@
     "pages/snack-bar/snack-bar",
     "pages/switch/switch",
     "pages/tabs/tabs",
-    "pages/test/test",
     "pages/tooltip/tooltip",
     "pages/typography/typography"
   ],

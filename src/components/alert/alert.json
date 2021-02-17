@@ -1,8 +1,10 @@
 {
   "component": true,
   "usingComponents": {
+    "mui-alert-title": "../alert-title/alert-title",
     "mui-paper": "../paper/paper",
     "mui-icon": "../icon/icon",
+    "mui-icon-button": "../icon-button/icon-button",
     "mui-typography": "../typography/typography",
     "mui-button": "../button/button"
   }

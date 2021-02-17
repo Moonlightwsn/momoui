@@ -1,18 +1,25 @@
 <view
   data-momoui-theme="{{theme}}"
-  style="padding: 40px 10px;"
+  class="page"
 >
-  <mui-typography gutter-bottom variant="h1">h1. Heading</mui-typography>
-  <mui-typography gutter-bottom variant="h2">h2. Heading</mui-typography>
-  <mui-typography gutter-bottom variant="h3">h3. Heading</mui-typography>
-  <mui-typography gutter-bottom variant="h4">h4. Heading</mui-typography>
-  <mui-typography gutter-bottom variant="h5">h5. Heading</mui-typography>
-  <mui-typography gutter-bottom color="error" variant="h6">h6. Heading</mui-typography>
-  <mui-typography gutter-bottom color="textPrimary" variant="subtitle1">subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur</mui-typography>
-  <mui-typography gutter-bottom color="textSecondary" variant="subtitle2">subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur</mui-typography>
-  <mui-typography gutter-bottom color="primary">body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.</mui-typography>
-  <mui-typography gutter-bottom color="secondary" variant="body2">body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.</mui-typography>
-  <mui-typography gutter-bottom variant="button" display="block">button text</mui-typography>
-  <mui-typography gutter-bottom variant="caption" display="block">caption text</mui-typography>
-  <mui-typography gutter-bottom variant="overline" display="block">overline text</mui-typography>
+  <mui-typography variant="h4">Typography 文字铸排</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">使用文字铸排可以尽可能清晰、高效地展示您的设计和内容</mui-typography>
+  <mui-typography mClass="header2" variant="h5">组件</mui-typography>
+  <view class="demo-box">
+    <view style="display: block;">
+      <mui-typography gutter-bottom variant="h1">h1. Heading</mui-typography>
+      <mui-typography gutter-bottom variant="h2">h2. Heading</mui-typography>
+      <mui-typography gutter-bottom variant="h3">h3. Heading</mui-typography>
+      <mui-typography gutter-bottom variant="h4">h4. Heading</mui-typography>
+      <mui-typography gutter-bottom variant="h5">h5. Heading</mui-typography>
+      <mui-typography gutter-bottom color="error" variant="h6">h6. Heading</mui-typography>
+      <mui-typography gutter-bottom color="textPrimary" variant="subtitle1">subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur</mui-typography>
+      <mui-typography gutter-bottom color="textSecondary" variant="subtitle2">subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur</mui-typography>
+      <mui-typography gutter-bottom color="primary">body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.</mui-typography>
+      <mui-typography gutter-bottom color="secondary" variant="body2">body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.</mui-typography>
+      <mui-typography gutter-bottom variant="button" display="block">button text</mui-typography>
+      <mui-typography gutter-bottom variant="caption" display="block">caption text</mui-typography>
+      <mui-typography gutter-bottom variant="overline" display="block">overline text</mui-typography>
+    </view>
+  </view>
 </view>

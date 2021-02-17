@@ -1,0 +1,78 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography variant="h4">Alert 警告提示</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">一个警告提示组件展示了一段简短且重要的信息，在不影响用户操作的同时能够吸引用户的注意力</mui-typography>
+  <mui-typography mClass="header2" variant="h5">简单的警告提示</mui-typography>
+  <view class="demo-box">
+    <view class="alert-wrapper">
+      <mui-alert severity="error" message="This is an error alert — check it out!" />
+      <mui-alert severity="warning" message="This is a warning alert — check it out!" />
+      <mui-alert severity="info" message="This is an info alert — check it out!" />
+      <mui-alert severity="success" message="This is a success alert — check it out!" />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">描述</mui-typography>
+  <view class="demo-box">
+    <view class="alert-wrapper">
+      <mui-alert severity="error" title="Error">This is an error alert — <label style="font-weight: 700;">check it out!</label></mui-alert>
+      <mui-alert severity="warning"><mui-alert-title>Warning</mui-alert-title>This is a warning alert — <label style="font-weight: 700;">check it out!</label></mui-alert>
+      <mui-alert severity="info" title="Info">This is an info alert — <label style="font-weight: 700;">check it out!</label></mui-alert>
+      <mui-alert severity="success" title="Success">This is a success alert — <label style="font-weight: 700;">check it out!</label></mui-alert>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">行为</mui-typography>
+  <view class="demo-box">
+    <view class="alert-wrapper">
+      <mui-alert severity="success" message="This is a success alert — check it out!" onClose="{{Close}}" />
+      <mui-alert severity="success" message="This is a success alert — check it out!" closeText="UNDO" onClose="{{Close}}" />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">过渡效果</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">收起与展开</mui-typography>
+  <view class="demo-box">
+    <view class="alert-wrapper">
+      <mui-collapse in="{{open}}">
+        <mui-alert data-key="closeCollapse" severity="success" message="Close me!" onClose="{{Close}}" />
+      </mui-collapse>
+      <mui-button disabled="{{open}}" bindtap="ReOpen" variant="outlined">Re-open</mui-button>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">图标</mui-typography>
+  <view class="demo-box">
+    <view class="alert-wrapper">
+      <mui-alert icon="check" message="This is a success alert — check it out!" />
+      <mui-alert icon="check-circle-outline" message="This is a success alert — check it out!" />
+      <mui-alert icon="{{false}}" message="This is a success alert — check it out!" />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">变体</mui-typography>
+  <mui-typography mClass="header2" variant="h6">描边</mui-typography>
+  <view class="demo-box">
+    <view class="alert-wrapper">
+      <mui-alert variant="outlined" severity="error" message="This is an error alert — check it out!" />
+      <mui-alert variant="outlined" severity="warning" message="This is a warning alert — check it out!" />
+      <mui-alert variant="outlined" severity="info" message="This is an info alert — check it out!" />
+      <mui-alert variant="outlined" severity="success" message="This is a success alert — check it out!" />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h6">填充</mui-typography>
+  <view class="demo-box">
+    <view class="alert-wrapper">
+      <mui-alert variant="filled" severity="error" message="This is an error alert — check it out!" />
+      <mui-alert variant="filled" severity="warning" message="This is a warning alert — check it out!" />
+      <mui-alert variant="filled" severity="info" message="This is an info alert — check it out!" />
+      <mui-alert variant="filled" severity="success" message="This is a success alert — check it out!" />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">颜色</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">使用 color 属性可以覆盖不同程度提醒的默认颜色</mui-typography>
+  <view class="demo-box">
+    <view class="alert-wrapper">
+      <mui-alert color="info" severity="success" message="This is a success alert — check it out!" />
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">Toast（提示）</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">你可以使用消息条（Snackbar）来显示一个带警告提示组件的 toast</mui-typography>
+</view>

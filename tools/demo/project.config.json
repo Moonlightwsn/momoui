@@ -32,6 +32,11 @@
 		"miniprogram": {
       "list": [
         {
+          "name": "alert",
+          "pathName": "pages/alert/alert",
+          "scene": null
+        },
+        {
           "name": "app-bar",
           "pathName": "pages/app-bar/app-bar",
           "scene": null
@@ -169,11 +174,6 @@
         {
           "name": "tabs",
           "pathName": "pages/tabs/tabs",
-          "scene": null
-        },
-        {
-          "name": "test",
-          "pathName": "pages/test/test",
           "scene": null
         },
         {

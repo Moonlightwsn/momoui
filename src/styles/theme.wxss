@@ -638,83 +638,89 @@
   /** mui-divider end */
 
   /** mui-tooltip */
-  .mui-tooltip {
-    position: relative;
-    .tooltip-title {
+  &.mui-tooltip-root {
+    .mui-paper-root {
+      background-color: transparent;
+    }
+    .mui-tooltip {
       position: relative;
-      color: #fff;
-      padding: 4px 8px;
-      font-size: 0.625rem;
-      max-width: 300px;
-      word-wrap: break-word;
-      box-sizing: border-box;
-      font-weight: 500;
-      line-height: 1.4em;
-      border-radius: 4px;
-      background-color: rgba(97, 97, 97, 0.9);
-      &.arrow-placement-bottom, &.arrow-placement-bottom-start, &.arrow-placement-bottom-end{
-        margin: 14px 0;
-      }
-      &.arrow-placement-top, &.arrow-placement-top-start, &.arrow-placement-top-end {
-        margin: 14px 0;
-      }
-      &.arrow-placement-left, &.arrow-placement-left-start, &.arrow-placement-left-end {
-        margin: 0 14px;
-      }
-      &.arrow-placement-right, &.arrow-placement-right-start, &.arrow-placement-right-end {
-        margin: 0 14px;
-      }
-      .tooltip-arrow {
-        color: rgba(97, 97, 97, 0.9);
-        width: 10px;
-        height: 7px;
-        overflow: hidden;
-        position: absolute;
+      .tooltip-title {
+        position: relative;
+        color: #fff;
+        padding: 4px 8px;
+        font-size: 0.625rem;
+        max-width: 300px;
+        word-wrap: break-word;
         box-sizing: border-box;
-        &::after {
-          width: 100%;
-          height: 100%;
-          margin: auto;
-          content: "";
-          display: block;
-          transform: rotate(45deg);
-          background-color: currentColor;
-        }
-        &.arrow-placement-bottom, &.arrow-placement-bottom-start, &.arrow-placement-bottom-end {
-          left: calc(50% - 5px);
-          top: -7px;
-          &::after {
-            transform-origin: 0 100%;
-          }
+        font-weight: 500;
+        line-height: 1.4em;
+        border-radius: 4px;
+        background-color: rgba(97, 97, 97, 0.9);
+        &.arrow-placement-bottom, &.arrow-placement-bottom-start, &.arrow-placement-bottom-end{
+          margin: 14px 0;
         }
         &.arrow-placement-top, &.arrow-placement-top-start, &.arrow-placement-top-end {
-          left: calc(50% - 5px);
-          bottom: -7px;
-          &::after {
-            transform-origin: 100% 0;
-          }
+          margin: 14px 0;
         }
         &.arrow-placement-left, &.arrow-placement-left-start, &.arrow-placement-left-end {
-          right: -7px;
-          top: calc(50% - 5px);
-          height: 10px;
-          width: 7px;
-          &::after {
-            transform-origin: 0 0;
-          }
+          margin: 0 14px;
         }
         &.arrow-placement-right, &.arrow-placement-right-start, &.arrow-placement-right-end {
-          left: -7px;
-          top: calc(50% - 5px);
-          height: 10px;
-          width: 7px;
+          margin: 0 14px;
+        }
+        .tooltip-arrow {
+          color: rgba(97, 97, 97, 0.9);
+          width: 10px;
+          height: 7px;
+          overflow: hidden;
+          position: absolute;
+          box-sizing: border-box;
           &::after {
-            transform-origin: 100% 100%;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            content: "";
+            display: block;
+            transform: rotate(45deg);
+            background-color: currentColor;
+          }
+          &.arrow-placement-bottom, &.arrow-placement-bottom-start, &.arrow-placement-bottom-end {
+            left: calc(50% - 5px);
+            top: -7px;
+            &::after {
+              transform-origin: 0 100%;
+            }
+          }
+          &.arrow-placement-top, &.arrow-placement-top-start, &.arrow-placement-top-end {
+            left: calc(50% - 5px);
+            bottom: -7px;
+            &::after {
+              transform-origin: 100% 0;
+            }
+          }
+          &.arrow-placement-left, &.arrow-placement-left-start, &.arrow-placement-left-end {
+            right: -7px;
+            top: calc(50% - 5px);
+            height: 10px;
+            width: 7px;
+            &::after {
+              transform-origin: 0 0;
+            }
+          }
+          &.arrow-placement-right, &.arrow-placement-right-start, &.arrow-placement-right-end {
+            left: -7px;
+            top: calc(50% - 5px);
+            height: 10px;
+            width: 7px;
+            &::after {
+              transform-origin: 100% 100%;
+            }
           }
         }
       }
     }
   }
+  
   /** mui-tooltip end */
 
   /** mui-snack-bar */
@@ -2761,12 +2767,6 @@
 
   /** mui-typography */
   &.mui-typography {
-    &.display-block {
-      display: block;
-    }
-    &.display-inline {
-      display: inline;
-    }
     &.no-wrap-true {
       overflow: hidden;
       white-space: nowrap;
@@ -2878,6 +2878,12 @@
     &.mui-color-error {
       color: @error_color;
     }
+    &.display-block {
+      display: block;
+    }
+    &.display-inline {
+      display: inline;
+    }
   }
   /** mui-typography end */
 
@@ -2891,6 +2897,9 @@
     border-radius: 4px;
     letter-spacing: 0.01071em;
     background-color: transparent;
+    &.mui-variant-outlined {
+      background-color: transparent;
+    }
     &.mui-color-error {
       &.mui-variant-standard {
         color: #611a15;
@@ -3493,6 +3502,12 @@
       }
     }
 
+    &.mui-tooltip-root {
+      .mui-paper-root {
+        background-color: transparent;
+      }
+    }
+
     &.disabled-true {
       color: rgba(255, 255, 255, 0.3);
     }
@@ -3966,6 +3981,9 @@
     }
 
     &.mui-alert {
+      &.mui-variant-outlined {
+        background-color: transparent;
+      }
       &.mui-color-error {
         &.mui-variant-standard {
           color: #fab3ae;

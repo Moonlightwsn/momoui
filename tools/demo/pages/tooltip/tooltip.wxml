@@ -2,15 +2,17 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
+  <mui-typography variant="h4">Tooltip 工具提示</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1">当用户轻触一个元素时，工具提示组件会显示一段有意义的文本</mui-typography>
   <mui-typography mClass="header2" variant="h5">简单的工具提示</mui-typography>
   <view class="demo-box">
-    <mui-tooptip arrow title="delete">
+    <mui-tooltip title="delete">
       <mui-button
         shape="circle"
         icon="delete"
       />
-    </mui-tooptip>
-    <mui-tooptip mStyle="margin: 16px;" title="add">
+    </mui-tooltip>
+    <mui-tooltip mStyle="margin: 16px;" title="add">
       <mui-button
         shape="circle"
         variant="contained"
@@ -18,20 +20,47 @@
         icon="plus"
         size="large"
       />
-    </mui-tooptip>
+    </mui-tooltip>
   </view>
   <mui-typography mClass="header2" variant="h5">工具提示的定位</mui-typography>
+  <view class="demo-box" style="padding: 24px 36px;">
+    <view style="width: 500px;">
+      <mui-grid container justify="center">
+        <mui-grid item>
+          <view style="display: inline-flex"><mui-tooltip title="Add" placement="top-start"><mui-button size="small">top-start</mui-button></mui-tooltip></view>
+          <view style="display: inline-flex"><mui-tooltip title="Add" placement="top"><mui-button size="small">top</mui-button></mui-tooltip></view>
+          <view style="display: inline-flex"><mui-tooltip title="Add" placement="top-end"><mui-button size="small">top-end</mui-button></mui-tooltip></view>
+        </mui-grid>
+      </mui-grid>
+      <mui-grid container justify="center">
+        <mui-grid container item direction="column" xs="{{6}}">
+          <view style="display: inline-flex"><mui-tooltip title="Add" placement="left-start"><mui-button size="small">left-start</mui-button></mui-tooltip></view>
+          <view style="display: inline-flex"><mui-tooltip title="Add" placement="left"><mui-button size="small">left</mui-button></mui-tooltip></view>
+          <view style="display: inline-flex"><mui-tooltip title="Add" placement="left-end"><mui-button size="small">left-end</mui-button></mui-tooltip></view>
+        </mui-grid>
+        <mui-grid container item direction="column" alignItems="flex-end" xs="{{6}}">
+          <view style="display: inline-flex"><mui-tooltip title="Add" placement="right-start"><mui-button size="small">right-start</mui-button></mui-tooltip></view>
+          <view style="display: inline-flex"><mui-tooltip title="Add" placement="right"><mui-button size="small">right</mui-button></mui-tooltip></view>
+          <view style="display: inline-flex"><mui-tooltip title="Add" placement="right-end"><mui-button size="small">right-end</mui-button></mui-tooltip></view>
+        </mui-grid>
+      </mui-grid>
+      <mui-grid container justify="center">
+        <mui-grid item>
+          <view style="display: inline-flex"><mui-tooltip title="Add" placement="bottom-start"><mui-button size="small">bottom-s</mui-button></mui-tooltip></view>
+          <view style="display: inline-flex"><mui-tooltip title="Add" placement="bottom"><mui-button size="small">bottom</mui-button></mui-tooltip></view>
+          <view style="display: inline-flex"><mui-tooltip title="Add" placement="bottom-end"><mui-button size="small">bottom-e</mui-button></mui-tooltip></view>
+        </mui-grid>
+      </mui-grid>
+    </view>
+  </view>
+  <mui-typography mClass="header2" variant="h5">带箭头的工具提示</mui-typography>
   <view class="demo-box">
-    <mui-tooptip
-      arrow
-      title="test"
-      placement="bottom-start"
-    >
-      <mui-button>TEST</mui-button>
-    </mui-tooptip>
+    <mui-tooltip arrow title="add">
+      <mui-button>Arrow</mui-button>
+    </mui-tooltip>
   </view>
 </view>
-<mui-tooptip
+<mui-tooltip
   mStyle="position: fixed;right: 16px;bottom: 16px;"
   arrow
   title="like"
@@ -44,4 +73,4 @@
     size="large"
     color="secondary"
   />
-</mui-tooptip>
+</mui-tooltip>
