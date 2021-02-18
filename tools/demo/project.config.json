@@ -12,7 +12,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.11.2",
+	"libVersion": "2.11.0",
 	"appid": "wxf5fa295a8fa3204a",
 	"projectname": "miniprogram-demo",
 	"isGameTourist": false,
@@ -26,11 +26,16 @@
 			"list": []
 		},
 		"game": {
-			"currentL": -1,
+			"currentL": 0,
 			"list": []
 		},
 		"miniprogram": {
       "list": [
+        {
+          "name": "index",
+          "pathName": "pages/index/index",
+          "scene": null
+        },
         {
           "name": "alert",
           "pathName": "pages/alert/alert",
@@ -117,8 +122,8 @@
           "scene": null
         },
         {
-          "name": "index",
-          "pathName": "pages/index/index",
+          "name": "icon",
+          "pathName": "pages/icon/icon",
           "scene": null
         },
         {

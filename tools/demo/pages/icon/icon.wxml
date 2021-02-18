@@ -1,0 +1,71 @@
+<view
+  data-momoui-theme="{{theme}}"
+  class="page"
+>
+  <mui-typography variant="h4">Icons 图标</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">MOMO UI 内置了300多个图标供您使用（本页最后将展示所有图标），所有内置图标取自网站 https://materialdesignicons.com/ ，你也可以从这个网站或者其他渠道取得图标并在MOMO UI中使用</mui-typography>
+  <mui-typography mClass="header2" variant="h5">图标属性</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">通过 name 属性指定图标, 使用前需要在 app.js 中设置全局变量 <label style="font-weight: 600;">momouiRootPath： 你当前安装MOMO UI的目录</label>，如果不设置则默认为 /miniprogram_npm/momoui-miniprogram/ </mui-typography>
+  <view class="demo-box">
+    <mui-icon name="account" />
+    <mui-icon name="plus" />
+    <mui-icon name="minus" />
+    <mui-icon name="info" />
+    <mui-icon name="dots-horizontal" />
+  </view>
+  <mui-typography mClass="header2" variant="h5">大小与颜色</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">icon的大小与颜色默认继承style color与font-size属性，也可以通过直接指定icon的color与sise属性</mui-typography>
+  <view class="demo-box" style="color: #1976d2;font-size: 24px;">
+    <mui-icon name="home" />
+    <mui-icon name="delete" color="#dc004e" />
+    <mui-icon name="book" size="{{16}}" />
+    <mui-icon name="camera" mStyle="color: #4caf50;font-size: 16px;" />
+    <mui-icon name="dots-horizontal" />
+  </view>
+  <mui-typography mClass="header2" variant="h5">自旋转</mui-typography>
+  <view class="demo-box" style="font-size: 24px;">
+    <mui-icon name="loading" spin />
+    <mui-icon name="check-circle" spin />
+    <mui-icon name="heart" color="#dc004e" spin />
+  </view>
+  <mui-typography mClass="header2" variant="h5">自定义图标</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">在小程序目录中放置自己的svg文件，图标name即文件名，将icon的customized属性置为true，并在app.js中指定svg文件所在目录 <label style="font-weight: 600;">customizedIconsPath</label></mui-typography>
+  <view class="demo-box">
+    <mui-icon name="wechat" customized size="{{24}}" color="#07c160" />
+  </view>
+  <mui-typography mClass="header2" variant="h5">图标列表</mui-typography>
+  <view class="demo-box" style="min-height: 200px;align-items: flex-start;">
+    <view style="flex-grow: 1;position: relative;">
+      <mui-app-bar color="primary" position="sticky">
+        <mui-toolbar>
+          <view class="search">
+            <view class="searchIcon"><mui-icon name="search" size="{{24}}" /></view>
+            <mui-input
+              mClass="searchInput"
+              mStyle="color: inherit;"
+              disableUnderline
+              placeholder="Search icons…"
+              placeholderStyle="{{theme === 'dark' ? 'color:#5b778e;' : ''}}"
+              inputChange="{{Search}}"
+              inputConfirm="{{Search}}"
+            />
+          </view>
+        </mui-toolbar>
+      </mui-app-bar>
+      <view wx:if="{{loading || error}}" style="position: relative;display: inline-flex;left: calc(50% - 26px);top: 20px;">
+        <mui-progress wx:if="{{loading}}" />
+        <mui-icon wx:elif="{{error}}" name="close-circle" color="#f44336" size="{{56}}" />
+        <mui-typography mStyle="display: flex; align-items: center; justify-content: center;position: absolute;top: 72px;right: 0;bottom: 0;left: 0;" variant="caption" color="textSecondary">
+          {{loading ? '加载中...' : ''}}
+          {{error ? '加载错误' : ''}}
+        </mui-typography>
+      </view>
+      <view wx:else style="display: flex;flex-wrap: wrap;margin-top: 24px;">
+        <view wx:for="{{icons}}" wx:key="item" style="width: 74px;margin: 0 4px;display: flex;flex-direction: column;justify-content: flex-start;align-items: center;">
+          <mui-icon name="{{item}}" size="{{36}}" mStyle="padding: 12px;margin: 4px 0;" />
+          <mui-typography mStyle="text-align: center;" variant="body2">{{item}}</mui-typography>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -290,7 +290,8 @@ Component({
     _onConfirm(e) {
       const {inputConfirm} = this.data
       if (inputConfirm && typeof inputConfirm === 'function') {
-        inputConfirm(e, this.dataset)
+        const {value} = e.detail || {}
+        inputConfirm(value, e, this.dataset)
       }
     },
     _onKeyboardHeightChange(e) {

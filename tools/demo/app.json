@@ -17,6 +17,7 @@
     "pages/form/form",
     "pages/grid/grid",
     "pages/grid-list/grid-list",
+    "pages/icon/icon",
     "pages/index/index",
     "pages/input/input",
     "pages/list/list",

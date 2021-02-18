@@ -1,7 +1,8 @@
 <mui-button-base
   class="mui mui-bottom-navigation-action selected-{{_selected}} only-icon-{{!(showLabel || _selected || !_hideInactiveAction)}}"
+  style="display: flex;justify-content: center;"
   mClass="mui-button {{mClass}}"
-  mStyle="{{mStyle}}"
+  mStyle="flex-grow: 1;{{mStyle}}"
   bindtap="_Select"
   component="button"
   hoverClass="{{disabled ? '' : (hoverClass ? hoverClass : 'mui-button-hover')}}"

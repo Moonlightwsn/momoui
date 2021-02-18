@@ -132,7 +132,10 @@ Component({
     },
     _ReadSvgAndGenBase64(iconName: string, color: string, size: string, customized: boolean) {
       if (iconName) {
-        const iconPath = customized ? `${customizedIconsPath || ''}${iconName}.svg` : `${momouiRootPath}${muiIconPath}${iconName}.svg`
+        let iconPath = customized ? `${customizedIconsPath || ''}${iconName}` : `${momouiRootPath}${muiIconPath}${iconName}`
+        if (iconPath.substr(-4) !== '.svg') {
+          iconPath = `${iconPath}.svg`
+        }
         try {
           const fileRes = wx.getFileSystemManager().readFileSync(iconPath, 'binary')
           if (fileRes) {

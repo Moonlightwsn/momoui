@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "mui-app-bar": "../../components/app-bar/app-bar",
+    "mui-icon": "../../components/icon/icon",
+    "mui-input": "../../components/input/input",
+    "mui-progress": "../../components/progress/progress",
+    "mui-toolbar": "../../components/toolbar/toolbar",
+    "mui-typography": "../../components/typography/typography"
+  }
+}

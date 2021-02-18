@@ -2,4 +2,9 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
+  <mui-bottom-navigation mClass="bottomNavigation" value="{{value}}" onChange="{{SetValue}}" showLabels>
+    <mui-bottom-navigation-action icon="apps" label="组件总览" />
+    <mui-bottom-navigation-action icon="school" label="快速上手" />
+    <mui-bottom-navigation-action icon="theme-light-dark" label="主题" />
+  </mui-bottom-navigation>
 </view>
