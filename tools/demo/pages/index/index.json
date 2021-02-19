@@ -1,9 +1,27 @@
 {
   "usingComponents": {
+    "mui-avatar": "../../components/avatar/avatar",
+    "mui-backdrop": "../../components/backdrop/backdrop",
     "mui-bottom-navigation": "../../components/bottom-navigation/bottom-navigation",
     "mui-bottom-navigation-action": "../../components/bottom-navigation-action/bottom-navigation-action",
     "mui-button-group": "../../components/button-group/button-group",
     "mui-button": "../../components/button/button",
-    "mui-icon": "../../components/icon/icon"
+    "mui-card": "../../components/card/card",
+    "mui-card-actions": "../../components/card-actions/card-actions",
+    "mui-card-action-area": "../../components/card-action-area/card-action-area",
+    "mui-card-content": "../../components/card-content/card-content",
+    "mui-card-header": "../../components/card-header/card-header",
+    "mui-card-media": "../../components/card-media/card-media",
+    "mui-collapse": "../../components/collapse/collapse",
+    "mui-divider": "../../components/divider/divider",
+    "mui-drawer": "../../components/drawer/drawer",
+    "mui-fab": "../../components/fab/fab",
+    "mui-grid": "../../components/grid/grid",
+    "mui-icon": "../../components/icon/icon",
+    "mui-icon-button": "../../components/icon-button/icon-button",
+    "mui-list": "../../components/list/list",
+    "mui-list-item": "../../components/list-item/list-item",
+    "mui-progress": "../../components/progress/progress",
+    "mui-typography": "../../components/typography/typography"
   }
 }

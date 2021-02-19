@@ -66,14 +66,14 @@ Component({
       const {secondaryAction = {}} = this.data
       const {action} = secondaryAction
       if (action && typeof action === 'function') {
-        action(e)
+        action(e, this.dataset)
       }
     },
     _secondaryLongpress(e) {
       const {secondaryAction = {}} = this.data
       const {longpress} = secondaryAction
       if (longpress && typeof longpress === 'function') {
-        longpress(e)
+        longpress(e, this.dataset)
       }
     }
   },

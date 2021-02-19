@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/index/index",
     "pages/alert/alert",
     "pages/app-bar/app-bar",
     "pages/avatar/avatar",
@@ -18,7 +19,6 @@
     "pages/grid/grid",
     "pages/grid-list/grid-list",
     "pages/icon/icon",
-    "pages/index/index",
     "pages/input/input",
     "pages/list/list",
     "pages/menu/menu",

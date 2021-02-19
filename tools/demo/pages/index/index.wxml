@@ -1,10 +1,73 @@
 <view
   data-momoui-theme="{{theme}}"
   class="page"
+  style="padding-bottom: 100px;"
 >
+  <mui-typography variant="h4">组件总览</mui-typography>
+  <mui-typography mClass="paragraph" variant="body1"><text style="font-weight: 600;">MOMO UI</text>是<text style="font-weight: 600;">Material UI</text>在微信小程序上的实现。它提供了丰富与精美的基础组件，也在各组件的示例中展示了如何运用它们。</mui-typography>
   <mui-bottom-navigation mClass="bottomNavigation" value="{{value}}" onChange="{{SetValue}}" showLabels>
-    <mui-bottom-navigation-action icon="apps" label="组件总览" />
-    <mui-bottom-navigation-action icon="school" label="快速上手" />
-    <mui-bottom-navigation-action icon="theme-light-dark" label="主题" />
+    <mui-bottom-navigation-action style="flex-grow: 1;" icon="apps" label="组件总览" />
+    <mui-bottom-navigation-action style="flex-grow: 1;" icon="school" label="快速上手" />
+    <mui-bottom-navigation-action style="flex-grow: 1;" icon="theme-light-dark" label="主题" />
   </mui-bottom-navigation>
+  <block wx:for="{{components}}" wx:key="key">
+    <mui-typography mClass="header2" variant="h5">{{item.title}}</mui-typography>
+    <view>
+      <mui-grid container>
+        <mui-grid wx:for="{{item.children}}" wx:key="key" wx:for-item="subitem" item xs="{{12}}" sm="auto" mStyle="min-width: 280px;">
+          <mui-card mClass="CompCard">
+            <mui-card-header title="{{subitem.title}}" subheader="{{subitem.subtitle}}">
+              <mui-avatar slot="avatar" mStyle="background-color: #f44336">{{subitem.avatar}}</mui-avatar>
+              <mui-icon-button bindtap="NavigateTo" data-path="{{subitem.path}}" slot="action" icon="chevron-right" />
+            </mui-card-header>
+            <mui-divider />
+            <mui-card-action-area bindtap="NavigateTo" data-path="{{subitem.path}}">
+              <mui-card-content>
+                <mui-card-media
+                  image="{{subitem.briefimg || '../../assets/components/'+subitem.key+'.svg'}}"
+                  imageStyle="width: {{subitem.img.width || 150}}px;height: {{subitem.img.height || 105}}px;"
+                />
+              </mui-card-content>
+            </mui-card-action-area>
+          </mui-card>
+        </mui-grid>
+      </mui-grid>
+    </view>
+  </block>
+  <mui-backdrop mStyle="z-index: 1201; color: #fff;" open="{{loading}}">
+    <mui-progress wx:if="{{loading}}" color="inherit" />
+  </mui-backdrop>
+  <mui-drawer anchor="left" open="{{open}}" onClose="{{CloseDrawer}}">
+    <mui-list wx:if="{{open}}">
+      <block wx:for="{{components}}" wx:key="key">
+        <mui-list-item primary="{{item.title}}" />
+        <mui-list-item
+          bindtap="NavigateTo"
+          button
+          indent="{{48}}"
+          primary="{{subitem.title}}"
+          secondary="{{subitem.subtitle}}"
+          secondaryAction="{{ {icon: 'chevron-right', action: NavigateTo} }}"
+          data-path="{{subitem.path}}"
+          wx:for="{{item.children}}"
+          wx:key="key"
+          wx:for-item="subitem"
+        />
+      </block>
+    </mui-list>
+  </mui-drawer>
+  <view style="position: fixed;bottom: 80px;left: 8px;">
+    <mui-fab
+      bindtap="OpenDrawer"
+      color="primary"
+      disabled="{{loading2}}"
+      icon="menu"
+      size="small"
+    />
+    <mui-progress
+      wx:if="{{loading2}}"
+      size="{{48}}"
+      mStyle="color: #4caf50;position: absolute;top: -4px;left: -4px;"
+    />
+  </view>
 </view>

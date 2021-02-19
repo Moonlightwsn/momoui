@@ -152,7 +152,7 @@
           <mui-grid item>
             <mui-form-control>
               <mui-input-label>With a grid</mui-input-label>
-              <mui-input />
+              <mui-input mStyle="max-width: 200px;" />
             </mui-form-control>
           </mui-grid>
         </mui-grid>

@@ -3,7 +3,7 @@
   class="page"
 >
   <mui-typography variant="h4">Icons 图标</mui-typography>
-  <mui-typography mClass="paragraph" variant="body2">MOMO UI 内置了300多个图标供您使用（本页最后将展示所有图标），所有内置图标取自网站 https://materialdesignicons.com/ ，你也可以从这个网站或者其他渠道取得图标并在MOMO UI中使用</mui-typography>
+  <mui-typography mClass="paragraph" variant="body2">MOMO UI 内置了300多个图标供您使用（本页最后将展示所有图标），所有内置图标取自网站 <text selectable user-select>https://materialdesignicons.com/</text> <mui-icon bindtap="CopyUrl" mStyle="margin-left: 8px;vertical-align: middle;font-size: 20px;" name="clipboard-text" /> ，你也可以从这个网站或者其他渠道取得图标并在MOMO UI中使用</mui-typography>
   <mui-typography mClass="header2" variant="h5">图标属性</mui-typography>
   <mui-typography mClass="paragraph" variant="body2">通过 name 属性指定图标, 使用前需要在 app.js 中设置全局变量 <label style="font-weight: 600;">momouiRootPath： 你当前安装MOMO UI的目录</label>，如果不设置则默认为 /miniprogram_npm/momoui-miniprogram/ </mui-typography>
   <view class="demo-box">

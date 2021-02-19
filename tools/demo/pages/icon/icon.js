@@ -54,4 +54,9 @@ Page({
       this.setData({icons: app.builtinicons})
     }
   },
+  CopyUrl() {
+    wx.setClipboardData({
+      data: 'https://materialdesignicons.com/'
+    })
+  }
 })
