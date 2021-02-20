@@ -23,6 +23,7 @@ Page({
           const {files = []} = res || {}
           if (Array.isArray(files)) {
             app.builtinicons = files.map(item => item.substr(0, item.length - 4)).sort()
+            console.log(JSON.stringify(app.builtinicons))
             this.setData({icons: app.builtinicons, loading: false, error: false})
           }
         },

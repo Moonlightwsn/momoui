@@ -1,5 +1,9 @@
 import themeMixin from '../../behaviors/theme'
 
+/* eslint-disable */
+const app = getApp()
+/* eslint-disable */
+
 Page({
   behaviors: [themeMixin],
   data: {
@@ -7,6 +11,8 @@ Page({
     loading: false,
     loading2: false,
     open: false,
+    scrollIntoView: '',
+    scrollIntoView2: '',
     components: [{
       key: 'layout',
       title: 'Layout 布局',
@@ -238,12 +244,17 @@ Page({
       }]
     }],
   },
-  onLoad() {
-    this.setData({
+  onLoad(q) {
+    const newData = {
       SetValue: this.SetValue.bind(this),
       CloseDrawer: this.CloseDrawer.bind(this),
       NavigateTo: this.NavigateTo.bind(this),
-    })
+      GotoPlanB: this.GotoPlanB.bind(this),
+    }
+    if (q && q.current) {
+      newData.value = Number(q.current) || 0
+    }
+    this.setData(newData)
   },
   SetValue(e) {
     const {current} = e.detail
@@ -265,7 +276,7 @@ Page({
           wx.navigateTo({
             url: to,
             complete: () => {
-              this.setData({loading: false, open: false})
+              this.setData({loading: false})
             }
           })
         }, 325)
@@ -281,5 +292,16 @@ Page({
   },
   CloseDrawer() {
     this.setData({open: false})
+  },
+  ScrollToTop() {
+    this.setData({scrollIntoView: 'top'})
+  },
+  GotoPlanB() {
+    this.setData({scrollIntoView2: 'planb'})
+  },
+  ChangeTheme() {
+    let newTheme = this.data.theme === 'light' ? 'dark' : 'light'
+    app.momouiTheme = newTheme
+    wx.redirectTo({ url: '/pages/index/index?current=2' })
   },
 })

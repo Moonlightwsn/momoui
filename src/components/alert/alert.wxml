@@ -3,7 +3,7 @@
   mStyle="{{mStyle}}"
   elevation="0"
 >
-  <view class="alert-icon">
+  <view class="alert-icon" style="{{_showIconStyle}}">
     <mui-icon
       wx:if="{{icon}}"
       color="{{icon.color}}"

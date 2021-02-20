@@ -7,19 +7,10 @@
   <mui-typography mClass="header2" variant="h5">简单的工具提示</mui-typography>
   <view class="demo-box">
     <mui-tooltip title="delete">
-      <mui-button
-        shape="circle"
-        icon="delete"
-      />
+      <mui-icon-button icon="delete" />
     </mui-tooltip>
     <mui-tooltip mStyle="margin: 16px;" title="add">
-      <mui-button
-        shape="circle"
-        variant="contained"
-        color="primary"
-        icon="plus"
-        size="large"
-      />
+      <mui-fab color="primary" icon="plus" />
     </mui-tooltip>
   </view>
   <mui-typography mClass="header2" variant="h5">工具提示的定位</mui-typography>
@@ -66,11 +57,5 @@
   title="like"
   placement="top"
 >
-  <mui-button
-    shape="circle"
-    icon="heart"
-    variant="contained"
-    size="large"
-    color="secondary"
-  />
+  <mui-fab color="secondary" icon="heart" />
 </mui-tooltip>

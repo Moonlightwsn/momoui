@@ -1,7 +1,9 @@
 {
   "usingComponents": {
     "mui-button": "../../components/button/button",
+    "mui-fab": "../../components/fab/fab",
     "mui-grid": "../../components/grid/grid",
+    "mui-icon-button": "../../components/icon-button/icon-button",
     "mui-tooltip": "../../components/tooltip/tooltip",
     "mui-typography": "../../components/typography/typography"
   }

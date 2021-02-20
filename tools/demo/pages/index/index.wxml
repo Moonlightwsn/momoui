@@ -1,73 +1,183 @@
 <view
   data-momoui-theme="{{theme}}"
-  class="page"
-  style="padding-bottom: 100px;"
 >
-  <mui-typography variant="h4">组件总览</mui-typography>
-  <mui-typography mClass="paragraph" variant="body1"><text style="font-weight: 600;">MOMO UI</text>是<text style="font-weight: 600;">Material UI</text>在微信小程序上的实现。它提供了丰富与精美的基础组件，也在各组件的示例中展示了如何运用它们。</mui-typography>
+  <swiper style="height: 100vh;" current="{{value}}" bindchange="SetValue">
+    <swiper-item>
+      <scroll-view scroll-y style="overflow-y:auto;height: 100vh;" scroll-into-view="{{scrollIntoView}}" scroll-with-animation>
+        <view style="padding: 24px 16px 100px;box-sizing: border-box;" id="top">
+          <mui-typography variant="h4">组件总览</mui-typography>
+          <mui-typography mClass="paragraph" variant="body1"><text style="font-weight: 600;">MOMO UI</text>是<text style="font-weight: 600;">Material UI</text>在微信小程序上的实现。它提供了丰富与精美的基础组件，本页的各组件示例中也分别展示了如何运用它们。</mui-typography>
+          <block wx:for="{{components}}" wx:key="key">
+            <mui-typography mClass="header2" variant="h5">{{item.title}}</mui-typography>
+            <view>
+              <mui-grid container>
+                <mui-grid wx:for="{{item.children}}" wx:key="key" wx:for-item="subitem" item xs="{{12}}" sm="auto" mStyle="min-width: 280px;">
+                  <mui-card mClass="CompCard">
+                    <mui-card-header title="{{subitem.title}}" subheader="{{subitem.subtitle}}">
+                      <mui-avatar slot="avatar" mStyle="background-color: #f44336">{{subitem.avatar}}</mui-avatar>
+                      <mui-icon-button bindtap="NavigateTo" data-path="{{subitem.path}}" slot="action" icon="chevron-right" />
+                    </mui-card-header>
+                    <mui-divider />
+                    <mui-card-action-area bindtap="NavigateTo" data-path="{{subitem.path}}">
+                      <mui-card-content>
+                        <mui-card-media
+                          image="{{subitem.briefimg || '../../assets/components/'+subitem.key+'.svg'}}"
+                          imageStyle="width: {{subitem.img.width || 150}}px;height: {{subitem.img.height || 105}}px;"
+                        />
+                      </mui-card-content>
+                    </mui-card-action-area>
+                  </mui-card>
+                </mui-grid>
+              </mui-grid>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y scroll-x style="overflow-y:auto;height: 100vh;" scroll-into-view="{{scrollIntoView2}}" scroll-with-animation>
+        <view style="padding: 24px 16px 100px;box-sizing: border-box;">
+          <mui-typography variant="h4">快速上手</mui-typography>
+          <mui-typography mClass="paragraph" variant="body2" color="textSecondary">在开始之前，希望你已经学习过小程序的开发与使用，并且了解在小程序中如何使用自定义组件，在此基础上使用 MOMO UI 为你开发的小程序添砖加瓦。微信的基础库建议在 2.11.2 版本以上。</mui-typography>
+          <mui-typography variant="caption" mStyle="word-break:break-all;">微信小程序开发官方文档: <text selectable user-select>https://developers.weixin.qq.com/miniprogram/dev/framework/</text></mui-typography>
+          <mui-typography mClass="header2" variant="h6">安装 MOMO UI</mui-typography>
+          <view class="code"><text class="line" selectable user-select>$ npm install momoui-miniprogram</text></view>
+          <mui-chip variant="outlined" avatar="help-circle-outline" color="secondary" label="不想安装npm包？点我" size="small" onClick="{{GotoPlanB}}" />
+          <mui-alert mStyle="margin-top: 12px;" severity="info">如果使用的开发者工具版本在 v1.02.1811150 之前，在安装 MOMO UI 的 npm 包时，建议使用 --production 选项</mui-alert>
+          <mui-typography mClass="paragraph" variant="h6">构建npm</mui-typography>
+          <mui-typography mClass="paragraph" variant="body2">点击开发者工具中的菜单栏：工具 --> 构建 npm</mui-typography>
+          <mui-alert severity="warning">构建npm后，MOMO UI 所在的目录默认是 <text style="font-weight: 500;">/miniprogram_npm/momoui-miniprogram/</text> ，你也可以自行调整该目录，如果有所调整，请将下文中所有出现该目录的地方替换为你调整后的新目录</mui-alert>
+          <mui-typography mClass="paragraph" variant="h6">开始使用</mui-typography>
+          <mui-typography mClass="paragraph" variant="body2">在 app.wxss 里引入 MOMO UI 的样式</mui-typography>
+          <view class="code">
+            <text class="line" selectable user-select>@import '/miniprogram_npm/momoui-miniprogram/styles/static/fonts/roboto.wxss';</text>
+            <text class="line" selectable user-select>@import '/miniprogram_npm/momoui-miniprogram/styles/common.wxss';</text>
+          </view>
+          <mui-typography mClass="paragraph" variant="body2">在 app.js 里声明 MOMO UI 所在目录，默认情况下可忽略这一步</mui-typography>
+          <view class="code">
+            <text class="line" selectable user-select> App({ </text>
+            <text class="line" style="padding-left: 16px;" selectable user-select> momouiRootPath: '调整过后的目录', </text>
+            <text class="line" selectable user-select> }) </text>
+          </view>
+          <mui-typography mClass="paragraph" variant="body2">在页面中引入你想使用的组件，比如 Button 和 Tooptip 组件</mui-typography>
+          <mui-typography mClass="paragraph" variant="body2">1. 在页面的 json 文件加入 usingComponents 配置字段</mui-typography>
+          <view class="code">
+            <text class="line" selectable user-select> { </text>
+            <text class="line" style="padding-left: 16px;" selectable user-select> "usingComponents": { </text>
+            <text class="line" style="padding-left: 32px;" selectable user-select> "mui-button": "momoui/button/button" </text>
+            <text class="line" style="padding-left: 32px;" selectable user-select> "mui-tooltip": "momoui/tooltip/tooltip" </text>
+            <text class="line" style="padding-left: 16px;" selectable user-select> } </text>
+            <text class="line" selectable user-select> } </text>
+          </view>
+          <mui-typography mClass="paragraph" variant="body2">2. 在页面的 wxml 文件中使用组件</mui-typography>
+          <view class="code">
+            <text class="line" selectable user-select> {{'<'}}mui-tooltip title="Tip"{{'>'}} </text>
+            <text class="line" style="padding-left: 16px;" selectable user-select> {{'<'}}mui-button color="primary" variant="contained"{{'>'}} </text>
+            <text class="line" style="padding-left: 32px;" selectable user-select> 点我 </text>
+            <text class="line" style="padding-left: 16px;" selectable user-select> {{'<'}}/mui-button{{'>'}} </text>
+            <text class="line" selectable user-select> {{'<'}}/mui-tooltip{{'>'}} </text>
+          </view>
+          <mui-alert icon="{{false}}">
+            更多更复杂的组件展示效果可以在 “组件总览” 中一一查看，同时结合示例的源码可以学习所有组件的使用方法。示例代码的下载地址就在下方。
+          </mui-alert>
+          <mui-divider mStyle="margin: 24px 0;" />
+          <view id="planb"></view>
+          <mui-typography mClass="paragraph" variant="h6">下载源码</mui-typography>
+          <mui-typography mClass="paragraph" variant="body2">
+            如果你不想安装 MOMO UI 的 npm包，可以下载 MOMO UI 的源码，并参考源码中附带的 demo 示例，直接进行开发（原则上并不推荐这种做法）
+          </mui-typography>
+          <mui-typography variant="caption" mStyle="word-break:break-all;">MOMO UI 的 github 地址: <text selectable user-select>https://github.com/Moonlightwsn/momoui/</text></mui-typography>
+          <mui-typography mClass="paragraph" variant="caption" display="block">组件源码目录： /src</mui-typography>
+          <mui-typography mClass="paragraph" variant="caption" display="block">示例demo目录： /tools/demo</mui-typography>
+          <view class="code">
+            <text class="line" selectable user-select>$ git clone https://github.com/Moonlightwsn/momoui.git</text>
+            <text class="line" selectable user-select>$ cd momoui</text>
+            <text class="line" selectable user-select>$ npm install</text>
+            <text class="line" selectable user-select>$ npm run dev 或者 npm run watch  <text style="color: #6a737d"># 热更新模式</text></text>
+            <text style="color: #6a737d;margin: 16px 0;display: block;"># 执行完上述命令后，会生成一个 miniprogram_dev 目录，该目录是一个小程序项目目录，在开发者工具中打开此目录即可查看整个demo</text>
+          </view>
+          <mui-divider mStyle="margin: 24px 0;" />
+          <mui-typography mClass="paragraph" variant="h6">注意事项</mui-typography>
+          <mui-typography mClass="paragraph" variant="body2">建议在 app.json 配置文件中配置 "style": "v2" </mui-typography>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y scroll-x style="overflow-y:auto;height: 100vh;" scroll-with-animation>
+        <view style="padding: 24px 16px 100px;box-sizing: border-box;">
+          <mui-typography variant="h4" mStyle="margin-bottom: 24px;">切换主题</mui-typography>
+          <mui-alert variant="outlined" icon="{{false}}" severity="info">
+            <mui-typography mClass="paragraph" variant="body2">微信客户端从7.0.12开始正式支持暗黑模式即 DarkMode ，MOMO UI 在 2.0 版本也开始为所有组件适配暗黑模式下的显示色调</mui-typography>
+            <mui-typography mClass="paragraph" variant="body2">建议先阅读微信小程序官方文档 <text selectable user-select>DarkMode 适配指南</text> 这一章节</mui-typography>
+            <mui-typography mClass="paragraph" variant="body2">MOMO UI 适配 DarkMode 的方法很简单，只需要在页面根节点或者组件的外层结点增加属性 data-momoui-theme="dark" </mui-typography>
+            <mui-typography mClass="paragraph" variant="body2">你可以选择让用户自行切换主题，也可以对微信客户端的主题切换事件进行监听，好让 MOMO UI 的主题跟随微信客户端</mui-typography>
+            <mui-typography mClass="paragraph" variant="body2">可以点击右下角的悬浮按钮切换主题试试看</mui-typography>
+          </mui-alert>
+          <mui-divider mStyle="margin: 24px 0;" />
+          <mui-alert variant="filled" severity="info" icon="handshake" title="欢迎完善 MOMO UI">
+            如果你觉得 MOMO UI 做的不错，或者 MOMO UI 对你的工作和个人开发有所帮助，欢迎去 MOMO UI 在github上的开源仓库提建议和bug；如果你对 MOMO UI 的开发有兴趣，也欢迎帮助维护和完善它的开发；最后如果你有微信小程序或者Web前端开发与合作需求，可以联系我！我的个人QQ号：<text selectable user-select>543456277</text>！谢谢大家！
+          </mui-alert>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
   <mui-bottom-navigation mClass="bottomNavigation" value="{{value}}" onChange="{{SetValue}}" showLabels>
     <mui-bottom-navigation-action style="flex-grow: 1;" icon="apps" label="组件总览" />
     <mui-bottom-navigation-action style="flex-grow: 1;" icon="school" label="快速上手" />
     <mui-bottom-navigation-action style="flex-grow: 1;" icon="theme-light-dark" label="主题" />
   </mui-bottom-navigation>
-  <block wx:for="{{components}}" wx:key="key">
-    <mui-typography mClass="header2" variant="h5">{{item.title}}</mui-typography>
-    <view>
-      <mui-grid container>
-        <mui-grid wx:for="{{item.children}}" wx:key="key" wx:for-item="subitem" item xs="{{12}}" sm="auto" mStyle="min-width: 280px;">
-          <mui-card mClass="CompCard">
-            <mui-card-header title="{{subitem.title}}" subheader="{{subitem.subtitle}}">
-              <mui-avatar slot="avatar" mStyle="background-color: #f44336">{{subitem.avatar}}</mui-avatar>
-              <mui-icon-button bindtap="NavigateTo" data-path="{{subitem.path}}" slot="action" icon="chevron-right" />
-            </mui-card-header>
-            <mui-divider />
-            <mui-card-action-area bindtap="NavigateTo" data-path="{{subitem.path}}">
-              <mui-card-content>
-                <mui-card-media
-                  image="{{subitem.briefimg || '../../assets/components/'+subitem.key+'.svg'}}"
-                  imageStyle="width: {{subitem.img.width || 150}}px;height: {{subitem.img.height || 105}}px;"
-                />
-              </mui-card-content>
-            </mui-card-action-area>
-          </mui-card>
-        </mui-grid>
-      </mui-grid>
-    </view>
-  </block>
   <mui-backdrop mStyle="z-index: 1201; color: #fff;" open="{{loading}}">
     <mui-progress wx:if="{{loading}}" color="inherit" />
   </mui-backdrop>
-  <mui-drawer anchor="left" open="{{open}}" onClose="{{CloseDrawer}}">
-    <mui-list wx:if="{{open}}">
-      <block wx:for="{{components}}" wx:key="key">
-        <mui-list-item primary="{{item.title}}" />
-        <mui-list-item
-          bindtap="NavigateTo"
-          button
-          indent="{{48}}"
-          primary="{{subitem.title}}"
-          secondary="{{subitem.subtitle}}"
-          secondaryAction="{{ {icon: 'chevron-right', action: NavigateTo} }}"
-          data-path="{{subitem.path}}"
-          wx:for="{{item.children}}"
-          wx:key="key"
-          wx:for-item="subitem"
-        />
-      </block>
-    </mui-list>
-  </mui-drawer>
-  <view style="position: fixed;bottom: 80px;left: 8px;">
+  <block wx:if="{{value === 0}}">
+    <mui-drawer anchor="left" open="{{open}}" onClose="{{CloseDrawer}}">
+      <mui-list wx:if="{{open}}">
+        <block wx:for="{{components}}" wx:key="key">
+          <mui-list-item primary="{{item.title}}" />
+          <mui-list-item
+            bindtap="NavigateTo"
+            button
+            indent="{{48}}"
+            primary="{{subitem.title}}"
+            secondary="{{subitem.subtitle}}"
+            secondaryAction="{{ {icon: 'chevron-right', action: NavigateTo} }}"
+            data-path="{{subitem.path}}"
+            wx:for="{{item.children}}"
+            wx:key="key"
+            wx:for-item="subitem"
+          />
+        </block>
+      </mui-list>
+    </mui-drawer>
+    <view style="position: fixed;bottom: 80px;left: 8px;">
+      <mui-fab
+        bindtap="OpenDrawer"
+        color="primary"
+        disabled="{{loading2}}"
+        icon="menu"
+        size="small"
+      />
+      <mui-progress
+        wx:if="{{loading2}}"
+        size="{{48}}"
+        mStyle="color: #4caf50;position: absolute;top: -4px;left: -4px;"
+      />
+    </view>
     <mui-fab
-      bindtap="OpenDrawer"
-      color="primary"
-      disabled="{{loading2}}"
-      icon="menu"
+      bindtap="ScrollToTop"
+      mStyle="position: fixed;bottom: 80px;right: 8px;"
+      color="secondary"
+      icon="arrow-collapse-up"
       size="small"
     />
-    <mui-progress
-      wx:if="{{loading2}}"
-      size="{{48}}"
-      mStyle="color: #4caf50;position: absolute;top: -4px;left: -4px;"
+  </block>
+  <block wx:if="{{value === 2}}">
+    <mui-fab
+      bindtap="ChangeTheme"
+      mStyle="position: fixed;bottom: 80px;right: 8px;"
+      color="secondary"
+      icon="swap-horizontal-bold"
+      size="small"
     />
-  </view>
+  </block>
 </view>

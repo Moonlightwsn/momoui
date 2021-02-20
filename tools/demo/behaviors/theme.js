@@ -12,9 +12,13 @@ module.exports = Behavior({
     app.unWatchThemeChange && app.unWatchThemeChange(this.themeChanged)
   },
   methods: {
-    themeChanged(theme) {
+    themeChanged(theme, callback) {
       this.setData({
         theme
+      }, () => {
+        if (callback && typeof callback === 'function') {
+          callback()
+        }
       })
     }
   }

@@ -36,7 +36,7 @@
   "darkmode": true,
   "themeLocation": "theme.json",
   "window":{
-    "navigationBarTitleText": "MOMO UI",
+    "navigationBarTitleText": "MOMO UI v2.0",
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle",
     "backgroundColor": "@bgColor",

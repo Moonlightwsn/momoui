@@ -51,6 +51,7 @@ Component({
   },
   data: {
     _hasAction: false,
+    _showIconStyle: '',
   },
   lifetimes: {
     attached() {
@@ -75,6 +76,9 @@ Component({
     'icon, severity': function (icon, severity) {
       if (typeof icon !== 'boolean' && !icon) {
         this._setIcon(severity)
+      }
+      if (typeof icon === 'boolean' && !icon) {
+        this.setData({_showIconStyle: 'display: none;'})
       }
     },
     'onClose, closeText': function (onClose, closeText) {

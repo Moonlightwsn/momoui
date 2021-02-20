@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "mui-alert": "../../components/alert/alert",
     "mui-avatar": "../../components/avatar/avatar",
     "mui-backdrop": "../../components/backdrop/backdrop",
     "mui-bottom-navigation": "../../components/bottom-navigation/bottom-navigation",
@@ -12,6 +13,7 @@
     "mui-card-content": "../../components/card-content/card-content",
     "mui-card-header": "../../components/card-header/card-header",
     "mui-card-media": "../../components/card-media/card-media",
+    "mui-chip": "../../components/chip/chip",
     "mui-collapse": "../../components/collapse/collapse",
     "mui-divider": "../../components/divider/divider",
     "mui-drawer": "../../components/drawer/drawer",

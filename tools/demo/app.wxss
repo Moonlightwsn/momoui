@@ -37,6 +37,24 @@
   justify-content: flex-start;
 }
 
+.code {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  margin: 12px 0;
+  padding: 0 16px;
+  background-color: #272c34;
+  border-radius: 4px;
+  color: #66d9ef;
+  line-height: 1.5;
+  font-size: 15px;
+  overflow-x: auto;
+}
+
+.code .line {
+  display: block;
+  word-break:break-all;
+  margin: 16px 0;
+}
+
 .demo-box .demo-row.end {
   justify-content: flex-end;
 }
