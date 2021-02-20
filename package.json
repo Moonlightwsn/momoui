@@ -2,11 +2,14 @@
   "name": "momoui-miniprogram",
   "version": "2.0.1",
   "keywords": [
+    "material",
     "material ui",
-    "小程序",
-    "微信",
+    "material design",
+    "微信小程序",
     "wechat",
     "miniprogram",
+    "mp",
+    "momo",
     "momoui"
   ],
   "description": "类Material-UI的微信小程序组件库",
