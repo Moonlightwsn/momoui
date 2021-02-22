@@ -35,8 +35,8 @@ $ npm install momoui-miniprogram --production
 - 在app.wxss中全局引入momoui样式与字体
 
 ```css
-@import '/miniprogram_npm/momoui-miniprogram/styles/fonts/roboto/roboto.wxss';
-@import '/miniprogram_npm/momoui-miniprogram/styles/global.wxss';
+@import '/miniprogram_npm/momoui-miniprogram/styles/static/fonts/roboto.wxss';
+@import '/miniprogram_npm/momoui-miniprogram/styles/common.wxss';
 ```
 
 - 在app.js中设置momoui的所在目录 

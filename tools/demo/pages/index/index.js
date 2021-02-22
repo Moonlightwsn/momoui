@@ -256,6 +256,20 @@ Page({
     }
     this.setData(newData)
   },
+  onShareAppMessage() {
+    return {
+      title: 'MOMO UI - 精美丰富的类Material UI的小程序UI组件',
+      path: '/pages/index/index',
+      imageUrl: '../../assets/brief.png',
+    }
+  },
+  onShareTimeline() {
+    return {
+      title: 'MOMO UI - 精美丰富的类Material UI的小程序UI组件',
+      path: '/pages/index/index',
+      imageUrl: '../../assets/brief.png',
+    }
+  },
   SetValue(e) {
     const {current} = e.detail
     this.setData({
