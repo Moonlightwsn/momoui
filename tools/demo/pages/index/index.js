@@ -235,6 +235,13 @@ Page({
         img: {width: 114, height: 60},
         path: '/pages/tooltip/tooltip',
       }, {
+        key: 'popover',
+        title: 'Popover',
+        subtitle: '弹出框',
+        avatar: 'P',
+        img: {width: 132, height: 109},
+        path: '/pages/popover/popover',
+      }, {
         key: 'typography',
         title: 'Typography',
         subtitle: '文字铸排',

@@ -39,6 +39,7 @@ export default Behavior({
       } = this.data
       if (open) {
         if (autoHideDuration > 0) {
+          clearTimeout(this.closeTimer)
           this.closeTimer = setTimeout(() => {
             this._close()
           }, autoHideDuration)
@@ -48,47 +49,40 @@ export default Behavior({
           const {_onBeforeShow} = this
           if (_onBeforeShow && typeof _onBeforeShow === 'function') {
             const onBeforeShowRes = _onBeforeShow()
-            if (!onBeforeShowRes.then) {
-              needUpdateData = onBeforeShowRes
-              if (needUpdateData) {
-                this.setData(needUpdateData, () => {
-                  this.openTimer = setTimeout(() => {
-                    this.setData({_show: true})
-                  }, 50)
-                })
-              } else {
+            if (onBeforeShowRes && onBeforeShowRes.then) {
+              onBeforeShowRes.then(theNeedUpdateData => {
+                needUpdateData = theNeedUpdateData
+                if (needUpdateData) {
+                  this.setData(needUpdateData)
+                }
+                clearTimeout(this.openTimer)
                 this.openTimer = setTimeout(() => {
                   this.setData({_show: true})
                 }, 50)
-              }
-            } else {
-              _onBeforeShow().then(theNeedUpdateData => {
-                needUpdateData = theNeedUpdateData
-                if (needUpdateData) {
-                  this.setData(needUpdateData, () => {
-                    this.openTimer = setTimeout(() => {
-                      this.setData({_show: true})
-                    }, 50)
-                  })
-                } else {
-                  this.openTimer = setTimeout(() => {
-                    this.setData({_show: true})
-                  }, 50)
-                }
               }).catch(e => console.log(e))
+            } else {
+              needUpdateData = onBeforeShowRes
+              if (needUpdateData) {
+                this.setData(needUpdateData)
+              }
+              clearTimeout(this.openTimer)
+              this.openTimer = setTimeout(() => {
+                this.setData({_show: true})
+              }, 50)
             }
           } else {
+            clearTimeout(this.openTimer)
             this.openTimer = setTimeout(() => {
               this.setData({_show: true})
             }, 50)
           }
         })
       } else {
-        this.setData({_show: false}, () => {
-          this.closeTimer = setTimeout(() => {
-            this.setData({_open: false})
-          }, transitionDuration)
-        })
+        this.setData({_show: false})
+        clearTimeout(this.closeTimer)
+        this.closeTimer = setTimeout(() => {
+          this.setData({_open: false})
+        }, transitionDuration)
       }
     },
   },

@@ -1,0 +1,6 @@
+<view>
+  <mui-snack-bar anchorOrigin="{{ {vertical: 'bottom', horizontal: 'right'} }}" open="{{open}}" onClose="{{Close}}" transitionDuration="{{800}}">
+    <mui-alert severity="success" title="提示" message="这是一个测试" onClose="{{Close}}" />
+  </mui-snack-bar>
+  <mui-button bindtap="Open">Open</mui-button>
+</view>

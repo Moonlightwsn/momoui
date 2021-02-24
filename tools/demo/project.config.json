@@ -190,6 +190,11 @@
           "name": "typography",
           "pathName": "pages/typography/typography",
           "scene": null
+        },
+        {
+          "name": "lab",
+          "pathName": "pages/lab/lab",
+          "scene": null
         }
       ]
     }

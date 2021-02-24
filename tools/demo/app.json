@@ -31,7 +31,8 @@
     "pages/switch/switch",
     "pages/tabs/tabs",
     "pages/tooltip/tooltip",
-    "pages/typography/typography"
+    "pages/typography/typography",
+    "pages/lab/lab"
   ],
   "darkmode": true,
   "themeLocation": "theme.json",
