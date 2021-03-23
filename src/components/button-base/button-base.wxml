@@ -1,3 +1,4 @@
+<wxs module="ripple" src="../../wxs/ripple.wxs"></wxs>
 <view
   wx:if="{{component === 'view'}}"
   class="mui mui-button-base mui-ripple-base disabled-{{disabled}} {{mClass}}"
@@ -14,10 +15,7 @@
   wx:elif="{{component === 'button'}}"
   appParameter="{{openType === 'launchApp' ? appParameter : ''}}"
   class="mui mui-button-base mui-ripple-base disabled-{{disabled}} {{mClass}}"
-  bindtap="_RippleActionTest"
-  bindtouchstart="_RippleAction"
-  bindtouchend="_RippleEnd"
-  bindtouchcancel="_RippleEnd"
+  bindtap="_RippleAction"
   bind:getphonenumber="{{openType === 'getPhoneNumber' ? '_openTypeEvent' : '' }}"
   bind:getuserinfo="{{openType === 'getUserInfo' ? '_openTypeEvent' : '' }}"
   bind:opensetting="{{openType === 'openSetting' ? '_openTypeEvent' : '' }}"
@@ -41,4 +39,17 @@
 >
   <slot />
   <mui-ripple-container class="_mui-ripple-container"></mui-ripple-container>
+  <!--
+  <view
+    class="mui-ripple-container"
+    style="height:{{_rpcStyle.height}}px;width:{{_rpcStyle.width}}px;border-radius:{{_rpcStyle.borderRadius}}px"
+  >
+    <view
+      wx:for="{{_rippleList}}"
+      wx:key="key"
+      class="mui-ripple"
+      style="width:{{_rpcStyle.radius}}px;height:{{_rpcStyle.radius}}px;top:{{item.y}}px;left:{{item.x}}px;{{item.backgroundColor ? 'background-color:' + item.backgroundColor : ''}}"
+    />
+  </view>
+  -->
 </button>

@@ -10,6 +10,8 @@
   position: absolute;
   overflow: hidden;
   pointer-events: none;
+  top: 0;
+  left: 0;
 }
 
 .mui-ripple {

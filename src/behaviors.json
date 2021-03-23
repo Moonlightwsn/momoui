@@ -2,7 +2,6 @@
   "commonJs": [
     "./behaviors/checkGroupController",
     "./behaviors/checkController",
-    "./behaviors/formItem",
     "./behaviors/muiBase",
     "./behaviors/muiController",
     "./behaviors/openType",

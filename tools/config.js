@@ -93,5 +93,5 @@ module.exports = {
     }
   },
 
-  copy: ['styles/static'], // 将会复制到目标目录
+  copy: ['styles/static', 'wxs'], // 将会复制到目标目录
 }

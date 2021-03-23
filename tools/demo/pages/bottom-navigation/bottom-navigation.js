@@ -41,7 +41,4 @@ Page({
   bindtextareablur() {
     console.log('text blur')
   },
-  TEST(e) {
-    console.log(e)
-  },
 })

@@ -20,6 +20,7 @@ Component({
     radius: 0,
     backgroundColor: null,
   },
+  /*
   lifetimes: {
     attached() {
       this.setData({
@@ -27,26 +28,27 @@ Component({
       })
     },
   },
+  */
   methods: {
+    /*
     _getRippleItemNode(rippleItem) {
-      /*
+      console.log('getRef', rippleItem)
       if (!this._rippleItemMap) {
         this._rippleItemMap = {}
       }
       this._rippleItemMap[rippleKey] = rippleItem
-      */
       this._currentRippleItem = rippleItem
     },
     _RippleEnd() {
-      /*
+      console.log('ripple end', this._currentRippleItem)
       if (this._rippleItem) {
         this._rippleItem._RippleEnd()
       }
-      */
       if (this._currentRippleItem) {
         this._currentRippleItem._RippleEnd()
       }
     },
+    */
     _RippleAction(params: RippleParams) {
       const {
         width,

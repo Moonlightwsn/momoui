@@ -13,25 +13,26 @@ export default Behavior({
       value: ''
     },
   },
+  data: {
+    _rippleList: [],
+    _rpcStyle: {
+      width: 0,
+      height: 0,
+      borderRadius: 0,
+      radius: 0,
+    },
+  },
   methods: {
-    _RippleEnd() {
-      if (this._hasRippled) {
-        if (!this._muiRippleContainer) {
-          const _muiRippleContainer = this.selectComponent('._mui-ripple-container')
-          this._muiRippleContainer = _muiRippleContainer
-        }
-        this._muiRippleContainer._RippleEnd()
-      }
+    /*
+    _RippleAction(rippleParams) {
+      console.log(rippleParams)
     },
-    _RippleActionTest(e) {
-      console.log(1, e)
-    },
+    */
     _RippleAction(e) {
-      console.log(2, e)
       const {disableRipple} = this.data
       const {disabled} = this.data
-      if (!disableRipple && !disabled) {
-        this._hasRippled = true
+      if (!disableRipple && !disabled/*  && !this._hasRippled */) {
+        // this._hasRippled = true
         if (!this._muiRippleContainer) {
           const _muiRippleContainer = this.selectComponent('._mui-ripple-container')
           this._muiRippleContainer = _muiRippleContainer

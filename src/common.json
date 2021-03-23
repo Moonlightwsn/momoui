@@ -1,6 +1,7 @@
 {
   "commonJs": [
     "./common/utils",
-    "./common/base64"
+    "./common/base64",
+    "./common/transitionTypeMap"
   ]
 }

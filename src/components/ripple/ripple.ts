@@ -27,12 +27,14 @@ Component({
     }
   },
   lifetimes: {
+    /*
     attached() {
       const {getRef, rippleKey} = this.data
       if (getRef && typeof getRef === 'function') {
         getRef(this, rippleKey)
       }
     },
+    */
     ready() {
       // rippleContainer 负责创建ripple list
       // ripple 自身在渲染就绪时，自主触发一次Ripple动作
@@ -40,6 +42,7 @@ Component({
     }
   },
   methods: {
+    /*
     _RippleEnd() {
       this.animate(
         '.mui-ripple',
@@ -58,6 +61,7 @@ Component({
         }
       )
     },
+    */
     _RippleAction() {
       this.animate(
         '.mui-ripple',
@@ -66,15 +70,13 @@ Component({
           opacity: 0.3,
         }, {
           scale: [2, 2],
-          opacity: 0.3,
+          opacity: 0,
         }],
-        250,
+        600,
         () => {
-          /*
           this.triggerEvent('clearripple', {
             rippleKey: this.data.rippleKey
           })
-          */
         }
       )
     }
