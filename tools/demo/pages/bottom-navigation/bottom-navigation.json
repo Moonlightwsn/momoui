@@ -1,5 +1,7 @@
 {
   "usingComponents": {
+    "mui-drawer": "../../components/drawer/drawer",
+    "mui-input": "../../components/input/input",
     "mui-bottom-navigation": "../../components/bottom-navigation/bottom-navigation",
     "mui-bottom-navigation-action": "../../components/bottom-navigation-action/bottom-navigation-action",
     "mui-button": "../../components/button/button",

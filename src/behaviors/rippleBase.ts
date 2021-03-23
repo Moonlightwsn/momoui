@@ -14,16 +14,30 @@ export default Behavior({
     },
   },
   methods: {
+    _RippleEnd() {
+      if (this._hasRippled) {
+        if (!this._muiRippleContainer) {
+          const _muiRippleContainer = this.selectComponent('._mui-ripple-container')
+          this._muiRippleContainer = _muiRippleContainer
+        }
+        this._muiRippleContainer._RippleEnd()
+      }
+    },
+    _RippleActionTest(e) {
+      console.log(1, e)
+    },
     _RippleAction(e) {
+      console.log(2, e)
       const {disableRipple} = this.data
       const {disabled} = this.data
       if (!disableRipple && !disabled) {
+        this._hasRippled = true
         if (!this._muiRippleContainer) {
           const _muiRippleContainer = this.selectComponent('._mui-ripple-container')
           this._muiRippleContainer = _muiRippleContainer
         }
         if (this._muiRippleContainer) {
-          const {x, y} = e.detail
+          const {pageX: x, pageY: y} = e.changedTouches[0]
           const query = this.createSelectorQuery()
           query.select('.mui-ripple-base').fields({
             size: true,

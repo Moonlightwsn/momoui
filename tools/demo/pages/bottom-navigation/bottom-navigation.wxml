@@ -2,6 +2,9 @@
   data-momoui-theme="{{theme}}"
   class="page"
 >
+  <mui-button>Button</mui-button>
+  <button bindtap="TEST">TEST</button>
+  <!--
   <mui-typography variant="h4">Bottom Navigation 底部导航栏</mui-typography>
   <mui-typography mClass="paragraph" variant="body1">使用底部导航栏，您可以在应用程序的主要导航项之间跳转</mui-typography>
   <mui-typography mClass="header2" variant="h5">底部导航栏</mui-typography>
@@ -23,4 +26,5 @@
       <mui-bottom-navigation-action icon="folder" label="Folder" />
     </mui-bottom-navigation>
   </view>
+  -->
 </view>

@@ -164,7 +164,7 @@ Component({
     },
     showConfirmBar: {
       type: Boolean,
-      value: true,
+      value: false,
     },
     size: {
       type: String,
@@ -189,6 +189,7 @@ Component({
     _textareaHeight: 0,
     _hasInputLabel: false,
     _inputLabelShrink: false,
+    _textareaStyle: '',
   },
   lifetimes: {
     attached() {
@@ -381,6 +382,11 @@ Component({
       if (this._hasChangedLine) {
         this._AdjustTextareaHeight(rows, rowsMax)
       }
+    },
+    '_textAutoHeight, _textareaHeight': function (_textAutoHeight, _textareaHeight) {
+      this.setData({
+        _textareaStyle: (!_textAutoHeight && _textareaHeight) ? `height: ${_textareaHeight}px;` : ''
+      })
     },
     ...ObserversForControlledPropsByAncestor(controlledProps),
   },

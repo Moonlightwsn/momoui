@@ -1,7 +1,9 @@
 <view
   wx:if="{{component === 'view'}}"
   class="mui mui-button-base mui-ripple-base disabled-{{disabled}} {{mClass}}"
-  bindtap="_RippleAction"
+  bindtouchstart="_RippleAction"
+  bindtouchend="_RippleEnd"
+  bindtouchcancel="_RippleEnd"
   disabled="{{disabled}}"
   style="{{mStyle}}"
 >
@@ -12,7 +14,10 @@
   wx:elif="{{component === 'button'}}"
   appParameter="{{openType === 'launchApp' ? appParameter : ''}}"
   class="mui mui-button-base mui-ripple-base disabled-{{disabled}} {{mClass}}"
-  bindtap="_RippleAction"
+  bindtap="_RippleActionTest"
+  bindtouchstart="_RippleAction"
+  bindtouchend="_RippleEnd"
+  bindtouchcancel="_RippleEnd"
   bind:getphonenumber="{{openType === 'getPhoneNumber' ? '_openTypeEvent' : '' }}"
   bind:getuserinfo="{{openType === 'getUserInfo' ? '_openTypeEvent' : '' }}"
   bind:opensetting="{{openType === 'openSetting' ? '_openTypeEvent' : '' }}"

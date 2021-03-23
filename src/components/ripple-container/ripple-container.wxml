@@ -5,6 +5,7 @@
   <mui-ripple
     wx:key="key"
     wx:for="{{rippleArray}}"
+    getRef="{{_getRippleItemNode}}"
     background-color="{{backgroundColor}}"
     radius="{{radius}}"
     top="{{item.y}}"

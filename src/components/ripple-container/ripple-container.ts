@@ -20,7 +20,33 @@ Component({
     radius: 0,
     backgroundColor: null,
   },
+  lifetimes: {
+    attached() {
+      this.setData({
+        _getRippleItemNode: this._getRippleItemNode.bind(this),
+      })
+    },
+  },
   methods: {
+    _getRippleItemNode(rippleItem) {
+      /*
+      if (!this._rippleItemMap) {
+        this._rippleItemMap = {}
+      }
+      this._rippleItemMap[rippleKey] = rippleItem
+      */
+      this._currentRippleItem = rippleItem
+    },
+    _RippleEnd() {
+      /*
+      if (this._rippleItem) {
+        this._rippleItem._RippleEnd()
+      }
+      */
+      if (this._currentRippleItem) {
+        this._currentRippleItem._RippleEnd()
+      }
+    },
     _RippleAction(params: RippleParams) {
       const {
         width,
@@ -74,6 +100,11 @@ Component({
       const {rippleKey} = e.detail
       const tobeDeleteIndex = this.data.rippleArray.findIndex(item => item.key === rippleKey)
       this.data.rippleArray.splice(tobeDeleteIndex, 1)
+      /*
+      if (this._rippleItemMap) {
+        delete this._rippleItemMap[rippleKey]
+      }
+      */
       /**
        *  this._updateRippleArray()
        *  使用debounce防抖可以减少短时间内大量不必要的setData
