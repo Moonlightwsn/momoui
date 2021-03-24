@@ -16,9 +16,9 @@ module.exports = {
         var rippleKey = 'ripple-' + Math.round(Math.random() * 10000000000000000)
         var x = event.changedTouches[0].pageX
         var y = event.changedTouches[0].pageY
-        var left = event.target.offsetLeft
-        var top = event.target.offsetTop
-        // 在rippleBase中获取scrollLeft和scrollTop，再对rippleX, rippleY加以计算
+        // 在rippleBase中获取left, top, scrollLeft和scrollTop，再对rippleX, rippleY加以计算
+        // var left = event.target.offsetLeft
+        // var top = event.target.offsetTop
         // var scrollLeft = 0
         // var scrollTop = 0 
         var rippleBaseStyles = state.rippleBase.getComputedStyle([
@@ -38,8 +38,6 @@ module.exports = {
           key: rippleKey,
           x: x,
           y: y,
-          left: left,
-          top: top,
           centerX: centerRippleX,
           centerY: centerRippleY,
           width: width,

@@ -26,7 +26,6 @@ export default Behavior({
     _RippleAction(rippleParams) {
       const {disableRipple, disabled} = this.data
       if (!disableRipple && !disabled) {
-        console.log(rippleParams)
         const {
           _rippleList,
           _rpcStyle,
@@ -42,24 +41,21 @@ export default Behavior({
         }
         const query = this.createSelectorQuery()
         query.select('.mui-ripple-base').fields({
-          size: true,
           rect: true,
-          computedStyle: ['borderRadius']
         })
         query.selectViewport().scrollOffset()
         query.exec((res) => {
-          console.log(res)
-          const [, viewport] = res || {}
+          const [view, viewport] = res || {}
+          const {left = 0, top = 0} = view || {}
           const {scrollLeft = 0, scrollTop = 0} = viewport || {}
-          console.log(scrollLeft, scrollTop)
           let rippleX
           let rippleY
           if (centerRipple) {
             rippleX = rippleParams.centerX
             rippleY = rippleParams.centerY
           } else {
-            rippleX = (rippleParams.x - (rippleParams.left + scrollLeft)) - (rippleParams.radius / 2)
-            rippleY = (rippleParams.y - (rippleParams.top + scrollTop)) - (rippleParams.radius / 2)
+            rippleX = (rippleParams.x - (left + scrollLeft)) - (rippleParams.radius / 2)
+            rippleY = (rippleParams.y - (top + scrollTop)) - (rippleParams.radius / 2)
           }
           _rippleList.push({
             key: rippleParams.key,
