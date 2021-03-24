@@ -23,16 +23,57 @@ export default Behavior({
     },
   },
   methods: {
-    /*
     _RippleAction(rippleParams) {
-      console.log(rippleParams)
+      const {disableRipple, disabled} = this.data
+      if (!disableRipple && !disabled) {
+        const {
+          _rippleList,
+          _rpcStyle,
+          centerRipple,
+        } = this.data
+        const newData: any = {}
+        const newRpcStyles = {}
+        Object.keys(_rpcStyle).forEach(styleKey => {
+          const nextStyle = Number(rippleParams[styleKey])
+          if (_rpcStyle[styleKey] !== nextStyle) {
+            newRpcStyles[styleKey] = nextStyle
+          }
+        })
+        if (Object.keys(newRpcStyles).length > 0) {
+          newData._rpcStyle = newRpcStyles
+        }
+        _rippleList.push({
+          key: rippleParams.key,
+          x: centerRipple ? rippleParams.centerX : rippleParams.x,
+          y: centerRipple ? rippleParams.centerY : rippleParams.y,
+          rippleClass: rippleParams.rippleClass,
+        })
+        newData._rippleList = _rippleList
+        this.setData(newData)
+      }
     },
-    */
+    _RippleEnd({key, rippleClass = ''}) {
+      if (key) {
+        const endRippleIndex = this.data._rippleList.findIndex(item => item.key === key)
+        if (endRippleIndex > -1) {
+          this.setData({
+            [`_rippleList[${endRippleIndex}].rippleClass`]: rippleClass
+          })
+        }
+      }
+    },
+    _RippleAnimationEnd(e) {
+      const {detail: {animationName}, target: {dataset: {key}}} = e
+      if (key && animationName !== 'rippleLongpress') {
+        const tobeDeleteIndex = this.data._rippleList.findIndex(item => item.key === key)
+        this.data._rippleList.splice(tobeDeleteIndex, 1)
+      }
+    }
+    /*
     _RippleAction(e) {
       const {disableRipple} = this.data
       const {disabled} = this.data
-      if (!disableRipple && !disabled/*  && !this._hasRippled */) {
-        // this._hasRippled = true
+      if (!disableRipple && !disabled) {
         if (!this._muiRippleContainer) {
           const _muiRippleContainer = this.selectComponent('._mui-ripple-container')
           this._muiRippleContainer = _muiRippleContainer
@@ -76,5 +117,6 @@ export default Behavior({
         }
       }
     }
+    */
   }
 })

@@ -1,56 +1,92 @@
 module.exports = {
   touchstart: function(event, instance) {
     var state = instance.getState()
-    if (!state.rippleContainer) {
-      state.rippleContainer = instance.selectComponent('.mui-ripple-container')
-    }
-    if (!state.rippleBase) {
-      state.rippleBase = instance.selectComponent('.mui-ripple-base')
-    }
-    if (!state.rippling && state.rippleContainer && state.rippleBase) {
+    if (!state.rippling) {
       state.rippling = true
-      var x = event.changedTouches[0].pageX
-      var y = event.changedTouches[0].pageY
-      var left = event.target.offsetLeft
-      var top = event.target.offsetTop
-      var scrollLeft = 0
-      var scrollTop = 0
-      var rippleBaseStyles = state.rippleBase.getComputedStyle([
-        'width',
-        'height',
-        'left',
-        'top',
-        'borderRadius',
-        'scrollLeft',
-        'scrollTop',
-      ])
-      var width = rippleBaseStyles.width.slice(0, -2)
-      var height = rippleBaseStyles.height.slice(0, -2)
-      var borderRadius = rippleBaseStyles.borderRadius.slice(0, -2)
-      if (width > 0 && height > 0) {
-        var radius = Math.max(width, height)
-        var rippleX = (x - (left + scrollLeft)) - (radius / 2)
-        var rippleY = (y - (top + scrollTop)) - (radius / 2)
-        var centerRippleX = (width / 2) - (radius / 2)
-        var centerRippleY = (height / 2) - (radius / 2)
-        instance.callMethod('_RippleAction', {
-          key: 'ripple-' + Math.round(Math.random() * 10000000000000000),
-          x: rippleX,
-          y: rippleY,
-          centerX: centerRippleX,
-          centerY: centerRippleY,
-          width: width,
-          height: height,
-          radius: radius,
-          borderRadius: borderRadius,
-        })
+      if (!state.rippleQueue) {
+        state.rippleQueue = []
+      }
+      if (!state.longpressRippleQueue) {
+        state.longpressRippleQueue = []
+      }
+      if (!state.rippleBase) {
+        state.rippleBase = instance.selectComponent('.mui-ripple-base')
+      }
+      if (state.rippleBase) {
+        var rippleKey = 'ripple-' + Math.round(Math.random() * 10000000000000000)
+        var x = event.changedTouches[0].pageX
+        var y = event.changedTouches[0].pageY
+        var left = event.target.offsetLeft
+        var top = event.target.offsetTop
+        var scrollLeft = 0
+        var scrollTop = 0
+        var rippleBaseStyles = state.rippleBase.getComputedStyle([
+          'width',
+          'height',
+          'left',
+          'top',
+          'borderRadius',
+          'scrollLeft',
+          'scrollTop',
+        ])
+        var width = rippleBaseStyles.width.slice(0, -2)
+        var height = rippleBaseStyles.height.slice(0, -2)
+        var borderRadius = rippleBaseStyles.borderRadius.slice(0, -2)
+        if (width > 0 && height > 0) {
+          var radius = Math.max(width, height)
+          var rippleX = (x - (left + scrollLeft)) - (radius / 2)
+          var rippleY = (y - (top + scrollTop)) - (radius / 2)
+          var centerRippleX = (width / 2) - (radius / 2)
+          var centerRippleY = (height / 2) - (radius / 2)
+          var rippleParams = {
+            key: rippleKey,
+            x: rippleX,
+            y: rippleY,
+            centerX: centerRippleX,
+            centerY: centerRippleY,
+            width: width,
+            height: height,
+            radius: radius,
+            borderRadius: borderRadius,
+          }
+          state.rippleQueue.push(rippleParams)
+        }
       }
     }
   },
   touchend: function(event, instance) {
     var state = instance.getState()
-    if (state.rippling) {
-      state.rippling = false
+    if (state.rippling && state.longpressRippleQueue) {
+      var lastLongpressRippleKey = state.longpressRippleQueue.shift()
+      if (lastLongpressRippleKey) {
+        state.rippling = false
+        instance.callMethod('_RippleEnd', {
+          key: lastLongpressRippleKey,
+          rippleClass: 'ripple-end'
+        })
+      }
     }
   },
+  tap: function(_, instance) {
+    var state = instance.getState()
+    if (state.rippling) {
+      var lastRippleParams = state.rippleQueue.shift()
+      state.rippling = false
+      if (lastRippleParams) {
+        lastRippleParams.rippleClass = 'ripple-tap'
+        instance.callMethod('_RippleAction', lastRippleParams)
+      }
+    }
+  },
+  longpress: function(_, instance) {
+    var state = instance.getState()
+    if (state.rippling && state.rippleQueue) {
+      var lastRippleParams = state.rippleQueue.shift()
+      if (lastRippleParams) {
+        state.longpressRippleQueue.push(lastRippleParams.key)
+        lastRippleParams.rippleClass = 'ripple-longpress'
+        instance.callMethod('_RippleAction', lastRippleParams)
+      }
+    }
+  }
 }

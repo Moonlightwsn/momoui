@@ -1,7 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "mui-ripple-container": "../ripple-container/ripple-container",
     "mui-icon": "../icon/icon"
   }
 }
