@@ -4,6 +4,7 @@
   mClass="mui-button {{mClass}}"
   mStyle="flex-grow: 1;{{mStyle}}"
   bindtap="_Select"
+  bindlongpress="_Select"
   component="button"
   hoverClass="{{disabled ? '' : (hoverClass ? hoverClass : 'mui-button-hover')}}"
 >

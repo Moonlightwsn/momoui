@@ -115,7 +115,7 @@ Component({
         _templateData.drawerType = 'docker'
         _templateData.elevation = 0
         if (variant === 'permanent') {
-          _transitionStyle = 'transition: width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;'
+          _transitionStyle = 'transition: width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms, height 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;'
         } else if (variant === 'persistent') {
           _templateData.persistent = true
         }

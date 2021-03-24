@@ -29,7 +29,7 @@
     placeholderClass="mui-input-placeholder {{placeholderClass}}"
     selectionStart="{{selectionStart}}"
     selectionEnd="{{selectionEnd}}"
-    style="{{(!_textAutoHeight && _textareaHeight) ? 'height:'+_textareaHeight+'px' : ''}}"
+    style="{{_textareaStyle}}"
     showConfirmBar="{{showConfirmBar}}"
   />
   <input

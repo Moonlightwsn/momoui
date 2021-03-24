@@ -10,14 +10,60 @@
   position: absolute;
   overflow: hidden;
   pointer-events: none;
+  top: 0;
+  left: 0;
 }
 
 .mui-ripple {
   display: inline-block;
   position: absolute;
   opacity: 0;
-  border-radius: 100%;
+  border-radius: 50%;
   background-color: rgb(0, 0, 0);
+  &.ripple-tap {
+    animation: rippleTap 800ms ease;
+    animation-fill-mode: forwards;
+  }
+  &.ripple-longpress {
+    animation: rippleLongpress 600ms ease;
+    animation-fill-mode: forwards;
+  }
+  &.ripple-end {
+    animation: rippleEnd 200ms ease;
+    animation-fill-mode: forwards;
+  }
+  @keyframes rippleTap {
+    from {
+      transform: scale(0);
+      opacity: 0.3;
+    }
+    to {
+      transform: scale(2.83);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes rippleLongpress {
+    from {
+      transform: scale(0);
+      opacity: 0.3;
+    }
+    to {
+      transform: scale(2.83);
+      opacity: 0.3;
+    }
+  }
+  
+  @keyframes rippleEnd {
+    from {
+      transform: scale(2.83);
+      opacity: 0.3;
+    }
+    to {
+      transform: scale(2.83);
+      opacity: 0;
+    }
+  }
 }
 
 .mui-variant-text,.mui-variant-outlined {
