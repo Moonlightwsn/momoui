@@ -14,12 +14,13 @@
   <!-- <mui-ripple-container class="_mui-ripple-container"></mui-ripple-container> -->
   <view
     class="mui-ripple-container"
-    style="height:{{_rpcStyle.height}}px;width:{{_rpcStyle.width}}px;border-radius:{{_rpcStyle.borderRadius}}px"
+    style="height:{{_rpcStyle.height}}px;width:{{_rpcStyle.width}}px;border-radius:{{_rpcStyle.borderRadius}}"
   >
     <view
       wx:for="{{_rippleList}}"
       wx:key="key"
       data-key="{{item.key}}"
+      bindanimationend="_RippleAnimationEnd"
       class="mui-ripple {{item.rippleClass}}"
       style="width:{{_rpcStyle.radius}}px;height:{{_rpcStyle.radius}}px;top:{{item.y}}px;left:{{item.x}}px;{{rippleColor ? 'background-color:' + rippleColor : ''}}"
     />
@@ -59,12 +60,13 @@
   <!-- <mui-ripple-container class="_mui-ripple-container"></mui-ripple-container> -->
   <view
     class="mui-ripple-container"
-    style="height:{{_rpcStyle.height}}px;width:{{_rpcStyle.width}}px;border-radius:{{_rpcStyle.borderRadius}}px"
+    style="height:{{_rpcStyle.height}}px;width:{{_rpcStyle.width}}px;border-radius:{{_rpcStyle.borderRadius}};"
   >
     <view
       wx:for="{{_rippleList}}"
       wx:key="key"
       data-key="{{item.key}}"
+      bindanimationend="_RippleAnimationEnd"
       class="mui-ripple {{item.rippleClass}}"
       style="width:{{_rpcStyle.radius}}px;height:{{_rpcStyle.radius}}px;top:{{item.y}}px;left:{{item.x}}px;{{rippleColor ? 'background-color:' + rippleColor : ''}}"
     />

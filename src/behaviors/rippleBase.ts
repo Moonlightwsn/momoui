@@ -26,6 +26,7 @@ export default Behavior({
     _RippleAction(rippleParams) {
       const {disableRipple, disabled} = this.data
       if (!disableRipple && !disabled) {
+        console.log(rippleParams)
         const {
           _rippleList,
           _rpcStyle,
@@ -34,22 +35,41 @@ export default Behavior({
         const newData: any = {}
         const newRpcStyles = {}
         Object.keys(_rpcStyle).forEach(styleKey => {
-          const nextStyle = Number(rippleParams[styleKey])
-          if (_rpcStyle[styleKey] !== nextStyle) {
-            newRpcStyles[styleKey] = nextStyle
-          }
+          newRpcStyles[styleKey] = rippleParams[styleKey]
         })
         if (Object.keys(newRpcStyles).length > 0) {
           newData._rpcStyle = newRpcStyles
         }
-        _rippleList.push({
-          key: rippleParams.key,
-          x: centerRipple ? rippleParams.centerX : rippleParams.x,
-          y: centerRipple ? rippleParams.centerY : rippleParams.y,
-          rippleClass: rippleParams.rippleClass,
+        const query = this.createSelectorQuery()
+        query.select('.mui-ripple-base').fields({
+          size: true,
+          rect: true,
+          computedStyle: ['borderRadius']
         })
-        newData._rippleList = _rippleList
-        this.setData(newData)
+        query.selectViewport().scrollOffset()
+        query.exec((res) => {
+          console.log(res)
+          const [, viewport] = res || {}
+          const {scrollLeft = 0, scrollTop = 0} = viewport || {}
+          console.log(scrollLeft, scrollTop)
+          let rippleX
+          let rippleY
+          if (centerRipple) {
+            rippleX = rippleParams.centerX
+            rippleY = rippleParams.centerY
+          } else {
+            rippleX = (rippleParams.x - (rippleParams.left + scrollLeft)) - (rippleParams.radius / 2)
+            rippleY = (rippleParams.y - (rippleParams.top + scrollTop)) - (rippleParams.radius / 2)
+          }
+          _rippleList.push({
+            key: rippleParams.key,
+            x: rippleX,
+            y: rippleY,
+            rippleClass: rippleParams.rippleClass,
+          })
+          newData._rippleList = _rippleList
+          this.setData(newData)
+        })
       }
     },
     _RippleEnd({key, rippleClass = ''}) {

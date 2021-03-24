@@ -292,14 +292,16 @@ Page({
       to = dataset.path
     }
     if (to) {
-      this.setData({loading: true}, () => {
+      this.setData({loading: false}, () => {
         setTimeout(() => {
+          /*
           wx.navigateTo({
             url: to,
             complete: () => {
               this.setData({loading: false})
             }
           })
+          */
         }, 325)
       })
     }
