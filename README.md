@@ -51,7 +51,7 @@ App({
 ```
 
 ## Typescript项目
-- 使用微信开发者工具新建typesciprt项目时，目录结构有所不同，需要在 `project.config.json` 文件中另行配置
+- 使用微信开发者工具新建typescript项目时，目录结构有所不同，需要在 `project.config.json` 文件中另行配置
 ```json
 "setting": {
   "packNpmManually": true,
