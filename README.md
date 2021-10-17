@@ -50,6 +50,20 @@ App({
 })
 ```
 
+## Typescript项目
+- 使用微信开发者工具新建typesciprt项目时，目录结构有所不同，需要在 `project.config.json` 文件中另行配置
+```json
+"setting": {
+  "packNpmManually": true,
+  "packNpmRelationList": [{
+      "packageJsonPath": "./package.json",
+      "miniprogramNpmDistDir": "./miniprogram"
+  }]
+}
+
+```
+- 如果自定义整个项目的目录结构，或者对原项目的目录做过调整，在`构建npm`步骤出现问题时，请熟读官方文档 [`npm支持`](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)
+
 ## 注意事项
 
 - 建议在app.json配置中配置 `"style": "v2"`
@@ -60,7 +74,7 @@ App({
 // index.json
 {
   "usingComponents": {
-    "mui-button": "/miniprogram_npm/momoui-miniprogram/button/button"
+    "mui-button": "/miniprogram_npm/momoui-miniprogram/components/button/button"
   }
 }
 ```
